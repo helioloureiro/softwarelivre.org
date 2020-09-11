@@ -1,0 +1,760 @@
+
+<!--Sessão do topo do template-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>
+        Fisl 18 &raquo;
+        18º Fórum Internacional Software Livre    </title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="http://fisl18.softwarelivre.org/wp-content/themes/FISL18_B/style.css">
+
+    <script type="text/javascript" src="http://fisl18.softwarelivre.org/wp-content/themes/FISL18_B/js/jquery.min.js"></script>
+    <script type="text/javascript" src="http://fisl18.softwarelivre.org/wp-content/themes/FISL18_B/js/popper.min.js"></script>
+    <script type="text/javascript" src="http://fisl18.softwarelivre.org/wp-content/themes/FISL18_B/js/bootstrap.min.js"></script>
+
+     <script src="https://unpkg.com/ionicons@4.2.0/dist/ionicons.js"></script>
+ <script type="text/javascript" src="http://fisl18.softwarelivre.org/wp-content/themes/FISL18_B/js/owl.carousel.min.js"></script>
+ <script type="text/javascript" src="http://fisl18.softwarelivre.org/wp-content/themes/FISL18_B/js/jquery.keyboard-focus.min.js"></script>
+<script type="text/javascript" src="http://fisl18.softwarelivre.org/wp-content/themes/FISL18_B/js/lightcase.js"></script>
+<script type="text/javascript" src="http://fisl18.softwarelivre.org/wp-content/themes/FISL18_B/js/masonry.min.js"></script>
+<script type="text/javascript" src="http://fisl18.softwarelivre.org/wp-content/themes/FISL18_B/js/imagesloaded.pkgd.min.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+            var alterClass = function() {
+                var ww = document.body.clientWidth;
+                if (ww < 992) {
+                    $('.navbar.navbar-fisl').removeClass('sticky-top');
+                } else if (ww >= 991) {
+                    $('.navbar.navbar-fisl').addClass('sticky-top');
+                };
+            };
+            $(window).resize(function() {
+                alterClass();
+            });
+            //Fire it when the page first loads:
+            alterClass();
+});
+
+// Calcular altura da base e passar para container
+
+$(document).ready(exe);
+$(window).resize(exe);
+
+function exe(){
+    var topHeight = $('.footerH').outerHeight(true);
+    $('.tudo').css("min-height", "calc(100vh - "+ topHeight +"px)")
+}
+
+
+//Criar container para carousel
+	//owl carroseu
+	$(document).ready(function() {
+		$(".owl-carousel").owlCarousel({
+			loop: true,
+			margin: 30,
+			autoplay: true,
+            dots:false,
+			autoplayTimeout: 4000,
+			touchDrag: true,
+            responsive: {
+                320: {
+					items: 1,
+				},
+				600: {
+					items: 2,
+				},
+				980: {
+					items: 3,
+				},	
+                1020: {
+					items: 1,
+			}
+            }
+		});
+	});
+
+	$('.owl-carousel').mouseover(function() {
+		owl.trigger('stop.owl.autoplay');
+	})
+
+	$('.owl-carousel').mouseleave(function() {
+		owl.trigger('play.owl.autoplay', [1000]);
+	})
+// Twitter script:
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+// Facebook HTML5 script: /
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+// Google+ script: 
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/platform.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+ 
+</script>
+    <link rel='dns-prefetch' href='//s.w.org' />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/fisl18.softwarelivre.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.7"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='team_manager-normalize-css-css'  href='http://fisl18.softwarelivre.org/wp-content/plugins/team-showcase/css/normalize.css?ver=4.9.7' type='text/css' media='all' />
+<link rel='stylesheet' id='team_manager-awesome-css-css'  href='http://fisl18.softwarelivre.org/wp-content/plugins/team-showcase/css/font-awesome.css?ver=4.9.7' type='text/css' media='all' />
+<link rel='stylesheet' id='team_manager-featherlight-css-css'  href='http://fisl18.softwarelivre.org/wp-content/plugins/team-showcase/css/featherlight.css?ver=4.9.7' type='text/css' media='all' />
+<link rel='stylesheet' id='team_manager-style1-css-css'  href='http://fisl18.softwarelivre.org/wp-content/plugins/team-showcase/css/style1.css?ver=4.9.7' type='text/css' media='all' />
+<script type='text/javascript' src='http://fisl18.softwarelivre.org/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='http://fisl18.softwarelivre.org/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='http://fisl18.softwarelivre.org/wp-content/plugins/team-showcase/js/modernizr.custom.js?ver=1.0'></script>
+<script type='text/javascript' src='http://fisl18.softwarelivre.org/wp-content/plugins/team-showcase/js/classie.js?ver=1.0'></script>
+<script type='text/javascript' src='http://fisl18.softwarelivre.org/wp-content/plugins/team-showcase/js/featherlight.js?ver=1.0'></script>
+<script type='text/javascript' src='http://fisl18.softwarelivre.org/wp-content/plugins/team-showcase/js/main.js?ver=1.0'></script>
+<link rel='https://api.w.org/' href='http://fisl18.softwarelivre.org/index.php/wp-json/' />
+<link rel="alternate" href="http://fisl18.softwarelivre.org/" hreflang="pt" />
+<link rel="alternate" href="http://fisl18.softwarelivre.org/index.php/en/" hreflang="en" />
+<link rel="alternate" href="http://fisl18.softwarelivre.org/index.php/es/" hreflang="es" />
+<link rel="icon" href="http://fisl18.softwarelivre.org/wp-content/uploads/2018/06/cropped-Icon-32x32.png" sizes="32x32" />
+<link rel="icon" href="http://fisl18.softwarelivre.org/wp-content/uploads/2018/06/cropped-Icon-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="http://fisl18.softwarelivre.org/wp-content/uploads/2018/06/cropped-Icon-180x180.png" />
+<meta name="msapplication-TileImage" content="http://fisl18.softwarelivre.org/wp-content/uploads/2018/06/cropped-Icon-270x270.png" />
+		<style type="text/css" id="wp-custom-css">
+			  section article .owl-carousel-page {
+    margin: 0 30px;
+    position: relative; }
+    section article .owl-carousel-page .owl-stage-outer {
+      overflow: hidden;
+      position: relative;
+      z-index: 10; }
+      section article .owl-carousel-page .owl-stage-outer .owl-stage .owl-item {
+        display: inline-block;
+        vertical-align: middle; }
+        section article .owl-carousel-page .owl-stage-outer .owl-stage .owl-item .item img {
+          width: 100%;
+          height: auto; }
+    section article .owl-carousel-page .owl-nav {
+      top: 50%;
+      margin-top: -30px;
+      width: 100%;
+      position: absolute; }
+      section article .owl-carousel-page .owl-nav .owl-prev {
+        overflow: hidden;
+        text-indent: -50rem;
+        border-radius: 0;
+        float: left;
+        color: transparent;
+        background: none;
+        display: block;
+        content: " ";
+        width: 20px;
+        height: 20px;
+        line-height: 40px;
+        border-bottom: solid 3px #739b9b;
+        border-left: solid 3px #739b9b;
+        margin-left: -35px;
+        transform: rotate(45deg);
+        opacity: 0.6; }
+        section article .owl-carousel-page .owl-nav .owl-prev:hover {
+          color: transparent;
+          background: none;
+          opacity: 1; }
+      section article .owl-carousel-page .owl-nav .owl-next {
+        overflow: hidden;
+        text-indent: -50rem;
+        display: block;
+        float: right;
+        border-radius: 0;
+        color: transparent;
+        background: none;
+        content: " ";
+        width: 20px;
+        height: 20px;
+        border-bottom: solid 3px #739b9b;
+        border-right: solid 3px #739b9b;
+        margin-right: -35px;
+        transform: rotate(-45deg);
+        opacity: 0.6; }
+        section article .owl-carousel-page .owl-nav .owl-next:hover {
+          color: transparent;
+          background: none;
+          opacity: 1; }
+    section article .owl-carousel-page .owl-dots .owl-dot {
+      cursor: pointer; }
+      section article .owl-carousel-page .owl-dots .owl-dot span {
+        width: 20px;
+        height: 3px;
+        margin: 5px 4px;
+        background: #739b9b;
+        display: block;
+        transition: opacity 200ms ease;
+        border-radius: 0;
+        opacity: 0.5; }
+      section article .owl-carousel-page .owl-dots .owl-dot.active span, section article .owl-carousel-page .owl-dots .owl-dot:hover span {
+        opacity: 1; }
+
+.fix-top {
+  padding-top: 35px;
+	-webkit-transition: padding-top  ease-in-out 0.3s;
+    -moz-transition: padding-top ease-in-out 0.3s;
+    -o-transition: padding-top ease-in-out 0.3s;
+    transition: padding-top ease-in-out 0.3s;
+	z-index: 0;
+}
+
+.wp-caption.alignnone{
+	max-width: 100% !important;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+		</style>
+	</head>
+
+<body class="home blog wp-custom-logo">
+
+<!-- Carrega conjunto de classes uteis para o site  -->
+
+
+    <div class="container-fluid px-0 tudo">
+        
+    
+
+ <nav class="navbar navbar-fisl navbar-expand-lg navbar-dark bg-secondary py-0 pr-0 sticky-top  nav-home">
+        <!--Logo-->
+        <a href="http://fisl18.softwarelivre.org/" title="Fisl 18" rel="home" class="navbar-brand image-replacement"> <img src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/06/cropped-tit-site.png"> </a>        <!--//Logo-->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="d-block d-md-block d-lg-none">
+           
+<div class="dropdown search-collapse">
+  <button class="btn btn-link py-0 px-4 text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <span class="src-open"><i class="icon ion-md-search"></i></span><span class="src-close"><i class="icon ion-md-close"></i></span>
+  </button>
+  <div class="dropdown-menu dropdown-menu-right border-0 bg-secondary p-2" aria-labelledby="dropdownMenuButton">
+  <form id="searchform" method="get" action="http://fisl18.softwarelivre.org/">
+    <input type="text" class="search-field form-control" name="s" placeholder="Pesquisar" value="">
+    <button class="btn btn-link py-0 button-search"  type="submit"><i class="icon ion-md-search"></i></button>
+</form>
+  </div>
+</div>        </div>
+
+ <div id="navbarSupportedContent" class="collapse navbar-collapse"><ul id="menu-menu-br" class="navbar-nav ml-auto"><li id="menu-item-1043" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1043 nav-item"><a title="Certificados FISL18!!!" href="https://segue.fisl18.softwarelivre.org/#/authenticate/home" class="nav-link">Certificados FISL18!!!</a></li>
+<li id="menu-item-65" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-65 nav-item"><a title="Inscrições" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link" id="menu-item-dropdown-65">Inscrições</a>
+<ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-65" role="menu">
+	<li id="menu-item-528" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-528 nav-item"><a title="Participantes" href="http://fisl18.softwarelivre.org/index.php/participantes/" class="dropdown-item">Participantes</a></li>
+	<li id="menu-item-61" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61 nav-item"><a title="Comunidades" href="http://fisl18.softwarelivre.org/index.php/comunidades/" class="dropdown-item">Comunidades</a></li>
+	<li id="menu-item-62" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62 nav-item"><a title="Submissão de Trabalhos" href="http://fisl18.softwarelivre.org/index.php/submissao-de-trabalhos/" class="dropdown-item">Submissão de Trabalhos</a></li>
+	<li id="menu-item-63" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-63 nav-item"><a title="Voluntários" href="http://fisl18.softwarelivre.org/index.php/voluntarios/" class="dropdown-item">Voluntários</a></li>
+	<li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60 nav-item"><a title="Caravanas" href="http://fisl18.softwarelivre.org/index.php/caravanas/" class="dropdown-item">Caravanas</a></li>
+</ul>
+</li>
+<li id="menu-item-342" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-342 nav-item"><a title="O Evento" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link" id="menu-item-dropdown-342">O Evento</a>
+<ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-342" role="menu">
+	<li id="menu-item-344" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-344 nav-item"><a title="Sobre FISL" href="http://fisl18.softwarelivre.org/index.php/sobre-o-fisl-2/" class="dropdown-item">Sobre FISL</a></li>
+	<li id="menu-item-340" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-340 nav-item"><a title="Perguntas Frequentes" href="http://fisl18.softwarelivre.org/index.php/faqs/" class="dropdown-item">Perguntas Frequentes</a></li>
+	<li id="menu-item-345" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-345 nav-item"><a title="Patrocínio &#038; Apoio" href="http://fisl18.softwarelivre.org/index.php/patrocinio-apoio/" class="dropdown-item">Patrocínio &#038; Apoio</a></li>
+	<li id="menu-item-415" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-415 nav-item"><a title="Patrocinadores" href="http://fisl18.softwarelivre.org/index.php/patrocinadores/" class="dropdown-item">Patrocinadores</a></li>
+	<li id="menu-item-338" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-338 nav-item"><a title="Crowdfunding FISL18" href="http://fisl18.softwarelivre.org/index.php/161-2/" class="dropdown-item">Crowdfunding FISL18</a></li>
+	<li id="menu-item-384" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-384 nav-item"><a title="Política Anti-Assédio" href="http://fisl18.softwarelivre.org/index.php/politica-anti-assedio/" class="dropdown-item">Política Anti-Assédio</a></li>
+	<li id="menu-item-424" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-424 nav-item"><a title="As Páginas Amigas" href="http://fisl18.softwarelivre.org/index.php/as-paginas-amigas/" class="dropdown-item">As Páginas Amigas</a></li>
+	<li id="menu-item-379" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-379 nav-item"><a title="Divulgue" href="http://fisl18.softwarelivre.org/index.php/346-2/" class="dropdown-item">Divulgue</a></li>
+	<li id="menu-item-425" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-425 nav-item"><a title="Sobre a Cidade" href="#" class="dropdown-item">Sobre a Cidade</a>
+	<ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-342" role="menu">
+		<li id="menu-item-441" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-441 nav-item"><a title="Fatos" href="http://fisl18.softwarelivre.org/index.php/fatos/" class="dropdown-item">Fatos</a></li>
+		<li id="menu-item-439" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-439 nav-item"><a title="Guia de Hospedagem" href="http://fisl18.softwarelivre.org/index.php/guia-de-hospedagem/" class="dropdown-item">Guia de Hospedagem</a></li>
+		<li id="menu-item-440" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-440 nav-item"><a title="Como Chegar" href="http://fisl18.softwarelivre.org/index.php/como-chegar/" class="dropdown-item">Como Chegar</a></li>
+		<li id="menu-item-438" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-438 nav-item"><a title="Turismo" href="http://fisl18.softwarelivre.org/index.php/turismo/" class="dropdown-item">Turismo</a></li>
+		<li id="menu-item-437" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-437 nav-item"><a title="CEPUC" href="http://fisl18.softwarelivre.org/index.php/cepuc/" class="dropdown-item">CEPUC</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-387" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-387 nav-item"><a title="Programação" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link" id="menu-item-dropdown-387">Programação</a>
+<ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-387" role="menu">
+	<li id="menu-item-414" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-414 nav-item"><a title="Agenda" href="#" class="dropdown-item">Agenda</a>
+	<ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-387" role="menu">
+		<li id="menu-item-410" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-410 nav-item"><a title="Dia 11" href="https://agenda.fisl18.softwarelivre.org/#/2018-07-11" class="dropdown-item">Dia 11</a></li>
+		<li id="menu-item-411" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-411 nav-item"><a title="Dia 12" href="https://agenda.fisl18.softwarelivre.org/#/2018-07-12" class="dropdown-item">Dia 12</a></li>
+		<li id="menu-item-412" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-412 nav-item"><a title="Dia 13" href="https://agenda.fisl18.softwarelivre.org/#/2018-07-13" class="dropdown-item">Dia 13</a></li>
+		<li id="menu-item-413" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-413 nav-item"><a title="Dia 14" href="https://agenda.fisl18.softwarelivre.org/#/2018-07-14" class="dropdown-item">Dia 14</a></li>
+	</ul>
+</li>
+	<li id="menu-item-389" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-389 nav-item"><a title="Destaques &#038; Convidados" href="http://fisl18.softwarelivre.org/index.php/destaques-convidados/" class="dropdown-item">Destaques &#038; Convidados</a></li>
+	<li id="menu-item-390" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-390 nav-item"><a title="Oficinas" href="http://fisl18.softwarelivre.org/index.php/oficinas/" class="dropdown-item">Oficinas</a></li>
+	<li id="menu-item-391" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-391 nav-item"><a title="Trilhas" href="http://fisl18.softwarelivre.org/index.php/trilhas/" class="dropdown-item">Trilhas</a></li>
+	<li id="menu-item-392" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-392 nav-item"><a title="Áreas Temáticas" href="#" class="dropdown-item">Áreas Temáticas</a>
+	<ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-387" role="menu">
+		<li id="menu-item-393" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-393 nav-item"><a title="Acessibilidade" href="http://fisl18.softwarelivre.org/index.php/acessibilidade/" class="dropdown-item">Acessibilidade</a></li>
+		<li id="menu-item-394" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-394 nav-item"><a title="Cultura livre" href="http://fisl18.softwarelivre.org/index.php/cultura-livre/" class="dropdown-item">Cultura livre</a></li>
+		<li id="menu-item-395" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-395 nav-item"><a title="Educação Livre" href="http://fisl18.softwarelivre.org/index.php/educacao-livre/" class="dropdown-item">Educação Livre</a></li>
+		<li id="menu-item-396" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-396 nav-item"><a title="Empreendedorismo" href="http://fisl18.softwarelivre.org/index.php/empreendedorismo/" class="dropdown-item">Empreendedorismo</a></li>
+		<li id="menu-item-397" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-397 nav-item"><a title="Energia Livre" href="http://fisl18.softwarelivre.org/index.php/energia-livre/" class="dropdown-item">Energia Livre</a></li>
+		<li id="menu-item-398" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-398 nav-item"><a title="Feminino Livre" href="http://fisl18.softwarelivre.org/index.php/feminino-livre/" class="dropdown-item">Feminino Livre</a></li>
+		<li id="menu-item-399" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-399 nav-item"><a title="Fislinho" href="http://fisl18.softwarelivre.org/index.php/fislinho/" class="dropdown-item">Fislinho</a></li>
+		<li id="menu-item-400" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-400 nav-item"><a title="Games" href="http://fisl18.softwarelivre.org/index.php/games/" class="dropdown-item">Games</a></li>
+		<li id="menu-item-401" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-401 nav-item"><a title="Mobile &#038; IOT" href="http://fisl18.softwarelivre.org/index.php/mobile-iot/" class="dropdown-item">Mobile &#038; IOT</a></li>
+		<li id="menu-item-402" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-402 nav-item"><a title="Risol" href="http://fisl18.softwarelivre.org/index.php/risol/" class="dropdown-item">Risol</a></li>
+		<li id="menu-item-403" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-403 nav-item"><a title="Robótica Livre" href="http://fisl18.softwarelivre.org/index.php/robotica-livre/" class="dropdown-item">Robótica Livre</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+</ul></div>        <div class="d-none d-md-none d-lg-inline-block">
+           
+<div class="dropdown search-collapse">
+  <button class="btn btn-link py-0 px-4 text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <span class="src-open"><i class="icon ion-md-search"></i></span><span class="src-close"><i class="icon ion-md-close"></i></span>
+  </button>
+  <div class="dropdown-menu dropdown-menu-right border-0 bg-secondary p-2" aria-labelledby="dropdownMenuButton">
+  <form id="searchform" method="get" action="http://fisl18.softwarelivre.org/">
+    <input type="text" class="search-field form-control" name="s" placeholder="Pesquisar" value="">
+    <button class="btn btn-link py-0 button-search"  type="submit"><i class="icon ion-md-search"></i></button>
+</form>
+  </div>
+</div>        </div>
+
+     </nav>
+
+
+
+<header><div class="header-image d-none d-sm-block d-md-block" style="background-image: url(http://novofisl.softwarelivre.org/wp-content/uploads/2018/06/cropped-bktiti.png);"><div class="container">
+    <div class="d-block d-md-flex flex-lg-row flex-row align-items-center pt-2 pt-md-4 pt-lg-1">
+        <div id="media_image-3" class="widget_media_image header-widget flex-fill"><a href="http://fisl18.softwarelivre.org/"><img width="586" height="230" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/06/Logo_G.png" class="image wp-image-48  attachment-full size-full" alt="" style="max-width: 100%; height: auto;" srcset="http://fisl18.softwarelivre.org/wp-content/uploads/2018/06/Logo_G.png 586w, http://fisl18.softwarelivre.org/wp-content/uploads/2018/06/Logo_G-300x118.png 300w" sizes="(max-width: 586px) 100vw, 586px" /></a></div><div id="custom_html-2" class="widget_text widget_custom_html header-widget flex-fill"><div class="textwidget custom-html-widget"><h5 class="text-primary text-center title d-none d-sm-none d-md-block">
+	INFORMAÇÃO E COMUNICAÇÃO ABERTAS PARA A SOCIEDADE
+</h5>
+<h5 class="text-center d-none d-sm-none d-md-block">
+	O futuro do Conhecimento Livre
+</h5>
+<h3 class="text-center">
+11 A 14 JULHO/2018
+</h3>
+<h6 class="text-center">
+CENTRO DE EVENTOS PUCRS | PORTO ALEGRE | RS | BRASIL
+</h6></div></div>    </div>
+</div></div></header>
+
+<div id="fisl-home-carousel" class="carousel slide" data-ride="carousel">
+    
+    <ol class="carousel-indicators">
+                <li data-target="#fisl-home-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#fisl-home-carousel" data-slide-to="1" ></li>
+                <li data-target="#fisl-home-carousel" data-slide-to="2" ></li>
+                <li data-target="#fisl-home-carousel" data-slide-to="3" ></li>
+                <li data-target="#fisl-home-carousel" data-slide-to="4" ></li>
+                <li data-target="#fisl-home-carousel" data-slide-to="5" ></li>
+                <li data-target="#fisl-home-carousel" data-slide-to="6" ></li>
+            </ol>
+
+    <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+            <img class="d-block w-100"  src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/20180714_191700.jpg" alt="Marcado pela resistência, FISL18 reúne mais de 1,5 mil participantes">
+            <div class="carousel-caption"><h3 class="title"><a href="http://fisl18.softwarelivre.org/index.php/2018/07/15/marcado-pela-resistencia-fisl18-reune-mais-de-15-mil-participantes/" title="Marcado pela resistência, FISL18 reúne mais de 1,5 mil participantes">Marcado pela resistência, FISL18 reúne mais de 1,5 mil participantes</a></h3><p>Terminou neste sábado, às 20 horas, o FISL 18 - Fórum Internacional Software Livre -, um dos mais importantes eventos de tecnologias livres da América Latina. Realizado em Porto Alegre&hellip;</p></div>
+        </div>
+                <div class="carousel-item ">
+            <img class="d-block w-100"  src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/29539471248_93d21920da_z-1.jpg" alt="Iniciativas para acelerar transformação digital no setor público são organizadas no FISL 18">
+            <div class="carousel-caption"><h3 class="title"><a href="http://fisl18.softwarelivre.org/index.php/2018/07/14/iniciativas-para-acelerar-transformacao-digital-no-setor-publico-sao-organizadas-no-fisl-18/" title="Iniciativas para acelerar transformação digital no setor público são organizadas no FISL 18">Iniciativas para acelerar transformação digital no setor público são organizadas no FISL 18</a></h3><p>O Fórum Internacional Software Livre se consolidou, ao longo de 18 edições, como um dos mais importantes espaços de discussão e proliferação do uso de tecnologias livres para o desenvolvimento&hellip;</p></div>
+        </div>
+                <div class="carousel-item ">
+            <img class="d-block w-100"  src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/42690722394_1b2e2a3150_z.jpg" alt="Projeto que ensina robótica em escolas públicas do Rio Grande do Sul é apresentado no FISL18">
+            <div class="carousel-caption"><h3 class="title"><a href="http://fisl18.softwarelivre.org/index.php/2018/07/14/projeto-que-ensina-robotica-em-escolas-publicas-gauchas-e-apresentado-no-fisl18/" title="Projeto que ensina robótica em escolas públicas do Rio Grande do Sul é apresentado no FISL18">Projeto que ensina robótica em escolas públicas do Rio Grande do Sul é apresentado no FISL18</a></h3><p>Texto: Anderson Guerreiro A quebra de uma lógica de ensino que coloca alunos de escolas públicas como produtores de conhecimento e não apenas de receptores foi pauta de uma palestra&hellip;</p></div>
+        </div>
+                <div class="carousel-item ">
+            <img class="d-block w-100"  src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/41595360810_292db08f12_z.jpg" alt="Privacidade na rede e software livre: deu match!">
+            <div class="carousel-caption"><h3 class="title"><a href="http://fisl18.softwarelivre.org/index.php/2018/07/14/privacidade-na-rede-e-software-livre-deu-match/" title="Privacidade na rede e software livre: deu match!">Privacidade na rede e software livre: deu match!</a></h3><p>Se os dados são um produto valioso no mundo em que vivemos, eles são igualmente fáceis de se obter. Basta acessar uma página da web: ela vai saber seu número&hellip;</p></div>
+        </div>
+                <div class="carousel-item ">
+            <img class="d-block w-100"  src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/43342611282_f3424d2f33_z.jpg" alt="Medicina 4.0: FISL18 aborda avanços tecnológicos na saúde">
+            <div class="carousel-caption"><h3 class="title"><a href="http://fisl18.softwarelivre.org/index.php/2018/07/13/medicina-4-0-fisl18-aborda-avancos-tecnologicos-na-saude/" title="Medicina 4.0: FISL18 aborda avanços tecnológicos na saúde">Medicina 4.0: FISL18 aborda avanços tecnológicos na saúde</a></h3><p>Os avanços que a tecnologia tem propiciado à área da saúde foram pauta de uma palestra nesta sexta-feira, 13, durante o terceiro dia do Fórum Internacional Software Livre, em Porto&hellip;</p></div>
+        </div>
+                <div class="carousel-item ">
+            <img class="d-block w-100"  src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/29516826488_5b5c1fd2fd_z.jpg" alt="Data science com tecnologia livre é possível? Spoiler: a resposta é sim">
+            <div class="carousel-caption"><h3 class="title"><a href="http://fisl18.softwarelivre.org/index.php/2018/07/13/data-science-com-tecnologia-livre-e-possivel-spoiler-a-resposta-e-sim/" title="Data science com tecnologia livre é possível? Spoiler: a resposta é sim">Data science com tecnologia livre é possível? Spoiler: a resposta é sim</a></h3><p>Uma nova área de conhecimento científico está nascendo e, quando pensamos no contexto em que vivemos, não é de se surpreender. Se estamos presenciando o desenvolvimento da indústria 4.0, é&hellip;</p></div>
+        </div>
+                <div class="carousel-item ">
+            <img class="d-block w-100"  src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/42445004785_7977cf43ef_k.jpg" alt="Nota da Associação Software Livre.ORG">
+            <div class="carousel-caption"><h3 class="title"><a href="http://fisl18.softwarelivre.org/index.php/2018/07/12/nota-da-associacao-software-livre-org/" title="Nota da Associação Software Livre.ORG">Nota da Associação Software Livre.ORG</a></h3><p>Na tarde desta quarta-feira, o site oficial do FISL18 foi hackeado. Os autores do ataque veicularam na página ataques ao movimento feminista e à posição da Associação Software Livre. ORG&hellip;</p></div>
+        </div>
+            </div>
+
+
+<a class="carousel-control-prev" href="#fisl-home-carousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#fisl-home-carousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+<div class="container">
+<div class="row">
+
+<!--Sessão do corpo do template-->
+
+
+<div class="col-12 col-md-12 col-lg-8"><section class="loop-page">
+    <article>
+        <header>
+            	<a href="http://fisl18.softwarelivre.org/index.php/2018/09/05/relato-fisl18-l3p/" class="thumbnail-wrapper"><img width="1080" height="1920" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/09/IMG_20180711_092944616_HDR.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="http://fisl18.softwarelivre.org/wp-content/uploads/2018/09/IMG_20180711_092944616_HDR.jpg 1080w, http://fisl18.softwarelivre.org/wp-content/uploads/2018/09/IMG_20180711_092944616_HDR-169x300.jpg 169w, http://fisl18.softwarelivre.org/wp-content/uploads/2018/09/IMG_20180711_092944616_HDR-768x1365.jpg 768w, http://fisl18.softwarelivre.org/wp-content/uploads/2018/09/IMG_20180711_092944616_HDR-576x1024.jpg 576w" sizes="(max-width: 1080px) 100vw, 1080px" /></a>            <h4 class="title">
+                <a href="http://fisl18.softwarelivre.org/index.php/2018/09/05/relato-fisl18-l3p/" title="Relato FISL18 L3P">
+                <span>Relato FISL18 L3P</span>
+                </a>
+            </h4>
+        </header>
+        <p>O FISL — Fórum Internacional Software Livre — é considerado um um dos mais importantes eventos de tecnologias livres da América Latina. Um time de 4 pesquisadores do L3P — Fabs Balvedi, Leo Germani, Joyce Siqueira e Mateus Luna — esteve por lá para apresentar dois de seus principais projetos de software livre: o Tainacan e o Mapas Culturais. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Confira o relato na íntegra, no link abaixo: Relato FISL18</p>
+        <footer>
+            <ul class="small nav posted-by">
+		<li class="nav-item p-1"><time datetime="2018-09-05">5 setembro - 2018 - 10:54</time></li>
+			<li class="nav-item p-1">
+				<span class="mr-1">por</span>Fabricio Reis			</li>
+			</ul>        </footer>
+    </article>
+        <article>
+        <header>
+            	<a href="http://fisl18.softwarelivre.org/index.php/2018/07/15/marcado-pela-resistencia-fisl18-reune-mais-de-15-mil-participantes/" class="thumbnail-wrapper"><img width="4128" height="2322" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/20180714_191700.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/20180714_191700.jpg 4128w, http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/20180714_191700-300x169.jpg 300w, http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/20180714_191700-768x432.jpg 768w, http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/20180714_191700-1024x576.jpg 1024w" sizes="(max-width: 4128px) 100vw, 4128px" /></a>            <h4 class="title">
+                <a href="http://fisl18.softwarelivre.org/index.php/2018/07/15/marcado-pela-resistencia-fisl18-reune-mais-de-15-mil-participantes/" title="Marcado pela resistência, FISL18 reúne mais de 1,5 mil participantes">
+                <span>Marcado pela resistência, FISL18 reúne mais de 1,5 mil participantes</span>
+                </a>
+            </h4>
+        </header>
+        <p>Terminou neste sábado, às 20 horas, o FISL 18 &#8211; Fórum Internacional Software Livre -, um dos mais importantes eventos de tecnologias livres da América Latina. Realizado em Porto Alegre desde o ano 2000, o FISL reuniu nesta edição um público de mais de 1.565 pessoas e 45 caravanas, todas ligadas à tecnologia e suas aplicações. Foram 334 palestras, desde aspectos técnicos de desenvolvimento e programação de software livre, até medicina 4.0, passando por segurança na internet, preservação de dados <a class="read-more btn btn-primary btn-sm" href="http://fisl18.softwarelivre.org/index.php/2018/07/15/marcado-pela-resistencia-fisl18-reune-mais-de-15-mil-participantes/">Leia mais</a></p>
+        <footer>
+            <ul class="small nav posted-by">
+		<li class="nav-item p-1"><time datetime="2018-07-15">15 julho - 2018 - 12:21</time></li>
+			<li class="nav-item p-1">
+				<span class="mr-1">por</span>Vagner Benites			</li>
+			</ul>        </footer>
+    </article>
+        <article>
+        <header>
+            	<a href="http://fisl18.softwarelivre.org/index.php/2018/07/14/iniciativas-para-acelerar-transformacao-digital-no-setor-publico-sao-organizadas-no-fisl-18/" class="thumbnail-wrapper"><img width="640" height="426" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/29539471248_93d21920da_z-1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/29539471248_93d21920da_z-1.jpg 640w, http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/29539471248_93d21920da_z-1-300x200.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" /></a>            <h4 class="title">
+                <a href="http://fisl18.softwarelivre.org/index.php/2018/07/14/iniciativas-para-acelerar-transformacao-digital-no-setor-publico-sao-organizadas-no-fisl-18/" title="Iniciativas para acelerar transformação digital no setor público são organizadas no FISL 18">
+                <span>Iniciativas para acelerar transformação digital no setor público são organizadas no FISL 18</span>
+                </a>
+            </h4>
+        </header>
+        <p>O Fórum Internacional Software Livre se consolidou, ao longo de 18 edições, como um dos mais importantes espaços de discussão e proliferação do uso de tecnologias livres para o desenvolvimento humano. Neste ano, mais de 1.500 participantes fizeram um FISL com mais de 400 palestras em 47 horas de atividades. Nesta edição, o evento foi palco para a organização de uma rede de lideranças de diversos setores com o objetivo de acelerar a transformação digital no setor público. O investimento <a class="read-more btn btn-primary btn-sm" href="http://fisl18.softwarelivre.org/index.php/2018/07/14/iniciativas-para-acelerar-transformacao-digital-no-setor-publico-sao-organizadas-no-fisl-18/">Leia mais</a></p>
+        <footer>
+            <ul class="small nav posted-by">
+		<li class="nav-item p-1"><time datetime="2018-07-14">14 julho - 2018 - 9:58</time></li>
+			<li class="nav-item p-1">
+				<span class="mr-1">por</span>Vagner Benites			</li>
+			</ul>        </footer>
+    </article>
+        <article>
+        <header>
+            	<a href="http://fisl18.softwarelivre.org/index.php/2018/07/14/projeto-que-ensina-robotica-em-escolas-publicas-gauchas-e-apresentado-no-fisl18/" class="thumbnail-wrapper"><img width="640" height="426" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/42690722394_1b2e2a3150_z.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/42690722394_1b2e2a3150_z.jpg 640w, http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/42690722394_1b2e2a3150_z-300x200.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" /></a>            <h4 class="title">
+                <a href="http://fisl18.softwarelivre.org/index.php/2018/07/14/projeto-que-ensina-robotica-em-escolas-publicas-gauchas-e-apresentado-no-fisl18/" title="Projeto que ensina robótica em escolas públicas do Rio Grande do Sul é apresentado no FISL18">
+                <span>Projeto que ensina robótica em escolas públicas do Rio Grande do Sul é apresentado no FISL18</span>
+                </a>
+            </h4>
+        </header>
+        <p>Texto: Anderson Guerreiro A quebra de uma lógica de ensino que coloca alunos de escolas públicas como produtores de conhecimento e não apenas de receptores foi pauta de uma palestra neste sábado no Fórum Internacional Software Livre (FISL18). Com o tema Inserção da robótica educacional livre nas escolas do RS, o professor Juliano Bastianello destacou as ações desenvolvidas no NTE, o Núcleo de Tecnologia Educacional, de Gravataí. O projeto, desenvolvido desde 2015, visa levar a robótica como forma de inovação <a class="read-more btn btn-primary btn-sm" href="http://fisl18.softwarelivre.org/index.php/2018/07/14/projeto-que-ensina-robotica-em-escolas-publicas-gauchas-e-apresentado-no-fisl18/">Leia mais</a></p>
+        <footer>
+            <ul class="small nav posted-by">
+		<li class="nav-item p-1"><time datetime="2018-07-14">14 julho - 2018 - 6:20</time></li>
+			<li class="nav-item p-1">
+				<span class="mr-1">por</span>Vagner Benites			</li>
+			</ul>        </footer>
+    </article>
+        <article>
+        <header>
+            	<a href="http://fisl18.softwarelivre.org/index.php/2018/07/14/rede-ciberativistas-negras-pela-liberdade-de-corpos-vozes-e-softwares/" class="thumbnail-wrapper"><img width="640" height="521" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/43365261601_b1b904fcf6_z.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/43365261601_b1b904fcf6_z.jpg 640w, http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/43365261601_b1b904fcf6_z-300x244.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" /></a>            <h4 class="title">
+                <a href="http://fisl18.softwarelivre.org/index.php/2018/07/14/rede-ciberativistas-negras-pela-liberdade-de-corpos-vozes-e-softwares/" title="Rede Ciberativistas Negras: pela liberdade de corpos, vozes e softwares">
+                <span>Rede Ciberativistas Negras: pela liberdade de corpos, vozes e softwares</span>
+                </a>
+            </h4>
+        </header>
+        <p>Texto: Márcia Schuler Se liberdade, cooperação e descentralização são princípios do software livre, também o são para o movimento de mulheres negras. E, entre as muitas necessidades latentes em um mundo extremamente desigual &#8212; dentro e fora das redes &#8211;, são muitas as buscas por liberdade: de falar, de existir, de resistir, de criar, de transformar, de copiar, editar, distribuir e adaptar. Sabe-se que a população negra sempre ocupou espaços de comunicação, historicamente subordinada às condições políticas. Mas foi a <a class="read-more btn btn-primary btn-sm" href="http://fisl18.softwarelivre.org/index.php/2018/07/14/rede-ciberativistas-negras-pela-liberdade-de-corpos-vozes-e-softwares/">Leia mais</a></p>
+        <footer>
+            <ul class="small nav posted-by">
+		<li class="nav-item p-1"><time datetime="2018-07-14">14 julho - 2018 - 5:39</time></li>
+			<li class="nav-item p-1">
+				<span class="mr-1">por</span>Vagner Benites			</li>
+			</ul>        </footer>
+    </article>
+        <article>
+        <header>
+            	<a href="http://fisl18.softwarelivre.org/index.php/2018/07/14/privacidade-na-rede-e-software-livre-deu-match/" class="thumbnail-wrapper"><img width="640" height="424" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/41595360810_292db08f12_z.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/41595360810_292db08f12_z.jpg 640w, http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/41595360810_292db08f12_z-300x199.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" /></a>            <h4 class="title">
+                <a href="http://fisl18.softwarelivre.org/index.php/2018/07/14/privacidade-na-rede-e-software-livre-deu-match/" title="Privacidade na rede e software livre: deu match!">
+                <span>Privacidade na rede e software livre: deu match!</span>
+                </a>
+            </h4>
+        </header>
+        <p>Se os dados são um produto valioso no mundo em que vivemos, eles são igualmente fáceis de se obter. Basta acessar uma página da web: ela vai saber seu número de IP, o local de onde você está acessando, seu sistema operacional, os plugins que você usa e mesmo o tamanho da sua tela &#8212; aliás, se quiser saber quais informações essas páginas conseguem visualizar, vale uma visita ao ipleak.net. Mas, claro, é possível se proteger. Para quem ainda não <a class="read-more btn btn-primary btn-sm" href="http://fisl18.softwarelivre.org/index.php/2018/07/14/privacidade-na-rede-e-software-livre-deu-match/">Leia mais</a></p>
+        <footer>
+            <ul class="small nav posted-by">
+		<li class="nav-item p-1"><time datetime="2018-07-14">14 julho - 2018 - 3:07</time></li>
+			<li class="nav-item p-1">
+				<span class="mr-1">por</span>Vagner Benites			</li>
+			</ul>        </footer>
+    </article>
+        <article>
+        <header>
+            	<a href="http://fisl18.softwarelivre.org/index.php/2018/07/13/fisl18-dados-abertos-tornam-judiciario-mais-eficiente/" class="thumbnail-wrapper"><img width="640" height="424" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/42486300495_37ef18cfd1_z.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/42486300495_37ef18cfd1_z.jpg 640w, http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/42486300495_37ef18cfd1_z-300x199.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" /></a>            <h4 class="title">
+                <a href="http://fisl18.softwarelivre.org/index.php/2018/07/13/fisl18-dados-abertos-tornam-judiciario-mais-eficiente/" title="FISL18: Dados abertos tornam Judiciário mais eficiente">
+                <span>FISL18: Dados abertos tornam Judiciário mais eficiente</span>
+                </a>
+            </h4>
+        </header>
+        <p>Julio Trecenti se define como um faxineiro de dados. Diretor da Associação Brasileira de Jurimetria (ABJ) e doutorando em estatística, ele tem como missão difundir por aí o conceito de jurimetria. Em uma definição simples, ela é a estatística aplicada ao direito. Mas, claro, há muito mais a se falar sobre essa ciência fundamental em um mundo no qual a análise de dados se tornou um dos insumos mais importantes em diferentes áreas &#8212; entre elas, a elaboração de políticas <a class="read-more btn btn-primary btn-sm" href="http://fisl18.softwarelivre.org/index.php/2018/07/13/fisl18-dados-abertos-tornam-judiciario-mais-eficiente/">Leia mais</a></p>
+        <footer>
+            <ul class="small nav posted-by">
+		<li class="nav-item p-1"><time datetime="2018-07-13">13 julho - 2018 - 9:58</time></li>
+			<li class="nav-item p-1">
+				<span class="mr-1">por</span>Vagner Benites			</li>
+			</ul>        </footer>
+    </article>
+        <article>
+        <header>
+            	<a href="http://fisl18.softwarelivre.org/index.php/2018/07/13/medicina-4-0-fisl18-aborda-avancos-tecnologicos-na-saude/" class="thumbnail-wrapper"><img width="640" height="424" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/43342611282_f3424d2f33_z.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/43342611282_f3424d2f33_z.jpg 640w, http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/43342611282_f3424d2f33_z-300x199.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" /></a>            <h4 class="title">
+                <a href="http://fisl18.softwarelivre.org/index.php/2018/07/13/medicina-4-0-fisl18-aborda-avancos-tecnologicos-na-saude/" title="Medicina 4.0: FISL18 aborda avanços tecnológicos na saúde">
+                <span>Medicina 4.0: FISL18 aborda avanços tecnológicos na saúde</span>
+                </a>
+            </h4>
+        </header>
+        <p>Os avanços que a tecnologia tem propiciado à área da saúde foram pauta de uma palestra nesta sexta-feira, 13, durante o terceiro dia do Fórum Internacional Software Livre, em Porto Alegre. A palestra Medicina 4.0 &#8211; A Revolução tecnológica na saúde abordou, através de uma linha cronológica que inclui a Primeira, Segunda, Terceira e Quarta Revolução Industrial, dezenas de projetos que estão alterando, em todo o mundo, a forma como os atendimentos de saúde são feitos. A apresentação foi feita <a class="read-more btn btn-primary btn-sm" href="http://fisl18.softwarelivre.org/index.php/2018/07/13/medicina-4-0-fisl18-aborda-avancos-tecnologicos-na-saude/">Leia mais</a></p>
+        <footer>
+            <ul class="small nav posted-by">
+		<li class="nav-item p-1"><time datetime="2018-07-13">13 julho - 2018 - 9:28</time></li>
+			<li class="nav-item p-1">
+				<span class="mr-1">por</span>Vagner Benites			</li>
+			</ul>        </footer>
+    </article>
+        <article>
+        <header>
+            	<a href="http://fisl18.softwarelivre.org/index.php/2018/07/13/vai-para-cuba-desenvolvimento-do-software-livre-no-pais-e-tema-de-palestra-no-fisl18/" class="thumbnail-wrapper"><img width="640" height="424" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/28518575247_f26d68edb9_z.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/28518575247_f26d68edb9_z.jpg 640w, http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/28518575247_f26d68edb9_z-300x199.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" /></a>            <h4 class="title">
+                <a href="http://fisl18.softwarelivre.org/index.php/2018/07/13/vai-para-cuba-desenvolvimento-do-software-livre-no-pais-e-tema-de-palestra-no-fisl18/" title="Vai para Cuba! Desenvolvimento do Software Livre no país é tema de palestra no FISL18">
+                <span>Vai para Cuba! Desenvolvimento do Software Livre no país é tema de palestra no FISL18</span>
+                </a>
+            </h4>
+        </header>
+        <p>Saúde e Educação de qualidade são alguns dos conceitos normalmente associados a Cuba, assim como as restrições sofridas pela população devido ao embargo econômico imposto à ilha. Este contexto exigiu dos cubanos criatividade em diversas áreas, o que inclui o universo das tecnologias livres. Coordenador do Grupo de Usuários de Tecnologias Livres de Cuba por 7 anos, Pablo Mestre Drake esteve nesta sexta-feira (13) no FISL18 para falar sobre o desenvolvimento e promoção da cultura livre no país do Mar <a class="read-more btn btn-primary btn-sm" href="http://fisl18.softwarelivre.org/index.php/2018/07/13/vai-para-cuba-desenvolvimento-do-software-livre-no-pais-e-tema-de-palestra-no-fisl18/">Leia mais</a></p>
+        <footer>
+            <ul class="small nav posted-by">
+		<li class="nav-item p-1"><time datetime="2018-07-13">13 julho - 2018 - 8:07</time></li>
+			<li class="nav-item p-1">
+				<span class="mr-1">por</span>Vagner Benites			</li>
+			</ul>        </footer>
+    </article>
+        <article>
+        <header>
+            	<a href="http://fisl18.softwarelivre.org/index.php/2018/07/13/machismo-na-area-de-tecnologia-pauta-roda-de-conversa-no-fisl18/" class="thumbnail-wrapper"><img width="4128" height="2322" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/20180712_170649.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/20180712_170649.jpg 4128w, http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/20180712_170649-300x169.jpg 300w, http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/20180712_170649-768x432.jpg 768w, http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/20180712_170649-1024x576.jpg 1024w" sizes="(max-width: 4128px) 100vw, 4128px" /></a>            <h4 class="title">
+                <a href="http://fisl18.softwarelivre.org/index.php/2018/07/13/machismo-na-area-de-tecnologia-pauta-roda-de-conversa-no-fisl18/" title="Machismo na área de tecnologia pauta Roda de Conversa no FISL18">
+                <span>Machismo na área de tecnologia pauta Roda de Conversa no FISL18</span>
+                </a>
+            </h4>
+        </header>
+        <p>Na tarde desta quinta-feira, 12, ocorreu um bate-papo sobre o machismo na área de tecnologia e o processo de inserção das mulheres no segmento da Tecnologia da Informação. Participaram desta conversa cyberativistas do movimento feminista negro, integrante de grupos de programação voltado para as mulheres, estudantes e entusiastas. Nesta conversa foi debatido também o ataque ao site da FISL18 e a influência sociológica das mulheres nos eventos. Na tarde de quarta-feira, a página do evento foi hackeada. Os autores veicularam <a class="read-more btn btn-primary btn-sm" href="http://fisl18.softwarelivre.org/index.php/2018/07/13/machismo-na-area-de-tecnologia-pauta-roda-de-conversa-no-fisl18/">Leia mais</a></p>
+        <footer>
+            <ul class="small nav posted-by">
+		<li class="nav-item p-1"><time datetime="2018-07-13">13 julho - 2018 - 8:01</time></li>
+			<li class="nav-item p-1">
+				<span class="mr-1">por</span>Vagner Benites			</li>
+			</ul>        </footer>
+    </article>
+        <nav aria-label="navigation" class="py-3 mt-4"><ul class="pagination justify-content-center">
+<li class="page-item active" class="page-item"><a class="page-link" href="http://fisl18.softwarelivre.org/">1</a></li>
+<li class="page-item"><a class="page-link" href="http://fisl18.softwarelivre.org/index.php/page/2/">2</a></li>
+<li class="page-item"><a class="page-link" href="http://fisl18.softwarelivre.org/index.php/page/3/">3</a></li>
+<li class="page-item"><a class="page-link" href="http://fisl18.softwarelivre.org/index.php/page/4/">4</a></li>
+<li class="nx-post-list page-item"><a href="http://fisl18.softwarelivre.org/index.php/page/2/" class="page-link">Próxima página &raquo;</a></li>
+</ul></nav>
+</section>
+
+</div>
+
+
+<!--Barra Lateral direira-->
+<div class="col-12 col-md-12 col-lg-4">
+    <!--Coluna da esquerda-->
+    <aside class="sticky-top">   
+
+        <div id="polylang-2" class="widget_polylang sidebar-widget"><h5 class="widget-title">Idiomas</h5><ul>
+	<li class="lang-item lang-item-3 lang-item-pt lang-item-first current-lang"><a lang="pt-BR" hreflang="pt-BR" href="http://fisl18.softwarelivre.org/"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAIAAAD5gJpuAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAHjSURBVHjaYmRIZkCAfwwMf2DkLzCCMyDoBwNAALEAlTVGN/5nYPj//x8Q/P3/9++/vzZa31gY/mw5z/Tn3x8g98+f37///fn99/eq2lUAAQTS8J/h/7NPz/9C5P79WRj89f9/zv//fztLvPVezPzrz+8/f3//+vtLhl8GaANAAIE1/P8PVA1U6qn7NVTqb1XVpAv/JH7/+a/848XmtpBlj39PO8gM1PP7z2+gqwACiAnoYpC9TF9nB34NVf5z4XpoZJbEjJKfWaEfL7KLlbaURKj8Opj08RfIVb+BNgAEEBPQW1L8P+b6/mb6//s/w+/+nc4F0/9P2cj65xdHc+p/QR39//9/AdHJ9A/60l8YvjIABBAT0JYH75jStv75zwCSMBY8BXTMxXv/21ezfHj9X5/3BESDy5JfBy7/ZuBnAAggkA1//vx594kpaCnLloe/smLaVT9/ff3y/+/P/w+u/+JuW7fhwS/tSayPXrOycrEyfGQACCAWoA1//oOCDIgm72fu4vy6b4LD/9/S/3///s9+S28yy+9/LEAf//kLChVgCAEEEEjD7z9/JHgkQeHwD8gUjV79O9r6CzPLv6lr1OUFwWH9Fxjcv//9BcYoA0AAMTI4ImIROUYRMf2XARkABBgA8kMvQf3q+24AAAAASUVORK5CYII=" title="Português" alt="Português" /><span style="margin-left:0.3em;"></span></a></li>
+	<li class="lang-item lang-item-6 lang-item-en"><a lang="en-US" hreflang="en-US" href="http://fisl18.softwarelivre.org/index.php/en/"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAIAAAD5gJpuAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAHzSURBVHjaYkxOP8IAB//+Mfz7w8Dwi4HhP5CcJb/n/7evb16/APL/gRFQDiAAw3JuAgAIBEDQ/iswEERjGzBQLEru97ll0g0+3HvqMn1SpqlqGsZMsZsIe0SICA5gt5a/AGIEarCPtFh+6N/ffwxA9OvP/7//QYwff/6fZahmePeB4dNHhi+fGb59Y4zyvHHmCEAAAW3YDzQYaJJ93a+vX79aVf58//69fvEPlpIfnz59+vDhw7t37968efP3b/SXL59OnjwIEEAsDP+YgY53b2b89++/awvLn98MDi2cVxl+/vl6mituCtBghi9f/v/48e/XL86krj9XzwEEEENy8g6gu22rfn78+NGs5Ofr16+ZC58+fvyYwX8rxOxXr169fPny+fPn1//93bJlBUAAsQADZMEBxj9/GBxb2P/9+S/R8u3vzxuyaX8ZHv3j8/YGms3w8ycQARmi2eE37t4ACCDGR4/uSkrKAS35B3TT////wADOgLOBIaXIyjBlwxKAAGKRXjCB0SOEaeu+/y9fMnz4AHQxCP348R/o+l+//sMZQBNLEvif3AcIIMZbty7Ly6t9ZmXl+fXj/38GoHH/UcGfP79//BBiYHjy9+8/oUkNAAHEwt1V/vI/KBY/QSISFqM/GBg+MzB8A6PfYC5EFiDAABqgW776MP0rAAAAAElFTkSuQmCC" title="English" alt="English" /><span style="margin-left:0.3em;"></span></a></li>
+	<li class="lang-item lang-item-121 lang-item-es"><a lang="es-ES" hreflang="es-ES" href="http://fisl18.softwarelivre.org/index.php/es/"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAIAAAD5gJpuAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAFnSURBVHjaYvzPgAD/UNlYEUAAmuTYAAAQhAEYqF/zFbe50RZ1cMmS9TLi0pJLRjZohAMTGFUN9HdnHgEE1sDw//+Tp0ClINW/f0NIKPoFJH/9//ULyGaUlQXaABBALAx/Gf4zAt31F4i+ffj3/cN/XrFfzOx//v///f//LzACM/79ZmD8/e8TA0AAMYHdDVT958vXP38nMDB0s3x94/Tj5y+YahhiAKLfQKUAAcQEdtJfoDHMF2L+vPzDmFXLelf551tGFOOhev4A/QgQQExgHwAd8IdFT/Wz6j+GhlpmXSOW/2z///8Eq/sJ18Dw/zdQA0AAMQExxJjjdy9x2/76EfLz4MXdP/i+wsyGkkA3Aw3984cBIIAYfzIwMKel/bt3jwEaLNAwgZIQxp/fDH/+MqqovL14ESCAWICeZvr9h0FSEhSgwBgAygFDEMT+wwAhgQgc4kAEVAwQQIxfUSMSTxxDAECAAQAJWke8v4u1tAAAAABJRU5ErkJggg==" title="Español" alt="Español" /><span style="margin-left:0.3em;"></span></a></li>
+</ul>
+</div><div id="custom_html-6" class="widget_text widget_custom_html sidebar-widget"><h5 class="widget-title">Siga-nos na rede:</h5><div class="textwidget custom-html-widget"><div class="text-center">
+<a class="mr-1 icon-facebook" href="https://www.facebook.com/fisl.oficial/" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" data-original-title="Facebook FISL Oficial"><i class="icon ion-logo-facebook icon-large"></i><span style="display:none">Facebook</span>
+</a>
+<a class="mr-1 icon-twitter" href="https://twitter.com/fisl_oficial" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" data-original-title="Twitter FISL Oficial"><i class="icon ion-logo-twitter icon-large"></i><span style="display:none">Twitter</span></a>
+<a class="mr-1 icon-identica" href="https://identi.ca/fisl" data-toggle="tooltip" data-placement="top" title="Identi.ca" target="_blank" data-original-title="Identi.ca FISL Oficial"><i class="icon ion-md-at icon-large"></i><span style="display:none">Identi.ca</span></a>
+<a class="mr-1 icon-Instagram" href="https://www.instagram.com/fisloficial" data-toggle="tooltip" data-placement="top" title="Instagram" target="_blank" data-original-title="Instagram FISL Oficial"><i class="icon ion-logo-instagram icon-large"></i><span style="display:none">Instagram</span></a>
+</div></div></div><div id="text-12" class="widget_text sidebar-widget"><h5 class="widget-title">Patrocinadores:</h5>			<div class="textwidget"><div class="owl-carousel owl-theme"><div class="item"><a href="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_PUCRS.png"><img class="alignnone wp-image-773 size-full" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_PUCRS.png" alt="" width="450" height="411" /></a></div><div class="item"><a href="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_CPD.png"><img class="alignnone wp-image-759 size-full" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_CPD.png" alt="" width="450" height="411" /></a></div><div class="item"><a href="http://www.mctic.gov.br/portal"><img class="another-image-class alignnone wp-image-765 size-full" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_MCTIC.png" alt="" width="450" height="411" /></a></div><div class="item"><a href="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_Locaweb.png"><img class="alignnone wp-image-762 size-full" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_Locaweb.png" alt="" width="450" height="411" /></a></div><div class="item"><a href="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_Seprorgs.png"><img class="alignnone wp-image-777 size-full" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_Seprorgs.png" alt="" width="450" height="411" /></a></div><div class="item"><a href="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_Moodle.png"><img class="alignnone wp-image-767 size-full" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_Moodle.png" alt="" width="450" height="411" /></a></div><div class="item"><a href="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_Assespro.png"><img class="alignnone wp-image-756 size-full" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_Assespro.png" alt="" width="450" height="411" /></a></div><div class="item"><a href="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_Softsul.png"><img class="alignnone wp-image-779 size-full" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_Softsul.png" alt="" width="450" height="411" /></a></div><div class="item"><a href="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_Propus.png"><img class="alignnone wp-image-771 size-full" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_Propus.png" alt="" width="450" height="411" /></a></div><div class="item"><a href="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_MCT-PUCRS.png"><img class="alignnone wp-image-766 size-full" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_MCT-PUCRS.png" alt="" width="450" height="411" /></a></div><div class="item"><a href="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_SENAC.png"><img class="alignnone wp-image-776 size-full" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_SENAC.png" alt="" width="450" height="411" /></a></div><div class="item"><a href="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_SucesuRS.png"><img class="another-image-class alignnone wp-image-780 size-full" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_SucesuRS.png" alt="" width="450" height="411" /></a></div><div class="item"><a href="http://www.linuxmagazine.com.br/lm/"><img class="another-image-class alignnone wp-image-761 size-full" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_Linux-Magazine.png" alt="" width="450" height="411" /></a></div><div class="item"><a href="http://www.linuxmagazine.com.br/lm/"><img class="another-image-class alignnone wp-image-760 size-full" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_Ieducar.png" alt="" width="450" height="411" /></a></div><div class="item"><a href="http://www.lpi.org/"><img class="another-image-class alignnone wp-image-763 size-full" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_LPI.png" alt="" width="450" height="411" /></a></div><div class="item"><a href="https://optdyn.com/"><img class="another-image-class alignnone wp-image-769 size-full" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_OptDyn.png" alt="" width="450" height="411" /></a></div><div class="item"><a href="http://www.pucrs.br/tecnopuc/"><img class="another-image-class alignnone wp-image-781 size-full" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_Tecnopuc.png" alt="" width="450" height="411" /></a></div><div class="item"><a href="http://madsonbooks.com.br/"><img class="another-image-class alignnone wp-image-764 size-full" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_Madson_Books.png" alt="" width="450" height="411" /></a></div><div class="item"><a href="http://www.procempa.com.br/"><img class="another-image-class alignnone wp-image-953 size-full" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_Procenpa-1.png" alt="" width="512" height="512" /></a></div><div class="item"><a href="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_Zextras.png"><img class="alignnone wp-image-782 size-full" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_Zextras.png" alt="" width="450" height="411" /></a></div><div class="item"><a href="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_PhoughtWorks.png"><img class="alignnone wp-image-770 size-full" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_PhoughtWorks.png" alt="" width="450" height="411" /></a></div><div class="item"><a href="https://rocket.chat/"><img class="another-image-class alignnone wp-image-775 size-full" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_Rocket-Chat.png" alt="" width="450" height="411" /></a></div><div class="item"><a href="https://www.opensuse.org/"><img class="another-image-class alignnone wp-image-768 size-full" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_openSUSE.png" alt="" width="450" height="411" /></a></div><div class="item"><a href="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_sidia.png"><img class="alignnone wp-image-778 size-full" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_sidia.png" alt="" width="450" height="411" /></a></div><div class="item"><a href="https://www.redhat.com/pt-br"><img class="another-image-class alignnone wp-image-774 size-full" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_Redhat.png" alt="" width="450" height="411" /></a></div><div class="item"><a href="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_CGI-NIC-br.png"><img class="another-image-class alignnone wp-image-758 size-full" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_CGI-NIC-br.png" alt="" width="450" height="411" /></a></div><div class="item"><a href="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_Caixa.png"><img class="alignnone wp-image-757 size-full" src="http://fisl18.softwarelivre.org/wp-content/uploads/2018/07/Logo_Caixa.png" alt="" width="450" height="411" /></a></div></div>
+</div>
+		</div>  
+
+    </aside>
+	<!--/Coluna da esquerda--></div>
+<!--// Barra Lateral direita--> 
+</div>
+</div>
+
+<!--Sessão da base do template-->
+</div>
+
+<footer class="footerH">
+    <div class="col text-white bottom-first">
+
+<div class="container p-4">
+    <div class="d-block d-lg-flex flex-lg-row flex-row">
+        <div id="nav_menu-2" class="widget_nav_menu bottom-widget flex-fill"><div class="menu-menu-br-container"><ul id="menu-menu-br-1" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1043"><a href="https://segue.fisl18.softwarelivre.org/#/authenticate/home">Certificados FISL18!!!</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-65"><a href="#">Inscrições</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-528"><a href="http://fisl18.softwarelivre.org/index.php/participantes/">Participantes</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="http://fisl18.softwarelivre.org/index.php/comunidades/">Comunidades</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62"><a href="http://fisl18.softwarelivre.org/index.php/submissao-de-trabalhos/">Submissão de Trabalhos</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-63"><a href="http://fisl18.softwarelivre.org/index.php/voluntarios/">Voluntários</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="http://fisl18.softwarelivre.org/index.php/caravanas/">Caravanas</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-342"><a href="#">O Evento</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-344"><a href="http://fisl18.softwarelivre.org/index.php/sobre-o-fisl-2/">Sobre FISL</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-340"><a href="http://fisl18.softwarelivre.org/index.php/faqs/">Perguntas Frequentes</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-345"><a href="http://fisl18.softwarelivre.org/index.php/patrocinio-apoio/">Patrocínio &#038; Apoio</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-415"><a href="http://fisl18.softwarelivre.org/index.php/patrocinadores/">Patrocinadores</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-338"><a href="http://fisl18.softwarelivre.org/index.php/161-2/">Crowdfunding FISL18</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-384"><a href="http://fisl18.softwarelivre.org/index.php/politica-anti-assedio/">Política Anti-Assédio</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-424"><a href="http://fisl18.softwarelivre.org/index.php/as-paginas-amigas/">As Páginas Amigas</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-379"><a href="http://fisl18.softwarelivre.org/index.php/346-2/">Divulgue</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-425"><a href="#">Sobre a Cidade</a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-441"><a href="http://fisl18.softwarelivre.org/index.php/fatos/">Fatos</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-439"><a href="http://fisl18.softwarelivre.org/index.php/guia-de-hospedagem/">Guia de Hospedagem</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-440"><a href="http://fisl18.softwarelivre.org/index.php/como-chegar/">Como Chegar</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-438"><a href="http://fisl18.softwarelivre.org/index.php/turismo/">Turismo</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-437"><a href="http://fisl18.softwarelivre.org/index.php/cepuc/">CEPUC</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-387"><a href="#">Programação</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-414"><a href="#">Agenda</a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-410"><a href="https://agenda.fisl18.softwarelivre.org/#/2018-07-11">Dia 11</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-411"><a href="https://agenda.fisl18.softwarelivre.org/#/2018-07-12">Dia 12</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-412"><a href="https://agenda.fisl18.softwarelivre.org/#/2018-07-13">Dia 13</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-413"><a href="https://agenda.fisl18.softwarelivre.org/#/2018-07-14">Dia 14</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-389"><a href="http://fisl18.softwarelivre.org/index.php/destaques-convidados/">Destaques &#038; Convidados</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-390"><a href="http://fisl18.softwarelivre.org/index.php/oficinas/">Oficinas</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-391"><a href="http://fisl18.softwarelivre.org/index.php/trilhas/">Trilhas</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-392"><a href="#">Áreas Temáticas</a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-393"><a href="http://fisl18.softwarelivre.org/index.php/acessibilidade/">Acessibilidade</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-394"><a href="http://fisl18.softwarelivre.org/index.php/cultura-livre/">Cultura livre</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-395"><a href="http://fisl18.softwarelivre.org/index.php/educacao-livre/">Educação Livre</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-396"><a href="http://fisl18.softwarelivre.org/index.php/empreendedorismo/">Empreendedorismo</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-397"><a href="http://fisl18.softwarelivre.org/index.php/energia-livre/">Energia Livre</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-398"><a href="http://fisl18.softwarelivre.org/index.php/feminino-livre/">Feminino Livre</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-399"><a href="http://fisl18.softwarelivre.org/index.php/fislinho/">Fislinho</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-400"><a href="http://fisl18.softwarelivre.org/index.php/games/">Games</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-401"><a href="http://fisl18.softwarelivre.org/index.php/mobile-iot/">Mobile &#038; IOT</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-402"><a href="http://fisl18.softwarelivre.org/index.php/risol/">Risol</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-403"><a href="http://fisl18.softwarelivre.org/index.php/robotica-livre/">Robótica Livre</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+</ul></div></div><div id="text-10" class="widget_text bottom-widget flex-fill"><h4 class="widget-title">Realização:</h4>			<div class="textwidget"><p><a href="http://asl.org.br/"><img class="alignleft wp-image-49 size-full" src="http://novofisl.softwarelivre.org/wp-content/uploads/2018/06/Logo_ASL-P.png" alt="Logo ASL" width="125" height="124" /></a> <a href="http://softwarelivre.org/"><img class="alignleft wp-image-50 size-full" src="http://novofisl.softwarelivre.org/wp-content/uploads/2018/06/Logo_SoftwareLivre_Brasil_P.png" alt="Logo Software Livre Brasil" width="107" height="94" /></a></p>
+</div>
+		</div>    </div>
+</div>    </div>
+
+    <div class="col text-white bottom-last">
+        <div class="container p-2">
+        <div class="d-block d-lg-flex flex-lg-row align-items-center">
+<div id="text-6" class="widget_text bottom-widget widget-count-6 col-12 flex-fill mb-2 mb-lg-0 px-2"><h6 class="widget-title" style="display:none">Sobre o Fórum</h6>			<div class="textwidget"><p>18º Fórum Internacional Software Livre<br />
+11 a 14 de Julho de 2018 Centro de Eventos PUCRS | Porto Alegre | RS | Brasil</p>
+</div>
+		</div><div id="custom_html-3" class="widget_text widget_custom_html bottom-widget widget-count-6 col-12 flex-fill mb-2 mb-lg-0 px-2"><h6 class="widget-title" style="display:none">Licença</h6><div class="textwidget custom-html-widget"><a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license"><img style="border-width: 0;" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Licença Creative Commons" /></a>Este obra está licenciado com uma Licença <a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>.</div></div></div> 
+        </div> 
+    </div>
+
+</footer>
+
+   <script type="text/javascript">
+$( ".navbar-nav .dropdown-menu" ).addClass( "dropdown-menu-right" );
+$( "blockquote" ).addClass( "blockquote" );
+
+
+var $grid = $('.grid, .gallery.gallery-size-thumbnail, .gallery.gallery-size-medium, .gallery.gallery-size-large, .gallery.gallery-size-full').imagesLoaded(function() {
+  	//galeria 
+	  var $grid = $('.gallery.gallery-size-thumbnail, .gallery.gallery-size-medium, .gallery.gallery-size-large, .gallery.gallery-size-full').masonry({
+			itemSelector: '.gallery-item',
+			// columnWidth: '.grid-sizer',
+			percentPosition: true,
+			transitionDuration: '0.2s',
+			gutter: 0,
+			layoutInstant: false
+		});
+});
+
+$('.lang-item-pt a img').replaceWith( "<img src='http://fisl18.softwarelivre.org/wp-content/themes/FISL18_B/img/flags/pt.png' title='Portugês' alt='Portugês'/>" );
+$('.lang-item-en a img').replaceWith( "<img src='http://fisl18.softwarelivre.org/wp-content/themes/FISL18_B/img/flags/us.png' title='English' alt='English'/>" );
+$('.lang-item-es a img').replaceWith( "<img src='http://fisl18.softwarelivre.org/wp-content/themes/FISL18_B/img/flags/es.png' title='Español' alt='Español' />" );
+$('.circle-home:parent').each(function () {
+    $(this).insertBefore($(this).prev('.widget-title'));
+});
+
+$( "a" ).addClass( "keyboard-interaction-only" );
+
+//interação com tab
+$('.keyboard-interaction-only').keyboardFocus('is-focused');
+
+ $(".lightcase .gallery a").attr('data-rel','lightcase:myCollection');
+
+ $(".lightcase a").attr('data-rel','lightcase');
+
+$('a[data-rel^=lightcase]').lightcase();
+	
+	
+//Adição de classe na navegação ao rolar a página
+	$("document").ready(function($) {
+		var nav = $('aside');
+		$(window).scroll(function() {
+			if ($(this).scrollTop() > 60) {
+				nav.addClass("fix-top");
+			} else {
+				nav.removeClass("fix-top");
+			}
+		});
+	});
+
+
+
+
+</script><script type='text/javascript' src='http://fisl18.softwarelivre.org/wp-includes/js/wp-embed.min.js?ver=4.9.7'></script>
+</body>
+<!--// Body-->
+
+</html>
