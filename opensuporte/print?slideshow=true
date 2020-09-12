@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    <title>Print - Vagner Lima - Software Livre Brasil</title>
+
+    <style type="text/css">
+@import url(/stylesheets/slideshow.css);
+</style>
+    <script src="/javascripts/jquery-2.1.1.min.js"></script>
+<script src="/assets/vendor/sliderjs-4813c008b79ff67e006eacb62a9b8630.js"></script>
+<script src="/assets/vendor/pikachoose-476b26458f07a3a41eb6156f4ec6ef23.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function (){
+        $("#slideshow").PikaChoose({
+          buttons: { play: "Play", stop: "Stop", previous: "Previous", next: "Next" }
+        });
+        $("#slideshow").SliderJS({
+          window_width: 320,
+          window_height: 55,
+          list_width: 832,
+          pikachoose: true,
+          auto_play: false
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p class='back-button' ><a class="button icon- with-text" title="Back to gallery" href="http://softwarelivre.org/opensuporte/print">&nbsp;<span>Back to gallery</span></a></p>
+<ul id='slideshow' >
+      <li><img title="linux_1440x900_wallpaper_Wallpaper_1920x1200_www.wa(...).jpg" src="/thumbnails/0131/1718/linux-1440x900-wallpaper-wallpaper-1920x1200-www.wallpapermi.com_display.jpg" alt="Linux 1440x900 wallpaper wallpaper 1920x1200 www.wallpapermi.com display" /></li>
+      <li><img title="red-ubuntu-ball.jpg" src="/thumbnails/0131/1717/red-ubuntu-ball_display.jpg" alt="Red ubuntu ball display" /></li>
+      <li><img title="Technology_Linux_19507.jpg" src="/thumbnails/0131/1716/technology-linux-19507_display.jpg" alt="Technology linux 19507 display" /></li>
+      <li><img title="Technology_Other_111123.jpg" src="/thumbnails/0131/1715/technology-other-111123_display.jpg" alt="Technology other 111123 display" /></li>
+      <li><img title="Technology_Ubuntu_68953.jpg" src="/thumbnails/0131/1713/technology-ubuntu-68953_display.jpg" alt="Technology ubuntu 68953 display" /></li>
+      <li><img title="Ubuntu_Wallpaper__3_Widescreen_by_l.png" src="/thumbnails/0131/1714/ubuntu-wallpaper-3-widescreen-by-l_display.png" alt="Ubuntu wallpaper 3 widescreen by l display" /></li>
+</ul>
+
+  </body>
+</html>

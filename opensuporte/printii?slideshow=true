@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    <title>PrintII - Vagner Lima - Software Livre Brasil</title>
+
+    <style type="text/css">
+@import url(/stylesheets/slideshow.css);
+</style>
+    <script src="/javascripts/jquery-2.1.1.min.js"></script>
+<script src="/assets/vendor/sliderjs-4813c008b79ff67e006eacb62a9b8630.js"></script>
+<script src="/assets/vendor/pikachoose-476b26458f07a3a41eb6156f4ec6ef23.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function (){
+        $("#slideshow").PikaChoose({
+          buttons: { play: "Play", stop: "Stop", previous: "Previous", next: "Next" }
+        });
+        $("#slideshow").SliderJS({
+          window_width: 320,
+          window_height: 55,
+          list_width: 832,
+          pikachoose: true,
+          auto_play: false
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p class='back-button' ><a class="button icon- with-text" title="Back to gallery" href="http://softwarelivre.org/opensuporte/printii">&nbsp;<span>Back to gallery</span></a></p>
+<ul id='slideshow' >
+      <li><img title="creative_linux_wallpaper_gnome_by_jaysnanavati.jpg" src="/thumbnails/0131/1722/creative-linux-wallpaper-gnome-by-jaysnanavati_display.jpg" alt="Creative linux wallpaper gnome by jaysnanavati display" /></li>
+      <li><img title="Technology_Linux_221297.png" src="/thumbnails/0131/1721/technology-linux-221297_display.png" alt="Technology linux 221297 display" /></li>
+      <li><img title="tema3333.JPG" src="/thumbnails/0131/1720/tema3333_display.jpg" alt="Tema3333 display" /></li>
+</ul>
+
+  </body>
+</html>

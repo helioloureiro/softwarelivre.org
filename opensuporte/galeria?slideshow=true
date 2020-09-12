@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    <title>Galeria - Vagner Lima - Software Livre Brasil</title>
+
+    <style type="text/css">
+@import url(/stylesheets/slideshow.css);
+</style>
+    <script src="/javascripts/jquery-2.1.1.min.js"></script>
+<script src="/assets/vendor/sliderjs-4813c008b79ff67e006eacb62a9b8630.js"></script>
+<script src="/assets/vendor/pikachoose-476b26458f07a3a41eb6156f4ec6ef23.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function (){
+        $("#slideshow").PikaChoose({
+          buttons: { play: "Iniciar", stop: "Parar", previous: "Anterior", next: "Próximo" }
+        });
+        $("#slideshow").SliderJS({
+          window_width: 320,
+          window_height: 55,
+          list_width: 832,
+          pikachoose: true,
+          auto_play: false
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p class='back-button' ><a class="button icon- with-text" title="Voltar à galeria" href="http://softwarelivre.org/opensuporte/galeria">&nbsp;<span>Voltar à galeria</span></a></p>
+<ul id='slideshow' >
+      <li><img title="fresh_ubuntu.png" src="/thumbnails/0131/1668/fresh-ubuntu_display.png" alt="Fresh ubuntu display" /></li>
+      <li><img title="Icon.png" src="/thumbnails/0132/7241/icon_display.png" alt="Icon display" /></li>
+      <li><img title="Saucy_Salamander_Abstract_by_José_Vera_alcivar.jpg" src="/thumbnails/0131/1667/saucy-salamander-abstract-by-jose-vera-alcivar_display.jpg" alt="Saucy salamander abstract by jose vera alcivar display" /></li>
+      <li><img title="Ubuntu-Community-HD.jpg" src="/thumbnails/0131/1666/ubuntu-community-hd_display.jpg" alt="Ubuntu community hd display" /></li>
+      <li><img title="Ubuntu-Metal-Logo-Widescreen-Wallpaper.jpg" src="/thumbnails/0131/1665/ubuntu-metal-logo-widescreen-wallpaper_display.jpg" alt="Ubuntu metal logo widescreen wallpaper display" /></li>
+      <li><img title="wallpaper_ubuntu_07_1680x1050.jpg" src="/thumbnails/0131/1664/wallpaper-ubuntu-07-1680x1050_display.jpg" alt="Wallpaper ubuntu 07 1680x1050 display" /></li>
+</ul>
+
+  </body>
+</html>
