@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    <title>DebianDay - Mônica Paz - Software Livre Brasil</title>
+
+    <style type="text/css">
+@import url(/stylesheets/slideshow.css);
+</style>
+    <script src="/javascripts/jquery-2.1.1.min.js"></script>
+<script src="/assets/vendor/sliderjs-4813c008b79ff67e006eacb62a9b8630.js"></script>
+<script src="/assets/vendor/pikachoose-476b26458f07a3a41eb6156f4ec6ef23.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function (){
+        $("#slideshow").PikaChoose({
+          buttons: { play: "Iniciar", stop: "Parar", previous: "Anterior", next: "Próximo" }
+        });
+        $("#slideshow").SliderJS({
+          window_width: 320,
+          window_height: 55,
+          list_width: 832,
+          pikachoose: true,
+          auto_play: false
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p class='back-button' ><a class="button icon- with-text" title="Voltar à galeria" href="http://softwarelivre.org/monicapazz/debianday">&nbsp;<span>Voltar à galeria</span></a></p>
+<ul id='slideshow' >
+      <li><img title="2010-08-14_14.07.59.jpg" src="/thumbnails/0023/9664/2010-08-14-14.07.59_display.jpg" alt="2010 08 14 14.07.59 display" /></li>
+      <li><img title="2010-08-14_14.27.04.jpg" src="/thumbnails/0023/9665/2010-08-14-14.27.04_display.jpg" alt="2010 08 14 14.27.04 display" /></li>
+      <li><img title="2010-08-14_14.36.28.jpg" src="/thumbnails/0023/9666/2010-08-14-14.36.28_display.jpg" alt="2010 08 14 14.36.28 display" /></li>
+      <li><img title="2010-08-14_15.37.11.jpg" src="/thumbnails/0023/9667/2010-08-14-15.37.11_display.jpg" alt="2010 08 14 15.37.11 display" /></li>
+      <li><img title="2010-08-14_15.37.40.jpg" src="/thumbnails/0023/9668/2010-08-14-15.37.40_display.jpg" alt="2010 08 14 15.37.40 display" /></li>
+      <li><img title="2010-08-14_16.54.11.jpg" src="/thumbnails/0023/9671/2010-08-14-16.54.11_display.jpg" alt="2010 08 14 16.54.11 display" /></li>
+      <li><img title="2010-08-14_17.16.50.jpg" src="/thumbnails/0023/9669/2010-08-14-17.16.50_display.jpg" alt="2010 08 14 17.16.50 display" /></li>
+      <li><img title="2010-08-14_17.57.55.jpg" src="/thumbnails/0023/9670/2010-08-14-17.57.55_display.jpg" alt="2010 08 14 17.57.55 display" /></li>
+</ul>
+
+  </body>
+</html>

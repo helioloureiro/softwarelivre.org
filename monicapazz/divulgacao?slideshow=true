@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    <title>Divulgação - Mônica Paz - Software Livre Brasil</title>
+
+    <style type="text/css">
+@import url(/stylesheets/slideshow.css);
+</style>
+    <script src="/javascripts/jquery-2.1.1.min.js"></script>
+<script src="/assets/vendor/sliderjs-4813c008b79ff67e006eacb62a9b8630.js"></script>
+<script src="/assets/vendor/pikachoose-476b26458f07a3a41eb6156f4ec6ef23.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function (){
+        $("#slideshow").PikaChoose({
+          buttons: { play: "Iniciar", stop: "Parar", previous: "Anterior", next: "Próximo" }
+        });
+        $("#slideshow").SliderJS({
+          window_width: 320,
+          window_height: 55,
+          list_width: 832,
+          pikachoose: true,
+          auto_play: false
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p class='back-button' ><a class="button icon- with-text" title="Voltar à galeria" href="http://softwarelivre.org/monicapazz/divulgacao">&nbsp;<span>Voltar à galeria</span></a></p>
+<ul id='slideshow' >
+      <li><img title="Em novembro, Foz do Iguaçu será, mais uma vez, a sede da Conferência Latino-Americana de Software Livre – Latinoware 2010. Cerca de 2.500 pessoas, entre estudantes, profissionais e especialistas da áreas, são esperadas para a sétima edição do evento, que será realizada entre os dias 10 e 12 de novembro, no Parque Tecnológico Itaipu (PTI), localizado na Usina Hidrelétrica de Itaipu." src="/thumbnails/0023/7699/latinoware2010-180x150px-p-1-_display.gif" alt="Latinoware2010 180x150px p 1  display" /></li>
+</ul>
+
+  </body>
+</html>
