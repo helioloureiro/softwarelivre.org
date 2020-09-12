@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    <title>Galeria - Rodrigo Souto - Software Livre Brasil</title>
+
+    <style type="text/css">
+@import url(/stylesheets/slideshow.css);
+</style>
+    <script src="/javascripts/jquery-2.1.1.min.js"></script>
+<script src="/assets/vendor/sliderjs-4813c008b79ff67e006eacb62a9b8630.js"></script>
+<script src="/assets/vendor/pikachoose-476b26458f07a3a41eb6156f4ec6ef23.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function (){
+        $("#slideshow").PikaChoose({
+          buttons: { play: "Play", stop: "Stop", previous: "Previous", next: "Next" }
+        });
+        $("#slideshow").SliderJS({
+          window_width: 320,
+          window_height: 55,
+          list_width: 832,
+          pikachoose: true,
+          auto_play: false
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p class='back-button' ><a class="button icon- with-text" title="Back to gallery" href="http://softwarelivre.org/diguliu/galeria">&nbsp;<span>Back to gallery</span></a></p>
+<ul id='slideshow' >
+      <li><img title="Calvin_Bad_mood.png" src="/thumbnails/0022/1023/calvin-bad-mood_display.png" alt="Calvin bad mood display" /></li>
+      <li><img title="copyleft.jpg" src="/thumbnails/0022/1024/copyleft_display.jpg" alt="Copyleft display" /></li>
+      <li><img title="git-logo.png" src="/thumbnails/0022/1025/git-logo_display.png" alt="Git logo display" /></li>
+      <li><img title="GNU.png" src="/thumbnails/0022/1026/gnu_display.png" alt="Gnu display" /></li>
+      <li><img title="logo-colivre.png" src="/thumbnails/0022/1027/logo-colivre_display.png" alt="Logo colivre display" /></li>
+      <li><img title="logomdp.jpg" src="/thumbnails/0024/9796/logomdp_display.jpg" alt="Logomdp display" /></li>
+      <li><img title="logo-noosfero-320x320_big.png" src="/thumbnails/0022/1028/logo-noosfero-320x320-big_display.png" alt="Logo noosfero 320x320 big display" /></li>
+      <li><img title="marvin.jpg" src="/thumbnails/0022/1029/marvin_display.jpg" alt="Marvin display" /></li>
+      <li><img title="rails.png" src="/thumbnails/0022/1030/rails_display.png" alt="Rails display" /></li>
+      <li><img title="sandman.jpg" src="/thumbnails/0022/1031/sandman_display.jpg" alt="Sandman display" /></li>
+      <li><img title="The_Watchmen_Wallpaper_1_1280.jpg" src="/thumbnails/0022/1040/the-watchmen-wallpaper-1-1280_display.jpg" alt="The watchmen wallpaper 1 1280 display" /></li>
+      <li><img title="transmetropolitan16p02rtc4.jpg" src="/thumbnails/0022/1032/transmetropolitan16p02rtc4_display.jpg" alt="Transmetropolitan16p02rtc4 display" /></li>
+      <li><img title="tux.png" src="/thumbnails/0022/1033/tux_display.png" alt="Tux display" /></li>
+      <li><img title="v-for-vendetta-logo-wallpaper1.jpg" src="/thumbnails/0022/1034/v-for-vendetta-logo-wallpaper1_display.jpg" alt="V for vendetta logo wallpaper1 display" /></li>
+      <li><img title="vim-editor_logo.png" src="/thumbnails/0022/1035/vim-editor-logo_display.png" alt="Vim editor logo display" /></li>
+</ul>
+
+  </body>
+</html>
