@@ -1,0 +1,2383 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" class="controller-search action-search-articles template-leftbottom theme-sl-default">
+  <head>
+    <title>Software Livre Brasil</title>
+    
+    <!--<meta http-equiv="refresh" content="1"/>-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    
+
+      <meta name="description" content="Software Livre Brasil" />
+
+    <!-- site root -->
+    <meta property="noosfero:root" content=""/>
+
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    
+
+    <script src="/assets/application-1c0930e8f260aafbc74c4fad04079409.js"></script>
+
+  
+  
+<script src="/javascripts/plugins/pg_search/search.js"></script>
+<script src="/javascripts/plugins/pg_search/profile_search_block.js"></script>
+<script src="/assets/plugins/require_auth_to_comment/hide_comment_form-c3a3727ea301c62930e11aab20ae74d4.js"></script>
+<script src="/assets/plugins/require_auth_to_comment/jquery.livequery.min-d1fe96eb7788079f6e550db2b6610365.js"></script>
+<script src="/assets/plugins/orders/javascripts/locale-17eaae2c136082dab9da1d91648b6a7e.js"></script>
+<script src="/assets/plugins/orders/javascripts/toggle_edit-f9da47bc0223fac8e5e5174c6ea24413.js"></script>
+<script src="/assets/plugins/orders/javascripts/sortable-table-ba58eb377fc175eb1e374be63d5454a3.js"></script>
+<script src="/assets/plugins/orders/javascripts/help-14515dc2f741beaa4b3d121df366af0d.js"></script>
+<script src="/assets/plugins/orders/javascripts/orders-560e35746985dc40b97851b13705cb26.js"></script>
+<script src="/assets/plugins/html5_video/video-channel-6aca45f93220c0910d8273dd2368004e.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/locale-17eaae2c136082dab9da1d91648b6a7e.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/toggle_edit-f9da47bc0223fac8e5e5174c6ea24413.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/sortable-table-ba58eb377fc175eb1e374be63d5454a3.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/suppliers-35473b9ebd4b9e65027e1bafa94dfdcd.js"></script>
+<script src="/assets/plugins/event/event-b1013aca7ce3cf0d4d5e6e10dc1f05b2.js"></script>
+<script src="/assets/plugins/display_content/javascripts/jstree/_lib/jquery-1.8.3-09dfd3b315fe6b24fbc309e36f5d70c3.js"></script>
+<script src="/assets/plugins/display_content/javascripts/jstree/jquery.jstree-563d09f7e7938a8a2f4207bfe6d48dd3.js"></script>
+<script src="/assets/plugins/container_block/container_block-7eae56f79aa8da8b64941d18d2972c7b.js"></script>
+<script src="/assets/plugins/delivery/javascripts/delivery-da5b2dac737692db94d5bdc654586171.js"></script>
+<script src="/assets/plugins/products/javascripts/products-a4c860d8dbebe524d554f0b5564e0428.js"></script><script src="/designs/themes/sl-default/theme.js"></script><script>
+//<![CDATA[
+render_all_jquery_ui_widgets()
+//]]>
+</script>
+    <link rel="stylesheet" media="screen" href="/assets/application-e0072ababb97032fa1a5d95fa09d897c.css" />
+<link rel="stylesheet" media="screen" href="/designs/templates/leftbottom/stylesheets/style.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/icons/default/style-b3a500c1e17f47b010a70fdb0103012e.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/icons/pidgin/style-138f7bb59f9d26296632e82eae162877.css" />
+<link rel="stylesheet" media="screen" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/people_block/style-c340afe175b0045c7f8669073a428a1c.css" />
+<link rel="stylesheet" media="screen" href="/stylesheets/plugins/pg_search/style.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/recent_content/style-e0d5f807f7056b173f6cf113c840ddc0.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/custom_forms/style-7870704d75309d55ffcaa827c59baa18.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/work_assignment/style-526deb629c3d9e7736f049b99c72a50a.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/require_auth_to_comment/style-66a0efab118159977ca0194806ef4bec.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/orders/style-feb7767bc71e62563ccab53642a6e4c2.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/html5_video/style-8f2b70d373ff7ec22b404d91b1b6f211.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/suppliers/style-64c71b3cd22994ada93abd55c70ea1ce.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/gallery_block/style-4547593291c3fca2ad50216cbb3dfdc9.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/send_email/style-976778195cb106e52b31d57242cdc01c.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/event/style-8f5f6a9b5a7724dbc4977d11c2e4321c.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/display_content/style-cf10f47511255685485ac51859c22a29.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/container_block/style-dd17a810971259abe7c31678e9d9c132.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/video/style-68d51000d73adab06c1dcd036011138d.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/delivery/style-aeef749320f3cdff642340f047806f9b.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/sub_organizations/style-88810bb91c1c70f63817f6f03295fd92.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/products/style-3147a337d78ccc54df05870c504166fd.css" />
+<link rel="stylesheet" media="screen" href="/designs/themes/sl-default/global.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/themes/sl-default/style-f317a60b59d0ee3e8048cb6eba54b282.css" />
+
+    
+    
+
+    <script type="text/javascript">
+      DEFAULT_LOADING_MESSAGE = 'loading...';
+      PERMANENT_NOTIFICATIONS = false;
+      noosfero.profile = null
+    </script>
+
+      
+<script src="/assets/tinymce/js/tinymce/tinymce-666c93593f34cd23b1f1e9177ab27cae.js"></script><script src="/assets/tinymce/js/tinymce/jquery.tinymce.min-33361c760deadb5b77610a12911056f2.js"></script><script src="/assets/tinymce-4df3fc98953118b704cdb7a023aafdc2.js"></script>
+<script type="text/javascript">
+tinymce.create('tinymce.plugins.MacrosPlugin', {
+  createControl: function(n, cm) {
+    switch (n) {
+       case 'macros':
+    }
+    return null;
+  }
+});
+
+function tinymce_macros_setup(editor) {
+}
+
+// Register plugin with a short name
+tinymce.PluginManager.add('macrosPlugin', tinymce.plugins.MacrosPlugin);
+
+jQuery(document).ready(function () {
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"it","selector":".tiny_mce","toolbar1":"fullscreen | insertfile undo redo | copy paste | bold italic underline | styleselect fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image","menubar":"edit insert view tools","toolbar2":"print preview code media | table | macros","macros_setup":[]})
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"it","selector":".tiny_mce_simple","toolbar1":"fullscreen | insertfile undo redo | copy paste | bold italic underline | styleselect fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image","menubar":false,"toolbar2":null,"macros_setup":[]})
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"it","selector":".tiny_mce_restricted","toolbar1":"bold italic underline | link","menubar":false,"toolbar2":null,"macros_setup":[]})
+});
+</script>
+
+
+  </head>
+  <body class="controller-search action-search-articles template-leftbottom">
+    <a href="#content" id="link-go-content"><span>Go to the content</span></a>
+    
+    <div id="global-header">
+      <!-- div class='supportbanner'>
+  <div class='content'>
+    <div class='banner-title'>Campanha de doação 2016</div>
+    <div class='banner-subtitle'>Ajude a <span class='asl'>ASL.Org</span> a realizar o <span class='fisl17'>FISL17</span>!</div>
+    <p>Ajude a Associação Software Livre.Org a continuar seu trabalho de 12 anos em prol do desenvolvimento e disseminação do Software Livre. Faça uma doação e ganhe um ingresso cortesia para o <span class='fisl17'>FISL17</span> e uma camiseta oficial do evento.</p>
+  </div>
+  <div class='footer-links'>
+    <a class='logo-fisl17' href='http://fisl.org.br' target='_blank'><span>fisl17</span></a>
+    <a class='logo-asl' href='http://asl.org' target='_blank'><span>ASL.org</span></a>
+    <a class='iot-fisl' href='http://segue.fisl17.softwarelivre.org' target='_blank'><span>Contribua para o fisl17</span></a>
+  </div>
+</div -->
+
+    </div>
+
+    <div id="wrap-1">
+      <div id="theme-header">
+        <div id="top">
+  <ul id="top-menu">
+    <li><a href="/"><span>Início</span></a></li>
+    <li><a id="submenu-people" href="/search/people"><span class="icon-menu-people">People</span></a><a class="up menu-submenu-trigger" id="submenu-people-trigger" onclick="toggleSubmenu(this, '', {&quot;More recent&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_recent&quot;},&quot;More active&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_active&quot;},&quot;More popular&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_popular&quot;}}); return false" href="#"><span>People menu</span></a></li>
+    <li><a id="submenu-communities" href="/search/communities"><span class="icon-menu-community">Communities</span></a><a class="up menu-submenu-trigger" id="submenu-communities-trigger" onclick="toggleSubmenu(this, '', {&quot;More recent&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_recent&quot;},&quot;More active&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_active&quot;},&quot;More popular&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_popular&quot;}}); return false" href="#"><span>Communities menu</span></a></li>
+    <li><a href="/profile/portal/events" id="submenu-events"><span class='icon-menu-events'>Events</span></a></li>
+    <li><a href="/doc"><span>Manual</span></a></li>
+    <li><a href="/portal/quem-somos" id="submenu-about"><span>About</span></a></li>
+  </ul>
+</div>
+
+      </div>
+      <div id="wrap-2">
+        <div id="user">
+    <span class='not-logged-in'>
+      <span class='login'><a id="link_login" onclick="return noosfero.modal.inline(&#39;#inlineLoginBox&#39;)" class="" href="/account/login"><i class="icon-menu-login"></i><strong>Login</strong></a></span>
+
+      <div id='inlineLoginBox' style='display: none;'>
+        <div class="login-box">
+
+<h2>Login</h2>
+
+
+
+
+<form action="/account/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="7fptr2X8VNU3IDXirev9BbK43dY2oynJqiD/n7vjiPFwkt2uF6dWNtg7wHwra4dm/SkXFT4v7pv3rMab5GguIw==" />
+
+     <div class="formfieldline"><label class="formlabel" for="main_user_login">Username / Email</label><div class="formfield type-text"><input id="main_user_login" onchange="this.value = convToValidLogin( this.value )" type="text" name="user[login]" /></div></div>
+
+     <div class="formfieldline"><label class="formlabel" for="user_password">Password</label><div class="formfield type-password"><input type="password" name="user[password]" id="user_password" /></div></div>
+
+     <div class='checkbox'>
+       <label>
+         <input type="checkbox" name="remember_me" id="remember_me" value="1" checked="checked" />
+         Keep me logged in
+       </label>
+     </div>
+
+     
+
+     <div class=" button-bar">
+       <input type="submit" name="commit" value="Log in" class="button with-text icon-login submit" />
+         <a class="button icon-close with-text modal-toggle modal-close" rel="deactivate" title="Cancel" href="#">&nbsp;<span>Cancel</span></a>
+<br style="clear: left;" /></div>
+</form>
+<div class=" button-bar">
+    <a class="button icon-add with-text" title="New user" href="/account/signup">&nbsp;<span>New user</span></a>
+
+    <a class="button icon-help with-text" title="I forgot my password!" href="/account/forgot_password">&nbsp;<span>I forgot my password!</span></a>
+<br style="clear: left;" /></div>
+</div><!-- end class="login-box" -->
+
+
+      </div>
+
+        <span class='or'>or</span> <span class='signup'><a href="/account/signup"><strong>Sign up</strong></a></span>
+    </span>
+  <form action="/search/articles" id="top-search" class="search_form clean" method="get">
+    <input name="query" size="15" title="Search..." onfocus="this.form.className='focused';" onblur="this.form.className=''" />
+    <div>Press <strong>Enter</strong> to send the search query.</div>
+    <script>
+//<![CDATA[
+jQuery("#user form input").hint();
+//]]>
+</script>
+  </form>
+</div><!-- end id="user" -->
+
+        <h1 id="site-title">
+          <a href="/"><span>Software livre Brasil</span></a>
+
+        </h1>
+        <div id="navigation">
+          <ul>
+            <div id="friends">
+<ul>
+  <li><a href="/portal"><span>+</span></a></li>
+  <li><a href="http://br-linux.org"><span>BR-Linux</span></a></li>
+  <li><a href="http://www.vivaolinux.com.br"><span>Viva o Linux</span></a></li>
+  <li><a href="http://www.revista.espiritolivre.org"><span>Revista Espírito Livre</span></a></li>
+  <li><a href="http://www.dicas-l.com.br"><span>Dicas-L</span></a></li>
+  <li><a href="http://www.sejalivre.org"><span>Seja Livre</span></a></li>
+  <li><a href="http://www.underlinux.com.br"><span>Under Linux</span></a></li>
+  <li><a href="http://www.sempreupdate.com.br"><span>Sempre Update</span></a></li>
+</ul>
+</div>
+<div id="external-links">
+<ul>
+  <li><a id="blogoosfero" title="Blogoosfero" href="http://blogoosfero.cc/software-livre" target="_blank"><span>Blogoosfero</span></a></li>
+  <li><a id="twitter" title="Twitter" href="https://twitter.com/PSLBrasil" target="_blank"><span>Twitter</span></a></li>
+  <li><a id="diaspora" title="Diaspora" href="https://diaspora.softwarelivre.org/u/pslbrasil" target="_blank"><span>Diaspora</span></a></li>
+  <li><a id="gnu-social" title="Quitter" href="https://quitter.se/pslbrasil" target="_blank"><span>Quitter</span></a></li>
+  <li><a id="feed" title="Feed" href="http://softwarelivre.org/portal/feed"><span>Feed</span></a></li>
+</ul>
+</div>
+
+          </ul>
+          <div id="navigation-end"></div>
+        </div><!-- end id="navigation" -->
+        <div id="content">
+          <div id="content-inner">
+  <div class="no-boxes"><div class="no-boxes-inner-1"><div class="no-boxes-inner-2"><div class="main-content"><h1>Search Results - <small>Tagged with catu</small></h1>
+
+<div class='search-form'>
+  <form class="search_form" action="/search/articles?tag=catu" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="data-remote" /><input type="hidden" name="authenticity_token" value="i65JtEP81cnxzFC64Q3Uc7xL0MEIpiElMePKdh/7OTwWxvm1MafXKh7XpSRnja4Q89oaAgAq5ndsb/NyQHCf7g==" />
+
+    <div id='search-header'>
+  <ul id="assets-menu"><li class="selected"><a data-tag="catu" href="/search/articles">Contents</a></li>
+<li><a data-tag="catu" href="/search/people">People</a></li>
+<li><a data-tag="catu" href="/search/communities">Communities</a></li>
+<li><a data-tag="catu" href="/search/enterprises">Enterprises</a></li></ul>
+  <div id="search-filters"><select name="order" id="order"><option value="more_recent">More recent</option>
+<option value="more_popular">More popular</option>
+<option value="more_comments">More comments</option>
+<option value="more_relevant">More relevant</option></select>
+</div>
+  <div class="clear"></div>
+</div>
+
+<div id='search-subheader'>
+  
+</div>
+<div class="search-field">
+  <span class="formfield">
+    <input type="text" name="query" id="search-input" value="" size="50" placeholder="Type words about the content you're looking for" class="search-input-with-suggestions" data-asset="articles" />
+  </span>
+
+  <input type="submit" name="commit" value="Search" class="button with-text icon-search submit" />
+</div>
+
+
+
+
+
+    <div id='total-results'>
+  Total of 32 results
+</div>
+
+
+      <div id='search-column-left' class='search-column'>
+        <div id="facets">
+
+      <div id="types-facet" class="facet"><h2>Types</h2><input type="text" id="" placeholder="Refine options" class="facet-refine" /><div class="facets-block"><div class="facet-option "><input type="hidden" name="facets[attribute-type][TextArticle]" id="facets_attribute-type_TextArticle" value="0" /><input type="checkbox" name="facets[attribute-type][TextArticle]" id="checkbox-0" value="1" /><label for="checkbox-0">TextArticle</label><span class="facet-count">(25)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[attribute-type][Gallery]" id="facets_attribute-type_Gallery" value="0" /><input type="checkbox" name="facets[attribute-type][Gallery]" id="checkbox-1" value="1" /><label for="checkbox-1">Gallery</label><span class="facet-count">(4)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[attribute-type][Blog]" id="facets_attribute-type_Blog" value="0" /><input type="checkbox" name="facets[attribute-type][Blog]" id="checkbox-2" value="1" /><label for="checkbox-2">Blog</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[attribute-type][Folder]" id="facets_attribute-type_Folder" value="0" /><input type="checkbox" name="facets[attribute-type][Folder]" id="checkbox-3" value="1" /><label for="checkbox-3">Folder</label><span class="facet-count">(1)</span></div></div><a class="button icon-clear with-text clear-facet" data-facet="types-facet" title="Clear filters" href="/search/articles">&nbsp;<span>Clear filters</span></a></div>
+      <div id="content-types-facet" class="facet"><h2>Content types</h2><input type="text" id="" placeholder="Refine options" class="facet-refine" /><div class="facets-block"><div class="facet-option undefined-value"><input type="hidden" name="facets[attribute-content_type][ ]" id="facets_attribute-content_type__" value="0" /><input type="checkbox" name="facets[attribute-content_type][ ]" id="checkbox-4" value="1" /><label for="checkbox-4">Undefined</label><span class="facet-count">(32)</span></div></div><a class="button icon-clear with-text clear-facet" data-facet="content-types-facet" title="Clear filters" href="/search/articles">&nbsp;<span>Clear filters</span></a></div>
+      <div id="tags-facet" class="facet"><h2>Tags</h2><input type="text" id="" placeholder="Refine options" class="facet-refine" /><div class="facets-block"><div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4637]" id="facets_relation-acts_as_taggable_on_tag_4637" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4637]" id="checkbox-5" value="1" /><label for="checkbox-5">catu</label><span class="facet-count">(37)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2090]" id="facets_relation-acts_as_taggable_on_tag_2090" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2090]" id="checkbox-6" value="1" /><label for="checkbox-6">bahia</label><span class="facet-count">(16)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][221]" id="facets_relation-acts_as_taggable_on_tag_221" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][221]" id="checkbox-7" value="1" /><label for="checkbox-7">rádio</label><span class="facet-count">(8)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4645]" id="facets_relation-acts_as_taggable_on_tag_4645" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4645]" id="checkbox-8" value="1" /><label for="checkbox-8">recôncavo</label><span class="facet-count">(8)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][36]" id="facets_relation-acts_as_taggable_on_tag_36" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][36]" id="checkbox-9" value="1" /><label for="checkbox-9">comunicação</label><span class="facet-count">(7)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][3790]" id="facets_relation-acts_as_taggable_on_tag_3790" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][3790]" id="checkbox-10" value="1" /><label for="checkbox-10">comunicadores</label><span class="facet-count">(6)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][38]" id="facets_relation-acts_as_taggable_on_tag_38" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][38]" id="checkbox-11" value="1" /><label for="checkbox-11">cultura</label><span class="facet-count">(6)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][320]" id="facets_relation-acts_as_taggable_on_tag_320" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][320]" id="checkbox-12" value="1" /><label for="checkbox-12">software</label><span class="facet-count">(6)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][344]" id="facets_relation-acts_as_taggable_on_tag_344" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][344]" id="checkbox-13" value="1" /><label for="checkbox-13">cidade</label><span class="facet-count">(6)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][321]" id="facets_relation-acts_as_taggable_on_tag_321" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][321]" id="checkbox-14" value="1" /><label for="checkbox-14">livre</label><span class="facet-count">(6)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4963]" id="facets_relation-acts_as_taggable_on_tag_4963" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4963]" id="checkbox-15" value="1" /><label for="checkbox-15">catuense</label><span class="facet-count">(5)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][9804]" id="facets_relation-acts_as_taggable_on_tag_9804" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][9804]" id="checkbox-16" value="1" /><label for="checkbox-16">tauá</label><span class="facet-count">(4)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][3784]" id="facets_relation-acts_as_taggable_on_tag_3784" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][3784]" id="checkbox-17" value="1" /><label for="checkbox-17">fm</label><span class="facet-count">(4)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4658]" id="facets_relation-acts_as_taggable_on_tag_4658" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4658]" id="checkbox-18" value="1" /><label for="checkbox-18">paulo</label><span class="facet-count">(4)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][55]" id="facets_relation-acts_as_taggable_on_tag_55" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][55]" id="checkbox-19" value="1" /><label for="checkbox-19">audiovisual</label><span class="facet-count">(4)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][224]" id="facets_relation-acts_as_taggable_on_tag_224" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][224]" id="checkbox-20" value="1" /><label for="checkbox-20">video</label><span class="facet-count">(4)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1148]" id="facets_relation-acts_as_taggable_on_tag_1148" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1148]" id="checkbox-21" value="1" /><label for="checkbox-21">programa</label><span class="facet-count">(3)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][9806]" id="facets_relation-acts_as_taggable_on_tag_9806" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][9806]" id="checkbox-22" value="1" /><label for="checkbox-22">olheiros</label><span class="facet-count">(3)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1189]" id="facets_relation-acts_as_taggable_on_tag_1189" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1189]" id="checkbox-23" value="1" /><label for="checkbox-23">cinelerra</label><span class="facet-count">(3)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4659]" id="facets_relation-acts_as_taggable_on_tag_4659" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4659]" id="checkbox-24" value="1" /><label for="checkbox-24">enselmo</label><span class="facet-count">(3)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][362]" id="facets_relation-acts_as_taggable_on_tag_362" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][362]" id="checkbox-25" value="1" /><label for="checkbox-25">ubuntu</label><span class="facet-count">(3)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2084]" id="facets_relation-acts_as_taggable_on_tag_2084" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2084]" id="checkbox-26" value="1" /><label for="checkbox-26">festa</label><span class="facet-count">(3)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][9805]" id="facets_relation-acts_as_taggable_on_tag_9805" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][9805]" id="checkbox-27" value="1" /><label for="checkbox-27">baixão</label><span class="facet-count">(3)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][9803]" id="facets_relation-acts_as_taggable_on_tag_9803" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][9803]" id="checkbox-28" value="1" /><label for="checkbox-28">representação</label><span class="facet-count">(3)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2417]" id="facets_relation-acts_as_taggable_on_tag_2417" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2417]" id="checkbox-29" value="1" /><label for="checkbox-29">comunitária</label><span class="facet-count">(3)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2171]" id="facets_relation-acts_as_taggable_on_tag_2171" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2171]" id="checkbox-30" value="1" /><label for="checkbox-30">coité</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2177]" id="facets_relation-acts_as_taggable_on_tag_2177" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2177]" id="checkbox-31" value="1" /><label for="checkbox-31">radialista</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4378]" id="facets_relation-acts_as_taggable_on_tag_4378" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4378]" id="checkbox-32" value="1" /><label for="checkbox-32">confraternização</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][855]" id="facets_relation-acts_as_taggable_on_tag_855" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][855]" id="checkbox-33" value="1" /><label for="checkbox-33">fotos</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4690]" id="facets_relation-acts_as_taggable_on_tag_4690" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4690]" id="checkbox-34" value="1" /><label for="checkbox-34">cidade de catu</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][95]" id="facets_relation-acts_as_taggable_on_tag_95" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][95]" id="checkbox-35" value="1" /><label for="checkbox-35">áudio</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][841]" id="facets_relation-acts_as_taggable_on_tag_841" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][841]" id="checkbox-36" value="1" /><label for="checkbox-36">servidor</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4646]" id="facets_relation-acts_as_taggable_on_tag_4646" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4646]" id="checkbox-37" value="1" /><label for="checkbox-37">pioneiro</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4623]" id="facets_relation-acts_as_taggable_on_tag_4623" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4623]" id="checkbox-38" value="1" /><label for="checkbox-38">catu fm</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5344]" id="facets_relation-acts_as_taggable_on_tag_5344" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5344]" id="checkbox-39" value="1" /><label for="checkbox-39">rótula</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][84]" id="facets_relation-acts_as_taggable_on_tag_84" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][84]" id="checkbox-40" value="1" /><label for="checkbox-40">encontro</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4625]" id="facets_relation-acts_as_taggable_on_tag_4625" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4625]" id="checkbox-41" value="1" /><label for="checkbox-41">damasceno</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][6475]" id="facets_relation-acts_as_taggable_on_tag_6475" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][6475]" id="checkbox-42" value="1" /><label for="checkbox-42">cristo</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4969]" id="facets_relation-acts_as_taggable_on_tag_4969" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4969]" id="checkbox-43" value="1" /><label for="checkbox-43">produções</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][264]" id="facets_relation-acts_as_taggable_on_tag_264" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][264]" id="checkbox-44" value="1" /><label for="checkbox-44">comunidade</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4664]" id="facets_relation-acts_as_taggable_on_tag_4664" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4664]" id="checkbox-45" value="1" /><label for="checkbox-45">sintonia</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4782]" id="facets_relation-acts_as_taggable_on_tag_4782" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4782]" id="checkbox-46" value="1" /><label for="checkbox-46">comunicador</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][10629]" id="facets_relation-acts_as_taggable_on_tag_10629" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][10629]" id="checkbox-47" value="1" /><label for="checkbox-47">2011</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4784]" id="facets_relation-acts_as_taggable_on_tag_4784" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4784]" id="checkbox-48" value="1" /><label for="checkbox-48">fazenda</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][7155]" id="facets_relation-acts_as_taggable_on_tag_7155" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][7155]" id="checkbox-49" value="1" /><label for="checkbox-49">radialistas</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4666]" id="facets_relation-acts_as_taggable_on_tag_4666" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4666]" id="checkbox-50" value="1" /><label for="checkbox-50">nacangaia</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2476]" id="facets_relation-acts_as_taggable_on_tag_2476" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2476]" id="checkbox-51" value="1" /><label for="checkbox-51">2010</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1010]" id="facets_relation-acts_as_taggable_on_tag_1010" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1010]" id="checkbox-52" value="1" /><label for="checkbox-52">associação</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][11450]" id="facets_relation-acts_as_taggable_on_tag_11450" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][11450]" id="checkbox-53" value="1" /><label for="checkbox-53">carnaval</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2170]" id="facets_relation-acts_as_taggable_on_tag_2170" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2170]" id="checkbox-54" value="1" /><label for="checkbox-54">uneb</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4781]" id="facets_relation-acts_as_taggable_on_tag_4781" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4781]" id="checkbox-55" value="1" /><label for="checkbox-55">pojuca</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5677]" id="facets_relation-acts_as_taggable_on_tag_5677" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5677]" id="checkbox-56" value="1" /><label for="checkbox-56">sabiá</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5671]" id="facets_relation-acts_as_taggable_on_tag_5671" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5671]" id="checkbox-57" value="1" /><label for="checkbox-57">beto</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][6474]" id="facets_relation-acts_as_taggable_on_tag_6474" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][6474]" id="checkbox-58" value="1" /><label for="checkbox-58">paixão</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5675]" id="facets_relation-acts_as_taggable_on_tag_5675" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5675]" id="checkbox-59" value="1" /><label for="checkbox-59">estrani amore</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4266]" id="facets_relation-acts_as_taggable_on_tag_4266" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4266]" id="checkbox-60" value="1" /><label for="checkbox-60">ppa</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][13098]" id="facets_relation-acts_as_taggable_on_tag_13098" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][13098]" id="checkbox-61" value="1" /><label for="checkbox-61">vereador</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][9142]" id="facets_relation-acts_as_taggable_on_tag_9142" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][9142]" id="checkbox-62" value="1" /><label for="checkbox-62">pais</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][3200]" id="facets_relation-acts_as_taggable_on_tag_3200" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][3200]" id="checkbox-63" value="1" /><label for="checkbox-63">prefeitura</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][504]" id="facets_relation-acts_as_taggable_on_tag_504" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][504]" id="checkbox-64" value="1" /><label for="checkbox-64">historia</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4964]" id="facets_relation-acts_as_taggable_on_tag_4964" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4964]" id="checkbox-65" value="1" /><label for="checkbox-65">comunicadora</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4971]" id="facets_relation-acts_as_taggable_on_tag_4971" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4971]" id="checkbox-66" value="1" /><label for="checkbox-66">passé</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1329]" id="facets_relation-acts_as_taggable_on_tag_1329" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1329]" id="checkbox-67" value="1" /><label for="checkbox-67">music</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4688]" id="facets_relation-acts_as_taggable_on_tag_4688" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4688]" id="checkbox-68" value="1" /><label for="checkbox-68">conceição do coité</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5451]" id="facets_relation-acts_as_taggable_on_tag_5451" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5451]" id="checkbox-69" value="1" /><label for="checkbox-69">educativa</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][635]" id="facets_relation-acts_as_taggable_on_tag_635" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][635]" id="checkbox-70" value="1" /><label for="checkbox-70">sociedade</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4665]" id="facets_relation-acts_as_taggable_on_tag_4665" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4665]" id="checkbox-71" value="1" /><label for="checkbox-71">sintonia de amor</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][173]" id="facets_relation-acts_as_taggable_on_tag_173" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][173]" id="checkbox-72" value="1" /><label for="checkbox-72">história</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][10791]" id="facets_relation-acts_as_taggable_on_tag_10791" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][10791]" id="checkbox-73" value="1" /><label for="checkbox-73">resultado</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][12]" id="facets_relation-acts_as_taggable_on_tag_12" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][12]" id="checkbox-74" value="1" /><label for="checkbox-74">município</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4840]" id="facets_relation-acts_as_taggable_on_tag_4840" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4840]" id="checkbox-75" value="1" /><label for="checkbox-75">wasigton</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][14846]" id="facets_relation-acts_as_taggable_on_tag_14846" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][14846]" id="checkbox-76" value="1" /><label for="checkbox-76">br</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5676]" id="facets_relation-acts_as_taggable_on_tag_5676" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5676]" id="checkbox-77" value="1" /><label for="checkbox-77">titanic</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][684]" id="facets_relation-acts_as_taggable_on_tag_684" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][684]" id="checkbox-78" value="1" /><label for="checkbox-78">apresentação</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5321]" id="facets_relation-acts_as_taggable_on_tag_5321" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5321]" id="checkbox-79" value="1" /><label for="checkbox-79">streaming</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][6620]" id="facets_relation-acts_as_taggable_on_tag_6620" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][6620]" id="checkbox-80" value="1" /><label for="checkbox-80">eleições</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2268]" id="facets_relation-acts_as_taggable_on_tag_2268" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2268]" id="checkbox-81" value="1" /><label for="checkbox-81">dilma</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4968]" id="facets_relation-acts_as_taggable_on_tag_4968" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4968]" id="checkbox-82" value="1" /><label for="checkbox-82">baleia</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4780]" id="facets_relation-acts_as_taggable_on_tag_4780" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4780]" id="checkbox-83" value="1" /><label for="checkbox-83">antonio carmelito</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2204]" id="facets_relation-acts_as_taggable_on_tag_2204" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2204]" id="checkbox-84" value="1" /><label for="checkbox-84">concurso</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][10817]" id="facets_relation-acts_as_taggable_on_tag_10817" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][10817]" id="checkbox-85" value="1" /><label for="checkbox-85">serra</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5673]" id="facets_relation-acts_as_taggable_on_tag_5673" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5673]" id="checkbox-86" value="1" /><label for="checkbox-86">renato</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][11475]" id="facets_relation-acts_as_taggable_on_tag_11475" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][11475]" id="checkbox-87" value="1" /><label for="checkbox-87">publico</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5672]" id="facets_relation-acts_as_taggable_on_tag_5672" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5672]" id="checkbox-88" value="1" /><label for="checkbox-88">silva</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][175191]" id="facets_relation-acts_as_taggable_on_tag_175191" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][175191]" id="checkbox-89" value="1" /><label for="checkbox-89">poço</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4687]" id="facets_relation-acts_as_taggable_on_tag_4687" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4687]" id="checkbox-90" value="1" /><label for="checkbox-90">primavera</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4089]" id="facets_relation-acts_as_taggable_on_tag_4089" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4089]" id="checkbox-91" value="1" /><label for="checkbox-91">plantas</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][3757]" id="facets_relation-acts_as_taggable_on_tag_3757" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][3757]" id="checkbox-92" value="1" /><label for="checkbox-92">alagoinhas</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1488]" id="facets_relation-acts_as_taggable_on_tag_1488" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1488]" id="checkbox-93" value="1" /><label for="checkbox-93">biblioteca</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][11205]" id="facets_relation-acts_as_taggable_on_tag_11205" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][11205]" id="checkbox-94" value="1" /><label for="checkbox-94">duque</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][3309]" id="facets_relation-acts_as_taggable_on_tag_3309" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][3309]" id="checkbox-95" value="1" /><label for="checkbox-95">comemoração</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4779]" id="facets_relation-acts_as_taggable_on_tag_4779" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4779]" id="checkbox-96" value="1" /><label for="checkbox-96">fim de ano</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2384]" id="facets_relation-acts_as_taggable_on_tag_2384" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2384]" id="checkbox-97" value="1" /><label for="checkbox-97">riachão</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][772]" id="facets_relation-acts_as_taggable_on_tag_772" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][772]" id="checkbox-98" value="1" /><label for="checkbox-98">amor</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][163]" id="facets_relation-acts_as_taggable_on_tag_163" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][163]" id="checkbox-99" value="1" /><label for="checkbox-99">brasil</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5674]" id="facets_relation-acts_as_taggable_on_tag_5674" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5674]" id="checkbox-100" value="1" /><label for="checkbox-100">russo</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][10815]" id="facets_relation-acts_as_taggable_on_tag_10815" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][10815]" id="checkbox-101" value="1" /><label for="checkbox-101">presidenciais</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][137041]" id="facets_relation-acts_as_taggable_on_tag_137041" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][137041]" id="checkbox-102" value="1" /><label for="checkbox-102">ibam</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][11441]" id="facets_relation-acts_as_taggable_on_tag_11441" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][11441]" id="checkbox-103" value="1" /><label for="checkbox-103">pt. psdb</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][11451]" id="facets_relation-acts_as_taggable_on_tag_11451" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][11451]" id="checkbox-104" value="1" /><label for="checkbox-104">turunas</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][516]" id="facets_relation-acts_as_taggable_on_tag_516" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][516]" id="checkbox-105" value="1" /><label for="checkbox-105">web</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][3536]" id="facets_relation-acts_as_taggable_on_tag_3536" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][3536]" id="checkbox-106" value="1" /><label for="checkbox-106">contato</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][9144]" id="facets_relation-acts_as_taggable_on_tag_9144" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][9144]" id="checkbox-107" value="1" /><label for="checkbox-107">metropolitana</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4021]" id="facets_relation-acts_as_taggable_on_tag_4021" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4021]" id="checkbox-108" value="1" /><label for="checkbox-108">professor</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4088]" id="facets_relation-acts_as_taggable_on_tag_4088" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4088]" id="checkbox-109" value="1" /><label for="checkbox-109">flores</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][175192]" id="facets_relation-acts_as_taggable_on_tag_175192" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][175192]" id="checkbox-110" value="1" /><label for="checkbox-110">artesiano</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][11448]" id="facets_relation-acts_as_taggable_on_tag_11448" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][11448]" id="checkbox-111" value="1" /><label for="checkbox-111">clube</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5347]" id="facets_relation-acts_as_taggable_on_tag_5347" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5347]" id="checkbox-112" value="1" /><label for="checkbox-112">petróleo</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4731]" id="facets_relation-acts_as_taggable_on_tag_4731" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4731]" id="checkbox-113" value="1" /><label for="checkbox-113">banda</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][11206]" id="facets_relation-acts_as_taggable_on_tag_11206" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][11206]" id="checkbox-114" value="1" /><label for="checkbox-114">caxias</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4842]" id="facets_relation-acts_as_taggable_on_tag_4842" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4842]" id="checkbox-115" value="1" /><label for="checkbox-115">ctuense</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4626]" id="facets_relation-acts_as_taggable_on_tag_4626" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4626]" id="checkbox-116" value="1" /><label for="checkbox-116">paulo enselmo</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][137042]" id="facets_relation-acts_as_taggable_on_tag_137042" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][137042]" id="checkbox-117" value="1" /><label for="checkbox-117">baleia produções</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][6470]" id="facets_relation-acts_as_taggable_on_tag_6470" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][6470]" id="checkbox-118" value="1" /><label for="checkbox-118">páscoa</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5613]" id="facets_relation-acts_as_taggable_on_tag_5613" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5613]" id="checkbox-119" value="1" /><label for="checkbox-119">santa luz</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][851]" id="facets_relation-acts_as_taggable_on_tag_851" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][851]" id="checkbox-120" value="1" /><label for="checkbox-120">produção</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][162]" id="facets_relation-acts_as_taggable_on_tag_162" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][162]" id="checkbox-121" value="1" /><label for="checkbox-121">2009</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][11452]" id="facets_relation-acts_as_taggable_on_tag_11452" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][11452]" id="checkbox-122" value="1" /><label for="checkbox-122">caramba</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4841]" id="facets_relation-acts_as_taggable_on_tag_4841" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4841]" id="checkbox-123" value="1" /><label for="checkbox-123">diretoria</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][73]" id="facets_relation-acts_as_taggable_on_tag_73" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][73]" id="checkbox-124" value="1" /><label for="checkbox-124">galeria</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4788]" id="facets_relation-acts_as_taggable_on_tag_4788" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4788]" id="checkbox-125" value="1" /><label for="checkbox-125">sonhos</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5348]" id="facets_relation-acts_as_taggable_on_tag_5348" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5348]" id="checkbox-126" value="1" /><label for="checkbox-126">josé visco</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5229]" id="facets_relation-acts_as_taggable_on_tag_5229" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5229]" id="checkbox-127" value="1" /><label for="checkbox-127">itarandi</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][23]" id="facets_relation-acts_as_taggable_on_tag_23" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][23]" id="checkbox-128" value="1" /><label for="checkbox-128">internet</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][348]" id="facets_relation-acts_as_taggable_on_tag_348" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][348]" id="checkbox-129" value="1" /><label for="checkbox-129">aberto</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][44]" id="facets_relation-acts_as_taggable_on_tag_44" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][44]" id="checkbox-130" value="1" /><label for="checkbox-130">eventos</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2842]" id="facets_relation-acts_as_taggable_on_tag_2842" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2842]" id="checkbox-131" value="1" /><label for="checkbox-131">código</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][11453]" id="facets_relation-acts_as_taggable_on_tag_11453" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][11453]" id="checkbox-132" value="1" /><label for="checkbox-132">axé</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2383]" id="facets_relation-acts_as_taggable_on_tag_2383" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2383]" id="checkbox-133" value="1" /><label for="checkbox-133">feliz</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][11253]" id="facets_relation-acts_as_taggable_on_tag_11253" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][11253]" id="checkbox-134" value="1" /><label for="checkbox-134">presidente</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2453]" id="facets_relation-acts_as_taggable_on_tag_2453" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2453]" id="checkbox-135" value="1" /><label for="checkbox-135">mp3</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][11449]" id="facets_relation-acts_as_taggable_on_tag_11449" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][11449]" id="checkbox-136" value="1" /><label for="checkbox-136">marchinha</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][139337]" id="facets_relation-acts_as_taggable_on_tag_139337" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][139337]" id="checkbox-137" value="1" /><label for="checkbox-137">acec</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][13096]" id="facets_relation-acts_as_taggable_on_tag_13096" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][13096]" id="checkbox-138" value="1" /><label for="checkbox-138">nego</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5044]" id="facets_relation-acts_as_taggable_on_tag_5044" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5044]" id="checkbox-139" value="1" /><label for="checkbox-139">filme</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][13097]" id="facets_relation-acts_as_taggable_on_tag_13097" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][13097]" id="checkbox-140" value="1" /><label for="checkbox-140">bé</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1580]" id="facets_relation-acts_as_taggable_on_tag_1580" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1580]" id="checkbox-141" value="1" /><label for="checkbox-141">pública</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4970]" id="facets_relation-acts_as_taggable_on_tag_4970" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4970]" id="checkbox-142" value="1" /><label for="checkbox-142">são sebastião</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1297]" id="facets_relation-acts_as_taggable_on_tag_1297" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1297]" id="checkbox-143" value="1" /><label for="checkbox-143">centro</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4385]" id="facets_relation-acts_as_taggable_on_tag_4385" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4385]" id="checkbox-144" value="1" /><label for="checkbox-144">documentario</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][6471]" id="facets_relation-acts_as_taggable_on_tag_6471" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][6471]" id="checkbox-145" value="1" /><label for="checkbox-145">ecumênico</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4023]" id="facets_relation-acts_as_taggable_on_tag_4023" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4023]" id="checkbox-146" value="1" /><label for="checkbox-146">radcom</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4843]" id="facets_relation-acts_as_taggable_on_tag_4843" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4843]" id="checkbox-147" value="1" /><label for="checkbox-147">casa da cultura</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2364]" id="facets_relation-acts_as_taggable_on_tag_2364" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2364]" id="checkbox-148" value="1" /><label for="checkbox-148">radio</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5346]" id="facets_relation-acts_as_taggable_on_tag_5346" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5346]" id="checkbox-149" value="1" /><label for="checkbox-149">110</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][11204]" id="facets_relation-acts_as_taggable_on_tag_11204" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][11204]" id="checkbox-150" value="1" /><label for="checkbox-150">praça</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5228]" id="facets_relation-acts_as_taggable_on_tag_5228" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5228]" id="checkbox-151" value="1" /><label for="checkbox-151">açude</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][3820]" id="facets_relation-acts_as_taggable_on_tag_3820" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][3820]" id="checkbox-152" value="1" /><label for="checkbox-152">municipal</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4661]" id="facets_relation-acts_as_taggable_on_tag_4661" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4661]" id="checkbox-153" value="1" /><label for="checkbox-153">comercial</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4785]" id="facets_relation-acts_as_taggable_on_tag_4785" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4785]" id="checkbox-154" value="1" /><label for="checkbox-154">flora</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][9143]" id="facets_relation-acts_as_taggable_on_tag_9143" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][9143]" id="checkbox-155" value="1" /><label for="checkbox-155">104</label><span class="facet-count">(1)</span></div></div><a class="button icon-clear with-text clear-facet" data-facet="tags-facet" title="Clear filters" href="/search/articles">&nbsp;<span>Clear filters</span></a></div>
+
+    <div class="period" id="created-at-period"><h2>Created at</h2><div><label>From:<input type="text" name="periods[created_at][start_date]" id="datepicker-from-created-at" from_id="datepicker-from-created-at" to_id="datepicker-to-created-at" />
+    <script type='text/javascript'>
+      jQuery('#datepicker-from-created-at').datepicker({
+        disabled: false,
+        altField: "",
+        altFormat: "",
+        appendText: "",
+        autoSize: false,
+        buttonImage: "",
+        buttonImageOnly: false,
+        buttonText: "...",
+        calculateWeek: "jQuery.datepicker.iso8601Week",
+        changeMonth: false,
+        changeYear: false,
+        closeText: "Done",
+        constrainInput: true,
+        currentText: "Today",
+        dateFormat: "yy-mm-dd",
+        dayNames: ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        dayNamesMin: ["Su","Mo","Tu","We","Th","Fr","Sa"],
+        dayNamesShort: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
+        defaultDate: null,
+        duration: "normal",
+        firstDay: 0,
+        gotoCurrent: false,
+        hideIfNoPrevNext: false,
+        isRTL: false,
+        maxDate: null,
+        minDate: null,
+        monthNames: ["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"],
+        monthNamesShort: ["Jan","Feb","Mar","Apr","maggio","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+        navigationAsDateFormat: false,
+        nextText: "Next",
+        numberOfMonths: 1,
+        prevText: "Prev",
+        selectOtherMonths: false,
+        shortYearCutoff: "+10",
+        showButtonPanel: false,
+        showCurrentAtPos: 0,
+        showMonthAfterYear: false,
+        showOn: "focus",
+        showOptions: {},
+        showOtherMonths: false,
+        showWeek: false,
+        stepMonths: 1,
+        weekHeader: "Wk",
+        yearRange: "c-10:c+10",
+        yearSuffix: ""
+      }).datepicker()
+    </script>
+    </label><label>Until:<input type="text" name="periods[created_at][end_date]" id="datepicker-to-created-at" from_id="datepicker-from-created-at" to_id="datepicker-to-created-at" />
+    <script type='text/javascript'>
+      jQuery('#datepicker-to-created-at').datepicker({
+        disabled: false,
+        altField: "",
+        altFormat: "",
+        appendText: "",
+        autoSize: false,
+        buttonImage: "",
+        buttonImageOnly: false,
+        buttonText: "...",
+        calculateWeek: "jQuery.datepicker.iso8601Week",
+        changeMonth: false,
+        changeYear: false,
+        closeText: "Done",
+        constrainInput: true,
+        currentText: "Today",
+        dateFormat: "yy-mm-dd",
+        dayNames: ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        dayNamesMin: ["Su","Mo","Tu","We","Th","Fr","Sa"],
+        dayNamesShort: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
+        defaultDate: null,
+        duration: "normal",
+        firstDay: 0,
+        gotoCurrent: false,
+        hideIfNoPrevNext: false,
+        isRTL: false,
+        maxDate: null,
+        minDate: null,
+        monthNames: ["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"],
+        monthNamesShort: ["Jan","Feb","Mar","Apr","maggio","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+        navigationAsDateFormat: false,
+        nextText: "Next",
+        numberOfMonths: 1,
+        prevText: "Prev",
+        selectOtherMonths: false,
+        shortYearCutoff: "+10",
+        showButtonPanel: false,
+        showCurrentAtPos: 0,
+        showMonthAfterYear: false,
+        showOn: "focus",
+        showOptions: {},
+        showOtherMonths: false,
+        showWeek: false,
+        stepMonths: 1,
+        weekHeader: "Wk",
+        yearRange: "c-10:c+10",
+        yearSuffix: ""
+      }).datepicker()
+    </script>
+    </label></div><input type="hidden" name="periods[created_at][is_metadata]" id="periods_created_at_is_metadata" value="false" /></div>
+    <div class="period" id="updated-at-period"><h2>Updated at</h2><div><label>From:<input type="text" name="periods[updated_at][start_date]" id="datepicker-from-updated-at" from_id="datepicker-from-updated-at" to_id="datepicker-to-updated-at" />
+    <script type='text/javascript'>
+      jQuery('#datepicker-from-updated-at').datepicker({
+        disabled: false,
+        altField: "",
+        altFormat: "",
+        appendText: "",
+        autoSize: false,
+        buttonImage: "",
+        buttonImageOnly: false,
+        buttonText: "...",
+        calculateWeek: "jQuery.datepicker.iso8601Week",
+        changeMonth: false,
+        changeYear: false,
+        closeText: "Done",
+        constrainInput: true,
+        currentText: "Today",
+        dateFormat: "yy-mm-dd",
+        dayNames: ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        dayNamesMin: ["Su","Mo","Tu","We","Th","Fr","Sa"],
+        dayNamesShort: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
+        defaultDate: null,
+        duration: "normal",
+        firstDay: 0,
+        gotoCurrent: false,
+        hideIfNoPrevNext: false,
+        isRTL: false,
+        maxDate: null,
+        minDate: null,
+        monthNames: ["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"],
+        monthNamesShort: ["Jan","Feb","Mar","Apr","maggio","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+        navigationAsDateFormat: false,
+        nextText: "Next",
+        numberOfMonths: 1,
+        prevText: "Prev",
+        selectOtherMonths: false,
+        shortYearCutoff: "+10",
+        showButtonPanel: false,
+        showCurrentAtPos: 0,
+        showMonthAfterYear: false,
+        showOn: "focus",
+        showOptions: {},
+        showOtherMonths: false,
+        showWeek: false,
+        stepMonths: 1,
+        weekHeader: "Wk",
+        yearRange: "c-10:c+10",
+        yearSuffix: ""
+      }).datepicker()
+    </script>
+    </label><label>Until:<input type="text" name="periods[updated_at][end_date]" id="datepicker-to-updated-at" from_id="datepicker-from-updated-at" to_id="datepicker-to-updated-at" />
+    <script type='text/javascript'>
+      jQuery('#datepicker-to-updated-at').datepicker({
+        disabled: false,
+        altField: "",
+        altFormat: "",
+        appendText: "",
+        autoSize: false,
+        buttonImage: "",
+        buttonImageOnly: false,
+        buttonText: "...",
+        calculateWeek: "jQuery.datepicker.iso8601Week",
+        changeMonth: false,
+        changeYear: false,
+        closeText: "Done",
+        constrainInput: true,
+        currentText: "Today",
+        dateFormat: "yy-mm-dd",
+        dayNames: ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        dayNamesMin: ["Su","Mo","Tu","We","Th","Fr","Sa"],
+        dayNamesShort: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
+        defaultDate: null,
+        duration: "normal",
+        firstDay: 0,
+        gotoCurrent: false,
+        hideIfNoPrevNext: false,
+        isRTL: false,
+        maxDate: null,
+        minDate: null,
+        monthNames: ["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"],
+        monthNamesShort: ["Jan","Feb","Mar","Apr","maggio","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+        navigationAsDateFormat: false,
+        nextText: "Next",
+        numberOfMonths: 1,
+        prevText: "Prev",
+        selectOtherMonths: false,
+        shortYearCutoff: "+10",
+        showButtonPanel: false,
+        showCurrentAtPos: 0,
+        showMonthAfterYear: false,
+        showOn: "focus",
+        showOptions: {},
+        showOtherMonths: false,
+        showWeek: false,
+        stepMonths: 1,
+        weekHeader: "Wk",
+        yearRange: "c-10:c+10",
+        yearSuffix: ""
+      }).datepicker()
+    </script>
+    </label></div><input type="hidden" name="periods[updated_at][is_metadata]" id="periods_updated_at_is_metadata" value="false" /></div>
+    <div class="period" id="published-at-period"><h2>Published at</h2><div><label>From:<input type="text" name="periods[published_at][start_date]" id="datepicker-from-published-at" from_id="datepicker-from-published-at" to_id="datepicker-to-published-at" />
+    <script type='text/javascript'>
+      jQuery('#datepicker-from-published-at').datepicker({
+        disabled: false,
+        altField: "",
+        altFormat: "",
+        appendText: "",
+        autoSize: false,
+        buttonImage: "",
+        buttonImageOnly: false,
+        buttonText: "...",
+        calculateWeek: "jQuery.datepicker.iso8601Week",
+        changeMonth: false,
+        changeYear: false,
+        closeText: "Done",
+        constrainInput: true,
+        currentText: "Today",
+        dateFormat: "yy-mm-dd",
+        dayNames: ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        dayNamesMin: ["Su","Mo","Tu","We","Th","Fr","Sa"],
+        dayNamesShort: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
+        defaultDate: null,
+        duration: "normal",
+        firstDay: 0,
+        gotoCurrent: false,
+        hideIfNoPrevNext: false,
+        isRTL: false,
+        maxDate: null,
+        minDate: null,
+        monthNames: ["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"],
+        monthNamesShort: ["Jan","Feb","Mar","Apr","maggio","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+        navigationAsDateFormat: false,
+        nextText: "Next",
+        numberOfMonths: 1,
+        prevText: "Prev",
+        selectOtherMonths: false,
+        shortYearCutoff: "+10",
+        showButtonPanel: false,
+        showCurrentAtPos: 0,
+        showMonthAfterYear: false,
+        showOn: "focus",
+        showOptions: {},
+        showOtherMonths: false,
+        showWeek: false,
+        stepMonths: 1,
+        weekHeader: "Wk",
+        yearRange: "c-10:c+10",
+        yearSuffix: ""
+      }).datepicker()
+    </script>
+    </label><label>Until:<input type="text" name="periods[published_at][end_date]" id="datepicker-to-published-at" from_id="datepicker-from-published-at" to_id="datepicker-to-published-at" />
+    <script type='text/javascript'>
+      jQuery('#datepicker-to-published-at').datepicker({
+        disabled: false,
+        altField: "",
+        altFormat: "",
+        appendText: "",
+        autoSize: false,
+        buttonImage: "",
+        buttonImageOnly: false,
+        buttonText: "...",
+        calculateWeek: "jQuery.datepicker.iso8601Week",
+        changeMonth: false,
+        changeYear: false,
+        closeText: "Done",
+        constrainInput: true,
+        currentText: "Today",
+        dateFormat: "yy-mm-dd",
+        dayNames: ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        dayNamesMin: ["Su","Mo","Tu","We","Th","Fr","Sa"],
+        dayNamesShort: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
+        defaultDate: null,
+        duration: "normal",
+        firstDay: 0,
+        gotoCurrent: false,
+        hideIfNoPrevNext: false,
+        isRTL: false,
+        maxDate: null,
+        minDate: null,
+        monthNames: ["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"],
+        monthNamesShort: ["Jan","Feb","Mar","Apr","maggio","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+        navigationAsDateFormat: false,
+        nextText: "Next",
+        numberOfMonths: 1,
+        prevText: "Prev",
+        selectOtherMonths: false,
+        shortYearCutoff: "+10",
+        showButtonPanel: false,
+        showCurrentAtPos: 0,
+        showMonthAfterYear: false,
+        showOn: "focus",
+        showOptions: {},
+        showOtherMonths: false,
+        showWeek: false,
+        stepMonths: 1,
+        weekHeader: "Wk",
+        yearRange: "c-10:c+10",
+        yearSuffix: ""
+      }).datepicker()
+    </script>
+    </label></div><input type="hidden" name="periods[published_at][is_metadata]" id="periods_published_at_is_metadata" value="false" /></div>
+</div>
+
+      </div>
+
+      <div id='search-column-right' class='search-column'>
+        <div id='search-content'>
+  <div class="map-or-list-search-results list"><div id="search-results" class="only-one-result-box">
+
+
+    <div class="search-results-articles search-results-box ">
+
+
+
+        <div class="search-results-innerbox search-results-type-article ">
+          <ul>
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/paulocatu/-paulo-enselmo---o-seu-espaco-cultural-na-internet/comunidade-da-fazenda-taua-inaugura-associacao-e-poco-artesiano">Comunidade da Fazenda Tauá inaugura Associação e Poço artesiano</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      <a href="/profile/paulocatu">Paulo </a>
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/paulocatu">Paulo </a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body"></td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/comunidade">comunidade</a>
+      <a class="search-article-tag" href="/tag/associa%C3%A7%C3%A3o">associação</a>
+      <a class="search-article-tag" href="/tag/damasceno">damasceno</a>
+      <a class="search-article-tag" href="/tag/artesiano">artesiano</a>
+      <a class="search-article-tag" href="/tag/po%C3%A7o">poço</a>
+      <a class="search-article-tag" href="/tag/catu">catu</a>
+      <a class="search-article-tag" href="/tag/tau%C3%A1">tauá</a>
+      <a class="search-article-tag" href="/tag/fazenda">fazenda</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 10 Marzo 2020.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/paulocatu/-paulo-enselmo---o-seu-espaco-cultural-na-internet/catu-fm-realiza-com-sucesso-o-i-encontro-de-comunicacao-de-catu">Catu FM realiza com sucesso o I encontro de comunicação de Catu</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/paulocatu">Paulo </a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body"></td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/encontro">encontro</a>
+      <a class="search-article-tag" href="/tag/comunica%C3%A7%C3%A3o">comunicação</a>
+      <a class="search-article-tag" href="/tag/catu">catu</a>
+      <a class="search-article-tag" href="/tag/radialistas">radialistas</a>
+      <a class="search-article-tag" href="/tag/comunicadores">comunicadores</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/paulocatu/-paulo-enselmo---o-seu-espaco-cultural-na-internet/participem-do-i-encontro-de-comunicacao-em-catuba">Participem do I Encontro de Comunicação em Catu(BA)</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/paulocatu">Paulo </a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body"></td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/encontro">encontro</a>
+      <a class="search-article-tag" href="/tag/comunica%C3%A7%C3%A3o">comunicação</a>
+      <a class="search-article-tag" href="/tag/catu">catu</a>
+      <a class="search-article-tag" href="/tag/bahia">bahia</a>
+      <a class="search-article-tag" href="/tag/uneb">uneb</a>
+      <a class="search-article-tag" href="/tag/radialistas">radialistas</a>
+      <a class="search-article-tag" href="/tag/comunicadores">comunicadores</a>
+      <a class="search-article-tag" href="/tag/catuense">catuense</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/paulocatu/104-noticias/entrevista-com-o-vereador-nego-be-em-catu-ba">Entrevista com o Vereador Nego Bé em Catu-BA</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/paulocatu">Paulo </a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">Uma informação que circula na sociedade catuense e tem causado grande repercussão na cidade é o fato de que o vereador Carlos Alberto conhecido popularmente no município de Catu como Nego Bé, estaria su...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/nego">nego</a>
+      <a class="search-article-tag" href="/tag/b%C3%A9">bé</a>
+      <a class="search-article-tag" href="/tag/vereador">vereador</a>
+      <a class="search-article-tag" href="/tag/catu">catu</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/paulocatu/-paulo-enselmo---o-seu-espaco-cultural-na-internet/catu-ba-divulga-edital-de-concurso">Catu (BA) divulga edital de concurso</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/paulocatu">Paulo </a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">A Prefeitura Municipal de Catu, no estado da Bahia, vai realizar Concurso Público para o preenchimento de 78 vagas em cargos de nível fundamental e médio, cujos salários variam de R$ 510,00 a R$ 805,20.</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/catu">catu</a>
+      <a class="search-article-tag" href="/tag/concurso">concurso</a>
+      <a class="search-article-tag" href="/tag/publico">publico</a>
+      <a class="search-article-tag" href="/tag/prefeitura">prefeitura</a>
+      <a class="search-article-tag" href="/tag/catu">catu</a>
+      <a class="search-article-tag" href="/tag/2010">2010</a>
+      <a class="search-article-tag" href="/tag/2011">2011</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/paulocatu/-paulo-enselmo---o-seu-espaco-cultural-na-internet/catu-ba-divulga-edital-de-concurso">Catu (BA) divulga edital de concurso</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/paulocatu">Paulo </a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">A Prefeitura Municipal de Catu, no estado da Bahia, vai realizar Concurso Público para o preenchimento de 78 vagas em cargos de nível fundamental e médio, cujos salários variam de R$ 510,00 a R$ 805,20.</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/catu">catu</a>
+      <a class="search-article-tag" href="/tag/concurso">concurso</a>
+      <a class="search-article-tag" href="/tag/publico">publico</a>
+      <a class="search-article-tag" href="/tag/prefeitura">prefeitura</a>
+      <a class="search-article-tag" href="/tag/catu">catu</a>
+      <a class="search-article-tag" href="/tag/2010">2010</a>
+      <a class="search-article-tag" href="/tag/2011">2011</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/paulocatu/-paulo-enselmo---o-seu-espaco-cultural-na-internet/i-grito-de-carnaval-do-clube-acec-em-catu-bahia">I GRITO DE CARNAVAL DO CLUBE ACEC EM CATU- BAHIA</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/paulocatu">Paulo </a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">Para reviver os grandes momentos dos antigos carnavais, o ACEC estará trazendo para Catu no dia *12/02/2011* *a partir das 22:00 H* a grandeOrquestra OS TURUNAS para fazer dançar ao som das velhas march...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/acec">acec</a>
+      <a class="search-article-tag" href="/tag/catu">catu</a>
+      <a class="search-article-tag" href="/tag/bahia">bahia</a>
+      <a class="search-article-tag" href="/tag/turunas">turunas</a>
+      <a class="search-article-tag" href="/tag/banda">banda</a>
+      <a class="search-article-tag" href="/tag/caramba">caramba</a>
+      <a class="search-article-tag" href="/tag/alagoinhas">alagoinhas</a>
+      <a class="search-article-tag" href="/tag/ax%C3%A9">axé</a>
+      <a class="search-article-tag" href="/tag/music">music</a>
+      <a class="search-article-tag" href="/tag/catu">catu</a>
+      <a class="search-article-tag" href="/tag/clube">clube</a>
+      <a class="search-article-tag" href="/tag/marchinha">marchinha</a>
+      <a class="search-article-tag" href="/tag/carnaval">carnaval</a>
+      <a class="search-article-tag" href="/tag/2011">2011</a>
+      <a class="search-article-tag" href="/tag/centro">centro</a>
+      <a class="search-article-tag" href="/tag/cidade">cidade</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/paulocatu/-paulo-enselmo---o-seu-espaco-cultural-na-internet/i-grito-de-carnaval-do-clube-acec-em-catu-bahia">I GRITO DE CARNAVAL DO CLUBE ACEC EM CATU- BAHIA</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/paulocatu">Paulo </a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">Para reviver os grandes momentos dos antigos carnavais, o ACEC estará trazendo para Catu no dia *12/02/2011* *a partir das 22:00 H* a grandeOrquestra OS TURUNAS para fazer dançar ao som das velhas march...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/acec">acec</a>
+      <a class="search-article-tag" href="/tag/catu">catu</a>
+      <a class="search-article-tag" href="/tag/bahia">bahia</a>
+      <a class="search-article-tag" href="/tag/turunas">turunas</a>
+      <a class="search-article-tag" href="/tag/banda">banda</a>
+      <a class="search-article-tag" href="/tag/caramba">caramba</a>
+      <a class="search-article-tag" href="/tag/alagoinhas">alagoinhas</a>
+      <a class="search-article-tag" href="/tag/ax%C3%A9">axé</a>
+      <a class="search-article-tag" href="/tag/music">music</a>
+      <a class="search-article-tag" href="/tag/catu">catu</a>
+      <a class="search-article-tag" href="/tag/clube">clube</a>
+      <a class="search-article-tag" href="/tag/marchinha">marchinha</a>
+      <a class="search-article-tag" href="/tag/carnaval">carnaval</a>
+      <a class="search-article-tag" href="/tag/2011">2011</a>
+      <a class="search-article-tag" href="/tag/centro">centro</a>
+      <a class="search-article-tag" href="/tag/cidade">cidade</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/paulocatu/-paulo-enselmo---o-seu-espaco-cultural-na-internet/resultado-das-eleicoes-presidenciais-2010-segundo-turno-em-catu-bahia">Resultado das eleições presidenciais 2010 segundo turno em Catu-Bahia</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/paulocatu">Paulo </a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">Confira o resultado das eleições presidenciais no município de Catu(BA) no segundo turno Dilma (PT) 23.653 votos (86,30%) José Serra (PSDB) 3.755 votos (13,70%)   Votos apurados: 29.760 Votos Válidos: 27...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/bahia">bahia</a>
+      <a class="search-article-tag" href="/tag/catu">catu</a>
+      <a class="search-article-tag" href="/tag/catu">catu</a>
+      <a class="search-article-tag" href="/tag/resultado">resultado</a>
+      <a class="search-article-tag" href="/tag/elei%C3%A7%C3%B5es">eleições</a>
+      <a class="search-article-tag" href="/tag/presidenciais">presidenciais</a>
+      <a class="search-article-tag" href="/tag/2010">2010</a>
+      <a class="search-article-tag" href="/tag/presidente">presidente</a>
+      <a class="search-article-tag" href="/tag/dilma">dilma</a>
+      <a class="search-article-tag" href="/tag/serra">serra</a>
+      <a class="search-article-tag" href="/tag/pt.%20psdb">pt. psdb</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/paulocatu/-paulo-enselmo---o-seu-espaco-cultural-na-internet/resultado-das-eleicoes-presidenciais-2010-segundo-turno-em-catu-bahia">Resultado das eleições presidenciais 2010 segundo turno em Catu-Bahia</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/paulocatu">Paulo </a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">Confira o resultado das eleições presidenciais no município de Catu(BA) no segundo turno Dilma (PT) 23.653 votos (86,30%) José Serra (PSDB) 3.755 votos (13,70%)   Votos apurados: 29.760 Votos Válidos: 27...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/bahia">bahia</a>
+      <a class="search-article-tag" href="/tag/catu">catu</a>
+      <a class="search-article-tag" href="/tag/catu">catu</a>
+      <a class="search-article-tag" href="/tag/resultado">resultado</a>
+      <a class="search-article-tag" href="/tag/elei%C3%A7%C3%B5es">eleições</a>
+      <a class="search-article-tag" href="/tag/presidenciais">presidenciais</a>
+      <a class="search-article-tag" href="/tag/2010">2010</a>
+      <a class="search-article-tag" href="/tag/presidente">presidente</a>
+      <a class="search-article-tag" href="/tag/dilma">dilma</a>
+      <a class="search-article-tag" href="/tag/serra">serra</a>
+      <a class="search-article-tag" href="/tag/pt.%20psdb">pt. psdb</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-gallery article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/paulocatu/galerias-de-fotos/praca-duque-de-caxias-.-catu-bahia">Praça Duque de Caxias .:: CATU- BAHIA</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-gallery-items">
+          <a class="search-image-pic pic-num1" style="background-image: url(/thumbnails/0026/1719/pa290309_thumb.jpg)" href="http://softwarelivre.org/paulocatu/galerias-de-fotos/praca-duque-de-caxias-.-catu-bahia/pa290309.jpg?view=true"></a>
+          <a class="search-image-pic pic-num2" style="background-image: url(/thumbnails/0026/1720/pa290310_thumb.jpg)" href="http://softwarelivre.org/paulocatu/galerias-de-fotos/praca-duque-de-caxias-.-catu-bahia/pa290310.jpg?view=true"></a>
+          <a class="search-image-pic pic-num3" style="background-image: url(/thumbnails/0026/1721/pa290304_thumb.jpg)" href="http://softwarelivre.org/paulocatu/galerias-de-fotos/praca-duque-de-caxias-.-catu-bahia/pa290304.jpg?view=true"></a>
+    </div>
+</div>
+
+  </div>
+
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/paulocatu">Paulo </a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">#</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/catu">catu</a>
+      <a class="search-article-tag" href="/tag/pra%C3%A7a">praça</a>
+      <a class="search-article-tag" href="/tag/duque">duque</a>
+      <a class="search-article-tag" href="/tag/caxias">caxias</a>
+      <a class="search-article-tag" href="/tag/catu">catu</a>
+      <a class="search-article-tag" href="/tag/bahia">bahia</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 12 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+
+              
+                <li class="search-gallery article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/paulocatu/galerias-de-fotos/praca-duque-de-caxias-.-catu-bahia">Praça Duque de Caxias .:: CATU- BAHIA</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-gallery-items">
+          <a class="search-image-pic pic-num1" style="background-image: url(/thumbnails/0026/1719/pa290309_thumb.jpg)" href="http://softwarelivre.org/paulocatu/galerias-de-fotos/praca-duque-de-caxias-.-catu-bahia/pa290309.jpg?view=true"></a>
+          <a class="search-image-pic pic-num2" style="background-image: url(/thumbnails/0026/1720/pa290310_thumb.jpg)" href="http://softwarelivre.org/paulocatu/galerias-de-fotos/praca-duque-de-caxias-.-catu-bahia/pa290310.jpg?view=true"></a>
+          <a class="search-image-pic pic-num3" style="background-image: url(/thumbnails/0026/1721/pa290304_thumb.jpg)" href="http://softwarelivre.org/paulocatu/galerias-de-fotos/praca-duque-de-caxias-.-catu-bahia/pa290304.jpg?view=true"></a>
+    </div>
+</div>
+
+  </div>
+
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/paulocatu">Paulo </a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">#</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/catu">catu</a>
+      <a class="search-article-tag" href="/tag/pra%C3%A7a">praça</a>
+      <a class="search-article-tag" href="/tag/duque">duque</a>
+      <a class="search-article-tag" href="/tag/caxias">caxias</a>
+      <a class="search-article-tag" href="/tag/catu">catu</a>
+      <a class="search-article-tag" href="/tag/bahia">bahia</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 12 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/paulocatu/-paulo-enselmo---o-seu-espaco-cultural-na-internet/catu-historia">Catu: História</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/paulocatu">Paulo </a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">A História da cidade de Catu(BA) será parte integrante do site oficial &quot;Paulo Enselmo.:: Na trilha da cultura livre&quot;, que já está no AR em fase de testes e além destes aspectos históricos da cidade, trab...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/catu">catu</a>
+      <a class="search-article-tag" href="/tag/historia">historia</a>
+      <a class="search-article-tag" href="/tag/catu">catu</a>
+      <a class="search-article-tag" href="/tag/bahia">bahia</a>
+      <a class="search-article-tag" href="/tag/hist%C3%B3ria">história</a>
+      <a class="search-article-tag" href="/tag/enselmo">enselmo</a>
+      <a class="search-article-tag" href="/tag/software">software</a>
+      <a class="search-article-tag" href="/tag/livre">livre</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/paulocatu/-paulo-enselmo---o-seu-espaco-cultural-na-internet/catu-historia">Catu: História</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/paulocatu">Paulo </a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">A História da cidade de Catu(BA) será parte integrante do site oficial &quot;Paulo Enselmo.:: Na trilha da cultura livre&quot;, que já está no AR em fase de testes e além destes aspectos históricos da cidade, trab...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/catu">catu</a>
+      <a class="search-article-tag" href="/tag/historia">historia</a>
+      <a class="search-article-tag" href="/tag/catu">catu</a>
+      <a class="search-article-tag" href="/tag/bahia">bahia</a>
+      <a class="search-article-tag" href="/tag/hist%C3%B3ria">história</a>
+      <a class="search-article-tag" href="/tag/enselmo">enselmo</a>
+      <a class="search-article-tag" href="/tag/software">software</a>
+      <a class="search-article-tag" href="/tag/livre">livre</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/paulocatu/videos/catu-um-video-que-mostra-a-nossa-cidade">Catu, um vídeo que mostra a nossa cidade</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/paulocatu">Paulo </a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">Catu é o título deste maravilhoso vídeo de autoria do catuense Cássio Góes que outrora assisti na internet e agora tenho o prazer de disponibilizá-lo aqui no site. Este vídeo segundo minhas pesquisas é u...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/video">video</a>
+      <a class="search-article-tag" href="/tag/audiovisual">audiovisual</a>
+      <a class="search-article-tag" href="/tag/cinelerra">cinelerra</a>
+      <a class="search-article-tag" href="/tag/ubuntu">ubuntu</a>
+      <a class="search-article-tag" href="/tag/representa%C3%A7%C3%A3o">representação</a>
+      <a class="search-article-tag" href="/tag/rec%C3%B4ncavo">recôncavo</a>
+      <a class="search-article-tag" href="/tag/comunica%C3%A7%C3%A3o">comunicação</a>
+      <a class="search-article-tag" href="/tag/catu">catu</a>
+      <a class="search-article-tag" href="/tag/tau%C3%A1">tauá</a>
+      <a class="search-article-tag" href="/tag/baix%C3%A3o">baixão</a>
+      <a class="search-article-tag" href="/tag/olheiros">olheiros</a>
+      <a class="search-article-tag" href="/tag/bahia">bahia</a>
+      <a class="search-article-tag" href="/tag/cultura">cultura</a>
+      <a class="search-article-tag" href="/tag/software">software</a>
+      <a class="search-article-tag" href="/tag/livre">livre</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/paulocatu/videos/liberado-o-video-do-i-arraia-do-tabaoie">Liberado o vídeo do I Arraiá do Tabaoiê</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/paulocatu">Paulo </a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">Assista o vídeo documental sobre o I Arraiá do tabaoiê que aconteceu na Fazenda Tauá (Catu) em Junho de 2010. Este material foi editado em software Livre, utilizando o Cinelerra no Ubuntu 10.04 Texto: P...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/video">video</a>
+      <a class="search-article-tag" href="/tag/audiovisual">audiovisual</a>
+      <a class="search-article-tag" href="/tag/cinelerra">cinelerra</a>
+      <a class="search-article-tag" href="/tag/ubuntu">ubuntu</a>
+      <a class="search-article-tag" href="/tag/representa%C3%A7%C3%A3o">representação</a>
+      <a class="search-article-tag" href="/tag/rec%C3%B4ncavo">recôncavo</a>
+      <a class="search-article-tag" href="/tag/comunica%C3%A7%C3%A3o">comunicação</a>
+      <a class="search-article-tag" href="/tag/catu">catu</a>
+      <a class="search-article-tag" href="/tag/tau%C3%A1">tauá</a>
+      <a class="search-article-tag" href="/tag/baix%C3%A3o">baixão</a>
+      <a class="search-article-tag" href="/tag/olheiros">olheiros</a>
+      <a class="search-article-tag" href="/tag/bahia">bahia</a>
+      <a class="search-article-tag" href="/tag/cultura">cultura</a>
+      <a class="search-article-tag" href="/tag/software">software</a>
+      <a class="search-article-tag" href="/tag/livre">livre</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/paulocatu/-paulo-enselmo---o-seu-espaco-cultural-na-internet/liberado-o-video-do-i-arraia-do-tabaoie"> Liberado o vídeo do I Arraiá do Tabaoiê</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/paulocatu">Paulo </a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">Assista o vídeo documental sobre o I Arraiá do tabaoiê que aconteceu na Fazenda Tauá (Catu) em Junho de 2010. Este material foi editado em software Livre, utilizando o Cinelerra no Ubuntu 10.04 Texto: P...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/video">video</a>
+      <a class="search-article-tag" href="/tag/audiovisual">audiovisual</a>
+      <a class="search-article-tag" href="/tag/cinelerra">cinelerra</a>
+      <a class="search-article-tag" href="/tag/ubuntu">ubuntu</a>
+      <a class="search-article-tag" href="/tag/representa%C3%A7%C3%A3o">representação</a>
+      <a class="search-article-tag" href="/tag/rec%C3%B4ncavo">recôncavo</a>
+      <a class="search-article-tag" href="/tag/comunica%C3%A7%C3%A3o">comunicação</a>
+      <a class="search-article-tag" href="/tag/catu">catu</a>
+      <a class="search-article-tag" href="/tag/tau%C3%A1">tauá</a>
+      <a class="search-article-tag" href="/tag/baix%C3%A3o">baixão</a>
+      <a class="search-article-tag" href="/tag/olheiros">olheiros</a>
+      <a class="search-article-tag" href="/tag/bahia">bahia</a>
+      <a class="search-article-tag" href="/tag/cultura">cultura</a>
+      <a class="search-article-tag" href="/tag/software">software</a>
+      <a class="search-article-tag" href="/tag/livre">livre</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/paulocatu/-paulo-enselmo---o-seu-espaco-cultural-na-internet/catu-um-video-que-mostra-a-nossa-cidade">Catu, um vídeo que mostra a nossa cidade</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/paulocatu">Paulo </a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">Catu é o título deste maravilhoso vídeo de autoria do catuense Cássio Góes que outrora  assisti na internet e agora tenho o prazer de disponibilizá-lo aqui no site. Este vídeo segundo minhas pesquisas é...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/video">video</a>
+      <a class="search-article-tag" href="/tag/cultura">cultura</a>
+      <a class="search-article-tag" href="/tag/catu">catu</a>
+      <a class="search-article-tag" href="/tag/audiovisual">audiovisual</a>
+      <a class="search-article-tag" href="/tag/apresenta%C3%A7%C3%A3o">apresentação</a>
+      <a class="search-article-tag" href="/tag/p%C3%BAblica">pública</a>
+      <a class="search-article-tag" href="/tag/filme">filme</a>
+      <a class="search-article-tag" href="/tag/documentario">documentario</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/paulocatu/-paulo-enselmo---o-seu-espaco-cultural-na-internet/catu-fm-inova-com-transmissao-livre-na-internet">Catu FM inova com transmissão livre na internet</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/paulocatu">Paulo </a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">A emissora de Rádio Catu FM que já utilizava softwares livres para edição de conteúdos multimídia  para publicação na web, deu um passo importante e passou a transmitir a sua programação na internet atr...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/software">software</a>
+      <a class="search-article-tag" href="/tag/livre">livre</a>
+      <a class="search-article-tag" href="/tag/servidor">servidor</a>
+      <a class="search-article-tag" href="/tag/streaming">streaming</a>
+      <a class="search-article-tag" href="/tag/catu">catu</a>
+      <a class="search-article-tag" href="/tag/bahia">bahia</a>
+      <a class="search-article-tag" href="/tag/metropolitana">metropolitana</a>
+      <a class="search-article-tag" href="/tag/radio">radio</a>
+      <a class="search-article-tag" href="/tag/web">web</a>
+      <a class="search-article-tag" href="/tag/c%C3%B3digo">código</a>
+      <a class="search-article-tag" href="/tag/aberto">aberto</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/paulocatu/-paulo-enselmo---o-seu-espaco-cultural-na-internet/comunidade-da-fazenda-taua-promovera-festa-em-comemoracao-ao-dia-dos-pais">Comunidade da Fazenda Tauá promoverá festa em comemoração ao dia dos pais</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/paulocatu">Paulo </a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">Está prevista para o próximo dia 8 de Agosto a festa em comemoração ao dia dos pais que acontecerá na fazenda Tauá, município de Catu. Iniciativa da comunidade local com o apoio da Catu FM. Uma das inov...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/festa">festa</a>
+      <a class="search-article-tag" href="/tag/pais">pais</a>
+      <a class="search-article-tag" href="/tag/comemora%C3%A7%C3%A3o">comemoração</a>
+      <a class="search-article-tag" href="/tag/r%C3%A1dio">rádio</a>
+      <a class="search-article-tag" href="/tag/comunicadores">comunicadores</a>
+      <a class="search-article-tag" href="/tag/catu">catu</a>
+      <a class="search-article-tag" href="/tag/fm">fm</a>
+      <a class="search-article-tag" href="/tag/104">104</a>
+      <a class="search-article-tag" href="/tag/bahia">bahia</a>
+      <a class="search-article-tag" href="/tag/munic%C3%ADpio">município</a>
+      <a class="search-article-tag" href="/tag/software">software</a>
+      <a class="search-article-tag" href="/tag/livre">livre</a>
+      <a class="search-article-tag" href="/tag/servidor">servidor</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+          </ul>
+        </div>
+    </div>
+
+  <div style="clear:both"></div>
+
+  <link rel="stylesheet" media="screen" href="/assets/vendor/jquery.fancybox-f18bccba6b2b1108ccca4462da78aa43.css" /><script src="/assets/vendor/jquery.fancybox.pack-c84445b4cd8162f8a15703d690ccc514.js"></script><script>
+//<![CDATA[
+apply_zoom_to_images("Zoom in")
+//]]>
+</script>
+</div>
+
+</div>
+    <div class="pagination"><span class="previous_page disabled"><span class="previous-arrow">&laquo; </span>Previous</span> <em class="current">1</em> <a rel="next" href="/search/articles?page=2&amp;tag=catu">2</a> <a class="next_page" rel="next" href="/search/articles?page=2&amp;tag=catu">Next<span class="next-arrow"> &raquo;</span></a></div>
+</div>
+
+      </div>
+
+</form>  <div style="clear: both"></div>
+</div>
+
+
+<script src="/assets/search-cd53876d91ad4bdc2de41314296e05ac.js"></script>
+
+<script src="https://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script>
+<script src="/assets/google_maps-254101fd37d91719e68ab390fb239658.js"></script>
+</div></div></div></div>
+  <br style='clear: both'/>
+</div><!-- end id="content-inner" -->
+
+        </div><!-- end id="content" -->
+      </div><!-- end id="wrap-2" -->
+    </div><!-- end id="wrap-1" -->
+    
+    <div id="footer">
+      <div id="theme-footer">
+        <div id="footer-environment">
+<div id="footer-links">
+  <ul>
+    <li><ul id="slbr-footer">
+        <li><a href="http://softwarelivre.org" id="slbr" class="link-this-page"><span>Software Livre - Brasil</span></a></li>
+        <li><a href="http://softwarelivre.org/tv"><span>TV Software Livre</span></a></li>
+        <li><a href="http://softwarelivre.org/radio"><span>Rádio Software Livre</span></a></li>
+        </ul></li>
+    <li><ul id="conheca-footer"><h3>Conheça</h3>
+        <li><a href="http://softwarelivre.org/portal/quem-somos">Quem Somos</a></li>
+        <li><a href="http://softwarelivre.org/portal/termos-de-uso">Termos de Uso</a></li>
+        <li><a href="http://softwarelivre.org/doc">Documentação</a></li>
+        <li><a href="http://softwarelivre.org/contact/portal/new">Fale Conosco</a></li>
+        </ul></li>
+    <li><ul id="colabore-footer"><h3>Colabore</h3>
+        <li><b><a href="http://softwarelivre.org/myprofile/portal/cms/suggest_an_article">Sugerir um Artigo</a></b></li>
+        <li><a href="http://softwarelivre.org/portal/melhorias">Sugerir Melhorias</a></li>
+        <li><a href="http://softwarelivre.org/portal/bugs">Reportar um Bug</a></li>
+        <li><a href="http://softwarelivre.org/portal/desenvolvimento">Desenvolvimento</a></li>
+        </ul></li>
+    <li><ul id="compartilhe-footer"><h3>Compartilhe</h3>
+        <li><b><!-- AddToAny BEGIN -->
+        <a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fsoftwarelivre.org&amp;linkname=SoftwareLivre.org">Compartilhar Isto!</a>
+        <script type="text/javascript">
+        var a2a_config = a2a_config || {};
+        a2a_config.linkname = "SoftwareLivre.org";
+        a2a_config.linkurl = "http://softwarelivre.org";
+        a2a_config.onclick = 1;
+        a2a_config.locale = "pt-BR";
+        a2a_config.num_services = 6;
+        a2a_config.prioritize = ["identi_ca", "twitter", "facebook", "google_buzz", "digg", "email"]
+        </script>
+        <script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END --></b></li>
+        <li><a href="http://softwarelivre.org/portal/eventos">Novos Eventos</a></li>
+        <li><a href="http://softwarelivre.org/portal/portfolio">Portfólio Livre</a></li>
+        <li><a href="http://softwarelivre.org/portal/divulgue">Páginas Amigas</a></li>
+        </ul></li>
+    <li><ul id="apoio-footer"><h3>Apoio</h3>
+        <li> <a href="http://softwarelivre.org/portal/apoio"><img src="/portal/anuncios/apoio.png" style="width:204px"><span>Apoio</span></img></a></li>
+        </ul></li>
+</div><!-- end id="footer-links" -->
+
+<div id="copyright">
+  © Copyleft 2015 -<a id="link-asl" href="http://associacao.softwarelivre.org/" title="Associação SoftwareLivre.org">ASL</a> - Alguns direitos reservados, exceto quando especificado em contrário e nos conteúdos replicados de outras fontes.
+  <p id="noosfero-license">Este site utiliza o software livre <a href="http://www.noosfero.org/" id="link-noosfero">Noosfero</a>, licenciado sob a licença <a href="http://www.gnu.org/licenses/agpl.html">GNU Affero General Public License</a>, versão 3 ou superior.  </p>
+</div><!-- end id="copyright" -->
+</div>
+
+<script type="text/javascript">
+  jQuery(function($) {
+    $(".highlights-block").insertAfter("#theme-header");
+    $(".action-home-index #block-695148").insertBefore("#block-666540");
+    $(".action-environment_design-index #block-695148").insertBefore("#block-666540");
+    $(".action-home-index #block-695454").insertAfter("#block-666540");
+    $(".action-environment_design-index #block-695454").insertAfter("#block-666540");
+    $("#site-title").prependTo("#top");
+    $("#user").insertAfter("#site-title");
+  });
+</script>
+
+      </div><!-- end id="theme-footer" -->
+      <div id="global-footer">
+        
+      </div><!-- end id="global-footer" -->
+    </div><!-- end id="footer" -->
+    
+    <script src="https://s7.addthis.com/js/152/addthis_widget.js"></script>
+    <!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+     var u = "piwik.colivre.coop.br/";
+     if(!u.match(/^https?/)){
+       var protocol = ("https:" == document.location.protocol ? "https" : "http");
+       u = protocol + '://' + u;
+     }
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 3]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.colivre.coop.br/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+  </body>
+</html>

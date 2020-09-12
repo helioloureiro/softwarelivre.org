@@ -1,0 +1,2314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" class="controller-search action-search-articles template-leftbottom theme-sl-default">
+  <head>
+    <title>Software Livre Brasil</title>
+    
+    <!--<meta http-equiv="refresh" content="1"/>-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    
+
+      <meta name="description" content="Software Livre Brasil" />
+
+    <!-- site root -->
+    <meta property="noosfero:root" content=""/>
+
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    
+
+    <script src="/assets/application-1c0930e8f260aafbc74c4fad04079409.js"></script>
+
+  
+  
+<script src="/javascripts/plugins/pg_search/search.js"></script>
+<script src="/javascripts/plugins/pg_search/profile_search_block.js"></script>
+<script src="/assets/plugins/require_auth_to_comment/hide_comment_form-c3a3727ea301c62930e11aab20ae74d4.js"></script>
+<script src="/assets/plugins/require_auth_to_comment/jquery.livequery.min-d1fe96eb7788079f6e550db2b6610365.js"></script>
+<script src="/assets/plugins/orders/javascripts/locale-17eaae2c136082dab9da1d91648b6a7e.js"></script>
+<script src="/assets/plugins/orders/javascripts/toggle_edit-f9da47bc0223fac8e5e5174c6ea24413.js"></script>
+<script src="/assets/plugins/orders/javascripts/sortable-table-ba58eb377fc175eb1e374be63d5454a3.js"></script>
+<script src="/assets/plugins/orders/javascripts/help-14515dc2f741beaa4b3d121df366af0d.js"></script>
+<script src="/assets/plugins/orders/javascripts/orders-560e35746985dc40b97851b13705cb26.js"></script>
+<script src="/assets/plugins/html5_video/video-channel-6aca45f93220c0910d8273dd2368004e.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/locale-17eaae2c136082dab9da1d91648b6a7e.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/toggle_edit-f9da47bc0223fac8e5e5174c6ea24413.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/sortable-table-ba58eb377fc175eb1e374be63d5454a3.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/suppliers-35473b9ebd4b9e65027e1bafa94dfdcd.js"></script>
+<script src="/assets/plugins/event/event-b1013aca7ce3cf0d4d5e6e10dc1f05b2.js"></script>
+<script src="/assets/plugins/display_content/javascripts/jstree/_lib/jquery-1.8.3-09dfd3b315fe6b24fbc309e36f5d70c3.js"></script>
+<script src="/assets/plugins/display_content/javascripts/jstree/jquery.jstree-563d09f7e7938a8a2f4207bfe6d48dd3.js"></script>
+<script src="/assets/plugins/container_block/container_block-7eae56f79aa8da8b64941d18d2972c7b.js"></script>
+<script src="/assets/plugins/delivery/javascripts/delivery-da5b2dac737692db94d5bdc654586171.js"></script>
+<script src="/assets/plugins/products/javascripts/products-a4c860d8dbebe524d554f0b5564e0428.js"></script><script src="/designs/themes/sl-default/theme.js"></script><script>
+//<![CDATA[
+render_all_jquery_ui_widgets()
+//]]>
+</script>
+    <link rel="stylesheet" media="screen" href="/assets/application-e0072ababb97032fa1a5d95fa09d897c.css" />
+<link rel="stylesheet" media="screen" href="/designs/templates/leftbottom/stylesheets/style.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/icons/default/style-b3a500c1e17f47b010a70fdb0103012e.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/icons/pidgin/style-138f7bb59f9d26296632e82eae162877.css" />
+<link rel="stylesheet" media="screen" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/people_block/style-c340afe175b0045c7f8669073a428a1c.css" />
+<link rel="stylesheet" media="screen" href="/stylesheets/plugins/pg_search/style.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/recent_content/style-e0d5f807f7056b173f6cf113c840ddc0.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/custom_forms/style-7870704d75309d55ffcaa827c59baa18.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/work_assignment/style-526deb629c3d9e7736f049b99c72a50a.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/require_auth_to_comment/style-66a0efab118159977ca0194806ef4bec.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/orders/style-feb7767bc71e62563ccab53642a6e4c2.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/html5_video/style-8f2b70d373ff7ec22b404d91b1b6f211.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/suppliers/style-64c71b3cd22994ada93abd55c70ea1ce.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/gallery_block/style-4547593291c3fca2ad50216cbb3dfdc9.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/send_email/style-976778195cb106e52b31d57242cdc01c.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/event/style-8f5f6a9b5a7724dbc4977d11c2e4321c.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/display_content/style-cf10f47511255685485ac51859c22a29.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/container_block/style-dd17a810971259abe7c31678e9d9c132.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/video/style-68d51000d73adab06c1dcd036011138d.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/delivery/style-aeef749320f3cdff642340f047806f9b.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/sub_organizations/style-88810bb91c1c70f63817f6f03295fd92.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/products/style-3147a337d78ccc54df05870c504166fd.css" />
+<link rel="stylesheet" media="screen" href="/designs/themes/sl-default/global.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/themes/sl-default/style-f317a60b59d0ee3e8048cb6eba54b282.css" />
+
+    
+    
+
+    <script type="text/javascript">
+      DEFAULT_LOADING_MESSAGE = 'loading...';
+      PERMANENT_NOTIFICATIONS = false;
+      noosfero.profile = null
+    </script>
+
+      
+<script src="/assets/tinymce/js/tinymce/tinymce-666c93593f34cd23b1f1e9177ab27cae.js"></script><script src="/assets/tinymce/js/tinymce/jquery.tinymce.min-33361c760deadb5b77610a12911056f2.js"></script><script src="/assets/tinymce-4df3fc98953118b704cdb7a023aafdc2.js"></script>
+<script type="text/javascript">
+tinymce.create('tinymce.plugins.MacrosPlugin', {
+  createControl: function(n, cm) {
+    switch (n) {
+       case 'macros':
+    }
+    return null;
+  }
+});
+
+function tinymce_macros_setup(editor) {
+}
+
+// Register plugin with a short name
+tinymce.PluginManager.add('macrosPlugin', tinymce.plugins.MacrosPlugin);
+
+jQuery(document).ready(function () {
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"it","selector":".tiny_mce","toolbar1":"fullscreen | insertfile undo redo | copy paste | bold italic underline | styleselect fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image","menubar":"edit insert view tools","toolbar2":"print preview code media | table | macros","macros_setup":[]})
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"it","selector":".tiny_mce_simple","toolbar1":"fullscreen | insertfile undo redo | copy paste | bold italic underline | styleselect fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image","menubar":false,"toolbar2":null,"macros_setup":[]})
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"it","selector":".tiny_mce_restricted","toolbar1":"bold italic underline | link","menubar":false,"toolbar2":null,"macros_setup":[]})
+});
+</script>
+
+
+  </head>
+  <body class="controller-search action-search-articles template-leftbottom">
+    <a href="#content" id="link-go-content"><span>Go to the content</span></a>
+    
+    <div id="global-header">
+      <!-- div class='supportbanner'>
+  <div class='content'>
+    <div class='banner-title'>Campanha de doação 2016</div>
+    <div class='banner-subtitle'>Ajude a <span class='asl'>ASL.Org</span> a realizar o <span class='fisl17'>FISL17</span>!</div>
+    <p>Ajude a Associação Software Livre.Org a continuar seu trabalho de 12 anos em prol do desenvolvimento e disseminação do Software Livre. Faça uma doação e ganhe um ingresso cortesia para o <span class='fisl17'>FISL17</span> e uma camiseta oficial do evento.</p>
+  </div>
+  <div class='footer-links'>
+    <a class='logo-fisl17' href='http://fisl.org.br' target='_blank'><span>fisl17</span></a>
+    <a class='logo-asl' href='http://asl.org' target='_blank'><span>ASL.org</span></a>
+    <a class='iot-fisl' href='http://segue.fisl17.softwarelivre.org' target='_blank'><span>Contribua para o fisl17</span></a>
+  </div>
+</div -->
+
+    </div>
+
+    <div id="wrap-1">
+      <div id="theme-header">
+        <div id="top">
+  <ul id="top-menu">
+    <li><a href="/"><span>Início</span></a></li>
+    <li><a id="submenu-people" href="/search/people"><span class="icon-menu-people">People</span></a><a class="up menu-submenu-trigger" id="submenu-people-trigger" onclick="toggleSubmenu(this, '', {&quot;More recent&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_recent&quot;},&quot;More active&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_active&quot;},&quot;More popular&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_popular&quot;}}); return false" href="#"><span>People menu</span></a></li>
+    <li><a id="submenu-communities" href="/search/communities"><span class="icon-menu-community">Communities</span></a><a class="up menu-submenu-trigger" id="submenu-communities-trigger" onclick="toggleSubmenu(this, '', {&quot;More recent&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_recent&quot;},&quot;More active&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_active&quot;},&quot;More popular&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_popular&quot;}}); return false" href="#"><span>Communities menu</span></a></li>
+    <li><a href="/profile/portal/events" id="submenu-events"><span class='icon-menu-events'>Events</span></a></li>
+    <li><a href="/doc"><span>Manual</span></a></li>
+    <li><a href="/portal/quem-somos" id="submenu-about"><span>About</span></a></li>
+  </ul>
+</div>
+
+      </div>
+      <div id="wrap-2">
+        <div id="user">
+    <span class='not-logged-in'>
+      <span class='login'><a id="link_login" onclick="return noosfero.modal.inline(&#39;#inlineLoginBox&#39;)" class="" href="/account/login"><i class="icon-menu-login"></i><strong>Login</strong></a></span>
+
+      <div id='inlineLoginBox' style='display: none;'>
+        <div class="login-box">
+
+<h2>Login</h2>
+
+
+
+
+<form action="/account/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="q4NgzIF8/aj0CWeC/FtMKvar/kkJkAR2nyp74j4YvsU269DN8yf/SxsSkhx62zZJuTo0igEcwyTCpkLmYZMYFw==" />
+
+     <div class="formfieldline"><label class="formlabel" for="main_user_login">Username / Email</label><div class="formfield type-text"><input id="main_user_login" onchange="this.value = convToValidLogin( this.value )" type="text" name="user[login]" /></div></div>
+
+     <div class="formfieldline"><label class="formlabel" for="user_password">Password</label><div class="formfield type-password"><input type="password" name="user[password]" id="user_password" /></div></div>
+
+     <div class='checkbox'>
+       <label>
+         <input type="checkbox" name="remember_me" id="remember_me" value="1" checked="checked" />
+         Keep me logged in
+       </label>
+     </div>
+
+     
+
+     <div class=" button-bar">
+       <input type="submit" name="commit" value="Log in" class="button with-text icon-login submit" />
+         <a class="button icon-close with-text modal-toggle modal-close" rel="deactivate" title="Cancel" href="#">&nbsp;<span>Cancel</span></a>
+<br style="clear: left;" /></div>
+</form>
+<div class=" button-bar">
+    <a class="button icon-add with-text" title="New user" href="/account/signup">&nbsp;<span>New user</span></a>
+
+    <a class="button icon-help with-text" title="I forgot my password!" href="/account/forgot_password">&nbsp;<span>I forgot my password!</span></a>
+<br style="clear: left;" /></div>
+</div><!-- end class="login-box" -->
+
+
+      </div>
+
+        <span class='or'>or</span> <span class='signup'><a href="/account/signup"><strong>Sign up</strong></a></span>
+    </span>
+  <form action="/search/articles" id="top-search" class="search_form clean" method="get">
+    <input name="query" size="15" title="Search..." onfocus="this.form.className='focused';" onblur="this.form.className=''" />
+    <div>Press <strong>Enter</strong> to send the search query.</div>
+    <script>
+//<![CDATA[
+jQuery("#user form input").hint();
+//]]>
+</script>
+  </form>
+</div><!-- end id="user" -->
+
+        <h1 id="site-title">
+          <a href="/"><span>Software livre Brasil</span></a>
+
+        </h1>
+        <div id="navigation">
+          <ul>
+            <div id="friends">
+<ul>
+  <li><a href="/portal"><span>+</span></a></li>
+  <li><a href="http://br-linux.org"><span>BR-Linux</span></a></li>
+  <li><a href="http://www.vivaolinux.com.br"><span>Viva o Linux</span></a></li>
+  <li><a href="http://www.revista.espiritolivre.org"><span>Revista Espírito Livre</span></a></li>
+  <li><a href="http://www.dicas-l.com.br"><span>Dicas-L</span></a></li>
+  <li><a href="http://www.sejalivre.org"><span>Seja Livre</span></a></li>
+  <li><a href="http://www.underlinux.com.br"><span>Under Linux</span></a></li>
+  <li><a href="http://www.sempreupdate.com.br"><span>Sempre Update</span></a></li>
+</ul>
+</div>
+<div id="external-links">
+<ul>
+  <li><a id="blogoosfero" title="Blogoosfero" href="http://blogoosfero.cc/software-livre" target="_blank"><span>Blogoosfero</span></a></li>
+  <li><a id="twitter" title="Twitter" href="https://twitter.com/PSLBrasil" target="_blank"><span>Twitter</span></a></li>
+  <li><a id="diaspora" title="Diaspora" href="https://diaspora.softwarelivre.org/u/pslbrasil" target="_blank"><span>Diaspora</span></a></li>
+  <li><a id="gnu-social" title="Quitter" href="https://quitter.se/pslbrasil" target="_blank"><span>Quitter</span></a></li>
+  <li><a id="feed" title="Feed" href="http://softwarelivre.org/portal/feed"><span>Feed</span></a></li>
+</ul>
+</div>
+
+          </ul>
+          <div id="navigation-end"></div>
+        </div><!-- end id="navigation" -->
+        <div id="content">
+          <div id="content-inner">
+  <div class="no-boxes"><div class="no-boxes-inner-1"><div class="no-boxes-inner-2"><div class="main-content"><h1>Search Results - <small>Tagged with apache</small></h1>
+
+<div class='search-form'>
+  <form class="search_form" action="/search/articles?tag=apache" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="data-remote" /><input type="hidden" name="authenticity_token" value="geBf67KjtPuDPYo75KxfdyuP4dSB8Jk5IYNH2Ok9U/0ciO/qwPi2GGwmf6ViLCUUZB4rF4l8Xmt8D37ctrb1Lw==" />
+
+    <div id='search-header'>
+  <ul id="assets-menu"><li class="selected"><a data-tag="apache" href="/search/articles">Contents</a></li>
+<li><a data-tag="apache" href="/search/people">People</a></li>
+<li><a data-tag="apache" href="/search/communities">Communities</a></li>
+<li><a data-tag="apache" href="/search/enterprises">Enterprises</a></li></ul>
+  <div id="search-filters"><select name="order" id="order"><option value="more_recent">More recent</option>
+<option value="more_popular">More popular</option>
+<option value="more_comments">More comments</option>
+<option value="more_relevant">More relevant</option></select>
+</div>
+  <div class="clear"></div>
+</div>
+
+<div id='search-subheader'>
+  
+</div>
+<div class="search-field">
+  <span class="formfield">
+    <input type="text" name="query" id="search-input" value="" size="50" placeholder="Type words about the content you're looking for" class="search-input-with-suggestions" data-asset="articles" />
+  </span>
+
+  <input type="submit" name="commit" value="Search" class="button with-text icon-search submit" />
+</div>
+
+
+
+
+
+    <div id='total-results'>
+  Total of 21 results
+</div>
+
+
+      <div id='search-column-left' class='search-column'>
+        <div id="facets">
+
+      <div id="types-facet" class="facet"><h2>Types</h2><input type="text" id="" placeholder="Refine options" class="facet-refine" /><div class="facets-block"><div class="facet-option "><input type="hidden" name="facets[attribute-type][TextArticle]" id="facets_attribute-type_TextArticle" value="0" /><input type="checkbox" name="facets[attribute-type][TextArticle]" id="checkbox-103" value="1" /><label for="checkbox-103">TextArticle</label><span class="facet-count">(18)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[attribute-type][Event]" id="facets_attribute-type_Event" value="0" /><input type="checkbox" name="facets[attribute-type][Event]" id="checkbox-104" value="1" /><label for="checkbox-104">Event</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[attribute-type][Blog]" id="facets_attribute-type_Blog" value="0" /><input type="checkbox" name="facets[attribute-type][Blog]" id="checkbox-105" value="1" /><label for="checkbox-105">Blog</label><span class="facet-count">(1)</span></div></div><a class="button icon-clear with-text clear-facet" data-facet="types-facet" title="Clear filters" href="/search/articles">&nbsp;<span>Clear filters</span></a></div>
+      <div id="content-types-facet" class="facet"><h2>Content types</h2><input type="text" id="" placeholder="Refine options" class="facet-refine" /><div class="facets-block"><div class="facet-option undefined-value"><input type="hidden" name="facets[attribute-content_type][ ]" id="facets_attribute-content_type__" value="0" /><input type="checkbox" name="facets[attribute-content_type][ ]" id="checkbox-106" value="1" /><label for="checkbox-106">Undefined</label><span class="facet-count">(21)</span></div></div><a class="button icon-clear with-text clear-facet" data-facet="content-types-facet" title="Clear filters" href="/search/articles">&nbsp;<span>Clear filters</span></a></div>
+      <div id="tags-facet" class="facet"><h2>Tags</h2><input type="text" id="" placeholder="Refine options" class="facet-refine" /><div class="facets-block"><div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5913]" id="facets_relation-acts_as_taggable_on_tag_5913" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5913]" id="checkbox-107" value="1" /><label for="checkbox-107">apache</label><span class="facet-count">(21)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1897]" id="facets_relation-acts_as_taggable_on_tag_1897" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1897]" id="checkbox-108" value="1" /><label for="checkbox-108">furusho</label><span class="facet-count">(8)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][11732]" id="facets_relation-acts_as_taggable_on_tag_11732" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][11732]" id="checkbox-109" value="1" /><label for="checkbox-109">libreoffice</label><span class="facet-count">(6)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][697]" id="facets_relation-acts_as_taggable_on_tag_697" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][697]" id="checkbox-110" value="1" /><label for="checkbox-110">odf</label><span class="facet-count">(5)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][959]" id="facets_relation-acts_as_taggable_on_tag_959" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][959]" id="checkbox-111" value="1" /><label for="checkbox-111">openoffice.org</label><span class="facet-count">(5)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][8]" id="facets_relation-acts_as_taggable_on_tag_8" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][8]" id="checkbox-112" value="1" /><label for="checkbox-112">software livre</label><span class="facet-count">(4)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][396]" id="facets_relation-acts_as_taggable_on_tag_396" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][396]" id="checkbox-113" value="1" /><label for="checkbox-113">curso</label><span class="facet-count">(4)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][11497]" id="facets_relation-acts_as_taggable_on_tag_11497" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][11497]" id="checkbox-114" value="1" /><label for="checkbox-114">tdf</label><span class="facet-count">(4)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][11498]" id="facets_relation-acts_as_taggable_on_tag_11498" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][11498]" id="checkbox-115" value="1" /><label for="checkbox-115">olivier</label><span class="facet-count">(3)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][968]" id="facets_relation-acts_as_taggable_on_tag_968" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][968]" id="checkbox-116" value="1" /><label for="checkbox-116">php</label><span class="facet-count">(3)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][363]" id="facets_relation-acts_as_taggable_on_tag_363" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][363]" id="checkbox-117" value="1" /><label for="checkbox-117">mysql</label><span class="facet-count">(3)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1910]" id="facets_relation-acts_as_taggable_on_tag_1910" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1910]" id="checkbox-118" value="1" /><label for="checkbox-118">treinamento</label><span class="facet-count">(3)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1362]" id="facets_relation-acts_as_taggable_on_tag_1362" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1362]" id="checkbox-119" value="1" /><label for="checkbox-119">java</label><span class="facet-count">(3)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][28849]" id="facets_relation-acts_as_taggable_on_tag_28849" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][28849]" id="checkbox-120" value="1" /><label for="checkbox-120">hadoop</label><span class="facet-count">(3)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][676]" id="facets_relation-acts_as_taggable_on_tag_676" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][676]" id="checkbox-121" value="1" /><label for="checkbox-121">broffice</label><span class="facet-count">(3)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2866]" id="facets_relation-acts_as_taggable_on_tag_2866" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2866]" id="checkbox-122" value="1" /><label for="checkbox-122">mazoni</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][140389]" id="facets_relation-acts_as_taggable_on_tag_140389" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][140389]" id="checkbox-123" value="1" /><label for="checkbox-123">alta</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][275]" id="facets_relation-acts_as_taggable_on_tag_275" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][275]" id="checkbox-124" value="1" /><label for="checkbox-124">desenvolvimento</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][642]" id="facets_relation-acts_as_taggable_on_tag_642" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][642]" id="checkbox-125" value="1" /><label for="checkbox-125">governo</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][28850]" id="facets_relation-acts_as_taggable_on_tag_28850" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][28850]" id="checkbox-126" value="1" /><label for="checkbox-126">bigdata</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1805]" id="facets_relation-acts_as_taggable_on_tag_1805" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1805]" id="checkbox-127" value="1" /><label for="checkbox-127">serpro</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][8878]" id="facets_relation-acts_as_taggable_on_tag_8878" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][8878]" id="checkbox-128" value="1" /><label for="checkbox-128">hands on</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][841]" id="facets_relation-acts_as_taggable_on_tag_841" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][841]" id="checkbox-129" value="1" /><label for="checkbox-129">servidor</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][163]" id="facets_relation-acts_as_taggable_on_tag_163" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][163]" id="checkbox-130" value="1" /><label for="checkbox-130">brasil</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][356]" id="facets_relation-acts_as_taggable_on_tag_356" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][356]" id="checkbox-131" value="1" /><label for="checkbox-131">linux</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][12862]" id="facets_relation-acts_as_taggable_on_tag_12862" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][12862]" id="checkbox-132" value="1" /><label for="checkbox-132">the document foundation</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5838]" id="facets_relation-acts_as_taggable_on_tag_5838" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5838]" id="checkbox-133" value="1" /><label for="checkbox-133">ibm</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1815]" id="facets_relation-acts_as_taggable_on_tag_1815" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1815]" id="checkbox-134" value="1" /><label for="checkbox-134">office</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1364]" id="facets_relation-acts_as_taggable_on_tag_1364" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1364]" id="checkbox-135" value="1" /><label for="checkbox-135">sun</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][138780]" id="facets_relation-acts_as_taggable_on_tag_138780" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][138780]" id="checkbox-136" value="1" /><label for="checkbox-136">simon</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1898]" id="facets_relation-acts_as_taggable_on_tag_1898" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1898]" id="checkbox-137" value="1" /><label for="checkbox-137">jomar</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][138197]" id="facets_relation-acts_as_taggable_on_tag_138197" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][138197]" id="checkbox-138" value="1" /><label for="checkbox-138">snep</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][16696]" id="facets_relation-acts_as_taggable_on_tag_16696" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][16696]" id="checkbox-139" value="1" /><label for="checkbox-139">nginx</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][406]" id="facets_relation-acts_as_taggable_on_tag_406" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][406]" id="checkbox-140" value="1" /><label for="checkbox-140">open source</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][12532]" id="facets_relation-acts_as_taggable_on_tag_12532" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][12532]" id="checkbox-141" value="1" /><label for="checkbox-141">awstats</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][141927]" id="facets_relation-acts_as_taggable_on_tag_141927" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][141927]" id="checkbox-142" value="1" /><label for="checkbox-142">geronimo</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][140033]" id="facets_relation-acts_as_taggable_on_tag_140033" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][140033]" id="checkbox-143" value="1" /><label for="checkbox-143">ogawa</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2108]" id="facets_relation-acts_as_taggable_on_tag_2108" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2108]" id="checkbox-144" value="1" /><label for="checkbox-144">erechim</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][7458]" id="facets_relation-acts_as_taggable_on_tag_7458" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][7458]" id="checkbox-145" value="1" /><label for="checkbox-145">varnish</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][682]" id="facets_relation-acts_as_taggable_on_tag_682" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][682]" id="checkbox-146" value="1" /><label for="checkbox-146">planilha</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][402]" id="facets_relation-acts_as_taggable_on_tag_402" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][402]" id="checkbox-147" value="1" /><label for="checkbox-147">texto</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][364]" id="facets_relation-acts_as_taggable_on_tag_364" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][364]" id="checkbox-148" value="1" /><label for="checkbox-148">openoffice</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][3052]" id="facets_relation-acts_as_taggable_on_tag_3052" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][3052]" id="checkbox-149" value="1" /><label for="checkbox-149">lançamento</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][140405]" id="facets_relation-acts_as_taggable_on_tag_140405" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][140405]" id="checkbox-150" value="1" /><label for="checkbox-150">pabx</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2093]" id="facets_relation-acts_as_taggable_on_tag_2093" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2093]" id="checkbox-151" value="1" /><label for="checkbox-151">lpi</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][22621]" id="facets_relation-acts_as_taggable_on_tag_22621" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][22621]" id="checkbox-152" value="1" /><label for="checkbox-152">aoobr</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][7553]" id="facets_relation-acts_as_taggable_on_tag_7553" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][7553]" id="checkbox-153" value="1" /><label for="checkbox-153">computerworld</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][7816]" id="facets_relation-acts_as_taggable_on_tag_7816" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][7816]" id="checkbox-154" value="1" /><label for="checkbox-154">redhat</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][140569]" id="facets_relation-acts_as_taggable_on_tag_140569" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][140569]" id="checkbox-155" value="1" /><label for="checkbox-155">apresntação</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][3972]" id="facets_relation-acts_as_taggable_on_tag_3972" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][3972]" id="checkbox-156" value="1" /><label for="checkbox-156">lamp</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][832]" id="facets_relation-acts_as_taggable_on_tag_832" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][832]" id="checkbox-157" value="1" /><label for="checkbox-157">voip</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][12533]" id="facets_relation-acts_as_taggable_on_tag_12533" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][12533]" id="checkbox-158" value="1" /><label for="checkbox-158">vhost</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][831]" id="facets_relation-acts_as_taggable_on_tag_831" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][831]" id="checkbox-159" value="1" /><label for="checkbox-159">asterisk</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][22623]" id="facets_relation-acts_as_taggable_on_tag_22623" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][22623]" id="checkbox-160" value="1" /><label for="checkbox-160">escritorio</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][130529]" id="facets_relation-acts_as_taggable_on_tag_130529" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][130529]" id="checkbox-161" value="1" /><label for="checkbox-161">mapreduce</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][142843]" id="facets_relation-acts_as_taggable_on_tag_142843" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][142843]" id="checkbox-162" value="1" /><label for="checkbox-162">apache shiro</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][307]" id="facets_relation-acts_as_taggable_on_tag_307" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][307]" id="checkbox-163" value="1" /><label for="checkbox-163">ruby</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5637]" id="facets_relation-acts_as_taggable_on_tag_5637" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5637]" id="checkbox-164" value="1" /><label for="checkbox-164">oracle</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][130528]" id="facets_relation-acts_as_taggable_on_tag_130528" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][130528]" id="checkbox-165" value="1" /><label for="checkbox-165">big data</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1733]" id="facets_relation-acts_as_taggable_on_tag_1733" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1733]" id="checkbox-166" value="1" /><label for="checkbox-166">latinoware</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][22620]" id="facets_relation-acts_as_taggable_on_tag_22620" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][22620]" id="checkbox-167" value="1" /><label for="checkbox-167">apacheoobr</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][516]" id="facets_relation-acts_as_taggable_on_tag_516" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][516]" id="checkbox-168" value="1" /><label for="checkbox-168">web</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][146673]" id="facets_relation-acts_as_taggable_on_tag_146673" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][146673]" id="checkbox-169" value="1" /><label for="checkbox-169">passenger</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][139267]" id="facets_relation-acts_as_taggable_on_tag_139267" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][139267]" id="checkbox-170" value="1" /><label for="checkbox-170">j2ee</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][823]" id="facets_relation-acts_as_taggable_on_tag_823" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][823]" id="checkbox-171" value="1" /><label for="checkbox-171">django</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1892]" id="facets_relation-acts_as_taggable_on_tag_1892" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1892]" id="checkbox-172" value="1" /><label for="checkbox-172">emprego</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][681]" id="facets_relation-acts_as_taggable_on_tag_681" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][681]" id="checkbox-173" value="1" /><label for="checkbox-173">calc</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][480]" id="facets_relation-acts_as_taggable_on_tag_480" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][480]" id="checkbox-174" value="1" /><label for="checkbox-174">python</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][22618]" id="facets_relation-acts_as_taggable_on_tag_22618" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][22618]" id="checkbox-175" value="1" /><label for="checkbox-175">apacheoo</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][20610]" id="facets_relation-acts_as_taggable_on_tag_20610" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][20610]" id="checkbox-176" value="1" /><label for="checkbox-176">servidor web</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][517]" id="facets_relation-acts_as_taggable_on_tag_517" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][517]" id="checkbox-177" value="1" /><label for="checkbox-177">framework</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][26866]" id="facets_relation-acts_as_taggable_on_tag_26866" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][26866]" id="checkbox-178" value="1" /><label for="checkbox-178">network</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][131869]" id="facets_relation-acts_as_taggable_on_tag_131869" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][131869]" id="checkbox-179" value="1" /><label for="checkbox-179">power point</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5842]" id="facets_relation-acts_as_taggable_on_tag_5842" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5842]" id="checkbox-180" value="1" /><label for="checkbox-180">telefonia</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][141929]" id="facets_relation-acts_as_taggable_on_tag_141929" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][141929]" id="checkbox-181" value="1" /><label for="checkbox-181">servidor de aplicação</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][683]" id="facets_relation-acts_as_taggable_on_tag_683" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][683]" id="checkbox-182" value="1" /><label for="checkbox-182">impress</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][3356]" id="facets_relation-acts_as_taggable_on_tag_3356" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][3356]" id="checkbox-183" value="1" /><label for="checkbox-183">software público</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2125]" id="facets_relation-acts_as_taggable_on_tag_2125" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2125]" id="checkbox-184" value="1" /><label for="checkbox-184">suporte</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][274]" id="facets_relation-acts_as_taggable_on_tag_274" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][274]" id="checkbox-185" value="1" /><label for="checkbox-185">perl</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][146674]" id="facets_relation-acts_as_taggable_on_tag_146674" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][146674]" id="checkbox-186" value="1" /><label for="checkbox-186">phusion</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][656]" id="facets_relation-acts_as_taggable_on_tag_656" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][656]" id="checkbox-187" value="1" /><label for="checkbox-187">microsoft</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][22619]" id="facets_relation-acts_as_taggable_on_tag_22619" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][22619]" id="checkbox-188" value="1" /><label for="checkbox-188">aoo</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][11736]" id="facets_relation-acts_as_taggable_on_tag_11736" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][11736]" id="checkbox-189" value="1" /><label for="checkbox-189">word</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][9186]" id="facets_relation-acts_as_taggable_on_tag_9186" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][9186]" id="checkbox-190" value="1" /><label for="checkbox-190">empresas</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][136133]" id="facets_relation-acts_as_taggable_on_tag_136133" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][136133]" id="checkbox-191" value="1" /><label for="checkbox-191">analista</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][679]" id="facets_relation-acts_as_taggable_on_tag_679" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][679]" id="checkbox-192" value="1" /><label for="checkbox-192">writer</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][699]" id="facets_relation-acts_as_taggable_on_tag_699" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][699]" id="checkbox-193" value="1" /><label for="checkbox-193">iso 26300</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1559]" id="facets_relation-acts_as_taggable_on_tag_1559" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1559]" id="checkbox-194" value="1" /><label for="checkbox-194">openldap</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][138256]" id="facets_relation-acts_as_taggable_on_tag_138256" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][138256]" id="checkbox-195" value="1" /><label for="checkbox-195">ror</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][11737]" id="facets_relation-acts_as_taggable_on_tag_11737" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][11737]" id="checkbox-196" value="1" /><label for="checkbox-196">excel</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][22622]" id="facets_relation-acts_as_taggable_on_tag_22622" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][22622]" id="checkbox-197" value="1" /><label for="checkbox-197">asf</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][20611]" id="facets_relation-acts_as_taggable_on_tag_20611" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][20611]" id="checkbox-198" value="1" /><label for="checkbox-198">http</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][144553]" id="facets_relation-acts_as_taggable_on_tag_144553" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][144553]" id="checkbox-199" value="1" /><label for="checkbox-199">medição de carga</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][141928]" id="facets_relation-acts_as_taggable_on_tag_141928" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][141928]" id="checkbox-200" value="1" /><label for="checkbox-200">apache geronimo</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][7410]" id="facets_relation-acts_as_taggable_on_tag_7410" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][7410]" id="checkbox-201" value="1" /><label for="checkbox-201">ruby on rails</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][143155]" id="facets_relation-acts_as_taggable_on_tag_143155" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][143155]" id="checkbox-202" value="1" /><label for="checkbox-202">fundação apache</label><span class="facet-count">(1)</span></div></div><a class="button icon-clear with-text clear-facet" data-facet="tags-facet" title="Clear filters" href="/search/articles">&nbsp;<span>Clear filters</span></a></div>
+
+    <div class="period" id="created-at-period"><h2>Created at</h2><div><label>From:<input type="text" name="periods[created_at][start_date]" id="datepicker-from-created-at" from_id="datepicker-from-created-at" to_id="datepicker-to-created-at" />
+    <script type='text/javascript'>
+      jQuery('#datepicker-from-created-at').datepicker({
+        disabled: false,
+        altField: "",
+        altFormat: "",
+        appendText: "",
+        autoSize: false,
+        buttonImage: "",
+        buttonImageOnly: false,
+        buttonText: "...",
+        calculateWeek: "jQuery.datepicker.iso8601Week",
+        changeMonth: false,
+        changeYear: false,
+        closeText: "Done",
+        constrainInput: true,
+        currentText: "Today",
+        dateFormat: "yy-mm-dd",
+        dayNames: ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        dayNamesMin: ["Su","Mo","Tu","We","Th","Fr","Sa"],
+        dayNamesShort: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
+        defaultDate: null,
+        duration: "normal",
+        firstDay: 0,
+        gotoCurrent: false,
+        hideIfNoPrevNext: false,
+        isRTL: false,
+        maxDate: null,
+        minDate: null,
+        monthNames: ["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"],
+        monthNamesShort: ["Jan","Feb","Mar","Apr","maggio","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+        navigationAsDateFormat: false,
+        nextText: "Next",
+        numberOfMonths: 1,
+        prevText: "Prev",
+        selectOtherMonths: false,
+        shortYearCutoff: "+10",
+        showButtonPanel: false,
+        showCurrentAtPos: 0,
+        showMonthAfterYear: false,
+        showOn: "focus",
+        showOptions: {},
+        showOtherMonths: false,
+        showWeek: false,
+        stepMonths: 1,
+        weekHeader: "Wk",
+        yearRange: "c-10:c+10",
+        yearSuffix: ""
+      }).datepicker()
+    </script>
+    </label><label>Until:<input type="text" name="periods[created_at][end_date]" id="datepicker-to-created-at" from_id="datepicker-from-created-at" to_id="datepicker-to-created-at" />
+    <script type='text/javascript'>
+      jQuery('#datepicker-to-created-at').datepicker({
+        disabled: false,
+        altField: "",
+        altFormat: "",
+        appendText: "",
+        autoSize: false,
+        buttonImage: "",
+        buttonImageOnly: false,
+        buttonText: "...",
+        calculateWeek: "jQuery.datepicker.iso8601Week",
+        changeMonth: false,
+        changeYear: false,
+        closeText: "Done",
+        constrainInput: true,
+        currentText: "Today",
+        dateFormat: "yy-mm-dd",
+        dayNames: ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        dayNamesMin: ["Su","Mo","Tu","We","Th","Fr","Sa"],
+        dayNamesShort: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
+        defaultDate: null,
+        duration: "normal",
+        firstDay: 0,
+        gotoCurrent: false,
+        hideIfNoPrevNext: false,
+        isRTL: false,
+        maxDate: null,
+        minDate: null,
+        monthNames: ["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"],
+        monthNamesShort: ["Jan","Feb","Mar","Apr","maggio","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+        navigationAsDateFormat: false,
+        nextText: "Next",
+        numberOfMonths: 1,
+        prevText: "Prev",
+        selectOtherMonths: false,
+        shortYearCutoff: "+10",
+        showButtonPanel: false,
+        showCurrentAtPos: 0,
+        showMonthAfterYear: false,
+        showOn: "focus",
+        showOptions: {},
+        showOtherMonths: false,
+        showWeek: false,
+        stepMonths: 1,
+        weekHeader: "Wk",
+        yearRange: "c-10:c+10",
+        yearSuffix: ""
+      }).datepicker()
+    </script>
+    </label></div><input type="hidden" name="periods[created_at][is_metadata]" id="periods_created_at_is_metadata" value="false" /></div>
+    <div class="period" id="updated-at-period"><h2>Updated at</h2><div><label>From:<input type="text" name="periods[updated_at][start_date]" id="datepicker-from-updated-at" from_id="datepicker-from-updated-at" to_id="datepicker-to-updated-at" />
+    <script type='text/javascript'>
+      jQuery('#datepicker-from-updated-at').datepicker({
+        disabled: false,
+        altField: "",
+        altFormat: "",
+        appendText: "",
+        autoSize: false,
+        buttonImage: "",
+        buttonImageOnly: false,
+        buttonText: "...",
+        calculateWeek: "jQuery.datepicker.iso8601Week",
+        changeMonth: false,
+        changeYear: false,
+        closeText: "Done",
+        constrainInput: true,
+        currentText: "Today",
+        dateFormat: "yy-mm-dd",
+        dayNames: ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        dayNamesMin: ["Su","Mo","Tu","We","Th","Fr","Sa"],
+        dayNamesShort: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
+        defaultDate: null,
+        duration: "normal",
+        firstDay: 0,
+        gotoCurrent: false,
+        hideIfNoPrevNext: false,
+        isRTL: false,
+        maxDate: null,
+        minDate: null,
+        monthNames: ["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"],
+        monthNamesShort: ["Jan","Feb","Mar","Apr","maggio","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+        navigationAsDateFormat: false,
+        nextText: "Next",
+        numberOfMonths: 1,
+        prevText: "Prev",
+        selectOtherMonths: false,
+        shortYearCutoff: "+10",
+        showButtonPanel: false,
+        showCurrentAtPos: 0,
+        showMonthAfterYear: false,
+        showOn: "focus",
+        showOptions: {},
+        showOtherMonths: false,
+        showWeek: false,
+        stepMonths: 1,
+        weekHeader: "Wk",
+        yearRange: "c-10:c+10",
+        yearSuffix: ""
+      }).datepicker()
+    </script>
+    </label><label>Until:<input type="text" name="periods[updated_at][end_date]" id="datepicker-to-updated-at" from_id="datepicker-from-updated-at" to_id="datepicker-to-updated-at" />
+    <script type='text/javascript'>
+      jQuery('#datepicker-to-updated-at').datepicker({
+        disabled: false,
+        altField: "",
+        altFormat: "",
+        appendText: "",
+        autoSize: false,
+        buttonImage: "",
+        buttonImageOnly: false,
+        buttonText: "...",
+        calculateWeek: "jQuery.datepicker.iso8601Week",
+        changeMonth: false,
+        changeYear: false,
+        closeText: "Done",
+        constrainInput: true,
+        currentText: "Today",
+        dateFormat: "yy-mm-dd",
+        dayNames: ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        dayNamesMin: ["Su","Mo","Tu","We","Th","Fr","Sa"],
+        dayNamesShort: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
+        defaultDate: null,
+        duration: "normal",
+        firstDay: 0,
+        gotoCurrent: false,
+        hideIfNoPrevNext: false,
+        isRTL: false,
+        maxDate: null,
+        minDate: null,
+        monthNames: ["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"],
+        monthNamesShort: ["Jan","Feb","Mar","Apr","maggio","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+        navigationAsDateFormat: false,
+        nextText: "Next",
+        numberOfMonths: 1,
+        prevText: "Prev",
+        selectOtherMonths: false,
+        shortYearCutoff: "+10",
+        showButtonPanel: false,
+        showCurrentAtPos: 0,
+        showMonthAfterYear: false,
+        showOn: "focus",
+        showOptions: {},
+        showOtherMonths: false,
+        showWeek: false,
+        stepMonths: 1,
+        weekHeader: "Wk",
+        yearRange: "c-10:c+10",
+        yearSuffix: ""
+      }).datepicker()
+    </script>
+    </label></div><input type="hidden" name="periods[updated_at][is_metadata]" id="periods_updated_at_is_metadata" value="false" /></div>
+    <div class="period" id="published-at-period"><h2>Published at</h2><div><label>From:<input type="text" name="periods[published_at][start_date]" id="datepicker-from-published-at" from_id="datepicker-from-published-at" to_id="datepicker-to-published-at" />
+    <script type='text/javascript'>
+      jQuery('#datepicker-from-published-at').datepicker({
+        disabled: false,
+        altField: "",
+        altFormat: "",
+        appendText: "",
+        autoSize: false,
+        buttonImage: "",
+        buttonImageOnly: false,
+        buttonText: "...",
+        calculateWeek: "jQuery.datepicker.iso8601Week",
+        changeMonth: false,
+        changeYear: false,
+        closeText: "Done",
+        constrainInput: true,
+        currentText: "Today",
+        dateFormat: "yy-mm-dd",
+        dayNames: ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        dayNamesMin: ["Su","Mo","Tu","We","Th","Fr","Sa"],
+        dayNamesShort: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
+        defaultDate: null,
+        duration: "normal",
+        firstDay: 0,
+        gotoCurrent: false,
+        hideIfNoPrevNext: false,
+        isRTL: false,
+        maxDate: null,
+        minDate: null,
+        monthNames: ["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"],
+        monthNamesShort: ["Jan","Feb","Mar","Apr","maggio","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+        navigationAsDateFormat: false,
+        nextText: "Next",
+        numberOfMonths: 1,
+        prevText: "Prev",
+        selectOtherMonths: false,
+        shortYearCutoff: "+10",
+        showButtonPanel: false,
+        showCurrentAtPos: 0,
+        showMonthAfterYear: false,
+        showOn: "focus",
+        showOptions: {},
+        showOtherMonths: false,
+        showWeek: false,
+        stepMonths: 1,
+        weekHeader: "Wk",
+        yearRange: "c-10:c+10",
+        yearSuffix: ""
+      }).datepicker()
+    </script>
+    </label><label>Until:<input type="text" name="periods[published_at][end_date]" id="datepicker-to-published-at" from_id="datepicker-from-published-at" to_id="datepicker-to-published-at" />
+    <script type='text/javascript'>
+      jQuery('#datepicker-to-published-at').datepicker({
+        disabled: false,
+        altField: "",
+        altFormat: "",
+        appendText: "",
+        autoSize: false,
+        buttonImage: "",
+        buttonImageOnly: false,
+        buttonText: "...",
+        calculateWeek: "jQuery.datepicker.iso8601Week",
+        changeMonth: false,
+        changeYear: false,
+        closeText: "Done",
+        constrainInput: true,
+        currentText: "Today",
+        dateFormat: "yy-mm-dd",
+        dayNames: ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        dayNamesMin: ["Su","Mo","Tu","We","Th","Fr","Sa"],
+        dayNamesShort: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
+        defaultDate: null,
+        duration: "normal",
+        firstDay: 0,
+        gotoCurrent: false,
+        hideIfNoPrevNext: false,
+        isRTL: false,
+        maxDate: null,
+        minDate: null,
+        monthNames: ["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"],
+        monthNamesShort: ["Jan","Feb","Mar","Apr","maggio","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+        navigationAsDateFormat: false,
+        nextText: "Next",
+        numberOfMonths: 1,
+        prevText: "Prev",
+        selectOtherMonths: false,
+        shortYearCutoff: "+10",
+        showButtonPanel: false,
+        showCurrentAtPos: 0,
+        showMonthAfterYear: false,
+        showOn: "focus",
+        showOptions: {},
+        showOtherMonths: false,
+        showWeek: false,
+        stepMonths: 1,
+        weekHeader: "Wk",
+        yearRange: "c-10:c+10",
+        yearSuffix: ""
+      }).datepicker()
+    </script>
+    </label></div><input type="hidden" name="periods[published_at][is_metadata]" id="periods_published_at_is_metadata" value="false" /></div>
+</div>
+
+      </div>
+
+      <div id='search-column-right' class='search-column'>
+        <div id='search-content'>
+  <div class="map-or-list-search-results list"><div id="search-results" class="only-one-result-box">
+
+
+    <div class="search-results-articles search-results-box ">
+
+
+
+        <div class="search-results-innerbox search-results-type-article ">
+          <ul>
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/marciojv/blog/treinamento-em-big-data-open-source-com-apache-hadoop-sao-paulo">Treinamento em Big Data Open Source com Apache Hadoop - São Paulo</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Marcio Junior Vieira
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/marciojv">Marcio Junior Vieira</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">Entre 25 a 27 de Julho a Ambiente Livre estará em São Paulo ministrando a capacitação em Big Data Open Source com Apache Hadoop. Sendo esta uma oportunidade unica para profissionais que queiram entrar de...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/hadoop">hadoop</a>
+      <a class="search-article-tag" href="/tag/big%20data">big data</a>
+      <a class="search-article-tag" href="/tag/apache">apache</a>
+      <a class="search-article-tag" href="/tag/mapreduce">mapreduce</a>
+      <a class="search-article-tag" href="/tag/treinamento">treinamento</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/hadoop/blog/treinamento-em-hadoop-curitiba">Treinamento em Hadoop - Curitiba</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Marcio Junior Vieira
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/hadoop">Hadoop</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">Prezados , ainda temos vagas na turma de Hadoop que aconteçe em Abril em Curitiba. O curso abordará todos assuntos fundamentais desta plataforma de Big Data. Saiba mais em : http://www.ambientelivre.com....</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/hadoop">hadoop</a>
+      <a class="search-article-tag" href="/tag/apache">apache</a>
+      <a class="search-article-tag" href="/tag/bigdata">bigdata</a>
+      <a class="search-article-tag" href="/tag/treinamento">treinamento</a>
+      <a class="search-article-tag" href="/tag/curso">curso</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Updated by <a href="http://softwarelivre.org/marciojv">Marcio Junior Vieira</a> at 14 Gennaio 2018</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/marciojv/blog/curso-apache-hadoop-big-data-open-source">Curso Apache Hadoop - Big Data Open Source</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/marciojv">Marcio Junior Vieira</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">Após capacitar mais de 300 profissionais em Business Intelligence Open Source no Brasil, a Ambiente Livre Tecnologia lança o treinamento de Big Data Open Source com Apache Hadoop. Sendo este um dos prime...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/hadoop">hadoop</a>
+      <a class="search-article-tag" href="/tag/bigdata">bigdata</a>
+      <a class="search-article-tag" href="/tag/apache">apache</a>
+      <a class="search-article-tag" href="/tag/open%20source">open source</a>
+      <a class="search-article-tag" href="/tag/curso">curso</a>
+      <a class="search-article-tag" href="/tag/treinamento">treinamento</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/marcelosoaressouza/blog-do-marcelo-soares-souza/phusion-passenger-4.0-beta-1">Phusion Passenger 4.0 beta 1</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/marcelosoaressouza">Marcelo Soares Souza</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">Phusion Passenger o módulo do Apache e Nginx para implantação de aplicativos web Ruby (Rails) e Python (Django) disponibilizou a primeira versão beta do Passenger 4.0, trazendo muitas novidades, dentre e...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/django">django</a>
+      <a class="search-article-tag" href="/tag/ruby%20on%20rails">ruby on rails</a>
+      <a class="search-article-tag" href="/tag/nginx">nginx</a>
+      <a class="search-article-tag" href="/tag/ruby">ruby</a>
+      <a class="search-article-tag" href="/tag/ror">ror</a>
+      <a class="search-article-tag" href="/tag/python">python</a>
+      <a class="search-article-tag" href="/tag/phusion">phusion</a>
+      <a class="search-article-tag" href="/tag/desenvolvimento">desenvolvimento</a>
+      <a class="search-article-tag" href="/tag/web">web</a>
+      <a class="search-article-tag" href="/tag/software%20livre">software livre</a>
+      <a class="search-article-tag" href="/tag/passenger">passenger</a>
+      <a class="search-article-tag" href="/tag/apache">apache</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/marcelosoaressouza/blog-do-marcelo-soares-souza/apache-jmeter-2.7">Apache JMeter 2.7</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/marcelosoaressouza">Marcelo Soares Souza</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">Originalmente: http://h-online.com/-1585273 A versão 2.7 do Apache JMeter chegou e traz um novo sistema de amostragem (sampling) para processos de sistema operacional, JMS aprimorado e gráficos e relatór...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/apache">apache</a>
+      <a class="search-article-tag" href="/tag/software%20livre">software livre</a>
+      <a class="search-article-tag" href="/tag/medi%C3%A7%C3%A3o%20de%20carga">medição de carga</a>
+      <a class="search-article-tag" href="/tag/java">java</a>
+      <a class="search-article-tag" href="/tag/lan%C3%A7amento">lançamento</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-blog article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/apache-openoffice-brasil/blog-da-apacheoobr">Blog da ApacheOOBr</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-blog"></div>
+</div>
+
+  </div>
+
+  <table class="noborder search-content-second-column">
+    <tr class="search-blog-items">
+      <td class="search-field-label">Last posts</td>
+
+      <td class="">
+          <a class="search-blog-sample-item icon icon-blog" href="http://softwarelivre.org/apache-openoffice-brasil/blog-da-apacheoobr/latinoware-%E2%80%9Cpais-perdera-ainda-mais-talentos-se-nao-valorizar-as-mulheres%E2%80%9D">Latinoware: “País perderá ainda mais talentos se não valorizar as mulheres”</a>
+          <a class="search-blog-sample-item icon icon-blog" href="http://softwarelivre.org/apache-openoffice-brasil/blog-da-apacheoobr/the-document-foundation-anuncia-a-nova-versao-libreoffice-3.6.2">The Document Foundation anuncia a nova versão LibreOffice 3.6.2</a>
+        
+      </td>
+    </tr>
+
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/apache-openoffice-brasil">Apache OpenOffice Brasil</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">#</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/apacheoo">apacheoo</a>
+      <a class="search-article-tag" href="/tag/aoo">aoo</a>
+      <a class="search-article-tag" href="/tag/apacheoobr">apacheoobr</a>
+      <a class="search-article-tag" href="/tag/apache">apache</a>
+      <a class="search-article-tag" href="/tag/aoobr">aoobr</a>
+      <a class="search-article-tag" href="/tag/asf">asf</a>
+      <a class="search-article-tag" href="/tag/office">office</a>
+      <a class="search-article-tag" href="/tag/escritorio">escritorio</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both;"/></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/marcelosoaressouza/blog-do-marcelo-soares-souza/apache-2.4-servidor-web-on-steroids">Apache 2.4 Servidor Web &quot;On Steroids&quot;</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/marcelosoaressouza">Marcelo Soares Souza</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">A fundação Apache disponibilizou oficialmente o Apache 2.4, a versão 2.4.1 (http://ftp.unicamp.br/pub/apache//httpd/httpd-2.4.1.tar.bz2) inicia uma novo branch de produção (GA) do servidor web líder a ma...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/funda%C3%A7%C3%A3o%20apache">fundação apache</a>
+      <a class="search-article-tag" href="/tag/apache">apache</a>
+      <a class="search-article-tag" href="/tag/http">http</a>
+      <a class="search-article-tag" href="/tag/software%20livre">software livre</a>
+      <a class="search-article-tag" href="/tag/servidor%20web">servidor web</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/furusho/blog/apache-shiro-framework-para-seguranca-de-aplicativos-ganha-novos-recursos">Apache Shiro: Framework para segurança de aplicativos ganha novos recursos</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/furusho">Vitorio Furusho</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">Quatorze meses depois de seu primeiro lançamento como um projeto de alta-prioridade da Apache, os desenvolvedores do Apache Shiro lançaram a versão 1.2.0, a primeira grande atualização do framework para...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/apache%20shiro">apache shiro</a>
+      <a class="search-article-tag" href="/tag/java">java</a>
+      <a class="search-article-tag" href="/tag/apache">apache</a>
+      <a class="search-article-tag" href="/tag/furusho">furusho</a>
+      <a class="search-article-tag" href="/tag/framework">framework</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/marcelosoaressouza/blog-do-marcelo-soares-souza/servidor-de-aplicacao-j2ee-apache-geronimo-3.0-beta1-e-disponibilizado">Servidor de Aplicação J2EE Apache Geronimo 3.0 beta1 é disponibilizado</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/marcelosoaressouza">Marcelo Soares Souza</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">O Projeto Apache Geronimo anunciou o lançamento do servidor de aplicação Apache Geronimo 3.0 beta1. Esta versão passou 100% nos testes de certificação Java Enterprise Edition 6.0 Full Profile e Web Profi...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/java">java</a>
+      <a class="search-article-tag" href="/tag/apache">apache</a>
+      <a class="search-article-tag" href="/tag/geronimo">geronimo</a>
+      <a class="search-article-tag" href="/tag/desenvolvimento">desenvolvimento</a>
+      <a class="search-article-tag" href="/tag/j2ee">j2ee</a>
+      <a class="search-article-tag" href="/tag/apache%20geronimo">apache geronimo</a>
+      <a class="search-article-tag" href="/tag/servidor%20de%20aplica%C3%A7%C3%A3o">servidor de aplicação</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/furusho/blog/libreoffice-e-apache-openoffice.org">LibreOffice e Apache OpenOffice.org </a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/furusho">Vitorio Furusho</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">Como sabem, sou membro do Steering Commitee da The Document Foundation e por ser atuante no trabalho feito dentro da TDF, a cessão do código levantou muitos questionamentos que não vi esclarecidos na en...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/libreoffice">libreoffice</a>
+      <a class="search-article-tag" href="/tag/openoffice.org">openoffice.org</a>
+      <a class="search-article-tag" href="/tag/olivier">olivier</a>
+      <a class="search-article-tag" href="/tag/tdf">tdf</a>
+      <a class="search-article-tag" href="/tag/furusho">furusho</a>
+      <a class="search-article-tag" href="/tag/apache">apache</a>
+      <a class="search-article-tag" href="/tag/odf">odf</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/furusho/blog/cisl-e-comunidades-fortalecem-suites-escritorio-livres">CISL e comunidades fortalecem suítes escritório livres</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/furusho">Vitorio Furusho</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">No dia 1º de julho, no Fórum Internacional Software Livre (Fisl), o Comitê Técnico de Implementação de Software Livre (CISL) assinou, juntamente, com as comunidades dos projetos LibreOffice e OpenOffice,...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/odf">odf</a>
+      <a class="search-article-tag" href="/tag/brasil">brasil</a>
+      <a class="search-article-tag" href="/tag/openoffice.org">openoffice.org</a>
+      <a class="search-article-tag" href="/tag/apache">apache</a>
+      <a class="search-article-tag" href="/tag/furusho">furusho</a>
+      <a class="search-article-tag" href="/tag/alta">alta</a>
+      <a class="search-article-tag" href="/tag/the%20document%20foundation">the document foundation</a>
+      <a class="search-article-tag" href="/tag/simon">simon</a>
+      <a class="search-article-tag" href="/tag/governo">governo</a>
+      <a class="search-article-tag" href="/tag/olivier">olivier</a>
+      <a class="search-article-tag" href="/tag/libreoffice">libreoffice</a>
+      <a class="search-article-tag" href="/tag/serpro">serpro</a>
+      <a class="search-article-tag" href="/tag/jomar">jomar</a>
+      <a class="search-article-tag" href="/tag/mazoni">mazoni</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/furusho/blog/brazil-signs-up-to-develop-office-suites">Brazil Signs Up To Develop Office Suites</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/furusho">Vitorio Furusho</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">At FISL in Brazil last week, I had the opportunity to speak as the co-presenter in a session about the evolution of OpenOffice.org – I think there will eventually be video of it. As Richard Hillesley obs...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/openoffice.org">openoffice.org</a>
+      <a class="search-article-tag" href="/tag/jomar">jomar</a>
+      <a class="search-article-tag" href="/tag/brasil">brasil</a>
+      <a class="search-article-tag" href="/tag/simon">simon</a>
+      <a class="search-article-tag" href="/tag/serpro">serpro</a>
+      <a class="search-article-tag" href="/tag/libreoffice">libreoffice</a>
+      <a class="search-article-tag" href="/tag/alta">alta</a>
+      <a class="search-article-tag" href="/tag/the%20document%20foundation">the document foundation</a>
+      <a class="search-article-tag" href="/tag/governo">governo</a>
+      <a class="search-article-tag" href="/tag/furusho">furusho</a>
+      <a class="search-article-tag" href="/tag/olivier">olivier</a>
+      <a class="search-article-tag" href="/tag/apache">apache</a>
+      <a class="search-article-tag" href="/tag/mazoni">mazoni</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/furusho/blog/the-document-foundation-anuncia-a-nova-versao-do-libreoffice-3.4.0">The Document Foundation anuncia a nova versão do LibreOffice 3.4.0</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/furusho">Vitorio Furusho</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">A Internet, 03 de junho de 2011 - A The Document Foundation anuncia o LibreOffice 3.4.0, um grande lançamento do pacote de escritório livre para produtividade pessoal desenvolvido por uma comunidade de...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/apresnta%C3%A7%C3%A3o">apresntação</a>
+      <a class="search-article-tag" href="/tag/oracle">oracle</a>
+      <a class="search-article-tag" href="/tag/iso%2026300">iso 26300</a>
+      <a class="search-article-tag" href="/tag/planilha">planilha</a>
+      <a class="search-article-tag" href="/tag/openoffice">openoffice</a>
+      <a class="search-article-tag" href="/tag/ogawa">ogawa</a>
+      <a class="search-article-tag" href="/tag/libreoffice">libreoffice</a>
+      <a class="search-article-tag" href="/tag/power%20point">power point</a>
+      <a class="search-article-tag" href="/tag/excel">excel</a>
+      <a class="search-article-tag" href="/tag/office">office</a>
+      <a class="search-article-tag" href="/tag/apache">apache</a>
+      <a class="search-article-tag" href="/tag/microsoft">microsoft</a>
+      <a class="search-article-tag" href="/tag/word">word</a>
+      <a class="search-article-tag" href="/tag/texto">texto</a>
+      <a class="search-article-tag" href="/tag/broffice">broffice</a>
+      <a class="search-article-tag" href="/tag/impress">impress</a>
+      <a class="search-article-tag" href="/tag/odf">odf</a>
+      <a class="search-article-tag" href="/tag/calc">calc</a>
+      <a class="search-article-tag" href="/tag/tdf">tdf</a>
+      <a class="search-article-tag" href="/tag/writer">writer</a>
+      <a class="search-article-tag" href="/tag/furusho">furusho</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/furusho/blog/computerworld-oracle-doa-codigo-do-openoffice.org-para-fundacao-apache">Computerworld: Oracle doa código do OpenOffice.org para fundação Apache</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/furusho">Vitorio Furusho</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">Anúncio acontece dois meses depois de a Oracle oficializar que deixaria de desenvolver a suíte de OpenOffice, passando-a para as mãos da comunidade open source. A Oracle anunciou hoje (1/6) que doou o c...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/computerworld">computerworld</a>
+      <a class="search-article-tag" href="/tag/apache">apache</a>
+      <a class="search-article-tag" href="/tag/odf">odf</a>
+      <a class="search-article-tag" href="/tag/sun">sun</a>
+      <a class="search-article-tag" href="/tag/ibm">ibm</a>
+      <a class="search-article-tag" href="/tag/libreoffice">libreoffice</a>
+      <a class="search-article-tag" href="/tag/tdf">tdf</a>
+      <a class="search-article-tag" href="/tag/furusho">furusho</a>
+      <a class="search-article-tag" href="/tag/broffice">broffice</a>
+      <a class="search-article-tag" href="/tag/openoffice.org">openoffice.org</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/furusho/blog/esclarecimentos-sobre-a-doacao-dos-ativos-do-openoffice.org-da-oracle-para-a-fundacao-apache">Esclarecimentos sobre a doação dos ativos do OpenOffice.org da Oracle para a fundação Apache</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/furusho">Vitorio Furusho</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">The  Document Foundation constitui-se de um time global de centenas de desenvolvedores trabalhando juntos para melhorar o produto LibreOffice em benefício de todos os usuários. Somos governados por uma c...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/tdf">tdf</a>
+      <a class="search-article-tag" href="/tag/openoffice.org">openoffice.org</a>
+      <a class="search-article-tag" href="/tag/broffice">broffice</a>
+      <a class="search-article-tag" href="/tag/odf">odf</a>
+      <a class="search-article-tag" href="/tag/libreoffice">libreoffice</a>
+      <a class="search-article-tag" href="/tag/furusho">furusho</a>
+      <a class="search-article-tag" href="/tag/ibm">ibm</a>
+      <a class="search-article-tag" href="/tag/apache">apache</a>
+      <a class="search-article-tag" href="/tag/sun">sun</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-event-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/baptista/blog/curso-hands-on-lamp-profissional-turma-1">Curso Hands On - LAMP Profissional (Turma 1)</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-event"></div>
+</div>
+
+  </div>
+
+  <table class="noborder search-content-second-column">
+      <tr class="search-article-event-date">
+        <td class="search-field-label">Start date</td>
+        <td class="article-item-date">2011-06-04 00:00:00 UTC</td>
+      </tr>
+      <tr class="search-article-event-date">
+        <td class="search-field-label">End date</td>
+        <td class="article-item-date">2011-06-04 00:00:00 UTC</td>
+      </tr>
+
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/baptista">Paulo Henrique Baptista de Oliveira</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">#</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/curso">curso</a>
+      <a class="search-article-tag" href="/tag/hands%20on">hands on</a>
+      <a class="search-article-tag" href="/tag/linux">linux</a>
+      <a class="search-article-tag" href="/tag/servidor">servidor</a>
+      <a class="search-article-tag" href="/tag/mysql">mysql</a>
+      <a class="search-article-tag" href="/tag/apache">apache</a>
+      <a class="search-article-tag" href="/tag/php">php</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 28 Maggio 2011.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/furusho/blog/lancamento-do-sistema-snep-pbx-sobre-ip">Lançamento do Sistema SNEP - PBX sobre IP</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/furusho">Vitorio Furusho</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">Nesta quarta-feira, dia 04 de Maio, foi disponibilizado oficialmente o software público SNEP que é um software de Telecomunicação para Configuração de Centrais Telefônicas de PBX sobre IP. Trata-se de um...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/telefonia">telefonia</a>
+      <a class="search-article-tag" href="/tag/empresas">empresas</a>
+      <a class="search-article-tag" href="/tag/software%20p%C3%BAblico">software público</a>
+      <a class="search-article-tag" href="/tag/mysql">mysql</a>
+      <a class="search-article-tag" href="/tag/latinoware">latinoware</a>
+      <a class="search-article-tag" href="/tag/asterisk">asterisk</a>
+      <a class="search-article-tag" href="/tag/furusho">furusho</a>
+      <a class="search-article-tag" href="/tag/snep">snep</a>
+      <a class="search-article-tag" href="/tag/php">php</a>
+      <a class="search-article-tag" href="/tag/apache">apache</a>
+      <a class="search-article-tag" href="/tag/voip">voip</a>
+      <a class="search-article-tag" href="/tag/pabx">pabx</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/edicarlos/edi-carlos-moura/servidor-web-apache">Servidor Web Apache</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/edicarlos">Edi Carlos</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">O que é o Apache?   O servidor Apache ou Servidor HTTP Apache é o servidor web mais utilizado do mundo. De acordo com uma análise realizada em 2009 pela Netcraft 66,6% de todos os sites da web rodavam em...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/apache">apache</a>
+      <a class="search-article-tag" href="/tag/software%20livre">software livre</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/joenio/blog/awstats-varnish-e-virtualhosts">AWStats, Varnish e virtualhosts</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/joenio">Joenio Costa</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">Se você usa AWStats para gerar estatísticas do seu site e seu servidor tem multiplos virtualhosts rodando sob o Varnish então você vai precisar configurar o Varnish pra guardar o virtualhost nos logs, c...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/varnish">varnish</a>
+      <a class="search-article-tag" href="/tag/apache">apache</a>
+      <a class="search-article-tag" href="/tag/awstats">awstats</a>
+      <a class="search-article-tag" href="/tag/perl">perl</a>
+      <a class="search-article-tag" href="/tag/vhost">vhost</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-event-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/baptista/blog/curso-hands-on-lamp-profissional">Curso Hands On - LAMP Profissional</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-event"></div>
+</div>
+
+  </div>
+
+  <table class="noborder search-content-second-column">
+      <tr class="search-article-event-date">
+        <td class="search-field-label">Start date</td>
+        <td class="article-item-date">2010-09-18 00:00:00 UTC</td>
+      </tr>
+      <tr class="search-article-event-date">
+        <td class="search-field-label">End date</td>
+        <td class="article-item-date">2010-09-18 00:00:00 UTC</td>
+      </tr>
+
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/baptista">Paulo Henrique Baptista de Oliveira</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">#</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/curso">curso</a>
+      <a class="search-article-tag" href="/tag/hands%20on">hands on</a>
+      <a class="search-article-tag" href="/tag/lamp">lamp</a>
+      <a class="search-article-tag" href="/tag/servidor">servidor</a>
+      <a class="search-article-tag" href="/tag/linux">linux</a>
+      <a class="search-article-tag" href="/tag/apache">apache</a>
+      <a class="search-article-tag" href="/tag/php">php</a>
+      <a class="search-article-tag" href="/tag/mysql">mysql</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 4 Settembre 2010.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+          </ul>
+        </div>
+    </div>
+
+  <div style="clear:both"></div>
+
+  <link rel="stylesheet" media="screen" href="/assets/vendor/jquery.fancybox-f18bccba6b2b1108ccca4462da78aa43.css" /><script src="/assets/vendor/jquery.fancybox.pack-c84445b4cd8162f8a15703d690ccc514.js"></script><script>
+//<![CDATA[
+apply_zoom_to_images("Zoom in")
+//]]>
+</script>
+</div>
+
+</div>
+    <div class="pagination"><span class="previous_page disabled"><span class="previous-arrow">&laquo; </span>Previous</span> <em class="current">1</em> <a rel="next" href="/search/articles?page=2&amp;tag=apache">2</a> <a class="next_page" rel="next" href="/search/articles?page=2&amp;tag=apache">Next<span class="next-arrow"> &raquo;</span></a></div>
+</div>
+
+      </div>
+
+</form>  <div style="clear: both"></div>
+</div>
+
+
+<script src="/assets/search-cd53876d91ad4bdc2de41314296e05ac.js"></script>
+
+<script src="https://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script>
+<script src="/assets/google_maps-254101fd37d91719e68ab390fb239658.js"></script>
+</div></div></div></div>
+  <br style='clear: both'/>
+</div><!-- end id="content-inner" -->
+
+        </div><!-- end id="content" -->
+      </div><!-- end id="wrap-2" -->
+    </div><!-- end id="wrap-1" -->
+    
+    <div id="footer">
+      <div id="theme-footer">
+        <div id="footer-environment">
+<div id="footer-links">
+  <ul>
+    <li><ul id="slbr-footer">
+        <li><a href="http://softwarelivre.org" id="slbr" class="link-this-page"><span>Software Livre - Brasil</span></a></li>
+        <li><a href="http://softwarelivre.org/tv"><span>TV Software Livre</span></a></li>
+        <li><a href="http://softwarelivre.org/radio"><span>Rádio Software Livre</span></a></li>
+        </ul></li>
+    <li><ul id="conheca-footer"><h3>Conheça</h3>
+        <li><a href="http://softwarelivre.org/portal/quem-somos">Quem Somos</a></li>
+        <li><a href="http://softwarelivre.org/portal/termos-de-uso">Termos de Uso</a></li>
+        <li><a href="http://softwarelivre.org/doc">Documentação</a></li>
+        <li><a href="http://softwarelivre.org/contact/portal/new">Fale Conosco</a></li>
+        </ul></li>
+    <li><ul id="colabore-footer"><h3>Colabore</h3>
+        <li><b><a href="http://softwarelivre.org/myprofile/portal/cms/suggest_an_article">Sugerir um Artigo</a></b></li>
+        <li><a href="http://softwarelivre.org/portal/melhorias">Sugerir Melhorias</a></li>
+        <li><a href="http://softwarelivre.org/portal/bugs">Reportar um Bug</a></li>
+        <li><a href="http://softwarelivre.org/portal/desenvolvimento">Desenvolvimento</a></li>
+        </ul></li>
+    <li><ul id="compartilhe-footer"><h3>Compartilhe</h3>
+        <li><b><!-- AddToAny BEGIN -->
+        <a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fsoftwarelivre.org&amp;linkname=SoftwareLivre.org">Compartilhar Isto!</a>
+        <script type="text/javascript">
+        var a2a_config = a2a_config || {};
+        a2a_config.linkname = "SoftwareLivre.org";
+        a2a_config.linkurl = "http://softwarelivre.org";
+        a2a_config.onclick = 1;
+        a2a_config.locale = "pt-BR";
+        a2a_config.num_services = 6;
+        a2a_config.prioritize = ["identi_ca", "twitter", "facebook", "google_buzz", "digg", "email"]
+        </script>
+        <script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END --></b></li>
+        <li><a href="http://softwarelivre.org/portal/eventos">Novos Eventos</a></li>
+        <li><a href="http://softwarelivre.org/portal/portfolio">Portfólio Livre</a></li>
+        <li><a href="http://softwarelivre.org/portal/divulgue">Páginas Amigas</a></li>
+        </ul></li>
+    <li><ul id="apoio-footer"><h3>Apoio</h3>
+        <li> <a href="http://softwarelivre.org/portal/apoio"><img src="/portal/anuncios/apoio.png" style="width:204px"><span>Apoio</span></img></a></li>
+        </ul></li>
+</div><!-- end id="footer-links" -->
+
+<div id="copyright">
+  © Copyleft 2015 -<a id="link-asl" href="http://associacao.softwarelivre.org/" title="Associação SoftwareLivre.org">ASL</a> - Alguns direitos reservados, exceto quando especificado em contrário e nos conteúdos replicados de outras fontes.
+  <p id="noosfero-license">Este site utiliza o software livre <a href="http://www.noosfero.org/" id="link-noosfero">Noosfero</a>, licenciado sob a licença <a href="http://www.gnu.org/licenses/agpl.html">GNU Affero General Public License</a>, versão 3 ou superior.  </p>
+</div><!-- end id="copyright" -->
+</div>
+
+<script type="text/javascript">
+  jQuery(function($) {
+    $(".highlights-block").insertAfter("#theme-header");
+    $(".action-home-index #block-695148").insertBefore("#block-666540");
+    $(".action-environment_design-index #block-695148").insertBefore("#block-666540");
+    $(".action-home-index #block-695454").insertAfter("#block-666540");
+    $(".action-environment_design-index #block-695454").insertAfter("#block-666540");
+    $("#site-title").prependTo("#top");
+    $("#user").insertAfter("#site-title");
+  });
+</script>
+
+      </div><!-- end id="theme-footer" -->
+      <div id="global-footer">
+        
+      </div><!-- end id="global-footer" -->
+    </div><!-- end id="footer" -->
+    
+    <script src="https://s7.addthis.com/js/152/addthis_widget.js"></script>
+    <!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+     var u = "piwik.colivre.coop.br/";
+     if(!u.match(/^https?/)){
+       var protocol = ("https:" == document.location.protocol ? "https" : "http");
+       u = protocol + '://' + u;
+     }
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 3]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.colivre.coop.br/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+  </body>
+</html>

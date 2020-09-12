@@ -1,0 +1,895 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt" class="controller-search action-search-people template-leftbottom theme-sl-default">
+  <head>
+    <title>Software Livre Brasil</title>
+    
+    <!--<meta http-equiv="refresh" content="1"/>-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    
+
+      <meta name="description" content="Software Livre Brasil" />
+
+    <!-- site root -->
+    <meta property="noosfero:root" content=""/>
+
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    
+
+    <script src="/assets/application-1c0930e8f260aafbc74c4fad04079409.js"></script>
+
+  
+  
+<script src="/javascripts/plugins/pg_search/search.js"></script>
+<script src="/javascripts/plugins/pg_search/profile_search_block.js"></script>
+<script src="/assets/plugins/require_auth_to_comment/hide_comment_form-c3a3727ea301c62930e11aab20ae74d4.js"></script>
+<script src="/assets/plugins/require_auth_to_comment/jquery.livequery.min-d1fe96eb7788079f6e550db2b6610365.js"></script>
+<script src="/assets/plugins/orders/javascripts/locale-17eaae2c136082dab9da1d91648b6a7e.js"></script>
+<script src="/assets/plugins/orders/javascripts/toggle_edit-f9da47bc0223fac8e5e5174c6ea24413.js"></script>
+<script src="/assets/plugins/orders/javascripts/sortable-table-ba58eb377fc175eb1e374be63d5454a3.js"></script>
+<script src="/assets/plugins/orders/javascripts/help-14515dc2f741beaa4b3d121df366af0d.js"></script>
+<script src="/assets/plugins/orders/javascripts/orders-560e35746985dc40b97851b13705cb26.js"></script>
+<script src="/assets/plugins/html5_video/video-channel-6aca45f93220c0910d8273dd2368004e.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/locale-17eaae2c136082dab9da1d91648b6a7e.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/toggle_edit-f9da47bc0223fac8e5e5174c6ea24413.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/sortable-table-ba58eb377fc175eb1e374be63d5454a3.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/suppliers-35473b9ebd4b9e65027e1bafa94dfdcd.js"></script>
+<script src="/assets/plugins/event/event-b1013aca7ce3cf0d4d5e6e10dc1f05b2.js"></script>
+<script src="/assets/plugins/display_content/javascripts/jstree/_lib/jquery-1.8.3-09dfd3b315fe6b24fbc309e36f5d70c3.js"></script>
+<script src="/assets/plugins/display_content/javascripts/jstree/jquery.jstree-563d09f7e7938a8a2f4207bfe6d48dd3.js"></script>
+<script src="/assets/plugins/container_block/container_block-7eae56f79aa8da8b64941d18d2972c7b.js"></script>
+<script src="/assets/plugins/delivery/javascripts/delivery-da5b2dac737692db94d5bdc654586171.js"></script>
+<script src="/assets/plugins/products/javascripts/products-a4c860d8dbebe524d554f0b5564e0428.js"></script><script src="/designs/themes/sl-default/theme.js"></script><script>
+//<![CDATA[
+render_all_jquery_ui_widgets()
+//]]>
+</script>
+    <link rel="stylesheet" media="screen" href="/assets/application-e0072ababb97032fa1a5d95fa09d897c.css" />
+<link rel="stylesheet" media="screen" href="/designs/templates/leftbottom/stylesheets/style.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/icons/default/style-b3a500c1e17f47b010a70fdb0103012e.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/icons/pidgin/style-138f7bb59f9d26296632e82eae162877.css" />
+<link rel="stylesheet" media="screen" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/people_block/style-c340afe175b0045c7f8669073a428a1c.css" />
+<link rel="stylesheet" media="screen" href="/stylesheets/plugins/pg_search/style.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/recent_content/style-e0d5f807f7056b173f6cf113c840ddc0.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/custom_forms/style-7870704d75309d55ffcaa827c59baa18.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/work_assignment/style-526deb629c3d9e7736f049b99c72a50a.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/require_auth_to_comment/style-66a0efab118159977ca0194806ef4bec.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/orders/style-feb7767bc71e62563ccab53642a6e4c2.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/html5_video/style-8f2b70d373ff7ec22b404d91b1b6f211.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/suppliers/style-64c71b3cd22994ada93abd55c70ea1ce.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/gallery_block/style-4547593291c3fca2ad50216cbb3dfdc9.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/send_email/style-976778195cb106e52b31d57242cdc01c.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/event/style-8f5f6a9b5a7724dbc4977d11c2e4321c.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/display_content/style-cf10f47511255685485ac51859c22a29.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/container_block/style-dd17a810971259abe7c31678e9d9c132.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/video/style-68d51000d73adab06c1dcd036011138d.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/delivery/style-aeef749320f3cdff642340f047806f9b.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/sub_organizations/style-88810bb91c1c70f63817f6f03295fd92.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/products/style-3147a337d78ccc54df05870c504166fd.css" />
+<link rel="stylesheet" media="screen" href="/designs/themes/sl-default/global.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/themes/sl-default/style-f317a60b59d0ee3e8048cb6eba54b282.css" />
+
+    
+    
+
+    <script type="text/javascript">
+      DEFAULT_LOADING_MESSAGE = 'loading...';
+      PERMANENT_NOTIFICATIONS = false;
+      noosfero.profile = null
+    </script>
+
+      
+<script src="/assets/tinymce/js/tinymce/tinymce-666c93593f34cd23b1f1e9177ab27cae.js"></script><script src="/assets/tinymce/js/tinymce/jquery.tinymce.min-33361c760deadb5b77610a12911056f2.js"></script><script src="/assets/tinymce-4df3fc98953118b704cdb7a023aafdc2.js"></script>
+<script type="text/javascript">
+tinymce.create('tinymce.plugins.MacrosPlugin', {
+  createControl: function(n, cm) {
+    switch (n) {
+       case 'macros':
+    }
+    return null;
+  }
+});
+
+function tinymce_macros_setup(editor) {
+}
+
+// Register plugin with a short name
+tinymce.PluginManager.add('macrosPlugin', tinymce.plugins.MacrosPlugin);
+
+jQuery(document).ready(function () {
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"pt_BR","selector":".tiny_mce","toolbar1":"fullscreen | insertfile undo redo | copy paste | bold italic underline | styleselect fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image","menubar":"edit insert view tools","toolbar2":"print preview code media | table | macros","macros_setup":[]})
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"pt_BR","selector":".tiny_mce_simple","toolbar1":"fullscreen | insertfile undo redo | copy paste | bold italic underline | styleselect fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image","menubar":false,"toolbar2":null,"macros_setup":[]})
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"pt_BR","selector":".tiny_mce_restricted","toolbar1":"bold italic underline | link","menubar":false,"toolbar2":null,"macros_setup":[]})
+});
+</script>
+
+
+  </head>
+  <body class="controller-search action-search-people template-leftbottom">
+    <a href="#content" id="link-go-content"><span>Ir para o conteúdo</span></a>
+    
+    <div id="global-header">
+      <!-- div class='supportbanner'>
+  <div class='content'>
+    <div class='banner-title'>Campanha de doação 2016</div>
+    <div class='banner-subtitle'>Ajude a <span class='asl'>ASL.Org</span> a realizar o <span class='fisl17'>FISL17</span>!</div>
+    <p>Ajude a Associação Software Livre.Org a continuar seu trabalho de 12 anos em prol do desenvolvimento e disseminação do Software Livre. Faça uma doação e ganhe um ingresso cortesia para o <span class='fisl17'>FISL17</span> e uma camiseta oficial do evento.</p>
+  </div>
+  <div class='footer-links'>
+    <a class='logo-fisl17' href='http://fisl.org.br' target='_blank'><span>fisl17</span></a>
+    <a class='logo-asl' href='http://asl.org' target='_blank'><span>ASL.org</span></a>
+    <a class='iot-fisl' href='http://segue.fisl17.softwarelivre.org' target='_blank'><span>Contribua para o fisl17</span></a>
+  </div>
+</div -->
+
+    </div>
+
+    <div id="wrap-1">
+      <div id="theme-header">
+        <div id="top">
+  <ul id="top-menu">
+    <li><a href="/"><span>Início</span></a></li>
+    <li><a id="submenu-people" href="/search/people"><span class="icon-menu-people">Pessoas</span></a><a class="up menu-submenu-trigger" id="submenu-people-trigger" onclick="toggleSubmenu(this, '', {&quot;Mais recentes&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_recent&quot;},&quot;Mais ativas&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_active&quot;},&quot;Mais populares&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_popular&quot;}}); return false" href="#"><span>Menu de pessoas</span></a></li>
+    <li><a id="submenu-communities" href="/search/communities"><span class="icon-menu-community">Comunidades</span></a><a class="up menu-submenu-trigger" id="submenu-communities-trigger" onclick="toggleSubmenu(this, '', {&quot;Mais recentes&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_recent&quot;},&quot;Mais ativas&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_active&quot;},&quot;Mais populares&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_popular&quot;}}); return false" href="#"><span>Menu de comunidades</span></a></li>
+    <li><a href="/profile/portal/events" id="submenu-events"><span class='icon-menu-events'>Eventos</span></a></li>
+    <li><a href="/doc"><span>Manual</span></a></li>
+    <li><a href="/portal/quem-somos" id="submenu-about"><span>Sobre</span></a></li>
+  </ul>
+</div>
+
+      </div>
+      <div id="wrap-2">
+        <div id="user">
+    <span class='not-logged-in'>
+      <span class='login'><a id="link_login" onclick="return noosfero.modal.inline(&#39;#inlineLoginBox&#39;)" class="" href="/account/login"><i class="icon-menu-login"></i><strong>Entrar</strong></a></span>
+
+      <div id='inlineLoginBox' style='display: none;'>
+        <div class="login-box">
+
+<h2>Entrar</h2>
+
+
+
+
+<form action="/account/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="/U/S5KJxfFDK5gU6DgstTx+pPAVvic0uz7WW3929P1hgJ2Ll0Cp+syX98KSIi1csUDj2xmcFCnySOa/bgjaZig==" />
+
+     <div class="formfieldline"><label class="formlabel" for="main_user_login">Nome de usuário / E-mail</label><div class="formfield type-text"><input id="main_user_login" onchange="this.value = convToValidLogin( this.value )" type="text" name="user[login]" /></div></div>
+
+     <div class="formfieldline"><label class="formlabel" for="user_password">senha</label><div class="formfield type-password"><input type="password" name="user[password]" id="user_password" /></div></div>
+
+     <div class='checkbox'>
+       <label>
+         <input type="checkbox" name="remember_me" id="remember_me" value="1" checked="checked" />
+         Mantenha-me logado
+       </label>
+     </div>
+
+     
+
+     <div class=" button-bar">
+       <input type="submit" name="commit" value="Entrar" class="button with-text icon-login submit" />
+         <a class="button icon-close with-text modal-toggle modal-close" rel="deactivate" title="Cancelar" href="#">&nbsp;<span>Cancelar</span></a>
+<br style="clear: left;" /></div>
+</form>
+<div class=" button-bar">
+    <a class="button icon-add with-text" title="Novo usuário" href="/account/signup">&nbsp;<span>Novo usuário</span></a>
+
+    <a class="button icon-help with-text" title="Eu esqueci a minha senha!" href="/account/forgot_password">&nbsp;<span>Eu esqueci a minha senha!</span></a>
+<br style="clear: left;" /></div>
+</div><!-- end class="login-box" -->
+
+
+      </div>
+
+        <span class='or'>ou</span> <span class='signup'><a href="/account/signup"><strong>Registre-se</strong></a></span>
+    </span>
+  <form action="/search/articles" id="top-search" class="search_form clean" method="get">
+    <input name="query" size="15" title="Busca..." onfocus="this.form.className='focused';" onblur="this.form.className=''" />
+    <div>Aperte <strong>Enter</strong> para enviar a consulta.</div>
+    <script>
+//<![CDATA[
+jQuery("#user form input").hint();
+//]]>
+</script>
+  </form>
+</div><!-- end id="user" -->
+
+        <h1 id="site-title">
+          <a href="/"><span>Software livre Brasil</span></a>
+
+        </h1>
+        <div id="navigation">
+          <ul>
+            <div id="friends">
+<ul>
+  <li><a href="/portal"><span>+</span></a></li>
+  <li><a href="http://br-linux.org"><span>BR-Linux</span></a></li>
+  <li><a href="http://www.vivaolinux.com.br"><span>Viva o Linux</span></a></li>
+  <li><a href="http://www.revista.espiritolivre.org"><span>Revista Espírito Livre</span></a></li>
+  <li><a href="http://www.dicas-l.com.br"><span>Dicas-L</span></a></li>
+  <li><a href="http://www.sejalivre.org"><span>Seja Livre</span></a></li>
+  <li><a href="http://www.underlinux.com.br"><span>Under Linux</span></a></li>
+  <li><a href="http://www.sempreupdate.com.br"><span>Sempre Update</span></a></li>
+</ul>
+</div>
+<div id="external-links">
+<ul>
+  <li><a id="blogoosfero" title="Blogoosfero" href="http://blogoosfero.cc/software-livre" target="_blank"><span>Blogoosfero</span></a></li>
+  <li><a id="twitter" title="Twitter" href="https://twitter.com/PSLBrasil" target="_blank"><span>Twitter</span></a></li>
+  <li><a id="diaspora" title="Diaspora" href="https://diaspora.softwarelivre.org/u/pslbrasil" target="_blank"><span>Diaspora</span></a></li>
+  <li><a id="gnu-social" title="Quitter" href="https://quitter.se/pslbrasil" target="_blank"><span>Quitter</span></a></li>
+  <li><a id="feed" title="Feed" href="http://softwarelivre.org/portal/feed"><span>Feed</span></a></li>
+</ul>
+</div>
+
+          </ul>
+          <div id="navigation-end"></div>
+        </div><!-- end id="navigation" -->
+        <div id="content">
+          <div id="content-inner">
+  <div class="no-boxes"><div class="no-boxes-inner-1"><div class="no-boxes-inner-2"><div class="main-content"><h1>Resultados da Busca</h1>
+
+<div class='search-form'>
+  <form class="search_form" action="/search/people" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="data-remote" /><input type="hidden" name="authenticity_token" value="3YAAhhbH3PHkaLUbamN18wr8gaZRfxCWHvV5iBCZXZxA6LCHZJzeEgtzQIXs4w+QRW1LZVnz18RDeUCMTxL7Tg==" />
+
+    <div id='search-header'>
+  <ul id="assets-menu"><li><a href="/search/articles">Conteúdos</a></li>
+<li class="selected"><a href="/search/people">Pessoas</a></li>
+<li><a href="/search/communities">Comunidades</a></li>
+<li><a href="/search/enterprises">Empreendimentos</a></li></ul>
+  <div id="search-filters"><select name="order" id="order"><option value="more_recent">Mais recentes</option>
+<option value="more_popular">Mais populares</option>
+<option value="more_active">Mais ativos</option></select>
+</div>
+  <div class="clear"></div>
+</div>
+
+<div id='search-subheader'>
+  
+</div>
+<div class="search-field">
+  <span class="formfield">
+    <input type="text" name="query" id="search-input" value="" size="50" placeholder="Escreva palavras sobre o pessoa que você está procurando" class="search-input-with-suggestions" data-asset="people" />
+  </span>
+
+  <input type="submit" name="commit" value="Busca" class="button with-text icon-search submit" />
+</div>
+
+
+
+
+
+    <div id='total-results'>
+  Total de 7639 resultados
+</div>
+
+
+      <div id='search-column-left' class='search-column'>
+        <div id="facets">
+
+      <div id="tags-facet" class="facet"><h2>Labels</h2><input type="text" id="" placeholder="Refinar opções" class="facet-refine" /><div class="facets-block"><div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2119]" id="facets_relation-acts_as_taggable_on_tag_2119" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2119]" id="checkbox-58" value="1" /><label for="checkbox-58">fotografia</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1253]" id="facets_relation-acts_as_taggable_on_tag_1253" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1253]" id="checkbox-59" value="1" /><label for="checkbox-59">servidores</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1920]" id="facets_relation-acts_as_taggable_on_tag_1920" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1920]" id="checkbox-60" value="1" /><label for="checkbox-60">treinamentos</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][171980]" id="facets_relation-acts_as_taggable_on_tag_171980" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][171980]" id="checkbox-61" value="1" /><label for="checkbox-61">redes sociais federadas</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][7686]" id="facets_relation-acts_as_taggable_on_tag_7686" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][7686]" id="checkbox-62" value="1" /><label for="checkbox-62">administração</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][139066]" id="facets_relation-acts_as_taggable_on_tag_139066" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][139066]" id="checkbox-63" value="1" /><label for="checkbox-63">administração de redes</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][578]" id="facets_relation-acts_as_taggable_on_tag_578" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][578]" id="checkbox-64" value="1" /><label for="checkbox-64">universidade</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][63816]" id="facets_relation-acts_as_taggable_on_tag_63816" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][63816]" id="checkbox-65" value="1" /><label for="checkbox-65">audio visual</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][723]" id="facets_relation-acts_as_taggable_on_tag_723" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][723]" id="checkbox-66" value="1" /><label for="checkbox-66">shell script</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][173219]" id="facets_relation-acts_as_taggable_on_tag_173219" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][173219]" id="checkbox-67" value="1" /><label for="checkbox-67">#graphicdesign</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][131880]" id="facets_relation-acts_as_taggable_on_tag_131880" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][131880]" id="checkbox-68" value="1" /><label for="checkbox-68">manutenção de computadores</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][145241]" id="facets_relation-acts_as_taggable_on_tag_145241" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][145241]" id="checkbox-69" value="1" /><label for="checkbox-69">php programmer</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][131876]" id="facets_relation-acts_as_taggable_on_tag_131876" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][131876]" id="checkbox-70" value="1" /><label for="checkbox-70">auxiliar administrativo</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2975]" id="facets_relation-acts_as_taggable_on_tag_2975" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2975]" id="checkbox-71" value="1" /><label for="checkbox-71">freebsd</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][6893]" id="facets_relation-acts_as_taggable_on_tag_6893" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][6893]" id="checkbox-72" value="1" /><label for="checkbox-72">wsl</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][139688]" id="facets_relation-acts_as_taggable_on_tag_139688" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][139688]" id="checkbox-73" value="1" /><label for="checkbox-73">pós-graduação informática em educação</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][514]" id="facets_relation-acts_as_taggable_on_tag_514" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][514]" id="checkbox-74" value="1" /><label for="checkbox-74">programação</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1310]" id="facets_relation-acts_as_taggable_on_tag_1310" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1310]" id="checkbox-75" value="1" /><label for="checkbox-75">informática</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][826]" id="facets_relation-acts_as_taggable_on_tag_826" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][826]" id="checkbox-76" value="1" /><label for="checkbox-76">noosfero</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][477]" id="facets_relation-acts_as_taggable_on_tag_477" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][477]" id="checkbox-77" value="1" /><label for="checkbox-77">tradução</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][174051]" id="facets_relation-acts_as_taggable_on_tag_174051" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][174051]" id="checkbox-78" value="1" /><label for="checkbox-78">edutech</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][173185]" id="facets_relation-acts_as_taggable_on_tag_173185" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][173185]" id="checkbox-79" value="1" /><label for="checkbox-79">curso gratuíto</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1238]" id="facets_relation-acts_as_taggable_on_tag_1238" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1238]" id="checkbox-80" value="1" /><label for="checkbox-80">i18n</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][173838]" id="facets_relation-acts_as_taggable_on_tag_173838" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][173838]" id="checkbox-81" value="1" /><label for="checkbox-81">escola técnica</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][174052]" id="facets_relation-acts_as_taggable_on_tag_174052" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][174052]" id="checkbox-82" value="1" /><label for="checkbox-82">colearn</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][139526]" id="facets_relation-acts_as_taggable_on_tag_139526" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][139526]" id="checkbox-83" value="1" /><label for="checkbox-83">redes socias</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][173000]" id="facets_relation-acts_as_taggable_on_tag_173000" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][173000]" id="checkbox-84" value="1" /><label for="checkbox-84">plano de contas</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1237]" id="facets_relation-acts_as_taggable_on_tag_1237" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1237]" id="checkbox-85" value="1" /><label for="checkbox-85">l10n</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][63814]" id="facets_relation-acts_as_taggable_on_tag_63814" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][63814]" id="checkbox-86" value="1" /><label for="checkbox-86">vfx</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][311]" id="facets_relation-acts_as_taggable_on_tag_311" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][311]" id="checkbox-87" value="1" /><label for="checkbox-87">filmes</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][173774]" id="facets_relation-acts_as_taggable_on_tag_173774" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][173774]" id="checkbox-88" value="1" /><label for="checkbox-88">curso presencial</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][663]" id="facets_relation-acts_as_taggable_on_tag_663" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][663]" id="checkbox-89" value="1" /><label for="checkbox-89">debian</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][53]" id="facets_relation-acts_as_taggable_on_tag_53" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][53]" id="checkbox-90" value="1" /><label for="checkbox-90">cinema</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][174168]" id="facets_relation-acts_as_taggable_on_tag_174168" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][174168]" id="checkbox-91" value="1" /><label for="checkbox-91">debian-games</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][172841]" id="facets_relation-acts_as_taggable_on_tag_172841" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][172841]" id="checkbox-92" value="1" /><label for="checkbox-92">qilinpoker.net agen poker domino 99</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][174167]" id="facets_relation-acts_as_taggable_on_tag_174167" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][174167]" id="checkbox-93" value="1" /><label for="checkbox-93">debian-devel</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][173528]" id="facets_relation-acts_as_taggable_on_tag_173528" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][173528]" id="checkbox-94" value="1" /><label for="checkbox-94">esquerdanobrasil</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][33559]" id="facets_relation-acts_as_taggable_on_tag_33559" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][33559]" id="checkbox-95" value="1" /><label for="checkbox-95">youtube mass video uploader</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][285]" id="facets_relation-acts_as_taggable_on_tag_285" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][285]" id="checkbox-96" value="1" /><label for="checkbox-96">arte</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][173752]" id="facets_relation-acts_as_taggable_on_tag_173752" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][173752]" id="checkbox-97" value="1" /><label for="checkbox-97">produção cinematografica</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][173751]" id="facets_relation-acts_as_taggable_on_tag_173751" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][173751]" id="checkbox-98" value="1" /><label for="checkbox-98">modelagem 3d</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][66]" id="facets_relation-acts_as_taggable_on_tag_66" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][66]" id="checkbox-99" value="1" /><label for="checkbox-99">fisl</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][543]" id="facets_relation-acts_as_taggable_on_tag_543" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][543]" id="checkbox-100" value="1" /><label for="checkbox-100">gentoo</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][3435]" id="facets_relation-acts_as_taggable_on_tag_3435" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][3435]" id="checkbox-101" value="1" /><label for="checkbox-101">saúde</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][173405]" id="facets_relation-acts_as_taggable_on_tag_173405" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][173405]" id="checkbox-102" value="1" /><label for="checkbox-102">#diasporabr</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][173821]" id="facets_relation-acts_as_taggable_on_tag_173821" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][173821]" id="checkbox-103" value="1" /><label for="checkbox-103">tecnopolitica</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][11429]" id="facets_relation-acts_as_taggable_on_tag_11429" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][11429]" id="checkbox-104" value="1" /><label for="checkbox-104">letras</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][131875]" id="facets_relation-acts_as_taggable_on_tag_131875" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][131875]" id="checkbox-105" value="1" /><label for="checkbox-105">gestão para gestores</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][356]" id="facets_relation-acts_as_taggable_on_tag_356" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][356]" id="checkbox-106" value="1" /><label for="checkbox-106">linux</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][131879]" id="facets_relation-acts_as_taggable_on_tag_131879" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][131879]" id="checkbox-107" value="1" /><label for="checkbox-107">montagem de computadores</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][224]" id="facets_relation-acts_as_taggable_on_tag_224" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][224]" id="checkbox-108" value="1" /><label for="checkbox-108">video</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][513]" id="facets_relation-acts_as_taggable_on_tag_513" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][513]" id="checkbox-109" value="1" /><label for="checkbox-109">gnu/linux</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][169813]" id="facets_relation-acts_as_taggable_on_tag_169813" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][169813]" id="checkbox-110" value="1" /><label for="checkbox-110">projeto gnome</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][174050]" id="facets_relation-acts_as_taggable_on_tag_174050" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][174050]" id="checkbox-111" value="1" /><label for="checkbox-111">educação democrática</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][23684]" id="facets_relation-acts_as_taggable_on_tag_23684" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][23684]" id="checkbox-112" value="1" /><label for="checkbox-112">web design</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][140173]" id="facets_relation-acts_as_taggable_on_tag_140173" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][140173]" id="checkbox-113" value="1" /><label for="checkbox-113">tecnologia e educação</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][172848]" id="facets_relation-acts_as_taggable_on_tag_172848" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][172848]" id="checkbox-114" value="1" /><label for="checkbox-114">#Softwalivre</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][147016]" id="facets_relation-acts_as_taggable_on_tag_147016" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][147016]" id="checkbox-115" value="1" /><label for="checkbox-115">redes sociais livres</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][6061]" id="facets_relation-acts_as_taggable_on_tag_6061" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][6061]" id="checkbox-116" value="1" /><label for="checkbox-116">especialização</label><span class="facet-count">(1)</span></div></div><a class="button icon-clear with-text clear-facet" data-facet="tags-facet" title="Clear filters" href="/search/people">&nbsp;<span>Clear filters</span></a></div>
+
+    <div class="period" id="created-at-period"><h2>Criado em</h2><div><label>De:<input type="text" name="periods[created_at][start_date]" id="datepicker-from-created-at" from_id="datepicker-from-created-at" to_id="datepicker-to-created-at" />
+    <script type='text/javascript'>
+      jQuery('#datepicker-from-created-at').datepicker({
+        disabled: false,
+        altField: "",
+        altFormat: "",
+        appendText: "",
+        autoSize: false,
+        buttonImage: "",
+        buttonImageOnly: false,
+        buttonText: "...",
+        calculateWeek: "jQuery.datepicker.iso8601Week",
+        changeMonth: false,
+        changeYear: false,
+        closeText: "Feito",
+        constrainInput: true,
+        currentText: "Hoje",
+        dateFormat: "yy-mm-dd",
+        dayNames: ["Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sábado"],
+        dayNamesMin: ["Dom","Seg","Ter","Qua","Qui","Sex","Sab"],
+        dayNamesShort: ["Dom","Seg","Ter","Qua","Qui","Sex","Sab"],
+        defaultDate: null,
+        duration: "normal",
+        firstDay: 0,
+        gotoCurrent: false,
+        hideIfNoPrevNext: false,
+        isRTL: false,
+        maxDate: null,
+        minDate: null,
+        monthNames: ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"],
+        monthNamesShort: ["Jan","Fev","Mar","Abr","Maio","Jun","Jul","Ago","Set","Out","Nov","Dez"],
+        navigationAsDateFormat: false,
+        nextText: "Próximo",
+        numberOfMonths: 1,
+        prevText: "Anterior",
+        selectOtherMonths: false,
+        shortYearCutoff: "+10",
+        showButtonPanel: false,
+        showCurrentAtPos: 0,
+        showMonthAfterYear: false,
+        showOn: "focus",
+        showOptions: {},
+        showOtherMonths: false,
+        showWeek: false,
+        stepMonths: 1,
+        weekHeader: "Sem",
+        yearRange: "c-10:c+10",
+        yearSuffix: ""
+      }).datepicker()
+    </script>
+    </label><label>Até:<input type="text" name="periods[created_at][end_date]" id="datepicker-to-created-at" from_id="datepicker-from-created-at" to_id="datepicker-to-created-at" />
+    <script type='text/javascript'>
+      jQuery('#datepicker-to-created-at').datepicker({
+        disabled: false,
+        altField: "",
+        altFormat: "",
+        appendText: "",
+        autoSize: false,
+        buttonImage: "",
+        buttonImageOnly: false,
+        buttonText: "...",
+        calculateWeek: "jQuery.datepicker.iso8601Week",
+        changeMonth: false,
+        changeYear: false,
+        closeText: "Feito",
+        constrainInput: true,
+        currentText: "Hoje",
+        dateFormat: "yy-mm-dd",
+        dayNames: ["Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sábado"],
+        dayNamesMin: ["Dom","Seg","Ter","Qua","Qui","Sex","Sab"],
+        dayNamesShort: ["Dom","Seg","Ter","Qua","Qui","Sex","Sab"],
+        defaultDate: null,
+        duration: "normal",
+        firstDay: 0,
+        gotoCurrent: false,
+        hideIfNoPrevNext: false,
+        isRTL: false,
+        maxDate: null,
+        minDate: null,
+        monthNames: ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"],
+        monthNamesShort: ["Jan","Fev","Mar","Abr","Maio","Jun","Jul","Ago","Set","Out","Nov","Dez"],
+        navigationAsDateFormat: false,
+        nextText: "Próximo",
+        numberOfMonths: 1,
+        prevText: "Anterior",
+        selectOtherMonths: false,
+        shortYearCutoff: "+10",
+        showButtonPanel: false,
+        showCurrentAtPos: 0,
+        showMonthAfterYear: false,
+        showOn: "focus",
+        showOptions: {},
+        showOtherMonths: false,
+        showWeek: false,
+        stepMonths: 1,
+        weekHeader: "Sem",
+        yearRange: "c-10:c+10",
+        yearSuffix: ""
+      }).datepicker()
+    </script>
+    </label></div><input type="hidden" name="periods[created_at][is_metadata]" id="periods_created_at_is_metadata" value="false" /></div>
+    <div class="period" id="updated-at-period"><h2>Atualizado em</h2><div><label>De:<input type="text" name="periods[updated_at][start_date]" id="datepicker-from-updated-at" from_id="datepicker-from-updated-at" to_id="datepicker-to-updated-at" />
+    <script type='text/javascript'>
+      jQuery('#datepicker-from-updated-at').datepicker({
+        disabled: false,
+        altField: "",
+        altFormat: "",
+        appendText: "",
+        autoSize: false,
+        buttonImage: "",
+        buttonImageOnly: false,
+        buttonText: "...",
+        calculateWeek: "jQuery.datepicker.iso8601Week",
+        changeMonth: false,
+        changeYear: false,
+        closeText: "Feito",
+        constrainInput: true,
+        currentText: "Hoje",
+        dateFormat: "yy-mm-dd",
+        dayNames: ["Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sábado"],
+        dayNamesMin: ["Dom","Seg","Ter","Qua","Qui","Sex","Sab"],
+        dayNamesShort: ["Dom","Seg","Ter","Qua","Qui","Sex","Sab"],
+        defaultDate: null,
+        duration: "normal",
+        firstDay: 0,
+        gotoCurrent: false,
+        hideIfNoPrevNext: false,
+        isRTL: false,
+        maxDate: null,
+        minDate: null,
+        monthNames: ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"],
+        monthNamesShort: ["Jan","Fev","Mar","Abr","Maio","Jun","Jul","Ago","Set","Out","Nov","Dez"],
+        navigationAsDateFormat: false,
+        nextText: "Próximo",
+        numberOfMonths: 1,
+        prevText: "Anterior",
+        selectOtherMonths: false,
+        shortYearCutoff: "+10",
+        showButtonPanel: false,
+        showCurrentAtPos: 0,
+        showMonthAfterYear: false,
+        showOn: "focus",
+        showOptions: {},
+        showOtherMonths: false,
+        showWeek: false,
+        stepMonths: 1,
+        weekHeader: "Sem",
+        yearRange: "c-10:c+10",
+        yearSuffix: ""
+      }).datepicker()
+    </script>
+    </label><label>Até:<input type="text" name="periods[updated_at][end_date]" id="datepicker-to-updated-at" from_id="datepicker-from-updated-at" to_id="datepicker-to-updated-at" />
+    <script type='text/javascript'>
+      jQuery('#datepicker-to-updated-at').datepicker({
+        disabled: false,
+        altField: "",
+        altFormat: "",
+        appendText: "",
+        autoSize: false,
+        buttonImage: "",
+        buttonImageOnly: false,
+        buttonText: "...",
+        calculateWeek: "jQuery.datepicker.iso8601Week",
+        changeMonth: false,
+        changeYear: false,
+        closeText: "Feito",
+        constrainInput: true,
+        currentText: "Hoje",
+        dateFormat: "yy-mm-dd",
+        dayNames: ["Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sábado"],
+        dayNamesMin: ["Dom","Seg","Ter","Qua","Qui","Sex","Sab"],
+        dayNamesShort: ["Dom","Seg","Ter","Qua","Qui","Sex","Sab"],
+        defaultDate: null,
+        duration: "normal",
+        firstDay: 0,
+        gotoCurrent: false,
+        hideIfNoPrevNext: false,
+        isRTL: false,
+        maxDate: null,
+        minDate: null,
+        monthNames: ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"],
+        monthNamesShort: ["Jan","Fev","Mar","Abr","Maio","Jun","Jul","Ago","Set","Out","Nov","Dez"],
+        navigationAsDateFormat: false,
+        nextText: "Próximo",
+        numberOfMonths: 1,
+        prevText: "Anterior",
+        selectOtherMonths: false,
+        shortYearCutoff: "+10",
+        showButtonPanel: false,
+        showCurrentAtPos: 0,
+        showMonthAfterYear: false,
+        showOn: "focus",
+        showOptions: {},
+        showOtherMonths: false,
+        showWeek: false,
+        stepMonths: 1,
+        weekHeader: "Sem",
+        yearRange: "c-10:c+10",
+        yearSuffix: ""
+      }).datepicker()
+    </script>
+    </label></div><input type="hidden" name="periods[updated_at][is_metadata]" id="periods_updated_at_is_metadata" value="false" /></div>
+    <div class="period" id="published-at-period"><h2>Published at</h2><div><label>De:<input type="text" name="periods[published_at][start_date]" id="datepicker-from-published-at" from_id="datepicker-from-published-at" to_id="datepicker-to-published-at" />
+    <script type='text/javascript'>
+      jQuery('#datepicker-from-published-at').datepicker({
+        disabled: false,
+        altField: "",
+        altFormat: "",
+        appendText: "",
+        autoSize: false,
+        buttonImage: "",
+        buttonImageOnly: false,
+        buttonText: "...",
+        calculateWeek: "jQuery.datepicker.iso8601Week",
+        changeMonth: false,
+        changeYear: false,
+        closeText: "Feito",
+        constrainInput: true,
+        currentText: "Hoje",
+        dateFormat: "yy-mm-dd",
+        dayNames: ["Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sábado"],
+        dayNamesMin: ["Dom","Seg","Ter","Qua","Qui","Sex","Sab"],
+        dayNamesShort: ["Dom","Seg","Ter","Qua","Qui","Sex","Sab"],
+        defaultDate: null,
+        duration: "normal",
+        firstDay: 0,
+        gotoCurrent: false,
+        hideIfNoPrevNext: false,
+        isRTL: false,
+        maxDate: null,
+        minDate: null,
+        monthNames: ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"],
+        monthNamesShort: ["Jan","Fev","Mar","Abr","Maio","Jun","Jul","Ago","Set","Out","Nov","Dez"],
+        navigationAsDateFormat: false,
+        nextText: "Próximo",
+        numberOfMonths: 1,
+        prevText: "Anterior",
+        selectOtherMonths: false,
+        shortYearCutoff: "+10",
+        showButtonPanel: false,
+        showCurrentAtPos: 0,
+        showMonthAfterYear: false,
+        showOn: "focus",
+        showOptions: {},
+        showOtherMonths: false,
+        showWeek: false,
+        stepMonths: 1,
+        weekHeader: "Sem",
+        yearRange: "c-10:c+10",
+        yearSuffix: ""
+      }).datepicker()
+    </script>
+    </label><label>Até:<input type="text" name="periods[published_at][end_date]" id="datepicker-to-published-at" from_id="datepicker-from-published-at" to_id="datepicker-to-published-at" />
+    <script type='text/javascript'>
+      jQuery('#datepicker-to-published-at').datepicker({
+        disabled: false,
+        altField: "",
+        altFormat: "",
+        appendText: "",
+        autoSize: false,
+        buttonImage: "",
+        buttonImageOnly: false,
+        buttonText: "...",
+        calculateWeek: "jQuery.datepicker.iso8601Week",
+        changeMonth: false,
+        changeYear: false,
+        closeText: "Feito",
+        constrainInput: true,
+        currentText: "Hoje",
+        dateFormat: "yy-mm-dd",
+        dayNames: ["Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sábado"],
+        dayNamesMin: ["Dom","Seg","Ter","Qua","Qui","Sex","Sab"],
+        dayNamesShort: ["Dom","Seg","Ter","Qua","Qui","Sex","Sab"],
+        defaultDate: null,
+        duration: "normal",
+        firstDay: 0,
+        gotoCurrent: false,
+        hideIfNoPrevNext: false,
+        isRTL: false,
+        maxDate: null,
+        minDate: null,
+        monthNames: ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"],
+        monthNamesShort: ["Jan","Fev","Mar","Abr","Maio","Jun","Jul","Ago","Set","Out","Nov","Dez"],
+        navigationAsDateFormat: false,
+        nextText: "Próximo",
+        numberOfMonths: 1,
+        prevText: "Anterior",
+        selectOtherMonths: false,
+        shortYearCutoff: "+10",
+        showButtonPanel: false,
+        showCurrentAtPos: 0,
+        showMonthAfterYear: false,
+        showOn: "focus",
+        showOptions: {},
+        showOtherMonths: false,
+        showWeek: false,
+        stepMonths: 1,
+        weekHeader: "Sem",
+        yearRange: "c-10:c+10",
+        yearSuffix: ""
+      }).datepicker()
+    </script>
+    </label></div><input type="hidden" name="periods[published_at][is_metadata]" id="periods_published_at_is_metadata" value="false" /></div>
+</div>
+
+      </div>
+
+      <div id='search-column-right' class='search-column'>
+        <div id='search-content'>
+  <div class="map-or-list-search-results list"><div id="search-results" class="only-one-result-box">
+
+
+    <div class="search-results-people search-results-box ">
+
+
+
+        <div class="search-results-innerbox search-results-type-person common-profile-list-block">
+          <ul>
+              
+                <li class="search-profile-item">
+  <div class="common-profile-list-block has-pic"><div class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/otaviano/check_friendship" onclick="toggleSubmenu(this, 'Otaviano Pires', [{&quot;Mural&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/otaviano&quot;}},{&quot;Amigos&quot;:{&quot;href&quot;:&quot;/profile/otaviano/friends&quot;}},{&quot;Comunidades&quot;:{&quot;href&quot;:&quot;/profile/otaviano/communities&quot;}},{&quot;Enviar e-mail&quot;:{&quot;href&quot;:&quot;/contact/otaviano/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Adicionar&quot;:{&quot;href&quot;:&quot;/profile/otaviano/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/otaviano&quot;}}]); return false" href="#"><span>Links do perfil</span></a><a class="profile_link url" style="" title="Otaviano Pires" href="http://softwarelivre.org/otaviano"><span class="profile-image"><img alt="Otaviano Pires" title="" class=" photo" src="/image_uploads/0013/9865/otaviano_portrait.jpg" /></span><span class="fn">Otaviano Pires</span><span class="extra_info">Desde: Set de 2018</span></a></div></div>
+</li>
+
+              
+                <li class="search-profile-item">
+  <div class="common-profile-list-block has-pic"><div class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/robertasoares/check_friendship" onclick="toggleSubmenu(this, 'Roberta Soares', [{&quot;Mural&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/robertasoares&quot;}},{&quot;Amigos&quot;:{&quot;href&quot;:&quot;/profile/robertasoares/friends&quot;}},{&quot;Comunidades&quot;:{&quot;href&quot;:&quot;/profile/robertasoares/communities&quot;}},{&quot;Enviar e-mail&quot;:{&quot;href&quot;:&quot;/contact/robertasoares/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Adicionar&quot;:{&quot;href&quot;:&quot;/profile/robertasoares/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/robertasoares&quot;}}]); return false" href="#"><span>Links do perfil</span></a><a class="profile_link url" style="" title="Roberta Soares" href="http://softwarelivre.org/robertasoares"><span class="profile-image"><img alt="Roberta Soares" title="" class=" photo" src="/image_uploads/0013/9835/roberta_portrait.jpg" /></span><span class="fn">Roberta Soares</span><span class="extra_info">Desde: Set de 2018</span></a></div></div>
+</li>
+
+              
+                <li class="search-profile-item">
+  <div class="common-profile-list-block has-pic"><div class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/gael/check_friendship" onclick="toggleSubmenu(this, 'Gael', [{&quot;Mural&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/gael&quot;}},{&quot;Amigos&quot;:{&quot;href&quot;:&quot;/profile/gael/friends&quot;}},{&quot;Comunidades&quot;:{&quot;href&quot;:&quot;/profile/gael/communities&quot;}},{&quot;Enviar e-mail&quot;:{&quot;href&quot;:&quot;/contact/gael/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Adicionar&quot;:{&quot;href&quot;:&quot;/profile/gael/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/gael&quot;}}]); return false" href="#"><span>Links do perfil</span></a><a class="profile_link url" style="" title="Gael Silva" href="http://softwarelivre.org/gael"><span class="profile-image"><img alt="Gael Silva" title="" class=" photo" src="/image_uploads/0013/9817/gael_portrait.jpg" /></span><span class="fn">Gael</span><span class="extra_info">Desde: Set de 2018</span></a></div></div>
+</li>
+
+              
+                <li class="search-profile-item">
+  <div class="common-profile-list-block has-pic"><div class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/joanaporto/check_friendship" onclick="toggleSubmenu(this, 'Joana Porto', [{&quot;Mural&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/joanaporto&quot;}},{&quot;Amigos&quot;:{&quot;href&quot;:&quot;/profile/joanaporto/friends&quot;}},{&quot;Comunidades&quot;:{&quot;href&quot;:&quot;/profile/joanaporto/communities&quot;}},{&quot;Enviar e-mail&quot;:{&quot;href&quot;:&quot;/contact/joanaporto/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Adicionar&quot;:{&quot;href&quot;:&quot;/profile/joanaporto/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/joanaporto&quot;}}]); return false" href="#"><span>Links do perfil</span></a><a class="profile_link url" style="" title="Joana Porto" href="http://softwarelivre.org/joanaporto"><span class="profile-image"><img alt="Joana Porto" title="" class=" photo" src="/image_uploads/0013/9811/joana_portrait.jpg" /></span><span class="fn">Joana Porto</span><span class="extra_info">Desde: Set de 2018</span></a></div></div>
+</li>
+
+              
+                <li class="search-profile-item">
+  <div class="common-profile-list-block has-pic"><div class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/gabioliveira/check_friendship" onclick="toggleSubmenu(this, 'Gabrielle Oliveira', [{&quot;Mural&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/gabioliveira&quot;}},{&quot;Amigos&quot;:{&quot;href&quot;:&quot;/profile/gabioliveira/friends&quot;}},{&quot;Comunidades&quot;:{&quot;href&quot;:&quot;/profile/gabioliveira/communities&quot;}},{&quot;Enviar e-mail&quot;:{&quot;href&quot;:&quot;/contact/gabioliveira/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Adicionar&quot;:{&quot;href&quot;:&quot;/profile/gabioliveira/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/gabioliveira&quot;}}]); return false" href="#"><span>Links do perfil</span></a><a class="profile_link url" style="" title="Gabrielle Oliveira" href="http://softwarelivre.org/gabioliveira"><span class="profile-image"><img alt="Gabrielle Oliveira" title="" class=" photo" src="/image_uploads/0013/9805/gabriela_portrait.jpg" /></span><span class="fn">Gabrielle Oliveira</span><span class="extra_info">Desde: Set de 2018</span></a></div></div>
+</li>
+
+              
+                <li class="search-profile-item">
+  <div class="common-profile-list-block no-pic"><div class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/ayrtoncavalieri/check_friendship" onclick="toggleSubmenu(this, 'AyrtonCavalieri', [{&quot;Mural&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/ayrtoncavalieri&quot;}},{&quot;Amigos&quot;:{&quot;href&quot;:&quot;/profile/ayrtoncavalieri/friends&quot;}},{&quot;Comunidades&quot;:{&quot;href&quot;:&quot;/profile/ayrtoncavalieri/communities&quot;}},{&quot;Enviar e-mail&quot;:{&quot;href&quot;:&quot;/contact/ayrtoncavalieri/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Adicionar&quot;:{&quot;href&quot;:&quot;/profile/ayrtoncavalieri/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/ayrtoncavalieri&quot;}}]); return false" href="#"><span>Links do perfil</span></a><a class="profile_link url" style="" title="Ayrton Cavalieri de Almeida" href="http://softwarelivre.org/ayrtoncavalieri"><span class="profile-image"><img alt="Ayrton Cavalieri de Almeida" title="" class=" photo" src="//www.gravatar.com/avatar/1520efbab2d1d8228895680693677550?only_path=false&amp;size=64&amp;d=wavatar" /></span><span class="fn">AyrtonCavalieri</span><span class="extra_info">Desde: Ago de 2018</span></a></div></div>
+</li>
+
+              
+                <li class="search-profile-item">
+  <div class="common-profile-list-block no-pic"><div class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/marcelrodrigues/check_friendship" onclick="toggleSubmenu(this, 'Marcel', [{&quot;Mural&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/marcelrodrigues&quot;}},{&quot;Amigos&quot;:{&quot;href&quot;:&quot;/profile/marcelrodrigues/friends&quot;}},{&quot;Comunidades&quot;:{&quot;href&quot;:&quot;/profile/marcelrodrigues/communities&quot;}},{&quot;Enviar e-mail&quot;:{&quot;href&quot;:&quot;/contact/marcelrodrigues/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Adicionar&quot;:{&quot;href&quot;:&quot;/profile/marcelrodrigues/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/marcelrodrigues&quot;}}]); return false" href="#"><span>Links do perfil</span></a><a class="profile_link url" style="" title="Marcel Rodrigues dos Santos" href="http://softwarelivre.org/marcelrodrigues"><span class="profile-image"><img alt="Marcel Rodrigues dos Santos" title="" class=" photo" src="//www.gravatar.com/avatar/4aec025a2d81665f9ecdf546e4a918aa?only_path=false&amp;size=64&amp;d=wavatar" /></span><span class="fn">Marcel</span><span class="extra_info">Desde: Jul de 2018</span></a></div></div>
+</li>
+
+              
+                <li class="search-profile-item">
+  <div class="common-profile-list-block has-pic"><div class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/victor-sgiaimo/check_friendship" onclick="toggleSubmenu(this, 'VictorSG', [{&quot;Mural&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/victor-sgiaimo&quot;}},{&quot;Amigos&quot;:{&quot;href&quot;:&quot;/profile/victor-sgiaimo/friends&quot;}},{&quot;Comunidades&quot;:{&quot;href&quot;:&quot;/profile/victor-sgiaimo/communities&quot;}},{&quot;Enviar e-mail&quot;:{&quot;href&quot;:&quot;/contact/victor-sgiaimo/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Adicionar&quot;:{&quot;href&quot;:&quot;/profile/victor-sgiaimo/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/victor-sgiaimo&quot;}}]); return false" href="#"><span>Links do perfil</span></a><a class="profile_link url" style="" title="Victor Sanches Giaimo" href="http://softwarelivre.org/victor-sgiaimo"><span class="profile-image"><img alt="Victor Sanches Giaimo" title="" class=" photo" src="/image_uploads/0013/9475/seo_portrait.jpg" /></span><span class="fn">VictorSG</span><span class="extra_info">Desde: Jul de 2018</span></a></div></div>
+</li>
+
+              
+                <li class="search-profile-item">
+  <div class="common-profile-list-block no-pic"><div class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/welbert5/check_friendship" onclick="toggleSubmenu(this, 'boto', [{&quot;Mural&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/welbert5&quot;}},{&quot;Amigos&quot;:{&quot;href&quot;:&quot;/profile/welbert5/friends&quot;}},{&quot;Comunidades&quot;:{&quot;href&quot;:&quot;/profile/welbert5/communities&quot;}},{&quot;Enviar e-mail&quot;:{&quot;href&quot;:&quot;/contact/welbert5/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Adicionar&quot;:{&quot;href&quot;:&quot;/profile/welbert5/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/welbert5&quot;}}]); return false" href="#"><span>Links do perfil</span></a><a class="profile_link url" style="" title="Welbert Roberto" href="http://softwarelivre.org/welbert5"><span class="profile-image"><img alt="Welbert Roberto" title="" class=" photo" src="//www.gravatar.com/avatar/9c65ed751ec2fe257633adadaf9b44ab?only_path=false&amp;size=64&amp;d=wavatar" /></span><span class="fn">boto</span><span class="extra_info">Desde: Jul de 2018</span></a></div></div>
+</li>
+
+              
+                <li class="search-profile-item">
+  <div class="common-profile-list-block no-pic"><div class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/filcez.ian/check_friendship" onclick="toggleSubmenu(this, 'Ian', [{&quot;Mural&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/filcez.ian&quot;}},{&quot;Amigos&quot;:{&quot;href&quot;:&quot;/profile/filcez.ian/friends&quot;}},{&quot;Comunidades&quot;:{&quot;href&quot;:&quot;/profile/filcez.ian/communities&quot;}},{&quot;Enviar e-mail&quot;:{&quot;href&quot;:&quot;/contact/filcez.ian/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Adicionar&quot;:{&quot;href&quot;:&quot;/profile/filcez.ian/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/filcez.ian&quot;}}]); return false" href="#"><span>Links do perfil</span></a><a class="profile_link url" style="" title="Ian Filgueiras Cezar" href="http://softwarelivre.org/filcez.ian"><span class="profile-image"><img alt="Ian Filgueiras Cezar" title="" class=" photo" src="//www.gravatar.com/avatar/7c3b231c30511d6d04af509d6581eaa2?only_path=false&amp;size=64&amp;d=wavatar" /></span><span class="fn">Ian</span><span class="extra_info">Desde: Jun de 2018</span></a></div></div>
+</li>
+
+              
+                <li class="search-profile-item">
+  <div class="common-profile-list-block has-pic"><div class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/heliana/check_friendship" onclick="toggleSubmenu(this, 'Heliana', [{&quot;Mural&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/heliana&quot;}},{&quot;Amigos&quot;:{&quot;href&quot;:&quot;/profile/heliana/friends&quot;}},{&quot;Comunidades&quot;:{&quot;href&quot;:&quot;/profile/heliana/communities&quot;}},{&quot;Enviar e-mail&quot;:{&quot;href&quot;:&quot;/contact/heliana/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Adicionar&quot;:{&quot;href&quot;:&quot;/profile/heliana/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/heliana&quot;}}]); return false" href="#"><span>Links do perfil</span></a><a class="profile_link url" style="" title="HELIANA FARIA METTIG ROCHA" href="http://softwarelivre.org/heliana"><span class="profile-image"><img alt="HELIANA FARIA METTIG ROCHA" title="" class=" photo" src="/image_uploads/0013/9397/foto-li3_portrait.jpg" /></span><span class="fn">Heliana</span><span class="extra_info">Desde: Jun de 2018</span></a></div></div>
+</li>
+
+              
+                <li class="search-profile-item">
+  <div class="common-profile-list-block no-pic"><div class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/lucas/check_friendship" onclick="toggleSubmenu(this, 'Lucas Bernardes', [{&quot;Mural&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/lucas&quot;}},{&quot;Amigos&quot;:{&quot;href&quot;:&quot;/profile/lucas/friends&quot;}},{&quot;Comunidades&quot;:{&quot;href&quot;:&quot;/profile/lucas/communities&quot;}},{&quot;Enviar e-mail&quot;:{&quot;href&quot;:&quot;/contact/lucas/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Adicionar&quot;:{&quot;href&quot;:&quot;/profile/lucas/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/lucas&quot;}}]); return false" href="#"><span>Links do perfil</span></a><a class="profile_link url" style="" title="Lucas Bernardes da Silva" href="http://softwarelivre.org/lucas"><span class="profile-image"><img alt="Lucas Bernardes da Silva" title="" class=" photo" src="//www.gravatar.com/avatar/d0126ead126b6a06e59a2c8f99920245?only_path=false&amp;size=64&amp;d=wavatar" /></span><span class="fn">Lucas Bernardes</span><span class="extra_info">Desde: Jun de 2018</span></a></div></div>
+</li>
+
+              
+                <li class="search-profile-item">
+  <div class="common-profile-list-block has-pic"><div class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/debora-nunes/check_friendship" onclick="toggleSubmenu(this, 'debnunes', [{&quot;Mural&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/debora-nunes&quot;}},{&quot;Amigos&quot;:{&quot;href&quot;:&quot;/profile/debora-nunes/friends&quot;}},{&quot;Comunidades&quot;:{&quot;href&quot;:&quot;/profile/debora-nunes/communities&quot;}},{&quot;Enviar e-mail&quot;:{&quot;href&quot;:&quot;/contact/debora-nunes/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Adicionar&quot;:{&quot;href&quot;:&quot;/profile/debora-nunes/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/debora-nunes&quot;}}]); return false" href="#"><span>Links do perfil</span></a><a class="profile_link url" style="" title="Débora de Lima Nunes Sales" href="http://softwarelivre.org/debora-nunes"><span class="profile-image"><img alt="Débora de Lima Nunes Sales" title="" class=" photo" src="/image_uploads/0013/9295/debora-nunes-mar-2018_portrait.jpg" /></span><span class="fn">debnunes</span><span class="extra_info">Desde: Jun de 2018</span></a></div></div>
+</li>
+
+              
+                <li class="search-profile-item">
+  <div class="common-profile-list-block has-pic"><div class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/laysbritto/check_friendship" onclick="toggleSubmenu(this, 'Lays', [{&quot;Mural&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/laysbritto&quot;}},{&quot;Amigos&quot;:{&quot;href&quot;:&quot;/profile/laysbritto/friends&quot;}},{&quot;Comunidades&quot;:{&quot;href&quot;:&quot;/profile/laysbritto/communities&quot;}},{&quot;Enviar e-mail&quot;:{&quot;href&quot;:&quot;/contact/laysbritto/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Adicionar&quot;:{&quot;href&quot;:&quot;/profile/laysbritto/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/laysbritto&quot;}}]); return false" href="#"><span>Links do perfil</span></a><a class="profile_link url" style="" title="Lays Britto Azevedo" href="http://softwarelivre.org/laysbritto"><span class="profile-image"><img alt="Lays Britto Azevedo" title="" class=" photo" src="/image_uploads/0013/9259/12509373-649269325214288-5332296098927045573-n_portrait.jpg" /></span><span class="fn">Lays</span><span class="extra_info">Desde: Jun de 2018</span></a></div></div>
+</li>
+
+              
+                <li class="search-profile-item">
+  <div class="common-profile-list-block has-pic"><div class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/jasonachermann/check_friendship" onclick="toggleSubmenu(this, 'Jason ', [{&quot;Mural&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/jasonachermann&quot;}},{&quot;Amigos&quot;:{&quot;href&quot;:&quot;/profile/jasonachermann/friends&quot;}},{&quot;Comunidades&quot;:{&quot;href&quot;:&quot;/profile/jasonachermann/communities&quot;}},{&quot;Enviar e-mail&quot;:{&quot;href&quot;:&quot;/contact/jasonachermann/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Adicionar&quot;:{&quot;href&quot;:&quot;/profile/jasonachermann/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/jasonachermann&quot;}}]); return false" href="#"><span>Links do perfil</span></a><a class="profile_link url" style="" title="Jason Daniel Lang Achermann" href="http://softwarelivre.org/jasonachermann"><span class="profile-image"><img alt="Jason Daniel Lang Achermann" title="" class=" photo" src="/image_uploads/0013/9277/20161219-114951_portrait.jpg" /></span><span class="fn">Jason </span><span class="extra_info">Desde: Mai de 2018</span></a></div></div>
+</li>
+
+              
+                <li class="search-profile-item">
+  <div class="common-profile-list-block has-pic"><div class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/lizvidotti/check_friendship" onclick="toggleSubmenu(this, 'Liz', [{&quot;Mural&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/lizvidotti&quot;}},{&quot;Amigos&quot;:{&quot;href&quot;:&quot;/profile/lizvidotti/friends&quot;}},{&quot;Comunidades&quot;:{&quot;href&quot;:&quot;/profile/lizvidotti/communities&quot;}},{&quot;Enviar e-mail&quot;:{&quot;href&quot;:&quot;/contact/lizvidotti/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Adicionar&quot;:{&quot;href&quot;:&quot;/profile/lizvidotti/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/lizvidotti&quot;}}]); return false" href="#"><span>Links do perfil</span></a><a class="profile_link url" style="" title="Liz Vidotti" href="http://softwarelivre.org/lizvidotti"><span class="profile-image"><img alt="Liz Vidotti" title="" class=" photo" src="/image_uploads/0013/9208/12039259-1091399617538138-4018260610911060134-n_portrait.jpg" /></span><span class="fn">Liz</span><span class="extra_info">Desde: Mai de 2018</span></a></div></div>
+</li>
+
+              
+                <li class="search-profile-item">
+  <div class="common-profile-list-block no-pic"><div class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/alo/check_friendship" onclick="toggleSubmenu(this, 'Alo', [{&quot;Mural&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/alo&quot;}},{&quot;Amigos&quot;:{&quot;href&quot;:&quot;/profile/alo/friends&quot;}},{&quot;Comunidades&quot;:{&quot;href&quot;:&quot;/profile/alo/communities&quot;}},{&quot;Enviar e-mail&quot;:{&quot;href&quot;:&quot;/contact/alo/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Adicionar&quot;:{&quot;href&quot;:&quot;/profile/alo/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/alo&quot;}}]); return false" href="#"><span>Links do perfil</span></a><a class="profile_link url" style="" title="Alonso Camilo" href="http://softwarelivre.org/alo"><span class="profile-image"><img alt="Alonso Camilo" title="" class=" photo" src="//www.gravatar.com/avatar/4f260def9d92573b4b0c3a8e4442cd17?only_path=false&amp;size=64&amp;d=wavatar" /></span><span class="fn">Alo</span><span class="extra_info">Desde: Mai de 2018</span></a></div></div>
+</li>
+
+              
+                <li class="search-profile-item">
+  <div class="common-profile-list-block has-pic"><div class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/marlonjbs/check_friendship" onclick="toggleSubmenu(this, 'marlon_jbs', [{&quot;Mural&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/marlonjbs&quot;}},{&quot;Amigos&quot;:{&quot;href&quot;:&quot;/profile/marlonjbs/friends&quot;}},{&quot;Comunidades&quot;:{&quot;href&quot;:&quot;/profile/marlonjbs/communities&quot;}},{&quot;Enviar e-mail&quot;:{&quot;href&quot;:&quot;/contact/marlonjbs/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Adicionar&quot;:{&quot;href&quot;:&quot;/profile/marlonjbs/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/marlonjbs&quot;}}]); return false" href="#"><span>Links do perfil</span></a><a class="profile_link url" style="" title="Marlon Jefferson Bruno dos Santos" href="http://softwarelivre.org/marlonjbs"><span class="profile-image"><img alt="Marlon Jefferson Bruno dos Santos" title="" class=" photo" src="/image_uploads/0013/9028/16120414322156_portrait.jpg" /></span><span class="fn">marlon_jbs</span><span class="extra_info">Desde: Abr de 2018</span></a></div></div>
+</li>
+
+              
+                <li class="search-profile-item">
+  <div class="common-profile-list-block no-pic"><div class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/leofreitas/check_friendship" onclick="toggleSubmenu(this, 'Leo', [{&quot;Mural&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/leofreitas&quot;}},{&quot;Amigos&quot;:{&quot;href&quot;:&quot;/profile/leofreitas/friends&quot;}},{&quot;Comunidades&quot;:{&quot;href&quot;:&quot;/profile/leofreitas/communities&quot;}},{&quot;Enviar e-mail&quot;:{&quot;href&quot;:&quot;/contact/leofreitas/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Adicionar&quot;:{&quot;href&quot;:&quot;/profile/leofreitas/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/leofreitas&quot;}}]); return false" href="#"><span>Links do perfil</span></a><a class="profile_link url" style="" title="Leonardo Freitas da Silva Pereira" href="http://softwarelivre.org/leofreitas"><span class="profile-image"><img alt="Leonardo Freitas da Silva Pereira" title="" class=" photo" src="//www.gravatar.com/avatar/6a4e4ffab2917783ff06644fe0d6db60?only_path=false&amp;size=64&amp;d=wavatar" /></span><span class="fn">Leo</span><span class="extra_info">Desde: Abr de 2018</span></a></div></div>
+</li>
+
+              
+                <li class="search-profile-item">
+  <div class="common-profile-list-block no-pic"><div class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/jj/check_friendship" onclick="toggleSubmenu(this, 'juniorss', [{&quot;Mural&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/jj&quot;}},{&quot;Amigos&quot;:{&quot;href&quot;:&quot;/profile/jj/friends&quot;}},{&quot;Comunidades&quot;:{&quot;href&quot;:&quot;/profile/jj/communities&quot;}},{&quot;Enviar e-mail&quot;:{&quot;href&quot;:&quot;/contact/jj/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Adicionar&quot;:{&quot;href&quot;:&quot;/profile/jj/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/jj&quot;}}]); return false" href="#"><span>Links do perfil</span></a><a class="profile_link url" style="" title="juniorss" href="http://softwarelivre.org/jj"><span class="profile-image"><img alt="juniorss" title="" class=" photo" src="//www.gravatar.com/avatar/faf6e5028dbaea8e068e5d0449eaa98d?only_path=false&amp;size=64&amp;d=wavatar" /></span><span class="fn">juniorss</span><span class="extra_info">Desde: Abr de 2018</span></a></div></div>
+</li>
+
+              
+                <li class="search-profile-item">
+  <div class="common-profile-list-block no-pic"><div class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/alylson/check_friendship" onclick="toggleSubmenu(this, 'alylson carneiro monteiro', [{&quot;Mural&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/alylson&quot;}},{&quot;Amigos&quot;:{&quot;href&quot;:&quot;/profile/alylson/friends&quot;}},{&quot;Comunidades&quot;:{&quot;href&quot;:&quot;/profile/alylson/communities&quot;}},{&quot;Enviar e-mail&quot;:{&quot;href&quot;:&quot;/contact/alylson/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Adicionar&quot;:{&quot;href&quot;:&quot;/profile/alylson/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/alylson&quot;}}]); return false" href="#"><span>Links do perfil</span></a><a class="profile_link url" style="" title="alylson carneiro monteiro" href="http://softwarelivre.org/alylson"><span class="profile-image"><img alt="alylson carneiro monteiro" title="" class=" photo" src="//www.gravatar.com/avatar/26a0e67d51329a620405a43d7a703670?only_path=false&amp;size=64&amp;d=wavatar" /></span><span class="fn">alylson carneiro monteiro</span><span class="extra_info">Desde: Abr de 2018</span></a></div></div>
+</li>
+
+              
+                <li class="search-profile-item">
+  <div class="common-profile-list-block no-pic"><div class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/larryedah/check_friendship" onclick="toggleSubmenu(this, 'Edah', [{&quot;Mural&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/larryedah&quot;}},{&quot;Amigos&quot;:{&quot;href&quot;:&quot;/profile/larryedah/friends&quot;}},{&quot;Comunidades&quot;:{&quot;href&quot;:&quot;/profile/larryedah/communities&quot;}},{&quot;Enviar e-mail&quot;:{&quot;href&quot;:&quot;/contact/larryedah/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Adicionar&quot;:{&quot;href&quot;:&quot;/profile/larryedah/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/larryedah&quot;}}]); return false" href="#"><span>Links do perfil</span></a><a class="profile_link url" style="" title="Larry" href="http://softwarelivre.org/larryedah"><span class="profile-image"><img alt="Larry" title="" class=" photo" src="//www.gravatar.com/avatar/715a25b6cb42165179f1fde8e11d0936?only_path=false&amp;size=64&amp;d=wavatar" /></span><span class="fn">Edah</span><span class="extra_info">Desde: Mar de 2018</span></a></div></div>
+</li>
+
+              
+                <li class="search-profile-item">
+  <div class="common-profile-list-block has-pic"><div class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/glaucya/check_friendship" onclick="toggleSubmenu(this, 'Gau', [{&quot;Mural&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/glaucya&quot;}},{&quot;Amigos&quot;:{&quot;href&quot;:&quot;/profile/glaucya/friends&quot;}},{&quot;Comunidades&quot;:{&quot;href&quot;:&quot;/profile/glaucya/communities&quot;}},{&quot;Enviar e-mail&quot;:{&quot;href&quot;:&quot;/contact/glaucya/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Adicionar&quot;:{&quot;href&quot;:&quot;/profile/glaucya/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/glaucya&quot;}}]); return false" href="#"><span>Links do perfil</span></a><a class="profile_link url" style="" title="Glaucya Boechat" href="http://softwarelivre.org/glaucya"><span class="profile-image"><img alt="Glaucya Boechat" title="" class=" photo" src="/image_uploads/0013/8823/photo-20170809-115728_portrait.jpg" /></span><span class="fn">Gau</span><span class="extra_info">Desde: Mar de 2018</span></a></div></div>
+</li>
+
+              
+                <li class="search-profile-item">
+  <div class="common-profile-list-block no-pic"><div class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/jota/check_friendship" onclick="toggleSubmenu(this, 'Jota', [{&quot;Mural&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/jota&quot;}},{&quot;Amigos&quot;:{&quot;href&quot;:&quot;/profile/jota/friends&quot;}},{&quot;Comunidades&quot;:{&quot;href&quot;:&quot;/profile/jota/communities&quot;}},{&quot;Enviar e-mail&quot;:{&quot;href&quot;:&quot;/contact/jota/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Adicionar&quot;:{&quot;href&quot;:&quot;/profile/jota/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/jota&quot;}}]); return false" href="#"><span>Links do perfil</span></a><a class="profile_link url" style="" title="Josué" href="http://softwarelivre.org/jota"><span class="profile-image"><img alt="Josué" title="" class=" photo" src="//www.gravatar.com/avatar/e1d0edb3915f0d73e779031571e26c1c?only_path=false&amp;size=64&amp;d=wavatar" /></span><span class="fn">Jota</span><span class="extra_info">Desde: Fev de 2018</span></a></div></div>
+</li>
+
+          </ul>
+        </div>
+    </div>
+
+  <div style="clear:both"></div>
+
+  <link rel="stylesheet" media="screen" href="/assets/vendor/jquery.fancybox-f18bccba6b2b1108ccca4462da78aa43.css" /><script src="/assets/vendor/jquery.fancybox.pack-c84445b4cd8162f8a15703d690ccc514.js"></script><script>
+//<![CDATA[
+apply_zoom_to_images("Mais zoom")
+//]]>
+</script>
+</div>
+
+</div>
+    <div class="pagination"><a class="previous_page" rel="prev" href="/search/people?page=3"><span class="previous-arrow">&laquo; </span>Anterior</a> <a rel="start" href="/search/people?page=1">1</a> <a href="/search/people?page=2">2</a> <a rel="prev" href="/search/people?page=3">3</a> <em class="current">4</em> <a rel="next" href="/search/people?page=5">5</a> <span class="gap">&hellip;</span> <a href="/search/people?page=319">319</a> <a class="next_page" rel="next" href="/search/people?page=5">Próximo<span class="next-arrow"> &raquo;</span></a></div>
+</div>
+
+      </div>
+
+</form>  <div style="clear: both"></div>
+</div>
+
+
+<script src="/assets/search-cd53876d91ad4bdc2de41314296e05ac.js"></script>
+
+<script src="https://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script>
+<script src="/assets/google_maps-254101fd37d91719e68ab390fb239658.js"></script>
+</div></div></div></div>
+  <br style='clear: both'/>
+</div><!-- end id="content-inner" -->
+
+        </div><!-- end id="content" -->
+      </div><!-- end id="wrap-2" -->
+    </div><!-- end id="wrap-1" -->
+    
+    <div id="footer">
+      <div id="theme-footer">
+        <div id="footer-environment">
+<div id="footer-links">
+  <ul>
+    <li><ul id="slbr-footer">
+        <li><a href="http://softwarelivre.org" id="slbr" class="link-this-page"><span>Software Livre - Brasil</span></a></li>
+        <li><a href="http://softwarelivre.org/tv"><span>TV Software Livre</span></a></li>
+        <li><a href="http://softwarelivre.org/radio"><span>Rádio Software Livre</span></a></li>
+        </ul></li>
+    <li><ul id="conheca-footer"><h3>Conheça</h3>
+        <li><a href="http://softwarelivre.org/portal/quem-somos">Quem Somos</a></li>
+        <li><a href="http://softwarelivre.org/portal/termos-de-uso">Termos de Uso</a></li>
+        <li><a href="http://softwarelivre.org/doc">Documentação</a></li>
+        <li><a href="http://softwarelivre.org/contact/portal/new">Fale Conosco</a></li>
+        </ul></li>
+    <li><ul id="colabore-footer"><h3>Colabore</h3>
+        <li><b><a href="http://softwarelivre.org/myprofile/portal/cms/suggest_an_article">Sugerir um Artigo</a></b></li>
+        <li><a href="http://softwarelivre.org/portal/melhorias">Sugerir Melhorias</a></li>
+        <li><a href="http://softwarelivre.org/portal/bugs">Reportar um Bug</a></li>
+        <li><a href="http://softwarelivre.org/portal/desenvolvimento">Desenvolvimento</a></li>
+        </ul></li>
+    <li><ul id="compartilhe-footer"><h3>Compartilhe</h3>
+        <li><b><!-- AddToAny BEGIN -->
+        <a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fsoftwarelivre.org&amp;linkname=SoftwareLivre.org">Compartilhar Isto!</a>
+        <script type="text/javascript">
+        var a2a_config = a2a_config || {};
+        a2a_config.linkname = "SoftwareLivre.org";
+        a2a_config.linkurl = "http://softwarelivre.org";
+        a2a_config.onclick = 1;
+        a2a_config.locale = "pt-BR";
+        a2a_config.num_services = 6;
+        a2a_config.prioritize = ["identi_ca", "twitter", "facebook", "google_buzz", "digg", "email"]
+        </script>
+        <script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END --></b></li>
+        <li><a href="http://softwarelivre.org/portal/eventos">Novos Eventos</a></li>
+        <li><a href="http://softwarelivre.org/portal/portfolio">Portfólio Livre</a></li>
+        <li><a href="http://softwarelivre.org/portal/divulgue">Páginas Amigas</a></li>
+        </ul></li>
+    <li><ul id="apoio-footer"><h3>Apoio</h3>
+        <li> <a href="http://softwarelivre.org/portal/apoio"><img src="/portal/anuncios/apoio.png" style="width:204px"><span>Apoio</span></img></a></li>
+        </ul></li>
+</div><!-- end id="footer-links" -->
+
+<div id="copyright">
+  © Copyleft 2015 -<a id="link-asl" href="http://associacao.softwarelivre.org/" title="Associação SoftwareLivre.org">ASL</a> - Alguns direitos reservados, exceto quando especificado em contrário e nos conteúdos replicados de outras fontes.
+  <p id="noosfero-license">Este site utiliza o software livre <a href="http://www.noosfero.org/" id="link-noosfero">Noosfero</a>, licenciado sob a licença <a href="http://www.gnu.org/licenses/agpl.html">GNU Affero General Public License</a>, versão 3 ou superior.  </p>
+</div><!-- end id="copyright" -->
+</div>
+
+<script type="text/javascript">
+  jQuery(function($) {
+    $(".highlights-block").insertAfter("#theme-header");
+    $(".action-home-index #block-695148").insertBefore("#block-666540");
+    $(".action-environment_design-index #block-695148").insertBefore("#block-666540");
+    $(".action-home-index #block-695454").insertAfter("#block-666540");
+    $(".action-environment_design-index #block-695454").insertAfter("#block-666540");
+    $("#site-title").prependTo("#top");
+    $("#user").insertAfter("#site-title");
+  });
+</script>
+
+      </div><!-- end id="theme-footer" -->
+      <div id="global-footer">
+        
+      </div><!-- end id="global-footer" -->
+    </div><!-- end id="footer" -->
+    
+    <script src="https://s7.addthis.com/js/152/addthis_widget.js"></script>
+    <!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+     var u = "piwik.colivre.coop.br/";
+     if(!u.match(/^https?/)){
+       var protocol = ("https:" == document.location.protocol ? "https" : "http");
+       u = protocol + '://' + u;
+     }
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 3]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.colivre.coop.br/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+  </body>
+</html>

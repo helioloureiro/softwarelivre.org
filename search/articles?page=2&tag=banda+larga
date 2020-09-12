@@ -1,0 +1,2410 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" class="controller-search action-search-articles template-leftbottom theme-sl-default">
+  <head>
+    <title>Software Livre Brasil</title>
+    
+    <!--<meta http-equiv="refresh" content="1"/>-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    
+
+      <meta name="description" content="Software Livre Brasil" />
+
+    <!-- site root -->
+    <meta property="noosfero:root" content=""/>
+
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    
+
+    <script src="/assets/application-1c0930e8f260aafbc74c4fad04079409.js"></script>
+
+  
+  
+<script src="/javascripts/plugins/pg_search/search.js"></script>
+<script src="/javascripts/plugins/pg_search/profile_search_block.js"></script>
+<script src="/assets/plugins/require_auth_to_comment/hide_comment_form-c3a3727ea301c62930e11aab20ae74d4.js"></script>
+<script src="/assets/plugins/require_auth_to_comment/jquery.livequery.min-d1fe96eb7788079f6e550db2b6610365.js"></script>
+<script src="/assets/plugins/orders/javascripts/locale-17eaae2c136082dab9da1d91648b6a7e.js"></script>
+<script src="/assets/plugins/orders/javascripts/toggle_edit-f9da47bc0223fac8e5e5174c6ea24413.js"></script>
+<script src="/assets/plugins/orders/javascripts/sortable-table-ba58eb377fc175eb1e374be63d5454a3.js"></script>
+<script src="/assets/plugins/orders/javascripts/help-14515dc2f741beaa4b3d121df366af0d.js"></script>
+<script src="/assets/plugins/orders/javascripts/orders-560e35746985dc40b97851b13705cb26.js"></script>
+<script src="/assets/plugins/html5_video/video-channel-6aca45f93220c0910d8273dd2368004e.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/locale-17eaae2c136082dab9da1d91648b6a7e.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/toggle_edit-f9da47bc0223fac8e5e5174c6ea24413.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/sortable-table-ba58eb377fc175eb1e374be63d5454a3.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/suppliers-35473b9ebd4b9e65027e1bafa94dfdcd.js"></script>
+<script src="/assets/plugins/event/event-b1013aca7ce3cf0d4d5e6e10dc1f05b2.js"></script>
+<script src="/assets/plugins/display_content/javascripts/jstree/_lib/jquery-1.8.3-09dfd3b315fe6b24fbc309e36f5d70c3.js"></script>
+<script src="/assets/plugins/display_content/javascripts/jstree/jquery.jstree-563d09f7e7938a8a2f4207bfe6d48dd3.js"></script>
+<script src="/assets/plugins/container_block/container_block-7eae56f79aa8da8b64941d18d2972c7b.js"></script>
+<script src="/assets/plugins/delivery/javascripts/delivery-da5b2dac737692db94d5bdc654586171.js"></script>
+<script src="/assets/plugins/products/javascripts/products-a4c860d8dbebe524d554f0b5564e0428.js"></script><script src="/designs/themes/sl-default/theme.js"></script><script>
+//<![CDATA[
+render_all_jquery_ui_widgets()
+//]]>
+</script>
+    <link rel="stylesheet" media="screen" href="/assets/application-e0072ababb97032fa1a5d95fa09d897c.css" />
+<link rel="stylesheet" media="screen" href="/designs/templates/leftbottom/stylesheets/style.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/icons/default/style-b3a500c1e17f47b010a70fdb0103012e.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/icons/pidgin/style-138f7bb59f9d26296632e82eae162877.css" />
+<link rel="stylesheet" media="screen" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/people_block/style-c340afe175b0045c7f8669073a428a1c.css" />
+<link rel="stylesheet" media="screen" href="/stylesheets/plugins/pg_search/style.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/recent_content/style-e0d5f807f7056b173f6cf113c840ddc0.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/custom_forms/style-7870704d75309d55ffcaa827c59baa18.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/work_assignment/style-526deb629c3d9e7736f049b99c72a50a.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/require_auth_to_comment/style-66a0efab118159977ca0194806ef4bec.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/orders/style-feb7767bc71e62563ccab53642a6e4c2.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/html5_video/style-8f2b70d373ff7ec22b404d91b1b6f211.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/suppliers/style-64c71b3cd22994ada93abd55c70ea1ce.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/gallery_block/style-4547593291c3fca2ad50216cbb3dfdc9.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/send_email/style-976778195cb106e52b31d57242cdc01c.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/event/style-8f5f6a9b5a7724dbc4977d11c2e4321c.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/display_content/style-cf10f47511255685485ac51859c22a29.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/container_block/style-dd17a810971259abe7c31678e9d9c132.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/video/style-68d51000d73adab06c1dcd036011138d.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/delivery/style-aeef749320f3cdff642340f047806f9b.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/sub_organizations/style-88810bb91c1c70f63817f6f03295fd92.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/products/style-3147a337d78ccc54df05870c504166fd.css" />
+<link rel="stylesheet" media="screen" href="/designs/themes/sl-default/global.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/themes/sl-default/style-f317a60b59d0ee3e8048cb6eba54b282.css" />
+
+    
+    
+
+    <script type="text/javascript">
+      DEFAULT_LOADING_MESSAGE = 'loading...';
+      PERMANENT_NOTIFICATIONS = false;
+      noosfero.profile = null
+    </script>
+
+      
+<script src="/assets/tinymce/js/tinymce/tinymce-666c93593f34cd23b1f1e9177ab27cae.js"></script><script src="/assets/tinymce/js/tinymce/jquery.tinymce.min-33361c760deadb5b77610a12911056f2.js"></script><script src="/assets/tinymce-4df3fc98953118b704cdb7a023aafdc2.js"></script>
+<script type="text/javascript">
+tinymce.create('tinymce.plugins.MacrosPlugin', {
+  createControl: function(n, cm) {
+    switch (n) {
+       case 'macros':
+    }
+    return null;
+  }
+});
+
+function tinymce_macros_setup(editor) {
+}
+
+// Register plugin with a short name
+tinymce.PluginManager.add('macrosPlugin', tinymce.plugins.MacrosPlugin);
+
+jQuery(document).ready(function () {
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"it","selector":".tiny_mce","toolbar1":"fullscreen | insertfile undo redo | copy paste | bold italic underline | styleselect fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image","menubar":"edit insert view tools","toolbar2":"print preview code media | table | macros","macros_setup":[]})
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"it","selector":".tiny_mce_simple","toolbar1":"fullscreen | insertfile undo redo | copy paste | bold italic underline | styleselect fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image","menubar":false,"toolbar2":null,"macros_setup":[]})
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"it","selector":".tiny_mce_restricted","toolbar1":"bold italic underline | link","menubar":false,"toolbar2":null,"macros_setup":[]})
+});
+</script>
+
+
+  </head>
+  <body class="controller-search action-search-articles template-leftbottom">
+    <a href="#content" id="link-go-content"><span>Go to the content</span></a>
+    
+    <div id="global-header">
+      <!-- div class='supportbanner'>
+  <div class='content'>
+    <div class='banner-title'>Campanha de doação 2016</div>
+    <div class='banner-subtitle'>Ajude a <span class='asl'>ASL.Org</span> a realizar o <span class='fisl17'>FISL17</span>!</div>
+    <p>Ajude a Associação Software Livre.Org a continuar seu trabalho de 12 anos em prol do desenvolvimento e disseminação do Software Livre. Faça uma doação e ganhe um ingresso cortesia para o <span class='fisl17'>FISL17</span> e uma camiseta oficial do evento.</p>
+  </div>
+  <div class='footer-links'>
+    <a class='logo-fisl17' href='http://fisl.org.br' target='_blank'><span>fisl17</span></a>
+    <a class='logo-asl' href='http://asl.org' target='_blank'><span>ASL.org</span></a>
+    <a class='iot-fisl' href='http://segue.fisl17.softwarelivre.org' target='_blank'><span>Contribua para o fisl17</span></a>
+  </div>
+</div -->
+
+    </div>
+
+    <div id="wrap-1">
+      <div id="theme-header">
+        <div id="top">
+  <ul id="top-menu">
+    <li><a href="/"><span>Início</span></a></li>
+    <li><a id="submenu-people" href="/search/people"><span class="icon-menu-people">People</span></a><a class="up menu-submenu-trigger" id="submenu-people-trigger" onclick="toggleSubmenu(this, '', {&quot;More recent&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_recent&quot;},&quot;More active&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_active&quot;},&quot;More popular&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_popular&quot;}}); return false" href="#"><span>People menu</span></a></li>
+    <li><a id="submenu-communities" href="/search/communities"><span class="icon-menu-community">Communities</span></a><a class="up menu-submenu-trigger" id="submenu-communities-trigger" onclick="toggleSubmenu(this, '', {&quot;More recent&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_recent&quot;},&quot;More active&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_active&quot;},&quot;More popular&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_popular&quot;}}); return false" href="#"><span>Communities menu</span></a></li>
+    <li><a href="/profile/portal/events" id="submenu-events"><span class='icon-menu-events'>Events</span></a></li>
+    <li><a href="/doc"><span>Manual</span></a></li>
+    <li><a href="/portal/quem-somos" id="submenu-about"><span>About</span></a></li>
+  </ul>
+</div>
+
+      </div>
+      <div id="wrap-2">
+        <div id="user">
+    <span class='not-logged-in'>
+      <span class='login'><a id="link_login" onclick="return noosfero.modal.inline(&#39;#inlineLoginBox&#39;)" class="" href="/account/login"><i class="icon-menu-login"></i><strong>Login</strong></a></span>
+
+      <div id='inlineLoginBox' style='display: none;'>
+        <div class="login-box">
+
+<h2>Login</h2>
+
+
+
+
+<form action="/account/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="I+QjeNgGAr5XiDs7fYKodpWemceC7Cvcacb7/nphjZq+jJN5ql0AXbiTzqX7AtIV2g9TBIpg7I40SsL6JeorSA==" />
+
+     <div class="formfieldline"><label class="formlabel" for="main_user_login">Username / Email</label><div class="formfield type-text"><input id="main_user_login" onchange="this.value = convToValidLogin( this.value )" type="text" name="user[login]" /></div></div>
+
+     <div class="formfieldline"><label class="formlabel" for="user_password">Password</label><div class="formfield type-password"><input type="password" name="user[password]" id="user_password" /></div></div>
+
+     <div class='checkbox'>
+       <label>
+         <input type="checkbox" name="remember_me" id="remember_me" value="1" checked="checked" />
+         Keep me logged in
+       </label>
+     </div>
+
+     
+
+     <div class=" button-bar">
+       <input type="submit" name="commit" value="Log in" class="button with-text icon-login submit" />
+         <a class="button icon-close with-text modal-toggle modal-close" rel="deactivate" title="Cancel" href="#">&nbsp;<span>Cancel</span></a>
+<br style="clear: left;" /></div>
+</form>
+<div class=" button-bar">
+    <a class="button icon-add with-text" title="New user" href="/account/signup">&nbsp;<span>New user</span></a>
+
+    <a class="button icon-help with-text" title="I forgot my password!" href="/account/forgot_password">&nbsp;<span>I forgot my password!</span></a>
+<br style="clear: left;" /></div>
+</div><!-- end class="login-box" -->
+
+
+      </div>
+
+        <span class='or'>or</span> <span class='signup'><a href="/account/signup"><strong>Sign up</strong></a></span>
+    </span>
+  <form action="/search/articles" id="top-search" class="search_form clean" method="get">
+    <input name="query" size="15" title="Search..." onfocus="this.form.className='focused';" onblur="this.form.className=''" />
+    <div>Press <strong>Enter</strong> to send the search query.</div>
+    <script>
+//<![CDATA[
+jQuery("#user form input").hint();
+//]]>
+</script>
+  </form>
+</div><!-- end id="user" -->
+
+        <h1 id="site-title">
+          <a href="/"><span>Software livre Brasil</span></a>
+
+        </h1>
+        <div id="navigation">
+          <ul>
+            <div id="friends">
+<ul>
+  <li><a href="/portal"><span>+</span></a></li>
+  <li><a href="http://br-linux.org"><span>BR-Linux</span></a></li>
+  <li><a href="http://www.vivaolinux.com.br"><span>Viva o Linux</span></a></li>
+  <li><a href="http://www.revista.espiritolivre.org"><span>Revista Espírito Livre</span></a></li>
+  <li><a href="http://www.dicas-l.com.br"><span>Dicas-L</span></a></li>
+  <li><a href="http://www.sejalivre.org"><span>Seja Livre</span></a></li>
+  <li><a href="http://www.underlinux.com.br"><span>Under Linux</span></a></li>
+  <li><a href="http://www.sempreupdate.com.br"><span>Sempre Update</span></a></li>
+</ul>
+</div>
+<div id="external-links">
+<ul>
+  <li><a id="blogoosfero" title="Blogoosfero" href="http://blogoosfero.cc/software-livre" target="_blank"><span>Blogoosfero</span></a></li>
+  <li><a id="twitter" title="Twitter" href="https://twitter.com/PSLBrasil" target="_blank"><span>Twitter</span></a></li>
+  <li><a id="diaspora" title="Diaspora" href="https://diaspora.softwarelivre.org/u/pslbrasil" target="_blank"><span>Diaspora</span></a></li>
+  <li><a id="gnu-social" title="Quitter" href="https://quitter.se/pslbrasil" target="_blank"><span>Quitter</span></a></li>
+  <li><a id="feed" title="Feed" href="http://softwarelivre.org/portal/feed"><span>Feed</span></a></li>
+</ul>
+</div>
+
+          </ul>
+          <div id="navigation-end"></div>
+        </div><!-- end id="navigation" -->
+        <div id="content">
+          <div id="content-inner">
+  <div class="no-boxes"><div class="no-boxes-inner-1"><div class="no-boxes-inner-2"><div class="main-content"><h1>Search Results - <small>Tagged with banda larga</small></h1>
+
+<div class='search-form'>
+  <form class="search_form" action="/search/articles?tag=banda+larga" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="data-remote" /><input type="hidden" name="authenticity_token" value="TCrKv1BpNIWmbWlnQg0BM+Hsh137fAVl7HHiyR9OnlnRQnq+IjI2Zkl2nPnEjXtQrn1NnvPwwjex/dvNQMU4iw==" />
+
+    <div id='search-header'>
+  <ul id="assets-menu"><li class="selected"><a data-tag="banda larga" href="/search/articles">Contents</a></li>
+<li><a data-tag="banda larga" href="/search/people">People</a></li>
+<li><a data-tag="banda larga" href="/search/communities">Communities</a></li>
+<li><a data-tag="banda larga" href="/search/enterprises">Enterprises</a></li></ul>
+  <div id="search-filters"><select name="order" id="order"><option value="more_recent">More recent</option>
+<option value="more_popular">More popular</option>
+<option value="more_comments">More comments</option>
+<option value="more_relevant">More relevant</option></select>
+</div>
+  <div class="clear"></div>
+</div>
+
+<div id='search-subheader'>
+  
+</div>
+<div class="search-field">
+  <span class="formfield">
+    <input type="text" name="query" id="search-input" value="" size="50" placeholder="Type words about the content you're looking for" class="search-input-with-suggestions" data-asset="articles" />
+  </span>
+
+  <input type="submit" name="commit" value="Search" class="button with-text icon-search submit" />
+</div>
+
+
+
+
+
+    <div id='total-results'>
+  Total of 113 results
+</div>
+
+
+      <div id='search-column-left' class='search-column'>
+        <div id="facets">
+
+      <div id="types-facet" class="facet"><h2>Types</h2><input type="text" id="" placeholder="Refine options" class="facet-refine" /><div class="facets-block"><div class="facet-option "><input type="hidden" name="facets[attribute-type][TextArticle]" id="facets_attribute-type_TextArticle" value="0" /><input type="checkbox" name="facets[attribute-type][TextArticle]" id="checkbox-2" value="1" /><label for="checkbox-2">TextArticle</label><span class="facet-count">(112)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[attribute-type][Event]" id="facets_attribute-type_Event" value="0" /><input type="checkbox" name="facets[attribute-type][Event]" id="checkbox-3" value="1" /><label for="checkbox-3">Event</label><span class="facet-count">(1)</span></div></div><a class="button icon-clear with-text clear-facet" data-facet="types-facet" title="Clear filters" href="/search/articles">&nbsp;<span>Clear filters</span></a></div>
+      <div id="content-types-facet" class="facet"><h2>Content types</h2><input type="text" id="" placeholder="Refine options" class="facet-refine" /><div class="facets-block"><div class="facet-option undefined-value"><input type="hidden" name="facets[attribute-content_type][ ]" id="facets_attribute-content_type__" value="0" /><input type="checkbox" name="facets[attribute-content_type][ ]" id="checkbox-4" value="1" /><label for="checkbox-4">Undefined</label><span class="facet-count">(113)</span></div></div><a class="button icon-clear with-text clear-facet" data-facet="content-types-facet" title="Clear filters" href="/search/articles">&nbsp;<span>Clear filters</span></a></div>
+      <div id="tags-facet" class="facet"><h2>Tags</h2><input type="text" id="" placeholder="Refine options" class="facet-refine" /><div class="facets-block"><div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][151]" id="facets_relation-acts_as_taggable_on_tag_151" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][151]" id="checkbox-5" value="1" /><label for="checkbox-5">banda larga</label><span class="facet-count">(114)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][23]" id="facets_relation-acts_as_taggable_on_tag_23" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][23]" id="checkbox-6" value="1" /><label for="checkbox-6">internet</label><span class="facet-count">(55)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5257]" id="facets_relation-acts_as_taggable_on_tag_5257" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5257]" id="checkbox-7" value="1" /><label for="checkbox-7">pnbl</label><span class="facet-count">(45)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1897]" id="facets_relation-acts_as_taggable_on_tag_1897" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1897]" id="checkbox-8" value="1" /><label for="checkbox-8">furusho</label><span class="facet-count">(37)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][900]" id="facets_relation-acts_as_taggable_on_tag_900" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][900]" id="checkbox-9" value="1" /><label for="checkbox-9">inclusão digital</label><span class="facet-count">(19)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5894]" id="facets_relation-acts_as_taggable_on_tag_5894" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5894]" id="checkbox-10" value="1" /><label for="checkbox-10">telebrás</label><span class="facet-count">(13)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][137343]" id="facets_relation-acts_as_taggable_on_tag_137343" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][137343]" id="checkbox-11" value="1" /><label for="checkbox-11">cidades digitais</label><span class="facet-count">(10)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][6377]" id="facets_relation-acts_as_taggable_on_tag_6377" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][6377]" id="checkbox-12" value="1" /><label for="checkbox-12">paraná</label><span class="facet-count">(10)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5881]" id="facets_relation-acts_as_taggable_on_tag_5881" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5881]" id="checkbox-13" value="1" /><label for="checkbox-13">fibra ótica</label><span class="facet-count">(9)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][138288]" id="facets_relation-acts_as_taggable_on_tag_138288" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][138288]" id="checkbox-14" value="1" /><label for="checkbox-14">copel</label><span class="facet-count">(8)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1728]" id="facets_relation-acts_as_taggable_on_tag_1728" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1728]" id="checkbox-15" value="1" /><label for="checkbox-15">lula</label><span class="facet-count">(8)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][642]" id="facets_relation-acts_as_taggable_on_tag_642" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][642]" id="checkbox-16" value="1" /><label for="checkbox-16">governo</label><span class="facet-count">(8)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1306]" id="facets_relation-acts_as_taggable_on_tag_1306" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1306]" id="checkbox-17" value="1" /><label for="checkbox-17">marcelo branco</label><span class="facet-count">(7)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][137600]" id="facets_relation-acts_as_taggable_on_tag_137600" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][137600]" id="checkbox-18" value="1" /><label for="checkbox-18">santanna</label><span class="facet-count">(6)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1634]" id="facets_relation-acts_as_taggable_on_tag_1634" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1634]" id="checkbox-19" value="1" /><label for="checkbox-19">3g</label><span class="facet-count">(6)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][3228]" id="facets_relation-acts_as_taggable_on_tag_3228" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][3228]" id="checkbox-20" value="1" /><label for="checkbox-20">móvel</label><span class="facet-count">(5)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][6260]" id="facets_relation-acts_as_taggable_on_tag_6260" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][6260]" id="checkbox-21" value="1" /><label for="checkbox-21">fust</label><span class="facet-count">(5)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2014]" id="facets_relation-acts_as_taggable_on_tag_2014" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2014]" id="checkbox-22" value="1" /><label for="checkbox-22">celepar</label><span class="facet-count">(5)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2677]" id="facets_relation-acts_as_taggable_on_tag_2677" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2677]" id="checkbox-23" value="1" /><label for="checkbox-23">direito autoral</label><span class="facet-count">(4)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][8]" id="facets_relation-acts_as_taggable_on_tag_8" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][8]" id="checkbox-24" value="1" /><label for="checkbox-24">software livre</label><span class="facet-count">(4)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][12695]" id="facets_relation-acts_as_taggable_on_tag_12695" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][12695]" id="checkbox-25" value="1" /><label for="checkbox-25">provedor</label><span class="facet-count">(4)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][137296]" id="facets_relation-acts_as_taggable_on_tag_137296" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][137296]" id="checkbox-26" value="1" /><label for="checkbox-26">plano nacional</label><span class="facet-count">(4)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2195]" id="facets_relation-acts_as_taggable_on_tag_2195" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2195]" id="checkbox-27" value="1" /><label for="checkbox-27">curitiba</label><span class="facet-count">(4)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][138673]" id="facets_relation-acts_as_taggable_on_tag_138673" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][138673]" id="checkbox-28" value="1" /><label for="checkbox-28">reforma do direito autoral</label><span class="facet-count">(4)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][10021]" id="facets_relation-acts_as_taggable_on_tag_10021" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][10021]" id="checkbox-29" value="1" /><label for="checkbox-29">marco civil da internet</label><span class="facet-count">(4)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1459]" id="facets_relation-acts_as_taggable_on_tag_1459" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1459]" id="checkbox-30" value="1" /><label for="checkbox-30">audiência pública</label><span class="facet-count">(4)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][17862]" id="facets_relation-acts_as_taggable_on_tag_17862" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][17862]" id="checkbox-31" value="1" /><label for="checkbox-31">telebras</label><span class="facet-count">(4)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][6368]" id="facets_relation-acts_as_taggable_on_tag_6368" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][6368]" id="checkbox-32" value="1" /><label for="checkbox-32">oi</label><span class="facet-count">(4)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1138]" id="facets_relation-acts_as_taggable_on_tag_1138" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1138]" id="checkbox-33" value="1" /><label for="checkbox-33">brasília</label><span class="facet-count">(4)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5902]" id="facets_relation-acts_as_taggable_on_tag_5902" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5902]" id="checkbox-34" value="1" /><label for="checkbox-34">câmara</label><span class="facet-count">(3)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5103]" id="facets_relation-acts_as_taggable_on_tag_5103" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5103]" id="checkbox-35" value="1" /><label for="checkbox-35">universalização</label><span class="facet-count">(3)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][7469]" id="facets_relation-acts_as_taggable_on_tag_7469" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][7469]" id="checkbox-36" value="1" /><label for="checkbox-36">minicom</label><span class="facet-count">(3)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][49]" id="facets_relation-acts_as_taggable_on_tag_49" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][49]" id="checkbox-37" value="1" /><label for="checkbox-37">fórum</label><span class="facet-count">(3)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][140075]" id="facets_relation-acts_as_taggable_on_tag_140075" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][140075]" id="checkbox-38" value="1" /><label for="checkbox-38">ai5-digital</label><span class="facet-count">(3)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][7217]" id="facets_relation-acts_as_taggable_on_tag_7217" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][7217]" id="checkbox-39" value="1" /><label for="checkbox-39">rogério santanna</label><span class="facet-count">(3)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2052]" id="facets_relation-acts_as_taggable_on_tag_2052" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2052]" id="checkbox-40" value="1" /><label for="checkbox-40">consegi</label><span class="facet-count">(3)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][135917]" id="facets_relation-acts_as_taggable_on_tag_135917" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][135917]" id="checkbox-41" value="1" /><label for="checkbox-41">plano</label><span class="facet-count">(3)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][3702]" id="facets_relation-acts_as_taggable_on_tag_3702" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][3702]" id="checkbox-42" value="1" /><label for="checkbox-42">marco civil</label><span class="facet-count">(3)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][138322]" id="facets_relation-acts_as_taggable_on_tag_138322" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][138322]" id="checkbox-43" value="1" /><label for="checkbox-43">conectado</label><span class="facet-count">(3)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][20]" id="facets_relation-acts_as_taggable_on_tag_20" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][20]" id="checkbox-44" value="1" /><label for="checkbox-44">redes</label><span class="facet-count">(3)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1489]" id="facets_relation-acts_as_taggable_on_tag_1489" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1489]" id="checkbox-45" value="1" /><label for="checkbox-45">nacional</label><span class="facet-count">(3)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][239]" id="facets_relation-acts_as_taggable_on_tag_239" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][239]" id="checkbox-46" value="1" /><label for="checkbox-46">cultura digital</label><span class="facet-count">(3)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1112]" id="facets_relation-acts_as_taggable_on_tag_1112" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1112]" id="checkbox-47" value="1" /><label for="checkbox-47">escolas</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2925]" id="facets_relation-acts_as_taggable_on_tag_2925" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2925]" id="checkbox-48" value="1" /><label for="checkbox-48">minc</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5101]" id="facets_relation-acts_as_taggable_on_tag_5101" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5101]" id="checkbox-49" value="1" /><label for="checkbox-49">conexão</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][7292]" id="facets_relation-acts_as_taggable_on_tag_7292" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][7292]" id="checkbox-50" value="1" /><label for="checkbox-50">telefônica</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][3547]" id="facets_relation-acts_as_taggable_on_tag_3547" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][3547]" id="checkbox-51" value="1" /><label for="checkbox-51">idec</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][136287]" id="facets_relation-acts_as_taggable_on_tag_136287" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][136287]" id="checkbox-52" value="1" /><label for="checkbox-52">bndes</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][36]" id="facets_relation-acts_as_taggable_on_tag_36" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][36]" id="checkbox-53" value="1" /><label for="checkbox-53">comunicação</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][137357]" id="facets_relation-acts_as_taggable_on_tag_137357" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][137357]" id="checkbox-54" value="1" /><label for="checkbox-54">comissão defesa consumidor</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1666]" id="facets_relation-acts_as_taggable_on_tag_1666" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1666]" id="checkbox-55" value="1" /><label for="checkbox-55">wireless</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][3386]" id="facets_relation-acts_as_taggable_on_tag_3386" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][3386]" id="checkbox-56" value="1" /><label for="checkbox-56">uol</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][205]" id="facets_relation-acts_as_taggable_on_tag_205" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][205]" id="checkbox-57" value="1" /><label for="checkbox-57">cidades</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][139991]" id="facets_relation-acts_as_taggable_on_tag_139991" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][139991]" id="checkbox-58" value="1" /><label for="checkbox-58">bel-100</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][137358]" id="facets_relation-acts_as_taggable_on_tag_137358" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][137358]" id="checkbox-59" value="1" /><label for="checkbox-59">direito à informação</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][137969]" id="facets_relation-acts_as_taggable_on_tag_137969" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][137969]" id="checkbox-60" value="1" /><label for="checkbox-60">lda</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][138318]" id="facets_relation-acts_as_taggable_on_tag_138318" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][138318]" id="checkbox-61" value="1" /><label for="checkbox-61">cidade digital</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][3787]" id="facets_relation-acts_as_taggable_on_tag_3787" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][3787]" id="checkbox-62" value="1" /><label for="checkbox-62">petrobras</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2268]" id="facets_relation-acts_as_taggable_on_tag_2268" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2268]" id="checkbox-63" value="1" /><label for="checkbox-63">dilma</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][137419]" id="facets_relation-acts_as_taggable_on_tag_137419" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][137419]" id="checkbox-64" value="1" /><label for="checkbox-64">ipea</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][7925]" id="facets_relation-acts_as_taggable_on_tag_7925" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][7925]" id="checkbox-65" value="1" /><label for="checkbox-65">uit</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2090]" id="facets_relation-acts_as_taggable_on_tag_2090" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2090]" id="checkbox-66" value="1" /><label for="checkbox-66">bahia</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][516]" id="facets_relation-acts_as_taggable_on_tag_516" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][516]" id="checkbox-67" value="1" /><label for="checkbox-67">web</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][3127]" id="facets_relation-acts_as_taggable_on_tag_3127" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][3127]" id="checkbox-68" value="1" /><label for="checkbox-68">guarulhos</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2823]" id="facets_relation-acts_as_taggable_on_tag_2823" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2823]" id="checkbox-69" value="1" /><label for="checkbox-69">consumidor</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][7291]" id="facets_relation-acts_as_taggable_on_tag_7291" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][7291]" id="checkbox-70" value="1" /><label for="checkbox-70">brasil telecom</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][828]" id="facets_relation-acts_as_taggable_on_tag_828" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][828]" id="checkbox-71" value="1" /><label for="checkbox-71">telecomunicações</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][38]" id="facets_relation-acts_as_taggable_on_tag_38" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][38]" id="checkbox-72" value="1" /><label for="checkbox-72">cultura</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5486]" id="facets_relation-acts_as_taggable_on_tag_5486" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5486]" id="checkbox-73" value="1" /><label for="checkbox-73">eletronet</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][136056]" id="facets_relation-acts_as_taggable_on_tag_136056" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][136056]" id="checkbox-74" value="1" /><label for="checkbox-74">plc</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5921]" id="facets_relation-acts_as_taggable_on_tag_5921" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5921]" id="checkbox-75" value="1" /><label for="checkbox-75">tic</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][3445]" id="facets_relation-acts_as_taggable_on_tag_3445" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][3445]" id="checkbox-76" value="1" /><label for="checkbox-76">inclusão social</label><span class="facet-count">(2)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][137666]" id="facets_relation-acts_as_taggable_on_tag_137666" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][137666]" id="checkbox-77" value="1" /><label for="checkbox-77">profuturo/fia</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][138300]" id="facets_relation-acts_as_taggable_on_tag_138300" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][138300]" id="checkbox-78" value="1" /><label for="checkbox-78">finlândia</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][42]" id="facets_relation-acts_as_taggable_on_tag_42" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][42]" id="checkbox-79" value="1" /><label for="checkbox-79">blog</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][137401]" id="facets_relation-acts_as_taggable_on_tag_137401" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][137401]" id="checkbox-80" value="1" /><label for="checkbox-80">intelig</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][138283]" id="facets_relation-acts_as_taggable_on_tag_138283" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][138283]" id="checkbox-81" value="1" /><label for="checkbox-81">celepar. copel</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][138649]" id="facets_relation-acts_as_taggable_on_tag_138649" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][138649]" id="checkbox-82" value="1" /><label for="checkbox-82">pebl</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][193]" id="facets_relation-acts_as_taggable_on_tag_193" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][193]" id="checkbox-83" value="1" /><label for="checkbox-83">liberdade</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1656]" id="facets_relation-acts_as_taggable_on_tag_1656" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1656]" id="checkbox-84" value="1" /><label for="checkbox-84">sérgio amadeu</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][6035]" id="facets_relation-acts_as_taggable_on_tag_6035" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][6035]" id="checkbox-85" value="1" /><label for="checkbox-85">conumidor</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5919]" id="facets_relation-acts_as_taggable_on_tag_5919" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5919]" id="checkbox-86" value="1" /><label for="checkbox-86">desconectados</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][140560]" id="facets_relation-acts_as_taggable_on_tag_140560" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][140560]" id="checkbox-87" value="1" /><label for="checkbox-87">brizola</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5656]" id="facets_relation-acts_as_taggable_on_tag_5656" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5656]" id="checkbox-88" value="1" /><label for="checkbox-88">pequenos</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][7837]" id="facets_relation-acts_as_taggable_on_tag_7837" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][7837]" id="checkbox-89" value="1" /><label for="checkbox-89">irlanda</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][136285]" id="facets_relation-acts_as_taggable_on_tag_136285" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][136285]" id="checkbox-90" value="1" /><label for="checkbox-90">aneel</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][6223]" id="facets_relation-acts_as_taggable_on_tag_6223" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][6223]" id="checkbox-91" value="1" /><label for="checkbox-91">sbtvd</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][7470]" id="facets_relation-acts_as_taggable_on_tag_7470" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][7470]" id="checkbox-92" value="1" /><label for="checkbox-92">digitais</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][138770]" id="facets_relation-acts_as_taggable_on_tag_138770" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][138770]" id="checkbox-93" value="1" /><label for="checkbox-93">gasoduto</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2767]" id="facets_relation-acts_as_taggable_on_tag_2767" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2767]" id="checkbox-94" value="1" /><label for="checkbox-94">mídias sociais</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][7218]" id="facets_relation-acts_as_taggable_on_tag_7218" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][7218]" id="checkbox-95" value="1" /><label for="checkbox-95">global info</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][6262]" id="facets_relation-acts_as_taggable_on_tag_6262" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][6262]" id="checkbox-96" value="1" /><label for="checkbox-96">anatel</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][186]" id="facets_relation-acts_as_taggable_on_tag_186" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][186]" id="checkbox-97" value="1" /><label for="checkbox-97">legislação</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][140474]" id="facets_relation-acts_as_taggable_on_tag_140474" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][140474]" id="checkbox-98" value="1" /><label for="checkbox-98">internet grátis</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][10522]" id="facets_relation-acts_as_taggable_on_tag_10522" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][10522]" id="checkbox-99" value="1" /><label for="checkbox-99">manifesto</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1041]" id="facets_relation-acts_as_taggable_on_tag_1041" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1041]" id="checkbox-100" value="1" /><label for="checkbox-100">netbook</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][720]" id="facets_relation-acts_as_taggable_on_tag_720" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][720]" id="checkbox-101" value="1" /><label for="checkbox-101">aprendizagem</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][171]" id="facets_relation-acts_as_taggable_on_tag_171" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][171]" id="checkbox-102" value="1" /><label for="checkbox-102">rede</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][8222]" id="facets_relation-acts_as_taggable_on_tag_8222" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][8222]" id="checkbox-103" value="1" /><label for="checkbox-103">copa do mundo</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][314]" id="facets_relation-acts_as_taggable_on_tag_314" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][314]" id="checkbox-104" value="1" /><label for="checkbox-104">asl</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1063]" id="facets_relation-acts_as_taggable_on_tag_1063" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1063]" id="checkbox-105" value="1" /><label for="checkbox-105">minas gerais</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2523]" id="facets_relation-acts_as_taggable_on_tag_2523" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2523]" id="checkbox-106" value="1" /><label for="checkbox-106">crescimento</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][47]" id="facets_relation-acts_as_taggable_on_tag_47" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][47]" id="checkbox-107" value="1" /><label for="checkbox-107">tecnologia</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][28647]" id="facets_relation-acts_as_taggable_on_tag_28647" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][28647]" id="checkbox-108" value="1" /><label for="checkbox-108">midialivrismo</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][10819]" id="facets_relation-acts_as_taggable_on_tag_10819" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][10819]" id="checkbox-109" value="1" /><label for="checkbox-109">psdb</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][137281]" id="facets_relation-acts_as_taggable_on_tag_137281" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][137281]" id="checkbox-110" value="1" /><label for="checkbox-110">claro</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][6264]" id="facets_relation-acts_as_taggable_on_tag_6264" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][6264]" id="checkbox-111" value="1" /><label for="checkbox-111">jaime</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][139325]" id="facets_relation-acts_as_taggable_on_tag_139325" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][139325]" id="checkbox-112" value="1" /><label for="checkbox-112">caetano</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][136667]" id="facets_relation-acts_as_taggable_on_tag_136667" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][136667]" id="checkbox-113" value="1" /><label for="checkbox-113">fndc</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][275]" id="facets_relation-acts_as_taggable_on_tag_275" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][275]" id="checkbox-114" value="1" /><label for="checkbox-114">desenvolvimento</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][20255]" id="facets_relation-acts_as_taggable_on_tag_20255" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][20255]" id="checkbox-115" value="1" /><label for="checkbox-115">distrito federal</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][13943]" id="facets_relation-acts_as_taggable_on_tag_13943" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][13943]" id="checkbox-116" value="1" /><label for="checkbox-116">tuitaço</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][12465]" id="facets_relation-acts_as_taggable_on_tag_12465" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][12465]" id="checkbox-117" value="1" /><label for="checkbox-117">tablet</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][13397]" id="facets_relation-acts_as_taggable_on_tag_13397" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][13397]" id="checkbox-118" value="1" /><label for="checkbox-118">itu</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5100]" id="facets_relation-acts_as_taggable_on_tag_5100" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5100]" id="checkbox-119" value="1" /><label for="checkbox-119">infraestrutura pública</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][28648]" id="facets_relation-acts_as_taggable_on_tag_28648" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][28648]" id="checkbox-120" value="1" /><label for="checkbox-120">resíduos eletrônicos</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5882]" id="facets_relation-acts_as_taggable_on_tag_5882" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5882]" id="checkbox-121" value="1" /><label for="checkbox-121">operadoras</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][14244]" id="facets_relation-acts_as_taggable_on_tag_14244" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][14244]" id="checkbox-122" value="1" /><label for="checkbox-122">participação social</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][137763]" id="facets_relation-acts_as_taggable_on_tag_137763" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][137763]" id="checkbox-123" value="1" /><label for="checkbox-123">magdiel da costa santos</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][15360]" id="facets_relation-acts_as_taggable_on_tag_15360" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][15360]" id="checkbox-124" value="1" /><label for="checkbox-124">sady jacques</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][140476]" id="facets_relation-acts_as_taggable_on_tag_140476" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][140476]" id="checkbox-125" value="1" /><label for="checkbox-125">bairro uberaba digital</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4112]" id="facets_relation-acts_as_taggable_on_tag_4112" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4112]" id="checkbox-126" value="1" /><label for="checkbox-126">wi-fi</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][16869]" id="facets_relation-acts_as_taggable_on_tag_16869" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][16869]" id="checkbox-127" value="1" /><label for="checkbox-127">15opoa</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2416]" id="facets_relation-acts_as_taggable_on_tag_2416" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2416]" id="checkbox-128" value="1" /><label for="checkbox-128">santana</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][3202]" id="facets_relation-acts_as_taggable_on_tag_3202" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][3202]" id="checkbox-129" value="1" /><label for="checkbox-129">eleição</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][8057]" id="facets_relation-acts_as_taggable_on_tag_8057" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][8057]" id="checkbox-130" value="1" /><label for="checkbox-130">federalsul</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][11617]" id="facets_relation-acts_as_taggable_on_tag_11617" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][11617]" id="checkbox-131" value="1" /><label for="checkbox-131">medicina</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][140046]" id="facets_relation-acts_as_taggable_on_tag_140046" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][140046]" id="checkbox-132" value="1" /><label for="checkbox-132">eletrobas</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1580]" id="facets_relation-acts_as_taggable_on_tag_1580" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1580]" id="checkbox-133" value="1" /><label for="checkbox-133">pública</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5877]" id="facets_relation-acts_as_taggable_on_tag_5877" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5877]" id="checkbox-134" value="1" /><label for="checkbox-134">eletrobrás</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][7515]" id="facets_relation-acts_as_taggable_on_tag_7515" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][7515]" id="checkbox-135" value="1" /><label for="checkbox-135">ministério público</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][6088]" id="facets_relation-acts_as_taggable_on_tag_6088" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][6088]" id="checkbox-136" value="1" /><label for="checkbox-136">velocidade</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][16872]" id="facets_relation-acts_as_taggable_on_tag_16872" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][16872]" id="checkbox-137" value="1" /><label for="checkbox-137">democraciareal</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4119]" id="facets_relation-acts_as_taggable_on_tag_4119" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4119]" id="checkbox-138" value="1" /><label for="checkbox-138">info</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][137530]" id="facets_relation-acts_as_taggable_on_tag_137530" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][137530]" id="checkbox-139" value="1" /><label for="checkbox-139">câmra dos deputados</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][6214]" id="facets_relation-acts_as_taggable_on_tag_6214" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][6214]" id="checkbox-140" value="1" /><label for="checkbox-140">mercosul</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][16121]" id="facets_relation-acts_as_taggable_on_tag_16121" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][16121]" id="checkbox-141" value="1" /><label for="checkbox-141">cgi</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][152]" id="facets_relation-acts_as_taggable_on_tag_152" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][152]" id="checkbox-142" value="1" /><label for="checkbox-142">internautas</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][140032]" id="facets_relation-acts_as_taggable_on_tag_140032" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][140032]" id="checkbox-143" value="1" /><label for="checkbox-143">reginaldo</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2983]" id="facets_relation-acts_as_taggable_on_tag_2983" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2983]" id="checkbox-144" value="1" /><label for="checkbox-144">direitos autorais</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][8225]" id="facets_relation-acts_as_taggable_on_tag_8225" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][8225]" id="checkbox-145" value="1" /><label for="checkbox-145">ministério da cultura</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5898]" id="facets_relation-acts_as_taggable_on_tag_5898" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5898]" id="checkbox-146" value="1" /><label for="checkbox-146">austrália</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5848]" id="facets_relation-acts_as_taggable_on_tag_5848" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5848]" id="checkbox-147" value="1" /><label for="checkbox-147">preço</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][139293]" id="facets_relation-acts_as_taggable_on_tag_139293" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][139293]" id="checkbox-148" value="1" /><label for="checkbox-148">conapsi</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][15418]" id="facets_relation-acts_as_taggable_on_tag_15418" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][15418]" id="checkbox-149" value="1" /><label for="checkbox-149">brizola neto</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][140455]" id="facets_relation-acts_as_taggable_on_tag_140455" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][140455]" id="checkbox-150" value="1" /><label for="checkbox-150">agencia brasil</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][123839]" id="facets_relation-acts_as_taggable_on_tag_123839" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][123839]" id="checkbox-151" value="1" /><label for="checkbox-151">dilma roussef</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5917]" id="facets_relation-acts_as_taggable_on_tag_5917" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5917]" id="checkbox-152" value="1" /><label for="checkbox-152">ibge</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][141161]" id="facets_relation-acts_as_taggable_on_tag_141161" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][141161]" id="checkbox-153" value="1" /><label for="checkbox-153">daniel bordignon</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][61]" id="facets_relation-acts_as_taggable_on_tag_61" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][61]" id="checkbox-154" value="1" /><label for="checkbox-154">conferência</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][6263]" id="facets_relation-acts_as_taggable_on_tag_6263" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][6263]" id="checkbox-155" value="1" /><label for="checkbox-155">pedro</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][6296]" id="facets_relation-acts_as_taggable_on_tag_6296" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][6296]" id="checkbox-156" value="1" /><label for="checkbox-156">gratuita</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][13825]" id="facets_relation-acts_as_taggable_on_tag_13825" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][13825]" id="checkbox-157" value="1" /><label for="checkbox-157">troca</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][138284]" id="facets_relation-acts_as_taggable_on_tag_138284" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][138284]" id="checkbox-158" value="1" /><label for="checkbox-158">ravedutti</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5918]" id="facets_relation-acts_as_taggable_on_tag_5918" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5918]" id="checkbox-159" value="1" /><label for="checkbox-159">atraso</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2820]" id="facets_relation-acts_as_taggable_on_tag_2820" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2820]" id="checkbox-160" value="1" /><label for="checkbox-160">municípios</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][15296]" id="facets_relation-acts_as_taggable_on_tag_15296" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][15296]" id="checkbox-161" value="1" /><label for="checkbox-161">rea</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1148]" id="facets_relation-acts_as_taggable_on_tag_1148" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1148]" id="checkbox-162" value="1" /><label for="checkbox-162">programa</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][319]" id="facets_relation-acts_as_taggable_on_tag_319" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][319]" id="checkbox-163" value="1" /><label for="checkbox-163">softwarelivre</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][9694]" id="facets_relation-acts_as_taggable_on_tag_9694" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][9694]" id="checkbox-164" value="1" /><label for="checkbox-164">reprodução de obras</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1334]" id="facets_relation-acts_as_taggable_on_tag_1334" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1334]" id="checkbox-165" value="1" /><label for="checkbox-165">nic.br</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4964]" id="facets_relation-acts_as_taggable_on_tag_4964" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4964]" id="checkbox-166" value="1" /><label for="checkbox-166">comunicadora</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][138581]" id="facets_relation-acts_as_taggable_on_tag_138581" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][138581]" id="checkbox-167" value="1" /><label for="checkbox-167">pebl-pr</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][7924]" id="facets_relation-acts_as_taggable_on_tag_7924" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][7924]" id="checkbox-168" value="1" /><label for="checkbox-168">onu</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][52]" id="facets_relation-acts_as_taggable_on_tag_52" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][52]" id="checkbox-169" value="1" /><label for="checkbox-169">mídia</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][16870]" id="facets_relation-acts_as_taggable_on_tag_16870" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][16870]" id="checkbox-170" value="1" /><label for="checkbox-170">ows</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2463]" id="facets_relation-acts_as_taggable_on_tag_2463" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2463]" id="checkbox-171" value="1" /><label for="checkbox-171">popular</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][138049]" id="facets_relation-acts_as_taggable_on_tag_138049" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][138049]" id="checkbox-172" value="1" /><label for="checkbox-172">telefónica</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][139886]" id="facets_relation-acts_as_taggable_on_tag_139886" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][139886]" id="checkbox-173" value="1" /><label for="checkbox-173">icms</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][9695]" id="facets_relation-acts_as_taggable_on_tag_9695" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][9695]" id="checkbox-174" value="1" /><label for="checkbox-174">cdes</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][16871]" id="facets_relation-acts_as_taggable_on_tag_16871" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][16871]" id="checkbox-175" value="1" /><label for="checkbox-175">globalchange</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][123843]" id="facets_relation-acts_as_taggable_on_tag_123843" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][123843]" id="checkbox-176" value="1" /><label for="checkbox-176">nicolás maduro</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][7927]" id="facets_relation-acts_as_taggable_on_tag_7927" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][7927]" id="checkbox-177" value="1" /><label for="checkbox-177">tecnologias da informação</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5333]" id="facets_relation-acts_as_taggable_on_tag_5333" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5333]" id="checkbox-178" value="1" /><label for="checkbox-178">lixo eletrônico</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1145]" id="facets_relation-acts_as_taggable_on_tag_1145" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1145]" id="checkbox-179" value="1" /><label for="checkbox-179">rio</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][140045]" id="facets_relation-acts_as_taggable_on_tag_140045" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][140045]" id="checkbox-180" value="1" /><label for="checkbox-180">canela rs</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][3951]" id="facets_relation-acts_as_taggable_on_tag_3951" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][3951]" id="checkbox-181" value="1" /><label for="checkbox-181">2014</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][15163]" id="facets_relation-acts_as_taggable_on_tag_15163" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][15163]" id="checkbox-182" value="1" /><label for="checkbox-182">vanessa nunes</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2708]" id="facets_relation-acts_as_taggable_on_tag_2708" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2708]" id="checkbox-183" value="1" /><label for="checkbox-183">consulta pública</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][7216]" id="facets_relation-acts_as_taggable_on_tag_7216" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][7216]" id="checkbox-184" value="1" /><label for="checkbox-184">médios</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][150]" id="facets_relation-acts_as_taggable_on_tag_150" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][150]" id="checkbox-185" value="1" /><label for="checkbox-185">usuários</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][3052]" id="facets_relation-acts_as_taggable_on_tag_3052" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][3052]" id="checkbox-186" value="1" /><label for="checkbox-186">lançamento</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][138051]" id="facets_relation-acts_as_taggable_on_tag_138051" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][138051]" id="checkbox-187" value="1" /><label for="checkbox-187">ctbc e gvt</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][140473]" id="facets_relation-acts_as_taggable_on_tag_140473" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][140473]" id="checkbox-188" value="1" /><label for="checkbox-188">rede de participação política</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][139292]" id="facets_relation-acts_as_taggable_on_tag_139292" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][139292]" id="checkbox-189" value="1" /><label for="checkbox-189">cpqd</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][874]" id="facets_relation-acts_as_taggable_on_tag_874" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][874]" id="checkbox-190" value="1" /><label for="checkbox-190">qualidade</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][123842]" id="facets_relation-acts_as_taggable_on_tag_123842" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][123842]" id="checkbox-191" value="1" /><label for="checkbox-191">josé mujica</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][138794]" id="facets_relation-acts_as_taggable_on_tag_138794" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][138794]" id="checkbox-192" value="1" /><label for="checkbox-192">faperj</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5880]" id="facets_relation-acts_as_taggable_on_tag_5880" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5880]" id="checkbox-193" value="1" /><label for="checkbox-193">teles</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][137370]" id="facets_relation-acts_as_taggable_on_tag_137370" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][137370]" id="checkbox-194" value="1" /><label for="checkbox-194">net são paulo</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][139884]" id="facets_relation-acts_as_taggable_on_tag_139884" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][139884]" id="checkbox-195" value="1" /><label for="checkbox-195">huawei</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][9342]" id="facets_relation-acts_as_taggable_on_tag_9342" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][9342]" id="checkbox-196" value="1" /><label for="checkbox-196">internet livre</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][272]" id="facets_relation-acts_as_taggable_on_tag_272" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][272]" id="checkbox-197" value="1" /><label for="checkbox-197">ead</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][138054]" id="facets_relation-acts_as_taggable_on_tag_138054" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][138054]" id="checkbox-198" value="1" /><label for="checkbox-198">pessutti</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5920]" id="facets_relation-acts_as_taggable_on_tag_5920" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5920]" id="checkbox-199" value="1" /><label for="checkbox-199">custo brasil</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][16874]" id="facets_relation-acts_as_taggable_on_tag_16874" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][16874]" id="checkbox-200" value="1" /><label for="checkbox-200">spainrevolution</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][136692]" id="facets_relation-acts_as_taggable_on_tag_136692" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][136692]" id="checkbox-201" value="1" /><label for="checkbox-201">cabral</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][137402]" id="facets_relation-acts_as_taggable_on_tag_137402" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][137402]" id="checkbox-202" value="1" /><label for="checkbox-202">bpl</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][120135]" id="facets_relation-acts_as_taggable_on_tag_120135" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][120135]" id="checkbox-203" value="1" /><label for="checkbox-203">estados</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][647]" id="facets_relation-acts_as_taggable_on_tag_647" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][647]" id="checkbox-204" value="1" /><label for="checkbox-204">compartilhamento</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5842]" id="facets_relation-acts_as_taggable_on_tag_5842" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5842]" id="checkbox-205" value="1" /><label for="checkbox-205">telefonia</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][318]" id="facets_relation-acts_as_taggable_on_tag_318" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][318]" id="checkbox-206" value="1" /><label for="checkbox-206">porto alegre</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][452]" id="facets_relation-acts_as_taggable_on_tag_452" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][452]" id="checkbox-207" value="1" /><label for="checkbox-207">meio ambiente</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][7516]" id="facets_relation-acts_as_taggable_on_tag_7516" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][7516]" id="checkbox-208" value="1" /><label for="checkbox-208">paulo bernardo</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5102]" id="facets_relation-acts_as_taggable_on_tag_5102" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5102]" id="checkbox-209" value="1" /><label for="checkbox-209">intenet</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5900]" id="facets_relation-acts_as_taggable_on_tag_5900" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5900]" id="checkbox-210" value="1" /><label for="checkbox-210">redes digitais</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][15040]" id="facets_relation-acts_as_taggable_on_tag_15040" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][15040]" id="checkbox-211" value="1" /><label for="checkbox-211">globalrevolution</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][6089]" id="facets_relation-acts_as_taggable_on_tag_6089" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][6089]" id="checkbox-212" value="1" /><label for="checkbox-212">publicidade</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1884]" id="facets_relation-acts_as_taggable_on_tag_1884" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1884]" id="checkbox-213" value="1" /><label for="checkbox-213">senado</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][362]" id="facets_relation-acts_as_taggable_on_tag_362" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][362]" id="checkbox-214" value="1" /><label for="checkbox-214">ubuntu</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][141159]" id="facets_relation-acts_as_taggable_on_tag_141159" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][141159]" id="checkbox-215" value="1" /><label for="checkbox-215">rafael de sá</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][119]" id="facets_relation-acts_as_taggable_on_tag_119" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][119]" id="checkbox-216" value="1" /><label for="checkbox-216">direitos humanos</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][122]" id="facets_relation-acts_as_taggable_on_tag_122" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][122]" id="checkbox-217" value="1" /><label for="checkbox-217">celular</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5922]" id="facets_relation-acts_as_taggable_on_tag_5922" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5922]" id="checkbox-218" value="1" /><label for="checkbox-218">renda.</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][6265]" id="facets_relation-acts_as_taggable_on_tag_6265" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][6265]" id="checkbox-219" value="1" /><label for="checkbox-219">ziller</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][141160]" id="facets_relation-acts_as_taggable_on_tag_141160" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][141160]" id="checkbox-220" value="1" /><label for="checkbox-220">gerson barrey</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][137322]" id="facets_relation-acts_as_taggable_on_tag_137322" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][137322]" id="checkbox-221" value="1" /><label for="checkbox-221">pib digital</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][27830]" id="facets_relation-acts_as_taggable_on_tag_27830" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][27830]" id="checkbox-222" value="1" /><label for="checkbox-222">oficina inclusão</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][123838]" id="facets_relation-acts_as_taggable_on_tag_123838" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][123838]" id="checkbox-223" value="1" /><label for="checkbox-223">cúpula</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][92031]" id="facets_relation-acts_as_taggable_on_tag_92031" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][92031]" id="checkbox-224" value="1" /><label for="checkbox-224">telecom</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5621]" id="facets_relation-acts_as_taggable_on_tag_5621" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5621]" id="checkbox-225" value="1" /><label for="checkbox-225">acesso</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2301]" id="facets_relation-acts_as_taggable_on_tag_2301" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2301]" id="checkbox-226" value="1" /><label for="checkbox-226">notebook</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5847]" id="facets_relation-acts_as_taggable_on_tag_5847" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5847]" id="checkbox-227" value="1" /><label for="checkbox-227">eua</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][138050]" id="facets_relation-acts_as_taggable_on_tag_138050" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][138050]" id="checkbox-228" value="1" /><label for="checkbox-228">net embratel</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][10822]" id="facets_relation-acts_as_taggable_on_tag_10822" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][10822]" id="checkbox-229" value="1" /><label for="checkbox-229">dem</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][7290]" id="facets_relation-acts_as_taggable_on_tag_7290" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][7290]" id="checkbox-230" value="1" /><label for="checkbox-230">embratel</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][137373]" id="facets_relation-acts_as_taggable_on_tag_137373" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][137373]" id="checkbox-231" value="1" /><label for="checkbox-231">mpf</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][3482]" id="facets_relation-acts_as_taggable_on_tag_3482" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][3482]" id="checkbox-232" value="1" /><label for="checkbox-232">2016</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][6164]" id="facets_relation-acts_as_taggable_on_tag_6164" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][6164]" id="checkbox-233" value="1" /><label for="checkbox-233">rede elétrica</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4855]" id="facets_relation-acts_as_taggable_on_tag_4855" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4855]" id="checkbox-234" value="1" /><label for="checkbox-234">governança</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][123841]" id="facets_relation-acts_as_taggable_on_tag_123841" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][123841]" id="checkbox-235" value="1" /><label for="checkbox-235">cristina kirchner</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][125553]" id="facets_relation-acts_as_taggable_on_tag_125553" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][125553]" id="checkbox-236" value="1" /><label for="checkbox-236">nova aurora</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][137885]" id="facets_relation-acts_as_taggable_on_tag_137885" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][137885]" id="checkbox-237" value="1" /><label for="checkbox-237">pps</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][2579]" id="facets_relation-acts_as_taggable_on_tag_2579" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][2579]" id="checkbox-238" value="1" /><label for="checkbox-238">direitos</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][136539]" id="facets_relation-acts_as_taggable_on_tag_136539" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][136539]" id="checkbox-239" value="1" /><label for="checkbox-239">olimpíadas</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][123840]" id="facets_relation-acts_as_taggable_on_tag_123840" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][123840]" id="checkbox-240" value="1" /><label for="checkbox-240">evo morales</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][1178]" id="facets_relation-acts_as_taggable_on_tag_1178" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][1178]" id="checkbox-241" value="1" /><label for="checkbox-241">telecentro</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][11]" id="facets_relation-acts_as_taggable_on_tag_11" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][11]" id="checkbox-242" value="1" /><label for="checkbox-242">educação</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][137403]" id="facets_relation-acts_as_taggable_on_tag_137403" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][137403]" id="checkbox-243" value="1" /><label for="checkbox-243">aes eletropaulo</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][8765]" id="facets_relation-acts_as_taggable_on_tag_8765" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][8765]" id="checkbox-244" value="1" /><label for="checkbox-244">elétrica</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5099]" id="facets_relation-acts_as_taggable_on_tag_5099" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5099]" id="checkbox-245" value="1" /><label for="checkbox-245">serviço público</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4569]" id="facets_relation-acts_as_taggable_on_tag_4569" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4569]" id="checkbox-246" value="1" /><label for="checkbox-246">intervozes</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][137433]" id="facets_relation-acts_as_taggable_on_tag_137433" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][137433]" id="checkbox-247" value="1" /><label for="checkbox-247">lei 1481/07</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][13219]" id="facets_relation-acts_as_taggable_on_tag_13219" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][13219]" id="checkbox-248" value="1" /><label for="checkbox-248">stream</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5654]" id="facets_relation-acts_as_taggable_on_tag_5654" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5654]" id="checkbox-249" value="1" /><label for="checkbox-249">provedores</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][28646]" id="facets_relation-acts_as_taggable_on_tag_28646" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][28646]" id="checkbox-250" value="1" /><label for="checkbox-250">mesas. debates</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][137174]" id="facets_relation-acts_as_taggable_on_tag_137174" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][137174]" id="checkbox-251" value="1" /><label for="checkbox-251">folha</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][13233]" id="facets_relation-acts_as_taggable_on_tag_13233" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][13233]" id="checkbox-252" value="1" /><label for="checkbox-252">cope</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][7404]" id="facets_relation-acts_as_taggable_on_tag_7404" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][7404]" id="checkbox-253" value="1" /><label for="checkbox-253">movimentos sociais</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5849]" id="facets_relation-acts_as_taggable_on_tag_5849" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5849]" id="checkbox-254" value="1" /><label for="checkbox-254">disponibilidade</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][14874]" id="facets_relation-acts_as_taggable_on_tag_14874" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][14874]" id="checkbox-255" value="1" /><label for="checkbox-255">tijolaço</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][7211]" id="facets_relation-acts_as_taggable_on_tag_7211" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][7211]" id="checkbox-256" value="1" /><label for="checkbox-256">conselho</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][137197]" id="facets_relation-acts_as_taggable_on_tag_137197" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][137197]" id="checkbox-257" value="1" /><label for="checkbox-257">fibras ópticas</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][138323]" id="facets_relation-acts_as_taggable_on_tag_138323" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][138323]" id="checkbox-258" value="1" /><label for="checkbox-258">cemig</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][658]" id="facets_relation-acts_as_taggable_on_tag_658" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][658]" id="checkbox-259" value="1" /><label for="checkbox-259">twitter</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][16873]" id="facets_relation-acts_as_taggable_on_tag_16873" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][16873]" id="checkbox-260" value="1" /><label for="checkbox-260">democracia real</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][633]" id="facets_relation-acts_as_taggable_on_tag_633" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][633]" id="checkbox-261" value="1" /><label for="checkbox-261">azeredo</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][3390]" id="facets_relation-acts_as_taggable_on_tag_3390" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][3390]" id="checkbox-262" value="1" /><label for="checkbox-262">políticas públicas</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5915]" id="facets_relation-acts_as_taggable_on_tag_5915" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5915]" id="checkbox-263" value="1" /><label for="checkbox-263">exclusão digital</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5640]" id="facets_relation-acts_as_taggable_on_tag_5640" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5640]" id="checkbox-264" value="1" /><label for="checkbox-264">fibras óticas</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][140074]" id="facets_relation-acts_as_taggable_on_tag_140074" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][140074]" id="checkbox-265" value="1" /><label for="checkbox-265">ana de hollanda</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][140697]" id="facets_relation-acts_as_taggable_on_tag_140697" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][140697]" id="checkbox-266" value="1" /><label for="checkbox-266">bairro uberaba</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][16868]" id="facets_relation-acts_as_taggable_on_tag_16868" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][16868]" id="checkbox-267" value="1" /><label for="checkbox-267">15o</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][5098]" id="facets_relation-acts_as_taggable_on_tag_5098" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][5098]" id="checkbox-268" value="1" /><label for="checkbox-268">politica pública</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][4157]" id="facets_relation-acts_as_taggable_on_tag_4157" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][4157]" id="checkbox-269" value="1" /><label for="checkbox-269">fisl11</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][136780]" id="facets_relation-acts_as_taggable_on_tag_136780" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][136780]" id="checkbox-270" value="1" /><label for="checkbox-270">deputado</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][9792]" id="facets_relation-acts_as_taggable_on_tag_9792" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][9792]" id="checkbox-271" value="1" /><label for="checkbox-271">slti</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][140039]" id="facets_relation-acts_as_taggable_on_tag_140039" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][140039]" id="checkbox-272" value="1" /><label for="checkbox-272">cidades comunicadoras</label><span class="facet-count">(1)</span></div>
+<div class="facet-option "><input type="hidden" name="facets[relation-acts_as_taggable_on/tag][7926]" id="facets_relation-acts_as_taggable_on_tag_7926" value="0" /><input type="checkbox" name="facets[relation-acts_as_taggable_on/tag][7926]" id="checkbox-273" value="1" /><label for="checkbox-273">população mundial</label><span class="facet-count">(1)</span></div></div><a class="button icon-clear with-text clear-facet" data-facet="tags-facet" title="Clear filters" href="/search/articles">&nbsp;<span>Clear filters</span></a></div>
+
+    <div class="period" id="created-at-period"><h2>Created at</h2><div><label>From:<input type="text" name="periods[created_at][start_date]" id="datepicker-from-created-at" from_id="datepicker-from-created-at" to_id="datepicker-to-created-at" />
+    <script type='text/javascript'>
+      jQuery('#datepicker-from-created-at').datepicker({
+        disabled: false,
+        altField: "",
+        altFormat: "",
+        appendText: "",
+        autoSize: false,
+        buttonImage: "",
+        buttonImageOnly: false,
+        buttonText: "...",
+        calculateWeek: "jQuery.datepicker.iso8601Week",
+        changeMonth: false,
+        changeYear: false,
+        closeText: "Done",
+        constrainInput: true,
+        currentText: "Today",
+        dateFormat: "yy-mm-dd",
+        dayNames: ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        dayNamesMin: ["Su","Mo","Tu","We","Th","Fr","Sa"],
+        dayNamesShort: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
+        defaultDate: null,
+        duration: "normal",
+        firstDay: 0,
+        gotoCurrent: false,
+        hideIfNoPrevNext: false,
+        isRTL: false,
+        maxDate: null,
+        minDate: null,
+        monthNames: ["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"],
+        monthNamesShort: ["Jan","Feb","Mar","Apr","maggio","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+        navigationAsDateFormat: false,
+        nextText: "Next",
+        numberOfMonths: 1,
+        prevText: "Prev",
+        selectOtherMonths: false,
+        shortYearCutoff: "+10",
+        showButtonPanel: false,
+        showCurrentAtPos: 0,
+        showMonthAfterYear: false,
+        showOn: "focus",
+        showOptions: {},
+        showOtherMonths: false,
+        showWeek: false,
+        stepMonths: 1,
+        weekHeader: "Wk",
+        yearRange: "c-10:c+10",
+        yearSuffix: ""
+      }).datepicker()
+    </script>
+    </label><label>Until:<input type="text" name="periods[created_at][end_date]" id="datepicker-to-created-at" from_id="datepicker-from-created-at" to_id="datepicker-to-created-at" />
+    <script type='text/javascript'>
+      jQuery('#datepicker-to-created-at').datepicker({
+        disabled: false,
+        altField: "",
+        altFormat: "",
+        appendText: "",
+        autoSize: false,
+        buttonImage: "",
+        buttonImageOnly: false,
+        buttonText: "...",
+        calculateWeek: "jQuery.datepicker.iso8601Week",
+        changeMonth: false,
+        changeYear: false,
+        closeText: "Done",
+        constrainInput: true,
+        currentText: "Today",
+        dateFormat: "yy-mm-dd",
+        dayNames: ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        dayNamesMin: ["Su","Mo","Tu","We","Th","Fr","Sa"],
+        dayNamesShort: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
+        defaultDate: null,
+        duration: "normal",
+        firstDay: 0,
+        gotoCurrent: false,
+        hideIfNoPrevNext: false,
+        isRTL: false,
+        maxDate: null,
+        minDate: null,
+        monthNames: ["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"],
+        monthNamesShort: ["Jan","Feb","Mar","Apr","maggio","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+        navigationAsDateFormat: false,
+        nextText: "Next",
+        numberOfMonths: 1,
+        prevText: "Prev",
+        selectOtherMonths: false,
+        shortYearCutoff: "+10",
+        showButtonPanel: false,
+        showCurrentAtPos: 0,
+        showMonthAfterYear: false,
+        showOn: "focus",
+        showOptions: {},
+        showOtherMonths: false,
+        showWeek: false,
+        stepMonths: 1,
+        weekHeader: "Wk",
+        yearRange: "c-10:c+10",
+        yearSuffix: ""
+      }).datepicker()
+    </script>
+    </label></div><input type="hidden" name="periods[created_at][is_metadata]" id="periods_created_at_is_metadata" value="false" /></div>
+    <div class="period" id="updated-at-period"><h2>Updated at</h2><div><label>From:<input type="text" name="periods[updated_at][start_date]" id="datepicker-from-updated-at" from_id="datepicker-from-updated-at" to_id="datepicker-to-updated-at" />
+    <script type='text/javascript'>
+      jQuery('#datepicker-from-updated-at').datepicker({
+        disabled: false,
+        altField: "",
+        altFormat: "",
+        appendText: "",
+        autoSize: false,
+        buttonImage: "",
+        buttonImageOnly: false,
+        buttonText: "...",
+        calculateWeek: "jQuery.datepicker.iso8601Week",
+        changeMonth: false,
+        changeYear: false,
+        closeText: "Done",
+        constrainInput: true,
+        currentText: "Today",
+        dateFormat: "yy-mm-dd",
+        dayNames: ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        dayNamesMin: ["Su","Mo","Tu","We","Th","Fr","Sa"],
+        dayNamesShort: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
+        defaultDate: null,
+        duration: "normal",
+        firstDay: 0,
+        gotoCurrent: false,
+        hideIfNoPrevNext: false,
+        isRTL: false,
+        maxDate: null,
+        minDate: null,
+        monthNames: ["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"],
+        monthNamesShort: ["Jan","Feb","Mar","Apr","maggio","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+        navigationAsDateFormat: false,
+        nextText: "Next",
+        numberOfMonths: 1,
+        prevText: "Prev",
+        selectOtherMonths: false,
+        shortYearCutoff: "+10",
+        showButtonPanel: false,
+        showCurrentAtPos: 0,
+        showMonthAfterYear: false,
+        showOn: "focus",
+        showOptions: {},
+        showOtherMonths: false,
+        showWeek: false,
+        stepMonths: 1,
+        weekHeader: "Wk",
+        yearRange: "c-10:c+10",
+        yearSuffix: ""
+      }).datepicker()
+    </script>
+    </label><label>Until:<input type="text" name="periods[updated_at][end_date]" id="datepicker-to-updated-at" from_id="datepicker-from-updated-at" to_id="datepicker-to-updated-at" />
+    <script type='text/javascript'>
+      jQuery('#datepicker-to-updated-at').datepicker({
+        disabled: false,
+        altField: "",
+        altFormat: "",
+        appendText: "",
+        autoSize: false,
+        buttonImage: "",
+        buttonImageOnly: false,
+        buttonText: "...",
+        calculateWeek: "jQuery.datepicker.iso8601Week",
+        changeMonth: false,
+        changeYear: false,
+        closeText: "Done",
+        constrainInput: true,
+        currentText: "Today",
+        dateFormat: "yy-mm-dd",
+        dayNames: ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        dayNamesMin: ["Su","Mo","Tu","We","Th","Fr","Sa"],
+        dayNamesShort: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
+        defaultDate: null,
+        duration: "normal",
+        firstDay: 0,
+        gotoCurrent: false,
+        hideIfNoPrevNext: false,
+        isRTL: false,
+        maxDate: null,
+        minDate: null,
+        monthNames: ["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"],
+        monthNamesShort: ["Jan","Feb","Mar","Apr","maggio","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+        navigationAsDateFormat: false,
+        nextText: "Next",
+        numberOfMonths: 1,
+        prevText: "Prev",
+        selectOtherMonths: false,
+        shortYearCutoff: "+10",
+        showButtonPanel: false,
+        showCurrentAtPos: 0,
+        showMonthAfterYear: false,
+        showOn: "focus",
+        showOptions: {},
+        showOtherMonths: false,
+        showWeek: false,
+        stepMonths: 1,
+        weekHeader: "Wk",
+        yearRange: "c-10:c+10",
+        yearSuffix: ""
+      }).datepicker()
+    </script>
+    </label></div><input type="hidden" name="periods[updated_at][is_metadata]" id="periods_updated_at_is_metadata" value="false" /></div>
+    <div class="period" id="published-at-period"><h2>Published at</h2><div><label>From:<input type="text" name="periods[published_at][start_date]" id="datepicker-from-published-at" from_id="datepicker-from-published-at" to_id="datepicker-to-published-at" />
+    <script type='text/javascript'>
+      jQuery('#datepicker-from-published-at').datepicker({
+        disabled: false,
+        altField: "",
+        altFormat: "",
+        appendText: "",
+        autoSize: false,
+        buttonImage: "",
+        buttonImageOnly: false,
+        buttonText: "...",
+        calculateWeek: "jQuery.datepicker.iso8601Week",
+        changeMonth: false,
+        changeYear: false,
+        closeText: "Done",
+        constrainInput: true,
+        currentText: "Today",
+        dateFormat: "yy-mm-dd",
+        dayNames: ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        dayNamesMin: ["Su","Mo","Tu","We","Th","Fr","Sa"],
+        dayNamesShort: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
+        defaultDate: null,
+        duration: "normal",
+        firstDay: 0,
+        gotoCurrent: false,
+        hideIfNoPrevNext: false,
+        isRTL: false,
+        maxDate: null,
+        minDate: null,
+        monthNames: ["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"],
+        monthNamesShort: ["Jan","Feb","Mar","Apr","maggio","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+        navigationAsDateFormat: false,
+        nextText: "Next",
+        numberOfMonths: 1,
+        prevText: "Prev",
+        selectOtherMonths: false,
+        shortYearCutoff: "+10",
+        showButtonPanel: false,
+        showCurrentAtPos: 0,
+        showMonthAfterYear: false,
+        showOn: "focus",
+        showOptions: {},
+        showOtherMonths: false,
+        showWeek: false,
+        stepMonths: 1,
+        weekHeader: "Wk",
+        yearRange: "c-10:c+10",
+        yearSuffix: ""
+      }).datepicker()
+    </script>
+    </label><label>Until:<input type="text" name="periods[published_at][end_date]" id="datepicker-to-published-at" from_id="datepicker-from-published-at" to_id="datepicker-to-published-at" />
+    <script type='text/javascript'>
+      jQuery('#datepicker-to-published-at').datepicker({
+        disabled: false,
+        altField: "",
+        altFormat: "",
+        appendText: "",
+        autoSize: false,
+        buttonImage: "",
+        buttonImageOnly: false,
+        buttonText: "...",
+        calculateWeek: "jQuery.datepicker.iso8601Week",
+        changeMonth: false,
+        changeYear: false,
+        closeText: "Done",
+        constrainInput: true,
+        currentText: "Today",
+        dateFormat: "yy-mm-dd",
+        dayNames: ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        dayNamesMin: ["Su","Mo","Tu","We","Th","Fr","Sa"],
+        dayNamesShort: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
+        defaultDate: null,
+        duration: "normal",
+        firstDay: 0,
+        gotoCurrent: false,
+        hideIfNoPrevNext: false,
+        isRTL: false,
+        maxDate: null,
+        minDate: null,
+        monthNames: ["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"],
+        monthNamesShort: ["Jan","Feb","Mar","Apr","maggio","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+        navigationAsDateFormat: false,
+        nextText: "Next",
+        numberOfMonths: 1,
+        prevText: "Prev",
+        selectOtherMonths: false,
+        shortYearCutoff: "+10",
+        showButtonPanel: false,
+        showCurrentAtPos: 0,
+        showMonthAfterYear: false,
+        showOn: "focus",
+        showOptions: {},
+        showOtherMonths: false,
+        showWeek: false,
+        stepMonths: 1,
+        weekHeader: "Wk",
+        yearRange: "c-10:c+10",
+        yearSuffix: ""
+      }).datepicker()
+    </script>
+    </label></div><input type="hidden" name="periods[published_at][is_metadata]" id="periods_published_at_is_metadata" value="false" /></div>
+</div>
+
+      </div>
+
+      <div id='search-column-right' class='search-column'>
+        <div id='search-content'>
+  <div class="map-or-list-search-results list"><div id="search-results" class="only-one-result-box">
+
+
+    <div class="search-results-articles search-results-box ">
+
+
+
+        <div class="search-results-innerbox search-results-type-article ">
+          <ul>
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/furusho/blog/provedores-de-internet-querem-regras-mais-flexiveis-da-telebras">Provedores de Internet querem regras mais flexíveis da Telebrás </a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/furusho">Vitorio Furusho</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">Para sustentar os pleitos apresentados ao Ministério das Comunicações há um mês, pequenos provedores de acesso à internet produziram um estudo em que pedem mudanças nos critérios propostos pela Telebrás...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/furusho">furusho</a>
+      <a class="search-article-tag" href="/tag/banda%20larga">banda larga</a>
+      <a class="search-article-tag" href="/tag/pnbl">pnbl</a>
+      <a class="search-article-tag" href="/tag/provedor">provedor</a>
+      <a class="search-article-tag" href="/tag/internet">internet</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/furusho/blog/canela-rs-sera-modelo-de-cidade-digital-no-brasil">Canela (RS) será modelo de cidade digital no Brasil </a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/furusho">Vitorio Furusho</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">A cidade de Canela, na serra gaúcha, servirá de modelo para outros municípios do país a partir da inauguração de seu “Projeto Cidade Digital”, que irá contar com uma rede de alta velocidade, garantindo q...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/internet">internet</a>
+      <a class="search-article-tag" href="/tag/furusho">furusho</a>
+      <a class="search-article-tag" href="/tag/banda%20larga">banda larga</a>
+      <a class="search-article-tag" href="/tag/cidade%20digital">cidade digital</a>
+      <a class="search-article-tag" href="/tag/canela%20rs">canela rs</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/furusho/blog/brasilia-sera-cidade-digital-com-interligacao-das-redes-federal-e-local">Brasília será cidade digital com interligação das redes federal e local </a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/furusho">Vitorio Furusho</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">O Ministério das Comunicações e o governo do Distrito Federal começaram a discutir a implantação de infraestrutura para fazer de Brasília uma cidade digital, com redes de fibras óticas cobrindo todo o DF...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/internet">internet</a>
+      <a class="search-article-tag" href="/tag/furusho">furusho</a>
+      <a class="search-article-tag" href="/tag/cidades%20digitais">cidades digitais</a>
+      <a class="search-article-tag" href="/tag/bras%C3%ADlia">brasília</a>
+      <a class="search-article-tag" href="/tag/distrito%20federal">distrito federal</a>
+      <a class="search-article-tag" href="/tag/banda%20larga">banda larga</a>
+      <a class="search-article-tag" href="/tag/minc">minc</a>
+      <a class="search-article-tag" href="/tag/pnbl">pnbl</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/furusho/blog/empresa-abre-inscricoes-para-a-segunda-edicao-do-ranking-de-cidades-digitais">Empresa abre inscrições para a segunda edição do Ranking de Cidades Digitais </a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/furusho">Vitorio Furusho</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">Todos os municípios da América Latina podem se inscrever para a segunda edição da pesquisa, que visa conhecer o nível de digitalização das cidades da região. A primeira edição contou com a participação d...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/internet">internet</a>
+      <a class="search-article-tag" href="/tag/cidades%20comunicadoras">cidades comunicadoras</a>
+      <a class="search-article-tag" href="/tag/cidades%20digitais">cidades digitais</a>
+      <a class="search-article-tag" href="/tag/inclus%C3%A3o%20digital">inclusão digital</a>
+      <a class="search-article-tag" href="/tag/furusho">furusho</a>
+      <a class="search-article-tag" href="/tag/banda%20larga">banda larga</a>
+      <a class="search-article-tag" href="/tag/pnbl">pnbl</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/furusho/blog/em-nova-aurora-pr-internet-gratis-tem-adesao-da-comunidade">Em Nova Aurora PR, Internet grátis tem adesão da comunidade</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/furusho">Vitorio Furusho</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">A prefeitura de Nova Aurora através da secretaria de Tecnologia e Sistema da Informação comunica que o Programa Nova Aurora digital já está em operação, do qual os moradores do perímetro urbano estão rec...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/banda%20larga">banda larga</a>
+      <a class="search-article-tag" href="/tag/fibra%20%C3%B3tica">fibra ótica</a>
+      <a class="search-article-tag" href="/tag/reginaldo">reginaldo</a>
+      <a class="search-article-tag" href="/tag/inclus%C3%A3o%20digital">inclusão digital</a>
+      <a class="search-article-tag" href="/tag/internet">internet</a>
+      <a class="search-article-tag" href="/tag/copel">copel</a>
+      <a class="search-article-tag" href="/tag/paran%C3%A1">paraná</a>
+      <a class="search-article-tag" href="/tag/nova%20aurora">nova aurora</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/furusho/blog/parana-internet-residencial-da-copel-so-em-2012">Paraná: Internet residencial da Copel, só em 2012</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/furusho">Vitorio Furusho</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">Banda larga com 100 Mbps por fibra óptica foi lançada ontem e, por enquanto, só estará acessível para empresas no Centro de Curitiba</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/bel-100">bel-100</a>
+      <a class="search-article-tag" href="/tag/copel">copel</a>
+      <a class="search-article-tag" href="/tag/banda%20larga">banda larga</a>
+      <a class="search-article-tag" href="/tag/curitiba">curitiba</a>
+      <a class="search-article-tag" href="/tag/furusho">furusho</a>
+      <a class="search-article-tag" href="/tag/paran%C3%A1">paraná</a>
+      <a class="search-article-tag" href="/tag/celepar">celepar</a>
+      <a class="search-article-tag" href="/tag/fibra%20%C3%B3tica">fibra ótica</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/furusho/blog/governo-do-parana-lanca-internet-em-banda-extralarga-da-copel">Governo do Paraná lança internet em banda extralarga da Copel</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/furusho">Vitorio Furusho</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">Uma transmissão de voz e imagem por videofone com 100 Mbps de velocidade entre o governador Beto Richa e o presidente da Copel, Lindolfo Zimmer, nesta segunda-feira (14), marcou o lançamento oficial de u...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/banda%20larga">banda larga</a>
+      <a class="search-article-tag" href="/tag/furusho">furusho</a>
+      <a class="search-article-tag" href="/tag/paran%C3%A1">paraná</a>
+      <a class="search-article-tag" href="/tag/curitiba">curitiba</a>
+      <a class="search-article-tag" href="/tag/fibra%20%C3%B3tica">fibra ótica</a>
+      <a class="search-article-tag" href="/tag/copel">copel</a>
+      <a class="search-article-tag" href="/tag/bel-100">bel-100</a>
+      <a class="search-article-tag" href="/tag/celepar">celepar</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/fike/blog/podcast-navaranda-paulo-bernardo">Podcast Navaranda: Paulo Bernardo</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/fike">Fernando Ike</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">  Podcast navaranda especial com entrevista do Ministro das Comunicações Paulo Bernardo. Muitos assuntos foram tratados: software livre, PNBL, causos, tablets, etc. Foi bem divertido e vocês podem confe...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/paulo%20bernardo">paulo bernardo</a>
+      <a class="search-article-tag" href="/tag/pnbl">pnbl</a>
+      <a class="search-article-tag" href="/tag/software%20livre">software livre</a>
+      <a class="search-article-tag" href="/tag/blog">blog</a>
+      <a class="search-article-tag" href="/tag/stream">stream</a>
+      <a class="search-article-tag" href="/tag/tablet">tablet</a>
+      <a class="search-article-tag" href="/tag/banda%20larga">banda larga</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/furusho/blog/governo-centraliza-negociacao-de-reducao-de-icms-para-banda-larga">Governo centraliza negociação de redução de ICMS para Banda Larga</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/furusho">Vitorio Furusho</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">O ministro das Comunicações, Paulo Bernardo, ao participar nesta quinta-feira, 20/01, do Campus Party, na capital paulista, assumiu que pediu ao Confaz para interromper as conversas com as teles referent...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/icms">icms</a>
+      <a class="search-article-tag" href="/tag/banda%20larga">banda larga</a>
+      <a class="search-article-tag" href="/tag/governo">governo</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Updated by <a href="http://softwarelivre.org/thaisrucker">Thaís Rucker</a> at 14 Gennaio 2018</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/furusho/blog/pnbl-telebras-rejeita-recurso-da-huawei">PNBL: Telebrás rejeita recurso da Huawei </a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/furusho">Vitorio Furusho</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">A Telebrás rejeitou o recurso da Huawei e manteve a Medidata como vencedora do pregão para equipamentos do núcleo da camada IP da rede que integra o Plano Nacional de Banda Larga.</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/huawei">huawei</a>
+      <a class="search-article-tag" href="/tag/internet">internet</a>
+      <a class="search-article-tag" href="/tag/telebr%C3%A1s">telebrás</a>
+      <a class="search-article-tag" href="/tag/pnbl">pnbl</a>
+      <a class="search-article-tag" href="/tag/banda%20larga">banda larga</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/furusho/blog/cityville-deve-chegar-a-100-milhoes-de-usuarios-ativos-mensais-nesta-semana">CityVille deve chegar a 100 milhões de usuários ativos mensais nesta semana</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/furusho">Vitorio Furusho</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">Já são mais de 98 milhões de usuários mensais ativos jogando o CityVille no Facebook, segundo o All Facebook. A previsão é de que o site chegue a 100 milhões de usuários ainda esta semana.</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/banda%20larga">banda larga</a>
+      <a class="search-article-tag" href="/tag/furusho">furusho</a>
+      <a class="search-article-tag" href="/tag/internet">internet</a>
+      <a class="search-article-tag" href="/tag/m%C3%B3vel">móvel</a>
+      <a class="search-article-tag" href="/tag/3g">3g</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/furusho/blog/brasil-tem-1945-milhoes-de-acessos-a-banda-larga-movel">Brasil tem 19,45 milhões de acessos à banda larga móvel</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/furusho">Vitorio Furusho</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">O Brasil concentra 19,45 milhões de acessos à banda larga móvel, segundo dados divulgados pela Anatel nesta terça-feira. Isso representa quase 10% da população brasileira que, segundo dados divulgados p...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/internet">internet</a>
+      <a class="search-article-tag" href="/tag/furusho">furusho</a>
+      <a class="search-article-tag" href="/tag/banda%20larga">banda larga</a>
+      <a class="search-article-tag" href="/tag/3g">3g</a>
+      <a class="search-article-tag" href="/tag/m%C3%B3vel">móvel</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/furusho/blog/banda-larga-e-o-maior-impacto-tecnologico-da-decada-diz-pesquisa">Banda larga é o maior impacto tecnológico da década, diz pesquisa</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/furusho">Vitorio Furusho</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">Usuários de banda larga móvel devem superar 1 bilhão em 2011, poucos meses depois de terem atingido a marca dos 500 milhões, afirmou a Ericsson nesta terça-feira.</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/m%C3%B3vel">móvel</a>
+      <a class="search-article-tag" href="/tag/banda%20larga">banda larga</a>
+      <a class="search-article-tag" href="/tag/furusho">furusho</a>
+      <a class="search-article-tag" href="/tag/3g">3g</a>
+      <a class="search-article-tag" href="/tag/internet">internet</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/furusho/blog/usuarios-de-banda-larga-movel-devem-chegar-a-1-bilhao-em-2011">Usuários de banda larga móvel devem chegar a 1 bilhão em 2011</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/furusho">Vitorio Furusho</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">Usuários de banda larga móvel devem superar 1 bilhão em 2011, poucos meses depois de terem atingido a marca dos 500 milhões, afirmou a Ericsson nesta terça-feira.</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/m%C3%B3vel">móvel</a>
+      <a class="search-article-tag" href="/tag/internet">internet</a>
+      <a class="search-article-tag" href="/tag/banda%20larga">banda larga</a>
+      <a class="search-article-tag" href="/tag/3g">3g</a>
+      <a class="search-article-tag" href="/tag/furusho">furusho</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/furusho/blog/rede-de-telemedicina-chega-a-160-instituicoes-no-pais">Rede de telemedicina chega a 160 instituições no país</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/furusho">Vitorio Furusho</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">A Rede Universitária de Telemedicina (Rute), projeto que promove a integração das atividades de telessaúde no país, inaugurou nesta semana mais três unidades, na Bahia, Paraíba e Rio de Janeiro. Em todo...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/pnbl">pnbl</a>
+      <a class="search-article-tag" href="/tag/cidades%20digitais">cidades digitais</a>
+      <a class="search-article-tag" href="/tag/furusho">furusho</a>
+      <a class="search-article-tag" href="/tag/medicina">medicina</a>
+      <a class="search-article-tag" href="/tag/banda%20larga">banda larga</a>
+      <a class="search-article-tag" href="/tag/internet">internet</a>
+      <a class="search-article-tag" href="/tag/minicom">minicom</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/furusho/blog/minicom-vai-centralizar-politicas-voltadas-a-banda-larga">Minicom vai centralizar políticas voltadas à banda larga</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/furusho">Vitorio Furusho</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">  Vem aí um novo Ministério das Comunicações, protagonista nas políticas públicas relacionadas ao acesso à banda larga no país. Nesse sentido, haverá mudanças na Secretaria de Telecomunicações, a concent...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/pnbl">pnbl</a>
+      <a class="search-article-tag" href="/tag/cidades%20digitais">cidades digitais</a>
+      <a class="search-article-tag" href="/tag/internet">internet</a>
+      <a class="search-article-tag" href="/tag/banda%20larga">banda larga</a>
+      <a class="search-article-tag" href="/tag/furusho">furusho</a>
+      <a class="search-article-tag" href="/tag/minicom">minicom</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/furusho/blog/novo-governo-aponta-para-a-popularizacao-da-internet">Novo governo aponta para a popularização da internet</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/furusho">Vitorio Furusho</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">Em discursos de posse, ministros destacam necessidade de ampliar acesso em banda larga e modernizar a gestão pública por meio do uso de novas tecnologias.</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/cidades%20digitais">cidades digitais</a>
+      <a class="search-article-tag" href="/tag/banda%20larga">banda larga</a>
+      <a class="search-article-tag" href="/tag/olimp%C3%ADadas">olimpíadas</a>
+      <a class="search-article-tag" href="/tag/pnbl">pnbl</a>
+      <a class="search-article-tag" href="/tag/comunicadora">comunicadora</a>
+      <a class="search-article-tag" href="/tag/copa%20do%20mundo">copa do mundo</a>
+      <a class="search-article-tag" href="/tag/internet">internet</a>
+      <a class="search-article-tag" href="/tag/furusho">furusho</a>
+      <a class="search-article-tag" href="/tag/2014">2014</a>
+      <a class="search-article-tag" href="/tag/2016">2016</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/branco/blog/banda-larga-marco-civil-da-internet-reforma-do-direito-autoral-e-dh">Banda Larga, Marco Civil da Internet, Reforma do Direito Autoral e DH</a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/branco">Marcelo D&#39;Elia Branco</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body"></td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/marco%20civil%20da%20internet">marco civil da internet</a>
+      <a class="search-article-tag" href="/tag/banda%20larga">banda larga</a>
+      <a class="search-article-tag" href="/tag/direitos%20humanos">direitos humanos</a>
+      <a class="search-article-tag" href="/tag/reforma%20do%20direito%20autoral">reforma do direito autoral</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/furusho/blog/cpqd-apresenta-solucoes-para-apoio-tecnologico-ao-pnbl">CPqD apresenta soluções para apoio tecnológico ao PNBL </a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/furusho">Vitorio Furusho</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">Na reunião do CONAPSI, a instituição se reúne com fabricantes e a Telebrás para encontrar soluções que atendam a demanda do Plano, quando iniciar implementação. O Centro de Pesquisa e Desenvolvimento em...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/cpqd">cpqd</a>
+      <a class="search-article-tag" href="/tag/conapsi">conapsi</a>
+      <a class="search-article-tag" href="/tag/banda%20larga">banda larga</a>
+      <a class="search-article-tag" href="/tag/telebr%C3%A1s">telebrás</a>
+      <a class="search-article-tag" href="/tag/pnbl">pnbl</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+              
+                <li class="search-text-article-item article-item">
+  <div>
+    <a class="search-result-title" href="http://softwarelivre.org/furusho/blog/plano-de-banda-larga-decide-eleicao-na-australia">Plano de banda larga decide eleição na Austrália </a>
+  </div>
+
+  <div class="search-content-first-column">
+    <div class="search-image-container">
+
+    <div class="search-content-type-icon icon-content-text-article"></div>
+</div>
+
+  </div>
+  <table class="noborder search-content-second-column">
+    
+
+<tr class="search-article-author search-article-author-name">
+  <td class="search-field-label">Author</td>
+  <td>
+      Software Livre Brasil
+  </td>
+</tr>
+
+
+<tr class="search-article-profile search-article-profile-name">
+  <td class="search-field-label">Profile</td>
+  <td>
+    <a href="/profile/furusho">Vitorio Furusho</a>
+  </td>
+</tr>
+
+
+<tr class="search-article-description">
+  <td class="search-field-label">Descrizione</td>
+
+
+
+    <td class="search-article-body">O plano australiano de estender cabos de fibra óptica a 93% dos domicílios, garantindo conexões de 100 Mbps (as demais terão conexão sem fio de 12 Mbps) foi desde o início considerado ambicioso, mas mes...</td>
+</tr>
+
+<tr class="search-article-tags">
+  <td class="search-field-label">Tags</td>
+  <td class="search-article-tags-container ">
+      <a class="search-article-tag" href="/tag/furusho">furusho</a>
+      <a class="search-article-tag" href="/tag/elei%C3%A7%C3%A3o">eleição</a>
+      <a class="search-article-tag" href="/tag/austr%C3%A1lia">austrália</a>
+      <a class="search-article-tag" href="/tag/banda%20larga">banda larga</a>
+      <a class="search-article-tag" href="/tag/pnbl">pnbl</a>
+    
+  </td>
+</tr>
+
+<tr class="search-article-categories">
+  <td class="search-field-label">Categories</td>
+  <td class="search-article-categories-container search-field-none">
+    None
+  </td>
+</tr>
+
+
+  </table>
+  
+<div class="search-article-author-changes">
+    <span>Last update: 14 Gennaio 2018.</span>
+</div>
+
+
+  <div style="clear: both"></div>
+</li>
+
+          </ul>
+        </div>
+    </div>
+
+  <div style="clear:both"></div>
+
+  <link rel="stylesheet" media="screen" href="/assets/vendor/jquery.fancybox-f18bccba6b2b1108ccca4462da78aa43.css" /><script src="/assets/vendor/jquery.fancybox.pack-c84445b4cd8162f8a15703d690ccc514.js"></script><script>
+//<![CDATA[
+apply_zoom_to_images("Zoom in")
+//]]>
+</script>
+</div>
+
+</div>
+    <div class="pagination"><a class="previous_page" rel="prev start" href="/search/articles?page=1&amp;tag=banda+larga"><span class="previous-arrow">&laquo; </span>Previous</a> <a rel="prev start" href="/search/articles?page=1&amp;tag=banda+larga">1</a> <em class="current">2</em> <a rel="next" href="/search/articles?page=3&amp;tag=banda+larga">3</a> <span class="gap">&hellip;</span> <a href="/search/articles?page=6&amp;tag=banda+larga">6</a> <a class="next_page" rel="next" href="/search/articles?page=3&amp;tag=banda+larga">Next<span class="next-arrow"> &raquo;</span></a></div>
+</div>
+
+      </div>
+
+</form>  <div style="clear: both"></div>
+</div>
+
+
+<script src="/assets/search-cd53876d91ad4bdc2de41314296e05ac.js"></script>
+
+<script src="https://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script>
+<script src="/assets/google_maps-254101fd37d91719e68ab390fb239658.js"></script>
+</div></div></div></div>
+  <br style='clear: both'/>
+</div><!-- end id="content-inner" -->
+
+        </div><!-- end id="content" -->
+      </div><!-- end id="wrap-2" -->
+    </div><!-- end id="wrap-1" -->
+    
+    <div id="footer">
+      <div id="theme-footer">
+        <div id="footer-environment">
+<div id="footer-links">
+  <ul>
+    <li><ul id="slbr-footer">
+        <li><a href="http://softwarelivre.org" id="slbr" class="link-this-page"><span>Software Livre - Brasil</span></a></li>
+        <li><a href="http://softwarelivre.org/tv"><span>TV Software Livre</span></a></li>
+        <li><a href="http://softwarelivre.org/radio"><span>Rádio Software Livre</span></a></li>
+        </ul></li>
+    <li><ul id="conheca-footer"><h3>Conheça</h3>
+        <li><a href="http://softwarelivre.org/portal/quem-somos">Quem Somos</a></li>
+        <li><a href="http://softwarelivre.org/portal/termos-de-uso">Termos de Uso</a></li>
+        <li><a href="http://softwarelivre.org/doc">Documentação</a></li>
+        <li><a href="http://softwarelivre.org/contact/portal/new">Fale Conosco</a></li>
+        </ul></li>
+    <li><ul id="colabore-footer"><h3>Colabore</h3>
+        <li><b><a href="http://softwarelivre.org/myprofile/portal/cms/suggest_an_article">Sugerir um Artigo</a></b></li>
+        <li><a href="http://softwarelivre.org/portal/melhorias">Sugerir Melhorias</a></li>
+        <li><a href="http://softwarelivre.org/portal/bugs">Reportar um Bug</a></li>
+        <li><a href="http://softwarelivre.org/portal/desenvolvimento">Desenvolvimento</a></li>
+        </ul></li>
+    <li><ul id="compartilhe-footer"><h3>Compartilhe</h3>
+        <li><b><!-- AddToAny BEGIN -->
+        <a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fsoftwarelivre.org&amp;linkname=SoftwareLivre.org">Compartilhar Isto!</a>
+        <script type="text/javascript">
+        var a2a_config = a2a_config || {};
+        a2a_config.linkname = "SoftwareLivre.org";
+        a2a_config.linkurl = "http://softwarelivre.org";
+        a2a_config.onclick = 1;
+        a2a_config.locale = "pt-BR";
+        a2a_config.num_services = 6;
+        a2a_config.prioritize = ["identi_ca", "twitter", "facebook", "google_buzz", "digg", "email"]
+        </script>
+        <script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END --></b></li>
+        <li><a href="http://softwarelivre.org/portal/eventos">Novos Eventos</a></li>
+        <li><a href="http://softwarelivre.org/portal/portfolio">Portfólio Livre</a></li>
+        <li><a href="http://softwarelivre.org/portal/divulgue">Páginas Amigas</a></li>
+        </ul></li>
+    <li><ul id="apoio-footer"><h3>Apoio</h3>
+        <li> <a href="http://softwarelivre.org/portal/apoio"><img src="/portal/anuncios/apoio.png" style="width:204px"><span>Apoio</span></img></a></li>
+        </ul></li>
+</div><!-- end id="footer-links" -->
+
+<div id="copyright">
+  © Copyleft 2015 -<a id="link-asl" href="http://associacao.softwarelivre.org/" title="Associação SoftwareLivre.org">ASL</a> - Alguns direitos reservados, exceto quando especificado em contrário e nos conteúdos replicados de outras fontes.
+  <p id="noosfero-license">Este site utiliza o software livre <a href="http://www.noosfero.org/" id="link-noosfero">Noosfero</a>, licenciado sob a licença <a href="http://www.gnu.org/licenses/agpl.html">GNU Affero General Public License</a>, versão 3 ou superior.  </p>
+</div><!-- end id="copyright" -->
+</div>
+
+<script type="text/javascript">
+  jQuery(function($) {
+    $(".highlights-block").insertAfter("#theme-header");
+    $(".action-home-index #block-695148").insertBefore("#block-666540");
+    $(".action-environment_design-index #block-695148").insertBefore("#block-666540");
+    $(".action-home-index #block-695454").insertAfter("#block-666540");
+    $(".action-environment_design-index #block-695454").insertAfter("#block-666540");
+    $("#site-title").prependTo("#top");
+    $("#user").insertAfter("#site-title");
+  });
+</script>
+
+      </div><!-- end id="theme-footer" -->
+      <div id="global-footer">
+        
+      </div><!-- end id="global-footer" -->
+    </div><!-- end id="footer" -->
+    
+    <script src="https://s7.addthis.com/js/152/addthis_widget.js"></script>
+    <!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+     var u = "piwik.colivre.coop.br/";
+     if(!u.match(/^https?/)){
+       var protocol = ("https:" == document.location.protocol ? "https" : "http");
+       u = protocol + '://' + u;
+     }
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 3]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.colivre.coop.br/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+  </body>
+</html>
