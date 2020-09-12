@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    <title>Galeria - Laboratório Experimental em Tecnologias Livres - Software Livre Brasil</title>
+
+    <style type="text/css">
+@import url(/stylesheets/slideshow.css);
+</style>
+    <script src="/javascripts/jquery-2.1.1.min.js"></script>
+<script src="/assets/vendor/sliderjs-4813c008b79ff67e006eacb62a9b8630.js"></script>
+<script src="/assets/vendor/pikachoose-476b26458f07a3a41eb6156f4ec6ef23.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function (){
+        $("#slideshow").PikaChoose({
+          buttons: { play: "Play", stop: "Stop", previous: "Previous", next: "Next" }
+        });
+        $("#slideshow").SliderJS({
+          window_width: 320,
+          window_height: 55,
+          list_width: 832,
+          pikachoose: true,
+          auto_play: false
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p class='back-button' ><a class="button icon- with-text" title="Back to gallery" href="http://softwarelivre.org/lablivre/galeria">&nbsp;<span>Back to gallery</span></a></p>
+<ul id='slideshow' >
+      <li><img title="10153889_491861054272954_6578310138015023406_n.jpg" src="/thumbnails/0134/3243/10153889-491861054272954-6578310138015023406-n_display.jpg" alt="10153889 491861054272954 6578310138015023406 n display" /></li>
+      <li><img title="10154029_491860970939629_5243627939063870016_n.jpg" src="/thumbnails/0134/3241/10154029-491860970939629-5243627939063870016-n_display.jpg" alt="10154029 491860970939629 5243627939063870016 n display" /></li>
+      <li><img title="10255507_713347248716553_3869337035589796500_o.jpg" src="/thumbnails/0134/3242/10255507-713347248716553-3869337035589796500-o_display.jpg" alt="10255507 713347248716553 3869337035589796500 o display" /></li>
+      <li><img title="10258664_647118138668934_6522308065644684882_o.jpg" src="/thumbnails/0134/3240/10258664-647118138668934-6522308065644684882-o_display.jpg" alt="10258664 647118138668934 6522308065644684882 o display" /></li>
+      <li><img title="11009906_808247812561982_1096411667514034133_n.png" src="/thumbnails/0141/2869/11009906-808247812561982-1096411667514034133-n_display.png" alt="11009906 808247812561982 1096411667514034133 n display" /></li>
+      <li><img title="1509771_10201074213332365_98207910252956349_n.jpg" src="/thumbnails/0134/3239/1509771-10201074213332365-98207910252956349-n_display.jpg" alt="1509771 10201074213332365 98207910252956349 n display" /></li>
+      <li><img title="20150622_171055.jpg" src="/thumbnails/0143/3894/20150622-171055_display.jpg" alt="20150622 171055 display" /></li>
+      <li><img title="20150622_171116.jpg" src="/thumbnails/0143/3895/20150622-171116_display.jpg" alt="20150622 171116 display" /></li>
+</ul>
+
+  </body>
+</html>
