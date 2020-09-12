@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    <title>Apoio - LinguAgil - Software Livre Brasil</title>
+
+    <style type="text/css">
+@import url(/stylesheets/slideshow.css);
+</style>
+    <script src="/javascripts/jquery-2.1.1.min.js"></script>
+<script src="/assets/vendor/sliderjs-4813c008b79ff67e006eacb62a9b8630.js"></script>
+<script src="/assets/vendor/pikachoose-476b26458f07a3a41eb6156f4ec6ef23.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function (){
+        $("#slideshow").PikaChoose({
+          buttons: { play: "Iniciar", stop: "Parar", previous: "Anterior", next: "Próximo" }
+        });
+        $("#slideshow").SliderJS({
+          window_width: 320,
+          window_height: 55,
+          list_width: 832,
+          pikachoose: true,
+          auto_play: false
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p class='back-button' ><a class="button icon- with-text" title="Voltar à galeria" href="http://softwarelivre.org/linguagil/galeria/apoio">&nbsp;<span>Voltar à galeria</span></a></p>
+<ul id='slideshow' >
+      <li><img title="Checklist Soluções" src="/thumbnails/0023/5503/logochecklist_display.png" alt="Logochecklist display" /></li>
+      <li><img title="Feira de Formandos" src="/thumbnails/0023/9660/ffu_display.jpg" alt="Ffu display" /></li>
+      <li><img title="gorila" src="/thumbnails/0023/8306/gorila_display.png" alt="Gorila display" /></li>
+      <li><img title="Infox" src="/thumbnails/0023/2571/logoinfox_display.png" alt="Logoinfox display" /></li>
+      <li><img title="Link3 Tecnologia" src="/thumbnails/0023/5500/logotipo-link3_display.png" alt="Logotipo link3 display" /></li>
+      <li><img title="LocaWeb_logo.jpg" src="/thumbnails/0024/3996/locaweb-logo_display.jpg" alt="Locaweb logo display" /></li>
+      <li><img title="Revista do Universitário" src="/thumbnails/0023/9659/revistauniversitario_display.png" alt="Revistauniversitario display" /></li>
+      <li><img title="Rita Designer" src="/thumbnails/0023/4904/rita-designer_display.png" alt="Rita designer display" /></li>
+      <li><img title="Yahoo!" src="/thumbnails/0023/3521/logoyahoo-_display.png" alt="Logoyahoo  display" /></li>
+</ul>
+
+  </body>
+</html>
