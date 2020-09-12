@@ -1,0 +1,728 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt" class="controller-content_viewer action-content_viewer-view_page template-leftbar profile-type-is-person profile-name-is-dtux theme-sl-default">
+  <head>
+    <title>Instalação e Configuração do Samba4 - DTuX</title>
+    <link rel="alternate" type="application/rss+xml" title="DTuX" href="http://softwarelivre.org/dtux/blog/feed" />
+    <!--<meta http-equiv="refresh" content="1"/>-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    
+
+      <meta name="description" content="Software Livre Brasil" />
+
+    <!-- site root -->
+    <meta property="noosfero:root" content=""/>
+
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    
+
+    <script src="/assets/application-1c0930e8f260aafbc74c4fad04079409.js"></script>
+
+  
+  
+<script src="/javascripts/plugins/pg_search/search.js"></script>
+<script src="/javascripts/plugins/pg_search/profile_search_block.js"></script>
+<script src="/assets/plugins/require_auth_to_comment/hide_comment_form-c3a3727ea301c62930e11aab20ae74d4.js"></script>
+<script src="/assets/plugins/require_auth_to_comment/jquery.livequery.min-d1fe96eb7788079f6e550db2b6610365.js"></script>
+<script src="/assets/plugins/orders/javascripts/locale-17eaae2c136082dab9da1d91648b6a7e.js"></script>
+<script src="/assets/plugins/orders/javascripts/toggle_edit-f9da47bc0223fac8e5e5174c6ea24413.js"></script>
+<script src="/assets/plugins/orders/javascripts/sortable-table-ba58eb377fc175eb1e374be63d5454a3.js"></script>
+<script src="/assets/plugins/orders/javascripts/help-14515dc2f741beaa4b3d121df366af0d.js"></script>
+<script src="/assets/plugins/orders/javascripts/orders-560e35746985dc40b97851b13705cb26.js"></script>
+<script src="/assets/plugins/html5_video/video-channel-6aca45f93220c0910d8273dd2368004e.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/locale-17eaae2c136082dab9da1d91648b6a7e.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/toggle_edit-f9da47bc0223fac8e5e5174c6ea24413.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/sortable-table-ba58eb377fc175eb1e374be63d5454a3.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/suppliers-35473b9ebd4b9e65027e1bafa94dfdcd.js"></script>
+<script src="/assets/plugins/event/event-b1013aca7ce3cf0d4d5e6e10dc1f05b2.js"></script>
+<script src="/assets/plugins/display_content/javascripts/jstree/_lib/jquery-1.8.3-09dfd3b315fe6b24fbc309e36f5d70c3.js"></script>
+<script src="/assets/plugins/display_content/javascripts/jstree/jquery.jstree-563d09f7e7938a8a2f4207bfe6d48dd3.js"></script>
+<script src="/assets/plugins/container_block/container_block-7eae56f79aa8da8b64941d18d2972c7b.js"></script>
+<script src="/assets/plugins/delivery/javascripts/delivery-da5b2dac737692db94d5bdc654586171.js"></script>
+<script src="/assets/plugins/products/javascripts/products-a4c860d8dbebe524d554f0b5564e0428.js"></script><script src="/designs/themes/sl-default/theme.js"></script><script>
+//<![CDATA[
+render_all_jquery_ui_widgets()
+//]]>
+</script>
+    <link rel="stylesheet" media="screen" href="/assets/application-e0072ababb97032fa1a5d95fa09d897c.css" />
+<link rel="stylesheet" media="screen" href="/designs/templates/leftbar/stylesheets/style.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/icons/default/style-b3a500c1e17f47b010a70fdb0103012e.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/icons/pidgin/style-138f7bb59f9d26296632e82eae162877.css" />
+<link rel="stylesheet" media="screen" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/people_block/style-c340afe175b0045c7f8669073a428a1c.css" />
+<link rel="stylesheet" media="screen" href="/stylesheets/plugins/pg_search/style.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/recent_content/style-e0d5f807f7056b173f6cf113c840ddc0.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/custom_forms/style-7870704d75309d55ffcaa827c59baa18.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/work_assignment/style-526deb629c3d9e7736f049b99c72a50a.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/require_auth_to_comment/style-66a0efab118159977ca0194806ef4bec.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/orders/style-feb7767bc71e62563ccab53642a6e4c2.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/html5_video/style-8f2b70d373ff7ec22b404d91b1b6f211.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/suppliers/style-64c71b3cd22994ada93abd55c70ea1ce.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/gallery_block/style-4547593291c3fca2ad50216cbb3dfdc9.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/send_email/style-976778195cb106e52b31d57242cdc01c.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/event/style-8f5f6a9b5a7724dbc4977d11c2e4321c.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/display_content/style-cf10f47511255685485ac51859c22a29.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/container_block/style-dd17a810971259abe7c31678e9d9c132.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/video/style-68d51000d73adab06c1dcd036011138d.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/delivery/style-aeef749320f3cdff642340f047806f9b.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/sub_organizations/style-88810bb91c1c70f63817f6f03295fd92.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/products/style-3147a337d78ccc54df05870c504166fd.css" />
+<link rel="stylesheet" media="screen" href="/designs/themes/sl-default/global.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/themes/sl-default/style-f317a60b59d0ee3e8048cb6eba54b282.css" />
+
+    
+    
+
+    <script type="text/javascript">
+      DEFAULT_LOADING_MESSAGE = 'loading...';
+      PERMANENT_NOTIFICATIONS = false;
+      noosfero.profile = "dtux"
+    </script>
+
+      
+<script src="/assets/tinymce/js/tinymce/tinymce-666c93593f34cd23b1f1e9177ab27cae.js"></script><script src="/assets/tinymce/js/tinymce/jquery.tinymce.min-33361c760deadb5b77610a12911056f2.js"></script><script src="/assets/tinymce-4df3fc98953118b704cdb7a023aafdc2.js"></script>
+<script type="text/javascript">
+tinymce.create('tinymce.plugins.MacrosPlugin', {
+  createControl: function(n, cm) {
+    switch (n) {
+       case 'macros':
+    }
+    return null;
+  }
+});
+
+function tinymce_macros_setup(editor) {
+}
+
+// Register plugin with a short name
+tinymce.PluginManager.add('macrosPlugin', tinymce.plugins.MacrosPlugin);
+
+jQuery(document).ready(function () {
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"pt_BR","selector":".tiny_mce","toolbar1":"fullscreen | insertfile undo redo | copy paste | bold italic underline | styleselect fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image","menubar":"edit insert view tools","toolbar2":"print preview code media | table | macros","macros_setup":[]})
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"pt_BR","selector":".tiny_mce_simple","toolbar1":"fullscreen | insertfile undo redo | copy paste | bold italic underline | styleselect fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image","menubar":false,"toolbar2":null,"macros_setup":[]})
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"pt_BR","selector":".tiny_mce_restricted","toolbar1":"bold italic underline | link","menubar":false,"toolbar2":null,"macros_setup":[]})
+});
+</script>
+
+
+  </head>
+  <body class="controller-content_viewer action-content_viewer-view_page template-leftbar">
+    <a href="#content" id="link-go-content"><span>Ir para o conteúdo</span></a>
+    
+    <div id="global-header">
+      <!-- div class='supportbanner'>
+  <div class='content'>
+    <div class='banner-title'>Campanha de doação 2016</div>
+    <div class='banner-subtitle'>Ajude a <span class='asl'>ASL.Org</span> a realizar o <span class='fisl17'>FISL17</span>!</div>
+    <p>Ajude a Associação Software Livre.Org a continuar seu trabalho de 12 anos em prol do desenvolvimento e disseminação do Software Livre. Faça uma doação e ganhe um ingresso cortesia para o <span class='fisl17'>FISL17</span> e uma camiseta oficial do evento.</p>
+  </div>
+  <div class='footer-links'>
+    <a class='logo-fisl17' href='http://fisl.org.br' target='_blank'><span>fisl17</span></a>
+    <a class='logo-asl' href='http://asl.org' target='_blank'><span>ASL.org</span></a>
+    <a class='iot-fisl' href='http://segue.fisl17.softwarelivre.org' target='_blank'><span>Contribua para o fisl17</span></a>
+  </div>
+</div -->
+
+    </div>
+
+    <div id="wrap-1">
+      <div id="theme-header">
+        <div id="top">
+  <ul id="top-menu">
+    <li><a href="/"><span>Início</span></a></li>
+    <li><a id="submenu-people" href="/search/people"><span class="icon-menu-people">Pessoas</span></a><a class="up menu-submenu-trigger" id="submenu-people-trigger" onclick="toggleSubmenu(this, '', {&quot;Mais recentes&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_recent&quot;},&quot;Mais ativas&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_active&quot;},&quot;Mais populares&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_popular&quot;}}); return false" href="#"><span>Menu de pessoas</span></a></li>
+    <li><a id="submenu-communities" href="/search/communities"><span class="icon-menu-community">Comunidades</span></a><a class="up menu-submenu-trigger" id="submenu-communities-trigger" onclick="toggleSubmenu(this, '', {&quot;Mais recentes&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_recent&quot;},&quot;Mais ativas&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_active&quot;},&quot;Mais populares&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_popular&quot;}}); return false" href="#"><span>Menu de comunidades</span></a></li>
+    <li><a href="/profile/portal/events" id="submenu-events"><span class='icon-menu-events'>Eventos</span></a></li>
+    <li><a href="/doc"><span>Manual</span></a></li>
+    <li><a href="/portal/quem-somos" id="submenu-about"><span>Sobre</span></a></li>
+  </ul>
+</div>
+
+      </div>
+      <div id="wrap-2">
+        <div id="user">
+    <span class='not-logged-in'>
+      <span class='login'><a id="link_login" onclick="return noosfero.modal.inline(&#39;#inlineLoginBox&#39;)" class="" href="/account/login"><i class="icon-menu-login"></i><strong>Entrar</strong></a></span>
+
+      <div id='inlineLoginBox' style='display: none;'>
+        <div class="login-box">
+
+<h2>Entrar</h2>
+
+
+
+
+<form action="/account/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="xQ+diPW9JZlJqPE53StgvH6qum7Zd5pnP+Qf1xYnLRxYZy2Jh+YneqazBKdbqxrfMTtwrdH7XTViaCbTSayLzg==" />
+
+     <div class="formfieldline"><label class="formlabel" for="main_user_login">Nome de usuário / E-mail</label><div class="formfield type-text"><input id="main_user_login" onchange="this.value = convToValidLogin( this.value )" type="text" name="user[login]" /></div></div>
+
+     <div class="formfieldline"><label class="formlabel" for="user_password">senha</label><div class="formfield type-password"><input type="password" name="user[password]" id="user_password" /></div></div>
+
+     <div class='checkbox'>
+       <label>
+         <input type="checkbox" name="remember_me" id="remember_me" value="1" checked="checked" />
+         Mantenha-me logado
+       </label>
+     </div>
+
+     
+
+     <div class=" button-bar">
+       <input type="submit" name="commit" value="Entrar" class="button with-text icon-login submit" />
+         <a class="button icon-close with-text modal-toggle modal-close" rel="deactivate" title="Cancelar" href="#">&nbsp;<span>Cancelar</span></a>
+<br style="clear: left;" /></div>
+</form>
+<div class=" button-bar">
+    <a class="button icon-add with-text" title="Novo usuário" href="/account/signup">&nbsp;<span>Novo usuário</span></a>
+
+    <a class="button icon-help with-text" title="Eu esqueci a minha senha!" href="/account/forgot_password">&nbsp;<span>Eu esqueci a minha senha!</span></a>
+<br style="clear: left;" /></div>
+</div><!-- end class="login-box" -->
+
+
+      </div>
+
+        <span class='or'>ou</span> <span class='signup'><a href="/account/signup"><strong>Registre-se</strong></a></span>
+    </span>
+  <form action="/search/articles" id="top-search" class="search_form clean" method="get">
+    <input name="query" size="15" title="Busca..." onfocus="this.form.className='focused';" onblur="this.form.className=''" />
+    <div>Aperte <strong>Enter</strong> para enviar a consulta.</div>
+    <script>
+//<![CDATA[
+jQuery("#user form input").hint();
+//]]>
+</script>
+  </form>
+</div><!-- end id="user" -->
+
+        <h1 id="site-title">
+          <a href="/"><span>Software livre Brasil</span></a>
+
+        </h1>
+        <div id="navigation">
+          <ul>
+            <div id="friends">
+<ul>
+  <li><a href="/portal"><span>+</span></a></li>
+  <li><a href="http://br-linux.org"><span>BR-Linux</span></a></li>
+  <li><a href="http://www.vivaolinux.com.br"><span>Viva o Linux</span></a></li>
+  <li><a href="http://www.revista.espiritolivre.org"><span>Revista Espírito Livre</span></a></li>
+  <li><a href="http://www.dicas-l.com.br"><span>Dicas-L</span></a></li>
+  <li><a href="http://www.sejalivre.org"><span>Seja Livre</span></a></li>
+  <li><a href="http://www.underlinux.com.br"><span>Under Linux</span></a></li>
+  <li><a href="http://www.sempreupdate.com.br"><span>Sempre Update</span></a></li>
+</ul>
+</div>
+<div id="external-links">
+<ul>
+  <li><a id="blogoosfero" title="Blogoosfero" href="http://blogoosfero.cc/software-livre" target="_blank"><span>Blogoosfero</span></a></li>
+  <li><a id="twitter" title="Twitter" href="https://twitter.com/PSLBrasil" target="_blank"><span>Twitter</span></a></li>
+  <li><a id="diaspora" title="Diaspora" href="https://diaspora.softwarelivre.org/u/pslbrasil" target="_blank"><span>Diaspora</span></a></li>
+  <li><a id="gnu-social" title="Quitter" href="https://quitter.se/pslbrasil" target="_blank"><span>Quitter</span></a></li>
+  <li><a id="feed" title="Feed" href="http://softwarelivre.org/portal/feed"><span>Feed</span></a></li>
+</ul>
+</div>
+
+          </ul>
+          <div id="navigation-end"></div>
+        </div><!-- end id="navigation" -->
+        <div id="content">
+          <div id="content-inner">
+  <div id="profile-header"></div><div class="boxes" id="boxes"><div class="box box-2" id="box-5957"><div class="blocks">  <div class="block-outer"><div class="block profile-image-block" id="block-10411" help="Este bloco apresenta a imagem do perfil"><div class="block-inner-1"><div class="block-inner-2"><div class="vcard">
+
+
+<div class="profile-big-image img-pic">
+  <div class="profile-big-image-inner1">
+    <div class="profile-big-image-inner2">
+      <a href="http://softwarelivre.org/dtux"><img alt="DIEGO PEREIRA GRASSATO" title="" class=" photo" src="/image_uploads/0001/2568/Beijinho_display_big.jpg" />
+</a>
+    </div>
+  </div>
+</div>
+
+  <p>DTuX</p>
+
+
+<div class="profile-info-options">
+  <ul>
+</ul>
+
+</div>
+</div><!-- end class="vcard" -->
+</div></div></div></div>
+
+    <div class="block-outer"><div class="block link-list-block" id="block-10412" help="Este bloco pode ser usado para criar um menu de links. Você pode incluir, remove e atualizar links como quiser."><div class="block-inner-1"><div class="block-inner-2"><div class="block-header"><h3 class="block-title empty"><span></span></h3><h4 class="block-subtitle empty"><span></span></h4></div>
+
+
+
+<ul>
+    <li>
+      <a class="icon-menu-people" href="/profile/dtux">Perfil</a>
+    </li>
+    <li>
+      <a class="icon-photos" href="/dtux/galeria">Galeria de fotos</a>
+    </li>
+    <li>
+      <a class="icon-send" href="/contact/dtux/new">Contato</a>
+    </li>
+    <li>
+      <a class="icon-edit" href="/dtux/blog">Blog</a>
+    </li>
+</ul>
+</div></div></div></div>
+</div></div>
+<div class="box box-1" id="box-5956"><div class="blocks">  <div class="block-outer"><div class="block main-block" id="block-10410" help="Este bloco apresenta o conteúdo principal das suas páginas."><div class="block-inner-1"><div class="block-inner-2"><div class="main-content">
+<div id="article" class="text-article">
+
+
+
+<script type="text/javascript">
+    window.ONE_COMMENT = "Um comentário";
+    window.COMMENT_PLURAL = "comentários";
+    window.NO_COMMENT_YET = "Sem comentários ainda";
+</script>
+
+  <div id="article-parent">
+    <a class="button icon-back with-text" title="Voltar a DTuX" href="http://softwarelivre.org/dtux/blog">&nbsp;<span>Voltar a DTuX</span></a>
+  </div>
+
+<div id="article-toolbar">
+  <div>
+  <div id="article-actions">
+
+    
+      <script>fullscreenPageLoad('#article')</script>
+    <a id="fullscreen-btn" onClick="toggle_fullwidth(&#39;#article&#39;)" class="button with-text icon-fullscreen" href="#" title="Ir para o modo tela cheia"><span>Tela cheia</span></a><a style="display: none;" id="exit-fullscreen-btn" onClick="toggle_fullwidth(&#39;#article&#39;)" class="button with-text icon-fullscreen" href="#" title="Sair do modo tela cheia"><span>Sair da tela cheia</span></a>
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+  </div>
+  <div id="article-header">
+    
+    
+      <h1 class="title">
+      Instalação e Configuração do Samba4
+  </h1>
+  <span class="publishing-info">
+  <span class="date">
+    1 de Outubro de 2009, 0:00
+  </span>
+  <span class="author">
+    , por Software Livre Brasil
+  </span>
+  <span class="comments">
+     - <a href="/dtux/blog/instalacao-e-configuracao-do-samba4#comments_list"><span class='comment-count hide'>0</span><span class='comment-count-write-out'>sem comentários ainda</span></a>
+  </span>
+
+<span class="followers-count">
+|
+    Ninguém está seguindo este artigo ainda.
+</span>
+
+</span>
+
+  <div id='article-sub-header'>
+      <div id="article-hits">
+        Visualizado 2108 vezes
+      </div>
+
+  </div>
+
+
+    
+  </div>
+</div>
+
+</div>
+
+
+
+  <div id="addThis">
+  <script type="text/javascript">
+    addthis_pub = 'ra-4d93d22a7a91a05f';
+    addthis_logo = '';
+    addthis_options = 'identica, twitter, www.facebook.com, favorites, email, delicious, tumblr, digg, slashdot, more';
+  </script>
+  <a href="http://www.addthis.com/bookmark.php" id="bt_addThis" target="_blank" onmouseover="return addthis_open(this, '', '[URL]')" onmouseout="addthis_close()" onclick="return addthis_sendto()"><img width="53" height="16" border="0" alt="" src="/images/bt-bookmark.gif" /></a>
+</div>
+
+
+  <div class="article-body article-body-text-article">
+    <p style="text-align: justify;"> </p>
+<p style="text-align: center;"><img src="http://www.bestlinux.com.br/images/stories/Imagens_Noticias2/logo_main.gif" height="122" alt="" width="271"></p>
+<p style="text-align: justify;"><span style="color: #000000;">Em janeiro de 2006 foi lançando a primeira versão beta do samba4. Mesmo antes desta data várias informações já eram dadas sobre as características do novo “servidor de arquivo”. Uma das informações que mais chama a nossa atenção era sobre a integração do SAMBA com o AD.<br> Agora com a versão ALPHA 9 já podemos testar e verificar as principais características do SAMBA4.</span></p>
+<p style="text-align: justify;"><span style="color: #000000;">Softwares utilizados:</span></p>
+<p style="text-align: justify;"><strong>•	Linux: Slackware 12.2 – Current Version</strong><br> ftp://ftp.slackware.no/pub/linux/ISO-images/slackware/13.0/</p>
+<p style="text-align: justify;"><strong>•	PhpLDAPadmin 1.1.0.7</strong><br> http://phpldapadmin.sourceforge.net/</p>
+<p style="text-align: justify;"><strong>•	Samba 4 Alpha9</strong><br> Via Git: “git clone git://git.samba.org/samba.git samba-master; cd samba-master &amp;&amp; git checkout -b master origin/master; cd ..”</p>
+<p style="text-align: justify;"><strong>•	Heimdal Kerberos</strong><br> http://www.h5l.org/dist/src/heimdal-1.2.1.tar.gz</p>
+<p style="text-align: justify;"><strong>•	Bind 9</strong><br> ftp://ftp.isc.org/isc/bind9/9.5.2/bind-9.5.2.tar.gz</p>
+<p style="text-align: center;"><span style="text-decoration: underline;"><span style="color: #000000;"><strong>Dependências de Outros softwares para o perfeito funcionamento</strong></span></span></p>
+<p style="text-align: justify;">Para o perfeito funcionamento do Samba4 depois vários testes foi visto que o DNS é um dos requisito primordiais para seu funcionamento adequado e reconhecimento de algumas diretivas impostas pelo samba4, para isso recopilaremos o BIND com suporte a Heimdal Kerberos, existem duas implementações de código aberto do Kerberos: Heimdal e MIT Kerberos. Heimdal é uma implementação do protocolo Kerberos implementada pela KTH (Royal Institute of Technology, em Estocolmo), enquanto MIT Kerberos é fornecido pelo MIT (Massachussets Institute of Technology), como diz seu nome.<br> Autenticação Kerberos é um protocolo de rede. Foi concebido para fornecer autenticação forte para o cliente/servidores de aplicativos usando criptografia de chaves secretas, então um cliente pode provar a sua identidade para um servidor (e vice-versa) em uma conexão de rede insegura.<br> Em nosso caso utilizaremos BIND com suporte ao Heimdal Kerberos por causa do GSS-TSIG algoritmo de serviço de segurança genérico para autenticação de transação com chave secreta de DNS (GSS-TSIG) este mecanismo é utilizado para estabelecer relações TSIG para autenticação do tipo Kerberos, necessário para interagir BIND com Samba4, com essas credenciais o DNS aceita atualizações GSS-TSIG assinadas e verifica as credenciais de correspondentes com as credencias cadastradas no Samba4, isso permite aos usuários descarregar o DNS dos usuários do Microsoft Windows sem ter a segurança comprometida.</p>
+<p style="text-align: center;"><span style="text-decoration: underline;"><strong>Compilação e Instalação</strong></span></p>
+<p style="text-align: justify;">Começaremos pelo Heimdal:</p>
+<p style="text-align: justify;"><strong><span style="color: #808080;">#tar –zxvf heimdal-1.2.1.tar.gz<br> #cd heimdal-1.2.1<br> #./configure –prefix=/usr –libdir=/usr/lib \<br> –sysconfdir=/etc  –localstatedir=/var  \<br> –mandir=/usr/man –with-openssl=/usr –bindir=/usr/bin/ \<br> –sbindir=/usr/sbin/ –enable-kcm<br> #make &amp;&amp; make install</span></strong></p>
+<p style="text-align: justify;"><span style="color: #000000;">Criaremos o usuário e o grupo responsável pelo Bind, e efetuaremos a compilação:</span></p>
+<p style="text-align: justify;"><strong><span style="color: #808080;"># groupadd named &amp;&amp; useradd named –g named<br> #tar –zxvf bind-9.5.2.tar.gz<br> #cd bind-9.5.2<br> #./configure   –prefix=/usr   –libdir=/usr/lib  \<br> –sysconfdir=/etc –localstatedir=/var   –with-libtool   \<br> –mandir=/usr/man   –enable-shared   –disable-static   \<br> –enable-threads –with-openssl=/usr –with-gssapi=/usr/include/gssapi –bindir=/usr/bin/ –sbindir=/usr/sbin/<br> #make &amp;&amp; make install</span></strong></p>
+<p style="text-align: justify;"><span style="color: #000000;">Adicione seu host em<em><strong> “/etc/hosts”</strong></em>, para ajudar 	na resolução de nomes, em meu caso ficou deste modo:</span></p>
+<p style="text-align: justify;"><span style="color: #808080;"><strong>#vi /etc/hosts</strong></span><span style="color: #808080;"><strong> </strong></span></p>
+<p style="text-align: justify;"><span style="color: #808080;"><strong>127.0.0.1                                       localhost</strong></span></p>
+<p style="text-align: justify;"><strong><span style="color: #808080;">192.168.11.1                              dtux.org dtux</span></strong></p>
+<p style="text-align: justify;"><span style="color: #000000;">Testando o funcionamento do Bind:</span></p>
+<p style="text-align: justify;"><strong><span style="color: #808080;">#named –u named -g<br> 25-Sep-2009 11:00:21.348 zone dtux.org/IN: loaded serial 2009091112<br> 25-Sep-2009 11:00:21.350 running<br> 25-Sep-2009 11:00:21.350 zone dtux.org/IN: sending notifies (serial 2009091112)</span></strong></p>
+<p style="text-align: center;"><strong><span style="text-decoration: underline;">Compilação</span></strong></p>
+<p style="text-align: justify;"><span style="color: #000000;">Após fazer o download, foi criado um diretório chamando samba-master. Os fontes do SAMBA4 ficaram dentro do diretório source4, criaremos um link simbólico apontando para source.</span></p>
+<p style="text-align: justify;"><strong><span style="color: #808080;"># cd samba-master/<br> # ln –s source4 source<br> # cd source<br> #./autogen.sh<br> #./configure –prefix=/usr/local/samba –sysconfdir=/etc/ –localstatedir=/var –mandir=/usr/man/ –enable-fhs –enable-debug –bindir=/usr/bin –sbindir=/usr/sbin –libdir=/lib –enable-developer<br> # make &amp;&amp; make install</span></strong></p>
+<p style="text-align: justify;"><span style="color: #000000;">Após a instalação rode o utilitário provision para a criação do domínio e do usuário administrator e sua respectiva senha:</span></p>
+<p style="text-align: justify;"><strong><span style="color: #808080;">#./setup/provision –realm=DTUX.ORG –domain=DTUX –admin=anna –server-role=’domain controller’</span></strong></p>
+<p style="text-align: justify;"><span style="color: #000000;">O parâmetro<strong><em> “–realm” </em></strong>é para definir o domínio do servidor Kerberos e o<em><strong> “domain”</strong></em> para o domínio SAMBA.<br> O SAMBA4 trás embutido os protocolos:</span></p>
+<p style="text-align: justify;"><strong>DNS – ( Bind )<br> SMB-( Samba 3 )<br> LDAP( OpenLdap )<br> KERBEROS( Heimdal )<br> MS-RPC – ( GPO )</strong></p>
+<p style="text-align: justify;"><span style="color: #000000;">Credenciais Utilizando base SamDB</span></p>
+<p style="text-align: justify;"><span style="color: #000000;">… que são responsáveis pela autenticação Active Directory.</span></p>
+<p style="text-align: justify;"><span style="color: #000000;">O diretório <em><strong>“/usr/local/samba”</strong></em> é gerado pela compilação do SAMBA e tem os seguintes subdiretórios:</span></p>
+<ul>
+<li><span style="color: #000000;"><strong>/usr/bin:  Programas para gerenciamento do samba, tais como smbstatus, net, etc.</strong></span></li>
+<li><span style="color: #000000;"><strong>/usr/sbin: Programa responsável por inicializar o samba.</strong></span></li>
+<li><span style="color: #000000;"><strong>/etc/samba:  Neste diretório fica o arquivo de configuração smb.conf</strong></span></li>
+<li><span style="color: #000000;"><strong>/usr/lib: Todas as libs compiladas do samba</strong></span></li>
+<li><span style="color: #000000;"><strong> /var/lib/samba/private: Exemplos de arquivos de configuração</strong></span></li>
+</ul>
+<p style="text-align: center;"><span style="color: #000000;"><strong><span style="text-decoration: underline;">Configuração do Bind</span></strong></span></p>
+<p style="text-align: justify;"><span style="color: #000000;">Após a instalação, configuramos o servidor DNS para trabalhar juntamente com o KERBEROS e KERBERO com BIND. Utilize os arquivos exemplos gerados pelo próprio SAMBA que estão dentro do diretório<em><strong> “/var/lib/samba/private”</strong></em>. Edite o arquivo <strong><em>“/etc/named/named.conf”</em></strong><strong><em> </em></strong>adicione as seguintes linhas:</span></p>
+<p style="text-align: justify;"><strong><span style="color: #808080;">#vi /etc/named/named.conf</span></strong></p>
+<p style="text-align: justify;"><span style="color: #000000;">Na sessão<em><strong> “option{}”</strong></em> adicione as linhas que irão fazer a comunicação ente o Keberos e o Bind:</span></p>
+<p style="text-align: justify;"><strong><span style="color: #808080;">options{<br> directory “/var/named”;<br> tkey-gssapi-credential “DNS/dtux.org”;<br> tkey-domain “DTUX.ORG”;<br> }</span></strong></p>
+<p style="text-align: justify;"><span style="color: #000000;">Depois de configurado a sessão <em><strong>“options”</strong></em> incluiremos o arquivo <em><strong>“named.conf”</strong></em> do Samba4 no Bind, abaixo da sessão <em><strong>“options”</strong></em> adicione:</span></p>
+<p style="text-align: justify;"><span style="color: #808080;"><strong>options{<br> directory “/var/named”;<br> tkey-gssapi-credential “DNS/dtux.org”;<br> tkey-domain “DTUX.ORG”;<br> }<br> include “/var/lib/samba/private/named.conf”;</strong></span></p>
+<p style="text-align: justify;"><span style="color: #000000;">Nesse arquivo está a configuração a zona configurada pelo Samba4 quando foi utilizado o utilitário<em><strong> “provision”</strong></em>. Antes de testar o funcionamento do Bind, temos que setar as variáveis de localização do arquivo<em><strong> “dns.keytab”</strong></em>, que é onde estão as informações de DNS registradas pelo Samba4:</span></p>
+<p style="text-align: justify;"><strong><span style="color: #808080;"># KEYTAB_FILE=“/var/lib/samba/private/dns.keytab”<br> # export KRB5_KTNAME=“/var/lib/samba/private/dns.keytab”</span></strong></p>
+<p style="text-align: justify;"><span style="color: #000000;">Para não termos que ficar digitando essas linhas a todo o momento coloquemos elas no inicio do arquivo<em><strong> “/etc/rc.d/rc.bind”</strong></em>, responsável pela inicialização do daemon do named.</span></p>
+<p style="text-align: justify;"><strong><span style="color: #808080;">#killall -9 named<br> #named –u named<br> #ps ax |grep named<br> 4450 ?        Ssl    0:00 named -u named<br> 4455 pts/3    R+     0:00 grep named</span></strong></p>
+<p style="text-align: justify;"><span style="color: #000000;">Pronto seu Bind já estará rodando e trocando informações com o Samba4, vamos fazer um teste para verificar se seu funcionamento está ok, utilizaremos a ferramenta<em><strong> “nsloockup”</strong></em>:</span></p>
+<p style="text-align: center;"><a href="http://samba4.wordpress.com/"><img title="dns" class="size-medium wp-image-16 aligncenter" src="http://samba4.files.wordpress.com/2009/09/dns.jpeg?w=433&amp;h=298" height="298" alt="dns" width="433"></a></p>
+<p style="text-align: justify;"> </p>
+<p style="text-align: justify;"><span style="color: #000000;">Caso você queira configurar um DNS reverso para o IP de seu samba fica a seu critério.<br> Também copiaremos o arquivo <em><strong>“krb5.conf”</strong></em> que está em<em><strong> “/var/lib/samba/private/“</strong></em> para o diretório<em><strong> “/etc/”</strong></em>.<br> Por utilizar o Kerberos, é necessário que todas as máquinas envolvidas estejam com os mesmos horários (segundos).Para isso nada melhor do que setar o Samba para ser o nosso time server, adicione ao <em><strong>“/etc/samba/smb.conf”</strong></em> na sessão <em><strong>“[globlas] “time server     = yes”</strong></em>, nos cliente é só setar<em><strong> “net time \dtux.org /set /Yes”</strong></em>, que o horário ficará sincronizado o com o do servidor.<br> Acerte o sistema de arquivo para trabalhar com o<em><strong> “xattr”</strong></em> alterando o arquivo<strong><em> “/etc/fstab”.</em></strong></span></p>
+<p style="text-align: justify;"><span style="color: #888888;"><br> <strong>/dev/sda1         ext3    defaults,user_xattr        0          1</strong></span></p>
+<p style="text-align: justify;"><span style="color: #000000;">Remonte o sistema para ativar as alterações.</span></p>
+<p style="text-align: justify;"><strong><span style="color: #888888;"># mount -o remount,rw /</span></strong></p>
+<p style="text-align: justify;"><span style="color: #000000;">Para testar, criemos alguns compartilhamentos. Para isso edite o arquivo <em><strong>“smb.conf”</strong></em> que está dentro do diretório<em><strong> “/etc/samba/”.</strong></em></span></p>
+<p style="text-align: justify;"><strong><span style="color: #888888;">[profiles]<br> comment = Profiles Remotos<br> path = /home/profiles<br> read only = no<br> browseable = no</span></strong></p>
+<p style="text-align: justify;"><span style="color: #000000;">O compartilhamento <em><strong>“Profiles”</strong></em> indica a localização dos profiles dos usuários nesse caso se tratando de uma configuração para<strong><em> “Perfil Móvel(Roaming Profile)”</em></strong></span></p>
+<p style="text-align: justify;"><span style="color: #000000;">Agora testaremos alguns serviços e verificar se estão todos funcionais.</span></p>
+<p style="text-align: justify;"><span style="color: #000000;">Iniciando do Samba</span></p>
+<p style="text-align: justify;"><strong><span style="color: #888888;">#samba -i -M single</span></strong></p>
+<p style="text-align: justify;"><span style="color: #000000;">Iniciando o Samba em modo debug:</span></p>
+<p style="text-align: justify;"><strong><span style="color: #888888;">#samba -i -M single –d3</span></strong></p>
+<p style="text-align: justify;"><span style="color: #000000;">Inicialização do Bind:</span></p>
+<p style="text-align: justify;"><strong><span style="color: #888888;">#/etc/rc.d/rc.bind start</span></strong></p>
+<p style="text-align: justify;"><span style="color: #000000;">Pronto com isso no servidor já está no ar com DNS funcionado, vamos a alguns testes:</span></p>
+<p style="text-align: justify;"><span style="color: #000000;"><strong><span style="text-decoration: underline;">Samba4</span></strong></span></p>
+<p style="text-align: justify;"><span style="color: #000000;">Autentique algum usuário do Samba4 com:</span></p>
+<p style="text-align: justify;"><strong><span style="color: #808080;"># smbclient //dtux.org/profiles -Uadministrator%anna<br> smb: \&gt; dir<br> .                              D                             0                                       Wed Sep 23 11:31:36 2009<br> ..                             D                           0                                       Tue Sep 22 17:26:38 2009<br> Admin                                   D                               0            Tue Sep 22 15:28:02 2009<br> alexandro   D                         0            Tue Sep 22 17:19:31 2009<br> diego                                       D                         0            Mon Sep 21 16:42:47 2009<br> nazir                                        D                                0            Wed Sep 23 11:31:36 2009<br> danilo                                    D                         0            Tue Sep 22 12:04:42 2009</span></strong></p>
+<p style="text-align: justify;"><span style="color: #000000;"><span style="text-decoration: underline;"><strong>Kerberos</strong></span></span></p>
+<p style="text-align: justify;"><span style="color: #000000;">Autentique algum usuário do Samba4 com e ofereça a senha quando pedido:</span></p>
+<p style="text-align: justify;"><strong><span style="color: #808080;">#kinit administrator@DTUX.ORG<br> Password for administrator@DTUX.ORG:</span></strong></p>
+<p style="text-align: justify;"><span style="color: #000000;">Verificando os tickets de conexão:</span></p>
+<p style="text-align: justify;"><strong><span style="color: #808080;">#klist<br> Ticket cache: FILE:/tmp/krb5cc_0<br> Default principal: administrator@DTUX.ORG</span></strong></p>
+<p style="text-align: justify;"><strong><span style="color: #808080;">Valid starting     Expires            Service principal<br> 09/25/09 14:22:50  09/26/09 14:22:48  krbtgt/DTUX.ORG@DTUX.ORG</span></strong></p>
+<p style="text-align: justify;"><span style="color: #000000;">Verificando os tickets de conexão e os métodos de autenticação aplicados</span>:</p>
+<p style="text-align: justify;"><strong><span style="color: #808080;">#klist -e<br> Ticket cache: FILE:/tmp/krb5cc_0<br> Default principal: administrator@DTUX.ORG</span></strong></p>
+<p style="text-align: justify;"><strong><span style="color: #808080;">Valid starting     Expires            Service principal<br> 09/25/09 14:22:50  09/26/09 14:22:48  krbtgt/DTUX.ORG@DTUX.ORG<br> Etype (skey, tkt): ArcFour with HMAC/md5, ArcFour with HMAC/md5</span></strong></p>
+<p style="text-align: justify;"><strong><span style="color: #808080;"><br></span></strong></p>
+<p style="text-align: center;"><span style="color: #000000;"><span style="text-decoration: underline;"><strong>Windows sendo Dominado pelo Samba4</strong></span></span></p>
+<p style="text-align: justify;"><span style="color: #000000;">Para colocar o Windows XP no domínio do samba, além da configuração de hora já foi falado, devemos configurar o ip da máquina onde está o samba4 no DNS do micro com Windows XP/2003/2008/7.</span></p>
+<p style="text-align: center;"><span style="color: #000000;"><a href="http://samba4.wordpress.com/2009/09/25/instalacao-samba4/dns21/"><img title="dns21" class="size-full wp-image-21 aligncenter" src="http://samba4.files.wordpress.com/2009/09/dns21.jpg?w=495&amp;h=371" height="371" alt="dns21" width="495"></a></span></p>
+<p style="text-align: center;"><span style="color: #000000;"><br> </span></p>
+<p style="text-align: justify;"><span style="color: #000000;">No Windows XP segue as seguintes configurações para se entrar em domínio, este procedimento serve para Windows XP/2000/2003/2008/7:</span></p>
+<p style="text-align: justify;"><span style="color: #000000;"><em><strong>•	Menu Iniciar -&gt; Painel de Controle -&gt; Sistema<br> •	Guia “Nome do Computador”<br> •	Alterar<br> •	Marque o checkbox “Domínio”<br> •	Coloque o seu domínio (DTUX.ORG) -&gt; OK<br> • Caso ocorrer algum problema de apontamento de DN, pode-se editar o arquivo “C:\WINDOWS\system32\drivers\etc\hosts”, no arquivo “hosts” você coloca o IP do servidor samba e na frente o seu respectivo DNS name desta forma:</strong></em></span></p>
+<ul>
+<li> <strong><span style="color: #808080;">127.0.0.1         localhost</span></strong>
+</li>
+<li><strong><span style="color: #808080;"> 192.168.11.2   	 dtux.org dtux</span></strong></li>
+</ul>
+<p style="text-align: center;"><a href="http://samba4.wordpress.com/2009/09/25/instalacao-samba4/logon-2/"><img title="logon" class="aligncenter size-full wp-image-23" src="http://samba4.files.wordpress.com/2009/09/logon1.jpg?w=495&amp;h=309" height="309" alt="logon" width="495"></a></p>
+<p style="text-align: center;"><a href="http://samba4.wordpress.com/2009/09/25/instalacao-samba4/logon1/"><img title="logon1" class="aligncenter size-full wp-image-24" src="http://samba4.files.wordpress.com/2009/09/logon11.jpg?w=501&amp;h=312" height="312" alt="logon1" width="501"></a></p>
+<p style="text-align: justify;"><span style="color: #000000;">Simple no primeiro logon logue como administrator, caso você queira fazer parte da administração do Samba4 através do <strong><em>“Windows Server 2003 Administration Tools Pack” </em></strong>antes de instalá-lo, instale o<strong><em> “Windows Server 2003 Suporte Tools”</em></strong>:</span></p>
+<p style="text-align: justify;">•<strong><span style="color: #808080;"> http://www.microsoft.com/downloads/details.aspx?FamilyID=c16ae515-c8f4-47ef-a1e4-a8dcbacff8e3&amp;displaylang=en </span></strong><br> •<strong> <span style="color: #808080;">http://download.microsoft.com/download/3/e/4/3e438f5e-24ef-4637-abd1-981341d349c7/WindowsServer2003-KB892777-SupportTools-x86-ENU.exe</span></strong></p>
+<p style="text-align: justify;"><span style="color: #000000;">Aproveitando vamos criar um <strong><em>“Perfil Remoto”</em></strong>, um problema encontrado com perfil remoto foi encontrado quando você cria um usuário pelo<strong><em> “Administrator Tolls”</em></strong> esse usuário não terá acesso ao Shell do Linux e com isso ele não irá conseguir ditar permissões de escrita e leitura, a forma existe script na pasta:</span><strong><em><span style="color: #808080;"><span style="color: #000000;"> /usr/local/samba/share/samba/setup</span>/</span>.</em></strong></p>
+<p style="text-align: justify;"><span style="color: #808080;"><strong>•	newuser</strong></span></p>
+<p style="text-align: justify;"><span style="color: #000000;">Antes de utilizá-lo você tem que adicionar o usuário no Linux usando o comando comum<strong><em> “useradd”</em></strong>.<br> Iremos simular o seguinte ambiente, criaremos um grupo e adicionaremos um usuário no Linux a colocaremos esse usuário no grupo criado entre no <strong><em>“Administrator Tools”</em></strong>, criaremos o grupo também e utilizaremos o script <strong><em>“newuser”</em></strong> para adicionar o usuário no samba4.</span></p>
+<p style="text-align: justify;"><span style="color: #000000;">•	Criando grupo:</span><br> <strong><span style="color: #808080;">#groupadd samba4</span></strong></p>
+<p style="text-align: justify;">•<span style="color: #000000;"> Criando usuário no Linux:</span><br> <strong><span style="color: #808080;">#useradd teste –g samba4 -p senha –c “Teste Samba4 Users”</span></strong></p>
+<p style="text-align: justify;">•	Criando a pasta do profile do usuário, levando em consideração que<strong><em> “/home/profiles”</em></strong>, já foi feito acima:<br> <strong><span style="color: #808080;">#mkdir -p /home/profiles/teste</span></strong></p>
+<p style="text-align: justify;"><span style="color: #000000;">•	Ditando permissões de acesso a pasta para este usuário recém criado:</span><br> <span style="color: #808080;"><strong> #chown teste:samba4 /home/profiles/teste</strong></span></p>
+<p style="text-align: justify;"><span style="color: #000000;">Agora usaremos o script <em><strong>“newuser”</strong></em> para fazer a importação, um problema encontrado foram as bibliotecas python utilizadas por esse scripts elas estão localizadas em<em><strong> “/usr/local/samba/lib/python2.6/site-packages”</strong></em>, temos que copiar todo esses arquivos para a pasta real do python do sistema <em><strong>“/usr/lib/python2.6/site-packages/”</strong></em>:</span></p>
+<p style="text-align: justify;"><strong><span style="color: #808080;">#cd /usr/local/samba/lib/python2.6/site-packages<br> #cp –rp  *  /usr/lib/python2.6/site-packages/</span></strong></p>
+<p style="text-align: justify;"><span style="color: #000000;">Vamos fazer a copia do<em><strong> “newuser”</strong></em> para nosso diretório<strong><em> “/usr/sbin”</em></strong>:</span></p>
+<p style="text-align: justify;"><strong><span style="color: #808080;"> #cp /usr/local/samba/share/samba/setup/newuser /usr/sbin</span></strong></p>
+<p style="text-align: justify;"><span style="color: #000000;">Tudo pronto para a execução do script:</span></p>
+<p style="text-align: justify;"><strong><span style="color: #808080;"> #newuser teste senha –unixname=teste -k KERBEROS –workgroup=dtux.org</span></strong></p>
+<p style="text-align: justify;"><strong><span style="color: #000000;">•	–unixname: Usuário criado no Linux/Unix<br> •	-k KERBEROS: Utiliza autenticação Kerberos<br> •	–workgroup: Domínio Criado</span></strong></p>
+<p style="text-align: justify;"><span style="color: #000000;">Agora quando você autenticar no Windows com este usuário que ele já está sincronizado, quando você abrir o<em><strong> “Administrator Tools” pelo menu “Iniciar -&gt; Executar”, digite “dsa.msc”</strong></em>:</span></p>
+<p style="text-align: center;"><span style="color: #000000;"><a href="http://samba4.wordpress.com/2009/09/25/instalacao-samba4/dsamsc1/"><img title="dsamsc1" class="aligncenter size-full wp-image-25" src="http://samba4.files.wordpress.com/2009/09/dsamsc1.jpg?w=368&amp;h=181" height="181" alt="dsamsc1" width="368"></a><br> </span></p>
+<p style="text-align: justify;"><span style="color: #000000;">Depois clique em seu domínio e vá em <strong><em>“Users” </em></strong>o usuário já irá aparecer na listagem, criaremos o grupo <em><strong>“samba4”</strong></em> pelo<em><strong> “Administrator Tools” </strong></em>e adicionaremos o usuário <em><strong>“teste”</strong></em> neste grupo, e configuraremos o seu profile remoto.<br> Criando o grupo:<em><strong> “Botão direito em Builtin -&gt;Novo -&gt; Group”</strong></em>, dê um nome uma descrição.</span></p>
+<p style="text-align: center;"><span style="color: #000000;"><a href="http://samba4.wordpress.com/2009/09/25/instalacao-samba4/cgrupos/"><img title="cgrupos" class="aligncenter size-full wp-image-28" src="http://samba4.files.wordpress.com/2009/09/cgrupos.jpg?w=495&amp;h=272" height="272" alt="cgrupos" width="495"></a><br> </span></p>
+<p style="text-align: justify;"><span style="color: #000000;">Agora na guia <em><strong>“Members”</strong></em> você define os usuários que farão parte deste grupo.</span></p>
+<p style="text-align: center;"><span style="color: #000000;"><a href="http://samba4.wordpress.com/2009/09/25/instalacao-samba4/cotactgrop/"><img title="cotactgrop" class="aligncenter size-full wp-image-27" src="http://samba4.files.wordpress.com/2009/09/cotactgrop.jpg?w=495&amp;h=272" height="272" alt="cotactgrop" width="495"></a><br> </span></p>
+<p style="text-align: justify;"><span style="color: #000000;">Os usuários que foi importamos já estão criados agora é só acertar alguns detalhes em <em><strong>“User logon name”</strong></em> que é o nome de logon é só colocar o nome do usuário e na frente o <em><strong>“@DOMINIO”</strong></em>, marque as opções<em><strong> “Use cannot chance password”</strong></em> se não quer que os usuários alterem a senha, e <em><strong>“Password never expires”</strong></em>, pra ela numca expirar.</span></p>
+<p style="text-align: center;"><span style="color: #000000;"><a href="http://samba4.wordpress.com/2009/09/25/instalacao-samba4/configuracao-2/"><img title="configuracao" class="aligncenter size-full wp-image-31" src="http://samba4.files.wordpress.com/2009/09/configuracao1.jpg?w=495&amp;h=272" height="272" alt="configuracao" width="495"></a><br> </span></p>
+<p style="text-align: justify;"><span style="color: #000000;">Iremos agora á guia <em><strong>“Profile”</strong></em> e em <em><strong>“Profile Path”</strong></em> definiremos o caminho do diretório remoto onde serão armazenados os arquivos do usuário.</span></p>
+<p style="text-align: center;"><span style="color: #000000;"><a href="http://samba4.wordpress.com/2009/09/25/instalacao-samba4/profile/"><img title="profile" class="aligncenter size-full wp-image-32" src="http://samba4.files.wordpress.com/2009/09/profile.jpg?w=644&amp;h=354" height="354" alt="profile" width="644"></a><br> </span></p>
+<p style="text-align: justify;"><span style="color: #000000;">Em <em><strong>“Map Folder”</strong></em>, podemos colocar esse caminho do profile do usuário para ser montado em uma unidade de mapeamento de rede.</span></p>
+<p style="text-align: center;"><span style="color: #000000;"><a href="http://samba4.wordpress.com/2009/09/25/instalacao-samba4/mapeamento/"><img title="mapeamento" class="aligncenter size-full wp-image-33" src="http://samba4.files.wordpress.com/2009/09/mapeamento.jpg?w=635&amp;h=348" height="348" alt="mapeamento" width="635"></a><br> </span></p>
+<p style="text-align: justify;"><span style="color: #000000;">Podemos através do Windows os tickets do Kerberos através do<em><strong> “Windows Server 2003 Resource Kit Tools”</strong> (http://www.microsoft.com/downloads/details.aspx?familyid=9d467a69-57ff-4ae7-96ee-b18c4790cffd&amp;displaylang=en)</em>. Utilizaremos Klist e o Kerbtray, que ficam localizadas em: <strong><em>“Iniciar -&gt; Windows Resource Kit Tolls -&gt; Command Shell”.</em></strong></span></p>
+<p style="text-align: center;"><span style="color: #000000;"><strong><em><a href="http://samba4.wordpress.com/2009/09/25/instalacao-samba4/resourcekit1/"><img title="resourcekit1" class="aligncenter size-full wp-image-34" src="http://samba4.files.wordpress.com/2009/09/resourcekit1.jpg?w=495&amp;h=371" height="371" alt="resourcekit1" width="495"></a><br> </em></strong></span></p>
+<p style="text-align: center;"> </p>
+<p style="text-align: center;"><span style="color: #000000;"><span style="text-decoration: underline;"><strong>Klist</strong></span></span></p>
+<p style="text-align: justify;"><span style="color: #000000;">A ferramenta klist é uma ferramenta de linha de comando que permite que você exiba o conteúdo dos cache de credenciais e pode ser usada em um cliente Windows para exibir ou destruir credenciais existentes de Kerberos.<br> A ferramenta klist exige um argumento. O argumento<span style="text-decoration: underline;"><strong> “tgt”</strong></span> mostra as credenciais no cache atual, e o argumento<span style="text-decoration: underline;"><strong> “tickets”</strong></span> mostram as credenciais em cache.</span></p>
+<p style="text-align: center;"><span style="color: #000000;"><a href="http://samba4.wordpress.com/2009/09/25/instalacao-samba4/klisttgt/"><img title="klisttgt" class="aligncenter size-full wp-image-35" src="http://samba4.files.wordpress.com/2009/09/klisttgt.jpg?w=520&amp;h=262" height="262" alt="klisttgt" width="520"></a></span></p>
+<p style="text-align: center;"><span style="color: #000000;"><a href="http://samba4.wordpress.com/2009/09/25/instalacao-samba4/klisttickets/"><img title="klisttickets" class="aligncenter size-full wp-image-36" src="http://samba4.files.wordpress.com/2009/09/klisttickets.jpg?w=521&amp;h=262" height="262" alt="klisttickets" width="521"></a><br> </span></p>
+<p style="text-align: center;"> </p>
+<p style="text-align: center;"><span style="color: #000000;"><span style="text-decoration: underline;"><strong>KerbTray</strong></span></span></p>
+<p style="text-align: justify;"><span style="color: #000000;">A ferramenta Kerberos Tray, KerbTray,<strong> (kerbtray.exe) </strong>é uma ferramenta gráfica da plataforma Windows que exibe informações de tickets Kerberos em um computador de plataforma Windows onde os tickets Kerberos foram armazenados no cache de credenciais. Os tickets Kerberos são adquiridos e armazenados nas credenciais de cache quando um usuário autenticar em um computador de plataforma Windows (cliente ou servidor) como um usuário de domínio. O KerbTray permite que você visualize e limpe o cache de ticket.<br> Quando executado, a ferramenta coloca um ícone na bandeja do sistema. Esse ícone exibe o status com base na presença ou ausência de credenciais válidas. Dados disponibilizados pela interface KerbTray incluem os selos de tempo nos tickets, os marcadores associados às credenciais e o(s) tipo(s) de criptografia dos tickets.</span></p>
+<p style="text-align: center;"><span style="color: #000000;"><a href="http://samba4.wordpress.com/2009/09/25/instalacao-samba4/kerbtraytickets/"><img title="kerbtraytickets" class="aligncenter size-full wp-image-37" src="http://samba4.files.wordpress.com/2009/09/kerbtraytickets.jpg?w=583&amp;h=436" height="436" alt="kerbtraytickets" width="583"></a><br> </span></p>
+<p style="text-align: justify;"><span style="color: #000000;"><span style="text-decoration: underline;"><strong>Administração do Samba4 via phpLDAPadmin</strong></span><br> phpLDAPadmin é uma interface gráfica para gerenciar a base de dados LDAP. Para seu funcionamento será necessário ter instalação do Apache com suporte à PHP versão 5 ou 4 se preferir. O seu site oficial é (<em>http://phpldapadmin.sourceforge.net</em>).</span></p>
+<p style="text-align: justify;"><strong><span style="color: #808080;">#wget –C http://ufpr.dl.sourceforge.net/sourceforge/phpldapadmin/phpldapadmin-1.1.0.7.tar.gz<br> # tar -zvzf phpldapadmin-1.1.0.7.tar.gz<br> # mv phpldapadmin-1.1.0.7 phpldapadmin</span></strong></p>
+<p style="text-align: justify;"><span style="color: #000000;">Copiaremos a pasta <strong><em>“phpldapadmin”</em></strong> na pasta do apache</span></p>
+<p style="text-align: justify;"><span style="color: #808080;"><em><strong># mv phpldapadmin /srv/www/htdocs</strong></em></span></p>
+<p style="text-align: justify;">Acesse a pasta onde estão as configurações de seu samba, lá você irá encontrar um arquivo de configuração devidamente configurado para se conectar ao samba4, copie para a pasta de configuração do <strong><em>“phpLDAPadmin”</em></strong>.</p>
+<p style="text-align: justify;"><span style="color: #808080;"><strong># cd /var/lib/samba/private<br> # cp phpldapadmin-config.php /srv/www/htdocs/ldap/config/config.php</strong></span></p>
+<p style="text-align: justify;"><span style="color: #000000;">Seu apache deve estar devidamente configurado com suporte a PHP. Caso você esteje utilizando o Slackware Linux, apenas descomente a linha “<em><strong>Include /etc/httpd/mod_php.conf” </strong></em>de seu <strong><em>“httpd.conf”</em></strong> em<em><strong> “/etc/httpd”</strong></em> e reinicie o apache:</span></p>
+<p style="text-align: justify;"><span style="color: #808080;"><strong># apachectl restart</strong></span></p>
+<p style="text-align: justify;"><span style="color: #000000;">Abra seu navegador no seguinte endereço:</span></p>
+<p style="text-align: justify;"><span style="color: #000000;"><em><strong>http://localhost/phpldapadmin/index.php</strong></em></span></p>
+<p style="text-align: justify;"><span style="color: #000000;">Irá abrir a pagina lhe pedindo usuário e senha, você pode conectar usando o usuário <strong><em>“Anônimo”</em></strong> ou como <strong><em>“Administrator”</em></strong>.<br> Para se conectar como <em><strong>“Administrator”</strong></em> você deve indicar o caminho completo da localização do usuário, neste caso ele se encontra em <em><strong>“CN=Users,DC=dtux,DC=org”</strong></em>, para o usuário <strong><em>“Administrator”</em> </strong>ficará assim:</span></p>
+<p style="text-align: justify;"><span style="color: #808080;"><strong>CN=Administrator,CN=Users,DC=dtux,DC=org</strong></span></p>
+<p style="text-align: justify;"><span style="color: #000000;">Você pode se conectar com qualquer usuário desde que indique o seu caminho completo, assim como o<em><strong> “Administrator”.</strong></em></span></p>
+<p style="text-align: justify;"> </p>
+<p style="text-align: center;"><a href="http://samba4.wordpress.com/2009/09/25/instalacao-samba4/login2/"><img title="login2" class="aligncenter size-full wp-image-38" src="http://samba4.files.wordpress.com/2009/09/login2.jpg?w=447&amp;h=180" height="180" alt="login2" width="447"></a></p>
+<p style="text-align: center;"><a href="http://samba4.wordpress.com/2009/09/25/instalacao-samba4/login1/"><img title="login1" class="aligncenter size-full wp-image-40" src="http://samba4.files.wordpress.com/2009/09/login1.jpeg?w=524&amp;h=326" height="326" alt="login1" width="524"></a></p>
+<p> </p>
+<p>Arquivos de configuração, lembrando que esse foram usados na minha estrutura, lembre-se cada caso é um caso:</p>
+<p><a href="/diegoanna/samba4/smb.conf"><img src="/images/icons-mime/unknown.png?1243378169" alt="Unknown">smb.conf </a>- Arquivo de configuração do samba<a href="/diegoanna/samba4/smb.conf"><br></a></p>
+<p><a href="/diegoanna/samba4/named.conf"><img src="/images/icons-mime/unknown.png?1243378169" alt="Unknown">named.conf </a>- Arquivo principal do bind<a href="/diegoanna/samba4/named.conf"><br></a></p>
+<p><a href="/diegoanna/samba4/dtux.org.zone"><img src="/images/icons-mime/unknown.png?1243378169" alt="Unknown">dtux.org.zone </a>- Zona principal criada pelo samba e adaptada<a href="/diegoanna/samba4/dtux.org.zone"><br></a></p>
+<p><a href="/diegoanna/samba4/11.168.192.in-addr.arpa"><img src="/images/icons-mime/unknown.png?1243378169" alt="Unknown">11.168.192.in-addr.arpa </a>- Zona Reversa baseada na Zona Principal<a href="/diegoanna/samba4/11.168.192.in-addr.arpa"><br></a></p>
+<p><a href="/diegoanna/samba4/krb5.conf"><img src="/images/icons-mime/unknown.png?1243378169" alt="Unknown">krb5.conf </a>- Arquivo de configuração do Keberos criado pelo samba<a href="/diegoanna/samba4/krb5.conf"><br></a></p>
+<p><a href="/diegoanna/samba4/adminsamba4.sh"><img src="/images/icons-mime/unknown.png?1243378169" alt="Unknown">adminSamba4.sh </a>- Script criado por mim, para ajuda na tarefa de criar usuários no linux e im porta-los para Active Directory do Samba4, simple que pode evoluir, sujestões são aceitas.</p>
+<p> </p>
+<p><strong>Fontes de Apoio: </strong>http://wiki.samba.org/index.php/Samba4/HOWTO <br> http://www.vivaolinux.com.br/artigo/Samba-4-como-controlador-de-dominio-com-Active-Directory-da-MS<br> http://www.nisled.org/?p=68</p>
+    <br style="clear:both" />
+  </div> <!-- end class="article-body" -->
+
+
+  <div id="article-tags">
+    Tags deste artigo:
+    <a href="/profile/dtux/tags/roaming%20profile">roaming profile</a>
+<a href="/profile/dtux/tags/instala%C3%A7%C3%A3o%20samba4">instalação samba4</a>
+<a href="/profile/dtux/tags/perfil%20movel">perfil movel</a>
+<a href="/profile/dtux/tags/instalando%20samba4">instalando samba4</a>
+<a href="/profile/dtux/tags/samba%20active%20directory">samba active directory</a>
+<a href="/profile/dtux/tags/nstala%C3%A7%C3%A3o%20e%20configura%C3%A7%C3%A3o)%20(active%20directory">nstalação e configuração) (active directory</a>
+<a href="/profile/dtux/tags/samba4">samba4</a>
+<a href="/profile/dtux/tags/samba%20+%20ad">samba + ad</a>
+<a href="/profile/dtux/tags/smbd.%20ldb">smbd. ldb</a>
+<a href="/profile/dtux/tags/active%20directory">active directory</a>
+<a href="/profile/dtux/tags/slackware">slackware</a>
+<a href="/profile/dtux/tags/samba4">samba4</a>
+<a href="/profile/dtux/tags/samba">samba</a>
+  </div>
+
+
+
+
+
+  <div class="comments" id="comments_list">
+    <h3 class="no-comments-yet">
+      <span class='comment-count hide'>0</span><span class='comment-count-write-out'>sem comentários ainda</span>
+    </h3>
+
+
+    <ul class="article-comments-list">
+    </ul>
+
+      <div id='page-comment-form' class='page-comment-form'><div class="page-comment-form">
+
+
+
+<div class="post_comment_box closed">
+
+  <a class="display-comment-form" href="#">Enviar um comentário</a>
+<form class="comment_form" id="new_comment" onsubmit="jQuery.ajax({data:jQuery.param(jQuery(this).serializeArray()) + &#39;&amp;authenticity_token=&#39; + encodeURIComponent(&#39;eVoz/eVUaiF7KMVJ/p9C/bOQEeeTTOvjZWz9zApfds3kMoP8lw9owpQzMNd4Hzie/AHbJJvALLE44MTIVdTQHw==&#39;), dataType:&#39;script&#39;, type:&#39;post&#39;, url:&#39;/profile/dtux/comment/create/121471?escape=false&#39;}); return false;" action="/profile/dtux/comment/create/121471" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="tXJXIK/SrXzP/UmVMpAdevGSJ3YBVj5awWgufraG120oGuch3YmvnyDmvAu0EGcZvgPttQna+Qic5Bd66Q1xvw==" />
+
+  <p><span class="required-field">Os campos <label class='pseudoformlabel'>realçados</label> são obrigatórios.</span></p>
+
+
+    <span class="required-field"><div class="formfieldline"><label class="formlabel" for="comment_name">Nome</label><div class="formfield type-text"><input type="text" name="comment[name]" id="comment_name" /></div></div></span>
+    <span class="required-field"><div class="formfieldline"><label class="formlabel" for="comment_email">e-mail</label><div class="formfield type-text"><input type="text" name="comment[email]" id="comment_email" /></div></div></span>
+    <p>
+    Se você é um usuário registrado, pode se identificar e ser reconhecido automaticamente.
+    </p>
+
+
+  <div class="formfieldline"><label class="formlabel" for="comment_title">Título</label><div class="formfield type-text"><input type="text" name="comment[title]" id="comment_title" /></div></div>
+  <span class="required-field"><div class="formfieldline"><label class="formlabel" for="comment_body">Digite seu comentário</label><div class="formfield type-textarea"><textarea rows="5" name="comment[body]" id="comment_body">
+</textarea></div></div></span>
+
+    <p><script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<div class="g-recaptcha " data-sitekey="6LcK7CYUAAAAABl-eMkoFIv3VvOOIPwiXeinFmUi" ajax="true"></div>
+          <noscript>
+            <div>
+              <div style="width: 302px; height: 422px; position: relative;">
+                <div style="width: 302px; height: 422px; position: absolute;">
+                  <iframe
+                    src="https://www.google.com/recaptcha/api/fallback?k=6LcK7CYUAAAAABl-eMkoFIv3VvOOIPwiXeinFmUi"
+                    frameborder="0" scrolling="no"
+                    style="width: 302px; height:422px; border-style: none;">
+                  </iframe>
+                </div>
+              </div>
+              <div style="width: 300px; height: 60px; border-style: none;
+                bottom: 12px; left: 25px; margin: 0px; padding: 0px; right: 25px;
+                background: #f9f9f9; border: 1px solid #c1c1c1; border-radius: 3px;">
+                <textarea id="g-recaptcha-response" name="g-recaptcha-response"
+                  class="g-recaptcha-response"
+                  style="width: 250px; height: 40px; border: 1px solid #c1c1c1;
+                  margin: 10px 25px; padding: 0px; resize: none;" value="">
+                </textarea>
+              </div>
+            </div>
+          </noscript>
+</p>
+
+
+  <input type="hidden" name="confirm" id="confirm" value="false" />
+  <input type="hidden" name="view" id="view" />
+  <input type="hidden" name="comment[reply_of_id]" id="comment_reply_of_id" />
+
+  
+
+  <div class=" button-bar">
+    <input type="submit" name="commit" value="Enviar comentário" onclick="save_comment(this); return false;" class="button with-text icon-add submit" />
+      <a id="cancel-comment" class="button icon-cancel with-text" title="Cancelar" href="">&nbsp;<span>Cancelar</span></a>
+<br style="clear: left;" /></div></form>
+
+</div><!-- end class="post_comment_box" -->
+</div><!-- end class="page-comment-form" -->
+
+<script src="/assets/comment_form-6675ef0f0fa17bef4ca4a3b992647bd9.js"></script>
+</div>
+  </div><!-- end class="comments" -->
+
+</div><!-- end id="article" -->
+<link rel="stylesheet" media="screen" href="/assets/vendor/jquery.fancybox-f18bccba6b2b1108ccca4462da78aa43.css" /><script src="/assets/vendor/jquery.fancybox.pack-c84445b4cd8162f8a15703d690ccc514.js"></script><script>
+//<![CDATA[
+apply_zoom_to_images("Mais zoom")
+//]]>
+</script>
+</div></div></div></div></div>
+</div></div></div><div id="profile-footer"></div>
+  <br style='clear: both'/>
+</div><!-- end id="content-inner" -->
+
+        </div><!-- end id="content" -->
+      </div><!-- end id="wrap-2" -->
+    </div><!-- end id="wrap-1" -->
+    
+    <div id="footer">
+      <div id="theme-footer">
+        <div id="footer-environment">
+<div id="footer-links">
+  <ul>
+    <li><ul id="slbr-footer">
+        <li><a href="http://softwarelivre.org" id="slbr" class="link-this-page"><span>Software Livre - Brasil</span></a></li>
+        <li><a href="http://softwarelivre.org/tv"><span>TV Software Livre</span></a></li>
+        <li><a href="http://softwarelivre.org/radio"><span>Rádio Software Livre</span></a></li>
+        </ul></li>
+    <li><ul id="conheca-footer"><h3>Conheça</h3>
+        <li><a href="http://softwarelivre.org/portal/quem-somos">Quem Somos</a></li>
+        <li><a href="http://softwarelivre.org/portal/termos-de-uso">Termos de Uso</a></li>
+        <li><a href="http://softwarelivre.org/doc">Documentação</a></li>
+        <li><a href="http://softwarelivre.org/contact/portal/new">Fale Conosco</a></li>
+        </ul></li>
+    <li><ul id="colabore-footer"><h3>Colabore</h3>
+        <li><b><a href="http://softwarelivre.org/myprofile/portal/cms/suggest_an_article">Sugerir um Artigo</a></b></li>
+        <li><a href="http://softwarelivre.org/portal/melhorias">Sugerir Melhorias</a></li>
+        <li><a href="http://softwarelivre.org/portal/bugs">Reportar um Bug</a></li>
+        <li><a href="http://softwarelivre.org/portal/desenvolvimento">Desenvolvimento</a></li>
+        </ul></li>
+    <li><ul id="compartilhe-footer"><h3>Compartilhe</h3>
+        <li><b><!-- AddToAny BEGIN -->
+        <a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fsoftwarelivre.org&amp;linkname=SoftwareLivre.org">Compartilhar Isto!</a>
+        <script type="text/javascript">
+        var a2a_config = a2a_config || {};
+        a2a_config.linkname = "SoftwareLivre.org";
+        a2a_config.linkurl = "http://softwarelivre.org";
+        a2a_config.onclick = 1;
+        a2a_config.locale = "pt-BR";
+        a2a_config.num_services = 6;
+        a2a_config.prioritize = ["identi_ca", "twitter", "facebook", "google_buzz", "digg", "email"]
+        </script>
+        <script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END --></b></li>
+        <li><a href="http://softwarelivre.org/portal/eventos">Novos Eventos</a></li>
+        <li><a href="http://softwarelivre.org/portal/portfolio">Portfólio Livre</a></li>
+        <li><a href="http://softwarelivre.org/portal/divulgue">Páginas Amigas</a></li>
+        </ul></li>
+    <li><ul id="apoio-footer"><h3>Apoio</h3>
+        <li> <a href="http://softwarelivre.org/portal/apoio"><img src="/portal/anuncios/apoio.png" style="width:204px"><span>Apoio</span></img></a></li>
+        </ul></li>
+</div><!-- end id="footer-links" -->
+
+<div id="copyright">
+  © Copyleft 2015 -<a id="link-asl" href="http://associacao.softwarelivre.org/" title="Associação SoftwareLivre.org">ASL</a> - Alguns direitos reservados, exceto quando especificado em contrário e nos conteúdos replicados de outras fontes.
+  <p id="noosfero-license">Este site utiliza o software livre <a href="http://www.noosfero.org/" id="link-noosfero">Noosfero</a>, licenciado sob a licença <a href="http://www.gnu.org/licenses/agpl.html">GNU Affero General Public License</a>, versão 3 ou superior.  </p>
+</div><!-- end id="copyright" -->
+</div>
+
+<script type="text/javascript">
+  jQuery(function($) {
+    $(".highlights-block").insertAfter("#theme-header");
+    $(".action-home-index #block-695148").insertBefore("#block-666540");
+    $(".action-environment_design-index #block-695148").insertBefore("#block-666540");
+    $(".action-home-index #block-695454").insertAfter("#block-666540");
+    $(".action-environment_design-index #block-695454").insertAfter("#block-666540");
+    $("#site-title").prependTo("#top");
+    $("#user").insertAfter("#site-title");
+  });
+</script>
+
+      </div><!-- end id="theme-footer" -->
+      <div id="global-footer">
+        
+      </div><!-- end id="global-footer" -->
+    </div><!-- end id="footer" -->
+    
+    <script src="https://s7.addthis.com/js/152/addthis_widget.js"></script>
+    <!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+     var u = "piwik.colivre.coop.br/";
+     if(!u.match(/^https?/)){
+       var protocol = ("https:" == document.location.protocol ? "https" : "http");
+       u = protocol + '://' + u;
+     }
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 3]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.colivre.coop.br/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+  </body>
+</html>
