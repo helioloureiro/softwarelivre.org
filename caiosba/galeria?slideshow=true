@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    <title>Galeria - Caio S. de Britto Almeida - Software Livre Brasil</title>
+
+    <style type="text/css">
+@import url(/stylesheets/slideshow.css);
+</style>
+    <script src="/javascripts/jquery-2.1.1.min.js"></script>
+<script src="/assets/vendor/sliderjs-4813c008b79ff67e006eacb62a9b8630.js"></script>
+<script src="/assets/vendor/pikachoose-476b26458f07a3a41eb6156f4ec6ef23.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function (){
+        $("#slideshow").PikaChoose({
+          buttons: { play: "Play", stop: "Stop", previous: "Previous", next: "Next" }
+        });
+        $("#slideshow").SliderJS({
+          window_width: 320,
+          window_height: 55,
+          list_width: 832,
+          pikachoose: true,
+          auto_play: false
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p class='back-button' ><a class="button icon- with-text" title="Back to gallery" href="http://softwarelivre.org/caiosba/galeria">&nbsp;<span>Back to gallery</span></a></p>
+<ul id='slideshow' >
+      <li><img title="arenafisl11.jpg" src="/thumbnails/0026/8243/arenafisl11_display.jpg" alt="Arenafisl11 display" /></li>
+      <li><img title="dsc03117.jpg" src="/thumbnails/0026/8244/dsc03117_display.jpg" alt="Dsc03117 display" /></li>
+      <li><img title="dsc03152.jpg" src="/thumbnails/0026/8246/dsc03152_display.jpg" alt="Dsc03152 display" /></li>
+      <li><img title="Eu_e_Stallman.jpg" src="/thumbnails/0026/8245/eu-e-stallman_display.jpg" alt="Eu e stallman display" /></li>
+      <li><img title="Palestra.jpg" src="/thumbnails/0026/8241/palestra_display.jpg" alt="Palestra display" /></li>
+      <li><img title="Premiação_2.jpg" src="/thumbnails/0026/8242/premiacao-2_display.jpg" alt="Premiacao 2 display" /></li>
+</ul>
+
+  </body>
+</html>
