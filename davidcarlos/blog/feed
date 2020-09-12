@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>David Carlos's RSS feed</title><link>http://softwarelivre.org/davidcarlos</link><description>David Carlos's content published at Software Livre Brasil</description><item><title>Fazendo arte com Ruby on Rails - vim-rails</title><description>&lt;p&gt;Já sabemos que o vim é um editor mágico. Isso porque nas mãos certas, ele faz coisas que até o co-piloto mais atento duvida. &lt;/p&gt;
+&lt;p&gt;Quando bem configurado o vim se torna mais que um editor de texto, se torna uma ferramenta que pode ser utilizada desde o desenvolvimento web,&lt;/p&gt;
+&lt;p&gt;até aquele processamento de imagem maroto rodando em uma raspberry-pi.&lt;/p&gt;
+&lt;p&gt;Falando em web, podemos citar um plugin para o vim muito útil, pra quem desenvolve com o framework Ruby on Rails. Esse plugin é o vim-rails.&lt;/p&gt;
+&lt;p&gt;O vim-rails permite que você navegue facilmente em projetos Rails, mapeando o MVC do seu projeto, e permitindo que você pule entre as camadas do projeto facilmente.&lt;/p&gt;
+&lt;p&gt;Fez aquela alteração na controller, e precisa pular rapidamente pra sua respectiva model?&lt;/p&gt;
+&lt;pre&gt;:Emodel&lt;/pre&gt;
+&lt;p&gt;Precisa editar a migration dessa mesma model:&lt;/p&gt;
+&lt;pre&gt;:Emigration&lt;/pre&gt;
+&lt;p&gt;Precisa fazer um split entre a controller e a model?&lt;/p&gt;
+&lt;pre&gt;:Vcontroler &amp;lt;nome da model&amp;gt;&lt;br&gt;&lt;br&gt;&lt;/pre&gt;
+&lt;p&gt;A partir do nome de uma deteminada model você pode pular para suas respectivas controllers, migrations e até mesmo testes(incluindo rspec).&lt;/p&gt;
+&lt;p&gt;O vim-rails expande as capacidades do comando &lt;strong&gt;gf&lt;/strong&gt; do vim, permitindo pular para classes, então se você quiser pular para uma classe qualquer,basta posicionar o cursor em cima do nome da classe, e digitar gf. Para uma visão mais aprofundada do plugin, acesse &lt;a href="https://github.com/tpope/vim-rails"&gt;vim-rails&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;</description><pubDate>Tue, 09 Feb 2016 05:09:29 +0000</pubDate><link>http://softwarelivre.org/davidcarlos/blog/fazendo-arte-com-ruby-on-rails-vim-rails</link><guid>http://softwarelivre.org/davidcarlos/blog/fazendo-arte-com-ruby-on-rails-vim-rails</guid></item><item><title>VIM - Salvando arquivos como root</title><description>&lt;p&gt;&lt;span style="font-size: 10pt;"&gt;Esse primeiro post irá tratar de como salvar arquivos que pedem permissão de root para serem salvos.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-size: 10pt;"&gt;Quando abrimos aquele arquivo que precisa de permissão de root para ser editado, é muito chato ter que sair do vim e abrir o arquivo com sudo.&lt;/span&gt;&lt;/p&gt;
+&lt;div class="Bt Pm"&gt;
+&lt;div class="Ct"&gt; &lt;/div&gt;
+&lt;div class="Ct"&gt;
+&lt;img src="/articles/0143/8983/post1.png" alt=""&gt;&lt;br&gt;&lt;br&gt;&lt;span style="font-size: 10pt;"&gt;Uma pequena dica muito valiosa é utilizar o seguinte comando dentro do vim:&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span style="font-size: 10pt;"&gt;&lt;strong&gt;:w !sudo tee %&lt;/strong&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span style="font-size: 10pt;"&gt;Edite seu arquivo normalmente, e para salvá-lo use o comando acima.&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span style="font-size: 10pt;"&gt;Ele pode pedir sua senha de sudo ou salvar automaticamente caso você já tenha usado alguma comando com sudo antes.&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span style="font-size: 10pt;"&gt;Você pode mapear esse comando no seu vimrc para facilitar na hora de salvar o arquivo.&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span style="font-size: 10pt;"&gt;Lembrando que para sair do arquivo você irá precisar forçar com :q!&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span style="font-size: 10pt;"&gt;Abraços.&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><pubDate>Fri, 31 Jul 2015 00:38:56 +0000</pubDate><link>http://softwarelivre.org/davidcarlos/blog/vim-salvando-arquivos-como-root</link><guid>http://softwarelivre.org/davidcarlos/blog/vim-salvando-arquivos-como-root</guid></item></channel></rss>
