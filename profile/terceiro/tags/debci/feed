@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Conteúdo de Antonio Terceiro marcado com a tag "debci"</title><link>http://softwarelivre.org/terceiro</link><description>Conteúdo de Antonio Terceiro marcado com a tag "debci"</description><item><title>Debian CI updates for September 2016</title><description>&lt;p&gt;&lt;a href="https://tracker.debian.org/news/795502"&gt;debci 1.4&lt;/a&gt; was released just a few days ago. Among general improvements, I would like to highlight:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;pretty much every place in the web UI that mentions a &lt;span class="caps"&gt;PASS&lt;/span&gt; or a &lt;span class="caps"&gt;FAIL&lt;/span&gt; also displays the tested package version. This was suggested to me on &lt;span class="caps"&gt;IRC&lt;/span&gt; by &lt;a href="http://layer-acht.org/thinking/"&gt;Holger&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;I also tried to workaround an instability when setting up the &lt;span class="caps"&gt;LXC&lt;/span&gt; containers used for the tests, where the test bed process setup would finish without failure even though some steps in the middle of it failed. This caused the very final step for the debci-specific setup to fail, so there was no &lt;code&gt;debci&lt;/code&gt; user inside the container, which caused tests to fail because that user was missing. Before that was fixed I was always keeping an eye on this issue, fixing the issue by hand, and re-triggering the affected packages by hand, so as far I can tell there is no package whose status has been permanently affected by this.&lt;/li&gt;
+	&lt;li&gt;Last, but not least, this release brings an interesting contribution by Gordon Ball, which is keeping track of different failure states. debci will now let you know whether a currently failing package has always failed, has passed in a previous version, or if the same version that is currently failing has previously passed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://ci.debian.net/"&gt;ci.debian.net&lt;/a&gt; has been upgraded to &lt;code&gt;debci&lt;/code&gt; 1.4 just after that. At the same time I have also upgraded &lt;code&gt;autodep8&lt;/code&gt; and &lt;code&gt;autopkgtest&lt;/code&gt; to their latest versions, available in jessie-backports. This means that it is now safe for Debian packages to assume the changes in &lt;a href="http://www.piware.de/2016/06/autopkgtest-4-0-simplified-cli-deprecating-adt/"&gt;autopkgtest 4.0&lt;/a&gt; are available, in special the &lt;code&gt;$AUTOPKGTEST_*&lt;/code&gt; environment variables.&lt;/p&gt;
+&lt;p&gt;In other news, for several weeks there were had issues with tests not being scheduled when they should have. I was just assuming that the issue was due to the existing test scheduler, &lt;code&gt;debci-batch&lt;/code&gt;, being broken. Today I was working on a new implementation that is going to be a lot faster, I started to hit a similar issue on my local tests, and finally realized what was wrong. The fact is that &lt;code&gt;debci-batch&lt;/code&gt; stores the timestamp of the last time a package has been scheduled to run, and it there are no test result after that timestamp, it assumes the package is still in the queue to be tested, and does not schedule it again. It turns out that a few weeks ago, during maintainance work, I had cleared the queue, discarding all jobs that were there, but forgot to reset those timestamps, so when &lt;code&gt;debci-batch&lt;/code&gt; came around again, it checked the timestamp of the last request and did not make new requests because there was no test result after that timestamp! I cleared all those timestamps, and the system should now go back to normal.&lt;/p&gt;
+&lt;p&gt;That is it for now. I you want to contribute to the Debian CI project and want to get in touch, you can pop up on the &lt;code&gt;#debci&lt;/code&gt; channel on the &lt;span class="caps"&gt;OFTC&lt;/span&gt; &lt;span class="caps"&gt;IRC&lt;/span&gt; network, or mail the &lt;a href="http://lists.alioth.debian.org/cgi-bin/mailman/listinfo/autopkgtest-devel"&gt;autopkgtest-devel&lt;/a&gt; mailing list.&lt;/p&gt;</description><pubDate>Wed, 07 Sep 2016 22:07:42 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/debian-ci-updates-for-september-2016</link><guid>http://softwarelivre.org/terceiro/blog/debian-ci-updates-for-september-2016</guid></item><item><title>Bits from the Debian Continuous Integration project</title><description>&lt;p&gt;It&amp;#8217;s been almost 2 years since the &lt;a href="https://ci.debian.net/"&gt;Debian Continuous Integration&lt;/a&gt; project has been launched, and it has proven to be a useful resource for the development of Debian.&lt;/p&gt;
+&lt;p&gt;I have previously made a &lt;a href="http://softwarelivre.org/terceiro/blog/an-introduction-to-the-debian-continuous-integration-project"&gt;an introductory post&lt;/a&gt;, and this this is an update on the latest developments.&lt;/p&gt;
+&lt;h3&gt;Infrastructure upgrade&lt;/h3&gt;
+&lt;p&gt;Back in early 2014 when Debian CI was launched, there were less than 200 source packages with declared test suite metadata, and using a single worker machine polling the archive for updates and running tests sequentially in an infinite loop (&amp;#8220;the simplest thing that could possibly work&amp;#8221;) was OK-ish.&lt;/p&gt;
+&lt;p&gt;Then our community started an incredible, slow and persistent effort to prepare source packages for automated testing, and &lt;a href="https://ci.debian.net/status/"&gt;we now have almost 5,000 of them&lt;/a&gt;. The original, over-simplistic design had to be replaced.&lt;/p&gt;
+&lt;p&gt;The effort of transforming debci in a distributed system was started by Martin Pitt, who did an huge amount of work. In the latest months I was able to complete that work, to a point where I am confident in letting it run (mostly) unatended. We also had lots of contributions to the web UI from Brandon Fairchild, who was a &lt;span class="caps"&gt;GSOC&lt;/span&gt; intern in 2014, and continues to contribute to this date.&lt;/p&gt;
+&lt;p&gt;All this work culminated in the migration from a single-worker model to a master/workers setup, currently with 10 worker nodes. On busy periods all of those worker nodes will go on for days with full utilization, but even then the turnaround between package upload and a test run is now &lt;em&gt;a lot&lt;/em&gt; faster than it used to.&lt;/p&gt;
+&lt;p&gt;Debian members can inspect the resource usage on those systems, as well as the length of the processing queue, by &lt;a href="https://ci.debian.net/munin/"&gt;browsing to the corresponding munin instance&lt;/a&gt; (requires authentication via a &lt;span class="caps"&gt;SSL&lt;/span&gt; client certificated issued by sso.debian.org).&lt;/p&gt;
+&lt;p&gt;The system is currenly being hosted on a Amazon EC2 account sponsored by Amazon.&lt;/p&gt;
+&lt;p&gt;The setup is &lt;a href="http://anonscm.debian.org/cgit/collab-maint/debian-ci-config.git"&gt;fully automated and reproducible&lt;/a&gt;. It is not fully (or at all) documented yet, but those interested should feel free to get in touch on &lt;span class="caps"&gt;IRC&lt;/span&gt; (&lt;span class="caps"&gt;OFTC&lt;/span&gt;, #debci)&lt;/p&gt;
+&lt;h3&gt;Testing backend changed from schroot to lxc&lt;/h3&gt;
+&lt;p&gt;Together with the infrastructure updates, we also switched to using lxc instead of schroot as backend. Most test suites should not be affected by this, but the default lxc settings might cause some very specific issues in a few packages. See for example &lt;a href="https://bugs.debian.org/806542"&gt;#806542&lt;/a&gt; (&amp;#8220;liblinux-prctl-perl: autopkgtest failures: seccomp, capbset&amp;#8221;)&lt;/p&gt;
+&lt;p&gt;Adding support for &lt;span class="caps"&gt;KVM&lt;/span&gt; is also in the plans, and we will get to that at some point.&lt;/p&gt;
+&lt;h3&gt;Learn more&lt;/h3&gt;
+&lt;p&gt;If you want to learn more on how you can add tests for your package, a good first start is the debci &lt;a href="https://ci.debian.net/doc/"&gt;online documentation&lt;/a&gt; (which is also available locally if you install `debci`).&lt;/p&gt;
+&lt;p&gt;You might also be interested in watching the &lt;a href="http://meetings-archive.debian.net/pub/debian-meetings/2015/debconf15/Tutorial_functional_testing_of_Debian_packages.webm"&gt;live tutorial&lt;/a&gt; (WebM, 469 MB!) that has been presented at Debconf 15 earlier this year, full of tips and real examples from the archive. It would be &lt;em&gt;awesome&lt;/em&gt; if someone wanted to transcribe that into a text tutorial ;-)&lt;/p&gt;
+&lt;h3&gt;How to get involved&lt;/h3&gt;
+&lt;p&gt;There are a few ways you can contribute:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;autodep8&lt;/strong&gt;. if you are knowledgeable on a subset of packages that are very similar   and can have their tests executed in a similar way, such as &amp;#8220;$Language   libraries&amp;#8221;, you might consider writing a test metadata generator so   that each package does not need to declare a debian/tests/control file   explicitly, requiring only The `Testsuite:` header in debian/control.&lt;/p&gt;
+&lt;p&gt;Ruby and Perl are already covered, and there is initial support for NodeJS. Adding support for new types of packages is very easy. See the &lt;a href="http://anonscm.debian.org/cgit/collab-maint/autodep8.git"&gt;source repository&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you manage to add support for your favorite language, please get in touch so we can discuss whitelisting the relavant packages in ci.debian.net so that they will get their tests executed even before being uploaded with the proper `Testsuite:` control field.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;autopkgtest&lt;/strong&gt;. &lt;a href="http://anonscm.debian.org/cgit/autopkgtest/autopkgtest.git"&gt;autopkgtest&lt;/a&gt; is responsible for actually running your tests, and you can use it to reproduce test runs locally.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;debci&lt;/strong&gt;. &lt;a href="http://anonscm.debian.org/cgit/collab-maint/debci.git"&gt;debci&lt;/a&gt; is the system running in ci.debian.net (version 1.0, currently in testing, is &lt;em&gt;exactly&lt;/em&gt; what is running up there, minus a version number and a changelog entry).&lt;/p&gt;
+&lt;p&gt;It can also be used to have private clones of ci.debian.net, e.g. for derivatives or internal Debian-related development. See for example the &lt;a href="http://autopkgtest.ubuntu.com/"&gt;Ubuntu autopkgtest site&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Getting in touch&lt;/h3&gt;
+&lt;p&gt;For maintainer queries and general discussion:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;mailing list: debian-qa@lists.debian.org&lt;/li&gt;
+	&lt;li&gt;&lt;span class="caps"&gt;IRC&lt;/span&gt;: #debian-qa on &lt;span class="caps"&gt;OFTC&lt;/span&gt;. Feel free to highlight `terceiro`&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For the development of debci/autopkgtest/autodep8&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;mailing list: autopkgtest-devel@lists.alioth.debian.org&lt;/li&gt;
+	&lt;li&gt;&lt;span class="caps"&gt;IRC&lt;/span&gt;: #debci on &lt;span class="caps"&gt;OFTC&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><pubDate>Fri, 11 Dec 2015 18:58:48 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/bits-from-the-debian-continuous-integration-project</link><guid>http://softwarelivre.org/terceiro/blog/bits-from-the-debian-continuous-integration-project</guid></item><item><title>DebConf15, testing debian packages, and packaging the free software web</title><description>&lt;p&gt;This is my August update, and by the far the coolest thing in it is Debconf.&lt;/p&gt;
+&lt;h2&gt;Debconf15&lt;/h2&gt;
+&lt;p&gt;I don&amp;#8217;t get tired of saying it is the best conference I ever attended. First it&amp;#8217;s a mix of meeting both new people and old friends, having the chance to chat with people whose work you admire but never had a chance to meet before. Second, it&amp;#8217;s always quality time: an informal environment, interesting and constructive presentations and discussions.&lt;/p&gt;
+&lt;p&gt;This year the venue was again very nice. Another thing that was very nice was having so many kids and families. This was no coincidence, since this was the first DebConf in which there was organized childcare. As the community gets older, this a very good way of keeping those who start having kids from being alienated from the community. Of course, not being a parent yet I have no idea how actually hard is to bring small kids to a conference like DebConf. ;-)&lt;/p&gt;
+&lt;p&gt;I presented two talks:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;strong&gt;Tutorial: Functional Testing of Debian packages&lt;/strong&gt;, where I introduced the   basic concepts of &lt;span class="caps"&gt;DEP&lt;/span&gt;-8/autopkgtest, and went over several examples from my   packages giving tips and tricks on how to write functional tests for Debian packages.
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="http://meetings-archive.debian.net/pub/debian-meetings/2015/debconf15/Tutorial_functional_testing_of_Debian_packages.webm"&gt;Video recording&lt;/a&gt; (webm, ~470MB)&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://annex.debconf.org/debconf-share/debconf15/slides/173-tutorial-functional-testing-of-debian-packages.pdf"&gt;slides&lt;/a&gt; (&lt;span class="caps"&gt;PDF&lt;/span&gt;)&lt;/li&gt;
+	&lt;/ul&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Packaging the Free Software Web for the end user&lt;/strong&gt;, where I presented the motivation for, and the current state of &lt;a href="https://gitlab.com/shak"&gt;shak&lt;/a&gt;, a project I am working on to make it trivial for end users to install server side applications in Debian. I spent quite some hacking time during DebConf finishing a prototype of the shak web interface, which was demonstrated live in the talk (of course, as usual with live demos, not everything worked :-)).
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="http://meetings-archive.debian.net/pub/debian-meetings/2015/debconf15/Packaging_the_free_software_web_for_the_end_user.webm"&gt;Video recording&lt;/a&gt; (webm, ~450MB)&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://annex.debconf.org/debconf-share/debconf15/slides/174-packaging-the-free-software-web.pdf"&gt;slides&lt;/a&gt; (&lt;span class="caps"&gt;PDF&lt;/span&gt;)&lt;/li&gt;
+	&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There was also the now traditional Ruby BoF, where discussed the state and future of the Ruby ecosystem in Debian; and an &lt;em&gt;in promptu&lt;/em&gt; Ruby packaging workshop where we introduced the basics of packaging in general, and Ruby packaging specifically.&lt;/p&gt;
+&lt;p&gt;Besides shak, I was able to hack on a few cool things during DebConf:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;debci &lt;a href="https://tracker.debian.org/news/705444"&gt;has been updated&lt;/a&gt; with a first version of the code to produce britney hints files that block packages that fail their tests from migrating to testing. There are some issues to be sorted out together with the release team to make sure we don&amp;#8217;t block packages unecessarily, e.g. we don&amp;#8217;t want to block packages that never passed their test suite &amp;#8212; most the test suite, and not the package, is broken.&lt;/li&gt;
+	&lt;li&gt;while hacking I ended up &lt;a href="https://tracker.debian.org/news/706879"&gt;updating jquery&lt;/a&gt; to the newest version in the 1.x series, and in fact adopting it I guess. This allowed me to drop the embedded jquery copy I used to have in the shak repository, and since then I was able to &lt;a href="https://tracker.debian.org/news/708523"&gt;improve the build&lt;/a&gt; to produce an output that is identical, except for a build timestamp inside a comment and a few empty lines, to the one produced by upstream, without using grunt (.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Miscellaneous updates&lt;/h2&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;a href="https://wiki.debian.org/Teams/Ruby/Rails4.2"&gt;Rails 4.2 in unstable&lt;/a&gt;: in order to support Diaspora (currently in experimental), and an upcoming Gitlab package (&lt;span class="caps"&gt;WIP&lt;/span&gt;). This requires quite some updates, &lt;span class="caps"&gt;NEW&lt;/span&gt; packages, and also making sure that Redmine is updated to a new upstream version. I did a few updates as part of this effort:
+	&lt;ul&gt;
+		&lt;li&gt;rails 2:4.2.3-3&lt;/li&gt;
+		&lt;li&gt;ruby-arel 6.0.3-1&lt;/li&gt;
+		&lt;li&gt;ruby-coffee-script 2.4.1-1&lt;/li&gt;
+		&lt;li&gt;ruby-coffee-script-source 1.9.1.1-1&lt;/li&gt;
+		&lt;li&gt;ruby-commander 4.3.5-1&lt;/li&gt;
+		&lt;li&gt;ruby-execjs 2.4.0-1&lt;/li&gt;
+		&lt;li&gt;ruby-globalid 0.3.6-1&lt;/li&gt;
+		&lt;li&gt;ruby-jbuilder 2.3.1-1&lt;/li&gt;
+		&lt;li&gt;ruby-jquery-rails 4.0.4-2&lt;/li&gt;
+		&lt;li&gt;ruby-minitest 5.8.0-1&lt;/li&gt;
+		&lt;li&gt;ruby-multi-json 1.11.2-1&lt;/li&gt;
+		&lt;li&gt;ruby-rack-test 0.6.3-1&lt;/li&gt;
+		&lt;li&gt;ruby-sass-rails 5.0.3-1&lt;/li&gt;
+		&lt;li&gt;ruby-spring 1.3.6-1&lt;/li&gt;
+		&lt;li&gt;ruby-sprockets 3.3.0-1~exp2&lt;/li&gt;
+		&lt;li&gt;ruby-sprockets-rails 2.3.2-1~exp1&lt;/li&gt;
+		&lt;li&gt;ruby-sqlite3 1.3.10-1&lt;/li&gt;
+		&lt;li&gt;ruby-turbolinks 2.5.3-1&lt;/li&gt;
+	&lt;/ul&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="https://packages.debian.org/sid/rerun"&gt;rerun&lt;/a&gt; (&lt;span class="caps"&gt;NEW&lt;/span&gt;), a tool to launch commands and restart them on filesystem change. Very useful when writing sinatra/rack applications.&lt;/li&gt;
+	&lt;li&gt;vagrant: &lt;a href="https://tracker.debian.org/news/704807"&gt;new upstream relaese&lt;/a&gt;, supporting VirtualBox 5.0&lt;/li&gt;
+	&lt;li&gt;pinpoint: &lt;a href="https://tracker.debian.org/news/702727"&gt;new upstream release&lt;/a&gt;, ported to clutter-gst-3.0&lt;/li&gt;
+	&lt;li&gt;chake: &lt;a href="https://tracker.debian.org/news/703099"&gt;new upstream release&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;gem2deb: &lt;a href="https://tracker.debian.org/news/705442"&gt;new release&lt;/a&gt; with several improvements, and a &lt;a href="https://tracker.debian.org/news/705744"&gt;bug fix followup&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;chef: &lt;a href="https://tracker.debian.org/news/707798"&gt;fix installation of initscripts&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;pry: &lt;a href="https://tracker.debian.org/news/705748"&gt;fixed imcompatibility with new ruby-slop&lt;/a&gt; (RC bug)&lt;/li&gt;
+	&lt;li&gt;foodcritic: &lt;a href="https://tracker.debian.org/news/707794"&gt;fixed test suite run during build&lt;/a&gt; (RC bug)&lt;/li&gt;
+	&lt;li&gt;library updates:
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/702681"&gt;ruby-grape-logging&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/702726"&gt;ruby-hashie&lt;/a&gt; (2 RC bugs)&lt;/li&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/703189"&gt;ruby-listen&lt;/a&gt;: new upstream release, fixed test suite (RC bug)&lt;/li&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/703187"&gt;ruby-rspec-retry&lt;/a&gt;: new upstrean release, fixed test suite (RC bug)&lt;/li&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/703201"&gt;ruby-dbf&lt;/a&gt;: new upstream release (sponsored, work by Christopher Baines)&lt;/li&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/703348"&gt;ruby-bootstrap-sass&lt;/a&gt;: new upstream release + fixed to work on non-Rails apps&lt;/li&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/705538"&gt;ruby-rails-dom-testing&lt;/a&gt; (&lt;span class="caps"&gt;NEW&lt;/span&gt;, dependency for rails 4.2)&lt;/li&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/705535"&gt;ruby-rails-deprecated-sanitizer&lt;/a&gt; (&lt;span class="caps"&gt;NEW&lt;/span&gt;, dependency for rails 4.2)&lt;/li&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/707821"&gt;ruby-rmagick&lt;/a&gt; new upstream release&lt;/li&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/707988"&gt;ruby-uglifier&lt;/a&gt; new upstream release&lt;/li&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/708814"&gt;ruby-cri&lt;/a&gt; (RC bug)
+		&lt;ul&gt;
+			&lt;li&gt;I was making source+arch:all uploads for a while, but this was my first ever source-only &lt;a href="https://buildd.debian.org/status/logs.php?pkg=ruby-cri&amp;amp;amp;ver=2.7.0-2"&gt;upload&lt;/a&gt; of an architecture-independent package to Debian, following the &lt;a href="https://lists.debian.org/debian-devel-announce/2015/08/msg00007.html"&gt;recent developments&lt;/a&gt; on the topic.&lt;/li&gt;
+		&lt;/ul&gt;&lt;/li&gt;
+	&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><pubDate>Sun, 30 Aug 2015 19:12:43 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/debconf15-testing-debian-packages-and-packaging-the-free-software-web</link><guid>http://softwarelivre.org/terceiro/blog/debconf15-testing-debian-packages-and-packaging-the-free-software-web</guid></item><item><title>An introduction to the Debian Continuous Integration project</title><description>&lt;p&gt;Debian is a &lt;strong&gt;big&lt;/strong&gt; system. At the time of writing, looking at my local package list caches tells me that the unstable suite contains
+21306 source packages, and 42867 binary packages on amd64.  Between these 42867
+binary packages, there is an unthinkable number of inter-package dependencies.
+For example the  dependency graph of the &lt;a href="http://packages.debian.org/ruby"&gt;ruby&lt;/a&gt; packages
+contains other 20-something packages.&lt;/p&gt;
+&lt;p&gt;&lt;a href="/articles/0135/0342/debtree-ruby.png"&gt;&lt;img src="/articles/0135/0341/debtree-ruby.small.png" alt="" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;A new version of any of these packages can potentially break some functionality in the &lt;code&gt;ruby&lt;/code&gt; package.&lt;/p&gt;
+&lt;p&gt;And that dependency graph is very small. Looking at the dependency graph for,
+say, the &lt;code&gt;rails&lt;/code&gt; package will make your eyes bleed. I tried it here, and
+GraphViz needed a &lt;span class="caps"&gt;PNG&lt;/span&gt; image with 7653&amp;#215;10003 pixels to draw it. It ain&amp;#8217;t pretty.
+Installing rails on a clean Debian system will pull in another 109 packages as
+part of the dependency chain. Again, as new versions of those packages are
+uploaded the archive, there is a probability that a backwards-incompatible
+change, or even a bug fix which was being worked around, might make some
+funcionality in &lt;code&gt;rails&lt;/code&gt; stop working. Even if that probability is low for each
+package in the dependency chain, with enough packages the probability of &lt;em&gt;any&lt;/em&gt;
+of them causing problems for rails is quite high.&lt;/p&gt;
+&lt;p&gt;And still the &lt;code&gt;rails&lt;/code&gt; dependency chain is not that big. &lt;code&gt;libreoffice&lt;/code&gt; will pull
+in another 264 packages. &lt;code&gt;gnome&lt;/code&gt; will pull in 1311 dependencies, and &lt;code&gt;kde-full&lt;/code&gt;
+1320 (!).&lt;/p&gt;
+&lt;p&gt;With a system this big, problems &lt;em&gt;will&lt;/em&gt; arrive, and that&amp;#8217;s a fact of life. As
+developers, what we can do is try to spot these problems as early as possible,
+and fixing them in time to make a solid release with the high quality Debian is
+known for.&lt;/p&gt;
+&lt;p&gt;While automated testing is not the proverbial Silver Bullet of Software
+Engineering, it is an effective way of finding regressions.&lt;/p&gt;
+&lt;p&gt;Back in 2006, Ian Jackson started the development of
+&lt;a href="http://packages.debian.org/autopkgtest"&gt;autopkgtest&lt;/a&gt; as a tool to test Debian
+packages in their installed form (as opposed to testing packages using their
+source tree).&lt;/p&gt;
+&lt;p&gt;In 2011, the autopkgtest test suite format was proposed as a standard for the
+Debian project, in what we now know as the
+&lt;a href="http://dep.debian.net/deps/dep8/"&gt;&lt;span class="caps"&gt;DEP&lt;/span&gt;-8&lt;/a&gt; specification.&lt;/p&gt;
+&lt;p&gt;Since then, some maintainers such as myself started experimenting with &lt;span class="caps"&gt;DEP&lt;/span&gt;-8
+tests in their packages. There was an expectation in the air that someday,
+someone would run those tests for the entire archive, and that would be a
+precious source of QA information.&lt;/p&gt;
+&lt;p&gt;Durign the holiday break last year, I decided to give it a shot. I initially
+called the codebase &lt;code&gt;dep8&lt;/code&gt;. Later I renamed it to &lt;code&gt;debci&lt;/code&gt;, since it could
+potentially also run other other types of test suites in the future. Since
+early January, &lt;a href="http://ci.debian.net/"&gt;ci.debian.net&lt;/a&gt; run an instance of debci
+for the Debian Project.&lt;/p&gt;
+&lt;p&gt;The Debian continuous Integration will trigger tests at most 4 times a day, 3
+hours after each dinstall run. It will update a local &lt;span class="caps"&gt;APT&lt;/span&gt; cache and look for
+packages that declare a &lt;span class="caps"&gt;DEP&lt;/span&gt;-8 test suite. Each package with a test suite will
+then have its test suite executed if there was any change in its dependency chain
+since the last test run. Existing test results are published at
+&lt;a href="http://ci.debian.net/"&gt;ci.debian.net&lt;/a&gt; every hour, and at the end of each batch
+a &amp;#8220;global status&amp;#8221; is updated.&lt;/p&gt;
+&lt;p&gt;Maintainers can subscribe to a per package Atom feed to keep up with their
+package test results. People interested in the overall status can subscribe to
+a &lt;a href="http://ci.debian.net/data/feeds/all-packages.xml"&gt;global Atom feed&lt;/a&gt; of events.&lt;/p&gt;
+&lt;p&gt;Since the introduction of Debian CI in mid-January 2014, we have seen an amazing increase in
+the number of packages with test suites. We had little less than 200 packages
+with test suites back then, against around 350 now (early June 2014). The ratio
+of packages passing passing their test suite has also improved a lot, going
+from less than 50% to more than 75%.&lt;/p&gt;
+&lt;p&gt;&lt;img src="/articles/0135/3298/debian-ci-pass-fail.png" alt="" /&gt;&lt;/p&gt;
+&lt;p&gt;There is &lt;a href="http://ci.debian.net/doc/"&gt;documentation available&lt;/a&gt;, including a &lt;span class="caps"&gt;FAQ&lt;/span&gt;
+for package maintainers with further information about how the system works, how to declare test suites in their packages and
+how to reproduce test runs locally. Also available is development information
+about debci itself, to those inclined to help improve the system.&lt;/p&gt;
+&lt;p&gt;This is just the beginning. &lt;code&gt;debci&lt;/code&gt; is under a good rate of development, and
+you can expect to see a constant flux of improvements. In special, I would like
+to mention a few people who are giving amazing contributions to the project:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;Martin Pitt has been working on improving debci to support parallel and
+  distributed workers. Being the current autopkgtest maintainer, Martin also
+  already got some bug fixes and fixes into autopkgtest motivated by debci use
+  cases.&lt;/li&gt;
+	&lt;li&gt;Brandon Fairchild is a &lt;span class="caps"&gt;GSOC&lt;/span&gt; student working on improving the debci web
+  interface to provide more useful information, display information for
+  multiple suites and architectures, plus making the UI work even without
+  Javascript enabled.&lt;/li&gt;
+	&lt;li&gt;Lucas Kanashiro is another &lt;span class="caps"&gt;GSOC&lt;/span&gt; student, who is working on investigating
+  patterns among packages that fail their test suites, so that we can figure
+  out how we can fix them, or if there are classes of failures that are actually
+  caused by problems in the debci infrastructure.&lt;/li&gt;
+&lt;/ul&gt;</description><pubDate>Sun, 01 Jun 2014 17:11:46 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/an-introduction-to-the-debian-continuous-integration-project</link><guid>http://softwarelivre.org/terceiro/blog/an-introduction-to-the-debian-continuous-integration-project</guid></item></channel></rss>

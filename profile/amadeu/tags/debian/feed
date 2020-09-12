@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Amadeu A. Barbosa Júnior's contents tagged with "debian"</title><link>http://softwarelivre.org/amadeu</link><description>Amadeu A. Barbosa Júnior's contents tagged with "debian"</description><item><title>Nvidia Geforce Go 6150 resolution problems in a Linux box</title><description>&lt;p&gt;Yesterday I noticed: my external video-output couldn&amp;#8217;t accept the 1600&amp;#215;1050 resolution anymore (magically because it worked some time ago). So I started some unsuccessful searches along the google to find a possible solution. But.. the google doesn&amp;#8217;t help me!&lt;/p&gt;
+&lt;p&gt;So I took more attention to my /var/log/Xorg.0.log and I see into it my video ram size reported wrong! My onboard video card just can provide 128MB of shared memory. But the Xorg log reported as 512MB! Uhhh, crazy! Another strange situation was about the &lt;span class="caps"&gt;EDID&lt;/span&gt;, my Xorg doesn&amp;#8217;t report the &lt;span class="caps"&gt;EDID&lt;/span&gt; of my 22&amp;quot; &lt;span class="caps"&gt;LCD&lt;/span&gt; TV-Monitor correctly anymore. I don&amp;#8217;t know why.&lt;/p&gt;
+&lt;p&gt;Then.. I just filled my /etc/X11/xorg.conf in the Device and Monitor section with:&lt;/p&gt;
+&lt;p&gt;Then.. I just filled my /etc/X11/xorg.conf in the Device and Monitor section with:&lt;code&gt;Section "Device"&lt;/code&gt;
+@    Identifier     &amp;quot;Device0&amp;quot;@
+@    Driver         &amp;quot;nvidia&amp;quot;@
+@    VendorName     &amp;#8220;&lt;span class="caps"&gt;NVIDIA&lt;/span&gt; Corporation&amp;#8221;@
+@    BoardName      &amp;#8220;GeForce Go 6150&amp;#8221;@
+@    VideoRam       131072@
+&lt;code&gt;EndSection&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Then.. I just filled my /etc/X11/xorg.conf in the Device and Monitor section with:&lt;code&gt;Section "Device"&lt;/code&gt;
+@    Identifier     &amp;quot;Device0&amp;quot;@
+@    Driver         &amp;quot;nvidia&amp;quot;@
+@    VendorName     &amp;#8220;&lt;span class="caps"&gt;NVIDIA&lt;/span&gt; Corporation&amp;#8221;@
+@    BoardName      &amp;#8220;GeForce Go 6150&amp;#8221;@
+@    VideoRam       131072@
+&lt;code&gt;EndSection&lt;/code&gt;&lt;code&gt;Section "Monitor"&lt;/code&gt;
+@    Identifier     &amp;quot;Monitor0&amp;quot;@
+@    VendorName     &amp;quot;Unknown&amp;quot;@
+@    ModelName      &amp;#8220;&lt;span class="caps"&gt;CRT&lt;/span&gt;-0&amp;#8221;@
+@    HorizSync       30.0 &amp;#8211; 75.0@
+@    VertRefresh     60.0@
+@    Option         &amp;#8220;Above&amp;#8221; &amp;quot; Monitor1&amp;quot;@
+&lt;code&gt;EndSection&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Then.. I just filled my /etc/X11/xorg.conf in the Device and Monitor section with:&lt;code&gt;Section "Device"&lt;/code&gt;
+@    Identifier     &amp;quot;Device0&amp;quot;@
+@    Driver         &amp;quot;nvidia&amp;quot;@
+@    VendorName     &amp;#8220;&lt;span class="caps"&gt;NVIDIA&lt;/span&gt; Corporation&amp;#8221;@
+@    BoardName      &amp;#8220;GeForce Go 6150&amp;#8221;@
+@    VideoRam       131072@
+&lt;code&gt;EndSection&lt;/code&gt;&lt;code&gt;Section "Monitor"&lt;/code&gt;
+@    Identifier     &amp;quot;Monitor0&amp;quot;@
+@    VendorName     &amp;quot;Unknown&amp;quot;@
+@    ModelName      &amp;#8220;&lt;span class="caps"&gt;CRT&lt;/span&gt;-0&amp;#8221;@
+@    HorizSync       30.0 &amp;#8211; 75.0@
+@    VertRefresh     60.0@
+@    Option         &amp;#8220;Above&amp;#8221; &amp;quot; Monitor1&amp;quot;@
+&lt;code&gt;EndSection&lt;/code&gt;After that the following metamode works again (finally!):&lt;/p&gt;
+&lt;p&gt;Then.. I just filled my /etc/X11/xorg.conf in the Device and Monitor section with:&lt;code&gt;Section "Device"&lt;/code&gt;
+@    Identifier     &amp;quot;Device0&amp;quot;@
+@    Driver         &amp;quot;nvidia&amp;quot;@
+@    VendorName     &amp;#8220;&lt;span class="caps"&gt;NVIDIA&lt;/span&gt; Corporation&amp;#8221;@
+@    BoardName      &amp;#8220;GeForce Go 6150&amp;#8221;@
+@    VideoRam       131072@
+&lt;code&gt;EndSection&lt;/code&gt;&lt;code&gt;Section "Monitor"&lt;/code&gt;
+@    Identifier     &amp;quot;Monitor0&amp;quot;@
+@    VendorName     &amp;quot;Unknown&amp;quot;@
+@    ModelName      &amp;#8220;&lt;span class="caps"&gt;CRT&lt;/span&gt;-0&amp;#8221;@
+@    HorizSync       30.0 &amp;#8211; 75.0@
+@    VertRefresh     60.0@
+@    Option         &amp;#8220;Above&amp;#8221; &amp;quot; Monitor1&amp;quot;@
+&lt;code&gt;EndSection&lt;/code&gt;After that the following metamode works again (finally!):&lt;code&gt;Option "metamodes" "CRT: 1680x1050 +0+0, DFP: nvidia-auto-select +200+1050"&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Then.. I just filled my /etc/X11/xorg.conf in the Device and Monitor section with:&lt;code&gt;Section "Device"&lt;/code&gt;
+@    Identifier     &amp;quot;Device0&amp;quot;@
+@    Driver         &amp;quot;nvidia&amp;quot;@
+@    VendorName     &amp;#8220;&lt;span class="caps"&gt;NVIDIA&lt;/span&gt; Corporation&amp;#8221;@
+@    BoardName      &amp;#8220;GeForce Go 6150&amp;#8221;@
+@    VideoRam       131072@
+&lt;code&gt;EndSection&lt;/code&gt;&lt;code&gt;Section "Monitor"&lt;/code&gt;
+@    Identifier     &amp;quot;Monitor0&amp;quot;@
+@    VendorName     &amp;quot;Unknown&amp;quot;@
+@    ModelName      &amp;#8220;&lt;span class="caps"&gt;CRT&lt;/span&gt;-0&amp;#8221;@
+@    HorizSync       30.0 &amp;#8211; 75.0@
+@    VertRefresh     60.0@
+@    Option         &amp;#8220;Above&amp;#8221; &amp;quot; Monitor1&amp;quot;@
+&lt;code&gt;EndSection&lt;/code&gt;After that the following metamode works again (finally!):&lt;code&gt;Option "metamodes" "CRT: 1680x1050 +0+0, DFP: nvidia-auto-select +200+1050"&lt;/code&gt;Great! My problem was solved. Probably there&amp;#8217;s a bizarre bug in the Nvidia proprietary driver! Anyway the NV free driver doesn&amp;#8217;t work with two monitors side-by-side (fist in 1600&amp;#215;1050 and second in 1280&amp;#215;800), so I must to use the proprietary driver unfortunately.&lt;/p&gt;</description><pubDate>Sun, 18 Oct 2009 11:42:09 +0000</pubDate><link>http://softwarelivre.org/amadeu/blog/nvidia-geforce-go-6150-resolution-problems-in-a-linux-box</link><guid>http://softwarelivre.org/amadeu/blog/nvidia-geforce-go-6150-resolution-problems-in-a-linux-box</guid></item><item><title>AmadeuJunior's Blog</title><description>#&lt;Proc:0x000000183b8158@/usr/share/noosfero/app/models/blog.rb:33&gt;</description><pubDate>Mon, 08 Jun 2009 15:15:14 +0000</pubDate><link>http://softwarelivre.org/amadeu/blog</link><guid>http://softwarelivre.org/amadeu/blog</guid></item></channel></rss>

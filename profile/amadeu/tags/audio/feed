@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Amadeu A. Barbosa Júnior's contents tagged with "audio"</title><link>http://softwarelivre.org/amadeu</link><description>Amadeu A. Barbosa Júnior's contents tagged with "audio"</description><item><title>Problemas com tags ID3 em arquivos de áudio</title><description>&lt;p&gt;Entre downloads e uploads pela rede é comum se deparar com problemas com as &lt;a href="http://pt.wikipedia.org/wiki/ID3"&gt;tags ID3&lt;/a&gt; em seus arquivos de áudio. Não sei informar o quanto problemas desse tipo acontecem mais ao formato MP3, mas eu arriscaria dizer: em face da grande população de software proprietário de última categoria espalhado por aí que inserem tags proprietárias nos arquivos MP3 é bem provável que haja muito código mal implementado e assim acaba acontecendo de ter ID3tags corrompidas.&lt;/p&gt;
+&lt;h2&gt;Tags ID3 corrompidas vs. Players?&lt;/h2&gt;
+&lt;p&gt;Você pensa logo: é &lt;strong&gt;só&lt;/strong&gt; metadado. E é, mas certos tocadores (principalmente os proprietários) podem não funcionar como o esperado nesses casos. Um exemplo concreto que infelizmente eu uso: &lt;a href="http://www.apple.com/br/itunes"&gt;iTunes&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Sintoma no iTunes&lt;/h2&gt;
+&lt;p&gt;Você tenta adicionar sua música na biblioteca de músicas e simplesmente o player não o faz e não diz nada, nenhum erro no sistema de logs, nada, absolutamente &lt;strong&gt;nada&lt;/strong&gt;! Absurdo!&lt;/p&gt;
+&lt;h2&gt;Qual o problema?&lt;/h2&gt;
+&lt;p&gt;Execute em seu terminal:
+&lt;strong&gt;$ file seuarquivo.mp3&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Se você tiver uma saída parecida com:
+&lt;strong&gt;seuarquivo.mp3: Audio file with ID3 version 2.3.0, &lt;em&gt;contains: Audio file with ID3 version 2.4.0,&lt;/em&gt; contains: &lt;span class="caps"&gt;MPEG&lt;/span&gt; &lt;span class="caps"&gt;ADTS&lt;/span&gt;, layer &lt;span class="caps"&gt;III&lt;/span&gt;, v1, 128 kbps, 44.1 kHz, JntStereo&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Atente para a seguinte sequência de caracteres: &lt;strong&gt;contains: Audio file with ID3 version&lt;/strong&gt;. Em todos os meus arquivos com ID3 tags &lt;strong&gt;que funcionam&lt;/strong&gt; essa string não aparece fazendo um &amp;#8220;file&amp;#8221;.&lt;/p&gt;
+&lt;h2&gt;Solução&lt;/h2&gt;
+&lt;p&gt;Então eu recriei as ID3 tags fazendo:
+&lt;strong&gt;$ id3v2 -2 seuarquivo.mp3&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Nova saída do file:
+&lt;strong&gt;$ file seuarquivo.mp3
+seuarquivo.mp3: Audio file with ID3 version 2.3.0, contains: &lt;span class="caps"&gt;MPEG&lt;/span&gt; &lt;span class="caps"&gt;ADTS&lt;/span&gt;, layer &lt;span class="caps"&gt;III&lt;/span&gt;, v1, 128 kbps, 44.1 kHz, JntStereo&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Pacote debian: &lt;a href="http://packages.debian.org/lenny/id3v2"&gt;id3v2&lt;/a&gt;&lt;/p&gt;</description><pubDate>Mon, 26 Apr 2010 03:26:19 +0000</pubDate><link>http://softwarelivre.org/amadeu/blog/problemas-com-tags-id3-em-arquivos-de-audio</link><guid>http://softwarelivre.org/amadeu/blog/problemas-com-tags-id3-em-arquivos-de-audio</guid></item></channel></rss>

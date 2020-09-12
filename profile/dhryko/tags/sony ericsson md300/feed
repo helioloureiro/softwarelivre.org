@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Conteúdo de Adriano Araújo Duarte marcado com a tag "sony ericsson md300"</title><link>http://softwarelivre.org/dhryko</link><description>Conteúdo de Adriano Araújo Duarte marcado com a tag "sony ericsson md300"</description><item><title>Configurando Claro 3G no Kubuntu 9.04 com modem Sony Ericsson MD300</title><description>&lt;p&gt;Diferentemente do que experienciei no Ubuntu 9.04, em que o modem foi reconhecido automaticamente e a conexão idem, no Kubuntu ainda é preciso fazer a configuração à moda antiga, usando o bom e velho KPPP.&lt;/p&gt;
+&lt;p&gt;A receita é a mesma postada pelo Daniel Petry no blog dele (http://blog.mdpetry.net/2008/09/claro-3g-no-ubuntu-com-sony-md300.html), sendo que não é preciso mexer com o wvdial para configurar a conexão. No próprio KPPP faremos isso. A receita do KPPP foi postada em outro blog, mas não consegui encontrar novamente. Quem achar, favor comentar aqui para que sejam feitos os devidos créditos.&lt;/p&gt;
+&lt;p&gt;Primeiramente vamos nos assegurar de que o sistema não reconhecerá o modem como pendrive. Faremos isso com a dica do Petry: usando um rules para o udev, como segue.&lt;/p&gt;
+&lt;p&gt;Crie o arquivo 50-md300modem.rules no caminho /etc/udev/rules.d com o seguinte texto incluso:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ACTION!=”add”, GOTO=”3G_End”&lt;br&gt; BUS==”usb”, SYSFS{idProduct}==”d0cf”, SYSFS{idVendor}==”0fce”, PROGRAM=”/bin/sh -c ‘echo 3 &amp;gt; /sys/%p/device/bConfigurationValue’”&lt;br&gt; LABEL=”3G_End”&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Feito isto, reinicie o udev (como root): /etc/init.d/udev restart&lt;/p&gt;
+&lt;p&gt;Conecte o modem no computador. Ele não deve ser reconhecido pelo alerta do sistema.&lt;/p&gt;
+&lt;p&gt;Feito isso, vamos configurar o KPPP. Abra o aplicativo através do Menu KDE/Internet/KPPP. Se for a primeira execução, ele pode pedir a criação do arquivo resolv.conf. Feche a janela do aplicativo e digite em um terminal:&lt;/p&gt;
+&lt;p&gt;$ sudo touch /etc/resolv.conf&lt;/p&gt;
+&lt;p&gt;Abra novamente o KPPP e clique em Configurar. Na aba Conexão, digite o nome (Claro 3G) e, em número, digite *99***1#.&lt;/p&gt;
+&lt;p&gt;Na aba DNS, coloque como domínio "bandalarga.claro.com.br" e acrescente os seguintes servidores (dica do Daniel Siqueira - http://danielsiqueira.com/2008/05/18/claro-3g-no-ubuntu-804-com-modem-usb-huawei-e226/):&lt;/p&gt;
+&lt;p&gt;200.169.117.14&lt;br&gt; 200.255.121.39&lt;/p&gt;
+&lt;p&gt;Em Modem, crie um novo com nome Sony MD300 e em dispositivo escolha /dev/ttyACM0. A velocidade deixe como 460800.&lt;/p&gt;
+&lt;p&gt;Em Comandos do Modem, na String de inicialização 2 coloque ADT+CFUN=6 (o número 6 força a conexão ao HDSPA, ou seja, ao 3G = mais rápido).&lt;/p&gt;
+&lt;p&gt;Em Outros, marque todos os itens, menos o penúltimo.&lt;/p&gt;
+&lt;p&gt;Feche todas as janelas de diálogo e, na janela inicial do KPPP, coloque o login claro e senha claro. Clique então em Conectar.&lt;/p&gt;
+&lt;p&gt;Isso deve ser suficiente para você conseguir conectar e navegar normalmente.&lt;/p&gt;
+&lt;p&gt;Abraços livres.&lt;/p&gt;</description><pubDate>Tue, 16 Jun 2009 23:26:38 +0000</pubDate><link>http://softwarelivre.org/dhryko/blog/configurando-claro-3g-no-kubuntu-9.04-com-modem-sony-ericsson-md300</link><guid>http://softwarelivre.org/dhryko/blog/configurando-claro-3g-no-kubuntu-9.04-com-modem-sony-ericsson-md300</guid></item></channel></rss>

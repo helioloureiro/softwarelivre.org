@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Conteúdo de Antonio Terceiro marcado com a tag "debian"</title><link>http://softwarelivre.org/terceiro</link><description>Conteúdo de Antonio Terceiro marcado com a tag "debian"</description><item><title>pristine-tar updates</title><description>&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://packages.debian.org/pristine-tar"&gt;pristine-tar&lt;/a&gt; is a tool that is present in the workflow of a lot of Debian people. I adopted it last year after it has been orphaned by its creator &lt;a href="https://joeyh.name/"&gt;Joey Hess&lt;/a&gt;. A little after that &lt;a href="https://tomasz.buchert.pl/"&gt;Tomasz Buchert&lt;/a&gt; joined me and we are now a functional two-person team.&lt;/p&gt;
+&lt;p&gt;pristine-tar goals are to import the content of a pristine upstream tarball into a &lt;span class="caps"&gt;VCS&lt;/span&gt; repository, and being able to later reconstruct that exact same tarball, bit by bit, based on the contents in the &lt;span class="caps"&gt;VCS&lt;/span&gt;, so we don&amp;#8217;t have to store a full copy of that tarball. This is done by storing a binary delta files which can be used to reconstruct the original tarball from a tarball produced with the contents of the &lt;span class="caps"&gt;VCS&lt;/span&gt;. Ultimately, we want to make sure that the tarball that is uploaded to Debian is exactly the same as the one that has been downloaded from upstream, without having to keep a full copy of it around if all of its contents is already extracted in the &lt;span class="caps"&gt;VCS&lt;/span&gt; anyway.&lt;/p&gt;
+&lt;h2&gt;The current state of the art, and perspectives for the future&lt;/h2&gt;
+&lt;p&gt;pristine-tar solves a &lt;a href="https://en.wikipedia.org/wiki/Wicked_problem"&gt;wicked problem&lt;/a&gt;, because our ability to reconstruct the original tarball is affected by changes in the behavior of &lt;code&gt;tar&lt;/code&gt; and of all of the compression tools (&lt;code&gt;gzip&lt;/code&gt;, &lt;code&gt;bzip2&lt;/code&gt;, &lt;code&gt;xz&lt;/code&gt;) and by what exact options were used when creating the original tarballs. Because of this, pristine-tar currently has a few embedded copies of old versions of compressors to be able to reconstruct tarballs produced by them, and also rely on a ever-evolving patch to tar that is been carried in Debian for a while.&lt;/p&gt;
+&lt;p&gt;So basically keeping pristine-tar working is a game of &lt;a href="https://en.wikipedia.org/wiki/Whac-A-Mole"&gt;Whac-A-Mole&lt;/a&gt;. Joey provided a &lt;a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=737871"&gt;good summary of the situation when he orphaned pristine-tar&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Going forward, we may need to rely on other ways of ensuring integrity of upstream source code. That could take the form of signed git tags, signed uncompressed tarballs (so that the compression doesn&amp;#8217;t matter), or maybe even a different system for storing actual tarballs. &lt;a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=871806"&gt;Debian bug #871806&lt;/a&gt; contains an interesting discussion on this topic.&lt;/p&gt;
+&lt;h2&gt;Recent improvements&lt;/h2&gt;
+&lt;p&gt;Even if keeping pristine-tar useful in the long term  will be hard, too much of Debian work currently relies on it, so we can&amp;#8217;t just abandon it. Instead, we keep figuring out ways to improve. And I have good news: pristine-tar has recently received updates that improve the situation quite a bit.&lt;/p&gt;
+&lt;p&gt;In order to be able to understand how better we are getting at it, I created a &amp;quot;visualization of the &lt;a href="https://people.debian.org/~terceiro/pristine-tar/"&gt;regression test suite results&lt;/a&gt;. With the help of data from there, let&amp;#8217;s look at the improvements made since pristine-tar 1.38, which was the version included in stretch.&lt;/p&gt;
+&lt;h3&gt;pristine-tar 1.39: xdelta3 by default.&lt;/h3&gt;
+&lt;p&gt;This was the first release made after the stretch release, and made &lt;code&gt;xdelta3&lt;/code&gt; the default delta generator for newly-imported tarballs. Existing tarballs with deltas produced by &lt;code&gt;xdelta&lt;/code&gt; are still supported, this only affects new imports.&lt;/p&gt;
+&lt;p&gt;The support for having multiple delta generator was written by Tomasz, and was already there since 1.35, but we decided to only flip the switch after using xdelta3 was supported in a stable release.&lt;/p&gt;
+&lt;h3&gt;pristine-tar 1.40: improved compression heuristics&lt;/h3&gt;
+&lt;p&gt;pristine-tar uses a few heuristics to produce the smaller delta possible, and this includes trying different compression options. In the release Tomasz included a contribution by Lennart Sorensen to also try the &lt;code&gt;--gnu&lt;/code&gt;, which gretly improved the support for rsyncable gzip compressed files. We can see an example of the type of improvement we got in the &lt;a href="https://people.debian.org/~terceiro/pristine-tar/"&gt;regression test suite data for delta sizes&lt;/a&gt; for &lt;code&gt;faad2_2.6.1.orig.tar.gz&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src="/articles/0173/3653/1_40.png" title="In 1.40, the delta produced from the test tarball faad2_2.6.1.orig.tar.gz went down from 800KB, almost the same size of tarball itself, to 6.8KB" alt="In 1.40, the delta produced from the test tarball faad2_2.6.1.orig.tar.gz went down from 800KB, almost the same size of tarball itself, to 6.8KB" /&gt;&lt;/p&gt;
+&lt;h3&gt;pristine-tar 1.41: support for signatures&lt;/h3&gt;
+&lt;p&gt;This release saw the addition of support for storage and retrieval of upstream signatures, contributed by Chris Lamb.&lt;/p&gt;
+&lt;h3&gt;pristine-tar 1.42: optionally recompressing tarballs&lt;/h3&gt;
+&lt;p&gt;I had this idea and wanted to try it out: most of our problems reproducing tarballs come from tarballs produced with old compressors, or from changes in compressor behavior, or from uncommon compression options being used. What if we could just recompress the tarballs before importing then? Yes, this kind of breaks the &amp;#8220;pristine&amp;#8221; bit of the whole business, but on the other hand, 1) the contents of the tarball are not affected, and 2) even if the initial tarball is not bit by bit the same that upstream release, at least future uploads of that same upstream version with Debian revisions can be regenerated just fine.&lt;/p&gt;
+&lt;p&gt;In some cases, as the case for the test tarball &lt;code&gt;util-linux_2.30.1.orig.tar.xz&lt;/code&gt;, recompressing is what makes it possible to reproduce the tarball (and thus import it with pristine-tar) possible at all:&lt;/p&gt;
+&lt;p&gt;&lt;img src="/articles/0173/3655/1_42_fail.png" title="util-linux_2.30.1.orig.tar.xz can only be imported after being recompressed" alt="util-linux_2.30.1.orig.tar.xz can only be imported after being recompressed" /&gt;&lt;/p&gt;
+&lt;p&gt;In other cases, if the current heuristics can&amp;#8217;t produce a reasonably small delta, recompressing makes a huge difference. It&amp;#8217;s the case for &lt;code&gt;mumble_1.1.8.orig.tar.gz&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src="/articles/0173/3654/1_42_reduce.png" title="with recompression, the delta produced from mumble_1.1.8.orig.tar.gz goes from 1.2MB, or 99% of the size to the original tarball, to 14.6KB, 1% of the size of original tarball" alt="with recompression, the delta produced from mumble_1.1.8.orig.tar.gz goes from 1.2MB, or 99% of the size to the original tarball, to 14.6KB, 1% of the size of original tarball" /&gt;&lt;/p&gt;
+&lt;p&gt;Recompressing is not enabled by default, and can be enabled by passing the &lt;code&gt;--recompress&lt;/code&gt; option. If you are using &lt;code&gt;pristine-tar&lt;/code&gt; via a wrapper tool like &lt;code&gt;gbp-buildpackage&lt;/code&gt;, you can use the &lt;code&gt;$PRISTINE_TAR&lt;/code&gt; environment variable to set options that will affect any pristine-tar invocations.&lt;/p&gt;
+&lt;p&gt;Also, even if you enable recompression, pristine-tar will only try it if the delta generations fails completely, of if the delta produced from the original tarball is too large. You can control what &amp;#8220;too large&amp;#8221; means by using the &lt;code&gt;--recompress-threshold-bytes&lt;/code&gt; and &lt;code&gt;--recompress-threshold-percent&lt;/code&gt; options. See the &lt;b&gt;pristine-tar(1)&lt;/b&gt; manual page for details.&lt;/p&gt;</description><pubDate>Mon, 09 Oct 2017 15:06:22 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/pristine-tar-updates</link><guid>http://softwarelivre.org/terceiro/blog/pristine-tar-updates</guid></item><item><title>Debconf17</title><description>&lt;p&gt;I&amp;#8217;m back from Debconf17.&lt;/p&gt;
+&lt;p&gt;I gave a &lt;a href="https://debconf17.debconf.org/talks/34/"&gt;talk&lt;/a&gt; entitled &amp;#8220;Patterns for Testing Debian Packages&amp;#8221;, in which I presented a collection of 7 patterns I documented while pushing the &lt;a href="https://ci.debian.net/"&gt;Debian Continuous Integration&lt;/a&gt; project, and were published &lt;a href="https://softwarelivre.org/terceiro/blog/patterns-for-testing-debian-packages"&gt;in a 2016 paper&lt;/a&gt;. &lt;a href="http://meetings-archive.debian.net/pub/debian-meetings/2017/debconf17/patterns-for-testing-debian-packages.vp8.webm"&gt;Video recording&lt;/a&gt; and a &lt;a href="https://annex.debconf.org/debconf-share/debconf17/slides/34-patterns-for-testing-debian-packages.pdf"&gt;copy of the slides&lt;/a&gt; are available.&lt;/p&gt;
+&lt;p&gt;I also hosted the &lt;a href="https://debconf17.debconf.org/talks/35/"&gt;ci/autopkgtest BoF&lt;/a&gt; session, in which we discussed issues around the usage of autopkgtest within Debian, the CI system, etc. &lt;a href="http://meetings-archive.debian.net/pub/debian-meetings/2017/debconf17/ci-autopkgtest-bof.vp8.webm"&gt;Video recording is available&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Kudos for the Debconf video team for making the recordings available so quickly!&lt;/p&gt;</description><pubDate>Mon, 14 Aug 2017 17:27:06 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/debconf17</link><guid>http://softwarelivre.org/terceiro/blog/debconf17</guid></item><item><title>Patterns for Testing Debian Packages</title><description>&lt;p&gt;At the and of 2016 I had the pleasure to attend the &lt;a href="http://hillside.net/sugarloaf/2016/"&gt;11th Latin American Conference on Pattern Languages of Programs&lt;/a&gt;, a.k.a SugarLoaf PLoP. PLoP is a &lt;a href="http://hillside.net/conferences"&gt;series of conferences&lt;/a&gt; on Patterns (as in &amp;#8220;Design Patterns&amp;#8221;), a subject that I appreciate a lot. Each of the PLoP conferences but the original main &amp;#8220;big&amp;#8221; conference has a funny name. SugarLoaf PLoP is called that way because its very first edition was held in Rio de Janeiro, so the organizers named it after a &lt;a href="https://en.wikipedia.org/wiki/Sugarloaf_Mountain"&gt;very famous mountain&lt;/a&gt; in Rio. The name stuck even though a long time has passed since it was held in Rio for the last time. 2016 was actually the first time SugarLoaf PLoP was held outside of Brazil, finally justifying the &amp;#8220;Latin American&amp;#8221; part of its name.&lt;/p&gt;
+&lt;p&gt;I was presenting a paper I wrote on patterns for testing Debian packages. The Debian project funded my travel expenses through the generous donations of its supporters. PLoP&amp;#8217;s are very fun conferences with a relaxed atmosphere, and is amazing how many smart (and interesting!) people gather together for them.&lt;/p&gt;
+&lt;p&gt;My paper is titled &amp;#8220;Patterns for Writing As-Installed Tests for Debian Packages&amp;#8221;, and has the following abstract:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Large software ecosystems, such as &lt;span class="caps"&gt;GNU&lt;/span&gt;/Linux distributions, demand a large amount of effort to make sure all of its components work correctly invidually, and also integrate correctly with each other to form a coherent system. Automated Quality Assurance techniques can prevent issues from reaching end users. This paper presents a pattern language originated in the Debian project for automated software testing in production-like environments. Such environments are closer in similarity to the environment where software will be actually deployed and used, as opposed to the development environment under which developers and regular Continuous Integration mechanisms usually test software products. The pattern language covers the handling of issues arising from the difference between development and production-like environments, as well as solutions for writing new, exclusive tests for as-installed functional tests. Even though the patterns are documented here in the context of the Debian project, they can also be generalized to other contexts.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In practical terms, the paper documents a set of patterns I have noticed in the last few years, when I have been pushing the &lt;a href="https://ci.debian.net/"&gt;Debian Continous Integration&lt;/a&gt; project. It should be an interesting read for people interested in the testing of Debian packages in their installed form, as done with autopkgtest. It should also be useful for people from other distributions interested in the subject, as the issues are not really Debian-specific.&lt;/p&gt;
+&lt;p&gt;I have recently finished the final version of the paper, which should be published in the &lt;span class="caps"&gt;ACM&lt;/span&gt; Digital Library at any point now. You can download a &lt;a href="https://gitlab.com/terceiro/installed-tests-patterns/raw/pdf/final/installed-tests-patterns.pdf"&gt;copy of the paper&lt;/a&gt; in &lt;span class="caps"&gt;PDF&lt;/span&gt;. &lt;a href="https://gitlab.com/terceiro/installed-tests-patterns"&gt;Source&lt;/a&gt; is also available, if you are into markdown, LaTeX, makefiles and this sort of thing.&lt;/p&gt;
+&lt;p&gt;If everything goes according to plan, I should be presenting a talk on this at the next Debconf in Montreal.&lt;/p&gt;</description><pubDate>Fri, 17 Mar 2017 01:23:33 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/patterns-for-testing-debian-packages</link><guid>http://softwarelivre.org/terceiro/blog/patterns-for-testing-debian-packages</guid></item><item><title>Debian CI updates for September 2016</title><description>&lt;p&gt;&lt;a href="https://tracker.debian.org/news/795502"&gt;debci 1.4&lt;/a&gt; was released just a few days ago. Among general improvements, I would like to highlight:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;pretty much every place in the web UI that mentions a &lt;span class="caps"&gt;PASS&lt;/span&gt; or a &lt;span class="caps"&gt;FAIL&lt;/span&gt; also displays the tested package version. This was suggested to me on &lt;span class="caps"&gt;IRC&lt;/span&gt; by &lt;a href="http://layer-acht.org/thinking/"&gt;Holger&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;I also tried to workaround an instability when setting up the &lt;span class="caps"&gt;LXC&lt;/span&gt; containers used for the tests, where the test bed process setup would finish without failure even though some steps in the middle of it failed. This caused the very final step for the debci-specific setup to fail, so there was no &lt;code&gt;debci&lt;/code&gt; user inside the container, which caused tests to fail because that user was missing. Before that was fixed I was always keeping an eye on this issue, fixing the issue by hand, and re-triggering the affected packages by hand, so as far I can tell there is no package whose status has been permanently affected by this.&lt;/li&gt;
+	&lt;li&gt;Last, but not least, this release brings an interesting contribution by Gordon Ball, which is keeping track of different failure states. debci will now let you know whether a currently failing package has always failed, has passed in a previous version, or if the same version that is currently failing has previously passed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://ci.debian.net/"&gt;ci.debian.net&lt;/a&gt; has been upgraded to &lt;code&gt;debci&lt;/code&gt; 1.4 just after that. At the same time I have also upgraded &lt;code&gt;autodep8&lt;/code&gt; and &lt;code&gt;autopkgtest&lt;/code&gt; to their latest versions, available in jessie-backports. This means that it is now safe for Debian packages to assume the changes in &lt;a href="http://www.piware.de/2016/06/autopkgtest-4-0-simplified-cli-deprecating-adt/"&gt;autopkgtest 4.0&lt;/a&gt; are available, in special the &lt;code&gt;$AUTOPKGTEST_*&lt;/code&gt; environment variables.&lt;/p&gt;
+&lt;p&gt;In other news, for several weeks there were had issues with tests not being scheduled when they should have. I was just assuming that the issue was due to the existing test scheduler, &lt;code&gt;debci-batch&lt;/code&gt;, being broken. Today I was working on a new implementation that is going to be a lot faster, I started to hit a similar issue on my local tests, and finally realized what was wrong. The fact is that &lt;code&gt;debci-batch&lt;/code&gt; stores the timestamp of the last time a package has been scheduled to run, and it there are no test result after that timestamp, it assumes the package is still in the queue to be tested, and does not schedule it again. It turns out that a few weeks ago, during maintainance work, I had cleared the queue, discarding all jobs that were there, but forgot to reset those timestamps, so when &lt;code&gt;debci-batch&lt;/code&gt; came around again, it checked the timestamp of the last request and did not make new requests because there was no test result after that timestamp! I cleared all those timestamps, and the system should now go back to normal.&lt;/p&gt;
+&lt;p&gt;That is it for now. I you want to contribute to the Debian CI project and want to get in touch, you can pop up on the &lt;code&gt;#debci&lt;/code&gt; channel on the &lt;span class="caps"&gt;OFTC&lt;/span&gt; &lt;span class="caps"&gt;IRC&lt;/span&gt; network, or mail the &lt;a href="http://lists.alioth.debian.org/cgi-bin/mailman/listinfo/autopkgtest-devel"&gt;autopkgtest-devel&lt;/a&gt; mailing list.&lt;/p&gt;</description><pubDate>Wed, 07 Sep 2016 22:07:42 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/debian-ci-updates-for-september-2016</link><guid>http://softwarelivre.org/terceiro/blog/debian-ci-updates-for-september-2016</guid></item><item><title>testing build reproducibility with debrepro</title><description>&lt;p&gt;Earlier today I was handling a &lt;a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=829362"&gt;reproducibility bug&lt;/a&gt; and decided I had to try a reproducibility test by myself. I tried &lt;a href="https://packages.debian.org/reprotest"&gt;reprotest&lt;/a&gt;, but I was being hit by a disorderfs issue and I was not sure whether the problem was with reprotest or not (at this point I cannot reproduce that anymore).&lt;/p&gt;
+&lt;p&gt;So I decided to hack a simple script to that, and it works. I even &lt;a href="https://anonscm.debian.org/cgit/collab-maint/devscripts.git/commit/?id=f3fd7952b8d38438f193076521f9067d742f9c94"&gt;included it in devscripts&lt;/a&gt; after writing a manpage. Of course reprotest is more complete, extensible, and supports arbitrary virtualization backends for doing the more dangerous/destructive variations (such as changing the hostname and other things that require root) but for quick tests &lt;code&gt;debrepro&lt;/code&gt; does the job.&lt;/p&gt;
+&lt;p&gt;Usage examples:&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;
+$ debrepro                                 # builds current directory
+$ debrepro /path/to/sourcepackage          # builds package there
+$ gbp-buildpackage --git-builder=debrepro  # can be used with vcs wrappers as well
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;debrepro&lt;/code&gt; will do two builds with a few variations between them, including $&lt;span class="caps"&gt;USER&lt;/span&gt;, $&lt;span class="caps"&gt;PATH&lt;/span&gt;, timezone, locale, umask, current time, and will even build under disorderfs if available. Build path variation is also performed because by definition the builds are done in different directories. If diffoscope is installed, it will be used for deep comparison of non-matching binaries.&lt;/p&gt;
+&lt;p&gt;If you are interested and don&amp;#8217;t want to build devscripts from source or wait for the next release, you can just &lt;a href="https://anonscm.debian.org/cgit/collab-maint/devscripts.git/plain/scripts/debrepro.sh?id=f3fd7952b8d38438f193076521f9067d742f9c94"&gt;grab the script&lt;/a&gt;, save it as &amp;#8220;debrepro&amp;#8221; somewhere on your $&lt;span class="caps"&gt;PATH&lt;/span&gt; and make it executable.&lt;/p&gt;</description><pubDate>Sat, 03 Sep 2016 16:58:01 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/testing-build-reproducibility-with-debrepro</link><guid>http://softwarelivre.org/terceiro/blog/testing-build-reproducibility-with-debrepro</guid></item><item><title>Adopting pristine-tar</title><description>&lt;p&gt;As of yesterday, I am the new maintainer of &lt;a href="https://packages.debian.org/pristine-tar"&gt;pristine-tar&lt;/a&gt;. As it is the case for most of &lt;a href="http://joeyh.name/"&gt;Joey Hess&lt;/a&gt;&amp;#8217; creations, it is an extremely useful tool, and used in a very large number of Debian packages which are maintained in git.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://tracker.debian.org/news/769872"&gt;My first upload&lt;/a&gt; was most of a terrain recognition nature: I did some housekeeping tasks, such as making the build idempotent and making sure all binaries are built with security hardening flags, and wrote a few automated test cases to serve as build-time and run-time regression test suite. No functional changes have been made.&lt;/p&gt;
+&lt;p&gt;As Joey &lt;a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=737871"&gt;explained when he orphaned it&lt;/a&gt;, there are a few technical challenges involved in making sure pristine-tar stays useful in the future. Although I did read some of the code, I am not particularly familiar with the internals yet, and will be more than happy to get co-maintainers. If you are interested, please get in touch. The &lt;a href="http://anonscm.debian.org/cgit/collab-maint/pristine-tar.git"&gt;source git repository&lt;/a&gt; is right there.&lt;/p&gt;</description><pubDate>Sun, 22 May 2016 14:02:35 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/adopting-pristine-tar</link><guid>http://softwarelivre.org/terceiro/blog/adopting-pristine-tar</guid></item><item><title>Debian Ruby Sprint 2016 - day 5: More Reproducible Builds, Retrospective, and A Little Bit of Tourism</title><description>&lt;p&gt;Earlier today I was made aware by Holger of &lt;a href="https://tests.reproducible-builds.org/unstable/amd64/stats_meta_pkg_state_maint_pkg-ruby-extras-maintainers.png"&gt;the results&lt;/a&gt; of our reproducibility efforts during the sprint. I would like to thank Lunar for pinging us about the issue, and Holger for pointing me to updated results. The  figure below depicts a stacked area chart where the X axis is time and the green area is reproducible packages. Red is packages that fail to build, and Orange are unreproducible packages&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://tests.reproducible-builds.org/unstable/amd64/stats_meta_pkg_state_maint_pkg-ruby-extras-maintainers.png"&gt;&lt;img src="/articles/0152/3781/reproducible.png" alt="" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I was able to book accommodation for the sprint attendees very close to both my place and the sprint venue, what was very useful but also had this downside of them not being able to see much of city. As the final day of the sprint was getting closer, we decided to have a different lunch to allow them to see one of the most famous local landmarks, the botanical gardens.&lt;/p&gt;
+&lt;p&gt;So we headed down to the botanical gardens, grabbed a few items for lunch at the park coffee shop, and set out to visit this very beautiful place. I have to say that there is the place were I usually take every visitor I have. We were joined by Gioavani who had just arrived for the &lt;a href="http://br2016.mini.debconf.org/"&gt;the MiniDebconf&lt;/a&gt; on the following weekend.&lt;/p&gt;
+&lt;p&gt;&lt;img src="/articles/0152/3780/botanical-gardens.jpg" alt="" /&gt;&lt;/p&gt;
+&lt;p&gt;The final lists of accomplishments of the day was again very impressive&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;r10k 2.1.1-2&lt;/li&gt;
+	&lt;li&gt;run massive update on team repositories
+	&lt;ul&gt;
+		&lt;li&gt;bump Standards-Version&lt;/li&gt;
+		&lt;li&gt;fix Vcs-* fields&lt;/li&gt;
+		&lt;li&gt;drop version in gem2deb build-dependency&lt;/li&gt;
+		&lt;li&gt;set debhelper compatibility level to 9&lt;/li&gt;
+		&lt;li&gt;update the default ruby-tests.rake&lt;/li&gt;
+	&lt;/ul&gt;&lt;/li&gt;
+	&lt;li&gt;day 4 report&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-faraday-middleware-multi-json 0.0.6-2&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-powerpack 0.1.1-2&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-contracts 0.13.0-1&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-chef-config 12.7.2-1 (&lt;span class="caps"&gt;NEW&lt;/span&gt;)&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-foreigner #808530 and asked it removal from the &lt;span class="caps"&gt;NEW&lt;/span&gt; queue (was already ROMed)&lt;/li&gt;
+	&lt;li&gt;filled for RM ruby-opengraph-parser (#816752)&lt;/li&gt;
+	&lt;li&gt;new how-can-i-help version developed and uploaded&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-romkan to unstable (from exp)&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-rinku to unstable (from exp)&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-ole to unstable (from exp)&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-net-ldap to unstable (from exp)&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-rack-mobile-detect to unstable (from exp)&lt;/li&gt;
+	&lt;li&gt;uploaded gem2deb 0.28 to help with reproducible builds: filenames are now sorted&lt;/li&gt;
+	&lt;li&gt;uploaded rails 2:4.2.5.2-2 with packaging improvements
+	&lt;ul&gt;
+		&lt;li&gt;run unit tests during the build and on CI&lt;/li&gt;
+		&lt;li&gt;apply upstream patch to fix ActiveRecord breakage under Ruby 2.3&lt;/li&gt;
+	&lt;/ul&gt;&lt;/li&gt;
+	&lt;li&gt;pushed a ton of tags for existing uploads&lt;/li&gt;
+	&lt;li&gt;merged improvements to the team master repository
+	&lt;ul&gt;
+		&lt;li&gt;review/cleanup the contents of the repository&lt;/li&gt;
+		&lt;li&gt;improved helper scripts to automate the workflow (upload, build, new-upstream, etc)&lt;/li&gt;
+	&lt;/ul&gt;&lt;/li&gt;
+	&lt;li&gt;followed up on ruby2.3 transition, filed #816698 against subversion because of ftbfs on mips, mipsel&lt;/li&gt;
+	&lt;li&gt;put ruby-cocoon into a better state&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-plist&lt;/li&gt;
+	&lt;li&gt;gem2deb: gem2tgz will now create foo.gemspec (easier to patch) instead of metadata.yml&lt;/li&gt;
+	&lt;li&gt;gemwatch: ditto&lt;/li&gt;
+	&lt;li&gt;close #794139 jekyll bug (unreproducible)&lt;/li&gt;
+	&lt;li&gt;close #798934 ruby-ffi-rzmq bug (unreproducible)&lt;/li&gt;
+	&lt;li&gt;closed ftbfs #816586 #800057 #784699 as unreproducible&lt;/li&gt;
+	&lt;li&gt;reassigned #760952 #680297 to ruby2.3 (from ruby2.2)&lt;/li&gt;
+	&lt;li&gt;investigated how to list packages with non-buildd-binary uploads&lt;/li&gt;
+	&lt;li&gt;ScottK has removed ruby2.1 from unstable!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;By the end of the afternoon I asked everyone to fill out a simple retrospective list, what we can use later to make future sprints better and better. Below are the results we got.&lt;/p&gt;
+&lt;p&gt;What was good:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;restricted room hours actually made for a nice rhythm (did not apply for a long time&amp;#8230;)&lt;/li&gt;
+	&lt;li&gt;very good food&lt;/li&gt;
+	&lt;li&gt;very cheap food!&lt;/li&gt;
+	&lt;li&gt;longer period makes the effort of travel more worthwhile&lt;/li&gt;
+	&lt;li&gt;many participants and longer sprint than usual allowing more work to be done&lt;/li&gt;
+	&lt;li&gt;good preparation with clear goals, make the sprint usefull&lt;/li&gt;
+	&lt;li&gt;patience with the less experienced participants&lt;/li&gt;
+	&lt;li&gt;&lt;span class="caps"&gt;RFS&lt;/span&gt; very fast&lt;/li&gt;
+	&lt;li&gt;Antônio is an excellent host&lt;/li&gt;
+	&lt;li&gt;You all are so helpful&lt;/li&gt;
+	&lt;li&gt;great dinners&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;What could be better:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;room too close to the street, too much vehicle noise, but sometimes nice music&lt;/li&gt;
+	&lt;li&gt;more coffee ^W meat&lt;/li&gt;
+	&lt;li&gt;could know more portugues so ordering food would have been easier&lt;/li&gt;
+	&lt;li&gt;debian infra could have not been down during the sprint&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The night ended at &lt;a href="http://www.bardoalemaocuritiba.com.br/"&gt;Bar do Alemão&lt;/a&gt; (&amp;#8220;The German&amp;#8217;s Bar&amp;#8221;). Both their beer and their food are very good, but I don&amp;#8217;t have enough elements to vouch for their authenticity. :) We were joined by Giovani (who we also met earlier in the botanic gardens), and by Paulo and Daniel who are organizing the MiniDebconf.&lt;/p&gt;
+&lt;p&gt;&lt;img src="/articles/0152/3779/bar-do-alemao.jpg" alt="" /&gt;&lt;/p&gt;
+&lt;p&gt;And that is the end of this year&amp;#8217;s Debian Ruby team sprint. I hope we do it all over again next year.&lt;/p&gt;</description><pubDate>Sat, 05 Mar 2016 16:21:18 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/debian-ruby-sprint-2016-day-5-more-reproducible-builds-retrospective-and-a-little-bit-of-tourism</link><guid>http://softwarelivre.org/terceiro/blog/debian-ruby-sprint-2016-day-5-more-reproducible-builds-retrospective-and-a-little-bit-of-tourism</guid></item><item><title>Debian Ruby Sprint 2016 - day 4: Steady Progress, Deferred Spring Cleaning, and Capital Sins</title><description>&lt;p&gt;As the day 4 of the Debian Ruby team sprint in Curitiba unfolded, we have now fixed a total of more than 70 build failure bugs, managed to almost finish the Ruby 2.3 transition to be good to migrate into testing, and bootstrapped some documentation that will help new contributors get up to speed with Ruby packaging faster.&lt;/p&gt;
+&lt;p&gt;We have also requested the removal of several packages that are either severely outdated, abandoned upstream, beyond repair, utterly wrong, or in some cases, all of the above.&lt;/p&gt;
+&lt;p&gt;The full list of work items finished yesterday is:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;filed for RM ruby-rubysl-test-unit (no rdeps, duplicates ruby-test-unit)&lt;/li&gt;
+	&lt;li&gt;filed for RM ruby-literati (no rdeps left)&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-certificate-authority 0.1.6-2&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-pdf-reader 1.4 (Closes: &lt;span class="caps"&gt;FTBFS&lt;/span&gt; #795763)&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-http 1.0.2-1  (Closes: #795752)&lt;/li&gt;
+	&lt;li&gt;raise severity of &lt;span class="caps"&gt;FTBFS&lt;/span&gt; bugs with ruby2.3&lt;/li&gt;
+	&lt;li&gt;day 3 report&lt;/li&gt;
+	&lt;li&gt;&lt;span class="caps"&gt;NMU&lt;/span&gt; pcs and upload to &lt;span class="caps"&gt;DELAYED&lt;/span&gt;/2 to remove dependency on ruby-monkey-lib and build-dependency on ruby2.1-dev&lt;/li&gt;
+	&lt;li&gt;upload ruby-parslet (Closes: #795046)&lt;/li&gt;
+	&lt;li&gt;initial documentation of packaging workflow with updated helper scripts in the team repo &amp;#8211; https://wiki.debian.org/Teams/Ruby/Workflow&lt;/li&gt;
+	&lt;li&gt;ask for the removal of ruby-rspec-longrun&lt;/li&gt;
+	&lt;li&gt;ruby-opengraph-parser &amp;#8211; upstream bug; upstream unresponsive; asked uploader about removal (no rdeps)&lt;/li&gt;
+	&lt;li&gt;fix ruby-celluloid-io for ruby2.3&lt;/li&gt;
+	&lt;li&gt;fixed ruby-buff-extension to work on ruby2.3&lt;/li&gt;
+	&lt;li&gt;uploaded newer ruby-varia-model upstream to work with newer ruby-hashie&lt;/li&gt;
+	&lt;li&gt;ask for the removal of mdpress&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-buff-config, ruby-semverse, ruby-buff-ruby-engine, ruby-buff-ignore, ruby-buff-shell-out to remove spork&lt;/li&gt;
+	&lt;li&gt;filed for RM spork (obsolete, broken)&lt;/li&gt;
+	&lt;li&gt;filed for RM ruby-gsl on failing archs&lt;/li&gt;
+	&lt;li&gt;upload ruby-solve (Closes: #816359, thanks zeha!)&lt;/li&gt;
+	&lt;li&gt;update ruby-standalone to work properly with ruby2.3 (needs to remove the rake binary)&lt;/li&gt;
+	&lt;li&gt;upload ruby-memfs&lt;/li&gt;
+	&lt;li&gt;ruby-rack (1.6.4-3) (&lt;span class="caps"&gt;ROM&lt;/span&gt; ruby-memcache-client)&lt;/li&gt;
+	&lt;li&gt;ruby-parslet 1.7.1-1 #795046&lt;/li&gt;
+	&lt;li&gt;upload ruby-listen&lt;/li&gt;
+	&lt;li&gt;upload ruby-clockwork&lt;/li&gt;
+	&lt;li&gt;upload ruby-bio with a patch to avoid transient &lt;span class="caps"&gt;FTBFS&lt;/span&gt; because of undefined class names&lt;/li&gt;
+	&lt;li&gt;fixed ruby-fakeweb ftbfs&lt;/li&gt;
+	&lt;li&gt;cleaned up old repositories on git.d.o&lt;/li&gt;
+	&lt;li&gt;investigated &lt;span class="caps"&gt;PET&lt;/span&gt; status (appears to somewhat work, but mostly decaying)&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-ogginfo&lt;/li&gt;
+	&lt;li&gt;upload ruby-libxml (agan!)&lt;/li&gt;
+	&lt;li&gt;upload racc 1.4.14-1&lt;/li&gt;
+	&lt;li&gt;upload ruby-sidekiq-cron&lt;/li&gt;
+	&lt;li&gt;how-can-i-help updated&lt;/li&gt;
+	&lt;li&gt;racc 1.4.14-1 (not ruby-racc ;-))&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We also managed to flirt with 2 &lt;a href="https://en.wikipedia.org/wiki/Seven_deadly_sins"&gt;capital sins&lt;/a&gt;. For those who care about these things, which I don&amp;#8217;t (but I still care about you), I guess 2 out of 7 still means we are good? :-)&lt;/p&gt;
+&lt;p&gt;I few people that I will not name complained that they hadn&amp;#8217;t had enough steak on the previous night, so we set out to visit a traditional all-you-can-eat Brazilian steakhouse (&amp;#8220;churrascaria&amp;#8221;). I made a reservation at &lt;a href="http://www.jardinsgrill.com.br/"&gt;Jardins Grill&lt;/a&gt; and there you have gluttony. I am pretty sure that &amp;#8220;not enough steak&amp;#8221; wasn&amp;#8217;t an issue last night. You can see how happy, despite being full to almost the point of being sick, everyone was.&lt;/p&gt;
+&lt;p&gt;&lt;img src="/articles/0152/3656/jardins-grill.jpg" alt="" /&gt;&lt;/p&gt;
+&lt;p&gt;A disjunct set of people, who I will also not name, were very disappointed to find out that &lt;a href="https://packages.debian.org/sid/ruby-tinder"&gt;the ruby-tinder package&lt;/a&gt; has absolutely nothing to do with &lt;a href="https://www.gotinder.com/"&gt;Tinder&lt;/a&gt; but were still very active on the later. Maybe Friday night we will have to split the group into a lust-free family party and a Tinder party.&lt;/p&gt;</description><pubDate>Fri, 04 Mar 2016 13:42:36 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/debian-ruby-sprint-2016-day-4-steady-progress-deferred-spring-cleaning-and-capital-sins</link><guid>http://softwarelivre.org/terceiro/blog/debian-ruby-sprint-2016-day-4-steady-progress-deferred-spring-cleaning-and-capital-sins</guid></item><item><title>Debian Ruby Sprint 2016 - day 3: Ruby 2.3 in unstable, Reproducible Builds, and Data Structures for Dinner Booths</title><description>&lt;p&gt;Day 3 was again a full of useful work. Since the beginning of the sprint, we were able to fix more than 50 FTBFS¹ bugs, alongside general quality improvements in the packages.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;¹ in the Debian jargon, &lt;span class="caps"&gt;FTBFS&lt;/span&gt; means that a package &amp;#8220;fails to build from source&amp;#8221;, which in Debian is a critical bug because users need to be able to produce binary packages from their source code to fully exercise the free software principles.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;An important milestone that was also achieved on day 3 was &lt;a href="https://tracker.debian.org/news/752105"&gt;the upload of ruby-defaults 1:2.3.0+1&lt;/a&gt;, making &lt;code&gt;ruby2.3&lt;/code&gt; the new default version of Ruby. That is the version that will shipped in the next Debian release, codenamed stretch. This is the culmination of a joint effort between the Ruby team and Debian Release Team that involves rebuilding a little more than 130 packages that use the Ruby C &lt;span class="caps"&gt;API&lt;/span&gt; to make sure everything will just work on upgrades, both from the previous stable release, and from earlier snapshots of the current development release.&lt;/p&gt;
+&lt;p&gt;Another small change that will have a big impact for Debian and for free software was &lt;a href="https://anonscm.debian.org/cgit/pkg-ruby-extras/gem2deb.git/commit/?id=d93a18490e3c9359d24ba7dcbd2d2cbe377d0271"&gt;an improvement to gem2deb&lt;/a&gt; that fixes &lt;a href="https://tests.reproducible-builds.org/issues/unstable/timestamps_in_gemspec_files_issue.html"&gt;a reproducibility issue in Ruby packages&lt;/a&gt; and will help currently more than 100 Ruby packages become &lt;a href="https://reproducible-builds.org/"&gt;reproducible&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The full list of items that have been worked on is this:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;sponsor ruby-github-linguist. Closes: #815908. Thanks balasankar&lt;/li&gt;
+	&lt;li&gt;rebuild remaining failing packages &amp;#8211; 55 remaining!&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-em-synchrony (&lt;span class="caps"&gt;FTBFS&lt;/span&gt; #800029)&lt;/li&gt;
+	&lt;li&gt;day 2 report blog post&lt;/li&gt;
+	&lt;li&gt;ruby-certificate-authority-0.1.6-1 (#816506)&lt;/li&gt;
+	&lt;li&gt;filed for ruby-grack removal&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-em-synchrony&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-mathml (&lt;span class="caps"&gt;FTBS&lt;/span&gt; #800029)&lt;/li&gt;
+	&lt;li&gt;uploaded new upstream version of ruby-redis which claims better ruby2.2 support&lt;/li&gt;
+	&lt;li&gt;uploaded pry (0.10.3-2), hoping it will build correctly on the buildd&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-hashery&lt;/li&gt;
+	&lt;li&gt;rails security issues: &lt;span class="caps"&gt;CVE&lt;/span&gt;-2016-2098, &lt;span class="caps"&gt;CVE&lt;/span&gt;-2016-2097
+	&lt;ul&gt;
+		&lt;li&gt;fixed in unstable on 2:4.2.5.2-1&lt;/li&gt;
+		&lt;li&gt;contacted security team for jessie update&lt;/li&gt;
+	&lt;/ul&gt;&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-ruby-engine, ruby-ruby-version, ruby-rspec-pending-for to &lt;span class="caps"&gt;NEW&lt;/span&gt;&lt;/li&gt;
+	&lt;li&gt;updated ruby-hashie to new upstream version&lt;/li&gt;
+	&lt;li&gt;ruby-remcached (fix &lt;span class="caps"&gt;FTBFS&lt;/span&gt;)&lt;/li&gt;
+	&lt;li&gt;made the switch to ruby2.3 in unstable *********&lt;/li&gt;
+	&lt;li&gt;filed https://bugs.ruby-lang.org/issues/12137 as ruby-awesome-print triggers this&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-rspec 3.4&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-rspec-rails 3.4&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-grack 2.0.2-2 (fix &lt;span class="caps"&gt;FTBFS&lt;/span&gt;)&lt;/li&gt;
+	&lt;li&gt;ruby-memcache-client (#797256) =&amp;gt; RoM ruby-memcache-client (#816538) + https://github.com/rack/rack/issues/1025&lt;/li&gt;
+	&lt;li&gt;upload ruby-acts-as-lists (Closes: &lt;span class="caps"&gt;FTBS&lt;/span&gt; #816482)&lt;/li&gt;
+	&lt;li&gt;ruby-beautify: fixed and uploaded&lt;/li&gt;
+	&lt;li&gt;filed for ruby-foreigner removal (+ fixed diaspora dependency)&lt;/li&gt;
+	&lt;li&gt;uploaded newer ruby-origin to fix &lt;span class="caps"&gt;FTBFS&lt;/span&gt;&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-responders&lt;/li&gt;
+	&lt;li&gt;gem2deb hacking
+	&lt;ul&gt;
+		&lt;li&gt;dh-make-ruby will not overwrite debian/copyright anymore&lt;/li&gt;
+		&lt;li&gt;force generated gemspecs to use date from debian/changelog. fixes https://tests.reproducible-builds.org/issues/unstable/timestamps_in_gemspec_files_issue.html&lt;/li&gt;
+		&lt;li&gt;uploaded version 0.27 to unstable&lt;/li&gt;
+	&lt;/ul&gt;&lt;/li&gt;
+	&lt;li&gt;make ruby-riddle tests run and work during build&lt;/li&gt;
+	&lt;li&gt;ruby-flexmock 2.0.4-1 -&amp;gt; uploaded&lt;/li&gt;
+	&lt;li&gt;RoM ruby-memcache-client (done #816538)&lt;/li&gt;
+	&lt;li&gt;upload nanoc 4.1.4 and fix tests for ruby2.3&lt;/li&gt;
+	&lt;li&gt;Upload new upstream version of ruby-test-after-commit&lt;/li&gt;
+	&lt;li&gt;uploaded newer upstream for ruby-origin fixing &lt;span class="caps"&gt;FTBFS&lt;/span&gt; bug&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The day ended at Outback, where we had an amount of beer that led us to formulate what we will now call the One-Sided Dinner Booth Problem.&lt;/p&gt;
+&lt;p&gt;&lt;img src="/articles/0152/3474/outback.jpg" alt="" /&gt;&lt;/p&gt;
+&lt;p&gt;In a party arranged like above, when the people closest to wall need to go alleviate themselves of some beer, you basically have to perform a removal from the bottom of a stack, which requires popping all the elements at the top. When they come back, you have to options:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;place them back at their original position, in which case
+	&lt;ul&gt;
+		&lt;li&gt;the people who stayed have to either stay standing or get up all over again (not sure what is worse)&lt;/li&gt;
+		&lt;li&gt;the odds are that the next person to leave will require less effort from the others&lt;/li&gt;
+	&lt;/ul&gt;&lt;/li&gt;
+	&lt;li&gt;shift everyone to places against the wall and place the one coming back at the very end of the bench away from the wall, in which case
+	&lt;ul&gt;
+		&lt;li&gt;the people who stayed are perhaps less annoyed, but you have to rearrange plates and pints&lt;/li&gt;
+		&lt;li&gt;it is less likely that the next time will require less effort from the others&lt;/li&gt;
+	&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The &lt;strong&gt;One-Sided Dinner Booth Problem&lt;/strong&gt; is finding the optimal data structure and algorithm for this situation. It is postulated that this is an NP-complete problem, and that only probabilistic solutions are cost-effective.&lt;/p&gt;</description><pubDate>Thu, 03 Mar 2016 13:42:00 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/debian-ruby-sprint-2016-day-3-ruby-2.3-in-unstable-reproducible-builds-and-data-structures-for-dinner-booths</link><guid>http://softwarelivre.org/terceiro/blog/debian-ruby-sprint-2016-day-3-ruby-2.3-in-unstable-reproducible-builds-and-data-structures-for-dinner-booths</guid></item><item><title>Debian Ruby Sprint 2016 - day 2: Japanese cuisine, bug fixes, and Mini Cheese&amp;Wine Party</title><description>&lt;p&gt;Day 1 ended with dinner at a &lt;a href="http://www.restauranteyamato.com.br/"&gt;Yamato&lt;/a&gt;, my preferred Japanese restaurant in the city. Curitiba has a very large Japanese community, and lots of Japanese restaurants. Yamato, however, is the only one were you will stumble upon senior Japanese people, probably first or second generation immigrants, what I guess says something about its authenticity.&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://softwarelivre.org/articles/0152/3316/yamato.jpg" alt="" /&gt;&lt;/p&gt;
+&lt;p&gt;Right after breaking for lunch, but before actually going out, we made what so far is official group photo (I might try again as the shot was not a really good one).&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://softwarelivre.org/articles/0152/3319/group-photo.jpg" alt="" /&gt;&lt;/p&gt;
+&lt;p&gt;Of course the most interesting part was the actual work that was done, and day 2 list is not less impressive than the day before:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;ruby-albino 1.3.3-4 (#813644)  @sbadia&lt;/li&gt;
+	&lt;li&gt;#816256: ruby-versionomy: &lt;span class="caps"&gt;FTBFS&lt;/span&gt;: `require&amp;#8217;: cannot load such file &amp;#8212; blockenspiel/unmixer_mri (LoadError)&lt;/li&gt;
+	&lt;li&gt;investiage ruby2.1 removal&lt;/li&gt;
+	&lt;li&gt;upload ruby-beautify&lt;/li&gt;
+	&lt;li&gt;upload ruby-aws-sdk&lt;/li&gt;
+	&lt;li&gt;made ruby-blockenspiel arch:all again&lt;/li&gt;
+	&lt;li&gt;filed RC bug against pcs depending on ruby2.1-dev&lt;/li&gt;
+	&lt;li&gt;ruby-dev in experimental now supports `pkg-config ruby` so packages can use pkg-config to build against the current default Ruby&lt;/li&gt;
+	&lt;li&gt;ruby-libxml (some tests skipped)&lt;/li&gt;
+	&lt;li&gt;fixed &lt;span class="caps"&gt;FTBFS&lt;/span&gt; #804794 in subtle delaying ruby2.1 removal (now in &lt;span class="caps"&gt;DELAYED&lt;/span&gt;/2)&lt;/li&gt;
+	&lt;li&gt;mailed debian-ruby and ask people to test ruby2.3 as default&lt;/li&gt;
+	&lt;li&gt;#816162: ruby-zentest: &lt;span class="caps"&gt;FTBFS&lt;/span&gt;: Failure: TestZenTest#test_testcase9&lt;/li&gt;
+	&lt;li&gt;ruby-sshkit 1.9.0~rc1-1 (795118)
+	&lt;ul&gt;
+		&lt;li&gt;capistrano 3.4.0-1 + ruby-sshkit 1.9.0~rc1-1 =&amp;gt; http://paste.debian.net/plain/410699&lt;/li&gt;
+	&lt;/ul&gt;&lt;/li&gt;
+	&lt;li&gt;filed for ruby-patron removal&lt;/li&gt;
+	&lt;li&gt;updated and uploaded ruby-pygments.rb updated + patch for tests (fix #812940)&lt;/li&gt;
+	&lt;li&gt;discussed dependency cycle resolution
+	&lt;ul&gt;
+		&lt;li&gt;will keep cycle between ruby2.3 and rake (as they really need each other)&lt;/li&gt;
+		&lt;li&gt;will break cycle from pure ruby packages to ruby when they are depended on by ruby2.3&lt;/li&gt;
+		&lt;li&gt;for same package set, enable Multi-Arch: foreign when needed&lt;/li&gt;
+	&lt;/ul&gt;&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-power-assert (M-A foreign, break ruby cycle)&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-did-you-mean (M-A foreign, break ruby cycle)&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-minitest (M-A foreign, break ruby cycle)&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-test-unit (M-A foreign, break ruby cycle)&lt;/li&gt;
+	&lt;li&gt;uploaded rake (M-A foreign)&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-net-telnet (M-A foreign)&lt;/li&gt;
+	&lt;li&gt;discussed removal of libruby metapackage, filed bug against dh-make-drupal (only rdep) #816417&lt;/li&gt;
+	&lt;li&gt;uploaded yard (Closes: #812809)&lt;/li&gt;
+	&lt;li&gt;rerun failed builds&lt;/li&gt;
+	&lt;li&gt;closed #798539 (not applicable on current version of ruby-webmock)&lt;/li&gt;
+	&lt;li&gt;closed #816321 fixed by ruby2.3 upload&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-cliver (by @lucasmoura)&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-celluloid-supervision ( closes: #810770)&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-celluloid-fsm ( closes: #815107)&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-raindrops&lt;/li&gt;
+	&lt;li&gt;investigated status of dhelp, ruby-mysql again&lt;/li&gt;
+	&lt;li&gt;ruby-http-form-data (1.0.1+gemwatch-1) @sbadia&lt;/li&gt;
+	&lt;li&gt;nmu ohcount (&lt;span class="caps"&gt;DELAYED&lt;/span&gt;/2)&lt;/li&gt;
+	&lt;li&gt;updated trocla to newest upstream, fixing #816257&lt;/li&gt;
+	&lt;li&gt;reassign  #816358 from ruby-safe-yaml to ruby2.3&lt;/li&gt;
+	&lt;li&gt;close #816120 (transient bug in ruby-default-value-for, waiting for ruby-sqlite3 binNMU)&lt;/li&gt;
+	&lt;li&gt;upload updated ruby-rc4&lt;/li&gt;
+	&lt;li&gt;uploaded new upstream version of pry, fixing &lt;span class="caps"&gt;FTBFS&lt;/span&gt; with ruby2.3&lt;/li&gt;
+	&lt;li&gt;ruby-rb-inotify  , required to new ruby-listen( need ruby-rb-inotify &amp;gt;= 0.9.7)&lt;/li&gt;
+	&lt;li&gt;applied patch from upstream to ruby2.3 for #816358&lt;/li&gt;
+	&lt;li&gt;uploaded new upstream version for coderay supporting ruby2.3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;On Monday Cédric told us that he and Sebastien had brought a bottle of French wine and some smelly French cheeses, and suggested that in the best Debian tradition we should have a Mini Cheese and Wine Party™. Sure thing! Luckily there is a farmer&amp;#8217;s market 2 blocks from home on Tuesdays mornings, where I usually buy my fruits, vegetables, and cheese &amp;amp; friends, so the timing was perfect. I went shopping early in the morning, and bought a few things, and was back before it was the time to go to &lt;span class="caps"&gt;UTFPR&lt;/span&gt;. After the day-long hacking session we stopped by another store nearby to buy a few extra bottles of wine and other snacks.&lt;/p&gt;
+&lt;p&gt;At night, in my place, I ended up playing cheese master.&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://softwarelivre.org/articles/0152/3317/cheese-master.jpg" alt="" /&gt;&lt;/p&gt;
+&lt;p&gt;There was enough food that at the end we were all &lt;em&gt;very&lt;/em&gt; full.&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://softwarelivre.org/articles/0152/3318/cheese-and-wine-party-table.jpg" alt="" /&gt;&lt;/p&gt;
+&lt;p&gt;And with the spokesperson task of the day done, off to hacking I am!&lt;/p&gt;</description><pubDate>Wed, 02 Mar 2016 12:56:21 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/debian-ruby-sprint-2016-day-2-japanese-cuisine-bug-fixes-and-mini-cheesewine-party</link><guid>http://softwarelivre.org/terceiro/blog/debian-ruby-sprint-2016-day-2-japanese-cuisine-bug-fixes-and-mini-cheesewine-party</guid></item><item><title>Debian Ruby Sprint 2016 - day 1</title><description>&lt;p&gt;This year&amp;#8217;s &lt;a href="https://wiki.debian.org/Teams/Ruby/Meeting/Brazil2016"&gt;Debian Ruby team sprint&lt;/a&gt; started today here at Curitiba. Everyone arrived fine, and we started working at the meeting room we have booked for the week at Curitiba campus of the &lt;a href="http://utfpr.edu.br/" title="UTPFR"&gt;Federal Technical University of Paraná&lt;/a&gt;. The room is at the &amp;#8220;Department of Business and Community Relations&amp;#8221;, what makes a lot of sense! :-)&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://softwarelivre.org/articles/0152/3029/utfpr.jpg" alt="" /&gt;&lt;/p&gt;
+&lt;p&gt;The day started with a quick setup, with a simple 8-port switch, and a couple of power strips. It tooks us a few minutes to figure what was blocked or not on the corporate network, and almost everyone who needs connections that are usually blocked in such environments already had their &lt;span class="caps"&gt;VPN&lt;/span&gt; setups so we were able to get started right after that.&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://softwarelivre.org/articles/0152/3031/ruby-sprint-setup.jpg" alt="" /&gt;&lt;/p&gt;
+&lt;p&gt;We are taking notes live on &lt;a href="https://public.etherpad-mozilla.org/p/Debian-Ruby-Curitiba-2016"&gt;mozilla&amp;#8217;s piblic etherpad site&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Today we accomplished quite a lot:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;analyzed the pending issues for the ruby2.3 transition issues, categorizing the missing packages into &amp;#8220;needs a binNMU now&amp;#8221;, &amp;#8220;needs a binNMU after switching the default to ruby2.3&amp;#8221;, and &amp;#8220;broken&amp;#8221;.&lt;/li&gt;
+	&lt;li&gt;ruby-defaults uploaded to experimental switching to ruby2.3 as default, and dropping support for ruby2.2&lt;/li&gt;
+	&lt;li&gt;ruby-gsl fixed to build against &lt;span class="caps"&gt;GSL&lt;/span&gt; 2.x (was blocking ruby2.3 transition)&lt;/li&gt;
+	&lt;li&gt;#816253: ruby-fast-gettext: fix &lt;span class="caps"&gt;FTBFS&lt;/span&gt; issue and import a new upstream&lt;/li&gt;
+	&lt;li&gt;ruby-aws: several issues fixed&lt;/li&gt;
+	&lt;li&gt;ruby-binding-of-caller: fixed rubygems-integration&lt;/li&gt;
+	&lt;li&gt;fixed ruby-kakasi-ffi (again)&lt;/li&gt;
+	&lt;li&gt;made ruby-blockenspiel arch:any again&lt;/li&gt;
+	&lt;li&gt;ruby-fast-gettext 1.0.0-1 (fix ftbfs 816253)&lt;/li&gt;
+	&lt;li&gt;ruby-aws-sdk: new upstream, debcheck fix and several bumps&lt;/li&gt;
+	&lt;li&gt;ruby-fcgi &amp;#8211; dropped transitional packages + refreshed packaging with -w&lt;/li&gt;
+	&lt;li&gt;ruby-sshkit 1.8.0&lt;/li&gt;
+	&lt;li&gt;ruby-beautify: new upstream and few minor fixes&lt;/li&gt;
+	&lt;li&gt;asciidoctor (new version sponsored)&lt;/li&gt;
+	&lt;li&gt;capistrano 3.4.0 (ftbfs #795724, #802734)&lt;/li&gt;
+	&lt;li&gt;#816254: ruby-packetfu: &lt;span class="caps"&gt;FTBFS&lt;/span&gt;: expected NameError with &amp;#8220;uninitialized constant PacketFu::FakePacket&amp;#8221;, got #&lt;/li&gt;
+	&lt;li&gt;updated rake to 10.5.0; making it &lt;strong&gt;not&lt;/strong&gt; include -I/usr/lib/ruby/vendor_ruby when running tests&lt;/li&gt;
+	&lt;li&gt;triaged an closed open bugs on ruby-httpclient that do not apply anymore.&lt;/li&gt;
+	&lt;li&gt;updated ruby-httpclient to get rid of warnings in apt-listbugs under Ruby 2.3&lt;/li&gt;
+	&lt;li&gt;ruby-packetfu (fix ftbfs #816254) by @kanashiro&lt;/li&gt;
+	&lt;li&gt;investigated extension/rdepends build failing with ruby2.3-only&lt;/li&gt;
+	&lt;li&gt;applied upstream patch to ruby to fix extension ftbfs when extension uses c++&lt;/li&gt;
+	&lt;li&gt;ruby-albino 1.3.3-4 (#813644)&lt;/li&gt;
+	&lt;li&gt;basic user-level testing using ruby2.3 as default:
+	&lt;ul&gt;
+		&lt;li&gt;chef                  &lt;span class="caps"&gt;WORKS&lt;/span&gt; mostly; it seems ohai segfaults some times&lt;/li&gt;
+		&lt;li&gt;rails autopkgtest     &lt;span class="caps"&gt;FIXED&lt;/span&gt; Could not find gem &amp;#8216;binding_of_caller (&amp;gt;= 0.7.2)&amp;#8217;, which is required by gem &amp;#8216;web-console (~&amp;gt; 2.0)&amp;#8217;, in any of the sources.&lt;/li&gt;
+		&lt;li&gt;vagrant               &lt;span class="caps"&gt;WORKS&lt;/span&gt;&lt;/li&gt;
+		&lt;li&gt;redmine autopkgtest   &lt;span class="caps"&gt;WORKS&lt;/span&gt;&lt;/li&gt;
+		&lt;li&gt;apt-listbugs          &lt;span class="caps"&gt;FIXED&lt;/span&gt; warnings (e.g. try `apt-listbugs list $pkg`); caused by ruby-httpclient&lt;/li&gt;
+		&lt;li&gt;nanoc                 &lt;span class="caps"&gt;WORKS&lt;/span&gt;&lt;/li&gt;
+	&lt;/ul&gt;&lt;/li&gt;
+	&lt;li&gt;capistrano 3.4.0-1 (#795724, #802734) by @sbadia + @terceiro&lt;/li&gt;
+&lt;/ul&gt;</description><pubDate>Mon, 29 Feb 2016 20:44:43 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/debian-ruby-sprint-2016-day-1</link><guid>http://softwarelivre.org/terceiro/blog/debian-ruby-sprint-2016-day-1</guid></item><item><title>Bits from the Debian Continuous Integration project</title><description>&lt;p&gt;It&amp;#8217;s been almost 2 years since the &lt;a href="https://ci.debian.net/"&gt;Debian Continuous Integration&lt;/a&gt; project has been launched, and it has proven to be a useful resource for the development of Debian.&lt;/p&gt;
+&lt;p&gt;I have previously made a &lt;a href="http://softwarelivre.org/terceiro/blog/an-introduction-to-the-debian-continuous-integration-project"&gt;an introductory post&lt;/a&gt;, and this this is an update on the latest developments.&lt;/p&gt;
+&lt;h3&gt;Infrastructure upgrade&lt;/h3&gt;
+&lt;p&gt;Back in early 2014 when Debian CI was launched, there were less than 200 source packages with declared test suite metadata, and using a single worker machine polling the archive for updates and running tests sequentially in an infinite loop (&amp;#8220;the simplest thing that could possibly work&amp;#8221;) was OK-ish.&lt;/p&gt;
+&lt;p&gt;Then our community started an incredible, slow and persistent effort to prepare source packages for automated testing, and &lt;a href="https://ci.debian.net/status/"&gt;we now have almost 5,000 of them&lt;/a&gt;. The original, over-simplistic design had to be replaced.&lt;/p&gt;
+&lt;p&gt;The effort of transforming debci in a distributed system was started by Martin Pitt, who did an huge amount of work. In the latest months I was able to complete that work, to a point where I am confident in letting it run (mostly) unatended. We also had lots of contributions to the web UI from Brandon Fairchild, who was a &lt;span class="caps"&gt;GSOC&lt;/span&gt; intern in 2014, and continues to contribute to this date.&lt;/p&gt;
+&lt;p&gt;All this work culminated in the migration from a single-worker model to a master/workers setup, currently with 10 worker nodes. On busy periods all of those worker nodes will go on for days with full utilization, but even then the turnaround between package upload and a test run is now &lt;em&gt;a lot&lt;/em&gt; faster than it used to.&lt;/p&gt;
+&lt;p&gt;Debian members can inspect the resource usage on those systems, as well as the length of the processing queue, by &lt;a href="https://ci.debian.net/munin/"&gt;browsing to the corresponding munin instance&lt;/a&gt; (requires authentication via a &lt;span class="caps"&gt;SSL&lt;/span&gt; client certificated issued by sso.debian.org).&lt;/p&gt;
+&lt;p&gt;The system is currenly being hosted on a Amazon EC2 account sponsored by Amazon.&lt;/p&gt;
+&lt;p&gt;The setup is &lt;a href="http://anonscm.debian.org/cgit/collab-maint/debian-ci-config.git"&gt;fully automated and reproducible&lt;/a&gt;. It is not fully (or at all) documented yet, but those interested should feel free to get in touch on &lt;span class="caps"&gt;IRC&lt;/span&gt; (&lt;span class="caps"&gt;OFTC&lt;/span&gt;, #debci)&lt;/p&gt;
+&lt;h3&gt;Testing backend changed from schroot to lxc&lt;/h3&gt;
+&lt;p&gt;Together with the infrastructure updates, we also switched to using lxc instead of schroot as backend. Most test suites should not be affected by this, but the default lxc settings might cause some very specific issues in a few packages. See for example &lt;a href="https://bugs.debian.org/806542"&gt;#806542&lt;/a&gt; (&amp;#8220;liblinux-prctl-perl: autopkgtest failures: seccomp, capbset&amp;#8221;)&lt;/p&gt;
+&lt;p&gt;Adding support for &lt;span class="caps"&gt;KVM&lt;/span&gt; is also in the plans, and we will get to that at some point.&lt;/p&gt;
+&lt;h3&gt;Learn more&lt;/h3&gt;
+&lt;p&gt;If you want to learn more on how you can add tests for your package, a good first start is the debci &lt;a href="https://ci.debian.net/doc/"&gt;online documentation&lt;/a&gt; (which is also available locally if you install `debci`).&lt;/p&gt;
+&lt;p&gt;You might also be interested in watching the &lt;a href="http://meetings-archive.debian.net/pub/debian-meetings/2015/debconf15/Tutorial_functional_testing_of_Debian_packages.webm"&gt;live tutorial&lt;/a&gt; (WebM, 469 MB!) that has been presented at Debconf 15 earlier this year, full of tips and real examples from the archive. It would be &lt;em&gt;awesome&lt;/em&gt; if someone wanted to transcribe that into a text tutorial ;-)&lt;/p&gt;
+&lt;h3&gt;How to get involved&lt;/h3&gt;
+&lt;p&gt;There are a few ways you can contribute:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;autodep8&lt;/strong&gt;. if you are knowledgeable on a subset of packages that are very similar   and can have their tests executed in a similar way, such as &amp;#8220;$Language   libraries&amp;#8221;, you might consider writing a test metadata generator so   that each package does not need to declare a debian/tests/control file   explicitly, requiring only The `Testsuite:` header in debian/control.&lt;/p&gt;
+&lt;p&gt;Ruby and Perl are already covered, and there is initial support for NodeJS. Adding support for new types of packages is very easy. See the &lt;a href="http://anonscm.debian.org/cgit/collab-maint/autodep8.git"&gt;source repository&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you manage to add support for your favorite language, please get in touch so we can discuss whitelisting the relavant packages in ci.debian.net so that they will get their tests executed even before being uploaded with the proper `Testsuite:` control field.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;autopkgtest&lt;/strong&gt;. &lt;a href="http://anonscm.debian.org/cgit/autopkgtest/autopkgtest.git"&gt;autopkgtest&lt;/a&gt; is responsible for actually running your tests, and you can use it to reproduce test runs locally.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;debci&lt;/strong&gt;. &lt;a href="http://anonscm.debian.org/cgit/collab-maint/debci.git"&gt;debci&lt;/a&gt; is the system running in ci.debian.net (version 1.0, currently in testing, is &lt;em&gt;exactly&lt;/em&gt; what is running up there, minus a version number and a changelog entry).&lt;/p&gt;
+&lt;p&gt;It can also be used to have private clones of ci.debian.net, e.g. for derivatives or internal Debian-related development. See for example the &lt;a href="http://autopkgtest.ubuntu.com/"&gt;Ubuntu autopkgtest site&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Getting in touch&lt;/h3&gt;
+&lt;p&gt;For maintainer queries and general discussion:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;mailing list: debian-qa@lists.debian.org&lt;/li&gt;
+	&lt;li&gt;&lt;span class="caps"&gt;IRC&lt;/span&gt;: #debian-qa on &lt;span class="caps"&gt;OFTC&lt;/span&gt;. Feel free to highlight `terceiro`&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For the development of debci/autopkgtest/autodep8&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;mailing list: autopkgtest-devel@lists.alioth.debian.org&lt;/li&gt;
+	&lt;li&gt;&lt;span class="caps"&gt;IRC&lt;/span&gt;: #debci on &lt;span class="caps"&gt;OFTC&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><pubDate>Fri, 11 Dec 2015 18:58:48 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/bits-from-the-debian-continuous-integration-project</link><guid>http://softwarelivre.org/terceiro/blog/bits-from-the-debian-continuous-integration-project</guid></item><item><title>DebConf15, testing debian packages, and packaging the free software web</title><description>&lt;p&gt;This is my August update, and by the far the coolest thing in it is Debconf.&lt;/p&gt;
+&lt;h2&gt;Debconf15&lt;/h2&gt;
+&lt;p&gt;I don&amp;#8217;t get tired of saying it is the best conference I ever attended. First it&amp;#8217;s a mix of meeting both new people and old friends, having the chance to chat with people whose work you admire but never had a chance to meet before. Second, it&amp;#8217;s always quality time: an informal environment, interesting and constructive presentations and discussions.&lt;/p&gt;
+&lt;p&gt;This year the venue was again very nice. Another thing that was very nice was having so many kids and families. This was no coincidence, since this was the first DebConf in which there was organized childcare. As the community gets older, this a very good way of keeping those who start having kids from being alienated from the community. Of course, not being a parent yet I have no idea how actually hard is to bring small kids to a conference like DebConf. ;-)&lt;/p&gt;
+&lt;p&gt;I presented two talks:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;strong&gt;Tutorial: Functional Testing of Debian packages&lt;/strong&gt;, where I introduced the   basic concepts of &lt;span class="caps"&gt;DEP&lt;/span&gt;-8/autopkgtest, and went over several examples from my   packages giving tips and tricks on how to write functional tests for Debian packages.
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="http://meetings-archive.debian.net/pub/debian-meetings/2015/debconf15/Tutorial_functional_testing_of_Debian_packages.webm"&gt;Video recording&lt;/a&gt; (webm, ~470MB)&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://annex.debconf.org/debconf-share/debconf15/slides/173-tutorial-functional-testing-of-debian-packages.pdf"&gt;slides&lt;/a&gt; (&lt;span class="caps"&gt;PDF&lt;/span&gt;)&lt;/li&gt;
+	&lt;/ul&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Packaging the Free Software Web for the end user&lt;/strong&gt;, where I presented the motivation for, and the current state of &lt;a href="https://gitlab.com/shak"&gt;shak&lt;/a&gt;, a project I am working on to make it trivial for end users to install server side applications in Debian. I spent quite some hacking time during DebConf finishing a prototype of the shak web interface, which was demonstrated live in the talk (of course, as usual with live demos, not everything worked :-)).
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="http://meetings-archive.debian.net/pub/debian-meetings/2015/debconf15/Packaging_the_free_software_web_for_the_end_user.webm"&gt;Video recording&lt;/a&gt; (webm, ~450MB)&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://annex.debconf.org/debconf-share/debconf15/slides/174-packaging-the-free-software-web.pdf"&gt;slides&lt;/a&gt; (&lt;span class="caps"&gt;PDF&lt;/span&gt;)&lt;/li&gt;
+	&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There was also the now traditional Ruby BoF, where discussed the state and future of the Ruby ecosystem in Debian; and an &lt;em&gt;in promptu&lt;/em&gt; Ruby packaging workshop where we introduced the basics of packaging in general, and Ruby packaging specifically.&lt;/p&gt;
+&lt;p&gt;Besides shak, I was able to hack on a few cool things during DebConf:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;debci &lt;a href="https://tracker.debian.org/news/705444"&gt;has been updated&lt;/a&gt; with a first version of the code to produce britney hints files that block packages that fail their tests from migrating to testing. There are some issues to be sorted out together with the release team to make sure we don&amp;#8217;t block packages unecessarily, e.g. we don&amp;#8217;t want to block packages that never passed their test suite &amp;#8212; most the test suite, and not the package, is broken.&lt;/li&gt;
+	&lt;li&gt;while hacking I ended up &lt;a href="https://tracker.debian.org/news/706879"&gt;updating jquery&lt;/a&gt; to the newest version in the 1.x series, and in fact adopting it I guess. This allowed me to drop the embedded jquery copy I used to have in the shak repository, and since then I was able to &lt;a href="https://tracker.debian.org/news/708523"&gt;improve the build&lt;/a&gt; to produce an output that is identical, except for a build timestamp inside a comment and a few empty lines, to the one produced by upstream, without using grunt (.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Miscellaneous updates&lt;/h2&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;a href="https://wiki.debian.org/Teams/Ruby/Rails4.2"&gt;Rails 4.2 in unstable&lt;/a&gt;: in order to support Diaspora (currently in experimental), and an upcoming Gitlab package (&lt;span class="caps"&gt;WIP&lt;/span&gt;). This requires quite some updates, &lt;span class="caps"&gt;NEW&lt;/span&gt; packages, and also making sure that Redmine is updated to a new upstream version. I did a few updates as part of this effort:
+	&lt;ul&gt;
+		&lt;li&gt;rails 2:4.2.3-3&lt;/li&gt;
+		&lt;li&gt;ruby-arel 6.0.3-1&lt;/li&gt;
+		&lt;li&gt;ruby-coffee-script 2.4.1-1&lt;/li&gt;
+		&lt;li&gt;ruby-coffee-script-source 1.9.1.1-1&lt;/li&gt;
+		&lt;li&gt;ruby-commander 4.3.5-1&lt;/li&gt;
+		&lt;li&gt;ruby-execjs 2.4.0-1&lt;/li&gt;
+		&lt;li&gt;ruby-globalid 0.3.6-1&lt;/li&gt;
+		&lt;li&gt;ruby-jbuilder 2.3.1-1&lt;/li&gt;
+		&lt;li&gt;ruby-jquery-rails 4.0.4-2&lt;/li&gt;
+		&lt;li&gt;ruby-minitest 5.8.0-1&lt;/li&gt;
+		&lt;li&gt;ruby-multi-json 1.11.2-1&lt;/li&gt;
+		&lt;li&gt;ruby-rack-test 0.6.3-1&lt;/li&gt;
+		&lt;li&gt;ruby-sass-rails 5.0.3-1&lt;/li&gt;
+		&lt;li&gt;ruby-spring 1.3.6-1&lt;/li&gt;
+		&lt;li&gt;ruby-sprockets 3.3.0-1~exp2&lt;/li&gt;
+		&lt;li&gt;ruby-sprockets-rails 2.3.2-1~exp1&lt;/li&gt;
+		&lt;li&gt;ruby-sqlite3 1.3.10-1&lt;/li&gt;
+		&lt;li&gt;ruby-turbolinks 2.5.3-1&lt;/li&gt;
+	&lt;/ul&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="https://packages.debian.org/sid/rerun"&gt;rerun&lt;/a&gt; (&lt;span class="caps"&gt;NEW&lt;/span&gt;), a tool to launch commands and restart them on filesystem change. Very useful when writing sinatra/rack applications.&lt;/li&gt;
+	&lt;li&gt;vagrant: &lt;a href="https://tracker.debian.org/news/704807"&gt;new upstream relaese&lt;/a&gt;, supporting VirtualBox 5.0&lt;/li&gt;
+	&lt;li&gt;pinpoint: &lt;a href="https://tracker.debian.org/news/702727"&gt;new upstream release&lt;/a&gt;, ported to clutter-gst-3.0&lt;/li&gt;
+	&lt;li&gt;chake: &lt;a href="https://tracker.debian.org/news/703099"&gt;new upstream release&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;gem2deb: &lt;a href="https://tracker.debian.org/news/705442"&gt;new release&lt;/a&gt; with several improvements, and a &lt;a href="https://tracker.debian.org/news/705744"&gt;bug fix followup&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;chef: &lt;a href="https://tracker.debian.org/news/707798"&gt;fix installation of initscripts&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;pry: &lt;a href="https://tracker.debian.org/news/705748"&gt;fixed imcompatibility with new ruby-slop&lt;/a&gt; (RC bug)&lt;/li&gt;
+	&lt;li&gt;foodcritic: &lt;a href="https://tracker.debian.org/news/707794"&gt;fixed test suite run during build&lt;/a&gt; (RC bug)&lt;/li&gt;
+	&lt;li&gt;library updates:
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/702681"&gt;ruby-grape-logging&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/702726"&gt;ruby-hashie&lt;/a&gt; (2 RC bugs)&lt;/li&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/703189"&gt;ruby-listen&lt;/a&gt;: new upstream release, fixed test suite (RC bug)&lt;/li&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/703187"&gt;ruby-rspec-retry&lt;/a&gt;: new upstrean release, fixed test suite (RC bug)&lt;/li&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/703201"&gt;ruby-dbf&lt;/a&gt;: new upstream release (sponsored, work by Christopher Baines)&lt;/li&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/703348"&gt;ruby-bootstrap-sass&lt;/a&gt;: new upstream release + fixed to work on non-Rails apps&lt;/li&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/705538"&gt;ruby-rails-dom-testing&lt;/a&gt; (&lt;span class="caps"&gt;NEW&lt;/span&gt;, dependency for rails 4.2)&lt;/li&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/705535"&gt;ruby-rails-deprecated-sanitizer&lt;/a&gt; (&lt;span class="caps"&gt;NEW&lt;/span&gt;, dependency for rails 4.2)&lt;/li&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/707821"&gt;ruby-rmagick&lt;/a&gt; new upstream release&lt;/li&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/707988"&gt;ruby-uglifier&lt;/a&gt; new upstream release&lt;/li&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/708814"&gt;ruby-cri&lt;/a&gt; (RC bug)
+		&lt;ul&gt;
+			&lt;li&gt;I was making source+arch:all uploads for a while, but this was my first ever source-only &lt;a href="https://buildd.debian.org/status/logs.php?pkg=ruby-cri&amp;amp;amp;ver=2.7.0-2"&gt;upload&lt;/a&gt; of an architecture-independent package to Debian, following the &lt;a href="https://lists.debian.org/debian-devel-announce/2015/08/msg00007.html"&gt;recent developments&lt;/a&gt; on the topic.&lt;/li&gt;
+		&lt;/ul&gt;&lt;/li&gt;
+	&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><pubDate>Sun, 30 Aug 2015 19:12:43 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/debconf15-testing-debian-packages-and-packaging-the-free-software-web</link><guid>http://softwarelivre.org/terceiro/blog/debconf15-testing-debian-packages-and-packaging-the-free-software-web</guid></item><item><title>Elixir in Debian, MiniDebconf at FISL, and Debian CI updates</title><description>&lt;p&gt;&lt;a href="http://softwarelivre.org/terceiro/blog/upgrades-to-jessie-ruby-2.2-transition-and-chef-update"&gt;In June I started keeping track&lt;/a&gt; of my Debian activities, and this is my July update.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Elixir in Debian&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://elixir-lang.org/"&gt;Elixir&lt;/a&gt; is a functional language built on top of the Erlang virtual machine. If features imutable data structures, interesting concurrency primitives, and everything else that Erlang does, but with a syntax inspired by Ruby what makes it much more aproachable in my opinion.&lt;/p&gt;
+&lt;p&gt;Those interested in Elixir for Debian are encouraged to hang around in #debian-elixir on the &lt;span class="caps"&gt;OFTC&lt;/span&gt; &lt;span class="caps"&gt;IRC&lt;/span&gt; servers. There are still a lot of things to figure out, for example how packaging Elixir libraries and applications is going to work.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;MiniDebconf at &lt;span class="caps"&gt;FISL&lt;/span&gt;, and beyond&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I helped organize a &lt;a href="https://wiki.debian.org/DebianEvents/br/2015/MiniDebconfFISL"&gt;MiniDebconf&lt;/a&gt; at this year&amp;#8217;s &lt;span class="caps"&gt;FISL&lt;/span&gt;, in Porto Alegre on the 10th of July. The whole program was targetted at getting more people to participate in Debian, so there were talks about translation, packaging, and a few other more specific topics.&lt;/p&gt;
+&lt;p&gt;I myself gave two talks: one about Debian basics, &amp;#8220;What is Debian, and how it works&amp;#8221;, and second one on &amp;#8220;packaging the free software web&amp;#8221;, which I will also give at &lt;a href="http://debconf15.debconf.org/"&gt;Debconf15&lt;/a&gt; later this month.&lt;/p&gt;
+&lt;p&gt;The recordings are available (all talks in Portuguese) &lt;a href="http://meetings-archive.debian.net/pub/debian-meetings/2015/mini-debconf-fisl/"&gt;at the Debian video archive&lt;/a&gt; thanks to Holger Levsen.&lt;/p&gt;
+&lt;p&gt;We are also organizing a &lt;a href="https://wiki.debian.org/DebianEvents/br/2015/MiniDebconfLatinoware"&gt;new MiniDebconf in October&lt;/a&gt; as part of the &lt;a href="http://latinoware.org/"&gt;Latinoware&lt;/a&gt; schedule.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ruby&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;We are in the middle of a &lt;a href="https://release.debian.org/transitions/html/ruby2.2.html"&gt;transition&lt;/a&gt; to switch to Ruby 2.2 as default in Debian unstable, and we are almost there. The Ruby transition is now on hold while &lt;a href="https://release.debian.org/transitions/html/libstdc++6.html"&gt;&lt;span class="caps"&gt;GCC&lt;/span&gt; 5 one&lt;/a&gt; is going on, but will be picked up as soon as were are done with &lt;span class="caps"&gt;GCC&lt;/span&gt; 5.&lt;/p&gt;
+&lt;p&gt;ruby-defaults has been uploaded to experimental for those that want to try having Ruby 2.2 as default before that change hits unstable. I myself have been using Ruby 2.2 as default for several weeks without any problem so far, including using vagrant on a daily basis and doing all my development on sid with it.&lt;/p&gt;
+&lt;p&gt;I started taking notes about &lt;a href="https://wiki.debian.org/Teams/Ruby/InterpreterTransitions"&gt;Ruby interpreter transitions&lt;/a&gt; work to make sure that knowledge is registered.&lt;/p&gt;
+&lt;p&gt;I have uploaded minor security updates of both &lt;a href="https://tracker.debian.org/news/701396"&gt;ruby2.1&lt;/a&gt; and &lt;a href="https://tracker.debian.org/news/701394"&gt;ruby2.2&lt;/a&gt; to unstable. They both reached testing earlier today.&lt;/p&gt;
+&lt;p&gt;I have also &lt;a href="https://tracker.debian.org/news/697703"&gt;fixed&lt;/a&gt; another &lt;a href="https://bugs.debian.org/786763"&gt;bug&lt;/a&gt; in redmine, which I hope to get into stable as well as soon as possible.&lt;/p&gt;
+&lt;p&gt;gem2deb has seen several improvements through versions &lt;a href="https://tracker.debian.org/news/698275"&gt;0.19&lt;/a&gt;, &lt;a href="https://tracker.debian.org/news/699499"&gt;0.20&lt;/a&gt;, &lt;a href="https://tracker.debian.org/news/699947"&gt;0.20.1&lt;/a&gt; and &lt;a href="https://tracker.debian.org/news/701578"&gt;0.20.2&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I have updated a few packages:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;a href="https://tracker.debian.org/news/694910"&gt;ruby-rubymail&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="https://tracker.debian.org/news/698034"&gt;ruby-ferret&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="https://tracker.debian.org/news/698259"&gt;ruby-omniauth&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="https://tracker.debian.org/news/698258"&gt;ruby-hashie&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="https://tracker.debian.org/news/699447"&gt;ruby-rack-accept&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="https://tracker.debian.org/news/698268"&gt;chef-zero&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="https://tracker.debian.org/news/698665"&gt;nailgun-agent&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="https://tracker.debian.org/news/698716"&gt;ruby-serialport&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="https://tracker.debian.org/news/698717"&gt;ruby-gnome2&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="https://tracker.debian.org/news/699285"&gt;ruby-mysql2&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="https://tracker.debian.org/news/699949"&gt;ruby-dataobjects-postgres&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="https://tracker.debian.org/news/700007"&gt;ruby-standalone&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="https://tracker.debian.org/news/700872"&gt;thin&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="https://tracker.debian.org/news/701694"&gt;ruby-stringex&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="https://tracker.debian.org/news/701693"&gt;ruby-i18n&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Two &lt;span class="caps"&gt;NEW&lt;/span&gt; packages, &lt;a href="https://tracker.debian.org/news/698262"&gt;ruby-rack-contrib&lt;/a&gt; and &lt;a href="https://tracker.debian.org/news/701355"&gt;ruby-grape-logging&lt;/a&gt; ,were &lt;span class="caps"&gt;ACCEPTED&lt;/span&gt; into the Debian archive. Kudos to the ftp-master team who are doing an awesome job reviewing new packages really fast.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Debian Continuous Integration&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This month I have made good progress with the changes needed to make debci work as a distributed system with one master/scheduler node and as many worker nodes (running tests) as possible.&lt;/p&gt;
+&lt;p&gt;While doing my tests, I have submitted a &lt;a href="https://lists.linuxcontainers.org/pipermail/lxc-devel/2015-July/012003.html"&gt;patch to lxc&lt;/a&gt; and updated  &lt;a href="https://tracker.debian.org/news/699950"&gt;autodep8&lt;/a&gt; in unstable. At some point I plan to upload both autodep8 and autopkgtest to jessie-backports.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Sponsoring&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I have sponsored a few packages:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;a href="https://tracker.debian.org/news/698263"&gt;ruby-rack-mount&lt;/a&gt;, &lt;a href="https://tracker.debian.org/news/698317"&gt;ruby-grape-entity&lt;/a&gt;, and &lt;a href="https://tracker.debian.org/news/698320"&gt;ruby-grape&lt;/a&gt; for Hleb Valoshka.&lt;/li&gt;
+	&lt;li&gt;&lt;a href="https://tracker.debian.org/news/689030"&gt;redir&lt;/a&gt; and &lt;a href="https://tracker.debian.org/news/698913"&gt;tmate&lt;/a&gt; &lt;a href="https://tracker.debian.org/news/701152"&gt;twice&lt;/a&gt; for Lucas Kanashiro.&lt;/li&gt;
+	&lt;li&gt;&lt;a href="https://lists.debian.org/debian-backports-changes/2015/08/msg00037.html"&gt;lxc to wheezy-backports&lt;/a&gt; for Christian Seiler.&lt;/li&gt;
+&lt;/ul&gt;</description><pubDate>Wed, 05 Aug 2015 01:13:18 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/elixir-in-debian-minidebconf-at-fisl-and-debian-ci-updates</link><guid>http://softwarelivre.org/terceiro/blog/elixir-in-debian-minidebconf-at-fisl-and-debian-ci-updates</guid></item><item><title>Upgrades to Jessie, Ruby 2.2 transition, and chef update</title><description>&lt;p&gt;Last month I started to track all the small Debian-related things that I do. My initial motivation was to be concious about how often I spend short periods of time working on Debian. Sometimes it&amp;#8217;s during lunch breaks, weekends, first thing in the morning before regular work, after I am done for the day with regular work, or even &lt;em&gt;during&lt;/em&gt; regular work, since I do have the chance of doing Debian work as part of my regular work occasionally.&lt;/p&gt;
+&lt;p&gt;Now that I have this information, I need to do something with it. So this is probably the first of monthly updates I will post about my Debian work. Hopefully it won&amp;#8217;t be the last.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Upgrades to Jessie&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I (finally) upgraded my two servers to Jessie. The first one, my home server, is a &lt;a href="http://www.compulab.co.il/utilite-computer/web/utilite-overview"&gt;Utilite&lt;/a&gt; which is a quite nice &lt;span class="caps"&gt;ARM&lt;/span&gt; box. It is silent and consumes very little power. The only problem I had with it is that the vendor-provided kernel is too old, so I couldn&amp;#8217;t upgrade udev, and therefore couldn&amp;#8217;t switch to systemd. I had to force systemv for now, until I can manage to upgrade the kernel and configure uboot to properly boot the official Debian kernel.&lt;/p&gt;
+&lt;p&gt;On my &lt;span class="caps"&gt;VPS&lt;/span&gt; things are way better. I was able to upgrade nicely, and it is now running a stock Jessie system.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;fixed https on ci.debian.net&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://bonedaddy.net/pabs3/"&gt;pabs&lt;/a&gt; had let me know on &lt;span class="caps"&gt;IRC&lt;/span&gt; of an issue with the &lt;span class="caps"&gt;TLS&lt;/span&gt; certificate for ci.debian.net, which took me a few iterations to get right. It was missing the intermediate certificates, and is now fixed. You can now enjoy &lt;a href="https://ci.debian.net"&gt;Debian CI under https&lt;/a&gt; .&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ruby 2.2 transition&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I was able to start the &lt;a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=789077"&gt;Ruby 2.2 transition&lt;/a&gt;, which has the goal of switch to Ruby 2.2 on unstable. The first step was updating &lt;a href="https://tracker.debian.org/news/690073"&gt;ruby-defaults&lt;/a&gt; adding support to build Ruby packgaes for both Ruby 2.1 and Ruby 2.2. This was followed by updates to gem2deb (&lt;a href="https://tracker.debian.org/news/689673"&gt;0.18&lt;/a&gt;, &lt;a href="https://tracker.debian.org/news/689674"&gt;0.18.1&lt;/a&gt;, &lt;a href="https://tracker.debian.org/news/690726"&gt;0.18.2&lt;/a&gt;, and &lt;a href="https://tracker.debian.org/news/692230"&gt;0.18.3&lt;/a&gt;) and &lt;a href="https://tracker.debian.org/news/690724"&gt;rubygems-integration&lt;/a&gt; . At this point, after a few rebuild requests only 50 out of 137 packages need to be looked at; some of them just use the default Ruby, so a rebuild once we switch the default will be enough to make it use Ruby 2.2, while others, specially Ruby libraries, will still need porting work or other fixes.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Updated the Chef stack&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;Bringing chef to the very latest upstream release into unstable was quite some work.&lt;/p&gt;
+&lt;p&gt;I had to update:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;ruby-columnize (0.9.0-1)&lt;/li&gt;
+	&lt;li&gt;ruby-mime-types (2.6.1-1)&lt;/li&gt;
+	&lt;li&gt;ruby-mixlib-log 1.6.0-1&lt;/li&gt;
+	&lt;li&gt;ruby-mixlib-shellout (2.1.0-1)&lt;/li&gt;
+	&lt;li&gt;ruby-mixlib-cli (1.5.0-1)&lt;/li&gt;
+	&lt;li&gt;ruby-mixlib-config (2.2.1-1)&lt;/li&gt;
+	&lt;li&gt;ruby-mixlib-authentication (1.3.0-2)&lt;/li&gt;
+	&lt;li&gt;ohai (8.4.0-1)&lt;/li&gt;
+	&lt;li&gt;chef-zero (4.2.2-1)&lt;/li&gt;
+	&lt;li&gt;ruby-specinfra (2.35.1-1)&lt;/li&gt;
+	&lt;li&gt;ruby-serverspec (2.18.0-1)&lt;/li&gt;
+	&lt;li&gt;chef (12.3.0-1)&lt;/li&gt;
+	&lt;li&gt;ruby-highline (1.7.2-1)&lt;/li&gt;
+	&lt;li&gt;ruby-safe-yaml (1.0.4-1)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In the middle I also had to package a new dependency, ruby-ffi-yajl, which was &lt;em&gt;very&lt;/em&gt; quickly &lt;span class="caps"&gt;ACCEPTED&lt;/span&gt; thanks to the awesome work of the ftp-master team.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Random bits&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;Sponsored a &lt;a href="https://tracker.debian.org/news/689030"&gt;upload of redir&lt;/a&gt; by Lucas Kanashiro&lt;/li&gt;
+	&lt;li&gt;&lt;a href="https://packages.debian.org/sid/chake"&gt;chake&lt;/a&gt;, a tool that I wrote for managing servers with chef but without a central chef server, got &lt;span class="caps"&gt;ACCEPTED&lt;/span&gt; into the official Debian archive.&lt;/li&gt;
+	&lt;li&gt;&lt;a href="https://packages.debian.org/sid/vagrant-lxc"&gt;vagrant-lxc&lt;/a&gt; , a vagrant plugin for using lxc as backend and lxc containters as development environments, was also &lt;span class="caps"&gt;ACCEPTED&lt;/span&gt; into unstable.&lt;/li&gt;
+	&lt;li&gt;I got the deprecated ruby-rack1.4 package &lt;a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=788643"&gt;removed from Debian&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><pubDate>Thu, 02 Jul 2015 20:26:42 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/upgrades-to-jessie-ruby-2.2-transition-and-chef-update</link><guid>http://softwarelivre.org/terceiro/blog/upgrades-to-jessie-ruby-2.2-transition-and-chef-update</guid></item><item><title>An introduction to the Debian Continuous Integration project</title><description>&lt;p&gt;Debian is a &lt;strong&gt;big&lt;/strong&gt; system. At the time of writing, looking at my local package list caches tells me that the unstable suite contains
+21306 source packages, and 42867 binary packages on amd64.  Between these 42867
+binary packages, there is an unthinkable number of inter-package dependencies.
+For example the  dependency graph of the &lt;a href="http://packages.debian.org/ruby"&gt;ruby&lt;/a&gt; packages
+contains other 20-something packages.&lt;/p&gt;
+&lt;p&gt;&lt;a href="/articles/0135/0342/debtree-ruby.png"&gt;&lt;img src="/articles/0135/0341/debtree-ruby.small.png" alt="" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;A new version of any of these packages can potentially break some functionality in the &lt;code&gt;ruby&lt;/code&gt; package.&lt;/p&gt;
+&lt;p&gt;And that dependency graph is very small. Looking at the dependency graph for,
+say, the &lt;code&gt;rails&lt;/code&gt; package will make your eyes bleed. I tried it here, and
+GraphViz needed a &lt;span class="caps"&gt;PNG&lt;/span&gt; image with 7653&amp;#215;10003 pixels to draw it. It ain&amp;#8217;t pretty.
+Installing rails on a clean Debian system will pull in another 109 packages as
+part of the dependency chain. Again, as new versions of those packages are
+uploaded the archive, there is a probability that a backwards-incompatible
+change, or even a bug fix which was being worked around, might make some
+funcionality in &lt;code&gt;rails&lt;/code&gt; stop working. Even if that probability is low for each
+package in the dependency chain, with enough packages the probability of &lt;em&gt;any&lt;/em&gt;
+of them causing problems for rails is quite high.&lt;/p&gt;
+&lt;p&gt;And still the &lt;code&gt;rails&lt;/code&gt; dependency chain is not that big. &lt;code&gt;libreoffice&lt;/code&gt; will pull
+in another 264 packages. &lt;code&gt;gnome&lt;/code&gt; will pull in 1311 dependencies, and &lt;code&gt;kde-full&lt;/code&gt;
+1320 (!).&lt;/p&gt;
+&lt;p&gt;With a system this big, problems &lt;em&gt;will&lt;/em&gt; arrive, and that&amp;#8217;s a fact of life. As
+developers, what we can do is try to spot these problems as early as possible,
+and fixing them in time to make a solid release with the high quality Debian is
+known for.&lt;/p&gt;
+&lt;p&gt;While automated testing is not the proverbial Silver Bullet of Software
+Engineering, it is an effective way of finding regressions.&lt;/p&gt;
+&lt;p&gt;Back in 2006, Ian Jackson started the development of
+&lt;a href="http://packages.debian.org/autopkgtest"&gt;autopkgtest&lt;/a&gt; as a tool to test Debian
+packages in their installed form (as opposed to testing packages using their
+source tree).&lt;/p&gt;
+&lt;p&gt;In 2011, the autopkgtest test suite format was proposed as a standard for the
+Debian project, in what we now know as the
+&lt;a href="http://dep.debian.net/deps/dep8/"&gt;&lt;span class="caps"&gt;DEP&lt;/span&gt;-8&lt;/a&gt; specification.&lt;/p&gt;
+&lt;p&gt;Since then, some maintainers such as myself started experimenting with &lt;span class="caps"&gt;DEP&lt;/span&gt;-8
+tests in their packages. There was an expectation in the air that someday,
+someone would run those tests for the entire archive, and that would be a
+precious source of QA information.&lt;/p&gt;
+&lt;p&gt;Durign the holiday break last year, I decided to give it a shot. I initially
+called the codebase &lt;code&gt;dep8&lt;/code&gt;. Later I renamed it to &lt;code&gt;debci&lt;/code&gt;, since it could
+potentially also run other other types of test suites in the future. Since
+early January, &lt;a href="http://ci.debian.net/"&gt;ci.debian.net&lt;/a&gt; run an instance of debci
+for the Debian Project.&lt;/p&gt;
+&lt;p&gt;The Debian continuous Integration will trigger tests at most 4 times a day, 3
+hours after each dinstall run. It will update a local &lt;span class="caps"&gt;APT&lt;/span&gt; cache and look for
+packages that declare a &lt;span class="caps"&gt;DEP&lt;/span&gt;-8 test suite. Each package with a test suite will
+then have its test suite executed if there was any change in its dependency chain
+since the last test run. Existing test results are published at
+&lt;a href="http://ci.debian.net/"&gt;ci.debian.net&lt;/a&gt; every hour, and at the end of each batch
+a &amp;#8220;global status&amp;#8221; is updated.&lt;/p&gt;
+&lt;p&gt;Maintainers can subscribe to a per package Atom feed to keep up with their
+package test results. People interested in the overall status can subscribe to
+a &lt;a href="http://ci.debian.net/data/feeds/all-packages.xml"&gt;global Atom feed&lt;/a&gt; of events.&lt;/p&gt;
+&lt;p&gt;Since the introduction of Debian CI in mid-January 2014, we have seen an amazing increase in
+the number of packages with test suites. We had little less than 200 packages
+with test suites back then, against around 350 now (early June 2014). The ratio
+of packages passing passing their test suite has also improved a lot, going
+from less than 50% to more than 75%.&lt;/p&gt;
+&lt;p&gt;&lt;img src="/articles/0135/3298/debian-ci-pass-fail.png" alt="" /&gt;&lt;/p&gt;
+&lt;p&gt;There is &lt;a href="http://ci.debian.net/doc/"&gt;documentation available&lt;/a&gt;, including a &lt;span class="caps"&gt;FAQ&lt;/span&gt;
+for package maintainers with further information about how the system works, how to declare test suites in their packages and
+how to reproduce test runs locally. Also available is development information
+about debci itself, to those inclined to help improve the system.&lt;/p&gt;
+&lt;p&gt;This is just the beginning. &lt;code&gt;debci&lt;/code&gt; is under a good rate of development, and
+you can expect to see a constant flux of improvements. In special, I would like
+to mention a few people who are giving amazing contributions to the project:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;Martin Pitt has been working on improving debci to support parallel and
+  distributed workers. Being the current autopkgtest maintainer, Martin also
+  already got some bug fixes and fixes into autopkgtest motivated by debci use
+  cases.&lt;/li&gt;
+	&lt;li&gt;Brandon Fairchild is a &lt;span class="caps"&gt;GSOC&lt;/span&gt; student working on improving the debci web
+  interface to provide more useful information, display information for
+  multiple suites and architectures, plus making the UI work even without
+  Javascript enabled.&lt;/li&gt;
+	&lt;li&gt;Lucas Kanashiro is another &lt;span class="caps"&gt;GSOC&lt;/span&gt; student, who is working on investigating
+  patterns among packages that fail their test suites, so that we can figure
+  out how we can fix them, or if there are classes of failures that are actually
+  caused by problems in the debci infrastructure.&lt;/li&gt;
+&lt;/ul&gt;</description><pubDate>Sun, 01 Jun 2014 17:11:46 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/an-introduction-to-the-debian-continuous-integration-project</link><guid>http://softwarelivre.org/terceiro/blog/an-introduction-to-the-debian-continuous-integration-project</guid></item><item><title>Ruby 2.0 released, with multiarch support^W^W^W^W</title><description>&lt;p&gt;&lt;a href="http://www.ruby-lang.org/en/news/2013/02/24/ruby-2-0-0-p0-is-released/"&gt;Ruby 2.0 was released&lt;/a&gt; today. This new version of the language brings some very interesting features, and according to the core team, an effort has been made to keep source level compartibility with Ruby 1.9.&lt;/p&gt;
+&lt;p&gt;Debian packaging &lt;a href="http://anonscm.debian.org/gitweb/?p=collab-maint/ruby2.0.git;a=summary"&gt;is under way&lt;/a&gt; and should hit &lt;span class="caps"&gt;NEW&lt;/span&gt; soon. During the last few days I gave more attention to getting the new multiarch support &lt;a href="http://bugs.ruby-lang.org/issues/7874"&gt;fixed&lt;/a&gt; &lt;a href="http://bugs.ruby-lang.org/issues/7874"&gt;upstream&lt;/a&gt; than to the packaging bits, but the remaining packaging work should be pretty much about housekeeping.&lt;/p&gt;
+&lt;p&gt;Next steps from a Debian point of view (after Wheezy is out) include:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;add Ruby 2.0 support in gem2deb (should be trivial).&lt;/li&gt;
+	&lt;li&gt;check what packages need fixing to support Ruby 2.0, and which are broken beyond repair.&lt;/li&gt;
+	&lt;li&gt;figure out how to better exploit a multiarch-enabled Ruby.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now let&amp;#8217;s get back to fixing &lt;a href="http://udd.debian.org/bugs.cgi?release=wheezy_and_sid&amp;amp;amp;patch=ign&amp;amp;amp;merged=ign&amp;amp;amp;done=ign&amp;amp;amp;fnewerval=7&amp;amp;amp;rc=1&amp;amp;amp;sortby=id&amp;amp;amp;sorto=asc&amp;amp;amp;ctags=1&amp;amp;amp;ctags=1&amp;amp;amp;cdeferred=1"&gt;RC bugs&lt;/a&gt; and getting Wheezy released. :-)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;span class="caps"&gt;UPDATE&lt;/span&gt; 2013-03-06:&lt;/strong&gt; actually the multiarch support is broken in 2.0.0, and the bugs I reported were only fixed in trunk. I will probably backport those fixes in the Debian package.&lt;/p&gt;</description><pubDate>Sun, 24 Feb 2013 15:31:48 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/ruby-2.0-released-with-multiarch-supportwwww</link><guid>http://softwarelivre.org/terceiro/blog/ruby-2.0-released-with-multiarch-supportwwww</guid></item><item><title>Debian e o horário de verão na Bahia e no Tocantins</title><description>&lt;p&gt;À meia noite deste Sábado, uma parte do Brasil vai adiantar os seus relógios em uma hora. De última hora, aconteceram alguma &lt;a href="http://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/decreto/d7826.htm"&gt;mudanças&lt;/a&gt; no horário de verão: a Bahia não vai mais participar, e o Tocantins passa a participar. Existe uma certa polêmica ainda, o Tocantins tentando sair, mas a sua participação no horário de verão está no decreto oficial.&lt;/p&gt;
+&lt;p&gt;Uma grande parte dos sistemas operacionais, Debian inclusive, utiliza uma base de dados chamada &lt;a href="http://www.iana.org/time-zones"&gt;tzdata&lt;/a&gt; para atualizar seus relógios automaticamente com a chegada do horário de verão, e toda vez que os políticos resolvem alterar as regras, essa base de dados precisa ser alterada.&lt;/p&gt;
+&lt;p&gt;No Debian, Rogério Bastos relatou o &lt;a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=690606"&gt;bug #690606&lt;/a&gt; alertando para a mudança nas regras. Eu preparei um patch fazendo as mudanças necessárias. O Aurelien Jarno, um dos mantenedores do tzdata no Debian, atualizou o pacote incluindo esse patch tanto na distribuição Wheezy (testing) quanto na Squeeze (stable).&lt;/p&gt;
+&lt;p&gt;Então, pra atualizar as regras de horário de verão num sistema Debian, basta atualizar o seu sistema normalmente (&lt;em&gt;apt-get update &amp;amp;&amp;amp; apt-get dist-upgrade&lt;/em&gt;). No caso do Squeeze (stable), o repositório stable-updates precisa estar habilitado (ele está habilitado por default).&lt;/p&gt;
+&lt;p&gt;O pacote tzdata oficial ainda não foi atualizado para as mudanças do horário brasileiro de verão, mas o &lt;a href="http://mm.icann.org/pipermail/tz/attachments/20121020/78bc1e8d/brazil-dst-2012-changes.diff"&gt;patch&lt;/a&gt; utilizado no Debian já foi &lt;a href="http://mm.icann.org/pipermail/tz/2012-October/018363.html"&gt;submetido&lt;/a&gt; para a lista.&lt;/p&gt;</description><pubDate>Sat, 20 Oct 2012 12:13:09 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/debian-e-o-horario-de-verao-na-bahia-e-no-tocantins</link><guid>http://softwarelivre.org/terceiro/blog/debian-e-o-horario-de-verao-na-bahia-e-no-tocantins</guid></item><item><title>Debian Day 2012 em Salvador</title><description>&lt;p&gt;O evento foi muito bom, e teve uma participação razoável. Não fizemos uma contagem oficial, mas em alguns momentos acho que tínhamos umas 30 pessoas. Só de certificados eu assinei 12. As discussões foram interessantes, e espero que alguém tenha se empolgado para começar a contribuir com o Debian, e com o software livre em geral.&lt;/p&gt;
+&lt;p&gt;Seguem alguns links:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;a href="https://docs.google.com/folder/d/0BzulLGr_xbjGdlJpMXNkOEVYcXM/edit?pli=1"&gt;Fotos tiradas pelo Fabio Nogueira&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://softwarelivre.org/terceiro/files/ddssa2012-abertura.pdf"&gt;slides de abertura&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;slides da palestra de Alex, &lt;a href="http://www.slideshare.net/alexoslabs/de-volta-as-origens-um-overview-sobre-a-relao-entre-o-debian-e-o-ubuntu"&gt;De volta as origens&amp;#8230; Um overview sobre a relação entre o Debian e o Ubuntu&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;slides da minha palestra, &lt;a href="http://softwarelivre.org/terceiro/files/ddssa2012-terceiro.pdf"&gt;Debian: 19 anos e contando&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://people.debian.org/~terceiro/ddssa2012.txt"&gt;lista de certificados de participação emitidos&lt;/a&gt; &amp;#8211; conforme descrito no corpo dos certificados&lt;/li&gt;
+&lt;/ul&gt;</description><pubDate>Sun, 19 Aug 2012 21:31:45 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/debian-day-2012-em-salvador</link><guid>http://softwarelivre.org/terceiro/blog/debian-day-2012-em-salvador</guid></item><item><title>Wheezy is Coming</title><description>&lt;p&gt;&lt;a href="http://lists.debian.org/debian-devel-announce/2012/06/msg00006.html"&gt;&lt;img src="http://softwarelivre.org/articles/0044/8477/Wheezy-is-Coming.jpg" alt="" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The original image (in wallpaper resolution) was made^Whacked by my friend &lt;a href="http://softwarelivre.org/aurium/blog/wheezy-is-coming"&gt;Aurélio&lt;/a&gt; .&lt;/p&gt;</description><pubDate>Thu, 28 Jun 2012 10:13:20 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/wheezy-is-coming</link><guid>http://softwarelivre.org/terceiro/blog/wheezy-is-coming</guid></item></channel></rss>

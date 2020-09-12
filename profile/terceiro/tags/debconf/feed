@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Conteúdo de Antonio Terceiro marcado com a tag "debconf"</title><link>http://softwarelivre.org/terceiro</link><description>Conteúdo de Antonio Terceiro marcado com a tag "debconf"</description><item><title>Debconf17</title><description>&lt;p&gt;I&amp;#8217;m back from Debconf17.&lt;/p&gt;
+&lt;p&gt;I gave a &lt;a href="https://debconf17.debconf.org/talks/34/"&gt;talk&lt;/a&gt; entitled &amp;#8220;Patterns for Testing Debian Packages&amp;#8221;, in which I presented a collection of 7 patterns I documented while pushing the &lt;a href="https://ci.debian.net/"&gt;Debian Continuous Integration&lt;/a&gt; project, and were published &lt;a href="https://softwarelivre.org/terceiro/blog/patterns-for-testing-debian-packages"&gt;in a 2016 paper&lt;/a&gt;. &lt;a href="http://meetings-archive.debian.net/pub/debian-meetings/2017/debconf17/patterns-for-testing-debian-packages.vp8.webm"&gt;Video recording&lt;/a&gt; and a &lt;a href="https://annex.debconf.org/debconf-share/debconf17/slides/34-patterns-for-testing-debian-packages.pdf"&gt;copy of the slides&lt;/a&gt; are available.&lt;/p&gt;
+&lt;p&gt;I also hosted the &lt;a href="https://debconf17.debconf.org/talks/35/"&gt;ci/autopkgtest BoF&lt;/a&gt; session, in which we discussed issues around the usage of autopkgtest within Debian, the CI system, etc. &lt;a href="http://meetings-archive.debian.net/pub/debian-meetings/2017/debconf17/ci-autopkgtest-bof.vp8.webm"&gt;Video recording is available&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Kudos for the Debconf video team for making the recordings available so quickly!&lt;/p&gt;</description><pubDate>Mon, 14 Aug 2017 17:27:06 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/debconf17</link><guid>http://softwarelivre.org/terceiro/blog/debconf17</guid></item><item><title>DebConf15, testing debian packages, and packaging the free software web</title><description>&lt;p&gt;This is my August update, and by the far the coolest thing in it is Debconf.&lt;/p&gt;
+&lt;h2&gt;Debconf15&lt;/h2&gt;
+&lt;p&gt;I don&amp;#8217;t get tired of saying it is the best conference I ever attended. First it&amp;#8217;s a mix of meeting both new people and old friends, having the chance to chat with people whose work you admire but never had a chance to meet before. Second, it&amp;#8217;s always quality time: an informal environment, interesting and constructive presentations and discussions.&lt;/p&gt;
+&lt;p&gt;This year the venue was again very nice. Another thing that was very nice was having so many kids and families. This was no coincidence, since this was the first DebConf in which there was organized childcare. As the community gets older, this a very good way of keeping those who start having kids from being alienated from the community. Of course, not being a parent yet I have no idea how actually hard is to bring small kids to a conference like DebConf. ;-)&lt;/p&gt;
+&lt;p&gt;I presented two talks:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;strong&gt;Tutorial: Functional Testing of Debian packages&lt;/strong&gt;, where I introduced the   basic concepts of &lt;span class="caps"&gt;DEP&lt;/span&gt;-8/autopkgtest, and went over several examples from my   packages giving tips and tricks on how to write functional tests for Debian packages.
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="http://meetings-archive.debian.net/pub/debian-meetings/2015/debconf15/Tutorial_functional_testing_of_Debian_packages.webm"&gt;Video recording&lt;/a&gt; (webm, ~470MB)&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://annex.debconf.org/debconf-share/debconf15/slides/173-tutorial-functional-testing-of-debian-packages.pdf"&gt;slides&lt;/a&gt; (&lt;span class="caps"&gt;PDF&lt;/span&gt;)&lt;/li&gt;
+	&lt;/ul&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Packaging the Free Software Web for the end user&lt;/strong&gt;, where I presented the motivation for, and the current state of &lt;a href="https://gitlab.com/shak"&gt;shak&lt;/a&gt;, a project I am working on to make it trivial for end users to install server side applications in Debian. I spent quite some hacking time during DebConf finishing a prototype of the shak web interface, which was demonstrated live in the talk (of course, as usual with live demos, not everything worked :-)).
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="http://meetings-archive.debian.net/pub/debian-meetings/2015/debconf15/Packaging_the_free_software_web_for_the_end_user.webm"&gt;Video recording&lt;/a&gt; (webm, ~450MB)&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://annex.debconf.org/debconf-share/debconf15/slides/174-packaging-the-free-software-web.pdf"&gt;slides&lt;/a&gt; (&lt;span class="caps"&gt;PDF&lt;/span&gt;)&lt;/li&gt;
+	&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There was also the now traditional Ruby BoF, where discussed the state and future of the Ruby ecosystem in Debian; and an &lt;em&gt;in promptu&lt;/em&gt; Ruby packaging workshop where we introduced the basics of packaging in general, and Ruby packaging specifically.&lt;/p&gt;
+&lt;p&gt;Besides shak, I was able to hack on a few cool things during DebConf:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;debci &lt;a href="https://tracker.debian.org/news/705444"&gt;has been updated&lt;/a&gt; with a first version of the code to produce britney hints files that block packages that fail their tests from migrating to testing. There are some issues to be sorted out together with the release team to make sure we don&amp;#8217;t block packages unecessarily, e.g. we don&amp;#8217;t want to block packages that never passed their test suite &amp;#8212; most the test suite, and not the package, is broken.&lt;/li&gt;
+	&lt;li&gt;while hacking I ended up &lt;a href="https://tracker.debian.org/news/706879"&gt;updating jquery&lt;/a&gt; to the newest version in the 1.x series, and in fact adopting it I guess. This allowed me to drop the embedded jquery copy I used to have in the shak repository, and since then I was able to &lt;a href="https://tracker.debian.org/news/708523"&gt;improve the build&lt;/a&gt; to produce an output that is identical, except for a build timestamp inside a comment and a few empty lines, to the one produced by upstream, without using grunt (.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Miscellaneous updates&lt;/h2&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;a href="https://wiki.debian.org/Teams/Ruby/Rails4.2"&gt;Rails 4.2 in unstable&lt;/a&gt;: in order to support Diaspora (currently in experimental), and an upcoming Gitlab package (&lt;span class="caps"&gt;WIP&lt;/span&gt;). This requires quite some updates, &lt;span class="caps"&gt;NEW&lt;/span&gt; packages, and also making sure that Redmine is updated to a new upstream version. I did a few updates as part of this effort:
+	&lt;ul&gt;
+		&lt;li&gt;rails 2:4.2.3-3&lt;/li&gt;
+		&lt;li&gt;ruby-arel 6.0.3-1&lt;/li&gt;
+		&lt;li&gt;ruby-coffee-script 2.4.1-1&lt;/li&gt;
+		&lt;li&gt;ruby-coffee-script-source 1.9.1.1-1&lt;/li&gt;
+		&lt;li&gt;ruby-commander 4.3.5-1&lt;/li&gt;
+		&lt;li&gt;ruby-execjs 2.4.0-1&lt;/li&gt;
+		&lt;li&gt;ruby-globalid 0.3.6-1&lt;/li&gt;
+		&lt;li&gt;ruby-jbuilder 2.3.1-1&lt;/li&gt;
+		&lt;li&gt;ruby-jquery-rails 4.0.4-2&lt;/li&gt;
+		&lt;li&gt;ruby-minitest 5.8.0-1&lt;/li&gt;
+		&lt;li&gt;ruby-multi-json 1.11.2-1&lt;/li&gt;
+		&lt;li&gt;ruby-rack-test 0.6.3-1&lt;/li&gt;
+		&lt;li&gt;ruby-sass-rails 5.0.3-1&lt;/li&gt;
+		&lt;li&gt;ruby-spring 1.3.6-1&lt;/li&gt;
+		&lt;li&gt;ruby-sprockets 3.3.0-1~exp2&lt;/li&gt;
+		&lt;li&gt;ruby-sprockets-rails 2.3.2-1~exp1&lt;/li&gt;
+		&lt;li&gt;ruby-sqlite3 1.3.10-1&lt;/li&gt;
+		&lt;li&gt;ruby-turbolinks 2.5.3-1&lt;/li&gt;
+	&lt;/ul&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="https://packages.debian.org/sid/rerun"&gt;rerun&lt;/a&gt; (&lt;span class="caps"&gt;NEW&lt;/span&gt;), a tool to launch commands and restart them on filesystem change. Very useful when writing sinatra/rack applications.&lt;/li&gt;
+	&lt;li&gt;vagrant: &lt;a href="https://tracker.debian.org/news/704807"&gt;new upstream relaese&lt;/a&gt;, supporting VirtualBox 5.0&lt;/li&gt;
+	&lt;li&gt;pinpoint: &lt;a href="https://tracker.debian.org/news/702727"&gt;new upstream release&lt;/a&gt;, ported to clutter-gst-3.0&lt;/li&gt;
+	&lt;li&gt;chake: &lt;a href="https://tracker.debian.org/news/703099"&gt;new upstream release&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;gem2deb: &lt;a href="https://tracker.debian.org/news/705442"&gt;new release&lt;/a&gt; with several improvements, and a &lt;a href="https://tracker.debian.org/news/705744"&gt;bug fix followup&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;chef: &lt;a href="https://tracker.debian.org/news/707798"&gt;fix installation of initscripts&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;pry: &lt;a href="https://tracker.debian.org/news/705748"&gt;fixed imcompatibility with new ruby-slop&lt;/a&gt; (RC bug)&lt;/li&gt;
+	&lt;li&gt;foodcritic: &lt;a href="https://tracker.debian.org/news/707794"&gt;fixed test suite run during build&lt;/a&gt; (RC bug)&lt;/li&gt;
+	&lt;li&gt;library updates:
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/702681"&gt;ruby-grape-logging&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/702726"&gt;ruby-hashie&lt;/a&gt; (2 RC bugs)&lt;/li&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/703189"&gt;ruby-listen&lt;/a&gt;: new upstream release, fixed test suite (RC bug)&lt;/li&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/703187"&gt;ruby-rspec-retry&lt;/a&gt;: new upstrean release, fixed test suite (RC bug)&lt;/li&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/703201"&gt;ruby-dbf&lt;/a&gt;: new upstream release (sponsored, work by Christopher Baines)&lt;/li&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/703348"&gt;ruby-bootstrap-sass&lt;/a&gt;: new upstream release + fixed to work on non-Rails apps&lt;/li&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/705538"&gt;ruby-rails-dom-testing&lt;/a&gt; (&lt;span class="caps"&gt;NEW&lt;/span&gt;, dependency for rails 4.2)&lt;/li&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/705535"&gt;ruby-rails-deprecated-sanitizer&lt;/a&gt; (&lt;span class="caps"&gt;NEW&lt;/span&gt;, dependency for rails 4.2)&lt;/li&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/707821"&gt;ruby-rmagick&lt;/a&gt; new upstream release&lt;/li&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/707988"&gt;ruby-uglifier&lt;/a&gt; new upstream release&lt;/li&gt;
+		&lt;li&gt;&lt;a href="https://tracker.debian.org/news/708814"&gt;ruby-cri&lt;/a&gt; (RC bug)
+		&lt;ul&gt;
+			&lt;li&gt;I was making source+arch:all uploads for a while, but this was my first ever source-only &lt;a href="https://buildd.debian.org/status/logs.php?pkg=ruby-cri&amp;amp;amp;ver=2.7.0-2"&gt;upload&lt;/a&gt; of an architecture-independent package to Debian, following the &lt;a href="https://lists.debian.org/debian-devel-announce/2015/08/msg00007.html"&gt;recent developments&lt;/a&gt; on the topic.&lt;/li&gt;
+		&lt;/ul&gt;&lt;/li&gt;
+	&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><pubDate>Sun, 30 Aug 2015 19:12:43 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/debconf15-testing-debian-packages-and-packaging-the-free-software-web</link><guid>http://softwarelivre.org/terceiro/blog/debconf15-testing-debian-packages-and-packaging-the-free-software-web</guid></item></channel></rss>

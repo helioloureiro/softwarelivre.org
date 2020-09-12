@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Amadeu A. Barbosa Júnior's contents tagged with "bug"</title><link>http://softwarelivre.org/amadeu</link><description>Amadeu A. Barbosa Júnior's contents tagged with "bug"</description><item><title>Problemas com tags ID3 em arquivos de áudio</title><description>&lt;p&gt;Entre downloads e uploads pela rede é comum se deparar com problemas com as &lt;a href="http://pt.wikipedia.org/wiki/ID3"&gt;tags ID3&lt;/a&gt; em seus arquivos de áudio. Não sei informar o quanto problemas desse tipo acontecem mais ao formato MP3, mas eu arriscaria dizer: em face da grande população de software proprietário de última categoria espalhado por aí que inserem tags proprietárias nos arquivos MP3 é bem provável que haja muito código mal implementado e assim acaba acontecendo de ter ID3tags corrompidas.&lt;/p&gt;
+&lt;h2&gt;Tags ID3 corrompidas vs. Players?&lt;/h2&gt;
+&lt;p&gt;Você pensa logo: é &lt;strong&gt;só&lt;/strong&gt; metadado. E é, mas certos tocadores (principalmente os proprietários) podem não funcionar como o esperado nesses casos. Um exemplo concreto que infelizmente eu uso: &lt;a href="http://www.apple.com/br/itunes"&gt;iTunes&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Sintoma no iTunes&lt;/h2&gt;
+&lt;p&gt;Você tenta adicionar sua música na biblioteca de músicas e simplesmente o player não o faz e não diz nada, nenhum erro no sistema de logs, nada, absolutamente &lt;strong&gt;nada&lt;/strong&gt;! Absurdo!&lt;/p&gt;
+&lt;h2&gt;Qual o problema?&lt;/h2&gt;
+&lt;p&gt;Execute em seu terminal:
+&lt;strong&gt;$ file seuarquivo.mp3&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Se você tiver uma saída parecida com:
+&lt;strong&gt;seuarquivo.mp3: Audio file with ID3 version 2.3.0, &lt;em&gt;contains: Audio file with ID3 version 2.4.0,&lt;/em&gt; contains: &lt;span class="caps"&gt;MPEG&lt;/span&gt; &lt;span class="caps"&gt;ADTS&lt;/span&gt;, layer &lt;span class="caps"&gt;III&lt;/span&gt;, v1, 128 kbps, 44.1 kHz, JntStereo&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Atente para a seguinte sequência de caracteres: &lt;strong&gt;contains: Audio file with ID3 version&lt;/strong&gt;. Em todos os meus arquivos com ID3 tags &lt;strong&gt;que funcionam&lt;/strong&gt; essa string não aparece fazendo um &amp;#8220;file&amp;#8221;.&lt;/p&gt;
+&lt;h2&gt;Solução&lt;/h2&gt;
+&lt;p&gt;Então eu recriei as ID3 tags fazendo:
+&lt;strong&gt;$ id3v2 -2 seuarquivo.mp3&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Nova saída do file:
+&lt;strong&gt;$ file seuarquivo.mp3
+seuarquivo.mp3: Audio file with ID3 version 2.3.0, contains: &lt;span class="caps"&gt;MPEG&lt;/span&gt; &lt;span class="caps"&gt;ADTS&lt;/span&gt;, layer &lt;span class="caps"&gt;III&lt;/span&gt;, v1, 128 kbps, 44.1 kHz, JntStereo&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Pacote debian: &lt;a href="http://packages.debian.org/lenny/id3v2"&gt;id3v2&lt;/a&gt;&lt;/p&gt;</description><pubDate>Mon, 26 Apr 2010 03:26:19 +0000</pubDate><link>http://softwarelivre.org/amadeu/blog/problemas-com-tags-id3-em-arquivos-de-audio</link><guid>http://softwarelivre.org/amadeu/blog/problemas-com-tags-id3-em-arquivos-de-audio</guid></item><item><title>Nvidia Geforce Go 6150 resolution problems in a Linux box</title><description>&lt;p&gt;Yesterday I noticed: my external video-output couldn&amp;#8217;t accept the 1600&amp;#215;1050 resolution anymore (magically because it worked some time ago). So I started some unsuccessful searches along the google to find a possible solution. But.. the google doesn&amp;#8217;t help me!&lt;/p&gt;
+&lt;p&gt;So I took more attention to my /var/log/Xorg.0.log and I see into it my video ram size reported wrong! My onboard video card just can provide 128MB of shared memory. But the Xorg log reported as 512MB! Uhhh, crazy! Another strange situation was about the &lt;span class="caps"&gt;EDID&lt;/span&gt;, my Xorg doesn&amp;#8217;t report the &lt;span class="caps"&gt;EDID&lt;/span&gt; of my 22&amp;quot; &lt;span class="caps"&gt;LCD&lt;/span&gt; TV-Monitor correctly anymore. I don&amp;#8217;t know why.&lt;/p&gt;
+&lt;p&gt;Then.. I just filled my /etc/X11/xorg.conf in the Device and Monitor section with:&lt;/p&gt;
+&lt;p&gt;Then.. I just filled my /etc/X11/xorg.conf in the Device and Monitor section with:&lt;code&gt;Section "Device"&lt;/code&gt;
+@    Identifier     &amp;quot;Device0&amp;quot;@
+@    Driver         &amp;quot;nvidia&amp;quot;@
+@    VendorName     &amp;#8220;&lt;span class="caps"&gt;NVIDIA&lt;/span&gt; Corporation&amp;#8221;@
+@    BoardName      &amp;#8220;GeForce Go 6150&amp;#8221;@
+@    VideoRam       131072@
+&lt;code&gt;EndSection&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Then.. I just filled my /etc/X11/xorg.conf in the Device and Monitor section with:&lt;code&gt;Section "Device"&lt;/code&gt;
+@    Identifier     &amp;quot;Device0&amp;quot;@
+@    Driver         &amp;quot;nvidia&amp;quot;@
+@    VendorName     &amp;#8220;&lt;span class="caps"&gt;NVIDIA&lt;/span&gt; Corporation&amp;#8221;@
+@    BoardName      &amp;#8220;GeForce Go 6150&amp;#8221;@
+@    VideoRam       131072@
+&lt;code&gt;EndSection&lt;/code&gt;&lt;code&gt;Section "Monitor"&lt;/code&gt;
+@    Identifier     &amp;quot;Monitor0&amp;quot;@
+@    VendorName     &amp;quot;Unknown&amp;quot;@
+@    ModelName      &amp;#8220;&lt;span class="caps"&gt;CRT&lt;/span&gt;-0&amp;#8221;@
+@    HorizSync       30.0 &amp;#8211; 75.0@
+@    VertRefresh     60.0@
+@    Option         &amp;#8220;Above&amp;#8221; &amp;quot; Monitor1&amp;quot;@
+&lt;code&gt;EndSection&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Then.. I just filled my /etc/X11/xorg.conf in the Device and Monitor section with:&lt;code&gt;Section "Device"&lt;/code&gt;
+@    Identifier     &amp;quot;Device0&amp;quot;@
+@    Driver         &amp;quot;nvidia&amp;quot;@
+@    VendorName     &amp;#8220;&lt;span class="caps"&gt;NVIDIA&lt;/span&gt; Corporation&amp;#8221;@
+@    BoardName      &amp;#8220;GeForce Go 6150&amp;#8221;@
+@    VideoRam       131072@
+&lt;code&gt;EndSection&lt;/code&gt;&lt;code&gt;Section "Monitor"&lt;/code&gt;
+@    Identifier     &amp;quot;Monitor0&amp;quot;@
+@    VendorName     &amp;quot;Unknown&amp;quot;@
+@    ModelName      &amp;#8220;&lt;span class="caps"&gt;CRT&lt;/span&gt;-0&amp;#8221;@
+@    HorizSync       30.0 &amp;#8211; 75.0@
+@    VertRefresh     60.0@
+@    Option         &amp;#8220;Above&amp;#8221; &amp;quot; Monitor1&amp;quot;@
+&lt;code&gt;EndSection&lt;/code&gt;After that the following metamode works again (finally!):&lt;/p&gt;
+&lt;p&gt;Then.. I just filled my /etc/X11/xorg.conf in the Device and Monitor section with:&lt;code&gt;Section "Device"&lt;/code&gt;
+@    Identifier     &amp;quot;Device0&amp;quot;@
+@    Driver         &amp;quot;nvidia&amp;quot;@
+@    VendorName     &amp;#8220;&lt;span class="caps"&gt;NVIDIA&lt;/span&gt; Corporation&amp;#8221;@
+@    BoardName      &amp;#8220;GeForce Go 6150&amp;#8221;@
+@    VideoRam       131072@
+&lt;code&gt;EndSection&lt;/code&gt;&lt;code&gt;Section "Monitor"&lt;/code&gt;
+@    Identifier     &amp;quot;Monitor0&amp;quot;@
+@    VendorName     &amp;quot;Unknown&amp;quot;@
+@    ModelName      &amp;#8220;&lt;span class="caps"&gt;CRT&lt;/span&gt;-0&amp;#8221;@
+@    HorizSync       30.0 &amp;#8211; 75.0@
+@    VertRefresh     60.0@
+@    Option         &amp;#8220;Above&amp;#8221; &amp;quot; Monitor1&amp;quot;@
+&lt;code&gt;EndSection&lt;/code&gt;After that the following metamode works again (finally!):&lt;code&gt;Option "metamodes" "CRT: 1680x1050 +0+0, DFP: nvidia-auto-select +200+1050"&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Then.. I just filled my /etc/X11/xorg.conf in the Device and Monitor section with:&lt;code&gt;Section "Device"&lt;/code&gt;
+@    Identifier     &amp;quot;Device0&amp;quot;@
+@    Driver         &amp;quot;nvidia&amp;quot;@
+@    VendorName     &amp;#8220;&lt;span class="caps"&gt;NVIDIA&lt;/span&gt; Corporation&amp;#8221;@
+@    BoardName      &amp;#8220;GeForce Go 6150&amp;#8221;@
+@    VideoRam       131072@
+&lt;code&gt;EndSection&lt;/code&gt;&lt;code&gt;Section "Monitor"&lt;/code&gt;
+@    Identifier     &amp;quot;Monitor0&amp;quot;@
+@    VendorName     &amp;quot;Unknown&amp;quot;@
+@    ModelName      &amp;#8220;&lt;span class="caps"&gt;CRT&lt;/span&gt;-0&amp;#8221;@
+@    HorizSync       30.0 &amp;#8211; 75.0@
+@    VertRefresh     60.0@
+@    Option         &amp;#8220;Above&amp;#8221; &amp;quot; Monitor1&amp;quot;@
+&lt;code&gt;EndSection&lt;/code&gt;After that the following metamode works again (finally!):&lt;code&gt;Option "metamodes" "CRT: 1680x1050 +0+0, DFP: nvidia-auto-select +200+1050"&lt;/code&gt;Great! My problem was solved. Probably there&amp;#8217;s a bizarre bug in the Nvidia proprietary driver! Anyway the NV free driver doesn&amp;#8217;t work with two monitors side-by-side (fist in 1600&amp;#215;1050 and second in 1280&amp;#215;800), so I must to use the proprietary driver unfortunately.&lt;/p&gt;</description><pubDate>Sun, 18 Oct 2009 11:42:09 +0000</pubDate><link>http://softwarelivre.org/amadeu/blog/nvidia-geforce-go-6150-resolution-problems-in-a-linux-box</link><guid>http://softwarelivre.org/amadeu/blog/nvidia-geforce-go-6150-resolution-problems-in-a-linux-box</guid></item><item><title>Melhorias na rede social do softwarelivre.org</title><description>&lt;p&gt;O &lt;a href="http://www.noosfero.com.br"&gt;Noosfero&lt;/a&gt; é uma ótima plataforma para rede social, permite uma grande gama de personalizações para cada instalação. Acredito que alguns recursos possíveis estão &lt;strong&gt;ausentes&lt;/strong&gt; ou &lt;strong&gt;apresentam problemas&lt;/strong&gt; ou eu &lt;strong&gt;não entendi como usar&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Então nesse post permanente vou listar o que já percebi e anotar as respectivas soluções/conclusões.&lt;/p&gt;
+&lt;p&gt;Aos poucos vou conversar com o pessoal do Noosfero e da &lt;span class="caps"&gt;ASL&lt;/span&gt; para descobrir as &amp;#8220;causas&amp;#8221; e &amp;#8220;soluções&amp;#8221; para esses problemas. Se você participa do desenvolvimento do Noosfero ou é da &lt;span class="caps"&gt;ASL&lt;/span&gt; ou sabe o porquê dessas coisas abaixo = &lt;strong&gt;por favor, deixe seu comentário&lt;/strong&gt;!&lt;/p&gt;
+&lt;ol&gt;
+	&lt;li&gt;botão de &amp;#8220;ajuda&amp;#8221; não é apresentado&lt;/li&gt;
+	&lt;li&gt;os marcadores usados ao adicionar amigos não são úteis durante a &lt;a href="http://softwarelivre.org/myprofile/amadeu/friends"&gt;gerência das amizades&lt;/a&gt; nem possuem a mesma &lt;a href="http://softwarelivre.org/profile/amadeu/tag/softwarelivre"&gt;semântica das tags usadas no blog&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;del&gt;criação de temas não funciona: tentei criar temas personalizados com nomes &amp;#8220;myfirstpage&amp;#8221;, &amp;#8220;first&amp;#8221;, &amp;#8220;test&amp;#8221; e nenhum funcionou, o sistema volta à minha &lt;a href="http://softwarelivre.org/myprofile/amadeu/themes"&gt;página de temas&lt;/a&gt; sem mostrar o tema recém criado nem mesmo como editá-lo&lt;/del&gt;
+	&lt;ol&gt;
+		&lt;li&gt;&lt;strong&gt;bug resolvido&lt;/strong&gt;: a criação de temas está desabilitada no noosfero desse servidor e também havia um bug corrigido conforme http://softwarelivre.org/noosfero/blog/como-obter-posts-de-um-feed-externo-para-o-seu-blog-no-noosfero#comment-919&lt;/li&gt;
+	&lt;/ol&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;del&gt;publicação de um post em uma comunidade permite duplicação: após clicar em &amp;#8220;divulgar&amp;#8221; (= &amp;#8220;spread this&amp;#8221;) eu consigo mandar o mesmo post múltiplas vezes para uma mesma comunidade podendo causar um &lt;em&gt;flood&lt;/em&gt; de posts&lt;/del&gt;
+	&lt;ol&gt;
+		&lt;li&gt;&lt;strong&gt;errei&lt;/strong&gt;: não acontece &lt;em&gt;flood&lt;/em&gt; a menos que se mude o título!&lt;/li&gt;
+	&lt;/ol&gt;&lt;/li&gt;
+	&lt;li&gt;campos de comentários não permitem edição baseada em marcação &lt;a href="http://softwarelivre.org/amadeu/blog/o-que-e-textile"&gt;Textile&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;posts &lt;strong&gt;divulgados&lt;/strong&gt; são na verdade &lt;strong&gt;links&lt;/strong&gt; &lt;del&gt;&lt;strong&gt;copiados&lt;/strong&gt;&lt;/del&gt; mas não se atualizam &lt;strong&gt;com base&lt;/strong&gt; nas atualizações da entrada de blog que o &lt;i&gt;originou&lt;/i&gt;, mesmo depois de tentar &amp;#8220;divulgar&amp;#8221; (= &amp;#8220;spread this&amp;#8221;) pela segunda vez, permanecendo o primeiro conteúdo.
+	&lt;ol&gt;
+		&lt;li&gt;&lt;strong&gt;bug confirmado por Joenio&lt;/strong&gt;, veja mais abaixo na lista de bugs reportados!&lt;/li&gt;
+	&lt;/ol&gt;&lt;/li&gt;
+	&lt;li&gt;edição do &lt;strong&gt;título&lt;/strong&gt; de um post no meu blog causa uma &lt;strong&gt;publicação duplicada&lt;/strong&gt; (imaginando que já &amp;#8220;divulguei&amp;#8221; antes e estou querendo apenas &amp;#8220;atualizar minha divulgação&amp;#8221;). Se o ID do post (por exemplo esse aqui = 9599) fosse usado para &lt;strong&gt;divulgar&lt;/strong&gt; e não se &lt;strong&gt;copiasse&lt;/strong&gt; o post inteiro (incluindo o título) talvez tudo estivesse digamos.. &lt;strong&gt;conectado&lt;/strong&gt; !&lt;/li&gt;
+	&lt;li&gt;nuvem de tags não é apresentada no http://softwarelivre.org/profile/amadeu mas sim no http://softwarelivre.org/profile/amadeu/tags, independente de eu estar logado ou não&lt;/li&gt;
+	&lt;li&gt;não é possível adicionar/convidar pessoas para as comunidades, seria importante ter algo semelhante aos convites de amizades também na gerência de comunidades e empreendimentos. Eu verifiquei isso ao criar a comunidade http://softwarelivre.org/jamendo.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Bugs &lt;strong&gt;reportados&lt;/strong&gt;:&lt;/p&gt;
+&lt;ol&gt;
+	&lt;li&gt;http://www.colivre.coop.br/Noosfero/ActionItem1101 &amp;#8211; Marcação Textile não é convertida para &lt;span class="caps"&gt;HTML&lt;/span&gt; nas comunidades&lt;/li&gt;
+	&lt;li&gt;https://www.colivre.coop.br/Noosfero/ActionItem1109 &amp;#8211; Reference article not render content as expected (igual ao &lt;strong&gt;1101&lt;/strong&gt;)&lt;/li&gt;
+	&lt;li&gt;http://www.colivre.coop.br/Noosfero/ActionItem1099 &amp;#8211; Duplicação na adição de amigos causa tela branca&lt;/li&gt;
+	&lt;li&gt;http://www.colivre.coop.br/Noosfero/ActionItem1104 &amp;#8211; Nuvens de tags não apresentada na página do perfil&lt;/li&gt;
+	&lt;li&gt;http://www.colivre.coop.br/Noosfero/ActionItem1108 &amp;#8211; Cache of reference article is not expiring&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Bugs &lt;strong&gt;resolvidos&lt;/strong&gt;:&lt;/p&gt;
+&lt;ol&gt;
+	&lt;li&gt;&lt;em&gt;em breve&lt;/em&gt; ;-)&lt;/li&gt;
+&lt;/ol&gt;</description><pubDate>Mon, 08 Jun 2009 18:24:32 +0000</pubDate><link>http://softwarelivre.org/amadeu/blog/melhorias-na-rede-social-do-softwarelivre.org</link><guid>http://softwarelivre.org/amadeu/blog/melhorias-na-rede-social-do-softwarelivre.org</guid></item></channel></rss>

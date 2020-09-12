@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Conteúdo de Antonio Terceiro marcado com a tag "debian ci"</title><link>http://softwarelivre.org/terceiro</link><description>Conteúdo de Antonio Terceiro marcado com a tag "debian ci"</description><item><title>Debian CI: new data retention policy</title><description>&lt;p&gt;When I started &lt;a href="https://packages.debian.org/debci"&gt;debci&lt;/a&gt; for
+&lt;a href="https://ci.debian.net/"&gt;Debian CI&lt;/a&gt;, I went for the simplest thing that could
+possibly work. One of the design decisions was to use the filesystem directly
+for file storage. A large part of the Debian CI data is log files and test
+artifacts (which are just files), and using the filesystem directly for storage
+makes it a lot easier to handle it. The rest of the data which is structured
+(test history and status of packages) is stored as &lt;span class="caps"&gt;JSON&lt;/span&gt; files.&lt;/p&gt;
+&lt;p&gt;Another nice benefit of using the filesystem like this is that I get a sort of
+&lt;span class="caps"&gt;REST&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt; for free by just exposing &lt;a href="https://ci.debian.net/data/"&gt;the file storage&lt;/a&gt;
+to the web. For example, getting the latest test status of debci itself on
+unstable/amd64  is as easy as:&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;
+$ curl https://ci.debian.net/data/packages/unstable/amd64/d/debci/latest.json
+{
+  "run_id": "20170528_173652",
+  "package": "debci",
+  "version": "1.5.1",
+  "date": "2017-05-28 17:43:05",
+  "status": "pass",
+  "blame": [],
+  "previous_status": "pass",
+  "duration_seconds": "373",
+  "duration_human": "0h 6m 13s",
+  "message": "Tests passed, but at least one test skipped",
+  "last_pass_version": "1.5.1",
+  "last_pass_date": "2017-05-28 17:43:05"
+}
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Now, nothing in life is without compromises. One big disadvantage of the way
+debci stored its data is that there were &lt;strong&gt;a lot&lt;/strong&gt; of files, which ends up using
+a large number of inodes in the filesystem. The current Debian CI master has
+more than 10 million inodes in its filesystem, and almost all of them were
+being used. This is clearly unsustainable.&lt;/p&gt;
+&lt;p&gt;You will notice that I said &lt;em&gt;stored&lt;/em&gt;, because as of version 1.6, debci now
+implements a data retention policy: log files and test artifacts will now only
+be kept for a configurable amount of days (default: 180).&lt;/p&gt;
+&lt;p&gt;So there you have it: effective immediately, Debian CI will not provide logs
+and test artifacts older than 180 days.&lt;/p&gt;
+&lt;p&gt;If you are reporting bugs based on logs from Debian CI, please don&amp;#8217;t hotlink
+the log files. Instead, make sure you download the logs in question and attach
+them to the bug report, because in 6 months they will be gone.&lt;/p&gt;</description><pubDate>Sun, 28 May 2017 21:20:04 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/debian-ci-new-data-retention-policy</link><guid>http://softwarelivre.org/terceiro/blog/debian-ci-new-data-retention-policy</guid></item></channel></rss>

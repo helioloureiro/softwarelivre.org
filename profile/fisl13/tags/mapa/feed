@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Conteúdo de fisl13 marcado com a tag "mapa"</title><link>http://softwarelivre.org/fisl13</link><description>Conteúdo de fisl13 marcado com a tag "mapa"</description><item><title>Localize-se!</title><description>&lt;p&gt;Este ano as atividades do fisl tomam mais espaços na PUC-RS. Confira a localização dos prédios no Campus:&lt;img src="/articles/0045/5805/mapa-app-f.png" alt="" width="500"&gt;&lt;/p&gt;</description><pubDate>Tue, 24 Jul 2012 16:21:43 +0000</pubDate><link>http://softwarelivre.org/fisl13/noticias/localize-se</link><guid>http://softwarelivre.org/fisl13/noticias/localize-se</guid></item><item><title>¡Para ubicarse!</title><description>&lt;p&gt;Este año las actividades del fisl toman más espacios en la PUC-RS. Revisá la localización de los predios en el Campus:&lt;img src="/articles/0045/5805/mapa-app-f.png" alt="" width="500"&gt;&lt;/p&gt;</description><pubDate>Tue, 24 Jul 2012 17:42:36 +0000</pubDate><link>http://softwarelivre.org/fisl13/noticias/%C2%A1para-ubicarse</link><guid>http://softwarelivre.org/fisl13/noticias/%C2%A1para-ubicarse</guid></item><item><title>Cómo llegar</title><description>&lt;!-- css files --&gt;
+&lt;style type="text/css" media="screen"&gt;
+
+  #mapa-como-chegar {
+  	background-color:  #edf1fe;
+  	margin: 0px auto;
+  	padding: 0px;
+  	width: 500px;
+  }
+  
+  #mapa-como-chegar td,
+  #mapa-como-chegar div {
+  	color: #000000;
+  	font-family: Tahoma, Arial, sans-serif;
+  	font-size: 11px;
+  }
+  
+  #mapa-como-chegar tr:hover td {
+     background-color: transparent;
+  }
+  
+  #mapa-como-chegar #highlight-box {
+  	background-color: transparent;
+  	font-family: Tahoma, Arial, sans-serif;
+  }
+  
+  #mapa-como-chegar #highlight-box b {color: #00315c;}
+  
+  #mapa-como-chegar #highlight-box .small {padding-top: 2px; color: #40698c;}
+  
+  /* map box */
+  
+  #mapa-como-chegar #map-box {
+  	background-image: url(http://softwarelivre.org/articles/0042/0849/bg_loadingmap.gif);
+  	background-color: #edf1fe;
+  	font-family: Tahoma, Arial, sans-serif;
+  }
+  
+  #mapa-como-chegar #googlemap-container {
+  	margin: 5px 0px 5px 0px;
+  	background-color: #edf1fe;
+  	width: 490px;
+  }
+  
+  #mapa-como-chegar #googlemap-directions {
+  	display: none;
+  	border: solid 1px #56bbed;
+  	background-color: #ffffff;
+  	width: 475px;
+  	height: 180px;
+  	overflow:auto; 
+  	overflow-x:hidden;
+  	overflow-y:auto;
+  }
+
+&lt;/style&gt;
+	
+&lt;!-- custom css file for IE --&gt;
+&lt;!--[if lte IE 6]&gt;
+		&lt;link rel="stylesheet" type="text/css" href="http://softwarelivre.org/fisl13/ie-v2.css"&gt;
+	&lt;![endif]--&gt;
+&lt;!--[if IE 8]&gt;
+	&lt;link rel="stylesheet" type="text/css" href="http://softwarelivre.org/fisl13/ie8.css"&gt;
+&lt;![endif]--&gt;
+&lt;!-- end css files --&gt;
+
+&lt;script src="http://maps.google.com/maps?file=api&amp;amp;v=2&amp;amp;sensor=true&amp;amp;key=ABQIAAAACZGlzmHu1-BFj1FKnNqlyRSGizf7lmFvT1EyGAbyxP5ICrhpQxQBIWR0fl3f7KD88YTu-srca_t_pA" type="text/javascript"&gt;&lt;/script&gt;
+
+
+&lt;script type="text/javascript"&gt;
+
+	var map;
+	var gdir;
+
+	function setDirections(fromAddress, toAddress) {
+		gdir.load("from: " + fromAddress + " to: " + toAddress, { "locale": "pt_BR" });
+	}
+
+	function handleErrors(){
+		if (gdir.getStatus().code == G_GEO_UNKNOWN_ADDRESS) {
+			 alert("Nenhuma localização geográfica foi encontrada para o endereço especificado. Talvez o endereço seja muito novo ou esteja incorreto. Por favor verifique se está digitado corretamente.");
+		} else if (gdir.getStatus().code == G_GEO_SERVER_ERROR) {
+			 alert("Ocorreu um erro no processamento de sua busca. Por favor tente novamente agora ou mais tarde.");
+		} else if (gdir.getStatus().code == G_GEO_MISSING_QUERY) {
+			 alert("Você não especificou um endereço de origem.");
+		} else if (gdir.getStatus().code == G_GEO_BAD_KEY) {
+			 alert("O(s) termo(s) digitado(s) não é(são) válido(s). Por favor não utilize caracteres especiais.");
+		} else if (gdir.getStatus().code == G_GEO_BAD_REQUEST) {
+			 alert("Ocorreu um erro na sua solicitação. Por favor tente novamente agora ou mais tarde.");
+		} else if (gdir.getStatus().code == G_GEO_UNKNOWN_DIRECTIONS) {
+			alert("Verifique o endereço de origem digitado.");
+		} else {
+			alert("Um erro desconhecido ocorreu. Provavelmente algum problema de conexão. Tente novamente agora ou mais tarde.");
+		}
+	}
+	
+	function mapSearch(){
+		var f = document.mapsearch.from.value;
+		var t = document.mapsearch.to.value;
+		setDirections(f, t);
+		document.getElementById("googlemap-directions").style.display = "block";
+	}
+
+	function load() {
+		if (GBrowserIsCompatible()) {
+			map = new GMap2(document.getElementById("googlemap"));
+			map.setCenter(new GLatLng(-30.058787, -51.173544), 15);
+			map.addControl(new GLargeMapControl());
+			var mapControl = new GHierarchicalMapTypeControl();
+			map.addControl(mapControl);
+			gdir = new GDirections(map, document.getElementById("googlemap-directions"));
+			GEvent.addListener(gdir, "error", handleErrors);
+		}
+	}
+
+   jQuery(document).ready(function () {
+      load();
+   });
+&lt;/script&gt;
+
+&lt;div id="mapa-como-chegar"&gt;
+  &lt;table cellspacing="0" cellpadding="5" width="490px"&gt;
+    &lt;tr&gt;
+      &lt;td&gt;
+        &lt;div id="highlight-box"&gt;
+          &lt;img src="/articles/0042/0858/tit-minibox-rota.gif" alt="Como chegar ao fisl" title="Exibição de rota para chegar ao fisl"&gt;
+          &lt;table cellpadding="0" cellspacing="0" style="margin: 4px 0px 7px 0px"&gt;
+            &lt;form name="mapsearch" action="#"&gt;
+              &lt;tr&gt;
+                &lt;td&gt;&lt;b&gt;Ponto de partida: &lt;/b&gt;&lt;/td&gt;
+                &lt;td&gt;
+&lt;input size="27" id="fromAddress" name="from"&gt;  &lt;/td&gt;
+              &lt;/tr&gt;	
+              &lt;tr&gt;
+                &lt;td&gt;&lt;b&gt;Ponto de destino: &lt;/b&gt;&lt;/td&gt;
+                &lt;td&gt;
+                  &lt;input size="27" value="Av. Ipiranga, 6681 - Partenon, Porto Alegre - RS, 91530-000, BRA" id="toAddress" name="to"&gt; 
+				         &lt;a href="/articles/0042/0859/bt-minibox-ok.gif" border="0"&gt;&lt;/a&gt;
+                &lt;/td&gt;
+              &lt;/tr&gt;	
+            &lt;/form&gt;
+          &lt;/table&gt;
+          &lt;span class="small"&gt;&lt;b&gt;ATENÇÃO:&lt;/b&gt; Essas direções são apenas para fins de planejamento. Obras, trânsito intenso ou outros fatores podem fazer com que as condições das vias sejam diferentes dos resultados no mapa. Dados cartográficos ©2008 MapLink/Tele Atlas&lt;/span&gt;
+        &lt;/div&gt; 	&lt;!-- end highlight box --&gt;
+        &lt;div id="googlemap-container"&gt;
+          &lt;div id="googlemap" style="width: 490px; height: 350px"&gt;&lt;/div&gt;
+          &lt;br&gt;
+          &lt;div id="googlemap-directions"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;  &lt;!-- end mapa-como-chegar --&gt;</description><pubDate>Mon, 16 Apr 2012 18:58:14 +0000</pubDate><link>http://softwarelivre.org/fisl13/noticias/como-llegar</link><guid>http://softwarelivre.org/fisl13/noticias/como-llegar</guid></item></channel></rss>

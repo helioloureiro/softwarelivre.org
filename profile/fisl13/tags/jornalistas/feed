@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Conteúdo de fisl13 marcado com a tag "jornalistas"</title><link>http://softwarelivre.org/fisl13</link><description>Conteúdo de fisl13 marcado com a tag "jornalistas"</description><item><title>Credenciamento de Imprensa e Blog fisl13</title><description>Veículos de comunicação e Blogs interessados em cobrir o 13º Fórum Internacional Software Livre podem fazer o credenciamento.
+
+Os campos em vermelho são obrigatórios
+
+&lt;style type="text/css" media="screen"&gt;
+  #fisl13-press label.required,
+  #fisl13-press span.required {
+    color: #CC0000;
+    font-weight: bold;
+  }
+  #fisl13-press input.required {
+    border: 2px solid #CC0000;
+  }
+  #fisl13-press label.required {
+    display: inline-block;
+  }
+&lt;/style&gt;
+
+&lt;script type="text/javascript"&gt;
+  jQuery(function($) {
+    $(".required").each( function(index) {
+      $(this).after("&lt;span class='required'&gt;*&lt;/span&gt;");
+    });
+    $("form#fisl13-press").live('submit', function(data) {
+      var valid = true;
+      $("input.required").each(function(){
+        $(this).removeClass('required');
+      });
+      $(".required").each( function(index) {
+        var input = '#' + $(this).attr("for");
+        if ($(input).val() == "") {
+          valid = false;
+          display_notice('O campo ' + $(this).html() + ' precisa ser preenchido');
+          $(input).addClass('required').focus();
+          return false;
+        }
+      });
+      return valid;
+    });
+  });
+&lt;/script&gt;
+
+&lt;form id="fisl13-press" action="%7Bsendemail%7D" method="post"&gt;
+  &lt;input type="hidden" name="to" value="mariel@softwarelivre.org"&gt;
+  &lt;input type="hidden" name="subject" value="Credenciamento de Imprensa e Blog fisl13"&gt;
+  &lt;input type="hidden" name="message" value="Credenciamento de Imprensa e Blog fisl13"&gt;
+  &lt;div class="formfieldline"&gt;
+    &lt;label class="formlabel required" for="fisl13_nome"&gt;Nome&lt;/label&gt;
+    &lt;div class="formfield type-text"&gt;&lt;input id="fisl13_nome" name="Nome" size="40" type="text"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="formfieldline"&gt;
+    &lt;label class="formlabel required" for="fisl13_veiculo"&gt;Veículo&lt;/label&gt;
+    &lt;div class="formfield type-text"&gt;&lt;input id="fisl13_veiculo" name="Veículo" size="40" type="text"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="formfieldline"&gt;
+    &lt;label class="formlabel required" for="fisl13_tipo_veiculo"&gt;Tipo de Veículo&lt;/label&gt;
+    &lt;div class="formfield type-text"&gt;&lt;input id="fisl13_tipo_veiculo" name="Tipo de Veículo" size="40" type="text"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="formfieldline"&gt;
+    &lt;label class="formlabel" for="fisl13_editoria"&gt;Editoria/Coluna/Programa&lt;/label&gt;
+    &lt;div class="formfield type-text"&gt;&lt;input id="fisl13_editoria" name="Editoria/Coluna/Programa" size="40" type="text"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="formfieldline"&gt;
+    &lt;label class="formlabel" for="fisl13_cargo"&gt;Cargo&lt;/label&gt;
+    &lt;div class="formfield type-text"&gt;&lt;input id="fisl13_cargo" name="Cargo" size="40" type="text"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="formfieldline"&gt;
+    &lt;label class="formlabel required" for="fisl13_site"&gt;Website/Blog&lt;/label&gt;
+    &lt;div class="formfield type-text"&gt;&lt;input id="fisl13_site" name="Website/Blog" size="40" type="text"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="formfieldline"&gt;
+    &lt;label class="formlabel required" for="fisl13_email"&gt;e-Mail&lt;/label&gt;
+    &lt;div class="formfield type-text"&gt;&lt;input id="fisl13_email" name="Email" size="40" type="text"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="formfieldline"&gt;
+    &lt;label class="formlabel required" for="fisl13_telefone"&gt;Telefone&lt;/label&gt;
+    &lt;div class="formfield type-text"&gt;&lt;input id="fisl13_telefone" name="Telefone" size="10" type="text"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="formfieldline"&gt;
+    &lt;label class="formlabel required" for="fisl13_endereco"&gt;Endereço&lt;/label&gt;
+    &lt;div class="formfield type-text"&gt;&lt;input id="fisl13_endereco" name="Endereço" size="40" type="text"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="formfieldline"&gt;
+    &lt;label class="formlabel required" for="fisl13_cidade"&gt;Cidade&lt;/label&gt;
+    &lt;div class="formfield type-text"&gt;&lt;input id="fisl13_cidade" name="Cidade" size="40" type="text"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="formfieldline"&gt;
+    &lt;label class="formlabel required" for="fisl13_estado"&gt;Estado&lt;/label&gt;
+    &lt;div class="formfield type-text"&gt;&lt;input id="fisl13_estado" name="Estado" size="40" type="text"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="formfieldline"&gt;
+    &lt;label class="formlabel required" for="fisl13_pais"&gt;País&lt;/label&gt;
+    &lt;div class="formfield type-text"&gt;&lt;input id="fisl13_pais" name="País" size="40" type="text"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="button-bar"&gt;
+    &lt;input class="button with-text icon-send submit" name="commit" value="Enviar" type="submit"&gt;
+    &lt;br style="clear: left;"&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</description><pubDate>Tue, 17 Apr 2012 16:03:10 +0000</pubDate><link>http://softwarelivre.org/fisl13/credenciamento-de-imprensa-e-blog-fisl13</link><guid>http://softwarelivre.org/fisl13/credenciamento-de-imprensa-e-blog-fisl13</guid></item></channel></rss>
