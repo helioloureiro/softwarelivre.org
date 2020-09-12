@@ -1,0 +1,1131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" class="controller-content_viewer action-content_viewer-view_page template-default profile-type-is-community profile-name-is-android theme-sl-default">
+  <head>
+    <title>Instalando Plugin ADT e Hello World - Android </title>
+    <link rel="alternate" type="application/rss+xml" title="Desenvolvimento para o Android (smartphone e tablets)" href="http://softwarelivre.org/android/blog/feed" />
+    <!--<meta http-equiv="refresh" content="1"/>-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    
+
+      <meta name="description" content="Software Livre Brasil" />
+
+    <!-- site root -->
+    <meta property="noosfero:root" content=""/>
+
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    
+
+    <script src="/assets/application-1c0930e8f260aafbc74c4fad04079409.js"></script>
+
+  
+  
+<script src="/javascripts/plugins/pg_search/search.js"></script>
+<script src="/javascripts/plugins/pg_search/profile_search_block.js"></script>
+<script src="/assets/plugins/require_auth_to_comment/hide_comment_form-c3a3727ea301c62930e11aab20ae74d4.js"></script>
+<script src="/assets/plugins/require_auth_to_comment/jquery.livequery.min-d1fe96eb7788079f6e550db2b6610365.js"></script>
+<script src="/assets/plugins/orders/javascripts/locale-17eaae2c136082dab9da1d91648b6a7e.js"></script>
+<script src="/assets/plugins/orders/javascripts/toggle_edit-f9da47bc0223fac8e5e5174c6ea24413.js"></script>
+<script src="/assets/plugins/orders/javascripts/sortable-table-ba58eb377fc175eb1e374be63d5454a3.js"></script>
+<script src="/assets/plugins/orders/javascripts/help-14515dc2f741beaa4b3d121df366af0d.js"></script>
+<script src="/assets/plugins/orders/javascripts/orders-560e35746985dc40b97851b13705cb26.js"></script>
+<script src="/assets/plugins/html5_video/video-channel-6aca45f93220c0910d8273dd2368004e.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/locale-17eaae2c136082dab9da1d91648b6a7e.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/toggle_edit-f9da47bc0223fac8e5e5174c6ea24413.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/sortable-table-ba58eb377fc175eb1e374be63d5454a3.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/suppliers-35473b9ebd4b9e65027e1bafa94dfdcd.js"></script>
+<script src="/assets/plugins/event/event-b1013aca7ce3cf0d4d5e6e10dc1f05b2.js"></script>
+<script src="/assets/plugins/display_content/javascripts/jstree/_lib/jquery-1.8.3-09dfd3b315fe6b24fbc309e36f5d70c3.js"></script>
+<script src="/assets/plugins/display_content/javascripts/jstree/jquery.jstree-563d09f7e7938a8a2f4207bfe6d48dd3.js"></script>
+<script src="/assets/plugins/container_block/container_block-7eae56f79aa8da8b64941d18d2972c7b.js"></script>
+<script src="/assets/plugins/delivery/javascripts/delivery-da5b2dac737692db94d5bdc654586171.js"></script>
+<script src="/assets/plugins/products/javascripts/products-a4c860d8dbebe524d554f0b5564e0428.js"></script><script src="/designs/themes/sl-default/theme.js"></script><script>
+//<![CDATA[
+render_all_jquery_ui_widgets()
+//]]>
+</script>
+    <link rel="stylesheet" media="screen" href="/assets/application-e0072ababb97032fa1a5d95fa09d897c.css" />
+<link rel="stylesheet" media="screen" href="/designs/templates/default/stylesheets/style.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/icons/default/style-b3a500c1e17f47b010a70fdb0103012e.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/icons/pidgin/style-138f7bb59f9d26296632e82eae162877.css" />
+<link rel="stylesheet" media="screen" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/people_block/style-c340afe175b0045c7f8669073a428a1c.css" />
+<link rel="stylesheet" media="screen" href="/stylesheets/plugins/pg_search/style.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/recent_content/style-e0d5f807f7056b173f6cf113c840ddc0.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/custom_forms/style-7870704d75309d55ffcaa827c59baa18.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/work_assignment/style-526deb629c3d9e7736f049b99c72a50a.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/require_auth_to_comment/style-66a0efab118159977ca0194806ef4bec.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/orders/style-feb7767bc71e62563ccab53642a6e4c2.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/html5_video/style-8f2b70d373ff7ec22b404d91b1b6f211.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/suppliers/style-64c71b3cd22994ada93abd55c70ea1ce.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/gallery_block/style-4547593291c3fca2ad50216cbb3dfdc9.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/send_email/style-976778195cb106e52b31d57242cdc01c.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/event/style-8f5f6a9b5a7724dbc4977d11c2e4321c.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/display_content/style-cf10f47511255685485ac51859c22a29.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/container_block/style-dd17a810971259abe7c31678e9d9c132.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/video/style-68d51000d73adab06c1dcd036011138d.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/delivery/style-aeef749320f3cdff642340f047806f9b.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/sub_organizations/style-88810bb91c1c70f63817f6f03295fd92.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/products/style-3147a337d78ccc54df05870c504166fd.css" />
+<link rel="stylesheet" media="screen" href="/designs/themes/sl-default/global.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/themes/sl-default/style-f317a60b59d0ee3e8048cb6eba54b282.css" />
+
+    
+    
+
+    <script type="text/javascript">
+      DEFAULT_LOADING_MESSAGE = 'loading...';
+      PERMANENT_NOTIFICATIONS = false;
+      noosfero.profile = "android"
+    </script>
+
+      
+<script src="/assets/tinymce/js/tinymce/tinymce-666c93593f34cd23b1f1e9177ab27cae.js"></script><script src="/assets/tinymce/js/tinymce/jquery.tinymce.min-33361c760deadb5b77610a12911056f2.js"></script><script src="/assets/tinymce-4df3fc98953118b704cdb7a023aafdc2.js"></script>
+<script type="text/javascript">
+tinymce.create('tinymce.plugins.MacrosPlugin', {
+  createControl: function(n, cm) {
+    switch (n) {
+       case 'macros':
+    }
+    return null;
+  }
+});
+
+function tinymce_macros_setup(editor) {
+}
+
+// Register plugin with a short name
+tinymce.PluginManager.add('macrosPlugin', tinymce.plugins.MacrosPlugin);
+
+jQuery(document).ready(function () {
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"it","selector":".tiny_mce","toolbar1":"fullscreen | insertfile undo redo | copy paste | bold italic underline | styleselect fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image","menubar":"edit insert view tools","toolbar2":"print preview code media | table | macros","macros_setup":[]})
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"it","selector":".tiny_mce_simple","toolbar1":"fullscreen | insertfile undo redo | copy paste | bold italic underline | styleselect fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image","menubar":false,"toolbar2":null,"macros_setup":[]})
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"it","selector":".tiny_mce_restricted","toolbar1":"bold italic underline | link","menubar":false,"toolbar2":null,"macros_setup":[]})
+});
+</script>
+
+
+  </head>
+  <body class="controller-content_viewer action-content_viewer-view_page template-default">
+    <a href="#content" id="link-go-content"><span>Go to the content</span></a>
+    
+    <div id="global-header">
+      <!-- div class='supportbanner'>
+  <div class='content'>
+    <div class='banner-title'>Campanha de doação 2016</div>
+    <div class='banner-subtitle'>Ajude a <span class='asl'>ASL.Org</span> a realizar o <span class='fisl17'>FISL17</span>!</div>
+    <p>Ajude a Associação Software Livre.Org a continuar seu trabalho de 12 anos em prol do desenvolvimento e disseminação do Software Livre. Faça uma doação e ganhe um ingresso cortesia para o <span class='fisl17'>FISL17</span> e uma camiseta oficial do evento.</p>
+  </div>
+  <div class='footer-links'>
+    <a class='logo-fisl17' href='http://fisl.org.br' target='_blank'><span>fisl17</span></a>
+    <a class='logo-asl' href='http://asl.org' target='_blank'><span>ASL.org</span></a>
+    <a class='iot-fisl' href='http://segue.fisl17.softwarelivre.org' target='_blank'><span>Contribua para o fisl17</span></a>
+  </div>
+</div -->
+
+    </div>
+
+    <div id="wrap-1">
+      <div id="theme-header">
+        <div id="top">
+  <ul id="top-menu">
+    <li><a href="/"><span>Início</span></a></li>
+    <li><a id="submenu-people" href="/search/people"><span class="icon-menu-people">People</span></a><a class="up menu-submenu-trigger" id="submenu-people-trigger" onclick="toggleSubmenu(this, '', {&quot;More recent&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_recent&quot;},&quot;More active&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_active&quot;},&quot;More popular&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_popular&quot;}}); return false" href="#"><span>People menu</span></a></li>
+    <li><a id="submenu-communities" href="/search/communities"><span class="icon-menu-community">Communities</span></a><a class="up menu-submenu-trigger" id="submenu-communities-trigger" onclick="toggleSubmenu(this, '', {&quot;More recent&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_recent&quot;},&quot;More active&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_active&quot;},&quot;More popular&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_popular&quot;}}); return false" href="#"><span>Communities menu</span></a></li>
+    <li><a href="/profile/portal/events" id="submenu-events"><span class='icon-menu-events'>Events</span></a></li>
+    <li><a href="/doc"><span>Manual</span></a></li>
+    <li><a href="/portal/quem-somos" id="submenu-about"><span>About</span></a></li>
+  </ul>
+</div>
+
+      </div>
+      <div id="wrap-2">
+        <div id="user">
+    <span class='not-logged-in'>
+      <span class='login'><a id="link_login" onclick="return noosfero.modal.inline(&#39;#inlineLoginBox&#39;)" class="" href="/account/login"><i class="icon-menu-login"></i><strong>Login</strong></a></span>
+
+      <div id='inlineLoginBox' style='display: none;'>
+        <div class="login-box">
+
+<h2>Login</h2>
+
+
+
+
+<form action="/account/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="/st8abhDuOMOiWQqsrbbpPcCfmNd6x3jFH4WrQEVROdjo8xoyhi6AOGSkbQ0NqHHuJO0oFVn2rFJ8i+pXp7iNQ==" />
+
+     <div class="formfieldline"><label class="formlabel" for="main_user_login">Username / Email</label><div class="formfield type-text"><input id="main_user_login" onchange="this.value = convToValidLogin( this.value )" type="text" name="user[login]" /></div></div>
+
+     <div class="formfieldline"><label class="formlabel" for="user_password">Password</label><div class="formfield type-password"><input type="password" name="user[password]" id="user_password" /></div></div>
+
+     <div class='checkbox'>
+       <label>
+         <input type="checkbox" name="remember_me" id="remember_me" value="1" checked="checked" />
+         Keep me logged in
+       </label>
+     </div>
+
+     
+
+     <div class=" button-bar">
+       <input type="submit" name="commit" value="Log in" class="button with-text icon-login submit" />
+         <a class="button icon-close with-text modal-toggle modal-close" rel="deactivate" title="Cancel" href="#">&nbsp;<span>Cancel</span></a>
+<br style="clear: left;" /></div>
+</form>
+<div class=" button-bar">
+    <a class="button icon-add with-text" title="New user" href="/account/signup">&nbsp;<span>New user</span></a>
+
+    <a class="button icon-help with-text" title="I forgot my password!" href="/account/forgot_password">&nbsp;<span>I forgot my password!</span></a>
+<br style="clear: left;" /></div>
+</div><!-- end class="login-box" -->
+
+
+      </div>
+
+        <span class='or'>or</span> <span class='signup'><a href="/account/signup"><strong>Sign up</strong></a></span>
+    </span>
+  <form action="/search/articles" id="top-search" class="search_form clean" method="get">
+    <input name="query" size="15" title="Search..." onfocus="this.form.className='focused';" onblur="this.form.className=''" />
+    <div>Press <strong>Enter</strong> to send the search query.</div>
+    <script>
+//<![CDATA[
+jQuery("#user form input").hint();
+//]]>
+</script>
+  </form>
+</div><!-- end id="user" -->
+
+        <h1 id="site-title">
+          <a href="/"><span>Software livre Brasil</span></a>
+
+        </h1>
+        <div id="navigation">
+          <ul>
+            <div id="friends">
+<ul>
+  <li><a href="/portal"><span>+</span></a></li>
+  <li><a href="http://br-linux.org"><span>BR-Linux</span></a></li>
+  <li><a href="http://www.vivaolinux.com.br"><span>Viva o Linux</span></a></li>
+  <li><a href="http://www.revista.espiritolivre.org"><span>Revista Espírito Livre</span></a></li>
+  <li><a href="http://www.dicas-l.com.br"><span>Dicas-L</span></a></li>
+  <li><a href="http://www.sejalivre.org"><span>Seja Livre</span></a></li>
+  <li><a href="http://www.underlinux.com.br"><span>Under Linux</span></a></li>
+  <li><a href="http://www.sempreupdate.com.br"><span>Sempre Update</span></a></li>
+</ul>
+</div>
+<div id="external-links">
+<ul>
+  <li><a id="blogoosfero" title="Blogoosfero" href="http://blogoosfero.cc/software-livre" target="_blank"><span>Blogoosfero</span></a></li>
+  <li><a id="twitter" title="Twitter" href="https://twitter.com/PSLBrasil" target="_blank"><span>Twitter</span></a></li>
+  <li><a id="diaspora" title="Diaspora" href="https://diaspora.softwarelivre.org/u/pslbrasil" target="_blank"><span>Diaspora</span></a></li>
+  <li><a id="gnu-social" title="Quitter" href="https://quitter.se/pslbrasil" target="_blank"><span>Quitter</span></a></li>
+  <li><a id="feed" title="Feed" href="http://softwarelivre.org/portal/feed"><span>Feed</span></a></li>
+</ul>
+</div>
+
+          </ul>
+          <div id="navigation-end"></div>
+        </div><!-- end id="navigation" -->
+        <div id="content">
+          <div id="content-inner">
+  <div id="profile-header"><p><strong><a href="http://gynmobile.com/">Gyn Mobile</a> - </strong>Desenvolvimento para dispositivos móveis</p></div><div class="boxes" id="boxes"><div class="box box-3" id="box-64980"><div class="blocks">    <div class="block-outer"><div class="block members-block" id="block-123510" help="Clicking a member takes you to his/her homepage"><div class="block-inner-1"><div class="block-inner-2">
+<div class="block-header"><h3 class="block-title"><span>2 members</span></h3><h4 class="block-subtitle empty"><span></span></h4></div>
+
+<div>
+    <ul>
+      <div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/belleb/check_friendship" onclick="toggleSubmenu(this, 'Belle', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/belleb&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/belleb/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/belleb/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/belleb/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/belleb/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/belleb&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Isabele Barbosa" href="http://softwarelivre.org/belleb"><span class="profile-image"><img alt="Isabele Barbosa" title="" class=" photo" src="/image_uploads/0013/5672/IMG_20170317_084625_331_minor.jpg" /></span><span class="fn">Belle</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/felipeold/check_friendship" onclick="toggleSubmenu(this, 'Felipe Baptista', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/felipeold&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/felipeold/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/felipeold/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/felipeold/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/felipeold/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/felipeold&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Felipe Souza Baptista" href="http://softwarelivre.org/felipeold"><span class="profile-image"><img alt="Felipe Souza Baptista" title="" class=" photo" src="/image_uploads/0007/6697/536056_428357843911656_1307817367_n_minor.jpg" /></span><span class="fn">Felipe Baptista</span><span class="extra_info"></span></a></li></div>
+
+    </ul>
+  <br style="clear:both" />
+</div>
+<div class="block-footer-content"><a class="view-all" href="/profile/android/members#members-tab">Mostra Tutto</a>
+
+</div></div></div></div></div>
+</div></div>
+<div class="box box-2" id="box-64979"><div class="blocks">  <div class="block-outer"><div class="block profile-image-block" id="block-123507" help="This block presents the profile image"><div class="block-inner-1"><div class="block-inner-2"><div class="vcard">
+
+
+<div class="profile-big-image img-pic">
+  <div class="profile-big-image-inner1">
+    <div class="profile-big-image-inner2">
+      <a href="http://softwarelivre.org/android"><img alt="Android " title="" class=" logo" src="/image_uploads/0005/6034/3_big.jpg" />
+</a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="profile-info-options">
+  <ul>
+  <li>
+    <div class='join-leave-button require-login-popup'>
+    <a class="button icon-add with-text modal-toggle join-community" title="Join this community" href="/profile/android/join_not_logged">&nbsp;<span>Join this community</span></a>
+</div>
+
+<script>
+//<![CDATA[
+
+  noosfero.add_and_join.locales.leaveConfirmation = "Please confirm to leave the community 'Android '"
+
+//]]>
+</script>
+
+  </li>
+</ul>
+
+</div>
+</div><!-- end class="vcard" -->
+</div></div></div></div>
+
+    <div class="block-outer"><div class="block link-list-block" id="block-123508" help="This block can be used to create a menu of links. You can add, remove and update the links as you wish."><div class="block-inner-1"><div class="block-inner-2"><div class="block-header"><h3 class="block-title empty"><span></span></h3><h4 class="block-subtitle empty"><span></span></h4></div>
+
+
+
+<ul>
+    <li>
+      <a class="icon-ok" href="/profile/android">Página inicial</a>
+    </li>
+    <li>
+      <a class="icon-send" href="/profile/android/invite/friends">Convide amig@s</a>
+    </li>
+    <li>
+      <a class="icon-event" href="/profile/android/events">Agenda</a>
+    </li>
+    <li>
+      <a class="icon-forum" href="/android/forum">Fórum</a>
+    </li>
+    <li>
+      <a class="icon-edit" href="/android/blog">Blog</a>
+    </li>
+</ul>
+</div></div></div></div>
+
+    <div class="block-outer"><div class="block recent-documents-block" id="block-123509" help="This block lists your content most recently updated."><div class="block-inner-1"><div class="block-inner-2"><div class="block-header"><h3 class="block-title"><span>Recent content</span></h3><h4 class="block-subtitle empty"><span></span></h4></div>
+
+<ul>
+    <li><a href="http://softwarelivre.org/android/blog/instalando-plugin-adt-e-hello-world">Instalando Plugin ADT e Hello World</a></li>
+    <li><a href="http://softwarelivre.org/android/blog/configurando-apn-no-android">Configurando APN no Android</a></li>
+    <li><a href="http://softwarelivre.org/android/blog/instalando-android-sdk-2.0-no-windows">Instalando Android SDK 2.0 no Windows</a></li>
+    <li><a href="http://softwarelivre.org/android/forum">Fórum</a></li>
+</ul>
+<div class="block-footer-content">  <a href="/profile/android/sitemap">All content</a>
+</div></div></div></div></div>
+</div></div>
+<div class="box box-1" id="box-64978"><div class="blocks">  <div class="block-outer"><div class="block main-block" id="block-123506" help="This block presents the main content of your pages."><div class="block-inner-1"><div class="block-inner-2"><div class="main-content">
+<div id="article" class="text-article">
+
+
+
+<script type="text/javascript">
+    window.ONE_COMMENT = "One comment";
+    window.COMMENT_PLURAL = "comments";
+    window.NO_COMMENT_YET = "No comments yet";
+</script>
+
+  <div id="article-parent">
+    <a class="button icon-back with-text" title="Go back to Desenvolvime..." href="http://softwarelivre.org/android/blog">&nbsp;<span>Go back to Desenvolvime...</span></a>
+  </div>
+
+<div id="article-toolbar">
+  <div>
+  <div id="article-actions">
+
+    
+      <script>fullscreenPageLoad('#article')</script>
+    <a id="fullscreen-btn" onClick="toggle_fullwidth(&#39;#article&#39;)" class="button with-text icon-fullscreen" href="#" title="Go to full screen mode"><span>Full screen</span></a><a style="display: none;" id="exit-fullscreen-btn" onClick="toggle_fullwidth(&#39;#article&#39;)" class="button with-text icon-fullscreen" href="#" title="Exit full screen mode"><span>Exit full screen</span></a>
+
+
+
+
+
+
+      <a id="suggest-article-link" class="button with-text icon-suggest" href="/myprofile/android/cms/suggest_an_article"><span>Suggest an article</span></a>
+
+
+
+    
+
+    
+
+  </div>
+  <div id="article-header">
+    
+    
+      <h1 class="title">
+      Instalando Plugin ADT e Hello World
+  </h1>
+  <span class="publishing-info">
+  <span class="date">
+    Agosto 25, 2011 0:00
+  </span>
+  <span class="author">
+    , by Software Livre Brasil
+  </span>
+  <span class="comments">
+     - <a href="/android/blog/instalando-plugin-adt-e-hello-world#comments_list"><span class='comment-count hide'>13</span><span class='comment-count-write-out'>13 comments</span></a>
+  </span>
+
+<span class="followers-count">
+|
+    No one following this article yet.
+</span>
+
+</span>
+
+  <div id='article-sub-header'>
+      <div id="article-hits">
+        Viewed 1943 times 
+      </div>
+
+  </div>
+
+
+    
+  </div>
+</div>
+
+</div>
+
+
+
+  <div id="addThis">
+  <script type="text/javascript">
+    addthis_pub = 'ra-4d93d22a7a91a05f';
+    addthis_logo = '';
+    addthis_options = 'identica, twitter, www.facebook.com, favorites, email, delicious, tumblr, digg, slashdot, more';
+  </script>
+  <a href="http://www.addthis.com/bookmark.php" id="bt_addThis" target="_blank" onmouseover="return addthis_open(this, '', '[URL]')" onmouseout="addthis_close()" onclick="return addthis_sendto()"><img width="53" height="16" border="0" alt="" src="/images/bt-bookmark.gif" /></a>
+</div>
+
+
+  <div class="article-body article-body-text-article">
+    <p> </p>
+<p><span style="font-size: small;"><strong>Instalando o plugin ADT no Eclipse e criando um projeto Android</strong></span></p>
+<p>Para baixar e instalar o plugin ADT, siga os passos abaixo: </p>
+<p>1. Inicie o Eclipse, selecione Help &gt; Software Updates &gt; Find and Install..</p>
+<p>2. Na janela que aparece, selecione Search for new features to install e pressione Next.</p>
+<p>3. Pressione New Remote Site.</p>
+<p>4. Entre com um nome para o site remoto (Ex.: Android Plugin) e informe a seguinte URL: https://dl-ssl.google.com/android/eclipse/, Se tiver problemas com o https, utilize apenas o http: http://dl-ssl.google.com/android/eclipse/</p>
+<p>5. Pressione OK.</p>
+<p>6. Você verá o novo site adicionado e selecionado na lista de busca. Pressione Finish.</p>
+<p>7. O plugin ADT não é assinado, mas você pode aceitar a instalação de qualquer maneira clicando em Install All.</p>
+<p>8. Reinicie o Eclipse.</p>
+<p>9. Depois de reiniciar, atualize as preferências do Eclipse para apontar para o diretório do SDK:</p>
+<p> </p>
+<p>- Selecione Window &gt; Preferences… para abrir o painel de preferências. (Mac OS X: Eclipse &gt; Preferences) </p>
+<p>- Selecione Android no painel da esquerda. </p>
+<p>- Localize o diretório do SDK clicando em Browse… no campo SDK Location. </p>
+<p>- Pressione Apply, e depois OK.</p>
+<p> </p>
+<p><span style="font-size: small;"><strong>Criando um Projeto Android no Eclipse</strong></span></p>
+<p>1. Selecione File &gt; New &gt; Project</p>
+<p>2. Selecione Android &gt; Android Project, e pressione Next</p>
+<p>3. Selecione os conteúdos do projeto</p>
+<p>- Selecione Create new project in workspace para iniciar um novo código. Informe um nome para o projeto, para o pacote de base, para uma classe que estenderá Activity e um nome para a sua aplicação. (Uma classe Activity representa uma atividade, ou seja, qualquer coisa que o usuário pode fazer. Quase todas as atividades interagem com o usuário, então a classe Activity cria uma janela para você, na qual você pode colocar sua interface gráfica.) </p>
+<p>- Selecione Create new project from existing code para iniciar um projeto apartir de um código existente. Utilize esta opção se você deseja rodar qualquer exemplo incluído no SDK. As aplicações de exemplo estão no diretório samples/. </p>
+<p>- Selecione o diretório que contém o código existente e clique em OK. Se o diretório contém um arquivo manifest válido, o ADT preenche o nome do pacote, classe de atividade e aplicação para você. </p>
+<p>- Pressione Finish. </p>
+<p> </p>
+<p>O plugin ADT cria os seguintes arquivos para você: </p>
+<p>src/ Uma pasta contendo a classe de Activity </p>
+<p>res/ Uma classe com seus recursos </p>
+<p>AndroidManifest.xml O arquivo manifest do seu projeto.</p>
+<p> </p>
+<p><span style="font-size: small;"><strong>Depurar Aplicação</strong></span></p>
+<p>1. Selecione Run &gt; Open Run Dialog… ou Run &gt; Open Debug Dialog.</p>
+<p>2. Selecione Android Application na lista de projetos à esquerda e clique em New.</p>
+<p>3. Informe um nome para a sua configuração.</p>
+<p>4. Na aba Android, selecione o projeto e a classe de Activity.</p>
+<p>5. Na aba Emulator, defina as propriedades que conforme desejar.</p>
+<p>6. Você pode definir opções adicionais na aba Common.</p>
+<p>7. Pressione Apply para salvar a configuração, ou Run ou Debug como for mais apropriado.</p>
+<p> </p>
+<p>Agora você já pode rodar e depurar sua aplicação. Basta selecionar Run &gt; Run ou Run &gt; Debug. O ato de rodar ou depurar uma aplicação, dispara as seguintes ações: </p>
+<p>- Inicia o emulador, caso não esteja rodando. </p>
+<p>- Compila o projeto, se houveram mudanças desde a última compilação, e instala a aplicação no emulador.</p>
+<p> </p>
+<p><span style="font-size: small;"><strong>Hello Android</strong></span></p>
+<p>Nesse pequeno tutorial, será demonstrado o tradicional hello world. </p>
+<p>Bom, primeiramente iremos criar o nosso projeto android. </p>
+<p>- File &gt; New &gt; Android Project; </p>
+<p>- Dê um nome para o seu projeto em Project Name (no exemplo foi usado OlaAndroid); </p>
+<p>- Escolha a configuração de pacote de sua preferência em Package Name (no exemplo foi usado com.portalandroid.olaandroid); </p>
+<p>- Dê um nome para a Atividade em Activity (no exemplo foi usado OlaAndroid); e por fim: </p>
+<p>- Digite o nome da sua aplicação em Application Name (no exemplo foi utilizado Olá Android), e clique em Finish. </p>
+<p>Com o projeto criado, vamos agora partir para o nosso primeiro hello Android. Esse por sua vez, é extremamente simples: </p>
+<p> </p>
+<p><strong><span style="font-size: small;">OlaAndroid.java </span></strong></p>
+<p>package com.portalandroid.olaandroid;</p>
+<p>import android.app.Activity;</p>
+<p>import android.os.Bundle;</p>
+<p>import android.widget.TextView;</p>
+<p>public class OlaAndroid extends Activity {</p>
+<p>    private String oi = "Olá Android =D";</p>
+<p>    @Override</p>
+<p>    public void onCreate(Bundle savedInstanceState){</p>
+<p>        super.onCreate(savedInstanceState);</p>
+<p>        TextView imprime = new TextView(this);</p>
+<p>        imprime.setText(oi);</p>
+<p>        setContentView(imprime);</p>
+<p>    }</p>
+<p>}</p>
+<p> </p>
+<p>Para compilar basta ir no menu Run &gt; Open Run Dialog... </p>
+<p>- Na tela que se abrirá, clique com o botão direito em cima do Android Application &gt; New; </p>
+<p>- A esqueda da mesma janela citada, dê um nome para a compilação (geralmente o mesmo nome da aplicação) no campo Name e clique em Browser logo abaixo; </p>
+<p>- Ao final, clique em Apply e Run!</p>
+<p> </p>
+    <br style="clear:both" />
+  </div> <!-- end class="article-body" -->
+
+
+
+
+
+
+
+  <div class="comments" id="comments_list">
+    <h3 >
+      <span class='comment-count hide'>11</span><span class='comment-count-write-out'>11 comments</span>
+    </h3>
+
+      <a class="display-comment-form" id="top-post-comment-button" onclick="jQuery(&#39;#page-comment-form .display-comment-form&#39;).first().click();" href="#">Post a comment</a>
+
+      <input type="hidden" name="page_url" id="page_url" value="/android/blog/instalando-plugin-adt-e-hello-world" />
+      <script src="/assets/comment_order-7cf8e091e4a17a8708f1ae727e7cac6c.js"></script>
+      <div class="comment-order">
+        <form id="form_order" action="/android" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+          <select name="comment_order" id="comment_order"><option selected="selected" value="oldest">Oldest first</option>
+<option value="newest">Newest first</option></select>
+</form>      </div>
+
+    <ul class="article-comments-list">
+        <li id="comment-23594" class="article-comment">
+  <div class="article-comment-inner">
+
+  <div class="comment-content comment-logged-out ">
+
+
+    <a target="_blank" class="comment-picture" title="aaron (utente non autenticato)" href="//www.gravatar.com/e92767562f91a14189d86e9573409122"><img onerror="gravatarCommentFailback(this)" data-gravatar="//www.gravatar.com/avatar/e92767562f91a14189d86e9573409122?only_path=false&amp;size=50" src="//www.gravatar.com/avatar/e92767562f91a14189d86e9573409122?only_path=false&amp;size=50&amp;d=404" alt="E92767562f91a14189d86e9573409122?only path=false&amp;size=50&amp;d=404" /><span class="comment-info">aaron</span><span class="comment-user-status icon-user-unknown">(utente non autenticato)</span></a>
+
+<div class="comment-balloon "><div class="comment-wrapper-1"><div class="comment-wrapper-2"><div class="comment-wrapper-3"><div class="comment-wrapper-4"><div class="comment-wrapper-5"><div class="comment-wrapper-6"><div class="comment-wrapper-7"><div class="comment-wrapper-8"><div class="comment-balloon-content">
+    <div class="comment-details">
+      <div class="comment-header">
+        <ul>
+</ul>
+<div class="comments-action-bar">
+    <a class="comment-footer comment-footer-link comment-footer-hide comment-actions-reply button" id="comment-reply-to-23594" title="Reply" href="#" onclick="var f = add_comment_reply_form(this, 23594); f.find(&#39;comment_title, textarea&#39;).val(&#39;&#39;); return false; return false;"></a>
+</div>
+
+      </div>
+
+      <div class="comment-created-at">
+        Ottobre 23, 2011 20:56
+      </div>
+      <h4>Great Post</h4>
+      <div class="comment-text">
+        <p/>
+        Great post, very informative will be back to read more.
+<br/>
+<a href="http://www.helpmestopsmoking.org.uk" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;help&#x200B;mest&#x200B;opsm&#x200B;okin&#x200B;g.or&#x200B;g.uk</a>
+      </div>
+      
+    </div>
+
+    <div class="comment_reply post_comment_box closed" id="comment_reply_to_23594">
+    </div>
+
+</div></div></div></div></div></div></div></div></div><br style="clear: both;" /></div>
+  </div>
+
+  <ul class="comment-replies">
+      <li id="comment-23785" class="article-comment">
+  <div class="article-comment-inner">
+
+  <div class="comment-content comment-logged-out ">
+
+
+    <a target="_blank" class="comment-picture" title="Fabio Brandespim (utente non autenticato)" href="//www.gravatar.com/97ec1223d9a5a580d39873554e1c2a32"><img onerror="gravatarCommentFailback(this)" data-gravatar="//www.gravatar.com/avatar/97ec1223d9a5a580d39873554e1c2a32?only_path=false&amp;size=50" src="//www.gravatar.com/avatar/97ec1223d9a5a580d39873554e1c2a32?only_path=false&amp;size=50&amp;d=404" alt="97ec1223d9a5a580d39873554e1c2a32?only path=false&amp;size=50&amp;d=404" /><span class="comment-info">Fabio Brandespim</span><span class="comment-user-status icon-user-unknown">(utente non autenticato)</span></a>
+
+<div class="comment-balloon "><div class="comment-wrapper-1"><div class="comment-wrapper-2"><div class="comment-wrapper-3"><div class="comment-wrapper-4"><div class="comment-wrapper-5"><div class="comment-wrapper-6"><div class="comment-wrapper-7"><div class="comment-wrapper-8"><div class="comment-balloon-content">
+    <div class="comment-details">
+      <div class="comment-header">
+        <ul>
+</ul>
+<div class="comments-action-bar">
+    <a class="comment-footer comment-footer-link comment-footer-hide comment-actions-reply button" id="comment-reply-to-23785" title="Reply" href="#" onclick="var f = add_comment_reply_form(this, 23785); f.find(&#39;comment_title, textarea&#39;).val(&#39;&#39;); return false; return false;"></a>
+</div>
+
+      </div>
+
+      <div class="comment-created-at">
+        Ottobre 26, 2011 11:40
+      </div>
+      <h4>Thanks!</h4>
+      <div class="comment-text">
+        <p/>
+        Soon I'll be posting how to use the sql-lite with the android.
+      </div>
+      
+    </div>
+
+    <div class="comment_reply post_comment_box closed" id="comment_reply_to_23785">
+    </div>
+
+</div></div></div></div></div></div></div></div></div><br style="clear: both;" /></div>
+  </div>
+
+
+  </div>
+</li>
+
+  </ul>
+
+  </div>
+</li>
+<li id="comment-23893" class="article-comment">
+  <div class="article-comment-inner">
+
+  <div class="comment-content comment-logged-out ">
+
+
+    <a target="_blank" class="comment-picture" title="Alen Coder (utente non autenticato)" href="//www.gravatar.com/b193706058be3c844d19b6c1b291fe2b"><img onerror="gravatarCommentFailback(this)" data-gravatar="//www.gravatar.com/avatar/b193706058be3c844d19b6c1b291fe2b?only_path=false&amp;size=50" src="//www.gravatar.com/avatar/b193706058be3c844d19b6c1b291fe2b?only_path=false&amp;size=50&amp;d=404" alt="B193706058be3c844d19b6c1b291fe2b?only path=false&amp;size=50&amp;d=404" /><span class="comment-info">Alen Coder</span><span class="comment-user-status icon-user-unknown">(utente non autenticato)</span></a>
+
+<div class="comment-balloon "><div class="comment-wrapper-1"><div class="comment-wrapper-2"><div class="comment-wrapper-3"><div class="comment-wrapper-4"><div class="comment-wrapper-5"><div class="comment-wrapper-6"><div class="comment-wrapper-7"><div class="comment-wrapper-8"><div class="comment-balloon-content">
+    <div class="comment-details">
+      <div class="comment-header">
+        <ul>
+</ul>
+<div class="comments-action-bar">
+    <a class="comment-footer comment-footer-link comment-footer-hide comment-actions-reply button" id="comment-reply-to-23893" title="Reply" href="#" onclick="var f = add_comment_reply_form(this, 23893); f.find(&#39;comment_title, textarea&#39;).val(&#39;&#39;); return false; return false;"></a>
+</div>
+
+      </div>
+
+      <div class="comment-created-at">
+        Ottobre 29, 2011 14:29
+      </div>
+      <h4>link building service</h4>
+      <div class="comment-text">
+        <p/>
+        Thanks for sharing this powerful article with us.  I've been doing some research for my own link building service business, and I found your article by accident.
+      </div>
+      
+    </div>
+
+    <div class="comment_reply post_comment_box closed" id="comment_reply_to_23893">
+    </div>
+
+</div></div></div></div></div></div></div></div></div><br style="clear: both;" /></div>
+  </div>
+
+
+  </div>
+</li>
+<li id="comment-24951" class="article-comment">
+  <div class="article-comment-inner">
+
+  <div class="comment-content comment-logged-out ">
+
+
+    <a target="_blank" class="comment-picture" title="Prix d&#39;un Timbre (utente non autenticato)" href="//www.gravatar.com/2136a70e4690c241a1b480899e3155a0"><img onerror="gravatarCommentFailback(this)" data-gravatar="//www.gravatar.com/avatar/2136a70e4690c241a1b480899e3155a0?only_path=false&amp;size=50" src="//www.gravatar.com/avatar/2136a70e4690c241a1b480899e3155a0?only_path=false&amp;size=50&amp;d=404" alt="2136a70e4690c241a1b480899e3155a0?only path=false&amp;size=50&amp;d=404" /><span class="comment-info">Prix d&#39;un Timbre</span><span class="comment-user-status icon-user-unknown">(utente non autenticato)</span></a>
+
+<div class="comment-balloon "><div class="comment-wrapper-1"><div class="comment-wrapper-2"><div class="comment-wrapper-3"><div class="comment-wrapper-4"><div class="comment-wrapper-5"><div class="comment-wrapper-6"><div class="comment-wrapper-7"><div class="comment-wrapper-8"><div class="comment-balloon-content">
+    <div class="comment-details">
+      <div class="comment-header">
+        <ul>
+</ul>
+<div class="comments-action-bar">
+    <a class="comment-footer comment-footer-link comment-footer-hide comment-actions-reply button" id="comment-reply-to-24951" title="Reply" href="#" onclick="var f = add_comment_reply_form(this, 24951); f.find(&#39;comment_title, textarea&#39;).val(&#39;&#39;); return false; return false;"></a>
+</div>
+
+      </div>
+
+      <div class="comment-created-at">
+        Novembre 16, 2011 22:49
+      </div>
+      <h4>great!!</h4>
+      <div class="comment-text">
+        <p/>
+        This is exactly what I have been looking for, with the MS TAG you get better clarity and don’t need to worry much about cleaning your lens all the time u need to shoot. I will come back to read more updates on this. <a href="http://www.prix-timbre.info" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;prix&#x200B;-tim&#x200B;bre.&#x200B;info</a>
+      </div>
+      
+    </div>
+
+    <div class="comment_reply post_comment_box closed" id="comment_reply_to_24951">
+    </div>
+
+</div></div></div></div></div></div></div></div></div><br style="clear: both;" /></div>
+  </div>
+
+
+  </div>
+</li>
+<li id="comment-25335" class="article-comment">
+  <div class="article-comment-inner">
+
+  <div class="comment-content comment-logged-out ">
+
+
+    <a target="_blank" class="comment-picture" title="stop snoring treatment (utente non autenticato)" href="//www.gravatar.com/74a343881da81f8707dc4acfa411b77c"><img onerror="gravatarCommentFailback(this)" data-gravatar="//www.gravatar.com/avatar/74a343881da81f8707dc4acfa411b77c?only_path=false&amp;size=50" src="//www.gravatar.com/avatar/74a343881da81f8707dc4acfa411b77c?only_path=false&amp;size=50&amp;d=404" alt="74a343881da81f8707dc4acfa411b77c?only path=false&amp;size=50&amp;d=404" /><span class="comment-info">stop snoring treatment</span><span class="comment-user-status icon-user-unknown">(utente non autenticato)</span></a>
+
+<div class="comment-balloon "><div class="comment-wrapper-1"><div class="comment-wrapper-2"><div class="comment-wrapper-3"><div class="comment-wrapper-4"><div class="comment-wrapper-5"><div class="comment-wrapper-6"><div class="comment-wrapper-7"><div class="comment-wrapper-8"><div class="comment-balloon-content">
+    <div class="comment-details">
+      <div class="comment-header">
+        <ul>
+</ul>
+<div class="comments-action-bar">
+    <a class="comment-footer comment-footer-link comment-footer-hide comment-actions-reply button" id="comment-reply-to-25335" title="Reply" href="#" onclick="var f = add_comment_reply_form(this, 25335); f.find(&#39;comment_title, textarea&#39;).val(&#39;&#39;); return false; return false;"></a>
+</div>
+
+      </div>
+
+      <div class="comment-created-at">
+        Novembre 23, 2011 10:23
+      </div>
+      <h4>This plugin release xml files</h4>
+      <div class="comment-text">
+        <p/>
+        This plugin release xml files from the android.jar files. Specifically, a XML editor can't open these files since they are in binary xml file. This plugin identify the binary xml file and open related file in SDK. The problem is only AndroidManifest.xml. ADT's Manifest editor associate to &quot;AndroidManifest.xml&quot; and open all files with this name. This editor can't open binary xml. It is bug in ADT.http://dredalat.com/treatment-of-snoring
+      </div>
+      
+    </div>
+
+    <div class="comment_reply post_comment_box closed" id="comment_reply_to_25335">
+    </div>
+
+</div></div></div></div></div></div></div></div></div><br style="clear: both;" /></div>
+  </div>
+
+  <ul class="comment-replies">
+      <li id="comment-25337" class="article-comment">
+  <div class="article-comment-inner">
+
+  <div class="comment-content comment-logged-out ">
+
+
+    <a target="_blank" class="comment-picture" title="stop snoring treatment (utente non autenticato)" href="//www.gravatar.com/74a343881da81f8707dc4acfa411b77c"><img onerror="gravatarCommentFailback(this)" data-gravatar="//www.gravatar.com/avatar/74a343881da81f8707dc4acfa411b77c?only_path=false&amp;size=50" src="//www.gravatar.com/avatar/74a343881da81f8707dc4acfa411b77c?only_path=false&amp;size=50&amp;d=404" alt="74a343881da81f8707dc4acfa411b77c?only path=false&amp;size=50&amp;d=404" /><span class="comment-info">stop snoring treatment</span><span class="comment-user-status icon-user-unknown">(utente non autenticato)</span></a>
+
+<div class="comment-balloon "><div class="comment-wrapper-1"><div class="comment-wrapper-2"><div class="comment-wrapper-3"><div class="comment-wrapper-4"><div class="comment-wrapper-5"><div class="comment-wrapper-6"><div class="comment-wrapper-7"><div class="comment-wrapper-8"><div class="comment-balloon-content">
+    <div class="comment-details">
+      <div class="comment-header">
+        <ul>
+</ul>
+<div class="comments-action-bar">
+    <a class="comment-footer comment-footer-link comment-footer-hide comment-actions-reply button" id="comment-reply-to-25337" title="Reply" href="#" onclick="var f = add_comment_reply_form(this, 25337); f.find(&#39;comment_title, textarea&#39;).val(&#39;&#39;); return false; return false;"></a>
+</div>
+
+      </div>
+
+      <div class="comment-created-at">
+        Novembre 23, 2011 10:31
+      </div>
+      <h4>http://dredalat.com/treatment-of-snoring</h4>
+      <div class="comment-text">
+        <p/>
+        ADT's associate editor to Manifest &quot;AndroidManifest.xml&quot; and open all files with this name. This editor can not open binary xml. It is bug in ADT.
+<p/>
+stop snoring treatment
+      </div>
+      
+    </div>
+
+    <div class="comment_reply post_comment_box closed" id="comment_reply_to_25337">
+    </div>
+
+</div></div></div></div></div></div></div></div></div><br style="clear: both;" /></div>
+  </div>
+
+
+  </div>
+</li>
+
+  </ul>
+
+  </div>
+</li>
+<li id="comment-25421" class="article-comment">
+  <div class="article-comment-inner">
+
+  <div class="comment-content comment-logged-in ">
+
+    <a class="comment-picture" title="rodr1go" href="http://softwarelivre.org/rodr1go"><img src="/image_uploads/0003/5450/rodrigo_perfil_minor.png" alt="Rodrigo perfil minor" /><span class="comment-info">rodr1go</span></a>
+
+<div class="comment-balloon "><div class="comment-wrapper-1"><div class="comment-wrapper-2"><div class="comment-wrapper-3"><div class="comment-wrapper-4"><div class="comment-wrapper-5"><div class="comment-wrapper-6"><div class="comment-wrapper-7"><div class="comment-wrapper-8"><div class="comment-balloon-content">
+    <div class="comment-details">
+      <div class="comment-header">
+        <ul>
+</ul>
+<div class="comments-action-bar">
+    <a class="comment-footer comment-footer-link comment-footer-hide comment-actions-reply button" id="comment-reply-to-25421" title="Reply" href="#" onclick="var f = add_comment_reply_form(this, 25421); f.find(&#39;comment_title, textarea&#39;).val(&#39;&#39;); return false; return false;"></a>
+</div>
+
+      </div>
+
+      <div class="comment-created-at">
+        Novembre 24, 2011 3:33
+      </div>
+      <h4>Olá pessoal</h4>
+      <div class="comment-text">
+        <p/>
+        Gostaria de anunciar a segunda versão da SourceBrasil, caso alguém necessite de assistência com android, temos um canal no irc para isso, o site é  <a href="http://www.sourcebrasil.org" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;sour&#x200B;cebr&#x200B;asil&#x200B;.org</a>
+      </div>
+      
+    </div>
+
+    <div class="comment_reply post_comment_box closed" id="comment_reply_to_25421">
+    </div>
+
+</div></div></div></div></div></div></div></div></div><br style="clear: both;" /></div>
+  </div>
+
+
+  </div>
+</li>
+<li id="comment-26903" class="article-comment">
+  <div class="article-comment-inner">
+
+  <div class="comment-content comment-logged-out ">
+
+
+    <a target="_blank" class="comment-picture" title="Prix Timbre (utente non autenticato)" href="//www.gravatar.com/4096edf2421288a0a83db4828842417f"><img onerror="gravatarCommentFailback(this)" data-gravatar="//www.gravatar.com/avatar/4096edf2421288a0a83db4828842417f?only_path=false&amp;size=50" src="//www.gravatar.com/avatar/4096edf2421288a0a83db4828842417f?only_path=false&amp;size=50&amp;d=404" alt="4096edf2421288a0a83db4828842417f?only path=false&amp;size=50&amp;d=404" /><span class="comment-info">Prix Timbre</span><span class="comment-user-status icon-user-unknown">(utente non autenticato)</span></a>
+
+<div class="comment-balloon "><div class="comment-wrapper-1"><div class="comment-wrapper-2"><div class="comment-wrapper-3"><div class="comment-wrapper-4"><div class="comment-wrapper-5"><div class="comment-wrapper-6"><div class="comment-wrapper-7"><div class="comment-wrapper-8"><div class="comment-balloon-content">
+    <div class="comment-details">
+      <div class="comment-header">
+        <ul>
+</ul>
+<div class="comments-action-bar">
+    <a class="comment-footer comment-footer-link comment-footer-hide comment-actions-reply button" id="comment-reply-to-26903" title="Reply" href="#" onclick="var f = add_comment_reply_form(this, 26903); f.find(&#39;comment_title, textarea&#39;).val(&#39;&#39;); return false; return false;"></a>
+</div>
+
+      </div>
+
+      <div class="comment-created-at">
+        Dicembre 7, 2011 23:50
+      </div>
+      <h4>Prix Timbre</h4>
+      <div class="comment-text">
+        <p/>
+        I appreciate the helpful information. Personally, I always leave a useful comment. I get plenty of useless, spammy comments on my own site that I have to get rid of.
+<br/>
+<a href="http://www.prix-des-timbres.info" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;prix&#x200B;-des&#x200B;-tim&#x200B;bres&#x200B;.inf&#x200B;o</a>
+      </div>
+      
+    </div>
+
+    <div class="comment_reply post_comment_box closed" id="comment_reply_to_26903">
+    </div>
+
+</div></div></div></div></div></div></div></div></div><br style="clear: both;" /></div>
+  </div>
+
+
+  </div>
+</li>
+<li id="comment-36690" class="article-comment">
+  <div class="article-comment-inner">
+
+  <div class="comment-content comment-logged-out ">
+
+
+    <a target="_blank" class="comment-picture" title="skyebug77 (utente non autenticato)" href="//www.gravatar.com/e29ea14d873e9717da2c7d11c13f3228"><img onerror="gravatarCommentFailback(this)" data-gravatar="//www.gravatar.com/avatar/e29ea14d873e9717da2c7d11c13f3228?only_path=false&amp;size=50" src="//www.gravatar.com/avatar/e29ea14d873e9717da2c7d11c13f3228?only_path=false&amp;size=50&amp;d=404" alt="E29ea14d873e9717da2c7d11c13f3228?only path=false&amp;size=50&amp;d=404" /><span class="comment-info">skyebug77</span><span class="comment-user-status icon-user-unknown">(utente non autenticato)</span></a>
+
+<div class="comment-balloon "><div class="comment-wrapper-1"><div class="comment-wrapper-2"><div class="comment-wrapper-3"><div class="comment-wrapper-4"><div class="comment-wrapper-5"><div class="comment-wrapper-6"><div class="comment-wrapper-7"><div class="comment-wrapper-8"><div class="comment-balloon-content">
+    <div class="comment-details">
+      <div class="comment-header">
+        <ul>
+</ul>
+<div class="comments-action-bar">
+    <a class="comment-footer comment-footer-link comment-footer-hide comment-actions-reply button" id="comment-reply-to-36690" title="Reply" href="#" onclick="var f = add_comment_reply_form(this, 36690); f.find(&#39;comment_title, textarea&#39;).val(&#39;&#39;); return false; return false;"></a>
+</div>
+
+      </div>
+
+      <div class="comment-created-at">
+        Gennaio 30, 2012 20:43
+      </div>
+      <h4>Thanks</h4>
+      <div class="comment-text">
+        <p/>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dictum nulla ac erat auctor vel lobortis justo pretium. Nam ligula magna, malesuada non gravida quis, luctus et nisi. Integer non neque arcu, sed porta elit. Maecenas sollicitudin vehicula sapien vel condimentum. In hac habitasse platea dictumst. los vazquez sounds
+      </div>
+      
+    </div>
+
+    <div class="comment_reply post_comment_box closed" id="comment_reply_to_36690">
+    </div>
+
+</div></div></div></div></div></div></div></div></div><br style="clear: both;" /></div>
+  </div>
+
+
+  </div>
+</li>
+<li id="comment-43868" class="article-comment">
+  <div class="article-comment-inner">
+
+  <div class="comment-content comment-logged-out ">
+
+
+    <a target="_blank" class="comment-picture" title="newcastle  (utente non autenticato)" href="//www.gravatar.com/d56a9b8a53f648f361dac39f9c8a1b50"><img onerror="gravatarCommentFailback(this)" data-gravatar="//www.gravatar.com/avatar/d56a9b8a53f648f361dac39f9c8a1b50?only_path=false&amp;size=50" src="//www.gravatar.com/avatar/d56a9b8a53f648f361dac39f9c8a1b50?only_path=false&amp;size=50&amp;d=404" alt="D56a9b8a53f648f361dac39f9c8a1b50?only path=false&amp;size=50&amp;d=404" /><span class="comment-info">newcastle </span><span class="comment-user-status icon-user-unknown">(utente non autenticato)</span></a>
+
+<div class="comment-balloon "><div class="comment-wrapper-1"><div class="comment-wrapper-2"><div class="comment-wrapper-3"><div class="comment-wrapper-4"><div class="comment-wrapper-5"><div class="comment-wrapper-6"><div class="comment-wrapper-7"><div class="comment-wrapper-8"><div class="comment-balloon-content">
+    <div class="comment-details">
+      <div class="comment-header">
+        <ul>
+</ul>
+<div class="comments-action-bar">
+    <a class="comment-footer comment-footer-link comment-footer-hide comment-actions-reply button" id="comment-reply-to-43868" title="Reply" href="#" onclick="var f = add_comment_reply_form(this, 43868); f.find(&#39;comment_title, textarea&#39;).val(&#39;&#39;); return false; return false;"></a>
+</div>
+
+      </div>
+
+      <div class="comment-created-at">
+        Marzo 18, 2012 22:15
+      </div>
+      <h4>newcastle permanent internet banking</h4>
+      <div class="comment-text">
+        <p/>
+        Nice meeting! There must be a lot of amazing things to discover here. Many thanks for nice sharing!
+<br/>
+<a href="http://banksontheweb.blogspot.com/2011/01/newcastle-permanent-internet-banking.html" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">bank&#x200B;sont&#x200B;hewe&#x200B;b.bl&#x200B;ogsp&#x200B;ot.c&#x200B;om/2&#x200B;011/&#x200B;01/n&#x200B;ewca&#x200B;stle&#x200B;-per&#x200B;mane&#x200B;nt-i&#x200B;nter&#x200B;net-&#x200B;bank&#x200B;ing.&#x200B;html</a>
+      </div>
+      
+    </div>
+
+    <div class="comment_reply post_comment_box closed" id="comment_reply_to_43868">
+    </div>
+
+</div></div></div></div></div></div></div></div></div><br style="clear: both;" /></div>
+  </div>
+
+
+  </div>
+</li>
+<li id="comment-55026" class="article-comment">
+  <div class="article-comment-inner">
+
+  <div class="comment-content comment-logged-out ">
+
+
+    <a target="_blank" class="comment-picture" title=" (utente rimosso)" href="//www.gravatar.com/d41d8cd98f00b204e9800998ecf8427e"><img onerror="gravatarCommentFailback(this)" data-gravatar="//www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?only_path=false&amp;size=50" src="/images/icons-app/person-minor.png" alt="Person minor" /><span class="comment-info"></span><span class="comment-user-status icon-user-removed">(utente rimosso)</span></a>
+
+<div class="comment-balloon "><div class="comment-wrapper-1"><div class="comment-wrapper-2"><div class="comment-wrapper-3"><div class="comment-wrapper-4"><div class="comment-wrapper-5"><div class="comment-wrapper-6"><div class="comment-wrapper-7"><div class="comment-wrapper-8"><div class="comment-balloon-content">
+    <div class="comment-details">
+      <div class="comment-header">
+        <ul>
+</ul>
+<div class="comments-action-bar">
+    <a class="comment-footer comment-footer-link comment-footer-hide comment-actions-reply button" id="comment-reply-to-55026" title="Reply" href="#" onclick="var f = add_comment_reply_form(this, 55026); f.find(&#39;comment_title, textarea&#39;).val(&#39;&#39;); return false; return false;"></a>
+</div>
+
+      </div>
+
+      <div class="comment-created-at">
+        Ottobre 31, 2012 9:17
+      </div>
+      <h4>Olá pessoal</h4>
+      <div class="comment-text">
+        <p/>
+        Please add more good information that would help others in such good way.
+<br/>
+<a href="http://www.casinodownload-kostenlos.com" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;casi&#x200B;nodo&#x200B;wnlo&#x200B;ad-k&#x200B;oste&#x200B;nlos&#x200B;.com</a>
+<br/>
+<a href="http://www.best-online-casino-spielen.com" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;best&#x200B;-onl&#x200B;ine-&#x200B;casi&#x200B;no-s&#x200B;piel&#x200B;en.c&#x200B;om</a>
+<br/>
+<a href="http://www.win2day-bonus.com" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;win2&#x200B;day-&#x200B;bonu&#x200B;s.co&#x200B;m</a>
+      </div>
+      
+    </div>
+
+    <div class="comment_reply post_comment_box closed" id="comment_reply_to_55026">
+    </div>
+
+</div></div></div></div></div></div></div></div></div><br style="clear: both;" /></div>
+  </div>
+
+
+  </div>
+</li>
+
+        
+    </ul>
+
+      <div id='page-comment-form' class='page-comment-form'><div class="page-comment-form">
+
+
+
+<div class="post_comment_box closed">
+
+  <a class="display-comment-form" href="#">Post a comment</a>
+<form class="comment_form" id="new_comment" onsubmit="jQuery.ajax({data:jQuery.param(jQuery(this).serializeArray()) + &#39;&amp;authenticity_token=&#39; + encodeURIComponent(&#39;KER/IMD3HZQfUeS3IeOkr8JCCB7QSserNwj1IrMW6BW1LM8hsqwfd/BKESmnY97MjdPC3djGAPlqhMwm7J1Oxw==&#39;), dataType:&#39;script&#39;, type:&#39;post&#39;, url:&#39;/profile/android/comment/create/352644?escape=false&#39;}); return false;" action="/profile/android/comment/create/352644" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="RS9e9JUKtqI9xD3duR+KunETv2ey0jAHQEpGWGrwNAnYR+7151G0QdLfyEM/n/DZPoJ1pLpe91Udxn9cNXuS2w==" />
+
+  <p><span class="required-field">The <label class='pseudoformlabel'>highlighted</label> fields are mandatory.</span></p>
+
+
+    <span class="required-field"><div class="formfieldline"><label class="formlabel" for="comment_name">Nome</label><div class="formfield type-text"><input type="text" name="comment[name]" id="comment_name" /></div></div></span>
+    <span class="required-field"><div class="formfieldline"><label class="formlabel" for="comment_email">e-mail</label><div class="formfield type-text"><input type="text" name="comment[email]" id="comment_email" /></div></div></span>
+    <p>
+    If you are a registered user, you can login and be automatically recognized.
+    </p>
+
+
+  <div class="formfieldline"><label class="formlabel" for="comment_title">Titolo</label><div class="formfield type-text"><input type="text" name="comment[title]" id="comment_title" /></div></div>
+  <span class="required-field"><div class="formfieldline"><label class="formlabel" for="comment_body">Enter your comment</label><div class="formfield type-textarea"><textarea rows="5" name="comment[body]" id="comment_body">
+</textarea></div></div></span>
+
+    <p><script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<div class="g-recaptcha " data-sitekey="6LcK7CYUAAAAABl-eMkoFIv3VvOOIPwiXeinFmUi" ajax="true"></div>
+          <noscript>
+            <div>
+              <div style="width: 302px; height: 422px; position: relative;">
+                <div style="width: 302px; height: 422px; position: absolute;">
+                  <iframe
+                    src="https://www.google.com/recaptcha/api/fallback?k=6LcK7CYUAAAAABl-eMkoFIv3VvOOIPwiXeinFmUi"
+                    frameborder="0" scrolling="no"
+                    style="width: 302px; height:422px; border-style: none;">
+                  </iframe>
+                </div>
+              </div>
+              <div style="width: 300px; height: 60px; border-style: none;
+                bottom: 12px; left: 25px; margin: 0px; padding: 0px; right: 25px;
+                background: #f9f9f9; border: 1px solid #c1c1c1; border-radius: 3px;">
+                <textarea id="g-recaptcha-response" name="g-recaptcha-response"
+                  class="g-recaptcha-response"
+                  style="width: 250px; height: 40px; border: 1px solid #c1c1c1;
+                  margin: 10px 25px; padding: 0px; resize: none;" value="">
+                </textarea>
+              </div>
+            </div>
+          </noscript>
+</p>
+
+
+  <input type="hidden" name="confirm" id="confirm" value="false" />
+  <input type="hidden" name="view" id="view" />
+  <input type="hidden" name="comment[reply_of_id]" id="comment_reply_of_id" />
+
+  
+
+  <div class=" button-bar">
+    <input type="submit" name="commit" value="Post comment" onclick="save_comment(this); return false;" class="button with-text icon-add submit" />
+      <a id="cancel-comment" class="button icon-cancel with-text" title="Cancel" href="">&nbsp;<span>Cancel</span></a>
+<br style="clear: left;" /></div></form>
+
+</div><!-- end class="post_comment_box" -->
+</div><!-- end class="page-comment-form" -->
+
+<script src="/assets/comment_form-6675ef0f0fa17bef4ca4a3b992647bd9.js"></script>
+</div>
+  </div><!-- end class="comments" -->
+
+</div><!-- end id="article" -->
+<link rel="stylesheet" media="screen" href="/assets/vendor/jquery.fancybox-f18bccba6b2b1108ccca4462da78aa43.css" /><script src="/assets/vendor/jquery.fancybox.pack-c84445b4cd8162f8a15703d690ccc514.js"></script><script>
+//<![CDATA[
+apply_zoom_to_images("Zoom in")
+//]]>
+</script>
+</div></div></div></div></div>
+</div></div></div><div id="profile-footer"><p>Não há ventos favoráveis pra quem não sabe onde quer chegar!</p></div>
+  <br style='clear: both'/>
+</div><!-- end id="content-inner" -->
+
+        </div><!-- end id="content" -->
+      </div><!-- end id="wrap-2" -->
+    </div><!-- end id="wrap-1" -->
+    
+    <div id="footer">
+      <div id="theme-footer">
+        <div id="footer-environment">
+<div id="footer-links">
+  <ul>
+    <li><ul id="slbr-footer">
+        <li><a href="http://softwarelivre.org" id="slbr" class="link-this-page"><span>Software Livre - Brasil</span></a></li>
+        <li><a href="http://softwarelivre.org/tv"><span>TV Software Livre</span></a></li>
+        <li><a href="http://softwarelivre.org/radio"><span>Rádio Software Livre</span></a></li>
+        </ul></li>
+    <li><ul id="conheca-footer"><h3>Conheça</h3>
+        <li><a href="http://softwarelivre.org/portal/quem-somos">Quem Somos</a></li>
+        <li><a href="http://softwarelivre.org/portal/termos-de-uso">Termos de Uso</a></li>
+        <li><a href="http://softwarelivre.org/doc">Documentação</a></li>
+        <li><a href="http://softwarelivre.org/contact/portal/new">Fale Conosco</a></li>
+        </ul></li>
+    <li><ul id="colabore-footer"><h3>Colabore</h3>
+        <li><b><a href="http://softwarelivre.org/myprofile/portal/cms/suggest_an_article">Sugerir um Artigo</a></b></li>
+        <li><a href="http://softwarelivre.org/portal/melhorias">Sugerir Melhorias</a></li>
+        <li><a href="http://softwarelivre.org/portal/bugs">Reportar um Bug</a></li>
+        <li><a href="http://softwarelivre.org/portal/desenvolvimento">Desenvolvimento</a></li>
+        </ul></li>
+    <li><ul id="compartilhe-footer"><h3>Compartilhe</h3>
+        <li><b><!-- AddToAny BEGIN -->
+        <a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fsoftwarelivre.org&amp;linkname=SoftwareLivre.org">Compartilhar Isto!</a>
+        <script type="text/javascript">
+        var a2a_config = a2a_config || {};
+        a2a_config.linkname = "SoftwareLivre.org";
+        a2a_config.linkurl = "http://softwarelivre.org";
+        a2a_config.onclick = 1;
+        a2a_config.locale = "pt-BR";
+        a2a_config.num_services = 6;
+        a2a_config.prioritize = ["identi_ca", "twitter", "facebook", "google_buzz", "digg", "email"]
+        </script>
+        <script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END --></b></li>
+        <li><a href="http://softwarelivre.org/portal/eventos">Novos Eventos</a></li>
+        <li><a href="http://softwarelivre.org/portal/portfolio">Portfólio Livre</a></li>
+        <li><a href="http://softwarelivre.org/portal/divulgue">Páginas Amigas</a></li>
+        </ul></li>
+    <li><ul id="apoio-footer"><h3>Apoio</h3>
+        <li> <a href="http://softwarelivre.org/portal/apoio"><img src="/portal/anuncios/apoio.png" style="width:204px"><span>Apoio</span></img></a></li>
+        </ul></li>
+</div><!-- end id="footer-links" -->
+
+<div id="copyright">
+  © Copyleft 2015 -<a id="link-asl" href="http://associacao.softwarelivre.org/" title="Associação SoftwareLivre.org">ASL</a> - Alguns direitos reservados, exceto quando especificado em contrário e nos conteúdos replicados de outras fontes.
+  <p id="noosfero-license">Este site utiliza o software livre <a href="http://www.noosfero.org/" id="link-noosfero">Noosfero</a>, licenciado sob a licença <a href="http://www.gnu.org/licenses/agpl.html">GNU Affero General Public License</a>, versão 3 ou superior.  </p>
+</div><!-- end id="copyright" -->
+</div>
+
+<script type="text/javascript">
+  jQuery(function($) {
+    $(".highlights-block").insertAfter("#theme-header");
+    $(".action-home-index #block-695148").insertBefore("#block-666540");
+    $(".action-environment_design-index #block-695148").insertBefore("#block-666540");
+    $(".action-home-index #block-695454").insertAfter("#block-666540");
+    $(".action-environment_design-index #block-695454").insertAfter("#block-666540");
+    $("#site-title").prependTo("#top");
+    $("#user").insertAfter("#site-title");
+  });
+</script>
+
+      </div><!-- end id="theme-footer" -->
+      <div id="global-footer">
+        
+      </div><!-- end id="global-footer" -->
+    </div><!-- end id="footer" -->
+    
+    <script src="https://s7.addthis.com/js/152/addthis_widget.js"></script>
+    <!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+     var u = "piwik.colivre.coop.br/";
+     if(!u.match(/^https?/)){
+       var protocol = ("https:" == document.location.protocol ? "https" : "http");
+       u = protocol + '://' + u;
+     }
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 3]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.colivre.coop.br/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+  </body>
+</html>
