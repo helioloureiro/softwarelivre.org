@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    <title>Galeria - Giovani Ferreira - Software Livre Brasil</title>
+
+    <style type="text/css">
+@import url(/stylesheets/slideshow.css);
+</style>
+    <script src="/javascripts/jquery-2.1.1.min.js"></script>
+<script src="/assets/vendor/sliderjs-4813c008b79ff67e006eacb62a9b8630.js"></script>
+<script src="/assets/vendor/pikachoose-476b26458f07a3a41eb6156f4ec6ef23.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function (){
+        $("#slideshow").PikaChoose({
+          buttons: { play: "Play", stop: "Stop", previous: "Previous", next: "Next" }
+        });
+        $("#slideshow").SliderJS({
+          window_width: 320,
+          window_height: 55,
+          list_width: 832,
+          pikachoose: true,
+          auto_play: false
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p class='back-button' ><a class="button icon- with-text" title="Back to gallery" href="http://softwarelivre.org/jova2/galeria">&nbsp;<span>Back to gallery</span></a></p>
+<ul id='slideshow' >
+      <li><img title="241793_130242267056689_3830347_o.jpg" src="/thumbnails/0136/2481/241793-130242267056689-3830347-o_display.jpg" alt="241793 130242267056689 3830347 o display" /></li>
+      <li><img title="255838_130242737056642_3153116_o.jpg" src="/thumbnails/0136/2484/255838-130242737056642-3153116-o_display.jpg" alt="255838 130242737056642 3153116 o display" /></li>
+      <li><img title="256742_130238187057097_2255605_o.jpg" src="/thumbnails/0136/2486/256742-130238187057097-2255605-o_display.jpg" alt="256742 130238187057097 2255605 o display" /></li>
+      <li><img title="258657_130242727056643_726339_o.jpg" src="/thumbnails/0136/2489/258657-130242727056643-726339-o_display.jpg" alt="258657 130242727056643 726339 o display" /></li>
+      <li><img title="258977_130243107056605_6676316_o.jpg" src="/thumbnails/0136/2490/258977-130243107056605-6676316-o_display.jpg" alt="258977 130243107056605 6676316 o display" /></li>
+      <li><img title="259071_130238163723766_1532468_o.jpg" src="/thumbnails/0136/2491/259071-130238163723766-1532468-o_display.jpg" alt="259071 130238163723766 1532468 o display" /></li>
+      <li><img title="259501_130242730389976_3684256_o.jpg" src="/thumbnails/0136/2493/259501-130242730389976-3684256-o_display.jpg" alt="259501 130242730389976 3684256 o display" /></li>
+      <li><img title="259757_130238157057100_237707_o.jpg" src="/thumbnails/0136/2496/259757-130238157057100-237707-o_display.jpg" alt="259757 130238157057100 237707 o display" /></li>
+</ul>
+
+  </body>
+</html>
