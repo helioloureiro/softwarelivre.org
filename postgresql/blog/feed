@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>PostgreSQL's RSS feed</title><link>http://softwarelivre.org/postgresql</link><description>PostgreSQL's content published at Software Livre Brasil</description><item><title>PostgreSQL 9.4</title><description>&lt;p&gt;O Grupo de Desenvolvimento Global do PostgreSQL anuncia o lançamento do PostgreSQL 9.4, a última versão do líder mundial em sistema de banco de dados de código aberto. Esta versão adiciona várias funcionalidades novas que melhoram a flexibilidade, escalabilidade e performance do PostgreSQL para diversos tipos de usuários de banco de dados, incluindo melhorias no suporte a JSON, replicação e performance de índices.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Flexibilidade&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Com o novo tipo de dado JSONB para PostgreSQL, usuários não tem que escolher entre armazenamento de dados relacional e não-relacional: eles podem ter ambos ao mesmo tempo. JSONB suporta consultas rápidas e expressões de busca simples utilizando Índices Invertidos Genéricos (GIN). Várias novas funções de suporte permitem aos usuários extrair e manipular dados JSON, com um desempenho que corresponde ou supera os mais populares bancos de dados de documentos. Com JSONB, dados de tabelas podem ser facilmente integrados com dados de documentos para um ambiente de banco de dados totalmente integrado.&lt;/p&gt;
+&lt;p&gt;"JSONB traz o PostgreSQL para a comunidade de desenvolvimento JavaScript, permitindo que dados JSON possam ser armazenados e consultados nativamente. Node.js e outros frameworks JavaScript do lado do servidor podem se beneficiar da segurança e robustez do PostgreSQL, enquanto continuam a armazenar dados no formato sem esquema que eles preferem", disse Matt Soldo, Gerente de Produtos, Heroku Postgres.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Escalabilidade&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Na 9.4, Decodificação Lógica fornece uma nova API para leitura, filtragem e manipulação do fluxo de replicação do PostgreSQL. Esta interface é o fundamento para novas ferramentas de replicação, como Replicação Bidirecional, que permite a criação de clusters PostgreSQL com múltiplos mestres. Outras melhorias no sistema de replicação, tais como entradas de replicação e réplicas atrasadas no tempo, melhoram a administração e utilidade de servidores réplica.&lt;/p&gt;
+&lt;p&gt;"A principal razão por trás da nossa adoção imediata do PostgreSQL 9.4 é a nova funcionalidade Decodificação Lógica", disse Marco Favale, Gerente de Produção Cartográfica da Navionics. "A capacidade de escrever plugins de saída personalizados e flexíveis nos permitirá coletar mudanças em tabelas selecionadas de maneira transparente e replicá-las como quisermos, removendo a pesada - e mais complexa de gerenciar - solução de replicação baseada em gatilhos."&lt;/p&gt;
+&lt;p&gt;"Zalando confia na estabilidade e performance de centenas de servidores de banco de dados PostgreSQL para servir continuamente milhões de clientes em toda Europa", disse Valentine Gogichashvili, Líder do Time de Operações em Banco de Dados na Zalando Technologies. "Nós estamos animados para executar servidores em espera atrasados no tempo que funcionam imediatamente, e avaliaremos as novas ferramentas de replicação bidirecional assim que elas forem lançadas."&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Performance&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Versão 9.4 introduz também múltiplas melhorias de performance que irão permitir usuários obter mais ainda de cada servidor PostgreSQL. Estas incluem:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Melhorias em índices GIN, tornando-os até 50% menores e até 3X mais rápidos.&lt;/li&gt;
+&lt;li&gt;Visões materializadas atualizáveis paralelamente com rapidez para relatórios mais atuais.&lt;/li&gt;
+&lt;li&gt;Rapidamente recarrega a cache do banco de dados após reinício utilizando pg_prewarm.&lt;/li&gt;
+&lt;li&gt;Escrita paralela com rapidez do log de transação do PostgreSQL.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;"Definitivamente nos beneficiaremos da atualização concorrente de visões materializadas, servidores em espera atrasados no tempo (que farão a nossa recuperação de desastre ainda mais robusta) bem como as melhorias de performance habituais que cada nova versão traz", complementou Marco Favale.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.postgresql.org/downloads" title="Onde Baixar"&gt;Onde Baixar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="http://www.postgresql.org/about/press/presskit94" title="Kit de Imprensa"&gt;Kit de Imprensa&lt;/a&gt; &lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.postgresql.org/documentation/current/static/release-9-4" title="Notas de Lançamento"&gt;Notas de Lançamento&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wiki.postgresql.org/wiki/What%27s_new_in_PostgreSQL_9.4" title="O Que Há de Novo na 9.4"&gt;O Que Há de Novo na 9.4&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Sobre PostgreSQL&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;PostgreSQL é um sistema de banco de dados líder de código aberto, com uma comunidade global de milhares de usuários e colaboradores e dezenas de empresas e organizações. O Projeto PostgreSQL foi construído ao longo de 25 anos de engenharia, iniciando na Universidade da Califórnia, Berkeley, e tem um ritmo inigualável de desenvolvimento hoje. Conjunto de funcionalidades maduras do PostgreSQL não só se igualam aos principais sistemas de bancos de dados proprietários, mas os supera em funcionalidades avançadas, extensibilidade, segurança e estabilidade. Saiba mais sobre o PostgreSQL e participe da nossa comunidade em http://www.postgresql.org.&lt;/p&gt;</description><pubDate>Thu, 18 Dec 2014 13:21:10 +0000</pubDate><link>http://softwarelivre.org/postgresql/blog/postgresql-9.4</link><guid>http://softwarelivre.org/postgresql/blog/postgresql-9.4</guid></item><item><title>PGDay Campinas 2013</title><description>&lt;div&gt;&lt;div&gt;&lt;div&gt;
+&lt;p&gt;O PGDay Campinas 2013 ou Dia PostgreSQL, é um evento de compartilhamento de informações sobre o banco de dados PostgreSQL entre profissionais de TI e usuários de Campinas e região. O evento é uma oportunidade de relacionamento entre os participantes, fazendo novos contatos e trocando experiências com a comunidade.&lt;/p&gt;
+&lt;p&gt;O evento oferece uma programação que inclui palestras de alto nível técnico, ministradas por palestrantes reconhecidos nacional e internacionalmente e, discussões técnicas destinadas a fomentar o desenvolvimento do PostgreSQL.&lt;/p&gt;
+&lt;p&gt;Já foram realizadas cinco edições ao longo dos anos de 2007, 2008, 2010, 2011 e 2012. Mais de 600 profissionais de da área de Tecnologia da Informação participaram dos últimos encontros. O PGDay Campinas 2012 teve maior um destaque, realizada no Centro de Computação da Unicamp, com mais de 200 inscritos.&lt;/p&gt;
+&lt;p&gt;Data: Dia 18 de Setembro de 2013.&lt;br&gt;
+Horário: 8:30 à 17:00&lt;br&gt;
+Local: UNICAMP&lt;br&gt;
+Centro de Convenções UNICAMP&lt;br&gt;
+R. Elis Regina, 131 – Cidade Universitária – Barão Geraldo&lt;br&gt;
+Campinas/SP – CEP: 13.083-854&lt;br&gt;
+Telefone: (19) 3521-2200&lt;/p&gt;
+&lt;p&gt;Mais informações pelo site: &lt;a href="http://pgdaycampinas.com.br/2013/"&gt;http://pgdaycampinas.com.br/2013/&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;
+&lt;h3&gt;tags: &lt;/h3&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href="http://www.postgresql.org.br/taxonomy/term/4"&gt;PGDay&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+&lt;/div&gt;</description><pubDate>Mon, 16 Sep 2013 12:49:04 +0000</pubDate><link>http://softwarelivre.org/postgresql/blog/pgday-campinas-2013</link><guid>http://softwarelivre.org/postgresql/blog/pgday-campinas-2013</guid></item><item><title>PostgreSQL 9.3</title><description>&lt;div&gt;&lt;div&gt;&lt;div&gt;
+&lt;p&gt;9 DE SETEMBRO DE 2013: O Grupo de Desenvolvimento Global do PostgreSQL
+anuncia o lançamento do PostgreSQL 9.3, a última versão do líder mundial em
+sistema de banco de dados relacionais de código aberto. Esta versão expande a
+confiabilidade, disponibilidade e habilidade em integrar com outros bancos de
+dados. Usuários já estão descobrindo que eles podem desenvolver aplicações
+utilizando a versão 9.3 que antes não teriam sido possíveis.
+&lt;/p&gt;
+&lt;p&gt;
+"PostgreSQL 9.3 fornece funcionalidades que como um desenvolvedor de aplicações
+eu posso utilizar imediatamente: melhor suporte a JSON, indexação de expressões
+regulares e facilidade em federalizar bancos de dados com adaptador de dados
+externos. Não tenho ideia de como conclui projetos sem a 9.3", disse Jonathan
+S. Katz, CTO da VenueBook.
+&lt;/p&gt;
+&lt;p&gt;
+&lt;b&gt;Gravação de Dados Externos&lt;/b&gt;
+&lt;/p&gt;
+&lt;p&gt;
+A versão 9.3 torna os adaptadores de dados externos graváveis, permitindo a
+troca de dados bidirecional entre sistemas. Ambientes complexos de TI atuais
+envolvem múltiplos bancos de dados e fontes de dados semi-estruturados, e o
+PostgreSQL ajuda você a integrá-los em uma pilha coerente. O projeto também
+lançou o postgres_fdw, um conector de federação PostgreSQL-a-PostgreSQL
+escrita/leitura de alto desempenho.
+&lt;/p&gt;
+&lt;p&gt;
+"Adaptadores de dados externos graváveis nos permitem ligar e testar
+perfeitamente várias alternativas de fonte de dados, o que nos permite atender
+às diferentes necessidades rapidamente e desenvolver protótipos
+inteligentemente", explicou Lee Holloway, co-fundador e engenheiro líder na
+CloudFlare. "É emocionante conceber e lançar novos armazenamentos de dados
+(incluindo nossos internos experimentais escritos em Go) e, em seguida, vê-los
+ler, escrever e até mesmo transacionar mutuamente".
+&lt;/p&gt;
+&lt;p&gt;
+&lt;b&gt;Maior Confiabilidade e Disponibilidade&lt;/b&gt;
+&lt;/p&gt;
+&lt;p&gt;
+"Postgres tem sido a minha escolha favorita pela sua conhecida estabilidade,
+robustez, coerência forte, segurança, ACID e conformidade com o SQL", disse
+Pascal Bouchareine, diretor de pesquisa e desenvolvimento na Gandi.net. "Estou
+especialmente animado para ouvir mais sobre a transferência rápida em caso de
+falha que vem na 9.3".
+&lt;/p&gt;
+&lt;p&gt;
+Esta nova versão inclui funcionalidades para melhorar e estender as conhecidas
+confiabilidade e disponibilidade do PostgreSQL:
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Verificações de Páginas de Dados: ajuda administradores a detectar
+rapidamente discos com falhas e hardware ruim que corrompe dados&lt;/li&gt;
+&lt;li&gt;Transferência Rápida em Caso de Falha: permite transferências abaixo de um
+segundo do principal para réplica, suportando disponibilidade "a nível de
+operadora"&lt;/li&gt;
+&lt;li&gt;Remasterização de Réplicas: reconfiguração mais fácil e mais rápida de
+réplicas cascateadas após transferência em caso de falha&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+&lt;b&gt;Funcionalidades para Desenvolvedores&lt;/b&gt;
+&lt;/p&gt;
+&lt;p&gt;
+Tal como acontece todo lançamento anual, o PostgreSQL 9.3 inclui muitas
+funcionalidades que tornam o trabalho com PostgreSQL mais fácil, mais flexível
+e mais divertido para desenvolvedores de aplicações, administradores e
+arquitetos. Essas funcionalidades incluem:
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Métodos construtores e extratores adicionais para JSON&lt;/li&gt;
+&lt;li&gt;Visões automaticamente atualizáveis&lt;/li&gt;
+&lt;li&gt;pg_dump paralelo para acelerar cópias de seguranças em grandes bancos de dados&lt;/li&gt;
+&lt;li&gt;Junções laterais&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+Além disso, processos de trabalho em segundo plano definidos pelo usuário no
+PostgreSQL 9.3 permitem que desenvolvedores escrevam gerenciadores de tarefas,
+manipuladores de requisições, processadores paralelos, ferramentas de
+enfileiramento e outros aplicativos auxiliares que possibilitam que o
+PostgreSQL seja um coordenador de carga de trabalho. Um exemplo disto já
+lançado é o Mongres, um processo de trabalhado em segundo plano que aceita
+consultas do MongoDB, as interpreta e passa para o PostgreSQL.
+&lt;/p&gt;
+&lt;p&gt;
+&lt;b&gt;Sobre PostgreSQL&lt;/b&gt;
+&lt;/p&gt;
+&lt;p&gt;
+PostgreSQL é um sistema de banco de dados líder de código aberto, com uma
+comunidade global de milhares de usuários e colaboradores e dezenas de empresas
+e organizações. O Projeto PostgreSQL foi construído ao longo de 25 anos de
+engenharia, iniciando na Universidade da Califórnia, Berkeley, e tem um ritmo
+inigualável de desenvolvimento hoje. Conjunto de funcionalidades maduras do
+PostgreSQL não só se igualam aos principais sistemas de bancos de dados
+proprietários, mas os supera em funcionalidades avançadas, extensibilidade,
+segurança e estabilidade. Saiba mais sobre o PostgreSQL e participe da nossa
+comunidade em &lt;a href="http://www.postgresql.org"&gt;PostgreSQL.org&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;a name="features"&gt;&lt;/a&gt;&lt;h2&gt;Detalhes das Funcionalidades&lt;/h2&gt;
+
+&lt;p&gt;
+Para explicações sobre as funcionalidades acima e outras, visite as seguintes páginas:
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.postgresql.org/docs/9.3/static/release-9-3.html"&gt;Notas de Lançamento&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.postgresql.org/docs/9.3/static/index.html"&gt;Documentação 9.3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://wiki.postgresql.org/wiki/What%27s_new_in_PostgreSQL_9.3"&gt;O Que Há de Novo no PostgreSQL 9.3 (Inglês)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.postgresql.org/about/featurematrix"&gt;Matriz de Funcionalidades (Inglês)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/umitanuki/mongres"&gt;Mongres: emulador MongoDB para PostgreSQL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://blog.cloudflare.com/kyoto_tycoon_with_postgresql"&gt;Kyoto Tycoon FDW para PostgreSQL por CloudFlare&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wiki.postgresql.org/wiki/Foreign_data_wrappers"&gt;Lista de outros Adaptadores de Dados Externos&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;a name="download"&gt;&lt;/a&gt;&lt;h2&gt;Onde Baixar&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href="http://www.postgresql.org/download"&gt;Páginas de downloads&lt;/a&gt; com links para instaladores e ferramentas para Windows, Linux, OSX, BSD e Solaris.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.postgresql.org/ftp/source/v9.3.0"&gt;Código Fonte&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://pgxn.org"&gt;Rede de Extensões do PostgreSQL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.postgresql.org/download/product-categories"&gt;Softwares Relacionados e Comerciais&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;a name="docs"&gt;&lt;/a&gt;&lt;h2&gt;Documentação&lt;/h2&gt;
+
+&lt;p&gt;
+Documentação HTML e man pages são instalados com o PostgreSQL, mas fique a vontade para navegar, pesquisar e comentar na nossa vasta &lt;a href="http://www.postgresql.org/docs/9.3/interactive"&gt;documentação online&lt;/a&gt; interativa.
+&lt;/p&gt;
+
+&lt;a name="license"&gt;&lt;/a&gt;&lt;h2&gt;Licença&lt;/h2&gt;
+&lt;p&gt;
+PostgreSQL usa a &lt;a href="http://www.postgresql.org/about/license"&gt;Licença PostgreSQL&lt;/a&gt;, uma licença
+"tolerante" estilo BSD. Essa &lt;a href="http://www.opensource.org/licenses/postgresql"&gt;Licença certificada
+	pela OSI&lt;/a&gt; é amplamente reconhecida como flexível e ideal para negócios,
+uma vez que ela não restringe o uso do PostgreSQL com aplicações comerciais e
+proprietárias. Juntamente com apoio de várias empresas e a propriedade pública
+do código, nossa licença torna o PostgreSQL muito popular entre empresas que
+desejam incorporar um banco de dados em seus produtos sem medo de taxas,
+aprisionamento tecnológico ou mudanças nos termos da licença.
+&lt;/p&gt;
+
+&lt;a name="contact"&gt;&lt;/a&gt;&lt;h2&gt;Contatos&lt;/h2&gt;
+
+&lt;p&gt;Páginas na Web&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.postgresql.org"&gt;Página do PostgreSQL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.postgresql.org.br"&gt;Comunidade Brasileira de PostgreSQL&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Informação à Imprensa&lt;/p&gt;
+&lt;p&gt;Brasil&lt;br&gt;
+Euler Taveira de Oliveira&lt;br&gt;&lt;a href="mailto:br@postgresql.org"&gt;br@postgresql.org&lt;/a&gt;&lt;br&gt;
++55 63 84594598&lt;/p&gt;
+
+&lt;p&gt;Para contato em outras regiões, visite &lt;a href="http://www.postgresql.org/about/press/contact"&gt;nossa lista de contatos internacionais.&lt;/a&gt;&lt;/p&gt;
+
+&lt;a name="quoted_companies"&gt;&lt;/a&gt;&lt;h2&gt;Empresas Citadas e Texto Completo das Citações&lt;/h2&gt;
+
+&lt;b&gt;VenueBook&lt;/b&gt;
+
+&lt;blockquote&gt;"PostgreSQL 9.3 fornece funcionalidades que como um desenvolvedor de aplicações eu posso utilizar imediatamente: melhor suporte a JSON, indexação de expressões regulares e facilidade em federalizar bancos de dados com adaptador de dados externos. Não tenho ideia de como conclui projetos sem a 9.3", disse Jonathan S. Katz, CTO da VenueBook&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href="http://venuebook.com/"&gt;VenueBook&lt;/a&gt; é um solução de gerenciamento de eventos na nuvem que ajuda a gerenciar todo ciclo do evento em um só lugar. Nós fornecemos software que possibilita gerentes de locais a preparar e aprovar contratos, cardápios e processar todos pagamentos online. Diferentemente de outros sistemas no mercado que apenas o ajudam a gerenciar eventos, nós também simplificamos a interação e agendamento com o planejador. Contato (somente inglês): &lt;a href="mailto:info@venuebook.com"&gt;info@venuebook.com&lt;/a&gt;, +1 646-543-8368&lt;/p&gt;
+
+&lt;b&gt;CloudFlare&lt;/b&gt;
+
+&lt;blockquote&gt;
+"CloudFlare está orgulhosa em incluir o PostgreSQL 9.3 na sua caixa de ferramentas que proporcionam aceleração e segurança a milhões de sites. Ele fornece a extensibilidade e personalização que precisamos para ser ágil e escalável na camada de dados. Adaptadores de dados externos graváveis nos permitem ligar e testar perfeitamente várias alternativas de fonte de dados, o que nos permite atender às diferentes necessidades rapidamente e desenvolver protótipos inteligentemente. É emocionante conceber e lançar novos armazenamentos de dados (incluindo nossos internos experimentais escritos em Go) e, em seguida, vê-los ler, escrever e até mesmo transacionar mutuamente."
+&lt;br&gt;&lt;br&gt;
+"Acoplar adaptadores de dados externos com a noção de visões materializadas e junções laterais para consulta; e processos de trabalho em segundo plano para monitoramento, rende ao PostgreSQL uma armadura verdadeiramente poderosa que pretendemos usar e crescer com ele. CloudFlare está entusiasmada por ter esta joia em nossa caixa de ferramentas", disse Lee Holloway, co-fundador e engenheiro líder da CloudFlare.&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href="http://www.cloudflare.com"&gt;CloudFlare, Inc.&lt;/a&gt; faz sites duas vezes mais rápidos, os protege de ataques, garante que eles estejam sempre online e os torna simples de adicionar aplicativos web com apenas um clique. CloudFlare turbina sites independente do tamanho ou plataforma sem a necessidade de adicionar hardware, instalar software ou alterar uma linha de código. A comunidade CloudFlare se torna mais sólida à medida que cresce; cada novo site torna a rede mais inteligente. Graças a nossa fantástica tecnologia, a cada mês centenas de milhões de pessoas experimentam uma Internet melhor, mais rápida e mais segura. CloudFlare foi reconhecida pelo Fórum Econômico Mundial como um pioneiro tecnológico, chamado de a Mais Inovadora Empresa de Tecnologia de Rede e Internet no ano de 2011 e 2012 pelo Jornal Wall Street e ranqueada entre as 50 mais inovadoras empresas do mundo em 2012 pela Fast Company. CloudFlare localiza-se em São Francisco, Califórnia, USA. Contato (somente em inglês): &lt;a href="mailto:press@cloudflare.com"&gt;press@cloudflare.com&lt;/a&gt;, +1 (650) 485-1399&lt;/p&gt;
+
+&lt;b&gt;Gandi.net&lt;/b&gt;
+
+&lt;blockquote&gt;
+"Nós estamos acompanhando replicação e estamos muito interessados nas melhorias recentes desta funcionalidade. Estou especialmente animado para ouvir mais sobre a transferência rápida em caso de falha que vem na 9.3. Estamos utilizando o postgresql para a plataforma IAAS/PAAS na Gandi e recentemente internamente desenvolvendo um dos nossos sistemas em produção que armazena/computa/envia milhões de registros diariamente com facilidade."
+&lt;br&gt;&lt;br&gt;
+"Postgres tem sido a minha escolha favorita pela sua conhecida estabilidade/robustez/coerência forte/segurança/ACID e conformidade com o SQL. Agora que está se modernizando, fazendo bom uso do sistema operacional, estamos observando grandes melhorias de desempenho e mais facilidade na administração de uma instalação à prova de falhas. É o melhor banco de dados relacional de missão crítica disponível no mercado", disse Pascal Bouchareine, diretor de pesquisa e desenvolvimento da Gandi.
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href="http://www.gandi.net"&gt;GANDI.net&lt;/a&gt; foi uma das primeiras empresas de registro de domínio aprovada pelo ICANN para domínios .COM, .NET, .ORG, .BIZ, .INFO, .NAME, .BE, .FR e .EU na França. Agora ela oferece mais de 200 extensões de domínios e continua a aumentar essa lista regularmente. Gandi considera-se uma empresa de registro de domínios ética em uma indústria que tem algumas práticas 'desonestas'. Ela valoriza os direitos e a privacidade dos clientes acima de tudo e busca defender isso sempre que possível. Contato em inglês: Thomas Stocking e em francês: Nicolas Lhuillery. Telefone: +1 410.429.7402.&lt;/p&gt;
+
+&lt;a name="companies"&gt;&lt;/a&gt;&lt;h2&gt;Suporte Corporativo&lt;/h2&gt;
+
+&lt;p&gt;O PostgreSQL conta com o apoio de várias empresas, que patrocinam desenvolvedores, fornecem hospedagem e nos dão apoio financeiro. Veja nossa &lt;a href="http://www.postgresql.org/about/sponsors/"&gt;página de patrocinadores&lt;/a&gt; para ver alguns desses apoiadores do projeto.&lt;/p&gt;
+
+&lt;p&gt;Existe também uma grande comunidade de &lt;a href="http://www.postgresql.org/support/professional_support"&gt;empresas oferecendo suporte ao PostgreSQL&lt;/a&gt;, de consultores individuais a empresas multinacionais.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://www.postgresql.org/about/donate"&gt;Doações&lt;/a&gt; são aceitas de bom grado.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;
+&lt;h3&gt;tags: &lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.postgresql.org.br/taxonomy/term/22"&gt;postgres&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.postgresql.org.br/taxonomy/term/283"&gt;9.3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</description><pubDate>Mon, 09 Sep 2013 11:54:15 +0000</pubDate><link>http://softwarelivre.org/postgresql/blog/postgresql-9.3</link><guid>http://softwarelivre.org/postgresql/blog/postgresql-9.3</guid></item><item><title>PgDay Ceará 2013</title><description>&lt;div class="field field-name-body field-type-text-with-summary field-label-hidden"&gt;&lt;div class="field-items"&gt;&lt;div class="field-item even"&gt;A edição cearense do PgDay em 2013 consistirá de uma sequência de palestras sobre o tema, apresentando uma mesa de debates no seu encerramento, e será realizada no Centro Universitário Unichristus. O &lt;strong&gt;PgDay Ceará &lt;/strong&gt; será realizado dia 3 de maio.&lt;p&gt;
+
+O &lt;strong&gt;PgDay Ceará 2013&lt;/strong&gt; visa explorar o potencial do PostgreSQL e das tecnologias a ele associadas, e ao mesmo tempo: &lt;/p&gt;
+&lt;p&gt;
+- Promover as boas praticas de utilização de bancos de dados, relacionadas ao PostgreSQL;&lt;/p&gt;
+&lt;p&gt;
+- Divulgar casos reais de aplicação desta tecnologia;&lt;/p&gt;
+&lt;p&gt;
+- Fomentar a exploração de recursos básicos, intermediários e avançados desta ferramenta;&lt;/p&gt;
+&lt;p&gt;
+- Contribuir efetivamente para o aprimoramento da área de tecnologia da informação da região.&lt;/p&gt;
+&lt;p&gt;
+A chamada de trabalhos para a submissão de palestras já está em andamento e as inscrições gratuitas para alunos da Unichristus, profissionais, empresários, membros de ONGs e acadêmicos de outras instituições já podem ser feitas no sítio do Centro Universitário Unichristus.&lt;/p&gt;
+&lt;p&gt;
+
+O &lt;strong&gt;PgDay Ceará &lt;/strong&gt; será realizado dia 3 de maio.&lt;/p&gt;
+&lt;p&gt;
+&lt;/p&gt;
+&lt;p&gt;
+&lt;strong&gt;Referências: &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+- Hot-Site do Evento: &lt;a href="http://187.110.229.54/~userfacu/pgdayceara2013/home.php"&gt;http://187.110.229.54/~userfacu/pgdayceara2013/home.php&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-above clearfix"&gt;
+&lt;h3 class="field-label"&gt;tags: &lt;/h3&gt;
+&lt;ul class="links"&gt;
+&lt;li class="taxonomy-term-reference-0"&gt;&lt;a href="http://www.postgresql.org.br/taxonomy/term/3"&gt;pgdaybr&lt;/a&gt;&lt;/li&gt;
+&lt;li class="taxonomy-term-reference-1"&gt;&lt;a href="http://www.postgresql.org.br/taxonomy/term/42"&gt;eventos pgday&lt;/a&gt;&lt;/li&gt;
+&lt;li class="taxonomy-term-reference-2"&gt;&lt;a href="http://www.postgresql.org.br/taxonomy/term/1"&gt;eventos&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</description><pubDate>Fri, 10 May 2013 19:33:39 +0000</pubDate><link>http://softwarelivre.org/postgresql/blog/pgday-ceara-2013</link><guid>http://softwarelivre.org/postgresql/blog/pgday-ceara-2013</guid></item><item><title>Entra no ar novo site da Comunidade Brasileira de PostgreSQL!</title><description>&lt;div class="field field-name-body field-type-text-with-summary field-label-hidden"&gt;&lt;div class="field-items"&gt;&lt;div class="field-item even"&gt;
+&lt;p&gt;
+Em 2009 &lt;a href="http://temp.postgresql.org.br/noticias/lancamento"&gt;lançamos o site da comunidade em Drupal&lt;/a&gt; e hoje, quatro anos depois, é com orgulho e satisfação que anunciamos que o novo site da Comunidade Brasileira de PostgreSQL está no ar! Novamente! :)
+&lt;/p&gt;
+
+&lt;h3&gt;Tema&lt;/h3&gt;
+&lt;p&gt;
+Na versão anterior optou-se por utilizar um tema que seguisse as características do site Internacional, no entanto o tema pgTheme não é compatível com o Drupal 7 então estamos utilizando um dos temas padrões. Se você quiser ajudar a comunidade dando uma atualizada no pgTheme, ficaremos muito gratos por sua contribuição.&lt;/p&gt;
+&lt;h3&gt;Acesso&lt;/h3&gt;
+&lt;p&gt;
+O site conta com um sistema de logins que permite ao usuário do site passar de visitante à contribuidor, entretanto um sistema de CAPTCHA é utilizado para evitar acesso indiscriminado de robos spammers.
+&lt;/p&gt;
+&lt;h3&gt;Contribuição&lt;/h3&gt;
+&lt;p&gt;
+Mantendo a interatividade os usuários do site podem também ser contribuidores, sendo assim qualquer um que criar uma conta e efetuar o login no site poderá criar Conteúdos.
+&lt;/p&gt;
+&lt;h3&gt;Agradecimentos&lt;/h3&gt;
+&lt;p&gt;
+A disponibilização do site só foi possível devido as mudanças significativas em nossa infra-estrutura de servidores, que permitiu ampliar nossos recursos e nos proporcionou mais autonomia em nossos processos.
+&lt;/p&gt;
+&lt;p&gt;
+Gostaríamos de agradecer às seguintes pessoas, por sua contribuição considerável para a disponibilização deste site (lista em ordem alfabética):
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt; Euler Oliveira
+&lt;/li&gt;
+&lt;li&gt; Fabio Telles
+&lt;/li&gt;
+&lt;li&gt; Felipe A. Wiel
+&lt;/li&gt;
+&lt;li&gt; Fernando Ike
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+Não perca tempo, acesse, contribua e vamos fazer a Comunidade crescer e fortificar-se, com conteúdo de qualidade e dinâmico!
+&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><pubDate>Fri, 12 Apr 2013 13:18:35 +0000</pubDate><link>http://softwarelivre.org/postgresql/blog/entra-no-ar-novo-site-da-comunidade-brasileira-de-postgresql</link><guid>http://softwarelivre.org/postgresql/blog/entra-no-ar-novo-site-da-comunidade-brasileira-de-postgresql</guid></item><item><title>Solução de erro no PostgreSQL ao instalar</title><description>&lt;p&gt;Oi&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;Estava com problemas para instalar o PostgreSQL (Banco de Dados Open Source) no meu Mac OS X.&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;Segue o erro:&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;    Problem running post-install step.&lt;/p&gt;
+&lt;p&gt;    Installation may not complete correctly&lt;/p&gt;
+&lt;p&gt;    The database cluster initialisation failed&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;Solução encontrada por mim foi de remover o Usuário e Grupo do sistema, e adicionar manualmente: postgres.&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;Depois desses passos tem que remove o PgSQL do computador:&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;#Arquivo de informação&lt;/p&gt;
+&lt;p&gt;$ sudo rm /etc/postgres-reg.ini&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;#O PgSQL instalado com erro&lt;/p&gt;
+&lt;p&gt;$ sudo rm -r /Library/PostgreSQL/&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;Simples assim, mas tive bastante trabalho para consegui solucionar.&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;Abraços.&lt;/p&gt;</description><pubDate>Fri, 22 Mar 2013 10:25:42 +0000</pubDate><link>http://softwarelivre.org/postgresql/blog/solucao-de-erro-no-postgresql-ao-instalar</link><guid>http://softwarelivre.org/postgresql/blog/solucao-de-erro-no-postgresql-ao-instalar</guid></item><item><title>PGBR 2013 - 5ª Conferência Brasileira de PostgreSQL</title><description></description><pubDate>Tue, 19 Feb 2013 10:43:54 +0000</pubDate><link>http://softwarelivre.org/postgresql/blog/pgbr-2013-5a-conferencia-brasileira-de-postgresql</link><guid>http://softwarelivre.org/postgresql/blog/pgbr-2013-5a-conferencia-brasileira-de-postgresql</guid></item><item><title>PgDay Ouro Preto do Oeste - Rondônia 2012</title><description>&lt;p&gt;&lt;strong&gt;Data e Local:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;O PGDay Ouro Preto do Oeste acontecerá no dia 26 de outubro de 2012, no Campus da  UNEOURO - Faculdade de Ouro Preto do Oeste, localizado na Rua Porto Alegre, 494, Bairro Novo Horizonte - Ouro Preto do Oeste - RO.&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Programação PGDay Ouro Preto do Oeste, &lt;/strong&gt;&lt;strong&gt;dia 26/10/2012:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://www.postgresql.org.br/node/17041" target="_blank"&gt;leia mais&lt;/a&gt;&lt;/p&gt;</description><pubDate>Thu, 18 Oct 2012 21:36:20 +0000</pubDate><link>http://softwarelivre.org/postgresql/blog/pgday-ouro-preto-do-oeste-rondonia-2012</link><guid>http://softwarelivre.org/postgresql/blog/pgday-ouro-preto-do-oeste-rondonia-2012</guid></item><item><title>PGDay Rolim de Moura - Rondônia 2012</title><description>&lt;strong&gt;Data e Local&lt;/strong&gt;
+&lt;p&gt;O PGDay Cacoal acontecerá no dia 25 de outubro de 2012, no Campus da  FAROL - Faculdade Rolim de Moura, localizado na rodovia RO 383, Km 01 - s/n - Lado Sul.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Programação PGDay Rolim de Moura, &lt;/strong&gt;&lt;strong&gt;dia 25/10/2012:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://www.postgresql.org.br/node/17035" target="_blank"&gt;leia mais&lt;/a&gt;&lt;/p&gt;</description><pubDate>Wed, 10 Oct 2012 18:49:38 +0000</pubDate><link>http://softwarelivre.org/postgresql/blog/pgday-rolim-de-moura-rondonia-2012</link><guid>http://softwarelivre.org/postgresql/blog/pgday-rolim-de-moura-rondonia-2012</guid></item><item><title>PGDay Cacoal - Rondônia 2012</title><description>&lt;p&gt;&lt;strong&gt;Data e Local&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;O PGDay Cacoal acontecerá no dia 24 de outubro de 2012, no Campus da UNESC - Faculdades Integradas de Cacoal, localizado na Rua dos Esportes, 1038 - Cacoal - RO.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Programação PGDay Cacoal, &lt;/strong&gt;&lt;strong&gt;dia 24/10/2012:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://www.postgresql.org.br/node/17033" target="_blank"&gt;leia mais&lt;/a&gt;&lt;/p&gt;</description><pubDate>Wed, 10 Oct 2012 18:49:36 +0000</pubDate><link>http://softwarelivre.org/postgresql/blog/pgday-cacoal-rondonia-2012</link><guid>http://softwarelivre.org/postgresql/blog/pgday-cacoal-rondonia-2012</guid></item></channel></rss>

@@ -1,0 +1,847 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" class="controller-content_viewer action-content_viewer-view_page template-default profile-type-is-community profile-name-is-postgresql theme-sl-default">
+  <head>
+    <title>PostgreSQL 9.3 - PostgreSQL BR</title>
+    <link rel="alternate" type="application/rss+xml" title="Comunidade do Postgresql Brasil" href="http://softwarelivre.org/postgresql/blog/feed" />
+    <!--<meta http-equiv="refresh" content="1"/>-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    
+
+      <meta name="description" content="Software Livre Brasil" />
+
+    <!-- site root -->
+    <meta property="noosfero:root" content=""/>
+
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    
+
+    <script src="/assets/application-1c0930e8f260aafbc74c4fad04079409.js"></script>
+
+  
+  
+<script src="/javascripts/plugins/pg_search/search.js"></script>
+<script src="/javascripts/plugins/pg_search/profile_search_block.js"></script>
+<script src="/assets/plugins/require_auth_to_comment/hide_comment_form-c3a3727ea301c62930e11aab20ae74d4.js"></script>
+<script src="/assets/plugins/require_auth_to_comment/jquery.livequery.min-d1fe96eb7788079f6e550db2b6610365.js"></script>
+<script src="/assets/plugins/orders/javascripts/locale-17eaae2c136082dab9da1d91648b6a7e.js"></script>
+<script src="/assets/plugins/orders/javascripts/toggle_edit-f9da47bc0223fac8e5e5174c6ea24413.js"></script>
+<script src="/assets/plugins/orders/javascripts/sortable-table-ba58eb377fc175eb1e374be63d5454a3.js"></script>
+<script src="/assets/plugins/orders/javascripts/help-14515dc2f741beaa4b3d121df366af0d.js"></script>
+<script src="/assets/plugins/orders/javascripts/orders-560e35746985dc40b97851b13705cb26.js"></script>
+<script src="/assets/plugins/html5_video/video-channel-6aca45f93220c0910d8273dd2368004e.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/locale-17eaae2c136082dab9da1d91648b6a7e.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/toggle_edit-f9da47bc0223fac8e5e5174c6ea24413.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/sortable-table-ba58eb377fc175eb1e374be63d5454a3.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/suppliers-35473b9ebd4b9e65027e1bafa94dfdcd.js"></script>
+<script src="/assets/plugins/event/event-b1013aca7ce3cf0d4d5e6e10dc1f05b2.js"></script>
+<script src="/assets/plugins/display_content/javascripts/jstree/_lib/jquery-1.8.3-09dfd3b315fe6b24fbc309e36f5d70c3.js"></script>
+<script src="/assets/plugins/display_content/javascripts/jstree/jquery.jstree-563d09f7e7938a8a2f4207bfe6d48dd3.js"></script>
+<script src="/assets/plugins/container_block/container_block-7eae56f79aa8da8b64941d18d2972c7b.js"></script>
+<script src="/assets/plugins/delivery/javascripts/delivery-da5b2dac737692db94d5bdc654586171.js"></script>
+<script src="/assets/plugins/products/javascripts/products-a4c860d8dbebe524d554f0b5564e0428.js"></script><script src="/designs/themes/sl-default/theme.js"></script><script>
+//<![CDATA[
+render_all_jquery_ui_widgets()
+//]]>
+</script>
+    <link rel="stylesheet" media="screen" href="/assets/application-e0072ababb97032fa1a5d95fa09d897c.css" />
+<link rel="stylesheet" media="screen" href="/designs/templates/default/stylesheets/style.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/icons/default/style-b3a500c1e17f47b010a70fdb0103012e.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/icons/pidgin/style-138f7bb59f9d26296632e82eae162877.css" />
+<link rel="stylesheet" media="screen" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/people_block/style-c340afe175b0045c7f8669073a428a1c.css" />
+<link rel="stylesheet" media="screen" href="/stylesheets/plugins/pg_search/style.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/recent_content/style-e0d5f807f7056b173f6cf113c840ddc0.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/custom_forms/style-7870704d75309d55ffcaa827c59baa18.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/work_assignment/style-526deb629c3d9e7736f049b99c72a50a.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/require_auth_to_comment/style-66a0efab118159977ca0194806ef4bec.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/orders/style-feb7767bc71e62563ccab53642a6e4c2.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/html5_video/style-8f2b70d373ff7ec22b404d91b1b6f211.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/suppliers/style-64c71b3cd22994ada93abd55c70ea1ce.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/gallery_block/style-4547593291c3fca2ad50216cbb3dfdc9.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/send_email/style-976778195cb106e52b31d57242cdc01c.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/event/style-8f5f6a9b5a7724dbc4977d11c2e4321c.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/display_content/style-cf10f47511255685485ac51859c22a29.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/container_block/style-dd17a810971259abe7c31678e9d9c132.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/video/style-68d51000d73adab06c1dcd036011138d.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/delivery/style-aeef749320f3cdff642340f047806f9b.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/sub_organizations/style-88810bb91c1c70f63817f6f03295fd92.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/products/style-3147a337d78ccc54df05870c504166fd.css" />
+<link rel="stylesheet" media="screen" href="/designs/themes/sl-default/global.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/themes/sl-default/style-f317a60b59d0ee3e8048cb6eba54b282.css" />
+
+    
+    
+
+    <script type="text/javascript">
+      DEFAULT_LOADING_MESSAGE = 'loading...';
+      PERMANENT_NOTIFICATIONS = false;
+      noosfero.profile = "postgresql"
+    </script>
+
+      
+<script src="/assets/tinymce/js/tinymce/tinymce-666c93593f34cd23b1f1e9177ab27cae.js"></script><script src="/assets/tinymce/js/tinymce/jquery.tinymce.min-33361c760deadb5b77610a12911056f2.js"></script><script src="/assets/tinymce-4df3fc98953118b704cdb7a023aafdc2.js"></script>
+<script type="text/javascript">
+tinymce.create('tinymce.plugins.MacrosPlugin', {
+  createControl: function(n, cm) {
+    switch (n) {
+       case 'macros':
+    }
+    return null;
+  }
+});
+
+function tinymce_macros_setup(editor) {
+}
+
+// Register plugin with a short name
+tinymce.PluginManager.add('macrosPlugin', tinymce.plugins.MacrosPlugin);
+
+jQuery(document).ready(function () {
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"it","selector":".tiny_mce","toolbar1":"fullscreen | insertfile undo redo | copy paste | bold italic underline | styleselect fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image","menubar":"edit insert view tools","toolbar2":"print preview code media | table | macros","macros_setup":[]})
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"it","selector":".tiny_mce_simple","toolbar1":"fullscreen | insertfile undo redo | copy paste | bold italic underline | styleselect fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image","menubar":false,"toolbar2":null,"macros_setup":[]})
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"it","selector":".tiny_mce_restricted","toolbar1":"bold italic underline | link","menubar":false,"toolbar2":null,"macros_setup":[]})
+});
+</script>
+
+
+  </head>
+  <body class="controller-content_viewer action-content_viewer-view_page template-default">
+    <a href="#content" id="link-go-content"><span>Go to the content</span></a>
+    
+    <div id="global-header">
+      <!-- div class='supportbanner'>
+  <div class='content'>
+    <div class='banner-title'>Campanha de doação 2016</div>
+    <div class='banner-subtitle'>Ajude a <span class='asl'>ASL.Org</span> a realizar o <span class='fisl17'>FISL17</span>!</div>
+    <p>Ajude a Associação Software Livre.Org a continuar seu trabalho de 12 anos em prol do desenvolvimento e disseminação do Software Livre. Faça uma doação e ganhe um ingresso cortesia para o <span class='fisl17'>FISL17</span> e uma camiseta oficial do evento.</p>
+  </div>
+  <div class='footer-links'>
+    <a class='logo-fisl17' href='http://fisl.org.br' target='_blank'><span>fisl17</span></a>
+    <a class='logo-asl' href='http://asl.org' target='_blank'><span>ASL.org</span></a>
+    <a class='iot-fisl' href='http://segue.fisl17.softwarelivre.org' target='_blank'><span>Contribua para o fisl17</span></a>
+  </div>
+</div -->
+
+    </div>
+
+    <div id="wrap-1">
+      <div id="theme-header">
+        <div id="top">
+  <ul id="top-menu">
+    <li><a href="/"><span>Início</span></a></li>
+    <li><a id="submenu-people" href="/search/people"><span class="icon-menu-people">People</span></a><a class="up menu-submenu-trigger" id="submenu-people-trigger" onclick="toggleSubmenu(this, '', {&quot;More recent&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_recent&quot;},&quot;More active&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_active&quot;},&quot;More popular&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_popular&quot;}}); return false" href="#"><span>People menu</span></a></li>
+    <li><a id="submenu-communities" href="/search/communities"><span class="icon-menu-community">Communities</span></a><a class="up menu-submenu-trigger" id="submenu-communities-trigger" onclick="toggleSubmenu(this, '', {&quot;More recent&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_recent&quot;},&quot;More active&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_active&quot;},&quot;More popular&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_popular&quot;}}); return false" href="#"><span>Communities menu</span></a></li>
+    <li><a href="/profile/portal/events" id="submenu-events"><span class='icon-menu-events'>Events</span></a></li>
+    <li><a href="/doc"><span>Manual</span></a></li>
+    <li><a href="/portal/quem-somos" id="submenu-about"><span>About</span></a></li>
+  </ul>
+</div>
+
+      </div>
+      <div id="wrap-2">
+        <div id="user">
+    <span class='not-logged-in'>
+      <span class='login'><a id="link_login" onclick="return noosfero.modal.inline(&#39;#inlineLoginBox&#39;)" class="" href="/account/login"><i class="icon-menu-login"></i><strong>Login</strong></a></span>
+
+      <div id='inlineLoginBox' style='display: none;'>
+        <div class="login-box">
+
+<h2>Login</h2>
+
+
+
+
+<form action="/account/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="n7sAdc76pAIVGfxMI+nHS3H3kY2fLWPRMVT6TIZINeEC07B0vKGm4foCCdKlab0oPmZbTpehpINs2MNI2cOTMw==" />
+
+     <div class="formfieldline"><label class="formlabel" for="main_user_login">Username / Email</label><div class="formfield type-text"><input id="main_user_login" onchange="this.value = convToValidLogin( this.value )" type="text" name="user[login]" /></div></div>
+
+     <div class="formfieldline"><label class="formlabel" for="user_password">Password</label><div class="formfield type-password"><input type="password" name="user[password]" id="user_password" /></div></div>
+
+     <div class='checkbox'>
+       <label>
+         <input type="checkbox" name="remember_me" id="remember_me" value="1" checked="checked" />
+         Keep me logged in
+       </label>
+     </div>
+
+     
+
+     <div class=" button-bar">
+       <input type="submit" name="commit" value="Log in" class="button with-text icon-login submit" />
+         <a class="button icon-close with-text modal-toggle modal-close" rel="deactivate" title="Cancel" href="#">&nbsp;<span>Cancel</span></a>
+<br style="clear: left;" /></div>
+</form>
+<div class=" button-bar">
+    <a class="button icon-add with-text" title="New user" href="/account/signup">&nbsp;<span>New user</span></a>
+
+    <a class="button icon-help with-text" title="I forgot my password!" href="/account/forgot_password">&nbsp;<span>I forgot my password!</span></a>
+<br style="clear: left;" /></div>
+</div><!-- end class="login-box" -->
+
+
+      </div>
+
+        <span class='or'>or</span> <span class='signup'><a href="/account/signup"><strong>Sign up</strong></a></span>
+    </span>
+  <form action="/search/articles" id="top-search" class="search_form clean" method="get">
+    <input name="query" size="15" title="Search..." onfocus="this.form.className='focused';" onblur="this.form.className=''" />
+    <div>Press <strong>Enter</strong> to send the search query.</div>
+    <script>
+//<![CDATA[
+jQuery("#user form input").hint();
+//]]>
+</script>
+  </form>
+</div><!-- end id="user" -->
+
+        <h1 id="site-title">
+          <a href="/"><span>Software livre Brasil</span></a>
+
+        </h1>
+        <div id="navigation">
+          <ul>
+            <div id="friends">
+<ul>
+  <li><a href="/portal"><span>+</span></a></li>
+  <li><a href="http://br-linux.org"><span>BR-Linux</span></a></li>
+  <li><a href="http://www.vivaolinux.com.br"><span>Viva o Linux</span></a></li>
+  <li><a href="http://www.revista.espiritolivre.org"><span>Revista Espírito Livre</span></a></li>
+  <li><a href="http://www.dicas-l.com.br"><span>Dicas-L</span></a></li>
+  <li><a href="http://www.sejalivre.org"><span>Seja Livre</span></a></li>
+  <li><a href="http://www.underlinux.com.br"><span>Under Linux</span></a></li>
+  <li><a href="http://www.sempreupdate.com.br"><span>Sempre Update</span></a></li>
+</ul>
+</div>
+<div id="external-links">
+<ul>
+  <li><a id="blogoosfero" title="Blogoosfero" href="http://blogoosfero.cc/software-livre" target="_blank"><span>Blogoosfero</span></a></li>
+  <li><a id="twitter" title="Twitter" href="https://twitter.com/PSLBrasil" target="_blank"><span>Twitter</span></a></li>
+  <li><a id="diaspora" title="Diaspora" href="https://diaspora.softwarelivre.org/u/pslbrasil" target="_blank"><span>Diaspora</span></a></li>
+  <li><a id="gnu-social" title="Quitter" href="https://quitter.se/pslbrasil" target="_blank"><span>Quitter</span></a></li>
+  <li><a id="feed" title="Feed" href="http://softwarelivre.org/portal/feed"><span>Feed</span></a></li>
+</ul>
+</div>
+
+          </ul>
+          <div id="navigation-end"></div>
+        </div><!-- end id="navigation" -->
+        <div id="content">
+          <div id="content-inner">
+  <div id="profile-header"></div><div class="boxes" id="boxes"><div class="box box-3" id="box-2013"><div class="blocks">    <div class="block-outer"><div class="block members-block" id="block-3746" help="Clicking a member takes you to his/her homepage"><div class="block-inner-1"><div class="block-inner-2">
+<div class="block-header"><h3 class="block-title"><span>13 integrantes</span></h3><h4 class="block-subtitle empty"><span></span></h4></div>
+
+<div>
+    <ul>
+      <div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/carlosamaral/check_friendship" onclick="toggleSubmenu(this, 'chay', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/carlosamaral&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/carlosamaral/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/carlosamaral/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/carlosamaral/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/carlosamaral/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/carlosamaral&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Carlos Amaral" href="http://softwarelivre.org/carlosamaral"><span class="profile-image"><img alt="Carlos Amaral" title="" class=" photo" src="/image_uploads/0008/8007/caricatura_minor.jpg" /></span><span class="fn">chay</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/daniel_analyst/check_friendship" onclick="toggleSubmenu(this, 'Daniel', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/daniel_analyst&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/daniel_analyst/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/daniel_analyst/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/daniel_analyst/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/daniel_analyst/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/daniel_analyst&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Daniel Silva Marcelino" href="http://softwarelivre.org/daniel_analyst"><span class="profile-image"><img alt="Daniel Silva Marcelino" title="" class=" photo" src="/image_uploads/0010/6033/13083_781487025267381_8174926280420803223_n_minor.jpg" /></span><span class="fn">Daniel</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/ribraim/check_friendship" onclick="toggleSubmenu(this, 'Ibraim', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/ribraim&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/ribraim/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/ribraim/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/ribraim/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/ribraim/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/ribraim&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Rodrigo Ibraim Teixeira" href="http://softwarelivre.org/ribraim"><span class="profile-image"><img alt="Rodrigo Ibraim Teixeira" title="" class=" photo" src="/image_uploads/0010/5639/528785_3105300159655_1893344765_n_minor.jpg" /></span><span class="fn">Ibraim</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/alefevariani/check_friendship" onclick="toggleSubmenu(this, 'Alefe', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/alefevariani&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/alefevariani/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/alefevariani/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/alefevariani/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/alefevariani/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/alefevariani&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Alefe Variani" href="http://softwarelivre.org/alefevariani"><span class="profile-image"><img alt="Alefe Variani" title="" class=" photo" src="/image_uploads/0009/4160/eu-bor_minor.png" /></span><span class="fn">Alefe</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/brunork/check_friendship" onclick="toggleSubmenu(this, 'Bruno', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/brunork&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/brunork/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/brunork/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/brunork/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/brunork/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/brunork&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Bruno Kocziceski" href="http://softwarelivre.org/brunork"><span class="profile-image"><img alt="Bruno Kocziceski" title="" class=" photo" src="/image_uploads/0008/8043/1920451_10201815025677049_464174729_n_minor.jpg" /></span><span class="fn">Bruno</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/ederjordan/check_friendship" onclick="toggleSubmenu(this, 'Éder S. G.', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/ederjordan&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/ederjordan/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/ederjordan/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/ederjordan/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/ederjordan/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/ederjordan&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Éder Saraiva Grigório" href="http://softwarelivre.org/ederjordan"><span class="profile-image"><img alt="Éder Saraiva Grigório" title="" class=" photo" src="/image_uploads/0007/7764/ederjordan_minor.jpg" /></span><span class="fn">Éder S. G.</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/villarino/check_friendship" onclick="toggleSubmenu(this, 'Luciano', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/villarino&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/villarino/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/villarino/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/villarino/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/villarino/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/villarino&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Luciano Antônio Gonzaga Villarino" href="http://softwarelivre.org/villarino"><span class="profile-image"><img alt="Luciano Antônio Gonzaga Villarino" title="" class=" photo" src="/image_uploads/0011/9760/Luciano_minor.png" /></span><span class="fn">Luciano</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block no-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/didism2/check_friendship" onclick="toggleSubmenu(this, 'Diogo', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/didism2&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/didism2/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/didism2/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/didism2/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/didism2/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/didism2&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Diogo Moraes" href="http://softwarelivre.org/didism2"><span class="profile-image"><img alt="Diogo Moraes" title="" class=" photo" src="//www.gravatar.com/avatar/666da5738fc2c0b6a370b20295428105?only_path=false&amp;size=50&amp;d=wavatar" /></span><span class="fn">Diogo</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block no-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/albertguedes/check_friendship" onclick="toggleSubmenu(this, 'albert', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/albertguedes&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/albertguedes/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/albertguedes/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/albertguedes/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/albertguedes/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/albertguedes&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="albert r. carnier guedes" href="http://softwarelivre.org/albertguedes"><span class="profile-image"><img alt="albert r. carnier guedes" title="" class=" photo" src="//www.gravatar.com/avatar/9f31e45d46896015540aafa3c7a6c4b1?only_path=false&amp;size=50&amp;d=wavatar" /></span><span class="fn">albert</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block no-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/juvencioleite/check_friendship" onclick="toggleSubmenu(this, 'Juvencio', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/juvencioleite&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/juvencioleite/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/juvencioleite/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/juvencioleite/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/juvencioleite/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/juvencioleite&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Juvencio Leite" href="http://softwarelivre.org/juvencioleite"><span class="profile-image"><img alt="Juvencio Leite" title="" class=" photo" src="//www.gravatar.com/avatar/d72412cef43d1e894ac36f182966483f?only_path=false&amp;size=50&amp;d=wavatar" /></span><span class="fn">Juvencio</span><span class="extra_info"></span></a></li></div>
+
+    </ul>
+  <br style="clear:both" />
+</div>
+<div class="block-footer-content"><a class="view-all" href="/profile/postgresql/members#members-tab">Mostra Tutto</a>
+
+</div></div></div></div></div>
+</div></div>
+<div class="box box-2" id="box-2012"><div class="blocks">  <div class="block-outer"><div class="block profile-image-block" id="block-3744" help="This block presents the profile image"><div class="block-inner-1"><div class="block-inner-2"><div class="vcard">
+
+
+<div class="profile-big-image img-pic">
+  <div class="profile-big-image-inner1">
+    <div class="profile-big-image-inner2">
+      <a href="http://softwarelivre.org/postgresql"><img alt="PostgreSQL" title="" class=" logo" src="/image_uploads/0000/2368/logo_big.png" />
+</a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="profile-info-options">
+  <ul>
+  <li>
+    <div class='join-leave-button require-login-popup'>
+    <a class="button icon-add with-text modal-toggle join-community" title="Join this community" href="/profile/postgresql/join_not_logged">&nbsp;<span>Join this community</span></a>
+</div>
+
+<script>
+//<![CDATA[
+
+  noosfero.add_and_join.locales.leaveConfirmation = "Please confirm to leave the community 'PostgreSQL'"
+
+//]]>
+</script>
+
+  </li>
+</ul>
+
+</div>
+</div><!-- end class="vcard" -->
+</div></div></div></div>
+
+    <div class="block-outer"><div class="block link-list-block" id="block-13224" help="This block can be used to create a menu of links. You can add, remove and update the links as you wish."><div class="block-inner-1"><div class="block-inner-2"><div class="block-header"><h3 class="block-title empty"><span></span></h3><h4 class="block-subtitle empty"><span></span></h4></div>
+
+
+
+<ul>
+    <li>
+      <a class="icon-ok" href="/postgresql/blog">Pagina Inicial</a>
+    </li>
+    <li>
+      <a class="icon-send" href="http://listas.postgresql.org.br/cgi-bin/mailman/listinfo">Lista de Discussão</a>
+    </li>
+    <li>
+      <a class="icon-spread" href="http://www.postgresql.org.br">Pagina do Grupo Brasileiro de Usuários</a>
+    </li>
+</ul>
+</div></div></div></div>
+
+    <div class="block-outer"><div class="block blog-archives-block" id="block-13225"><div class="block-inner-1"><div class="block-inner-2">  <div class="block-header"><h3 class="block-title"><span>Posts</span></h3><h4 class="block-subtitle empty"><span></span></h4></div>
+
+  <ul class='blog-archives'>
+      <li><strong>2014 (1)</strong></li>
+      <ul class='2014-archive'>
+          <li><a href="http://softwarelivre.org/postgresql/blog?month=12&year=2014">Dicembre (1)</a></li>
+      </ul>
+      <li><strong>2013 (6)</strong></li>
+      <ul class='2013-archive'>
+          <li><a href="http://softwarelivre.org/postgresql/blog?month=9&year=2013">Settembre (2)</a></li>
+          <li><a href="http://softwarelivre.org/postgresql/blog?month=4&year=2013">Aprile (2)</a></li>
+          <li><a href="http://softwarelivre.org/postgresql/blog?month=3&year=2013">Marzo (1)</a></li>
+          <li><a href="http://softwarelivre.org/postgresql/blog?month=2&year=2013">Febbraio (1)</a></li>
+      </ul>
+      <li><strong>2012 (10)</strong></li>
+      <ul class='2012-archive'>
+          <li><a href="http://softwarelivre.org/postgresql/blog?month=10&year=2012">Ottobre (3)</a></li>
+          <li><a href="http://softwarelivre.org/postgresql/blog?month=9&year=2012">Settembre (4)</a></li>
+          <li><a href="http://softwarelivre.org/postgresql/blog?month=8&year=2012">Agosto (1)</a></li>
+          <li><a href="http://softwarelivre.org/postgresql/blog?month=6&year=2012">Giugno (1)</a></li>
+          <li><a href="http://softwarelivre.org/postgresql/blog?month=4&year=2012">Aprile (1)</a></li>
+      </ul>
+      <li><strong>2011 (20)</strong></li>
+      <ul class='2011-archive'>
+          <li><a href="http://softwarelivre.org/postgresql/blog?month=11&year=2011">Novembre (2)</a></li>
+          <li><a href="http://softwarelivre.org/postgresql/blog?month=10&year=2011">Ottobre (1)</a></li>
+          <li><a href="http://softwarelivre.org/postgresql/blog?month=9&year=2011">Settembre (4)</a></li>
+          <li><a href="http://softwarelivre.org/postgresql/blog?month=6&year=2011">Giugno (1)</a></li>
+          <li><a href="http://softwarelivre.org/postgresql/blog?month=5&year=2011">Maggio (2)</a></li>
+          <li><a href="http://softwarelivre.org/postgresql/blog?month=4&year=2011">Aprile (1)</a></li>
+          <li><a href="http://softwarelivre.org/postgresql/blog?month=3&year=2011">Marzo (5)</a></li>
+          <li><a href="http://softwarelivre.org/postgresql/blog?month=2&year=2011">Febbraio (4)</a></li>
+      </ul>
+      <li><strong>2010 (4)</strong></li>
+      <ul class='2010-archive'>
+          <li><a href="http://softwarelivre.org/postgresql/blog?month=10&year=2010">Ottobre (1)</a></li>
+          <li><a href="http://softwarelivre.org/postgresql/blog?month=9&year=2010">Settembre (1)</a></li>
+          <li><a href="http://softwarelivre.org/postgresql/blog?month=7&year=2010">Luglio (1)</a></li>
+          <li><a href="http://softwarelivre.org/postgresql/blog?month=5&year=2010">Maggio (1)</a></li>
+      </ul>
+      <li><strong>2009 (15)</strong></li>
+      <ul class='2009-archive'>
+          <li><a href="http://softwarelivre.org/postgresql/blog?month=12&year=2009">Dicembre (1)</a></li>
+          <li><a href="http://softwarelivre.org/postgresql/blog?month=11&year=2009">Novembre (1)</a></li>
+          <li><a href="http://softwarelivre.org/postgresql/blog?month=10&year=2009">Ottobre (2)</a></li>
+          <li><a href="http://softwarelivre.org/postgresql/blog?month=9&year=2009">Settembre (1)</a></li>
+          <li><a href="http://softwarelivre.org/postgresql/blog?month=7&year=2009">Luglio (2)</a></li>
+          <li><a href="http://softwarelivre.org/postgresql/blog?month=6&year=2009">Giugno (4)</a></li>
+          <li><a href="http://softwarelivre.org/postgresql/blog?month=5&year=2009">Maggio (3)</a></li>
+          <li><a href="http://softwarelivre.org/postgresql/blog?month=4&year=2009">Aprile (1)</a></li>
+      </ul>
+  </ul>
+
+  <div class="subscribe-feed"><a href="http://softwarelivre.org/postgresql/blog/feed">Subscribe RSS Feed</a></div>
+</div></div></div></div>
+
+    <div class="block-outer"><div class="block recent-documents-block" id="block-3745" help="This block lists your content most recently updated."><div class="block-inner-1"><div class="block-inner-2"><div class="block-header"><h3 class="block-title"><span>Conteúdo recente</span></h3><h4 class="block-subtitle empty"><span></span></h4></div>
+
+<ul>
+    <li><a href="http://softwarelivre.org/postgresql/blog/postgresql-9.4">PostgreSQL 9.4</a></li>
+    <li><a href="http://softwarelivre.org/postgresql/entenda-sobre-a-metologia-agil-scrum">Entenda sobre a metologia Ágil - Scrum</a></li>
+    <li><a href="http://softwarelivre.org/postgresql/blog/pgday-campinas-2013">PGDay Campinas 2013</a></li>
+    <li><a href="http://softwarelivre.org/postgresql/blog/postgresql-9.3">PostgreSQL 9.3</a></li>
+    <li><a href="http://softwarelivre.org/postgresql/blog/pgday-ceara-2013">PgDay Ceará 2013</a></li>
+</ul>
+<div class="block-footer-content">  <a href="/profile/postgresql/sitemap">All content</a>
+</div></div></div></div></div>
+</div></div>
+<div class="box box-1" id="box-2011"><div class="blocks">  <div class="block-outer"><div class="block main-block" id="block-3743" help="This block presents the main content of your pages."><div class="block-inner-1"><div class="block-inner-2"><div class="main-content">
+<div id="article" class="text-article">
+
+
+
+<script type="text/javascript">
+    window.ONE_COMMENT = "One comment";
+    window.COMMENT_PLURAL = "comments";
+    window.NO_COMMENT_YET = "No comments yet";
+</script>
+
+  <div id="article-parent">
+    <a class="button icon-back with-text" title="Go back to Comunidade d..." href="http://softwarelivre.org/postgresql/blog">&nbsp;<span>Go back to Comunidade d...</span></a>
+  </div>
+
+<div id="article-toolbar">
+  <div>
+  <div id="article-actions">
+
+    
+      <script>fullscreenPageLoad('#article')</script>
+    <a id="fullscreen-btn" onClick="toggle_fullwidth(&#39;#article&#39;)" class="button with-text icon-fullscreen" href="#" title="Go to full screen mode"><span>Full screen</span></a><a style="display: none;" id="exit-fullscreen-btn" onClick="toggle_fullwidth(&#39;#article&#39;)" class="button with-text icon-fullscreen" href="#" title="Exit full screen mode"><span>Exit full screen</span></a>
+
+
+
+
+
+
+      <a id="suggest-article-link" class="button with-text icon-suggest" href="/myprofile/postgresql/cms/suggest_an_article"><span>Suggest an article</span></a>
+
+
+
+    
+
+    
+
+  </div>
+  <div id="article-header">
+    
+    
+      <h1 class="title">
+      PostgreSQL 9.3
+  </h1>
+  <span class="publishing-info">
+  <span class="date">
+    Settembre 9, 2013 10:47
+  </span>
+  <span class="author">
+    , by Software Livre Brasil
+  </span>
+  <span class="comments">
+     - <a href="/postgresql/blog/postgresql-9.3#comments_list"><span class='comment-count hide'>0</span><span class='comment-count-write-out'>no comments yet</span></a>
+  </span>
+
+<span class="followers-count">
+|
+    No one following this article yet.
+</span>
+
+</span>
+
+  <div id='article-sub-header'>
+      <div id="article-hits">
+        Viewed 295 times 
+      </div>
+
+  </div>
+
+
+    
+  </div>
+</div>
+
+</div>
+
+
+
+  <div id="addThis">
+  <script type="text/javascript">
+    addthis_pub = 'ra-4d93d22a7a91a05f';
+    addthis_logo = '';
+    addthis_options = 'identica, twitter, www.facebook.com, favorites, email, delicious, tumblr, digg, slashdot, more';
+  </script>
+  <a href="http://www.addthis.com/bookmark.php" id="bt_addThis" target="_blank" onmouseover="return addthis_open(this, '', '[URL]')" onmouseout="addthis_close()" onclick="return addthis_sendto()"><img width="53" height="16" border="0" alt="" src="/images/bt-bookmark.gif" /></a>
+</div>
+
+
+  <div class="article-body article-body-text-article">
+    <div><div><div>
+<p>9 DE SETEMBRO DE 2013: O Grupo de Desenvolvimento Global do PostgreSQL
+anuncia o lançamento do PostgreSQL 9.3, a última versão do líder mundial em
+sistema de banco de dados relacionais de código aberto. Esta versão expande a
+confiabilidade, disponibilidade e habilidade em integrar com outros bancos de
+dados. Usuários já estão descobrindo que eles podem desenvolver aplicações
+utilizando a versão 9.3 que antes não teriam sido possíveis.
+</p>
+<p>
+"PostgreSQL 9.3 fornece funcionalidades que como um desenvolvedor de aplicações
+eu posso utilizar imediatamente: melhor suporte a JSON, indexação de expressões
+regulares e facilidade em federalizar bancos de dados com adaptador de dados
+externos. Não tenho ideia de como conclui projetos sem a 9.3", disse Jonathan
+S. Katz, CTO da VenueBook.
+</p>
+<p>
+<b>Gravação de Dados Externos</b>
+</p>
+<p>
+A versão 9.3 torna os adaptadores de dados externos graváveis, permitindo a
+troca de dados bidirecional entre sistemas. Ambientes complexos de TI atuais
+envolvem múltiplos bancos de dados e fontes de dados semi-estruturados, e o
+PostgreSQL ajuda você a integrá-los em uma pilha coerente. O projeto também
+lançou o postgres_fdw, um conector de federação PostgreSQL-a-PostgreSQL
+escrita/leitura de alto desempenho.
+</p>
+<p>
+"Adaptadores de dados externos graváveis nos permitem ligar e testar
+perfeitamente várias alternativas de fonte de dados, o que nos permite atender
+às diferentes necessidades rapidamente e desenvolver protótipos
+inteligentemente", explicou Lee Holloway, co-fundador e engenheiro líder na
+CloudFlare. "É emocionante conceber e lançar novos armazenamentos de dados
+(incluindo nossos internos experimentais escritos em Go) e, em seguida, vê-los
+ler, escrever e até mesmo transacionar mutuamente".
+</p>
+<p>
+<b>Maior Confiabilidade e Disponibilidade</b>
+</p>
+<p>
+"Postgres tem sido a minha escolha favorita pela sua conhecida estabilidade,
+robustez, coerência forte, segurança, ACID e conformidade com o SQL", disse
+Pascal Bouchareine, diretor de pesquisa e desenvolvimento na Gandi.net. "Estou
+especialmente animado para ouvir mais sobre a transferência rápida em caso de
+falha que vem na 9.3".
+</p>
+<p>
+Esta nova versão inclui funcionalidades para melhorar e estender as conhecidas
+confiabilidade e disponibilidade do PostgreSQL:
+</p>
+<ul>
+<li>Verificações de Páginas de Dados: ajuda administradores a detectar
+rapidamente discos com falhas e hardware ruim que corrompe dados</li>
+<li>Transferência Rápida em Caso de Falha: permite transferências abaixo de um
+segundo do principal para réplica, suportando disponibilidade "a nível de
+operadora"</li>
+<li>Remasterização de Réplicas: reconfiguração mais fácil e mais rápida de
+réplicas cascateadas após transferência em caso de falha</li>
+</ul>
+<p>
+<b>Funcionalidades para Desenvolvedores</b>
+</p>
+<p>
+Tal como acontece todo lançamento anual, o PostgreSQL 9.3 inclui muitas
+funcionalidades que tornam o trabalho com PostgreSQL mais fácil, mais flexível
+e mais divertido para desenvolvedores de aplicações, administradores e
+arquitetos. Essas funcionalidades incluem:
+</p>
+<ul>
+<li>Métodos construtores e extratores adicionais para JSON</li>
+<li>Visões automaticamente atualizáveis</li>
+<li>pg_dump paralelo para acelerar cópias de seguranças em grandes bancos de dados</li>
+<li>Junções laterais</li>
+</ul>
+<p>
+Além disso, processos de trabalho em segundo plano definidos pelo usuário no
+PostgreSQL 9.3 permitem que desenvolvedores escrevam gerenciadores de tarefas,
+manipuladores de requisições, processadores paralelos, ferramentas de
+enfileiramento e outros aplicativos auxiliares que possibilitam que o
+PostgreSQL seja um coordenador de carga de trabalho. Um exemplo disto já
+lançado é o Mongres, um processo de trabalhado em segundo plano que aceita
+consultas do MongoDB, as interpreta e passa para o PostgreSQL.
+</p>
+<p>
+<b>Sobre PostgreSQL</b>
+</p>
+<p>
+PostgreSQL é um sistema de banco de dados líder de código aberto, com uma
+comunidade global de milhares de usuários e colaboradores e dezenas de empresas
+e organizações. O Projeto PostgreSQL foi construído ao longo de 25 anos de
+engenharia, iniciando na Universidade da Califórnia, Berkeley, e tem um ritmo
+inigualável de desenvolvimento hoje. Conjunto de funcionalidades maduras do
+PostgreSQL não só se igualam aos principais sistemas de bancos de dados
+proprietários, mas os supera em funcionalidades avançadas, extensibilidade,
+segurança e estabilidade. Saiba mais sobre o PostgreSQL e participe da nossa
+comunidade em <a href="http://www.postgresql.org">PostgreSQL.org</a>.
+</p>
+
+<a name="features"></a><h2>Detalhes das Funcionalidades</h2>
+
+<p>
+Para explicações sobre as funcionalidades acima e outras, visite as seguintes páginas:
+</p>
+<ul>
+<li><a href="http://www.postgresql.org/docs/9.3/static/release-9-3.html">Notas de Lançamento</a></li>
+<li><a href="http://www.postgresql.org/docs/9.3/static/index.html">Documentação 9.3</a></li>
+<li><a href="http://wiki.postgresql.org/wiki/What%27s_new_in_PostgreSQL_9.3">O Que Há de Novo no PostgreSQL 9.3 (Inglês)</a></li>
+<li><a href="http://www.postgresql.org/about/featurematrix">Matriz de Funcionalidades (Inglês)</a></li>
+<li><a href="https://github.com/umitanuki/mongres">Mongres: emulador MongoDB para PostgreSQL</a></li>
+<li><a href="http://blog.cloudflare.com/kyoto_tycoon_with_postgresql">Kyoto Tycoon FDW para PostgreSQL por CloudFlare</a></li>
+<li><a href="https://wiki.postgresql.org/wiki/Foreign_data_wrappers">Lista de outros Adaptadores de Dados Externos</a></li>
+</ul>
+<a name="download"></a><h2>Onde Baixar</h2>
+<ul>
+<li>
+<a href="http://www.postgresql.org/download">Páginas de downloads</a> com links para instaladores e ferramentas para Windows, Linux, OSX, BSD e Solaris.</li>
+<li><a href="http://www.postgresql.org/ftp/source/v9.3.0">Código Fonte</a></li>
+<li><a href="http://pgxn.org">Rede de Extensões do PostgreSQL</a></li>
+<li><a href="http://www.postgresql.org/download/product-categories">Softwares Relacionados e Comerciais</a></li>
+</ul>
+<a name="docs"></a><h2>Documentação</h2>
+
+<p>
+Documentação HTML e man pages são instalados com o PostgreSQL, mas fique a vontade para navegar, pesquisar e comentar na nossa vasta <a href="http://www.postgresql.org/docs/9.3/interactive">documentação online</a> interativa.
+</p>
+
+<a name="license"></a><h2>Licença</h2>
+<p>
+PostgreSQL usa a <a href="http://www.postgresql.org/about/license">Licença PostgreSQL</a>, uma licença
+"tolerante" estilo BSD. Essa <a href="http://www.opensource.org/licenses/postgresql">Licença certificada
+	pela OSI</a> é amplamente reconhecida como flexível e ideal para negócios,
+uma vez que ela não restringe o uso do PostgreSQL com aplicações comerciais e
+proprietárias. Juntamente com apoio de várias empresas e a propriedade pública
+do código, nossa licença torna o PostgreSQL muito popular entre empresas que
+desejam incorporar um banco de dados em seus produtos sem medo de taxas,
+aprisionamento tecnológico ou mudanças nos termos da licença.
+</p>
+
+<a name="contact"></a><h2>Contatos</h2>
+
+<p>Páginas na Web</p>
+<ul>
+<li><a href="http://www.postgresql.org">Página do PostgreSQL</a></li>
+<li><a href="http://www.postgresql.org.br">Comunidade Brasileira de PostgreSQL</a></li>
+</ul>
+<p>Informação à Imprensa</p>
+<p>Brasil<br>
+Euler Taveira de Oliveira<br><a href="mailto:br@postgresql.org">br@postgresql.org</a><br>
++55 63 84594598</p>
+
+<p>Para contato em outras regiões, visite <a href="http://www.postgresql.org/about/press/contact">nossa lista de contatos internacionais.</a></p>
+
+<a name="quoted_companies"></a><h2>Empresas Citadas e Texto Completo das Citações</h2>
+
+<b>VenueBook</b>
+
+<blockquote>"PostgreSQL 9.3 fornece funcionalidades que como um desenvolvedor de aplicações eu posso utilizar imediatamente: melhor suporte a JSON, indexação de expressões regulares e facilidade em federalizar bancos de dados com adaptador de dados externos. Não tenho ideia de como conclui projetos sem a 9.3", disse Jonathan S. Katz, CTO da VenueBook</blockquote>
+
+<p><a href="http://venuebook.com/">VenueBook</a> é um solução de gerenciamento de eventos na nuvem que ajuda a gerenciar todo ciclo do evento em um só lugar. Nós fornecemos software que possibilita gerentes de locais a preparar e aprovar contratos, cardápios e processar todos pagamentos online. Diferentemente de outros sistemas no mercado que apenas o ajudam a gerenciar eventos, nós também simplificamos a interação e agendamento com o planejador. Contato (somente inglês): <a href="mailto:info@venuebook.com">info@venuebook.com</a>, +1 646-543-8368</p>
+
+<b>CloudFlare</b>
+
+<blockquote>
+"CloudFlare está orgulhosa em incluir o PostgreSQL 9.3 na sua caixa de ferramentas que proporcionam aceleração e segurança a milhões de sites. Ele fornece a extensibilidade e personalização que precisamos para ser ágil e escalável na camada de dados. Adaptadores de dados externos graváveis nos permitem ligar e testar perfeitamente várias alternativas de fonte de dados, o que nos permite atender às diferentes necessidades rapidamente e desenvolver protótipos inteligentemente. É emocionante conceber e lançar novos armazenamentos de dados (incluindo nossos internos experimentais escritos em Go) e, em seguida, vê-los ler, escrever e até mesmo transacionar mutuamente."
+<br><br>
+"Acoplar adaptadores de dados externos com a noção de visões materializadas e junções laterais para consulta; e processos de trabalho em segundo plano para monitoramento, rende ao PostgreSQL uma armadura verdadeiramente poderosa que pretendemos usar e crescer com ele. CloudFlare está entusiasmada por ter esta joia em nossa caixa de ferramentas", disse Lee Holloway, co-fundador e engenheiro líder da CloudFlare.</blockquote>
+
+<p><a href="http://www.cloudflare.com">CloudFlare, Inc.</a> faz sites duas vezes mais rápidos, os protege de ataques, garante que eles estejam sempre online e os torna simples de adicionar aplicativos web com apenas um clique. CloudFlare turbina sites independente do tamanho ou plataforma sem a necessidade de adicionar hardware, instalar software ou alterar uma linha de código. A comunidade CloudFlare se torna mais sólida à medida que cresce; cada novo site torna a rede mais inteligente. Graças a nossa fantástica tecnologia, a cada mês centenas de milhões de pessoas experimentam uma Internet melhor, mais rápida e mais segura. CloudFlare foi reconhecida pelo Fórum Econômico Mundial como um pioneiro tecnológico, chamado de a Mais Inovadora Empresa de Tecnologia de Rede e Internet no ano de 2011 e 2012 pelo Jornal Wall Street e ranqueada entre as 50 mais inovadoras empresas do mundo em 2012 pela Fast Company. CloudFlare localiza-se em São Francisco, Califórnia, USA. Contato (somente em inglês): <a href="mailto:press@cloudflare.com">press@cloudflare.com</a>, +1 (650) 485-1399</p>
+
+<b>Gandi.net</b>
+
+<blockquote>
+"Nós estamos acompanhando replicação e estamos muito interessados nas melhorias recentes desta funcionalidade. Estou especialmente animado para ouvir mais sobre a transferência rápida em caso de falha que vem na 9.3. Estamos utilizando o postgresql para a plataforma IAAS/PAAS na Gandi e recentemente internamente desenvolvendo um dos nossos sistemas em produção que armazena/computa/envia milhões de registros diariamente com facilidade."
+<br><br>
+"Postgres tem sido a minha escolha favorita pela sua conhecida estabilidade/robustez/coerência forte/segurança/ACID e conformidade com o SQL. Agora que está se modernizando, fazendo bom uso do sistema operacional, estamos observando grandes melhorias de desempenho e mais facilidade na administração de uma instalação à prova de falhas. É o melhor banco de dados relacional de missão crítica disponível no mercado", disse Pascal Bouchareine, diretor de pesquisa e desenvolvimento da Gandi.
+</blockquote>
+
+<p><a href="http://www.gandi.net">GANDI.net</a> foi uma das primeiras empresas de registro de domínio aprovada pelo ICANN para domínios .COM, .NET, .ORG, .BIZ, .INFO, .NAME, .BE, .FR e .EU na França. Agora ela oferece mais de 200 extensões de domínios e continua a aumentar essa lista regularmente. Gandi considera-se uma empresa de registro de domínios ética em uma indústria que tem algumas práticas 'desonestas'. Ela valoriza os direitos e a privacidade dos clientes acima de tudo e busca defender isso sempre que possível. Contato em inglês: Thomas Stocking e em francês: Nicolas Lhuillery. Telefone: +1 410.429.7402.</p>
+
+<a name="companies"></a><h2>Suporte Corporativo</h2>
+
+<p>O PostgreSQL conta com o apoio de várias empresas, que patrocinam desenvolvedores, fornecem hospedagem e nos dão apoio financeiro. Veja nossa <a href="http://www.postgresql.org/about/sponsors/">página de patrocinadores</a> para ver alguns desses apoiadores do projeto.</p>
+
+<p>Existe também uma grande comunidade de <a href="http://www.postgresql.org/support/professional_support">empresas oferecendo suporte ao PostgreSQL</a>, de consultores individuais a empresas multinacionais.</p>
+
+<p><a href="http://www.postgresql.org/about/donate">Doações</a> são aceitas de bom grado.</p>
+</div></div></div><div>
+<h3>tags: </h3>
+<ul>
+<li><a href="http://www.postgresql.org.br/taxonomy/term/22">postgres</a></li>
+<li><a href="http://www.postgresql.org.br/taxonomy/term/283">9.3</a></li>
+</ul>
+</div>
+    <br style="clear:both" />
+  </div> <!-- end class="article-body" -->
+
+
+
+<div id="article-source">Source: <a href="http://www.postgresql.org.br/node/18508">http://www.postgresql.org.br/node/18508</a></div>
+
+
+
+  <div class="comments" id="comments_list">
+    <h3 class="no-comments-yet">
+      <span class='comment-count hide'>0</span><span class='comment-count-write-out'>no comments yet</span>
+    </h3>
+
+
+    <ul class="article-comments-list">
+    </ul>
+
+      <div id='page-comment-form' class='page-comment-form'><div class="page-comment-form">
+
+
+
+<div class="post_comment_box closed">
+
+  <a class="display-comment-form" href="#">Post a comment</a>
+<form class="comment_form" id="new_comment" onsubmit="jQuery.ajax({data:jQuery.param(jQuery(this).serializeArray()) + &#39;&amp;authenticity_token=&#39; + encodeURIComponent(&#39;iTxF+XCyu6lzhDhyXQBf4KtYROcN78GLytA+eWqpbWAUVPX4Aum5SpyfzezbgCWD5MmOJAVjBtmXXAd9NSLLsg==&#39;), dataType:&#39;script&#39;, type:&#39;post&#39;, url:&#39;/profile/postgresql/comment/create/1294854?escape=false&#39;}); return false;" action="/profile/postgresql/comment/create/1294854" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="3bNFzGsHr+5gN4zhYYzwngRb+9ERmMAzN4IqwuEjPTVA2/XNGVytDY8seX/nDIr9S8oxEhkUB2FqDhPGvqib5w==" />
+
+  <p><span class="required-field">The <label class='pseudoformlabel'>highlighted</label> fields are mandatory.</span></p>
+
+
+    <span class="required-field"><div class="formfieldline"><label class="formlabel" for="comment_name">Nome</label><div class="formfield type-text"><input type="text" name="comment[name]" id="comment_name" /></div></div></span>
+    <span class="required-field"><div class="formfieldline"><label class="formlabel" for="comment_email">e-mail</label><div class="formfield type-text"><input type="text" name="comment[email]" id="comment_email" /></div></div></span>
+    <p>
+    If you are a registered user, you can login and be automatically recognized.
+    </p>
+
+
+  <div class="formfieldline"><label class="formlabel" for="comment_title">Titolo</label><div class="formfield type-text"><input type="text" name="comment[title]" id="comment_title" /></div></div>
+  <span class="required-field"><div class="formfieldline"><label class="formlabel" for="comment_body">Enter your comment</label><div class="formfield type-textarea"><textarea rows="5" name="comment[body]" id="comment_body">
+</textarea></div></div></span>
+
+    <p><script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<div class="g-recaptcha " data-sitekey="6LcK7CYUAAAAABl-eMkoFIv3VvOOIPwiXeinFmUi" ajax="true"></div>
+          <noscript>
+            <div>
+              <div style="width: 302px; height: 422px; position: relative;">
+                <div style="width: 302px; height: 422px; position: absolute;">
+                  <iframe
+                    src="https://www.google.com/recaptcha/api/fallback?k=6LcK7CYUAAAAABl-eMkoFIv3VvOOIPwiXeinFmUi"
+                    frameborder="0" scrolling="no"
+                    style="width: 302px; height:422px; border-style: none;">
+                  </iframe>
+                </div>
+              </div>
+              <div style="width: 300px; height: 60px; border-style: none;
+                bottom: 12px; left: 25px; margin: 0px; padding: 0px; right: 25px;
+                background: #f9f9f9; border: 1px solid #c1c1c1; border-radius: 3px;">
+                <textarea id="g-recaptcha-response" name="g-recaptcha-response"
+                  class="g-recaptcha-response"
+                  style="width: 250px; height: 40px; border: 1px solid #c1c1c1;
+                  margin: 10px 25px; padding: 0px; resize: none;" value="">
+                </textarea>
+              </div>
+            </div>
+          </noscript>
+</p>
+
+
+  <input type="hidden" name="confirm" id="confirm" value="false" />
+  <input type="hidden" name="view" id="view" />
+  <input type="hidden" name="comment[reply_of_id]" id="comment_reply_of_id" />
+
+  
+
+  <div class=" button-bar">
+    <input type="submit" name="commit" value="Post comment" onclick="save_comment(this); return false;" class="button with-text icon-add submit" />
+      <a id="cancel-comment" class="button icon-cancel with-text" title="Cancel" href="">&nbsp;<span>Cancel</span></a>
+<br style="clear: left;" /></div></form>
+
+</div><!-- end class="post_comment_box" -->
+</div><!-- end class="page-comment-form" -->
+
+<script src="/assets/comment_form-6675ef0f0fa17bef4ca4a3b992647bd9.js"></script>
+</div>
+  </div><!-- end class="comments" -->
+
+</div><!-- end id="article" -->
+<link rel="stylesheet" media="screen" href="/assets/vendor/jquery.fancybox-f18bccba6b2b1108ccca4462da78aa43.css" /><script src="/assets/vendor/jquery.fancybox.pack-c84445b4cd8162f8a15703d690ccc514.js"></script><script>
+//<![CDATA[
+apply_zoom_to_images("Zoom in")
+//]]>
+</script>
+</div></div></div></div></div>
+</div></div></div><div id="profile-footer"></div>
+  <br style='clear: both'/>
+</div><!-- end id="content-inner" -->
+
+        </div><!-- end id="content" -->
+      </div><!-- end id="wrap-2" -->
+    </div><!-- end id="wrap-1" -->
+    
+    <div id="footer">
+      <div id="theme-footer">
+        <div id="footer-environment">
+<div id="footer-links">
+  <ul>
+    <li><ul id="slbr-footer">
+        <li><a href="http://softwarelivre.org" id="slbr" class="link-this-page"><span>Software Livre - Brasil</span></a></li>
+        <li><a href="http://softwarelivre.org/tv"><span>TV Software Livre</span></a></li>
+        <li><a href="http://softwarelivre.org/radio"><span>Rádio Software Livre</span></a></li>
+        </ul></li>
+    <li><ul id="conheca-footer"><h3>Conheça</h3>
+        <li><a href="http://softwarelivre.org/portal/quem-somos">Quem Somos</a></li>
+        <li><a href="http://softwarelivre.org/portal/termos-de-uso">Termos de Uso</a></li>
+        <li><a href="http://softwarelivre.org/doc">Documentação</a></li>
+        <li><a href="http://softwarelivre.org/contact/portal/new">Fale Conosco</a></li>
+        </ul></li>
+    <li><ul id="colabore-footer"><h3>Colabore</h3>
+        <li><b><a href="http://softwarelivre.org/myprofile/portal/cms/suggest_an_article">Sugerir um Artigo</a></b></li>
+        <li><a href="http://softwarelivre.org/portal/melhorias">Sugerir Melhorias</a></li>
+        <li><a href="http://softwarelivre.org/portal/bugs">Reportar um Bug</a></li>
+        <li><a href="http://softwarelivre.org/portal/desenvolvimento">Desenvolvimento</a></li>
+        </ul></li>
+    <li><ul id="compartilhe-footer"><h3>Compartilhe</h3>
+        <li><b><!-- AddToAny BEGIN -->
+        <a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fsoftwarelivre.org&amp;linkname=SoftwareLivre.org">Compartilhar Isto!</a>
+        <script type="text/javascript">
+        var a2a_config = a2a_config || {};
+        a2a_config.linkname = "SoftwareLivre.org";
+        a2a_config.linkurl = "http://softwarelivre.org";
+        a2a_config.onclick = 1;
+        a2a_config.locale = "pt-BR";
+        a2a_config.num_services = 6;
+        a2a_config.prioritize = ["identi_ca", "twitter", "facebook", "google_buzz", "digg", "email"]
+        </script>
+        <script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END --></b></li>
+        <li><a href="http://softwarelivre.org/portal/eventos">Novos Eventos</a></li>
+        <li><a href="http://softwarelivre.org/portal/portfolio">Portfólio Livre</a></li>
+        <li><a href="http://softwarelivre.org/portal/divulgue">Páginas Amigas</a></li>
+        </ul></li>
+    <li><ul id="apoio-footer"><h3>Apoio</h3>
+        <li> <a href="http://softwarelivre.org/portal/apoio"><img src="/portal/anuncios/apoio.png" style="width:204px"><span>Apoio</span></img></a></li>
+        </ul></li>
+</div><!-- end id="footer-links" -->
+
+<div id="copyright">
+  © Copyleft 2015 -<a id="link-asl" href="http://associacao.softwarelivre.org/" title="Associação SoftwareLivre.org">ASL</a> - Alguns direitos reservados, exceto quando especificado em contrário e nos conteúdos replicados de outras fontes.
+  <p id="noosfero-license">Este site utiliza o software livre <a href="http://www.noosfero.org/" id="link-noosfero">Noosfero</a>, licenciado sob a licença <a href="http://www.gnu.org/licenses/agpl.html">GNU Affero General Public License</a>, versão 3 ou superior.  </p>
+</div><!-- end id="copyright" -->
+</div>
+
+<script type="text/javascript">
+  jQuery(function($) {
+    $(".highlights-block").insertAfter("#theme-header");
+    $(".action-home-index #block-695148").insertBefore("#block-666540");
+    $(".action-environment_design-index #block-695148").insertBefore("#block-666540");
+    $(".action-home-index #block-695454").insertAfter("#block-666540");
+    $(".action-environment_design-index #block-695454").insertAfter("#block-666540");
+    $("#site-title").prependTo("#top");
+    $("#user").insertAfter("#site-title");
+  });
+</script>
+
+      </div><!-- end id="theme-footer" -->
+      <div id="global-footer">
+        
+      </div><!-- end id="global-footer" -->
+    </div><!-- end id="footer" -->
+    
+    <script src="https://s7.addthis.com/js/152/addthis_widget.js"></script>
+    <!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+     var u = "piwik.colivre.coop.br/";
+     if(!u.match(/^https?/)){
+       var protocol = ("https:" == document.location.protocol ? "https" : "http");
+       u = protocol + '://' + u;
+     }
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 3]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.colivre.coop.br/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+  </body>
+</html>
