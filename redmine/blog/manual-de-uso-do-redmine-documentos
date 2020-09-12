@@ -1,0 +1,882 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt" class="controller-content_viewer action-content_viewer-view_page template-leftbottom profile-type-is-community profile-name-is-redmine theme-scarletred">
+  <head>
+    <title>Manual de uso do Redmine - Documentos - Redmine</title>
+    <link rel="alternate" type="application/rss+xml" title="Blog" href="http://softwarelivre.org/redmine/blog/feed" />
+    <!--<meta http-equiv="refresh" content="1"/>-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    
+
+      <meta name="description" content="Software Livre Brasil" />
+
+    <!-- site root -->
+    <meta property="noosfero:root" content=""/>
+
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    
+
+    <script src="/assets/application-1c0930e8f260aafbc74c4fad04079409.js"></script>
+
+  
+  
+<script src="/javascripts/plugins/pg_search/search.js"></script>
+<script src="/javascripts/plugins/pg_search/profile_search_block.js"></script>
+<script src="/assets/plugins/require_auth_to_comment/hide_comment_form-c3a3727ea301c62930e11aab20ae74d4.js"></script>
+<script src="/assets/plugins/require_auth_to_comment/jquery.livequery.min-d1fe96eb7788079f6e550db2b6610365.js"></script>
+<script src="/assets/plugins/orders/javascripts/locale-17eaae2c136082dab9da1d91648b6a7e.js"></script>
+<script src="/assets/plugins/orders/javascripts/toggle_edit-f9da47bc0223fac8e5e5174c6ea24413.js"></script>
+<script src="/assets/plugins/orders/javascripts/sortable-table-ba58eb377fc175eb1e374be63d5454a3.js"></script>
+<script src="/assets/plugins/orders/javascripts/help-14515dc2f741beaa4b3d121df366af0d.js"></script>
+<script src="/assets/plugins/orders/javascripts/orders-560e35746985dc40b97851b13705cb26.js"></script>
+<script src="/assets/plugins/html5_video/video-channel-6aca45f93220c0910d8273dd2368004e.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/locale-17eaae2c136082dab9da1d91648b6a7e.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/toggle_edit-f9da47bc0223fac8e5e5174c6ea24413.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/sortable-table-ba58eb377fc175eb1e374be63d5454a3.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/suppliers-35473b9ebd4b9e65027e1bafa94dfdcd.js"></script>
+<script src="/assets/plugins/event/event-b1013aca7ce3cf0d4d5e6e10dc1f05b2.js"></script>
+<script src="/assets/plugins/display_content/javascripts/jstree/_lib/jquery-1.8.3-09dfd3b315fe6b24fbc309e36f5d70c3.js"></script>
+<script src="/assets/plugins/display_content/javascripts/jstree/jquery.jstree-563d09f7e7938a8a2f4207bfe6d48dd3.js"></script>
+<script src="/assets/plugins/container_block/container_block-7eae56f79aa8da8b64941d18d2972c7b.js"></script>
+<script src="/assets/plugins/delivery/javascripts/delivery-da5b2dac737692db94d5bdc654586171.js"></script>
+<script src="/assets/plugins/products/javascripts/products-a4c860d8dbebe524d554f0b5564e0428.js"></script><script>
+//<![CDATA[
+render_all_jquery_ui_widgets()
+//]]>
+</script>
+    <link rel="stylesheet" media="screen" href="/assets/application-e0072ababb97032fa1a5d95fa09d897c.css" />
+<link rel="stylesheet" media="screen" href="/designs/templates/leftbottom/stylesheets/style.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/icons/default/style-b3a500c1e17f47b010a70fdb0103012e.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/icons/pidgin/style-138f7bb59f9d26296632e82eae162877.css" />
+<link rel="stylesheet" media="screen" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/people_block/style-c340afe175b0045c7f8669073a428a1c.css" />
+<link rel="stylesheet" media="screen" href="/stylesheets/plugins/pg_search/style.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/recent_content/style-e0d5f807f7056b173f6cf113c840ddc0.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/custom_forms/style-7870704d75309d55ffcaa827c59baa18.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/work_assignment/style-526deb629c3d9e7736f049b99c72a50a.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/require_auth_to_comment/style-66a0efab118159977ca0194806ef4bec.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/orders/style-feb7767bc71e62563ccab53642a6e4c2.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/html5_video/style-8f2b70d373ff7ec22b404d91b1b6f211.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/suppliers/style-64c71b3cd22994ada93abd55c70ea1ce.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/gallery_block/style-4547593291c3fca2ad50216cbb3dfdc9.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/send_email/style-976778195cb106e52b31d57242cdc01c.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/event/style-8f5f6a9b5a7724dbc4977d11c2e4321c.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/display_content/style-cf10f47511255685485ac51859c22a29.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/container_block/style-dd17a810971259abe7c31678e9d9c132.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/video/style-68d51000d73adab06c1dcd036011138d.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/delivery/style-aeef749320f3cdff642340f047806f9b.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/sub_organizations/style-88810bb91c1c70f63817f6f03295fd92.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/products/style-3147a337d78ccc54df05870c504166fd.css" />
+<link rel="stylesheet" media="screen" href="/designs/themes/sl-default/global.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/themes/scarletred/style-19abd7818b5b725fdd20670bd25072a3.css" />
+
+    
+    
+
+    <script type="text/javascript">
+      DEFAULT_LOADING_MESSAGE = 'loading...';
+      PERMANENT_NOTIFICATIONS = false;
+      noosfero.profile = "redmine"
+    </script>
+
+      
+<script src="/assets/tinymce/js/tinymce/tinymce-666c93593f34cd23b1f1e9177ab27cae.js"></script><script src="/assets/tinymce/js/tinymce/jquery.tinymce.min-33361c760deadb5b77610a12911056f2.js"></script><script src="/assets/tinymce-4df3fc98953118b704cdb7a023aafdc2.js"></script>
+<script type="text/javascript">
+tinymce.create('tinymce.plugins.MacrosPlugin', {
+  createControl: function(n, cm) {
+    switch (n) {
+       case 'macros':
+    }
+    return null;
+  }
+});
+
+function tinymce_macros_setup(editor) {
+}
+
+// Register plugin with a short name
+tinymce.PluginManager.add('macrosPlugin', tinymce.plugins.MacrosPlugin);
+
+jQuery(document).ready(function () {
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"pt_BR","selector":".tiny_mce","toolbar1":"fullscreen | insertfile undo redo | copy paste | bold italic underline | styleselect fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image","menubar":"edit insert view tools","toolbar2":"print preview code media | table | macros","macros_setup":[]})
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"pt_BR","selector":".tiny_mce_simple","toolbar1":"fullscreen | insertfile undo redo | copy paste | bold italic underline | styleselect fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image","menubar":false,"toolbar2":null,"macros_setup":[]})
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"pt_BR","selector":".tiny_mce_restricted","toolbar1":"bold italic underline | link","menubar":false,"toolbar2":null,"macros_setup":[]})
+});
+</script>
+
+
+  </head>
+  <body class="controller-content_viewer action-content_viewer-view_page template-leftbottom">
+    <a href="#content" id="link-go-content"><span>Go to the content</span></a>
+    <meta name="profile.allow_unauthenticated_comments" />
+    <div id="global-header">
+      <!-- div class='supportbanner'>
+  <div class='content'>
+    <div class='banner-title'>Campanha de doação 2016</div>
+    <div class='banner-subtitle'>Ajude a <span class='asl'>ASL.Org</span> a realizar o <span class='fisl17'>FISL17</span>!</div>
+    <p>Ajude a Associação Software Livre.Org a continuar seu trabalho de 12 anos em prol do desenvolvimento e disseminação do Software Livre. Faça uma doação e ganhe um ingresso cortesia para o <span class='fisl17'>FISL17</span> e uma camiseta oficial do evento.</p>
+  </div>
+  <div class='footer-links'>
+    <a class='logo-fisl17' href='http://fisl.org.br' target='_blank'><span>fisl17</span></a>
+    <a class='logo-asl' href='http://asl.org' target='_blank'><span>ASL.org</span></a>
+    <a class='iot-fisl' href='http://segue.fisl17.softwarelivre.org' target='_blank'><span>Contribua para o fisl17</span></a>
+  </div>
+</div -->
+
+    </div>
+
+    <div id="wrap-1">
+      <div id="theme-header">
+        <div id="assets-menu">
+  <ul>
+    <li class="asset_articles"><a href="/search/assets?asset=articles"><span class="icon-menu-articles"></span><strong>Articles</strong></a></li>
+<li class="asset_people"><a href="/search/assets?asset=people"><span class="icon-menu-people"></span><strong>People</strong></a></li>
+<li class="asset_enterprises"><a href="/search/assets?asset=enterprises"><span class="icon-menu-enterprise"></span><strong>Enterprises</strong></a></li>
+<li class="asset_communities"><a href="/search/assets?asset=communities"><span class="icon-menu-community"></span><strong>Communities</strong></a></li>
+<li class="asset_events"><a href="/search/assets?asset=events"><span class="icon-event"></span><strong>Events</strong></a></li>
+  </ul>
+</div><!-- fim id="assets-menu" -->
+
+<script type="text/javascript">
+  jQuery(function($) {
+    $("#site-title, #assets-menu").mouseover(function() {
+      clearTimeout( window.closeAssetsTimeout );
+      $("#assets-menu").slideDown(400);
+    });
+    $("#site-title, #assets-menu").mouseout(function() {
+      window.closeAssetsTimeout =
+      setTimeout( function() { $("#assets-menu").slideUp(400); }, 500 );
+    });
+  });
+</script>
+
+      </div>
+      <div id="wrap-2">
+        <div id="user">
+    <span class='not-logged-in'>
+      <span class='login'><a id="link_login" onclick="return noosfero.modal.inline(&#39;#inlineLoginBox&#39;)" class="" href="/account/login"><i class="icon-menu-login"></i><strong>Login</strong></a></span>
+
+      <div id='inlineLoginBox' style='display: none;'>
+        <div class="login-box">
+
+<h2>Login</h2>
+
+
+
+
+<form action="/account/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="rI9nhoo0ExoCFbyh2VCIwVeb8xbPF0AfU1Zq79bV6Nox59eH+G8R+e0OST9f0PKiGAo51cebh00O2lPriV5OCA==" />
+
+     <div class="formfieldline"><label class="formlabel" for="main_user_login">Username / Email</label><div class="formfield type-text"><input id="main_user_login" onchange="this.value = convToValidLogin( this.value )" type="text" name="user[login]" /></div></div>
+
+     <div class="formfieldline"><label class="formlabel" for="user_password">Password</label><div class="formfield type-password"><input type="password" name="user[password]" id="user_password" /></div></div>
+
+     <div class='checkbox'>
+       <label>
+         <input type="checkbox" name="remember_me" id="remember_me" value="1" checked="checked" />
+         Keep me logged in
+       </label>
+     </div>
+
+     
+
+     <div class=" button-bar">
+       <input type="submit" name="commit" value="Log in" class="button with-text icon-login submit" />
+         <a class="button icon-close with-text modal-toggle modal-close" rel="deactivate" title="Cancel" href="#">&nbsp;<span>Cancel</span></a>
+<br style="clear: left;" /></div>
+</form>
+<div class=" button-bar">
+    <a class="button icon-add with-text" title="New user" href="/account/signup">&nbsp;<span>New user</span></a>
+
+    <a class="button icon-help with-text" title="I forgot my password!" href="/account/forgot_password">&nbsp;<span>I forgot my password!</span></a>
+<br style="clear: left;" /></div>
+</div><!-- end class="login-box" -->
+
+
+      </div>
+
+        <span class='or'>or</span> <span class='signup'><a href="/account/signup"><strong>Sign up</strong></a></span>
+    </span>
+  <form action="/search/articles" id="top-search" class="search_form clean" method="get">
+    <input name="query" size="15" title="Search..." onfocus="this.form.className='focused';" onblur="this.form.className=''" />
+    <div>Press <strong>Enter</strong> to send the search query.</div>
+    <script>
+//<![CDATA[
+jQuery("#user form input").hint();
+//]]>
+</script>
+  </form>
+</div><!-- end id="user" -->
+
+        <h1 id="site-title">
+            <a href="http://softwarelivre.org"><img src="/designs/themes/noosfero/images/thin-logo.png" alt="Thin logo" /></a>
+
+        </h1>
+        <div id="navigation">
+          <ul>
+            
+          </ul>
+          <div id="navigation-end"></div>
+        </div><!-- end id="navigation" -->
+        <div id="content">
+          <div id="content-inner">
+  <div id="profile-header"><p style="text-align: left;"><img src="https://projetos.colivre.coop.br/attachments/download/404/redmine_logo2.png" alt="" style="display: block; margin-left: auto; margin-right: auto;"></p></div><div class="boxes" id="boxes"><div class="box box-3" id="box-362979"><div class="blocks">    <div class="block-outer"><div class="block tags-cloud-block" id="block-637636" help="Tags are created when you add some of them one to your contents or mark a profile with them. &lt;p/&gt;
+       Try to create some tags and you&#39;ll see your tag cloud growing."><div class="block-inner-1"><div class="block-inner-2"><div class="block-header"><h3 class="block-title"><span>Tags Cloud</span></h3><h4 class="block-subtitle empty"><span></span></h4></div>
+
+
+  <div class='tag_cloud'>
+      <a style="font-size: 16px;top: -6px;" title="6 items" href="http://softwarelivre.org/profile/redmine/tags/redmine">redmine</a>
+<a style="font-size: 16px;top: -6px;" title="6 items" href="http://softwarelivre.org/profile/redmine/tags/software%20livre">software livre</a>
+<a style="font-size: 9px;top: -3px;" title="2 items" href="http://softwarelivre.org/profile/redmine/tags/software%20livre%2Fredmine">software livre/redmine</a>
+  </div>
+</div></div></div></div>
+
+    <div class="block-outer"><div class="block slideshow-block" id="block-637635"><div class="block-inner-1"><div class="block-inner-2">
+<div class="block-header"><h3 class="block-title"><span>Galeria de fotos</span></h3><h4 class="block-subtitle empty"><span></span></h4></div>
+
+  <div class='slideshow-border'>
+    <div class='slideshow-container'>
+        <a href="http://softwarelivre.org/redmine/galeria-de-fotos/charge.gif?view=true">
+          <div style="background-image: url(/thumbnails/0136/3261/charge_slideshow.gif)" title=""></div>
+        </a>
+    </div>
+      <div class='slideshow-block-navigation'>
+        <a class="icon-media-prev" href="#">Anterior</a>
+          <a class="icon-media-pause" onclick="togglePlayback(&#39;#block-637635 .slideshow-container&#39;, this); return false;" href="#">&amp;nbsp;</a>
+        <a class="icon-media-next" href="#">Próximo</a>
+      </div>
+  </div>
+  <script type="text/javascript">
+    (function($) {
+     var options = {fx: 'fade', pause: 1, fastOnEvent: 1, timeout: 5000};
+       options.prev = '#block-637635 .icon-media-prev';
+       options.next = '#block-637635 .icon-media-next';
+      $('#block-637635 .slideshow-container').cycle(options);
+    })(jQuery);
+
+    function togglePlayback(slideshow, button) {
+      var $ = jQuery;
+      if (button.className == 'icon-media-pause') {
+        button.className = 'icon-media-play';
+        $(slideshow).cycle('pause');
+      } else {
+        button.className = 'icon-media-pause';
+        $(slideshow).cycle('resume');
+      }
+    }
+  </script>
+
+</div></div></div></div>
+
+    <div class="block-outer"><div class="block recent-documents-block" id="block-628129" help="Este bloco lista seu conteúdo atualizado mais recentemente."><div class="block-inner-1"><div class="block-inner-2"><div class="block-header"><h3 class="block-title"><span>Conteúdo recente</span></h3><h4 class="block-subtitle empty"><span></span></h4></div>
+
+<ul>
+    <li><a href="http://softwarelivre.org/redmine/forum/teste-usuario1">Teste usuário1</a></li>
+    <li><a href="http://softwarelivre.org/redmine/forum/compartilhe-conosco-a-sua-experiencia-com-o-uso-do-redmine">Compartilhe conosco a sua experiência com o uso do Redmine</a></li>
+    <li><a href="http://softwarelivre.org/redmine/blog/as-faces-da-economia-solidaria-no-brasil">As faces da Economia Solidária no Brasil</a></li>
+    <li><a href="http://softwarelivre.org/redmine/galeria-de-fotos">Galeria de fotos</a></li>
+    <li><a href="http://softwarelivre.org/redmine/blog/henry-laurence-gantt-quem-foi">Henry Laurence Gantt - Quem foi?</a></li>
+</ul>
+<div class="block-footer-content">  <a href="/profile/redmine/sitemap">Todo o conteúdo</a>
+</div></div></div></div></div>
+</div></div>
+<div class="box box-2" id="box-362978"><div class="blocks">  <div class="block-outer"><div class="block profile-image-block" id="block-636507" help="This block presents the profile image"><div class="block-inner-1"><div class="block-inner-2"><div class="vcard">
+
+
+<div class="profile-big-image img-pic">
+  <div class="profile-big-image-inner1">
+    <div class="profile-big-image-inner2">
+      <a href="http://softwarelivre.org/redmine"><img alt="Redmine" title="" class=" logo" src="/image_uploads/0009/2219/redmine_logo_big.png" />
+</a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="profile-info-options">
+  <ul>
+  <li>
+    <div class='join-leave-button require-login-popup'>
+    <a class="button icon-add with-text modal-toggle join-community" title="Join this community" href="/profile/redmine/join_not_logged">&nbsp;<span>Join this community</span></a>
+</div>
+
+<script>
+//<![CDATA[
+
+  noosfero.add_and_join.locales.leaveConfirmation = "Please confirm to leave the community 'Redmine'"
+
+//]]>
+</script>
+
+  </li>
+</ul>
+
+</div>
+</div><!-- end class="vcard" -->
+</div></div></div></div>
+
+    <div class="block-outer"><div class="block link-list-block" id="block-628128" help="Este bloco pode ser usado para criar um menu de links. Você pode incluir, remove e atualizar links como quiser."><div class="block-inner-1"><div class="block-inner-2"><div class="block-header"><h3 class="block-title empty"><span></span></h3><h4 class="block-subtitle empty"><span></span></h4></div>
+
+
+
+<ul>
+    <li>
+      <a target="_self" class="icon-ok" title="" href="/redmine/blog">Página inicial</a>
+    </li>
+    <li>
+      <a target="_self" class="icon-send" title="" href="/profile/redmine/invite/friends">Convide amig@s</a>
+    </li>
+    <li>
+      <a target="_self" class="icon-event" title="" href="/profile/redmine/events">Agenda</a>
+    </li>
+    <li>
+      <a target="_self" class="icon-forum" title="" href="/redmine/forum">Fórum</a>
+    </li>
+    <li>
+      <a target="_self" class="icon-edit" title="" href="/redmine/blog">Blog</a>
+    </li>
+    <li>
+      <a target="_self" class="icon-photos" title="" href="http://softwarelivre.org/redmine/galeria-de-fotos">Galeria de fotos</a>
+    </li>
+</ul>
+</div></div></div></div>
+
+    <div class="block-outer"><div class="block members-block" id="block-638080" help="Clicando em um membro você irá para a página dele"><div class="block-inner-1"><div class="block-inner-2">
+<div class="block-header"><h3 class="block-title"><span>4 integrantes</span></h3><h4 class="block-subtitle empty"><span></span></h4></div>
+
+<div>
+    <ul>
+      <div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/luanda/check_friendship" onclick="toggleSubmenu(this, 'Lua', [{&quot;Mural&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/luanda&quot;}},{&quot;Amigos&quot;:{&quot;href&quot;:&quot;/profile/luanda/friends&quot;}},{&quot;Comunidades&quot;:{&quot;href&quot;:&quot;/profile/luanda/communities&quot;}},{&quot;Enviar e-mail&quot;:{&quot;href&quot;:&quot;/contact/luanda/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Adicionar&quot;:{&quot;href&quot;:&quot;/profile/luanda/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/luanda&quot;}}]); return false" href="#"><span>Links do perfil</span></a><a class="profile_link url" style="" title="Luanda Naiade Oliveira da Silva" href="http://softwarelivre.org/luanda"><span class="profile-image"><img alt="Luanda Naiade Oliveira da Silva" title="" class=" photo" src="/image_uploads/0009/1648/f1_minor.jpg" /></span><span class="fn">Lua</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/wender.jean/check_friendship" onclick="toggleSubmenu(this, 'Wender Freese', [{&quot;Mural&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/wender.jean&quot;}},{&quot;Amigos&quot;:{&quot;href&quot;:&quot;/profile/wender.jean/friends&quot;}},{&quot;Comunidades&quot;:{&quot;href&quot;:&quot;/profile/wender.jean/communities&quot;}},{&quot;Enviar e-mail&quot;:{&quot;href&quot;:&quot;/contact/wender.jean/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Adicionar&quot;:{&quot;href&quot;:&quot;/profile/wender.jean/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/wender.jean&quot;}}]); return false" href="#"><span>Links do perfil</span></a><a class="profile_link url" style="" title="Wender Freese" href="http://softwarelivre.org/wender.jean"><span class="profile-image"><img alt="Wender Freese" title="" class=" photo" src="/image_uploads/0010/4338/941776_minor.png" /></span><span class="fn">Wender Freese</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/seredfogo/check_friendship" onclick="toggleSubmenu(this, 'seredfogo', [{&quot;Mural&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/seredfogo&quot;}},{&quot;Amigos&quot;:{&quot;href&quot;:&quot;/profile/seredfogo/friends&quot;}},{&quot;Comunidades&quot;:{&quot;href&quot;:&quot;/profile/seredfogo/communities&quot;}},{&quot;Enviar e-mail&quot;:{&quot;href&quot;:&quot;/contact/seredfogo/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Adicionar&quot;:{&quot;href&quot;:&quot;/profile/seredfogo/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/seredfogo&quot;}}]); return false" href="#"><span>Links do perfil</span></a><a class="profile_link url" style="" title="Sérgio Fernandes" href="http://softwarelivre.org/seredfogo"><span class="profile-image"><img alt="Sérgio Fernandes" title="" class=" photo" src="/image_uploads/0013/8505/esqueleto-com-headfone-wallpaper-17429_minor.jpg" /></span><span class="fn">seredfogo</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/girleandila/check_friendship" onclick="toggleSubmenu(this, 'Giltrix', [{&quot;Mural&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/girleandila&quot;}},{&quot;Amigos&quot;:{&quot;href&quot;:&quot;/profile/girleandila/friends&quot;}},{&quot;Comunidades&quot;:{&quot;href&quot;:&quot;/profile/girleandila/communities&quot;}},{&quot;Enviar e-mail&quot;:{&quot;href&quot;:&quot;/contact/girleandila/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Adicionar&quot;:{&quot;href&quot;:&quot;/profile/girleandila/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/girleandila&quot;}}]); return false" href="#"><span>Links do perfil</span></a><a class="profile_link url" style="" title="Girleandila Portugal" href="http://softwarelivre.org/girleandila"><span class="profile-image"><img alt="Girleandila Portugal" title="" class=" photo" src="/image_uploads/0008/8446/Coyote__Wile_E__Mad_minor.jpg" /></span><span class="fn">Giltrix</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/dansaas/check_friendship" onclick="toggleSubmenu(this, 'Daniel', [{&quot;Mural&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/dansaas&quot;}},{&quot;Amigos&quot;:{&quot;href&quot;:&quot;/profile/dansaas/friends&quot;}},{&quot;Comunidades&quot;:{&quot;href&quot;:&quot;/profile/dansaas/communities&quot;}},{&quot;Enviar e-mail&quot;:{&quot;href&quot;:&quot;/contact/dansaas/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Adicionar&quot;:{&quot;href&quot;:&quot;/profile/dansaas/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/dansaas&quot;}}]); return false" href="#"><span>Links do perfil</span></a><a class="profile_link url" style="" title="Daniel Pinheiro" href="http://softwarelivre.org/dansaas"><span class="profile-image"><img alt="Daniel Pinheiro" title="" class=" photo" src="/image_uploads/0010/0228/dan_2_minor.jpg" /></span><span class="fn">Daniel</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/smrabelo/check_friendship" onclick="toggleSubmenu(this, 'smrabelo', [{&quot;Mural&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/smrabelo&quot;}},{&quot;Amigos&quot;:{&quot;href&quot;:&quot;/profile/smrabelo/friends&quot;}},{&quot;Comunidades&quot;:{&quot;href&quot;:&quot;/profile/smrabelo/communities&quot;}},{&quot;Enviar e-mail&quot;:{&quot;href&quot;:&quot;/contact/smrabelo/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Adicionar&quot;:{&quot;href&quot;:&quot;/profile/smrabelo/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/smrabelo&quot;}}]); return false" href="#"><span>Links do perfil</span></a><a class="profile_link url" style="" title="Sérgio Maia Rabelo" href="http://softwarelivre.org/smrabelo"><span class="profile-image"><img alt="Sérgio Maia Rabelo" title="" class=" photo" src="/image_uploads/0009/8171/45db7235-0d65-42ea-a5ee-edce692ff9c5_minor.jpg" /></span><span class="fn">smrabelo</span><span class="extra_info"></span></a></li></div>
+
+    </ul>
+  <br style="clear:both" />
+</div>
+<div class="block-footer-content"><a class="view-all" href="/profile/redmine/members#members-tab">Ver todos(as)</a>
+
+</div></div></div></div></div>
+</div></div>
+<div class="box box-1" id="box-362977"><div class="blocks">  <div class="block-outer"><div class="block main-block" id="block-628126" help="This block presents the main content of your pages."><div class="block-inner-1"><div class="block-inner-2"><div class="main-content">
+<div id="article" class="text-article">
+
+
+
+<script type="text/javascript">
+    window.ONE_COMMENT = "One comment";
+    window.COMMENT_PLURAL = "comments";
+    window.NO_COMMENT_YET = "Neniu komento";
+</script>
+
+  <div id="article-parent">
+    <a class="button icon-back with-text" title="Go back to Blog" href="http://softwarelivre.org/redmine/blog">&nbsp;<span>Go back to Blog</span></a>
+  </div>
+
+<div id="article-toolbar">
+  <div>
+  <div id="article-actions">
+
+    
+      <script>fullscreenPageLoad('#article')</script>
+    <a id="fullscreen-btn" onClick="toggle_fullwidth(&#39;#article&#39;)" class="button with-text icon-fullscreen" href="#" title="Go to full screen mode"><span>Full screen</span></a><a style="display: none;" id="exit-fullscreen-btn" onClick="toggle_fullwidth(&#39;#article&#39;)" class="button with-text icon-fullscreen" href="#" title="Exit full screen mode"><span>Exit full screen</span></a>
+
+
+
+
+
+
+      <a id="suggest-article-link" class="button with-text icon-suggest" href="/myprofile/redmine/cms/suggest_an_article"><span>Suggest an article</span></a>
+
+
+
+    
+
+    
+
+  </div>
+  <div id="article-header">
+    
+    
+      <h1 class="title">
+      Manual de uso do Redmine - Documentos
+  </h1>
+  <span class="publishing-info">
+  <span class="date">
+    julio 17, 2014 17:00
+  </span>
+  <span class="author">
+    , by Luanda Naiade Oliveira da Silva
+  </span>
+  <span class="comments">
+     - <a href="/redmine/blog/manual-de-uso-do-redmine-documentos#comments_list"><span class='comment-count hide'>5</span><span class='comment-count-write-out'>5 comments</span></a>
+  </span>
+
+<span class="followers-count">
+|
+    No one following this article yet.
+</span>
+
+</span>
+
+  <div id='article-sub-header'>
+      <div id="article-hits">
+        Viewed 468 times 
+      </div>
+
+  </div>
+
+
+    
+  </div>
+</div>
+
+</div>
+
+
+
+  <div id="addThis">
+  <script type="text/javascript">
+    addthis_pub = 'ra-4d93d22a7a91a05f';
+    addthis_logo = '';
+    addthis_options = 'identica, twitter, www.facebook.com, favorites, email, delicious, tumblr, digg, slashdot, more';
+  </script>
+  <a href="http://www.addthis.com/bookmark.php" id="bt_addThis" target="_blank" onmouseover="return addthis_open(this, '', '[URL]')" onmouseout="addthis_close()" onclick="return addthis_sendto()"><img width="53" height="16" border="0" alt="" src="/images/bt-bookmark.gif" /></a>
+</div>
+
+
+  <div class="article-body article-body-text-article">
+    <p style="text-align: justify;">Este módulo pode ser utilizado pelo usuário para adicionar documentos relevantes para o projeto, a exemplo de: termos aditivos, contratos, convênios, programações de eventos entre outros itens de interesse dos usuários.</p>
+<p style="text-align: justify;">Ao clicar em <img src="https://projetos.colivre.coop.br/attachments/download/153/adicionarodocumento.png"> , o usuário vai preencher a categoria que pode ser: documentação do usuário e documentação técnica. É possível adicionar outras categorias tais como: reunião, contratos e etc.</p>
+<p style="text-align: justify;">Segundo consta no Manual da PRODESAN, considera-se como:</p>
+<ul style="text-align: justify;">
+<li>documententação do usuário, o documento que deve ser disponibilizado para todos, inclusive de usuário, relacionados ao negócio, como glossários, diagramas de negócio, especificação de regras, help, documentos fornecidos pelo usuários, como modelos de relatórios, formulários, dentre outros;</li>
+</ul><ul style="text-align: justify;">
+<li>documento técnico - todo documento que será utilizado pela equipe do projeto e que contenha instruções, orientações, regras de execução etc. São as especificações das funcionalidades que os analistas passam para os desenvolvedores, a modelagem de dados, catálogos de objetos etc.</li>
+</ul><p style="text-align: justify;">Há um campo para descrição do <strong>título</strong> do documento, e o campo <strong>descrição</strong> para escrever em maiores detalhes do que se trata a documentação adicionada em anexo.</p>
+<p style="text-align: justify;"><img src="https://projetos.colivre.coop.br/attachments/download/154/documentos.png" height="315" width="457"></p>
+    <br style="clear:both" />
+  </div> <!-- end class="article-body" -->
+
+
+
+
+
+
+
+  <div class="comments" id="comments_list">
+    <h3 >
+      <span class='comment-count hide'>2</span><span class='comment-count-write-out'>2 comments</span>
+    </h3>
+
+      <a class="display-comment-form" id="top-post-comment-button" onclick="jQuery(&#39;#page-comment-form .display-comment-form&#39;).first().click();" href="#">Post a comment</a>
+
+      <input type="hidden" name="page_url" id="page_url" value="/redmine/blog/manual-de-uso-do-redmine-documentos" />
+      <script src="/assets/comment_order-7cf8e091e4a17a8708f1ae727e7cac6c.js"></script>
+      <div class="comment-order">
+        <form id="form_order" action="/redmine" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+          <select name="comment_order" id="comment_order"><option selected="selected" value="oldest">Oldest first</option>
+<option value="newest">Newest first</option></select>
+</form>      </div>
+
+    <ul class="article-comments-list">
+        <li id="comment-93553" class="article-comment">
+  <div class="article-comment-inner">
+
+  <div class="comment-content comment-logged-out ">
+
+
+    <a target="_blank" class="comment-picture" title="wwerwe (malverigis uzanto)" href="//www.gravatar.com/30e351cb13db40b3b92a01866f9ed3b9"><img onerror="gravatarCommentFailback(this)" data-gravatar="//www.gravatar.com/avatar/30e351cb13db40b3b92a01866f9ed3b9?only_path=false&amp;size=50" src="//www.gravatar.com/avatar/30e351cb13db40b3b92a01866f9ed3b9?only_path=false&amp;size=50&amp;d=404" alt="30e351cb13db40b3b92a01866f9ed3b9?only path=false&amp;size=50&amp;d=404" /><span class="comment-info">wwerwe</span><span class="comment-user-status icon-user-unknown">(malverigis uzanto)</span></a>
+
+<div class="comment-balloon "><div class="comment-wrapper-1"><div class="comment-wrapper-2"><div class="comment-wrapper-3"><div class="comment-wrapper-4"><div class="comment-wrapper-5"><div class="comment-wrapper-6"><div class="comment-wrapper-7"><div class="comment-wrapper-8"><div class="comment-balloon-content">
+    <div class="comment-details">
+      <div class="comment-header">
+        <ul>
+</ul>
+<div class="comments-action-bar">
+    <a class="comment-footer comment-footer-link comment-footer-hide comment-actions-reply button" id="comment-reply-to-93553" title="Reply" href="#" onclick="var f = add_comment_reply_form(this, 93553); f.find(&#39;comment_title, textarea&#39;).val(&#39;&#39;); return false; return false;"></a>
+</div>
+
+      </div>
+
+      <div class="comment-created-at">
+        januaro 28, 2016 9:20
+      </div>
+      <h4>&nbsp;</h4>
+      <div class="comment-text">
+        <p/>
+        <a href="https://www.facebook.com/226840734315247" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/226&#x200B;8407&#x200B;3431&#x200B;5247</a>
+<br/>
+<a href="http://www.screencast.com/t/esfXmJRqk" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/esf&#x200B;XmJR&#x200B;qk</a>
+<br/>
+<a href="http://www.screencast.com/t/iveNINQn" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/ive&#x200B;NINQ&#x200B;n</a>
+<br/>
+<a href="http://www.screencast.com/t/IWNwbKRv" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/IWN&#x200B;wbKR&#x200B;v</a>
+<br/>
+<a href="http://www.screencast.com/t/QTDeO8ayJDyP" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/QTD&#x200B;eO8a&#x200B;yJDy&#x200B;P</a>
+<br/>
+<a href="http://www.screencast.com/t/8S88O0Yz" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/8S8&#x200B;8O0Y&#x200B;z</a>
+<br/>
+<a href="http://www.screencast.com/t/naYluM66m" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/naY&#x200B;luM6&#x200B;6m</a>
+<br/>
+<a href="https://www.rebelmouse.com/watchfostersseason3episode18/" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;rebe&#x200B;lmou&#x200B;se.c&#x200B;om/w&#x200B;atch&#x200B;fost&#x200B;erss&#x200B;easo&#x200B;n3ep&#x200B;isod&#x200B;e18/</a>
+<br/>
+<a href="https://www.facebook.com/226808620985125" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/226&#x200B;8086&#x200B;2098&#x200B;5125</a>
+<br/>
+<a href="http://www.screencast.com/t/hLjgxJu6" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/hLj&#x200B;gxJu&#x200B;6</a>
+<br/>
+<a href="http://www.screencast.com/t/qTBBLGtv" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/qTB&#x200B;BLGt&#x200B;v</a>
+<br/>
+<a href="http://www.screencast.com/t/MOihLiJLP" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/MOi&#x200B;hLiJ&#x200B;LP</a>
+<br/>
+<a href="https://www.facebook.com/1516107578718211" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/151&#x200B;6107&#x200B;5787&#x200B;1821&#x200B;1</a>
+<br/>
+<a href="https://www.facebook.com/226829124316408" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/226&#x200B;8291&#x200B;2431&#x200B;6408</a>
+<br/>
+<a href="http://www.screencast.com/t/voxdsuzkjgER" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/vox&#x200B;dsuz&#x200B;kjgE&#x200B;R</a>
+<br/>
+<a href="https://www.facebook.com/226732540992733" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/226&#x200B;7325&#x200B;4099&#x200B;2733</a>
+<br/>
+<a href="http://www.screencast.com/t/jE6VJHscin6" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/jE6&#x200B;VJHs&#x200B;cin6</a>
+<br/>
+<a href="http://www.screencast.com/t/9zdNqaeWUKq" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/9zd&#x200B;Nqae&#x200B;WUKq</a>
+<br/>
+<a href="https://www.rebelmouse.com/watchblacksailsseason3episode8/" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;rebe&#x200B;lmou&#x200B;se.c&#x200B;om/w&#x200B;atch&#x200B;blac&#x200B;ksai&#x200B;lsse&#x200B;ason&#x200B;3epi&#x200B;sode&#x200B;8/</a>
+<br/>
+<a href="http://www.screencast.com/t/UnaVSYEYg" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/Una&#x200B;VSYE&#x200B;Yg</a>
+<br/>
+<a href="http://www.screencast.com/t/NbA8walYqL" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/NbA&#x200B;8wal&#x200B;YqL</a>
+<br/>
+<a href="https://www.rebelmouse.com/togethernessseason2episode4/" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;rebe&#x200B;lmou&#x200B;se.c&#x200B;om/t&#x200B;oget&#x200B;hern&#x200B;esss&#x200B;easo&#x200B;n2ep&#x200B;isod&#x200B;e4/</a>
+<br/>
+<a href="http://www.screencast.com/t/VPWEn5ck" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/VPW&#x200B;En5c&#x200B;k</a>
+<br/>
+<a href="https://www.facebook.com/226841440981843" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/226&#x200B;8414&#x200B;4098&#x200B;1843</a>
+<br/>
+<a href="https://www.facebook.com/1516078758721093" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/151&#x200B;6078&#x200B;7587&#x200B;2109&#x200B;3</a>
+<br/>
+<a href="https://www.facebook.com/226829740983013" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/226&#x200B;8297&#x200B;4098&#x200B;3013</a>
+<br/>
+<a href="https://www.facebook.com/226728054326515" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/226&#x200B;7280&#x200B;5432&#x200B;6515</a>
+<br/>
+<a href="https://www.rebelmouse.com/prettylittleliarsseason6ep19/" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;rebe&#x200B;lmou&#x200B;se.c&#x200B;om/p&#x200B;rett&#x200B;ylit&#x200B;tlel&#x200B;iars&#x200B;seas&#x200B;on6e&#x200B;p19/</a>
+<br/>
+<a href="https://www.facebook.com/226729294326391" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/226&#x200B;7292&#x200B;9432&#x200B;6391</a>
+<br/>
+<a href="http://www.screencast.com/t/P5MU6LavXm" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/P5M&#x200B;U6La&#x200B;vXm</a>
+<br/>
+<a href="https://www.facebook.com/1516120912050211" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/151&#x200B;6120&#x200B;9120&#x200B;5021&#x200B;1</a>
+<br/>
+<a href="https://www.facebook.com/226677117665654" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/226&#x200B;6771&#x200B;1766&#x200B;5654</a>
+<br/>
+<a href="http://www.screencast.com/t/fzDUvFemc" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/fzD&#x200B;UvFe&#x200B;mc</a>
+<br/>
+<a href="http://www.screencast.com/t/ByUB8BUTPt" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/ByU&#x200B;B8BU&#x200B;TPt</a>
+<br/>
+<a href="http://www.screencast.com/t/WrQJIfUN8" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/WrQ&#x200B;JIfU&#x200B;N8</a>
+<br/>
+<a href="http://www.screencast.com/t/3VcKqZ2x" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/3Vc&#x200B;KqZ2&#x200B;x</a>
+<br/>
+<a href="https://www.rebelmouse.com/watcharrowseason4episode23/" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;rebe&#x200B;lmou&#x200B;se.c&#x200B;om/w&#x200B;atch&#x200B;arro&#x200B;wsea&#x200B;son4&#x200B;epis&#x200B;ode2&#x200B;3/</a>
+<br/>
+<a href="http://www.screencast.com/t/yNwTxkn6A" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/yNw&#x200B;Txkn&#x200B;6A</a>
+<br/>
+<a href="http://www.screencast.com/t/JpDagTKv" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/JpD&#x200B;agTK&#x200B;v</a>
+<br/>
+<a href="https://www.facebook.com/1516112245384411" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/151&#x200B;6112&#x200B;2453&#x200B;8441&#x200B;1</a>
+<br/>
+<a href="https://www.facebook.com/1514909162173262" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/151&#x200B;4909&#x200B;1621&#x200B;7326&#x200B;2</a>
+<br/>
+<a href="https://www.rebelmouse.com/watchbillionsseason1episode9/" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;rebe&#x200B;lmou&#x200B;se.c&#x200B;om/w&#x200B;atch&#x200B;bill&#x200B;ions&#x200B;seas&#x200B;on1e&#x200B;piso&#x200B;de9/</a>
+<br/>
+<a href="http://www.screencast.com/t/SFbZlDPRK" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/SFb&#x200B;ZlDP&#x200B;RK</a>
+<br/>
+<a href="https://www.facebook.com/226523377681028" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/226&#x200B;5233&#x200B;7768&#x200B;1028</a>
+<br/>
+<a href="https://www.facebook.com/226831984316122" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/226&#x200B;8319&#x200B;8431&#x200B;6122</a>
+<br/>
+<a href="http://www.screencast.com/t/NzCyl3wu9LL7" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/NzC&#x200B;yl3w&#x200B;u9LL&#x200B;7</a>
+<br/>
+<a href="http://www.screencast.com/t/ZL9RAsndc" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/ZL9&#x200B;RAsn&#x200B;dc</a>
+<br/>
+<a href="http://www.screencast.com/t/SkcO032k8" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/Skc&#x200B;O032&#x200B;k8</a>
+<br/>
+<a href="http://www.screencast.com/t/gA7dFEZcJ00F" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/gA7&#x200B;dFEZ&#x200B;cJ00&#x200B;F</a>
+<br/>
+<a href="http://www.screencast.com/t/UT6zcCeRm7A" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/UT6&#x200B;zcCe&#x200B;Rm7A</a>
+<br/>
+<a href="http://www.screencast.com/t/ieFO154b" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/ieF&#x200B;O154&#x200B;b</a>
+<br/>
+<a href="https://www.rebelmouse.com/watchsupergirlseason1episode20/" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;rebe&#x200B;lmou&#x200B;se.c&#x200B;om/w&#x200B;atch&#x200B;supe&#x200B;rgir&#x200B;lsea&#x200B;son1&#x200B;epis&#x200B;ode2&#x200B;0/</a>
+<br/>
+<a href="https://www.facebook.com/1514897182174460" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/151&#x200B;4897&#x200B;1821&#x200B;7446&#x200B;0</a>
+<br/>
+<a href="https://www.facebook.com/1514865108844334" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/151&#x200B;4865&#x200B;1088&#x200B;4433&#x200B;4</a>
+<br/>
+<a href="https://www.facebook.com/1516078108721158" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/151&#x200B;6078&#x200B;1087&#x200B;2115&#x200B;8</a>
+<br/>
+<a href="http://www.screencast.com/t/RbEpcUeVYx" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/RbE&#x200B;pcUe&#x200B;VYx</a>
+<br/>
+<a href="http://www.screencast.com/t/XwCAo3ks0" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/XwC&#x200B;Ao3k&#x200B;s0</a>
+<br/>
+<a href="http://www.screencast.com/t/HvnHif5Uam" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/Hvn&#x200B;Hif5&#x200B;Uam</a>
+<br/>
+<a href="https://www.rebelmouse.com/brooklynninenineseason3ep19/" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;rebe&#x200B;lmou&#x200B;se.c&#x200B;om/b&#x200B;rook&#x200B;lynn&#x200B;inen&#x200B;ines&#x200B;easo&#x200B;n3ep&#x200B;19/</a>
+<br/>
+<a href="https://www.facebook.com/1531108223881507" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/153&#x200B;1108&#x200B;2238&#x200B;8150&#x200B;7</a>
+<br/>
+<a href="https://www.facebook.com/226816067651047" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/226&#x200B;8160&#x200B;6765&#x200B;1047</a>
+<br/>
+<a href="http://www.screencast.com/t/BtIrmSAGTg" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/BtI&#x200B;rmSA&#x200B;GTg</a>
+<br/>
+<a href="http://www.screencast.com/t/fagZJ2syD" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/fag&#x200B;ZJ2s&#x200B;yD</a>
+<br/>
+<a href="http://www.screencast.com/t/PVEk7KPCzX" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/PVE&#x200B;k7KP&#x200B;CzX</a>
+<br/>
+<a href="https://www.facebook.com/226712460994741" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/226&#x200B;7124&#x200B;6099&#x200B;4741</a>
+<br/>
+<a href="https://www.facebook.com/226835177649136" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/226&#x200B;8351&#x200B;7764&#x200B;9136</a>
+<br/>
+<a href="https://www.facebook.com/226813707651283" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/226&#x200B;8137&#x200B;0765&#x200B;1283</a>
+<br/>
+<a href="http://www.screencast.com/t/oMQe2VPA7XFh" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/oMQ&#x200B;e2VP&#x200B;A7XF&#x200B;h</a>
+<br/>
+<a href="http://www.screencast.com/t/VlfjstTJN39d" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/Vlf&#x200B;jstT&#x200B;JN39&#x200B;d</a>
+<br/>
+<a href="http://www.screencast.com/t/UxO8tfNo" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/UxO&#x200B;8tfN&#x200B;o</a>
+<br/>
+<a href="https://www.facebook.com/226678364332196" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/226&#x200B;6783&#x200B;6433&#x200B;2196</a>
+<br/>
+<a href="https://www.facebook.com/1531000230558973" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/153&#x200B;1000&#x200B;2305&#x200B;5897&#x200B;3</a>
+<br/>
+<a href="https://www.rebelmouse.com/keepingupwithkardashianss11e18/" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;rebe&#x200B;lmou&#x200B;se.c&#x200B;om/k&#x200B;eepi&#x200B;ngup&#x200B;with&#x200B;kard&#x200B;ashi&#x200B;anss&#x200B;11e1&#x200B;8/</a>
+<br/>
+<a href="https://www.facebook.com/1516122272050075" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/151&#x200B;6122&#x200B;2720&#x200B;5007&#x200B;5</a>
+<br/>
+<a href="https://www.facebook.com/1530949300564066" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/153&#x200B;0949&#x200B;3005&#x200B;6406&#x200B;6</a>
+<br/>
+<a href="http://www.screencast.com/t/JLwVxgunHn" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/JLw&#x200B;Vxgu&#x200B;nHn</a>
+<br/>
+<a href="https://www.facebook.com/226605784339454" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/226&#x200B;6057&#x200B;8433&#x200B;9454</a>
+<br/>
+<a href="https://www.facebook.com/1514898745507637" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/151&#x200B;4898&#x200B;7455&#x200B;0763&#x200B;7</a>
+<br/>
+<a href="http://www.screencast.com/t/CnOyZ1zT8" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/CnO&#x200B;yZ1z&#x200B;T8</a>
+<br/>
+<a href="http://www.screencast.com/t/glBzyy66z" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/glB&#x200B;zyy6&#x200B;6z</a>
+<br/>
+<a href="http://www.screencast.com/t/SIubD31wNM" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/SIu&#x200B;bD31&#x200B;wNM</a>
+<br/>
+<a href="https://www.facebook.com/1516075718721397" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/151&#x200B;6075&#x200B;7187&#x200B;2139&#x200B;7</a>
+<br/>
+<a href="http://www.screencast.com/t/IzgCA9fcvP" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/Izg&#x200B;CA9f&#x200B;cvP</a>
+<br/>
+<a href="http://www.screencast.com/t/IOTyDcdCfDXe" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/IOT&#x200B;yDcd&#x200B;CfDX&#x200B;e</a>
+<br/>
+<a href="https://www.facebook.com/226713057661348" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/226&#x200B;7130&#x200B;5766&#x200B;1348</a>
+<br/>
+<a href="http://www.screencast.com/t/uVZNAgHMbnJ" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/uVZ&#x200B;NAgH&#x200B;MbnJ</a>
+<br/>
+<a href="https://www.facebook.com/226705657662800" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/226&#x200B;7056&#x200B;5766&#x200B;2800</a>
+<br/>
+<a href="http://www.screencast.com/t/J6LvfpiaD87" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/J6L&#x200B;vfpi&#x200B;aD87</a>
+<br/>
+<a href="http://www.screencast.com/t/kFGMURCO" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/kFG&#x200B;MURC&#x200B;O</a>
+<br/>
+<a href="https://www.facebook.com/226601624339870" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/226&#x200B;6016&#x200B;2433&#x200B;9870</a>
+<br/>
+<a href="http://www.screencast.com/t/Bu12uTZ9Rwg8" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;scre&#x200B;enca&#x200B;st.c&#x200B;om/t&#x200B;/Bu1&#x200B;2uTZ&#x200B;9Rwg&#x200B;8</a>
+<br/>
+<a href="https://www.rebelmouse.com/shadowhuntersseason1episode9/" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;rebe&#x200B;lmou&#x200B;se.c&#x200B;om/s&#x200B;hado&#x200B;whun&#x200B;ters&#x200B;seas&#x200B;on1e&#x200B;piso&#x200B;de9/</a>
+<br/>
+<a href="https://www.facebook.com/226653141001385" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/226&#x200B;6531&#x200B;4100&#x200B;1385</a>
+<br/>
+<a href="https://www.facebook.com/1516142945381341" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/151&#x200B;6142&#x200B;9453&#x200B;8134&#x200B;1</a>
+<br/>
+<a href="https://www.facebook.com/1516149655380670" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/151&#x200B;6149&#x200B;6553&#x200B;8067&#x200B;0</a>
+<br/>
+<a href="https://www.facebook.com/226681097665256" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/226&#x200B;6810&#x200B;9766&#x200B;5256</a>
+<br/>
+<a href="https://www.rebelmouse.com/hellskitchenseason15episode9/" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;rebe&#x200B;lmou&#x200B;se.c&#x200B;om/h&#x200B;ells&#x200B;kitc&#x200B;hens&#x200B;easo&#x200B;n15e&#x200B;piso&#x200B;de9/</a>
+<br/>
+<a href="https://www.facebook.com/203180943348477" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/203&#x200B;1809&#x200B;4334&#x200B;8477</a>
+<br/>
+<a href="https://www.rebelmouse.com/watchtheflashseason2episode23/" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;rebe&#x200B;lmou&#x200B;se.c&#x200B;om/w&#x200B;atch&#x200B;thef&#x200B;lash&#x200B;seas&#x200B;on2e&#x200B;piso&#x200B;de23&#x200B;/</a>
+<br/>
+<a href="https://www.facebook.com/203165750016663" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;face&#x200B;book&#x200B;.com&#x200B;/203&#x200B;1657&#x200B;5001&#x200B;6663</a>
+      </div>
+      
+    </div>
+
+    <div class="comment_reply post_comment_box closed" id="comment_reply_to_93553">
+    </div>
+
+</div></div></div></div></div></div></div></div></div><br style="clear: both;" /></div>
+  </div>
+
+
+  </div>
+</li>
+<li id="comment-93764" class="article-comment">
+  <div class="article-comment-inner">
+
+  <div class="comment-content comment-logged-out ">
+
+
+    <a target="_blank" class="comment-picture" title="caribian (malverigis uzanto)" href="//www.gravatar.com/fe56dc0cfadd6355d10c125083caf64c"><img onerror="gravatarCommentFailback(this)" data-gravatar="//www.gravatar.com/avatar/fe56dc0cfadd6355d10c125083caf64c?only_path=false&amp;size=50" src="//www.gravatar.com/avatar/fe56dc0cfadd6355d10c125083caf64c?only_path=false&amp;size=50&amp;d=404" alt="Fe56dc0cfadd6355d10c125083caf64c?only path=false&amp;size=50&amp;d=404" /><span class="comment-info">caribian</span><span class="comment-user-status icon-user-unknown">(malverigis uzanto)</span></a>
+
+<div class="comment-balloon "><div class="comment-wrapper-1"><div class="comment-wrapper-2"><div class="comment-wrapper-3"><div class="comment-wrapper-4"><div class="comment-wrapper-5"><div class="comment-wrapper-6"><div class="comment-wrapper-7"><div class="comment-wrapper-8"><div class="comment-balloon-content">
+    <div class="comment-details">
+      <div class="comment-header">
+        <ul>
+</ul>
+<div class="comments-action-bar">
+    <a class="comment-footer comment-footer-link comment-footer-hide comment-actions-reply button" id="comment-reply-to-93764" title="Reply" href="#" onclick="var f = add_comment_reply_form(this, 93764); f.find(&#39;comment_title, textarea&#39;).val(&#39;&#39;); return false; return false;"></a>
+</div>
+
+      </div>
+
+      <div class="comment-created-at">
+        aprilo 29, 2016 0:41
+      </div>
+      <h4>&nbsp;</h4>
+      <div class="comment-text">
+        <p/>
+        新人女優から人気女優、熟女まで幅広く扱っているカリビアンコム。そんな大手無修正動画サイトの入会前に確認しておきたいことから、お得な入会までご紹介します！無修正アダルト動画ならカリビアンコム、入会前に確認すべきことをご覧ください。カリビアンコム： <a href="http://www.encendiabiochar.com/" target="_blank" rel="nofolow" onclick="return confirm('Are you sure you want to visit this web site?')">www.&#x200B;ence&#x200B;ndia&#x200B;bioc&#x200B;har.&#x200B;com/</a>
+      </div>
+      
+    </div>
+
+    <div class="comment_reply post_comment_box closed" id="comment_reply_to_93764">
+    </div>
+
+</div></div></div></div></div></div></div></div></div><br style="clear: both;" /></div>
+  </div>
+
+
+  </div>
+</li>
+
+        
+    </ul>
+
+      <div id='page-comment-form' class='page-comment-form'><div class="page-comment-form">
+
+
+
+<div class="post_comment_box closed">
+
+  <a class="display-comment-form" href="#">Post a comment</a>
+<form class="comment_form" id="new_comment" onsubmit="jQuery.ajax({data:jQuery.param(jQuery(this).serializeArray()) + &#39;&amp;authenticity_token=&#39; + encodeURIComponent(&#39;CAhi8SkSznTbIMThITCi2dMWkp03CiJ6JtzXCzYKwaSVYNLwW0nMlzQ7MX+nsNi6nIdYXj+G5Sh7UO4PaYFndg==&#39;), dataType:&#39;script&#39;, type:&#39;post&#39;, url:&#39;/profile/redmine/comment/create/1362005?escape=false&#39;}); return false;" action="/profile/redmine/comment/create/1362005" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="qNeRPKtXX2y3wg5FwAF1CE1T0X8fPRDXhgd/BkwoiDA1vyE92Qxdj1jZ+9tGgQ9rAsIbvBex14Xbi0YCE6Mu4g==" />
+
+  <p><span class="required-field">The <label class='pseudoformlabel'>highlighted</label> fields are mandatory.</span></p>
+
+
+    <span class="required-field"><div class="formfieldline"><label class="formlabel" for="comment_name">Name</label><div class="formfield type-text"><input type="text" name="comment[name]" id="comment_name" /></div></div></span>
+    <span class="required-field"><div class="formfieldline"><label class="formlabel" for="comment_email">e-mail</label><div class="formfield type-text"><input type="text" name="comment[email]" id="comment_email" /></div></div></span>
+    <p>
+    If you are a registered user, you can login and be automatically recognized.
+    </p>
+
+
+  <div class="formfieldline"><label class="formlabel" for="comment_title">Title</label><div class="formfield type-text"><input type="text" name="comment[title]" id="comment_title" /></div></div>
+  <span class="required-field"><div class="formfieldline"><label class="formlabel" for="comment_body">Enter your comment</label><div class="formfield type-textarea"><textarea rows="5" name="comment[body]" id="comment_body">
+</textarea></div></div></span>
+
+    <p><script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<div class="g-recaptcha " data-sitekey="6LcK7CYUAAAAABl-eMkoFIv3VvOOIPwiXeinFmUi" ajax="true"></div>
+          <noscript>
+            <div>
+              <div style="width: 302px; height: 422px; position: relative;">
+                <div style="width: 302px; height: 422px; position: absolute;">
+                  <iframe
+                    src="https://www.google.com/recaptcha/api/fallback?k=6LcK7CYUAAAAABl-eMkoFIv3VvOOIPwiXeinFmUi"
+                    frameborder="0" scrolling="no"
+                    style="width: 302px; height:422px; border-style: none;">
+                  </iframe>
+                </div>
+              </div>
+              <div style="width: 300px; height: 60px; border-style: none;
+                bottom: 12px; left: 25px; margin: 0px; padding: 0px; right: 25px;
+                background: #f9f9f9; border: 1px solid #c1c1c1; border-radius: 3px;">
+                <textarea id="g-recaptcha-response" name="g-recaptcha-response"
+                  class="g-recaptcha-response"
+                  style="width: 250px; height: 40px; border: 1px solid #c1c1c1;
+                  margin: 10px 25px; padding: 0px; resize: none;" value="">
+                </textarea>
+              </div>
+            </div>
+          </noscript>
+</p>
+
+
+  <input type="hidden" name="confirm" id="confirm" value="false" />
+  <input type="hidden" name="view" id="view" />
+  <input type="hidden" name="comment[reply_of_id]" id="comment_reply_of_id" />
+
+  
+
+  <div class=" button-bar">
+    <input type="submit" name="commit" value="Post comment" onclick="save_comment(this); return false;" class="button with-text icon-add submit" />
+      <a id="cancel-comment" class="button icon-cancel with-text" title="Cancel" href="">&nbsp;<span>Cancel</span></a>
+<br style="clear: left;" /></div></form>
+
+</div><!-- end class="post_comment_box" -->
+</div><!-- end class="page-comment-form" -->
+
+<script src="/assets/comment_form-6675ef0f0fa17bef4ca4a3b992647bd9.js"></script>
+</div>
+  </div><!-- end class="comments" -->
+
+</div><!-- end id="article" -->
+<link rel="stylesheet" media="screen" href="/assets/vendor/jquery.fancybox-f18bccba6b2b1108ccca4462da78aa43.css" /><script src="/assets/vendor/jquery.fancybox.pack-c84445b4cd8162f8a15703d690ccc514.js"></script><script>
+//<![CDATA[
+apply_zoom_to_images("Zoom in")
+//]]>
+</script>
+</div></div></div></div></div>
+</div></div></div><div id="profile-footer"></div>
+  <br style='clear: both'/>
+</div><!-- end id="content-inner" -->
+
+        </div><!-- end id="content" -->
+      </div><!-- end id="wrap-2" -->
+    </div><!-- end id="wrap-1" -->
+    
+    <div id="footer">
+      <div id="theme-footer">
+        <div id="footer-content">
+  <p>This site uses &lt;a href=&quot;http://noosfero.org/&quot;&gt;Noosfero&lt;/a&gt;, developed by &lt;a href=&quot;http://colivre.coop.br/&quot;&gt;Colivre&lt;/a&gt; and licensed under the &lt;a href=&quot;http://www.gnu.org/licenses/agpl.html&quot;&gt;GNU Affero General Public License&lt;/a&gt; version 3 or any later version.</p>
+</div>
+
+      </div><!-- end id="theme-footer" -->
+      <div id="global-footer">
+        
+      </div><!-- end id="global-footer" -->
+    </div><!-- end id="footer" -->
+    
+    <script src="https://s7.addthis.com/js/152/addthis_widget.js"></script>
+    <!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+     var u = "piwik.colivre.coop.br/";
+     if(!u.match(/^https?/)){
+       var protocol = ("https:" == document.location.protocol ? "https" : "http");
+       u = protocol + '://' + u;
+     }
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 3]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.colivre.coop.br/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+  </body>
+</html>
