@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <link rel="shortcut icon" href="/designs/themes/fisl12/favicon.ico" type="image/x-icon" />
+    <title>Slideshow imagens - fisl12 - Software Livre Brasil</title>
+
+    <style type="text/css">
+@import url(/stylesheets/slideshow.css);
+</style>
+    <script src="/javascripts/jquery-2.1.1.min.js"></script>
+<script src="/assets/vendor/sliderjs-4813c008b79ff67e006eacb62a9b8630.js"></script>
+<script src="/assets/vendor/pikachoose-476b26458f07a3a41eb6156f4ec6ef23.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function (){
+        $("#slideshow").PikaChoose({
+          buttons: { play: "Iniciar", stop: "Parar", previous: "Anterior", next: "Próximo" }
+        });
+        $("#slideshow").SliderJS({
+          window_width: 320,
+          window_height: 55,
+          list_width: 832,
+          pikachoose: true,
+          auto_play: false
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p class='back-button' ><a class="button icon- with-text" title="Voltar à galeria" href="http://softwarelivre.org/fisl12/slideshow-imagens">&nbsp;<span>Voltar à galeria</span></a></p>
+<ul id='slideshow' >
+      <li><img title="214072.jpg" src="/thumbnails/0033/6714/214072_display.jpg" alt="214072 display" /></li>
+      <li><img title="atelier_livre.jpg" src="/thumbnails/0032/8510/atelier-livre_display.jpg" alt="Atelier livre display" /></li>
+      <li><img title="BANNER.JPG" src="/thumbnails/0033/6028/banner_display.jpg" alt="Banner display" /></li>
+      <li><img title="encerramento_small.jpg" src="/thumbnails/0033/7997/encerramento-small_display.jpg" alt="Encerramento small display" /></li>
+      <li><img title="firechima2.jpg" src="/thumbnails/0033/7580/firechima2_display.jpg" alt="Firechima2 display" /></li>
+      <li><img title="Governo_Escuta_-_Audiência_Pública_do_Gov_do_Estado.jpg" src="/thumbnails/0033/6230/governo-escuta-audiencia-publica-do-gov-do-estado_display.jpg" alt="Governo escuta audiencia publica do gov do estado display" /></li>
+      <li><img title="IMG_0354_small.JPG" src="/thumbnails/0031/2257/img-0354-small_display.jpg" alt="Img 0354 small display" /></li>
+      <li><img title="IMG_3286.JPG" src="/thumbnails/0030/6971/img-3286_display.jpg" alt="Img 3286 display" /></li>
+      <li><img title="insc.JPG" src="/thumbnails/0031/6836/insc_display.jpg" alt="Insc display" /></li>
+      <li><img title="John_Maddog_Hall.jpg" src="/thumbnails/0033/6231/john-maddog-hall_display.jpg" alt="John maddog hall display" /></li>
+      <li><img title="palestrantes.JPG" src="/thumbnails/0032/6854/palestrantes_display.jpg" alt="Palestrantes display" /></li>
+      <li><img title="pinguim.jpg" src="/thumbnails/0030/7099/pinguim_display.jpg" alt="Pinguim display" /></li>
+      <li><img title="Pinguin_do_LInux.jpg" src="/thumbnails/0033/6232/pinguin-do-linux_display.jpg" alt="Pinguin do linux display" /></li>
+      <li><img title="teste.jpg" src="/thumbnails/0030/6968/teste_display.jpg" alt="Teste display" /></li>
+      <li><img title="videos.JPG" src="/thumbnails/0035/6297/videos_display.jpg" alt="Videos display" /></li>
+</ul>
+
+  </body>
+</html>

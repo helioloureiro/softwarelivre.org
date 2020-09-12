@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <link rel="shortcut icon" href="/designs/themes/fisl12/favicon.ico" type="image/x-icon" />
+    <title>Imagens para blocos - fisl12 - Software Livre Brasil</title>
+
+    <style type="text/css">
+@import url(/stylesheets/slideshow.css);
+</style>
+    <script src="/javascripts/jquery-2.1.1.min.js"></script>
+<script src="/assets/vendor/sliderjs-4813c008b79ff67e006eacb62a9b8630.js"></script>
+<script src="/assets/vendor/pikachoose-476b26458f07a3a41eb6156f4ec6ef23.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function (){
+        $("#slideshow").PikaChoose({
+          buttons: { play: "Iniciar", stop: "Parar", previous: "Anterior", next: "Próximo" }
+        });
+        $("#slideshow").SliderJS({
+          window_width: 320,
+          window_height: 55,
+          list_width: 832,
+          pikachoose: true,
+          auto_play: false
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p class='back-button' ><a class="button icon- with-text" title="Voltar à galeria" href="http://softwarelivre.org/fisl12/imagens-para-blocos">&nbsp;<span>Voltar à galeria</span></a></p>
+<ul id='slideshow' >
+      <li><img title="brasil.png" src="/thumbnails/0030/5507/brasil_display.png" alt="Brasil display" /></li>
+      <li><img title="espanha.png" src="/thumbnails/0030/5509/espanha_display.png" alt="Espanha display" /></li>
+      <li><img title="esperanto.png" src="/thumbnails/0030/5510/esperanto_display.png" alt="Esperanto display" /></li>
+      <li><img title="eua.png" src="/thumbnails/0030/5508/eua_display.png" alt="Eua display" /></li>
+      <li><img title="feed.png" src="/thumbnails/0030/5502/feed_display.png" alt="Feed display" /></li>
+      <li><img title="identica-48.png" src="/thumbnails/0030/6275/identica-48_display.png" alt="Identica 48 display" /></li>
+      <li><img title="identica.png" src="/thumbnails/0030/6266/identica_display.png" alt="Identica display" /></li>
+      <li><img title="psl-brasil.png" src="/thumbnails/0030/6483/psl-brasil_display.png" alt="Psl brasil display" /></li>
+      <li><img title="rede-social.png" src="/thumbnails/0030/6475/rede-social_display.png" alt="Rede social display" /></li>
+      <li><img title="red-social.png" src="/thumbnails/0030/6476/red-social_display.png" alt="Red social display" /></li>
+      <li><img title="social-network.png" src="/thumbnails/0030/6477/social-network_display.png" alt="Social network display" /></li>
+      <li><img title="socia-reto.png" src="/thumbnails/0030/6478/socia-reto_display.png" alt="Socia reto display" /></li>
+      <li><img title="tvsl.png" src="/thumbnails/0031/6123/tvsl_display.png" alt="Tvsl display" /></li>
+      <li><img title="twitter.png" src="/thumbnails/0030/5503/twitter_display.png" alt="Twitter display" /></li>
+</ul>
+
+  </body>
+</html>
