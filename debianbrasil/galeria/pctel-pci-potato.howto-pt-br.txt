@@ -1,0 +1,183 @@
+==================================================================
+PCTel HSP56 Micromodem PCI no Debian 2.2r3 (potato) Mini-HOWTO 0.1
+==================================================================
+
+1 - Introdução
+==============
+
+1.1 - Propósito
+	O propósito deste documento é ser um guia para aqueles que estão tendo problemas ao tentar instalar o modem HSP56 Micromodem da PCTel num sistema Debian GNU/Linux 2.2r3 (potato).
+
+	Nos parágrafos seguintes tentarei explicar precisamente como eu instalei este modem (que está se tornando bastante popular em computadores atuais) no meu sistema Debian (uma ótima distribuição do Linux). Eu não tentei instalar em nenhum outro sistema e não tentei nenhum outro tipo de modem.
+
+	Para mais informações sobre Winmodems/Linmodems e suas instalações consulte:
+
+	- Linmodems.org
+	- Rob Clark's site: http://www.kcdata.com/~gromitkc/winmodem.html
+	- The Linux Documentation Project: http://www.linuxdoc.org
+	- Jan Stifter's Homepage: http://www.medres.ch/~jstifter/linux/pctel.html
+
+	Estes links me ajudaram bastante.
+
+1.2 - Aviso
+	Use este documento como um guia, adaptando as instruções ao seu caso específico. O procedimento descrito abaixo não é uma solução final e algumas coisas podem dar errado! O autor não garante que as instruções abaixo não vão causar danos ao seu sistema e não ficará responsável por qualquer problema que ocorra ao usar este documento. Em outras palavras: use este guia sob sua própria conta e risco.
+
+	Eu não sou um expert em Linux. Este documento conta minha experiência, descrevendo exatamente o que eu fiz. Funcionou em um sistema i686 (AMD Athlon) com o Debian GNU/Linux 2.2r3 (potato) instalado e um modem PCTel HSP56 Micromodem PCI (não OnBoard).
+
+	Para modems OnBoard, use o mesmo driver explicado abaixo, mas modifique o Makefile como explicado no passo 3 do arquivo README que acompanha o driver (em inglês). Provavelmente o chipset HAL_CM8738 é usado, mas eu não testei isso. Também fui informado de que ambos os arquivos compilados (.o) do driver precisam passar pelo fixscript, e~não só o "ptserial.o". Repita a operação para o outro arquivo, caso o linux reclame quando você tentar carregá-lo.
+
+1.3 - Sobre o autor
+	Se quiser contactar-me, use o correio eletrônico:
+	Vítor Souza <vitor.souza@terra.com.br>
+
+	Fique a vontade para mandar questões, sugestões e opiniões sobre esse Mini-HOWTO.
+
+
+2 - Antes de começar
+====================
+	Antes de começar, assegure-se que você possui:
+
+	- Os CDs do Debian 2.2r3 (pelo menos os 2 primeiros);
+	- Acesso à Internet em outra máquina ou sistema;
+	- Algum espaço em disco (não sei quanto exatamente).
+
+
+3 - O procedimento de instalação
+================================
+	O procedimento de instalação consiste em:
+
+	- Pegar o driver da Internet;
+	- Instalar e preparar o fonte do Kernel Linux;
+	- Compilando em "consertando" o driver;
+	- Conectando à Internet com seu PCTel.
+
+	Eu fiz todos os passos como usuário root, então não sei dizer quais passos realmente necessitam de privilégios root e quais não necessitam. Se você não quer fazer tudo como root, faça como usuário normal e use o comando "su" toda vez que o sistema não lhe der permissão para fazer algum dos comandos. Sou da opinião que se você não está jogando ou acessando a Internet como root, então tudo bem.
+
+3.1 - Pegando o driver na Internet
+	O driver que funcionou se encontra na página do Jan Stifter: http://www.medres.ch/~jstifter/linux/pctel.html. O nome do arquivo é pctel-2.2.tar.gz, e ainda deve estar por lá. Cópie o arquivo para uma pasta ou disquete. Você precisará ter acesso a este arquivo quando entrar no Linux.
+
+	Você também vai precisar de um pequeno "programinha" chamado "fixscript". A última versão deste script você pode achar lendo o Linmodem-Howto (procure por ele na página do Linux Documentation Project). Ao final deste documento está a cópia do fixscript que eu usei no meu caso, e você poderá tentar usá-la também.
+
+
+	$ cd /diretório/que/você/baixou/os/arquivos/
+	Para começar, acesse o diretório no qual você copiou o driver e o fixscript.
+
+	$ cp pctel-2.2.tar.gz /usr/src
+	$ cp fixscript /usr/src
+	Copie ambos para o diretório /usr/src. Este diretório já deve existir na sua instalação do Debian.
+
+	$ cd /usr/src
+	$ tar -zxvf pctel-2.2.tar.gz
+	Mude para o diretório /usr/src, descompacte (gzip) e desarquive (tar) os arquivos que compõem o driver. Este comando irá criar o diretório pctel-2.2. Você pode apagar pctel-2.2.tar.gz se quiser.
+
+3.2 - Instalando e preparando o fonte do Kernel Linux
+	O arquivo README que faz parte do driver utilizado explica que o driver necessita do código fonte do Kernel Linux instalado e preparado corretamente. O Debian potato utiliza o kernel 2.2.19pre17, então é o código fonte desta versão que estaremos instalando a partir dos CDs. Faça o seguinte:
+
+	$ apt-get install kernel-source-2.2.19pre17
+	Isto irá instalar o fonte do kernel e outros pacotes necessários para descompactá-lo.
+
+	$ cd /usr/src
+	Acesse o diretório onde se localiza o fonte compactado.
+
+	$ bzip2 -cd kernel-source-2.2.19pre17.tar.bz2 | tar -xvf -
+	Descompacte (bzip2) e desarquive (tar) os arquivos fonte do kernel. Este comando levará algum tempo para ser executado, pois o fonte é muito grande.
+
+	$ ln -s kernel-source-2.2.19pre17 linux
+	Faça um link simbólico do diretório do código fonte (digite "man ln" para mais informações sobre links). Isto é feito para que todos os programas possa achar o kernel no mesmo lugar: /usr/src/linux.
+
+	$ cd linux
+	$ make dep
+	Com esses dois comandos o linux irá avaliar as dependências do código fonte do kernel. Não ligue para o monte de mensagens que irão aparecer na sua tela. Confie nos programadores do Linux, tudo vai funcionar...
+
+3.3 - Compilando e "consertando" o driver
+	Com o fonte do kernel e os drivers preparados, é hora de compilar o driver.
+
+	$ touch /usr/src/linux/include/linux/modversions.h
+	Isto é necessário antes de compilar o driver. De acordo com Jan Stifter (criador do driver), é uma pequena "trapaça" que temos que fazer porque o driver precisa do arquivo modversions.h para funcionar, mesmo que seja vazio.
+
+	$ cd /usr/src/pctel-2.2
+	$ make
+	Vá para o diretório do driver e compile-o (make).
+
+	$ cp ../fixscript modules
+	$ cd modules
+	$ chmod 755 fixscript
+	Copie o fixscript para o diretório do driver, acesse o diretório e dê a ele permissão de execução.
+
+	$ ./fixscript ptserial.o ptserial-fix.o
+	"Conserte" o arquivo ptserial.o. O outro não precisa.
+
+	$ mv ptserial.o ptserial-old.o
+	$ mv ptserial-fix.o ptserial.o
+	Faça uma cópia do ptserial.o original e substitua-o pelo que foi "consertado".
+
+	$ cd ..
+	$ make install
+	Volte para o diretório pai e instale os drivers. Eles serão copiados para um subdiretório de /lib/modules, prontos para serem carregados. Um "arquivo dispositivo" ("device file", ver "man mknod") será criado e configurado para o seu modem: /dev/ttyS15.
+
+3.4 - Carregando os módulos
+	Os dois comandos abaixo deverão ser executados a cada vez que você reiniciar sua máquina e quiser usar o modem. Talvez no futuro alguém adicione as instruções sobre como fazer o Linux carregar o modem automaticamente.
+
+	$ insmod pctel
+	$ insmod ptserial
+
+3.5 - Conectando à Internet
+	Existem vários programas que realizam a conexão com a Internet uma vez que seu modem esteja configurado. Uma documentação antiga do Debian me sugeriu o uso do programa "wvdial" (veja http://www.worldvisions.ca para mais detalhes) então eu passei a usá-lo. Está funcionando muito bem para mim.
+
+	Para que o wvdial seja instalado e configurado, use:
+
+	$ apt-get install ppp wvdial
+
+	wvdial deve detectar seu modem (você deve carregar os módulos antes de usar o comando acima!) e configurá-lo automaticamente. A mensagem abaixo deve ser mostrada em algum momento dessa configuração:
+
+	Found a modem on /dev/ttyS15.
+	ttyS15<Info>: Speed 115200; init "ATQ0 V1 E1 S0=0 &C1 &D2 S11=55 +FCLASS=0"
+
+	Depois disso você está pronto para conectar à Internet. A única outra coisa que você precisa configurar são os servidores de nomes. Se você não sabe o que é isso, ligue para o seu provedor e pergunte a eles pelo endereço de DNS deles. Edite o arquivo /etc/resolv.conf com seu editor favorito e digite:
+
+	domain seu.nome.de.domínio
+	nameserver YYY.YYY.YYY.YYY
+	nameserver ZZZ.ZZZ.ZZZ.ZZZ
+
+	Onde seu.nome.de.domínio é o domínio do seu provedor da Internet. YYY.YYY.YYY.YYY é o endereço IP do servidor DNS primário e ZZZ.ZZZ.ZZZ.ZZZ é o endereço IP do servido DNS secundário (se existir um). Por exemplo, meu resolv.conf ficou assim:
+
+	domain terra.com.br
+	nameserver 200.177.250.10
+	nameserver 200.177.2.10
+
+	Se não quiser usar o wvdial, você pode tentar usar o pppconfig para configurar sua conexão (é bem fácil). Instale-o com o comando `apt-get pppconfig` e digite `pppconfig` para executá-lo.
+
+
+4 - Fixscript
+=============
+#!/bin/bash
+
+F=/tmp/objcopyscript
+S=/tmp/syms
+MI=/tmp/modinfo
+
+echo -ne "kernel_version="`uname -r`"\0" > $MI
+
+depmod -e $1 | grep -vE "^ltmodem" > $S
+
+echo "#!/bin/bash" > $F
+echo "objcopy \\" >> $F
+for i in `cat $S` ; do
+ echo -n doing $i
+ new=`awk '/ '$i'_R/ {
+  printf("%s", $2);
+ }' < /proc/ksyms`
+ echo " $new"
+ echo "--redefine=$i=$new \\" >> $F
+done
+
+echo "--remove-section=.modinfo \\" >> $F
+echo "--add-section=.modinfo=$MI \\" >> $F
+echo '$*' >> $F
+cat $F
+chmod a+x $F
+$F $1 $2
+rm -f $F $S $MI
+
+
+

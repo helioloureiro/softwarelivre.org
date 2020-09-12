@@ -1,0 +1,192 @@
+
+                    Como Internacionalizar Scripts Bash
+                    -----------------------------------
+
+                  Gustavo Noronha Silva <kov@debian.org>
+
+                             13 fevereiro 2005
+
+
+-------------------------------------------------------------------------------
+
+
+Resumo
+------
+
+     A internacionalização do Debian e de qualquer sistema de computação é
+     vital para o objetivo de universalização que é um dos mais importantes
+     do Debian.  Os scripts shell são parte importante do dia a dia de quem
+     lida com um Debian e são ponto chave no processo de
+     internacionalização.
+
+
+Nota de Copyright
+-----------------
+
+     Copyright (C) 2001 - Gustavo Noronha Silva
+
+     Este documento está licenciado sob a GNU FDL (Free Documentation
+     License), conforme publicada pela Free Software Foundation.
+
+
+-------------------------------------------------------------------------------
+
+
+Conteúdo
+--------
+
+     1.        Introdução
+
+     2.        Preparando seu script bash
+
+     3.        Criando o potfile
+
+     4.        Traduzindo o potfile
+
+     5.        Como instalar seu script com as traduções
+
+     6.        Como atualizar as traduções
+
+
+-------------------------------------------------------------------------------
+
+
+1. Introdução
+-------------
+
+     Este documento cobre a internacionalização de scripts bash.  Alguns
+     procedimentos apresentados podem funcionar com outros interpretadores
+     de comandos, mas alguns são bem específicos.
+
+     Antes de começar assegure-se de ter instalado o pacote `bash' e o
+     `gettext'.  Eles serão necessários para a realização da nossa tarefa
+     principal.
+
+
+-------------------------------------------------------------------------------
+
+
+2. Preparando seu script bash
+-----------------------------
+
+     Antes de sair traduzindo tudo você vai ter de preparar seu script bash
+     para ser internacionalizado.  Para isso é necessário modificar todas
+     as strings que você quer traduzir.  Por exemplo:
+
+          echo "Isso é um teste"
+          echo -e "Isso é um teste\nE uma nova linha"
+
+     Ficaria assim:
+
+          echo $"Isso é um teste"
+          echo -e $"Isso é um teste\nE uma nova linha"
+
+     Trocando em miudos, basta colocar um cifrão (`$') antes das strings.
+     As strings devem ser colocadas entre aspas (`""'), senão não são
+     consideradas como traduzíveis.  Isso é idêntico a marcar uma string
+     com _("string") em C, por exemplo, quando se usa o `gettext'.
+
+     Outra coisa importante é definir a variável `TEXTDOMAIN' para o nome
+     do domínio de localização do seu script.  Normalmente é o nome do seu
+     programa.  Esse nome é o nome do arquivo `.mo' que instalaremos com as
+     traduções mais tarde.
+
+
+-------------------------------------------------------------------------------
+
+
+3. Criando o potfile
+--------------------
+
+     O potfile é o arquivo <domínio>.pot que é o "arquivo mestre" para as
+     traduções.  Para gerá-lo usa-se, depois de preparar seu script:
+
+          $ bash --dump-po-strings <script> > <script.pot>
+
+     Isso irá pegar todas as strings marcadas do script e gerar um
+     `potfile' pronto para ser traduzido.
+
+
+-------------------------------------------------------------------------------
+
+
+4. Traduzindo o potfile
+-----------------------
+
+     Para traduzir seu script, agora, basta copiar o <script.pot> para, por
+     exemplo, pt_BR.po e fazer a tradução.  A tradução é idêntica à de um
+     potfile comum, mas alguns pontos devem ser observados.  Por exemplo:
+
+          echo -e $"teste\noutra linha"
+
+     Uma linha assim vai sair da seguinte forma no arquivo pot:
+
+          #: script:1
+          msgid "teste\\noutra linha"
+          msgstr ""
+
+     Esse tipo de entrada deve ser traduzida assim:
+
+          #: script:1
+          msgid "teste\\noutra linha"
+          msgstr "teste\noutra linha"
+
+     Usando apenas uma `\' antes do `n'.  Depois de todo o arquivo
+     traduzido, temos de gerar o arquivo `.gmo' de cada idioma para que
+     sejam instalados.  Isso se faz da seguinte forma:
+
+          $ msgfmt --statistics -o pt_BR.gmo pt_BR.po
+
+
+-------------------------------------------------------------------------------
+
+
+5. Como instalar seu script com as traduções
+--------------------------------------------
+
+     Agora é a hora de fazer a instalação.  O script pode ser instalado
+     onde você quiser.  Os arquivos `.pot' e `.po' não devem ser
+     instalados, somente os `.gmo'.
+
+     Você deve instalar esses arquivos `.gmo' no diretório
+     `/usr/share/locale/$idioma/LC_MESSAGES', substituindo o `$idioma' pelo
+     código do idioma que está instalando, `pt_BR', por exemplo.
+
+     Ao instalar, não se esqueça que o pt_BR.gmo, por exemplo, deve ir para
+     `/usr/share/locale/pt_BR/LC_MESSAGES' mas com o nome <domínio>.mo.  O
+     <domínio> deve ser substituído pelo conteúdo da variável `TEXTDOMAIN'
+     que foi definida no script.
+
+     Para alterar o diretório de instalação de `/usr/share/locale' para
+     outro lugar você pode usar a variável `TEXTDOMAINDIR' no script.
+
+     Depois disso seu script já deve mostrar frases no idioma definido na
+     variável de ambiente `LC_MESSAGES'.
+
+
+-------------------------------------------------------------------------------
+
+
+6. Como atualizar as traduções
+------------------------------
+
+     Atualizar traduções é um processo bem simples, basta regerar o
+     `potfile' com o comando já apresentado e depois executar:
+
+          $ msgmerge -o pt_BR.po pt_BR.po <dominio>.pot
+
+     A linha acima é um exemplo.  Você deve executar isso para cada arquivo
+     `.po' existente.  Depois disso feito basta editar os arquivos `.po' e
+     regerar os `.gmo'.
+
+
+-------------------------------------------------------------------------------
+
+
+     Como Internacionalizar Scripts Bash
+
+     Gustavo Noronha Silva <kov@debian.org>
+
+
+     13 fevereiro 2005
+

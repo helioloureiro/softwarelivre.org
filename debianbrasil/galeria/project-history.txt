@@ -1,0 +1,627 @@
+
+                       A História do Projeto Debian
+                       ----------------------------
+
+      Equipe de Documentação do Debian <debian-doc@lists.debian.org>
+
+       Versão do original: 1.2.0 (revisado em 19 de janeiro de 2001)
+
+
+-------------------------------------------------------------------------------
+
+
+Resumo
+------
+
+     Este documento descreve a história e as metas do projeto Debian.
+
+
+Nota de Copyright
+-----------------
+
+     Este documento pode ser redistribuído livremente ou modificado de
+     qualquer forma, desde que suas modificações sejam claramente
+     documentadas.
+
+     Este documento pode ser redistribuído gratuitamente ou não, e pode ser
+     modificado (incluindo mudança do tipo de mídia, do tipo de arquivo ou
+     de um idioma para outro), desde que todas as modificações do documento
+     original estejam claramente marcadas como tal.
+
+     Importantes contribuições a este documento foram feitas por:
+
+        * Ian Murdock <imurdock@cs.arizona.edu>
+
+        * Nils Lohner <lohner@debian.org>
+
+        * Craig Small <csmall@debian.org>
+
+        * Bill Mitchell <Bill.Mitchell@pobox.com>
+
+        * Hartmut Koptein <koptein@debian.org>
+
+        * Bdale Garbee <bdale@debian.org>
+
+        * Martin Schulze <joey@debian.org>
+
+     O documento original The Debian Project History
+     (http://www.br.debian.org/doc/misc-manuals#history) é atualmente
+     mantido por Martin Schulze <joey@debian.org>.
+
+     Tradução para o idioma português (Brasil):
+
+        * Tradutor: Israel Mendes Biscaia Filho <israelmbf@kovacs.com.br>
+
+        * Revisor: João Alberto de França Ferreira <joaoff@esquadro.com.br>
+
+     Qualquer comentário, sugestão, correção etc, devem ser enviados ao
+     tradutor e revisor.
+
+
+-------------------------------------------------------------------------------
+
+
+Conteúdo
+--------
+
+     1.        Introdução -- O que é o projeto Debian?
+     1.1.      O Início
+     1.2.      Pronunciando Debian
+
+     2.        Liderança
+
+     3.        Versões do Debian
+
+     4.        Uma história detalhada
+     4.1.      As versões 0.x
+     4.2.      As versões 1.x
+     4.3.      As versões 2.x
+     4.4.      O que virá?
+
+     5.        O Manifesto Debian
+     5.1.      O que é o Debian GNU/Linux?
+     5.2.      Por que o Debian está sendo construído?
+     5.3.      Como o Debian tentará pôr fim a esses problemas?
+
+
+-------------------------------------------------------------------------------
+
+
+1. Introdução -- O que é o projeto Debian?
+------------------------------------------
+
+     O Projeto Debian (http://www.br.debian.org) é um grupo mundial de
+     voluntários que pretende produzir uma distribuição de sistema
+     operacional que seja composta inteiramente por software livre.  O
+     principal produto do projeto é a distribuição de software Debian
+     GNU/Linux, que inclui o kernel (núcleo) do sistema operacional
+     GNU/Linux e milhares de aplicativos pré-empacotados.  Vários tipos de
+     processadores são suportados, incluindo Intel i386 e superiores,
+     Alpha, ARM, Motorola 68k, MIPS, PowerPC, Sparc e UltraSparc, HP
+     PA-RISC, IBM S/390 e Hitachi SuperH.
+
+     O Debian motivou a formação da Software in the Public Interest, Inc.
+     (http://www.spi-inc.org) (Software de Interesse Público, Inc.), uma
+     organização não-lucarativa baseada em Nova Iorque.  A SPI foi fundada
+     para ajudar o Debian e organizações similares a desenvolver e
+     distrubuir software e hardware "abertos".  Entre outras coisas, a SPI
+     provê um mecanismo pelo qual o Projeto Debian pode aceitar
+     contribuições que são dedutíveis de impostos nos EUA.
+
+     Para mais informações sobre software livre, veja a página Contrato
+     Social Debian (http://www.br.debian.org/social_contract) associada às
+     Idéias de Software Livre Debian, ou Debian O Quê Livre significa?
+     (http://www.br.debian.org/intro/free).
+
+
+1.1. O Início
+-------------
+
+     O Projeto Debian foi oficialmente fundado por Ian Murdock em 16 de
+     agosto de 1993.  Ian Murdock o iniciou como uma nova distribuição que
+     seria feita abertamente, na linha do Linux e GNU (leia o manifesto ao
+     final para mais detalhes).  Nenhuma outra distribuição conseguiu
+     atingir esta meta em 1993.  Este esforço foi patrocinado pelo projeto
+     GNU, da FSF (Free Software Foundation) por um ano (novembro de 1994 a
+     novembro de 1995).
+
+     O projeto Debian pretende ser consciente e crescer conscientemente, e
+     para ser mantido e suportado com os mesmos cuidados.  Começou como um
+     pequeno grupo de hackers Free Software, e gradualmente, cresceu para
+     se tornar uma grande e bem-organizada comunidade de desenvolvedores e
+     usuários.
+
+     O Debian se tornou a única distribuição que é aberta para todos os
+     desenvolvedores e usuários somarem seus trabalhos.  Também é o único
+     grande projeto que definiu suas próprias regras e políticas que ajudam
+     a organizá-lo.  Para receber alta qualidade e mantê-la, há muitos
+     regulamentos, automatismos e documentos que descrevem partes do
+     sistema.  O Debian também se tornou a única distribuição que tem um
+     detalhado mecanismo de dependências e outras relações entre pacotes.
+
+
+1.2. Pronunciando Debian
+------------------------
+
+     A pronúncia oficial de Debian é 'déb-i-an'.  Origina dos nomes de seu
+     criador, Ian Murdock e de sua esposa, Debra.
+
+
+-------------------------------------------------------------------------------
+
+
+2. Liderança
+------------
+
+     O Debian teve vários líderes desde seu começo, em 1993.
+
+     Ian Murdock fundou o Debian em agosto de 1993 e o liderou até março de
+     1996.
+
+     Bruce Perens liderou o Debian de abril de 1996 a dezembro de 1997.
+
+     Ian Jackson liderou o Debian de janeiro de 1998 a dezembro de 1998.
+
+     Wichert Akkerman liderou o Debian de janeiro de 1999 a março de 2001.
+
+     Ben Collins lidera o Debian de abril de 2001 até o presente momento.
+
+
+-------------------------------------------------------------------------------
+
+
+3. Versões do Debian
+--------------------
+
+     Debian 0.01 até 0.90 (agosto-dezembro 1993).
+
+     Debian 0.91 (janeiro de 1994): essa versão teve um simples sistema de
+     pacotes que podia instalar e remover pacotes.  O projeto então,
+     cresceu para algumas dezenas de pessoas.
+
+     Debian 0.93R5 (março de 1995): nessa versão, a responsabilidade por
+     cada pacote foi claramente designada para um desenvolvedor, e o
+     gerenciador de pacotes (`dpkg') foi usado para instalar pacotes depois
+     da instalação da base do sistema.
+
+     Debian 0.93R6 (novembro de 1995): surge o `dselect'.  Essa é a última
+     versão a.out do Debian; há agora em torno de 60 desenvolvedores.  O
+     primeiro servidor (master.debian.org) foi construído em paralelo com a
+     versão 0.93R6.
+
+     Debian 1.1 _Buzz_ (junho de 1996): essa foi a primeira versão do
+     Debian com um codinome.  Foi tirada, como todas as outras desde então,
+     de um personagem do filme _Toy Story_ ...  no caso, Buzz Lightyear.
+     Nessa época, Bruce Perens estava liderando o Projeto, sucedendo Ian
+     Murdock, e Bruce estava trabalhando na Pixar, empresa que produziu o
+     filme.  Essa versão foi totalmente em ELF (Executable and Linking
+     Format - Formato padrão para arquivos binários), usou o kernel
+     GNU/Linux 2.0, e conteve 474 pacotes.
+
+     Debian 1.2 _Rex_ (dezembro de 1996): 848 pacotes, 120 desenvolvedores
+     (nome extraído do dinossauro de plástico).
+
+     Debian 1.3 _Bo_ (julho de 1997): 974 pacotes, 200 desenvolvedores
+     (nome extraído de Bo Peep, a pastora).
+
+     Debian 2.0 _Hamm_ (julho de 1998): primeira versão do Debian a
+     suportar a arquitetura Motorola da série 68000.  Essa versão (feita
+     com Ian Jackson como líder do projeto) marcou a transição para a
+     libc6, e teve mais de 1500 pacotes e 400 desenvolvedores (nome
+     extraído do porquinho-cofre).
+
+     Debian 2.1 _Slink_ (09 de março de 1999): primeira versão do Debian a
+     suportar as arquiteturas Alpha (http://www.br.debian.org/ports/alpha)
+     e Sparc (http://www.br.debian.org/ports/sparc).  Essa versão (feita
+     com Wichert Akkerman como líder do projeto) conteve em torno de 2250
+     pacotes em 2 CDs oficiais, e incluía o `apt', a nova interface de
+     administração de pacotes.
+
+     Debian 2.2 _Potato_ (15 de agosto de 2000): essa versão foi a primeira
+     a suportar a arquitetura PowerPC
+     (http://www.br.debian.org/ports/powerpc).  Essa versão (feita com
+     Wichert Akkerman como líder do projeto) conteve mais que 3900 pacotes
+     binários e em torno de 2600 pacotes de códigos-fonte, mantidos por 450
+     desenvolvedores Debian.
+
+
+-------------------------------------------------------------------------------
+
+
+4. Uma história detalhada
+-------------------------
+
+
+4.1. As versões 0.x
+-------------------
+
+     O Debian foi iniciado em agosto de 1993 por Ian Murdock, um então
+     graduando da Universidade de Purdue.  O Debian foi patrocinado pelo
+     projeto GNU da The Free Software Foundation (http://www.fsf.org), a
+     organização iniciada por Richard Stallman e associada à Licença Geral
+     Pública (GPL), por um ano -- de novembro de 1994 a novembro de 1995.
+
+     As versões do Debian 0.01 até o Debian 0.90 foram lançadas entre
+     agosto e dezembro de 1993.  Ian Murdock escreve:
+
+     "O Debian 0.91 foi lançado em janeiro de 1994.  Ele tinha um sistema
+     de pacotes primitivo que permitia ao usuário gerenciar pacotes, mas
+     fazia muito pouco mais que isso (ele com certeza não possuía
+     dependências nem algo parecido).  Nessa época, havia algumas poucas
+     dúzias de pessoas trabalhando no Debian, enquanto eu me concentrava
+     mais em montar as versões.  A versão 0.91 foi a última que fiz desse
+     modo.
+
+     A maior parte do ano de 1994 foi gasta em organizar o Projeto Debian
+     de modo tal que outras pessoas pudessem contribuir mais efetivamente,
+     bem como trabalhar no `dpkg' (Ian Jackson era um dos maiores
+     responsáveis por isso).  Não havia versões públicas em 1994, pelo que
+     me lembro, contudo, havia muitas versões internas nas quais
+     trabalhávamos para continuar o processo.
+
+     O Debian 0.93 versão 5 saiu em março de 1995 e foi a primeira versão
+     "moderna" do Debian: existiam muito mais desenvolvedores nessa época
+     (embora não consiga lembrar exatamente quantos), cada um mantendo seus
+     próprios pacotes, e o `dpkg' estava sendo utilizado para instalar e
+     manter todos esses pacotes depois que a base do sistema estivesse
+     instalada.
+
+     "O Debian 0.93 versão 6 saiu em novembro de 1995 e foi a última versão
+     a.out.  Haviam cerca de sessenta desenvolvedores mantendo pacotes no
+     0.93R6.  Se não me engano, o `dselect' apareceu pela primeira vez na
+     0.93R6."
+
+     Ian Murdock também nota que o Debian 0.93R6 "...sempre foi minha
+     versão favorita do Debian", embora ele admite a possibilidade de que,
+     devido a razões pessoais, ele parou de trabalhar ativamente no projeto
+     em março de 1996 durante a pré-produção do Debian 1.0, que foi lançado
+     como Debian 1.1 para evitar confusões, depois que uma produtora de
+     CDROMs lançou, erroneamente, uma versão não oficial do Debian como
+     versão 1.0.  Isso levou a criar-se o conceito de imagens "oficiais",
+     para que o projeto ajudasse produtores de CDROMs a não cometer esse
+     tipo de erro.
+
+     Durante agosto de 1995 (entre o Debian 0.93 versão 5 e o Debian 0.93
+     versão 6), Hartmut Koptein iniciou o suporte a família de
+     processadores Motorola m68k.  Ele diz que "muitos, muitos pacotes eram
+     i386-cêntricos (little endian, -m486, O6 e todos para a libc4) e era
+     difícil conseguir uma base de pacotes para a minha máquina (um Atari
+     Medusa 68040, 32 MHz).  Depois de três meses (em novembro de 1995), eu
+     enviei 200 pacotes, de um total de 250, todos para a libc5!".  Depois,
+     ele iniciou, junto a Vincent Renardias e Martin Schulze, o suporte a
+     família PowerPC.  Desde então, o Projeto Debian cresceu e incluiu
+     suporte (http://www.debian.org/ports) a outras arquiteturas, e o
+     suporte ao novo kernel (não-Linux), o kernel GNU/Hurd.
+
+     Um antigo membro do projeto, Bill Mitchell, lembra-se do kernel
+     GNU/Linux:
+
+     "...estando entre as versões 0.99R8 e 0.99R15 quando começamos.  Por
+     um longo tempo, pude construir o kernel em menos de 30 minutos em uma
+     máquina 386 com 20 MHz, e podia também fazer uma instalação do Debian
+     no mesmo período de tempo e em 10Mb de espaço e disco.
+
+     "...eu me recordo do grupo inicial como sendo Ian Murdock, eu, Ian
+     Jackson, outro Ian cujo sobrenome não lembro, Dan Quinlan, e outras
+     pessoas cujos nomes não lembro mais.  Matt Welsh ou era parte do grupo
+     inicial ou uniu-se a ele bem cedo (até que ele deixou o projeto).
+     Alguém fez uma lista de e-mails, e nós estávamos a todo vapor.
+
+     Como me lembro, nós não começamos com um plano, e não começamos
+     criando um plano de uma maneira altamente organizada.  Desde o começo,
+     me lembro, nós começamos colecionando fontes de várias coleções
+     aleatórias de pacotes.  Depois de algum tempo, demos atenção a uma
+     coleção de itens que seriam indispensáveis para a criação de uma
+     distribuição: o kernel, um shell, o update, o getty, e vários outros
+     programas e arquivos necessários para iniciar o sistema, e uma coleção
+     de utilitários fundamentais."
+
+4.1.1. O Início do Sistema de Empacotamento do Debian
+-----------------------------------------------------
+
+     Nas primeiras fases do projeto, os membros pensavam em distribuir
+     pacotes que continham apenas o código-fonte.  Cada pacote consistiria
+     do fonte original e de um arquivo de correção (patch) "debianizado",
+     então os usuários descomprimiriam os fontes, aplicariam os patches, e
+     compilariam os binários por si próprios.  Logo, eles descobriram,
+     contudo, que algum esquema de distribuição de arquivos binários se
+     faria necessário.  A primeira ferramenta de empacotamento, escrito por
+     Ian Murdock, e chamado `dpkg', criou um pacote num formato binário
+     específico do Debian, que podia ser usado, posteriormente, para
+     descompactar e instalar os arquivos do pacote.
+
+     Ian Jackson logo assumiu o desenvolvimento da ferramenta de pacotes,
+     renomeando-a para `dpkg-deb' e escrevendo um programa front-end que
+     ele chamou de `dpkg' para facilitar o uso do `dpkg-deb' e prover as
+     _dependências_ e os _conflitos_ que existem no sistema Debian de hoje
+     em dia.  Os pacotes produzidos por essas ferramentas possuiam um
+     cabeçalho listando a versão da ferramenta usada para criar o pacote
+     dentro do próprio arquivo, um outro arquivo produzido pelo `tar', que
+     foi separado do cabeçalho por algumas informações de controle.
+
+     Então, surgiu algum debate entre os membros do projeto -- alguns
+     pensavam que o formato específico (debianizado) criado pelo `dpkg-deb'
+     deveria ser abandonado em favor do formato produzido pelo programa
+     `ar'.  Depois de várias revisões de formatos de arquivos (e
+     correspondentes revisões de pacotes), o formato `ar' foi adotado.  O
+     principal fator que acarretou essa mudança foi a possibilidade de se
+     descompactar um pacote Debian em qualquer sistema Unix-like sem ter
+     que rodar um executável não confiável.  Em outras palavras, apenas
+     ferramentas padrão presentes em qualquer sistema Unix, como 'ar' e
+     'tar' são requeridas para descompactar um pacote Debian e examinar seu
+     conteúdo.
+
+
+4.2. As versões 1.x
+-------------------
+
+     Quando Ian Murdock deixou o Debian, ele apontou Bruce Perens como o
+     próximo líder do projeto.  Bruce primeiramente ficou interessado no
+     Debian enquanto ele estava tentando criar uma distribuição de Linux
+     chamada "Linux para Hams", que incluiria todo o software Linux
+     necessário para operadores de rádio ham.  Descobrindo que o sistema
+     central do Debian necessitaria de muito mais trabalho para sustentar
+     seu projeto, Bruce acabou trabalhando muito na base do sistema Linux e
+     relatou ferramentas de instalação, deixando para segundo plano sua
+     distribuição para operadores de rádio ham, incluindo a organização
+     (junto com Ian Murdock) do primeiro conjunto de scripts de instalação
+     do Debian, eventualmente resultando no Disco de Recuperação Debian de
+     hoje em dia.
+
+     Ian Murdock declara:
+
+     "Bruce foi a escolha mais natural para suceder-me, já que ele já
+     mantinha o sistema básico por cerca de um ano, e cobria os buracos que
+     eu deixava, já que o tempo que destinava para o Debian, diminuía cada
+     vez mais."
+
+     Ele iniciou muitas áreas importantes do projeto, incluindo a
+     coordenação do esforço em produzir As Linhas-Guia do Software Livre
+     Debian (http://www.br.debian.org/social_contract#guidelines) e o
+     Contrato Social Debian (http://www.br.debian.org/social_contract), e o
+     início do O Projeto do Hardware Aberto (http://www.openhardware.org).
+     Durante seu tempo como líder do projeto, o Debian ganhou espaço no
+     mercado e uma reputação de uma plataforma para usuários Linux sérios e
+     técnicamente capazes.
+
+     Bruce Perens também uniu seus esforços na criação do Software de
+     Interesse Público, Inc.  (http://www.spi-inc.org).  Originalmente
+     feito para servir ao projeto Debian como uma entidade legal, capaz de
+     receber doações, suas metas rapidamente expandiram-se para incluir o
+     apoio a projetos de software livre fora do Projeto Debian.
+
+     As seguintes versões do Debian foram lançadas nesse tempo:
+
+        * 1.1 _Buzz_ lançada em junho de 1996 (474 pacotes, kernel 2.0,
+          completamente ELF, `dpkg')
+
+        * 1.2 _Rex_ lançada em dezembro de 1996 (848 pacotes, 120
+          desenvolvedores)
+
+        * 1.3 _Bo_ lançada em julho de 1997 (974 pacotes, 200
+          desenvolvedores)
+
+     Houveram muitos lançamentos internos com poucas mudanças do 1.3, sendo
+     o último o 1.3.1R6.
+
+     Bruce Perens (http://www.br.debian.org/News/1999/19990309) foi trocado
+     por Ian Jackson como líder do Projeto Debian no começo de janeiro de
+     1998, depois de liderar o projeto por muito tempo durante a preparação
+     da versão 2.0.
+
+
+4.3. As versões 2.x
+-------------------
+
+     Ian Jackson tornou-se líder do Projeto Debian no começo de 1998, e
+     foi, pouco depois, adicionado à equipe do Software de Interesse
+     Público como Vice-Presidente.  Depois da demissão do tesoureiro (Tim
+     Sailer), presidente (Bruce Perens), e secretário (Ian Murdock), ele
+     tornou-se presidente da equipe, e três novos membros foram escolhidos:
+     Martin Schulze (vice-presidente), Dale Scheetz (secretário) e Nils
+     Lohner (tesoureiro).
+
+     O Debian 2.0 (_Hamm_) foi lançado em julho de 1998 para as
+     arquiteturas Intel i386 e Motorola série 68000.  Esse lançamento
+     marcou a mudança para uma nova versão das bibliotecas C do sistema
+     (glibc2 ou libc6 por razões históricas).  Na época do lançamento,
+     haviam mais de 1500 pacotes, sendo mantidos por mais que 400
+     desenvolvedores Debian.
+
+     Wichert Akkerman sucedeu Ian Jackson como líder do Projeto Debian em
+     janeiro de 1999.  O Debian 2.1
+     (http://www.br.debian.org/releases/slink) foi lançado
+     (http://www.br.debian.org/News/1999/19990309) em 09 de março de 1999,
+     depois de atrasar uma semana, quando pequenos problemas de última hora
+     surgiram.
+
+     O Debian 2.1 ofereceu suporte oficial para mais duas arquiteturas
+     novas: Alpha (http://www.br.debian.org/ports/alpha) e Sparc
+     (http://www.br.debian.org/ports/sparc).  Os pacotes X-Window incluídos
+     no Debian 2.1 foram largamente re-organizados em relação a lançamentos
+     anteriores, e o 2.1 incluiu o `apt', a interface de gerenciamento de
+     pacotes de próxima geração do Debian.  Também foi a primeira versão a
+     requerer 2 CD-ROMs para o "Kit Oficial de CDs Debian"; a distribuição
+     incluía cerca de 2250 pacotes.
+
+     Em 21 de abril de 1999, a Corel Corporation (http://www.corel.com) e o
+     K Desktop Project (http://www.kde.org) efetivamente formaram uma
+     aliança com o Debian quando a Corel anunciou sua intenção em lançar
+     uma distrbuição de Linux baseada no Debian e no ambiente desktop
+     produzido pelo grupo KDE.  Durante os meses da primavera e do verão
+     seguintes, uma outra distribuição baseada no Debian, a Storm Linux
+     (http://stormix.com) surgiu, e o Projeto Debian escolheu um novo
+     logotipo (http://www.br.debian.org/logo), provendo tanto uma versão
+     oficial para ser usada em materiais sancionados pelo Debian, como
+     CD-ROMs e sites oficiais de Projetos, quanto um logotipo não-oficial,
+     para ser usado em materiais derivados ou que mencionam o Debian.
+
+     Também surgiu, nesse momento, um novo e único suporte para o kernel
+     GNU/Hurd (http://www.br.debian.org/ports/hurd).  Esta é a primeira
+     distribuição a não usar somente o kernel GNU/Linux, utilizando também,
+     o kernel GNU/Hurd (http://www.gnu.org/software/hurd/hurd.html), uma
+     versão do microkernel GNU/Mach.
+
+     O Debian 2.2 (_Potato_) foi lançado em 15 de agosto de 2000 para as
+     arquiteturas Intel i386, Motorola série 68000, Alpha, SUN Sparc,
+     PowerPC e ARM.  Essa é a primeira versão a incluir as arquiteturas
+     PowerPC e ARM.  Na época do lançamento, haviam mais de 3900 pacotes
+     binários e mais de 2600 pacotes de códigos-fonte mantidos por mais de
+     450 desenvolvedores Debian.
+
+
+4.4. O que virá?
+----------------
+
+     Os desenvolvedores Debian continuam a trabalhar na distribuição
+     instável, que virá a ser a próxima estável, de codinome _Woody_.
+
+     Enquanto isso, repositórios de pacotes foram implementados (ativados
+     no ftp-master desde dezembro de 2000).  Ao mesmo tempo, uma nova
+     distribuição (_testing_) foi introduzida.  Resumidamente, pacotes da
+     distribuição instável que se tornarem estáveis serão movidos para a
+     testing.  Isso deve reduzir o tempo de "freeze" e nos dar a capacidade
+     de preparar uma nova versão a qualquer hora.  Devido a isso, o _Woody_
+     tornou-se o nome da nova distribuição testing.
+
+
+-------------------------------------------------------------------------------
+
+
+5. O Manifesto Debian
+---------------------
+
+     Escrito por Ian A.  Murdock, Revisado em 06 de janeiro de 1994.
+
+
+5.1. O que é o Debian GNU/Linux?
+--------------------------------
+
+     O Debian GNU/Linux é um novo tipo de distribuição GNU/Linux.  Ao invés
+     de ser desenvolvido por uma ou um grupo isolado de pessoas, como
+     outras distribuições de Linux foram, o Debian está sendo desenvolvida
+     abertamente, no espírito do Linux e da GNU.  O objetivo principal do
+     Projeto Debian é criar uma distribuição que viva com o nome GNU/Linux.
+     O Debian está sendo feito cuidadosamente e conscientemente, e será
+     mantido da mesma forma.
+
+     É também uma tentativa de criar uma distribuição não-comercial, que
+     será capaz de competir eficientemente no mercado comercial.  Será,
+     eventualmente, distribuída pela Free Software Foundation em CD-ROM, e
+     a Associação Debian GNU/Linux oferecerá a distribuição em disquetes e
+     fitas, juntamente com manuais impressos, suporte técnico e outros
+     itens essenciais para o usuário final.  O citado acima estará
+     disponível por pouco mais que o custo, e o resto será aplicado no
+     desenvolvimento do software livre para todos os usuários.  Tal
+     distribuição é essencial ao sucesso do sistema operacional GNU/Linux
+     no mercado comercial, e deve ser feito através de organizações numa
+     posição em que se possa avançar e defender o software livre sem visar
+     lucros ou retornos.
+
+
+5.2. Por que o Debian está sendo construído?
+--------------------------------------------
+
+     Distribuições são essenciais ao futuro do Linux.  Especialmente, se
+     elas eliminam a necessidade do usuário localizar, copiar, compilar,
+     instalar e integrar um enorme número de ferramentas essenciais para
+     construir um sistema Linux.  Porém, o trabalho de construção do
+     sistema é associado ao criador da distribuição, cujo trabalho pode ser
+     compartilhado com milhares de outros usuários.  Quase todos os
+     usuários de Linux terão seu primeiro contato com esse sistema através
+     de uma distribuição, e a maioria desses usuários continuará usando uma
+     distribuição por questão de conveniência, depois que eles estejam
+     familiarizados com o sistema operacional.  Desta maneira, as
+     distribuições representam um papel realmente importante.
+
+     Apesar da óbvia importância, as distribuições têm chamado a atenção de
+     desenvolvedores.  Há uma razão simples para isso: elas não são simples
+     nem 'legais' de construir e requerem uma grande quantidade de esforço
+     e tempo de seu criador para que ela mantenha-se livre de erros e
+     sempre atualizada.  Uma coisa é criar um sistema do 'nada'.  Outra
+     coisa é ter certeza que o sistema é fácil dos outros instalarem, que
+     funcionará com uma larga variedade de configurações de hardware, que
+     conterá programas que serão úteis aos outros, e que será atualizado
+     quando seus componentes são melhorados.
+
+     Muitas distribuições começaram como sistemas muito bons, mas com o
+     passar do tempo, a manutenção da distribuição recebe uma atenção
+     secundária.  Um exemplo é a Softlanding Linux System (mais conhecida
+     como SLS).  É possivelmente a distribuição que possui maior número de
+     problemas e de pior manutenção, mas, infelizmente, pode ser também a
+     mais popular.  É, com certeza, a distribuição que atrai mais atenção
+     dos "distribuidores comerciais" de Linux que se aproveitam da
+     crescente popularidade desse sistema.
+
+     Esta é realmente uma combinação ruim, pois a maioria das pessoas que
+     obtém o Linux desses "distribuidores" recebe uma distribuição cheia de
+     defeitos e muito mal administrada.  Como se isso não fosse suficiente,
+     esses "distribuidores" têm uma tendência a promover "funções" de seus
+     produtos que não são funcionais ou extremamente instáveis.  Some isso
+     ao fato de que os compradores irão, logicamente, esperar do produto
+     todas as suas funções funcionando perfeitamente e que alguns acreditam
+     que ele seja um sistema operacional comercial (também há uma tendência
+     a não mencionar que o Linux é livre e que é distribuído sob a Licença
+     Pública Geral GNU).  Finalizando, esses "distribuidores" estão
+     atualmente ganhando bastante dinheiro para manter anúncios enormes em
+     revistas; é o clássico exemplo de comportamento inaceitável sendo
+     recompensado por aqueles que não sabem muito.  Definitivamente algo
+     precisa ser feito para remediar a situação.
+
+
+5.3. Como o Debian tentará pôr fim a esses problemas?
+-----------------------------------------------------
+
+     O processo de planejamento do Debian é aberto para que se tenha
+     certeza que o sistema é da mais alta qualidade e que ele reflete as
+     necessidades da comunidade de usuários.  Por envolver muitas pessoas
+     que têm diferentes habilidades e realidades, o Debian é capaz de ser
+     desenvolvido de maneira modular.  Seus componentes são de alta
+     qualidade, pois, aqueles que têm mais experiência em uma certa área,
+     têm a oportunidade de construir ou manter os componentes individuais
+     do Debian pertinentes àquela área.  Envolver outras pessoas também
+     assegura que muitas sugestões muito úteis podem ser dadas e assim
+     melhorar o sistema como um todo durante o seu desenvolvimento; desta
+     maneira, uma distribuição é criada baseando-se principalmente nas
+     necessidades dos usuários, ao invés das necessidades de seu
+     construtor.  É muito difícil para uma única pessoa ou um pequeno grupo
+     de pessoas prever essas necessidades e desejos sem ter contato direto
+     com outras pessoas.
+
+     O Debian GNU/Linux também será distribuído em mídia física pela Free
+     Software Foundation e pela Debian GNU/Linux Association.  Isso torna
+     disponível o Debian aos usuários que não têm acesso ao servidor FTP na
+     Internet e também gera produtos e serviços, como manuais impressos e
+     suporte técnico disponível para todos os usuários do sistema.  Dessa
+     maneira, o Debian pode ser usada pelo maior número possível de pessoas
+     e corporações, a meta será prover um produto de primeira qualidade,
+     não obter lucros ou retornos, e as melhorias providas ao software
+     serão úteis ao usuário, tendo ele pago ou não.
+
+     A Free Software Foundation representa uma peça importantíssima ao
+     futuro do Debian.  Pelo simples fato de distribuí-lo, uma mensagem
+     estará sendo enviada ao mundo dizendo que o Linux não é um produto
+     comercial e nunca deverá ser, mas não significa que o Linux não será
+     capaz de competir com produtos comerciais.  Para aqueles que discordam
+     disso, desafio a imaginar o sucesso do GNU Emacs e do GCC, que não são
+     produtos comerciais, porém produziram um grande impacto no mercado
+     comecial, apesar desse fato.
+
+     Chegou a hora de concentrar-se no futuro do Linux mais do que no
+     destrutivo objetivo de enriquecer uma pessoa às custas da comunidade
+     Linux inteira e de seu futuro.  O desenvolvimento e a distribuiçãoda
+     Debian podem não ser a solução para os problemas que eu salientei no
+     Manifesto, mas espero que atraia atenção suficiente para esses
+     problemas, e para que eles sejam resolvidos.
+
+
+-------------------------------------------------------------------------------
+
+
+     A História do Projeto Debian
+
+     Equipe de Documentação do Debian <debian-doc@lists.debian.org>
+
+
+     Versão do original: 1.2.0 (revisado em 19 de janeiro de 2001)
+

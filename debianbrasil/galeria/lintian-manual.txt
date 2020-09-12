@@ -1,0 +1,522 @@
+
+                        Lintian - Manual do Usuário
+                        ---------------------------
+
+                  Christian Schwarz <schwarz@debian.org>
+
+                     Richard Braakman <dark@xs4all.nl>
+
+                    E-Mail: <lintian-maint@debian.org>
+
+         Traduzido por: Ricardo Sandrin <strange@sdf.lonestar.org>
+
+                      versão 0.3.2, 14 Março de 1998
+
+
+-------------------------------------------------------------------------------
+
+
+Resumo
+------
+
+     Este manual descreve o Lintian, analisador de pacotes Debian.
+
+
+Nota de Copyright
+-----------------
+
+     Copyright (C)1998 Christian Schwarz e Richard Braakman
+
+     Este manual é um software de livre distribuição, que pode ser copiado
+     e distribuído sob os termos da Licença Pública Geral GNU, conforme
+     publicada pela Free Software Foundation, versão 2 da licença ou (a
+     critério do autor) qualquer versão posterior.
+
+     Este programa é distribuído na expectativa de ser útil aos seus
+     usuários, porém não tem nenhuma garantia, explícita ou implícita,
+     comerciais ou de atendimento a uma determinada finalidade.  Consulte a
+     Licença Pública Geral GNU para maiores detalhes.
+
+     Você pode copiar a Licença Pública Geral GNU em
+     ``/usr/doc/copyright/GPL'' no seu Debian GNU/Linux ou em
+     http://www.gnu.org/copyleft/gpl.html.  Você também pode obtê-la
+     escrevendo para
+
+     Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+     MA 02111-1307, USA.
+
+
+-------------------------------------------------------------------------------
+
+
+Conteúdo
+--------
+
+     1.        Introdução
+     1.1.      Sobre o Lintian
+     1.2.      Objetivos
+     1.3.      Aplicações
+     1.4.      Avisos
+
+     2.        Começando
+     2.1.      Instalando
+     2.2.      Executando
+     2.3.      Tags
+     2.4.      Excessões
+
+     3.        Uso avançado
+     3.1.      Como o Lintian trabalha
+     3.2.      O diretório laboratório
+     3.3.      Diretório da distribuição
+
+
+-------------------------------------------------------------------------------
+
+
+1. Introdução
+-------------
+
+
+1.1. Sobre o Lintian
+--------------------
+
+     Lintian é um analisador de pacotes Debian.  Pode ser usado para checar
+     se pacotes binários ou de código fonte estão de acordo com a política
+     da Debian e se existem erros comuns de empacotamento.
+
+     O Lintian usa um diretório laboratório, no qual são armazenadas todas
+     as informações sobre os pacotes examinados.  Ele pode manter tais
+     informações, evitando operações de coleção de dados desnecessárias.
+     De uma certa maneira, também é possível procurar por erros em todo o
+     arquivo Debian
+
+
+1.2. Objetivos
+--------------
+
+     Empacotar tem se tornado complicado -- não porque o dpkg é complicado
+     (sem dúvida, o dpkg-deb é muito simples de usar) mas devido as altas
+     solicitações de nosso política.  Se um mantenedor lança um novo
+     pacote, tem que levar em consideração centenas de regras para que o
+     pacote esteja 'de acordo com a política'.
+
+     Todas as regras de nossa política têm sido introduzidas através do
+     mesmo processo: Algum mantenedor tem uma boa idéia de como fazer
+     pacotes mais 'únicos' com relação a certo aspecto -- então, a idéia é
+     discutida e uma proposta política é preparada.  Se tivermos um
+     consenso sobre a mudança, ela é incluída em nossos manuais.
+
+     Então, nossa política _não_ foi projetada para tornar a vida dos
+     mantenedores difícil!  A intenção é fazer com que a Debian seja a
+     melhor distribuição Linux.  Com isso em mente, muitas políticas são
+     examinadas semanalmente nas listas de discussão.
+
+     Mas mudanças de políticas são apenas uma pequena parte da história:
+     Ter somente alguns avisos em um manual não faz a Debian melhor.  É
+     necessário que a política torne-se parte de nossas vidas e que seja
+     _implementada_ em nossos pacotes.  E é aqui que o Lintian entra:
+
+     O Lintian checa os pacotes e reporta todas as possíveis violações de
+     política.  (É claro que, nem tudo pode ser verificado mecanicamente --
+     mas muitas coisas podem e é para isso que o Lintian server)
+
+     Desta forma, o Lintian tem os seguintes objetivos:
+
+        * _Dar nos alguma impressão sobre a distância entre teoria
+          (política escrita) e prática (estado atual da implementação)._ A
+          partir dos resultados da primeira checagem feita com o Lintian,
+          vi que essa distância deve ser menor.  Incluir mais aspectos
+          políticos é desnecessário, a menos que eles sejam implementados.
+          Primeiramente, nós devemos corrigir os pacotes para que estejam
+          de acordo com a política atual antes de procurar por novas formas
+          de torná-la mais detalhada.  (Claro, também há mudanças
+          importantes que precisam ser incluídas -- mas não é o que tenho
+          em mente aqui.)
+
+        * _Fazer com que repensemos algumas posições de nossa política._
+          Por exemplo, podemos ver que algumas idéias que pareciam
+          maravilhosas na teoria não serão facilmente implementadas em
+          todos nossos pacotes -- E neste caso, devemos trabalhar novamente
+          tal idéia.
+
+        * _Mostrar nos onde devemos concentrar nossos esforços para dar à
+          Debian uma alta qualidade._ Muitos dos lançamentos necessários
+          serão implementados através de política.  Isto é, um novo manual
+          de política será lançado em alguns dias,que irão cobrir
+          (aproximadamente) tudo o que é necessário para que um pacote
+          esteja pronto para a Debian 2.0.  Os relatórios do Lintian irão
+          prover uma maneira fácil de comparar _todos_ nossos pacotes com a
+          política e registrar todo o processo de correção.  Veja, tudo
+          isto pode ser feito _automaticamente_.
+
+        * _Nos prevenir de cometer o mesmo erro novamente._ Sendo humanos,
+          é natural para nós cometermos erros.  Já que todos nós temos a
+          habilidade de aprender com nossos erros, atualmente, este não é
+          um grande problema.  Uma vez que uma falha importante é
+          encontrada, podemos inserir uma checagem no Lintian para que este
+          procure por estamesma falha.  Isto irá impedir que um erro
+          apareça em revisões futuras de qualquer um de nossos pacotes.
+
+
+1.3. Aplicações
+---------------
+
+     Há três campos de aplicação do Lintian:
+
+        * uma pessoa pode usar o Lintian para checar todo o arquivo Debian
+          e relatar erros,
+        * cada mantenedor pode rodar o Lintian sobre seu pacote antes de
+          enviá-lo para o servidor principal da Debian,
+        * dinstall checa os pacotes que são enviados para o servidor
+          principal antes de serem instalados no arquivo Debian.
+
+     Os autores do Lintian escolheram um design bastante modular para
+     alcançar os seguintes objetivos:
+
+        * flexibilidade: O Lintian pode ser usado para checar um único
+          pacote ou todo o arquivo Debian, relatar e acompanhar o relatório
+          de erros, etc.
+        * integridade: Lintian eventualmente incluirá checagens para
+          (aproximadamente) tudo que pode ser checado mecanicamente.
+        * atualização: O Lintian será atualizado sempre que acontecer uma
+          mudança de política.
+        * performance: Lintian torna possível checar um único pacotes em
+          alguns segundos ou avaliar todo o arquivo Debian em algumas
+          horas.
+
+
+1.4. Avisos
+-----------
+
+     1.   O Lintian não está finalizado e provavelmente nunca estará.  Por
+          favor, não use-o como uma referência para a política da Debian.
+          Ele pode deixar passar várias violações da política como também
+          pode relatar algumas violações por engano.  Se estiver em dúvida,
+          por favor, cheque o manual de política.
+
+     2.   A política da Debian dá aos mantenedores muita liberdade.  Em
+          muitos casos, as regras inclusas nos manuais permitem exceções.
+          Assim, se o Lintian relatar uma violação de política em um pacote
+          que você acredita que é um tipo de exceção (ou se você acha que o
+          Lintian está errado), por favor, notifique isso aos autores do
+          Lintian.  Há um arquivo chamado 'override', que informa ao
+          Lintian sobre exceções da política.
+
+     3.   Por favor, NÃO USE o Lintian como um arquivo de notificação de
+          erros (para relatar somente um erro ou em massa).  Isto já é
+          feito pelos autores do Lintian e duplicações de esforços deve ser
+          evitados!  Se você acredita que determinado erro é 'crítico' e
+          deva ser relatado/ corrigido imediatamente, por favor, contate o
+          mantenedor do respectivo pacote e/ou os mantenedores do Lintian.
+
+     4.   Qualquer feedback sobre o Lintian é bem-vindo!  Por favor, envie
+          seus comentários para Richard Braakman
+          <lintian-maint@debian.org>.
+
+
+-------------------------------------------------------------------------------
+
+
+2. Começando
+------------
+
+
+2.1. Instalando
+---------------
+
+     Antes de começar a checar seus pacotes com o Lintian, você terá que
+     instalar o pacote 'lintian' da Debian.  Com a versão 0.3.0, você não
+     precisa necessariamente de um arquivo de configuração para começar a
+     análise dos pacotes.
+
+
+2.2. Executando
+---------------
+
+     Depois disso, você pode executar o Lintian sobre qualquer pacote
+     binário ou de código fonte, da seguinte forma:
+
+$ lintian libc5_5.4.38-1.deb
+E: libc5: old-fsf-address-in-copyright-file
+W: libc5: shlib-without-dependency-information usr/lib/libgnumalloc.so.5.4.38
+W: libc5: shlib-without-dependency-information lib/libc.so.5.4.38
+W: libc5: shlib-without-dependency-information lib/libm.so.5.0.9
+E: libc5: shlib-with-executable-bit lib/libc.so.5.4.38 0755
+E: libc5: shlib-with-executable-bit lib/libm.so.5.0.9 0755
+E: libc5: shlib-missing-in-control-file libgnumalloc usr/lib/libgnumalloc.so.5.4.38
+$
+
+     Como você pode ver, o Lintian usa um formato especial para todas as
+     mensagens de erro e advertências.  Com isso, é muito fácil escrever
+     outros programas que executam o Lintian e interpretam as mensagem
+     exibidas.
+
+
+2.3. Tags
+---------
+
+     O primeiro caracter de cada linha indica o tipo de mensagem.
+     Atualmente, os seguintes tipos são suportados:
+
+     _Errors (E)_
+          A mensagem exibida indica uma violação de política ou erro de
+          empacotamento.  Para violações de política, o Lintian citará a
+          seção apropriada da política quando executado com a opção `-i'.
+
+     _Warnings (W)_
+          A mensagem exibida pode ter sido causada por uma violação de
+          política ou erro de empacotamento.
+
+     _Info (I)_
+          A mensagem exibida informa ao mantenedor sobre um certo aspecto
+          do empacotamento.  Algumas mensagens normalmente não indicam
+          erros, mas podem ser de interesse dos curiosos.  Elas não são
+          mostradas, a menos que a opção `-I' tenha sido utilizada.
+
+     _Notes (N)_
+          A notificação é uma mensagem de depuração que informa sobre o
+          estado atual do Lintian.
+
+     _Experimental (X)_
+          A mensagem é do tipo de uma das listas acima, mas foi definida
+          como 'experimental' pelos mantenedores do Lintian.  Isto
+          significa que o código que gerou tal notificação não foi bem
+          testado como o resto do Lintian e pode gerar resultados
+          surpreendentes.  Sinta-se à vontade para ignorar mensagens
+          Experimental que parecem não fazer sentido, mas de qualquer
+          forma, os relatos de erros também serão bem-vindos.
+
+     _Overridden (O)_
+          A notificação indica uma mensagem _Warning_ ou _Error_ previa,
+          que foi _sobreposta_(veja abaixo).
+
+     Exibidos após o indicador de tipo, os seguintes parâmetros indicam o
+     _pacote_ que foi processado (que pode ser tanto um pacote binário
+     quanto de código fonte) e o _problema_ que foi encontrado,
+     identificado por uma _tag_ (por exemplo,
+     `old-fsf-address-in-copyright-file').
+
+     Dependendo da tag que foi relatada, a linha pode conter argumentos
+     adicionais que dizem, por exemplo, que arquivos estão envolvidos.
+
+     Se você não souber o significado de determinada tag, basta usar a
+     opção `-i' para obter uma descrição detalhada:
+
+$ lintian -i libc5_5.4.38-1.deb
+E: libc5: old-fsf-address-in-copyright-file
+N:
+N:   The /usr/doc/<pkg>/copyright file refers to the old postal address of
+N:   the Free Software Foundation (FSF). The new address is:
+N:
+N:   Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+N:   MA 02111-1307, USA.
+N:
+[...]
+$
+
+     Em alguns casos, as mensagens contém um texto adicional, iniciado pelo
+     caracter #.  Por não seguir um único formato entre diferentes
+     mensagens e por tratar-se somente de uma informação adicional para o
+     mantenedor, este texto deverá ser ignorado por qualquer outro programa
+     que interprete as saídas do Lintian.
+
+
+2.4. Excessões
+--------------
+
+     Em alguns casos, o pacote verificado não tem erros ou violou a
+     política, mas o Lintian relata uma falha ou faz uma advertência.  Isto
+     pode ser causado pelas seguintes razões: O Lintian tem um erro, uma
+     checagem específica do Lintian não é tão esperta para saber sobre um
+     caso especial permitido pela política ou a política não permite
+     excessões para alguma regra.
+
+     No primeiro caso (onde o Lintian tem uma falha) você deve notificar os
+     autores através do Sistema de Tratamento de Falhas da Debian (Debian
+     Bug Tracking System - BTS), descrevendo qual pacote você analisou,
+     qual mensagem foi exibida e porque você acredita que o Lintian está
+     errado.  Será melhor ainda se você executar o Lintian com a opção
+     `-d', que faz com que a saída do Lintian contenha muito mais
+     informações (informações de depuração), e incluir o resultado em sua
+     notificação.  Isto simplificará o processo de correção para os autores
+     do Lintian.
+
+     No caso dois (onde, atualmente, o erro é uma exceção à política), você
+     também deve contatar os autores do Lintian, incluindo a mensagem de
+     erro do Lintian e uma pequena nota, mencionando porque você acha que
+     se trata de uma exceção.  se os mantenedores do Lintian concordarem
+     que está é uma exceção válida, eles irão adicionar a mensagem ao
+     arquivo `/usr/share/lintian/overrides/package'.  Com isso, o Lintian
+     estará ciente dessa exceção e não irá relatar o problema novamente
+     quando checar seu pacote.  (Atualmente, o Lintian continua relatando o
+     problema, mas com o tipo _overridden_.  Veja acima).
+
+     O formato dos arquivos overrides é simples: pacote: lintian-message.
+     Um arquivo override deve ser semelhante ao exemplo abaixo:
+
+          /usr/share/lintian/overrides/foo, onde foo é o nome de seu pacote
+          foo: FSSTND-dir-in-usr
+          foo: non-standard-dir-perm
+
+
+-------------------------------------------------------------------------------
+
+
+3. Uso avançado
+---------------
+
+
+3.1. Como o Lintian trabalha
+----------------------------
+
+     O Lintian está divido nas seguintes camadas:
+
+     _frontend_
+          a interface de linha de comando (atualmente, esta camada consiste
+          em dois scripts, chamados `lintian' e `lintian-info'.
+
+     _checadores_
+          um grupo de scripts que checam diferentes aspectos de pacotes de
+          código fonte ou binário
+
+     _coletores_
+          um grupo de scripts que preparam informações específicas sobre os
+          pacotes, necessárias para os scripts checadores
+
+     _desempactadores_
+          um grupo de scripts que desempacotam os pacotes de código fonte e
+          binário e extraem algumas informações básicas sobre seus
+          conteúdos
+
+     _scripts para relatórios de erros_
+          um grupo de de scripts que relatam os erros e acompanhá-los após
+          isso.
+
+     Quando você checa um pacote com o Lintian, os seguintes passos são
+     executados (não necessariamente nessa mesma ordem -- mas os detalhes
+     sãoimportantes agora):
+
+     1.   O conteúdo do pacote é descompactado no diretório _laboratório_
+          (ou somente _lab_)
+
+     2.   Algumas informação sobre o pacote são coletadas (Isto é feito
+          pelos _scripts coletores_).  Por exemplo, o programa `file' é
+          executado em cada arquivo do pacote e o resultado é salvo no
+          diretório lab, em um arquivo chamado `file-info').
+
+     3.   O conteúdo do pacote é removido (para economizar espaço em
+          disco), mas os _arquivos de estatística_ gerados no passo acima
+          permanecem no diretório lab.
+
+     4.   Os _scripts checadores_ são executados sobre o pacote e relatam
+          qualquer violação de política ou erro.  Estes scripts não têm
+          acesso direto ao conteúdo do pacote, mas usam as informações
+          coletadas como entrada.
+
+     5.   Dependendo do _modo do laboratório_ que o Lintian está utilizando
+          (veja abaixo), ele será totalmente removido.
+
+     A separação dos _scripts checadores_ das _ferramentas de
+     desempacotamento_ e dos scripts coletores de dados torna possível
+     várias execuções do Lintian sobre o mesmo pacote sem ter que
+     desempacotá-lo toda vez.  Adicionalmente, os scripts checadores não
+     têm nenhuma preocupação com detalhes sobre o empacotamento uma vez que
+     somente acessam os arquivos de estatísticas (não diretamente os
+     arquivos do pacote).
+
+     Além disto, sendo suficiente salvar apenas os arquivos de estatísticas
+     de cada pacote para executar a checagem, podemos guardar estes
+     arquivos de todos os pacotes da Debian para checar toda a distribuição
+     várias vezes.  (O arquivo Debian atual contém aproximadamente 1800
+     pacotes binários (arquiteturas i386 e outras) e 1350 pacotes de código
+     fonte.  Se todas os dados forem coletados, de todos estes pacotes, o
+     diretório lab ocupará, em torno de 200 megabytes, enquanto os pacotes
+     atuais ocupam mais de 1Gb -- no formato gzip!)
+
+
+3.2. O diretório laboratório
+----------------------------
+
+     O diretório laboratório do Lintian pode ser definido pela variável
+     _LINTIAN_LAB_ (tanto no arquivo de configuração como na variável de
+     ambiente).  Se a variável não for definida, o Lintian cria um
+     laboratório temporário em `/tmp', que será removido assim que a
+     checagem for terminada.  Este modo é chamado de _laboratório
+     temporário_.
+
+     No modo _laboratório estático_ (Quando o diretório laboratório é
+     definido pelo usuário), o laboratório deve ser configurado antes de
+     ser utilizado pelo Lintian.  Isto é feito com a opção `-S' (ou
+     `--setup-lab').  Veja também a próxima seção, sobre o diretório da
+     distribuição.
+
+     Aqui está uma descrição do laboratório do Lintian:
+
+   $LINTIAN_LAB/
+
+      source/
+       <src-pkg-name>/
+        .lintian-status
+        dsc                 arquivo dsc
+        foo.diff.gz
+        foo.orig.tar.gz     (Link simbólico para os arquivos atuais)
+        binary/
+	     <binary 1> -> ../../../binary/<binary 1>
+	     ...
+	unpacked/           (contém o pacote fonte descompactado)
+
+      binary/
+       <bin-pkg-name>/
+        .lintian-status
+        index               (resultado do `dpkg -c')
+        control-index       (o mesmo para control.tar.gz do dpkg)
+        control/            (contém todos os arquivos de controle)
+        fields/             (contém todas as conf. de campos de controle
+	source -> ../../source/<source pkg>
+        deb                 (Link simbólico para o arquivo atual)
+	unpacked/           (contém o pacote binário descompactado)
+
+      info/
+        binary-packages     lista dos pacotes binários no arquivo
+	source-packages     lista dos pacotes fonte no arquivo
+
+
+3.3. Diretório da distribuição
+------------------------------
+
+     Se quiser checar toda a distribuição Debian com o Lintian, você deverá
+     configurar a variável `LINTIAN_DIST' no arquivo de configuração (ou
+     como variável de ambiente).  Então, execute `lintian -S' para setar o
+     diretório laboratório e criar uma lista de de todos os pacotes
+     binários e de fonte da distribuição.  (Note, isto pode tomar algum
+     tempo...)
+
+     Depois, você poderá checar tanto um único pacote executando
+
+           lintian foo
+
+     (sem o caminho ou a extensão do pacote `foo') como checar toda a
+     distribuição com
+
+            $ lintian --all
+
+     Uma vez que o Lintian precisa de uma lista de pacotes atualizada, você
+     deverá executar novamente o comando `lintian -S' sempre que o
+     diretório da distribuição for alterado.  (Mas não há necessidade de
+     remover o diretório laboratório neste caso: O Lintian é esperto o
+     bastante para descompactar somente os pacotes que foram alterados.)
+
+
+-------------------------------------------------------------------------------
+
+
+     Lintian - Manual do Usuário
+
+     Christian Schwarz <schwarz@debian.org>
+     Richard Braakman <dark@xs4all.nl>
+     E-Mail: <lintian-maint@debian.org>
+     Traduzido por: Ricardo Sandrin <strange@sdf.lonestar.org>
+
+
+     versão 0.3.2, 14 Março de 1998
+

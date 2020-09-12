@@ -1,0 +1,214 @@
+
+                        Aqui entra o título do guia
+                        ---------------------------
+
+              Gleydson Mazioli da Silva <gleydson@debian.org>
+
+                   Versão do documento 0.01 - 06/11/2001
+
+
+-------------------------------------------------------------------------------
+
+
+Resumo
+------
+
+     Coloque aqui um resumo sobre este documento.  Não utilize a tag <p>
+     para quebra de linha junto com a tag <abstract>, isto causa erros de
+     compilação estranhos que podem te pertubar.
+
+
+Nota de Copyright
+-----------------
+
+     Copyleft (C) 1999-2001 - Gleydson Mazioli da Silva.
+
+     Aqui você pode descrever sob qual licença se encontra seu documento.
+     De a preferência a licença FDL (Free Documentation License) que
+     permite livre redistribuição e utilização do seu material.
+
+
+-------------------------------------------------------------------------------
+
+
+Conteúdo
+--------
+
+     1.        Introdução
+     1.1.      Seção 1
+     1.1.1.         Subseção 1
+     1.1.2.         Subseção 2
+     1.2.      Seção 2
+
+     2.        Capítulo 2
+
+     3.        Capítulo 3
+
+     4.        Caracteres Especiais
+
+     5.        Compilando seu documento
+
+
+-------------------------------------------------------------------------------
+
+
+1. Introdução
+-------------
+
+     Capítulo 1, clique em Capítulo 2, `Capítulo 2' para ir para o capítulo
+     2.
+
+
+1.1. Seção 1
+------------
+
+     Exemplo de seção 1.  _Texto destacado_, `texto formatado'.  _Texto
+     muito destacado_, <variável>, `Nome de pacote', `nome de programa'.
+
+1.1.1. Subseção 1
+-----------------
+
+     Texto da subseção.  [1].
+
+[1]  Esta é uma footnote
+
+1.1.1.1. Subseção da subseção 1
+-------------------------------
+
+     Texto da sub-subseção.  [1].
+
+[1]  Esta é uma segunda footnote
+
+1.1.2. Subseção 2
+-----------------
+
+     Texto da subseção 1
+
+     Parágrafo
+
+
+1.2. Seção 2
+------------
+
+     Texto da seção 2
+
+
+-------------------------------------------------------------------------------
+
+
+2. Capítulo 2
+-------------
+
+     Este é o capítulo 2 do documento.  Clique em Capítulo 1, `Introdução'
+     para abrir o capítulo 1.  O texto abaixo é uma forma de expressar
+     exemplos no documento:
+
+          Texto de saida
+          Texto de saida
+          Texto de saida
+
+     O texto permanece formatado conforme foi escrito.
+
+
+-------------------------------------------------------------------------------
+
+
+3. Capítulo 3
+-------------
+
+     Exemplos de listagem.
+
+     O seguinte exemplo, mostra listagem usando tags:
+     Titulo1
+          Texto que segue o titulo 1.
+     Titulo 2
+          Texto que segue o titulo 2.
+     Titulo 3
+          Texto que segue o titulo 3.
+     Um exemplo de texto de listagem:
+        * Item número 1.
+
+        * Item número 2.
+
+          Texto texto texto.
+
+     Um exemplo de texto de listagem numérica:
+
+     1.   Item número 1.
+
+     2.   Item número 2.
+
+          Texto texto texto.
+
+
+-------------------------------------------------------------------------------
+
+
+4. Caracteres Especiais
+-----------------------
+
+     Alguns dos caracteres especiais são mostrados a seguir.
+
+     aelig ae AElig AE amp & apos ' aring aa ast * bull * cir o clubs
+     [clubs] commat @ copy (C) darr [darr] deg [deg] diams [diams] divide /
+     equals = excl !  gt > hearts [hearts] horbar -- hyphen - iexcl !
+     iquest ?  laquo << larr <-- ldquo `` lsquo ` lt < mdash --- micro u
+     middot .  ndash -- not [not] ntilde n~ Ntilde N~ ohm [ohm] ordf [ordf]
+     ordm [ordm] oslash [oslash] Oslash [Oslash] para P plusmn +/- quot "
+     raquo >> rdquo '' reg (R) rsquo ' sect S spades [spades] szlig ss
+     times x trade (TM) uarr [uarr] yacute y' Yacute Y'
+
+
+-------------------------------------------------------------------------------
+
+
+5. Compilando seu documento
+---------------------------
+
+     Utilize uma das seguinte sintaxe para compilar o documento `.sgml' no
+     formato apropriado:
+
+     debiandoc2text modelo.sgml
+          Compila o documento em formato texto.
+
+     debiandoc2textov modelo.sgml
+          Semelhante ao acima, mas adiciona características de destaques no
+          texto para melhor visualização com o comando `less', `more', etc.
+
+     debiandoc2html modelo.sgml
+          Compila o documento em formato html.  Os arquivos de saída serão
+          gravados em um diretório com o nome `nome_do_documento.html'.
+
+     debiandoc2info modelo.sgml
+          Compila o documento no formato info pages (para ser aberto com o
+          programa `info').
+
+     debiandoc2latex modelo.sgml
+          Compila o documento no formato Latex (extensão `.tex').
+
+     debiandoc2latexpdf modelo.sgml
+          Compila o documento no formato `.pdf' (gerado via latex).  Este
+          formato foi padronizado pelo programa Acrobat Reader.
+
+     debiandoc2latexps modelo.sgml
+          Compila o documento no formato `.ps' que poderá ser aberto pelo
+          Ghost Script.  Este é um dos formatos preferidos para impressão.
+
+     debiandoc2latexdvi modelo.sgml
+          Compila o documento no formato `.dvi'.
+
+     Note que alguns dos formatos como PDF, PS e DVI requerem os pacotes do
+     Latex instalados para serem gerados: `tetex-lib tetex-bin
+     tetex-extras'.
+
+
+-------------------------------------------------------------------------------
+
+
+     Aqui entra o título do guia
+
+     Gleydson Mazioli da Silva <gleydson@debian.org>
+
+
+     Versão do documento 0.01 - 06/11/2001
+

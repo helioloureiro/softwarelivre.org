@@ -1,0 +1,290 @@
+
+                             Como Usar o Grub
+                             ----------------
+
+                 Vitor Silva Souza <vitor@vitoria.org.br>
+
+                  Gustavo Noronha Silva <kov@debian.org>
+
+                             13 fevereiro 2005
+
+
+-------------------------------------------------------------------------------
+
+
+Resumo
+------
+
+     O GRUB (GRand Universal Bootloader) é um software desenvolvido pela
+     GNU (www.gnu.org/software/grub) e se propõe a ser um carregador de
+     boot mais flexível, portanto, mais poderoso.  Este manual pretende ser
+     uma ajuda para aqueles que são iniciantes no grub e que desejam obter
+     o poder máximo do boot do seu sistema.
+
+
+Nota de Copyright
+-----------------
+
+     Copyright 2001 (C) Vitor Silva Souza <vitor@vitoria.org.br>
+
+     Esse manual está licenciado sob a GNU FDL, que pode ser encontrada em
+     http://www.fsf.org ou no diretório /usr/share/common-licenses em
+     sistemas Debian.
+
+
+-------------------------------------------------------------------------------
+
+
+Conteúdo
+--------
+
+     1.        Introdução e Instalação
+     1.1.      O que é o GRUB?
+     1.2.      Como conseguir o GRUB?
+     1.3.      Como definir o GRUB como carregador de boot do sistema
+
+     2.        Configurando o Processo de Boot
+     2.1.      Comandos para cada sistema
+     2.2.      O Menu do GRUB: menu.lst
+     2.3.      Como remover o GRUB
+
+
+-------------------------------------------------------------------------------
+
+
+1. Introdução e Instalação
+--------------------------
+
+
+1.1. O que é o GRUB?
+--------------------
+
+     O GRUB é um carregador de boot.  Ele serve para dar boot na mais
+     diversa gama de sistemas operacionais.  Ele segue o padrão Multiboot
+     que é capaz de carregar várias imagens de boot e módulos.  Por esse
+     motivo ele é o único carregador de boot capaz de carregar o conjunto
+     de servidores do GNU Hurd.
+
+
+1.2. Como conseguir o GRUB?
+---------------------------
+
+     A versão mais simples de usar do GRUB é a mais nova.  Ela está
+     presente no Debian instável e no testing (woody).  A versão do potato
+     é mais difícil de usar.
+
+     Para aqueles que usam woody ou sid, basta instalar o pacote `grub'
+     para continuar seguindo o guia.  A documentação extensiva se encontra
+     no pacote `grub-doc'.
+
+     Aos usuários de potato que desejam usar o grub, é recomendável que
+     usem o pacote que foi "portado" para potato, que é encontrado
+     adicionando a seguinte linha no /etc/apt/sources.list:
+
+     `deb http://people.debian.org/~kov/debian stable/'
+
+     Depois de adicionada a linha basta um apt-get update e fazer a
+     instalação do `grub'.
+
+
+1.3. Como definir o GRUB como carregador de boot do sistema
+-----------------------------------------------------------
+
+     Há duas maneiras de se instalar o Grub como carregador de boot, aqui
+     vão elas.
+
+1.3.1. Instalação Simples
+-------------------------
+
+     Depois de instalado o pacote `grub', você tem de decidir onde vai
+     colocar o seu carregador de boot.  Normalmente um bom lugar para isso
+     é o MBR do seu primeiro HD.
+
+     Para colocar o GRUB lá é simples, basta rodar o comando a seguir:
+
+          # grub-install /dev/hda
+
+     Esse comando deve instalar o GRUB no MBR e criar um diretório
+     `/boot/grub'.  Lá dentro estarão os arquivos chamados de "stages" que
+     serão usados pelo GRUB para dar o boot.  Depois disso copie o arquivo
+     `/usr/share/doc/grub/examples/menu.lst' para `/boot/grub'.  Mais
+     adiante aprenderemos o que é e como usar esse arquivo.
+
+1.3.2. Instalação Usando um Disquete
+------------------------------------
+
+     Se ainda não estiver no Linux, reinicie o computador e carregue-o.  Vá
+     para o diretório `/usr/lib/grub/i386-pc' e execute os comandos a
+     seguir, depois de ter colocado um disquete formatado no primeiro
+     drive:
+
+          # dd if=stage1 of=/dev/fd0 bs=512 count=1
+          # dd if=stage2 of=/dev/fd0 bs=512 seek=1
+
+     Coloque um disquete virgem no drive e execute os dois comandos para
+     que o disquete se torne um disquete de boot do GRUB.  A partir deste
+     disquete você poderá bootar virtualmente qualquer sistema em máquinas
+     i386, conhecendo um pouco dos comandos do GRUB e das partições feitas
+     na máquina.
+
+     Para instalar o grub no disco rígido principal basta, agora, criar o
+     diretório /boot/grub em qualquer partição de qualquer disco rígido
+     daquele computador, copiar os arquivos stage1 e stage2 para lá e
+     reiniciar o computador usando o disco de boot do grub.  A partir do
+     prompt "grub>", digite:
+
+          grub> find /boot/grub/stage1
+
+     Isso irá encontrar em qual partição você colocou os arquivos.  Digamos
+     que você tenha colocado na quarta partição do segundo disco.  Ele
+     responderá: (hd1,3).  Então digite:
+
+          grub> root (hd1,3)
+          grub> setup (hd0)
+
+     Isso irá instalar o grub no MBR do primeiro disco rígido, que será
+     carregado toda vez que iniciar o computador.  No entanto, ele ainda
+     irá mostrar o prompt...  Para ele mostrar uma lista, coloque o arquivo
+     menu.lst no diretório /boot/grub junto aos arquivos de imagem e
+     execute novamente os dois últimos comandos, acima.
+
+
+-------------------------------------------------------------------------------
+
+
+2. Configurando o Processo de Boot
+----------------------------------
+
+
+2.1. Comandos para cada sistema
+-------------------------------
+
+     Cada sistema tem sua maneira de ser carregado.  Os dois sistemas que
+     eu sei de cor são o Linux e o Windows (95, 98, Me e NT.  2000 ainda
+     não testei).  Suponha que eu tenha o Linux instalado na primeira
+     partição do primeiro HD e o windows instalado na segunda partição do
+     primeiro HD.  Temos:
+
+          Linux:
+          grub> root (hd0,0)
+          grub> kernel=/vmlinuz root=/dev/hda1
+          grub> boot
+          
+          Windows:
+          grub> root (hd1,0)
+          grub> chainloader +1
+          grub> makeactive
+          grub> boot
+
+     Obs.: a localização da imagem do kernel (vmlinuz) pode variar.  É
+     importante verificar qual o seu nome.  Dê uma olhada em /boot.
+
+     Para completar os comandos que fazem que seja possível que qualquer
+     sistema seja carregado, temos o "hide" e o "unhide" que escondem e
+     mostram partições.  Quando você tem num mesmo computador o Windows 98
+     e o NT instalados, por exemplo, você precisa esconder a partição do 98
+     para carregar o NT e vice-versa.
+
+
+2.2. O Menu do GRUB: menu.lst
+-----------------------------
+
+     Tudo fica mais fácil quando aparece uma lista para que o sistema seja
+     escolhido...  Vou escrever um exemplo de menu.lst (que deve ser
+     colocado junto às imagens em /boot/grub) para um computador que tenha
+     as seguintes configurações:
+
+          Disco 1
+              |- Partição 1: Debian GNU/Linux. ext2.
+              \- Partição 2: Red Hat 7. ext2.
+          Disco 2
+              |- Partição 1: Windows 95 OEM2 instalado. Fat32.
+              |- Partição 2: Nenhum sistema. Fat16.
+              \- Partição 3: Windows NT instalado. NTFS.
+
+     A notação de discos e partições do grub é diferente da do GNU/Linux.
+     O primeiro HD é o hd0, sua primeira partição é 0.  Para especificar
+     primeira partição do primeiro HD usa-se: `hd0,0'.
+
+     Ao contrário do lilo, que precisa de toda uma bagunça para passar
+     parâmetros para o kernel, o grub deixa que você os passe na linha
+     mesmo que define o kernel a ser carregado.
+
+     Para sistemas GNU, 3 linhas normalmente bastam: A primeira linha
+     (`title Nome do Sistema') define o nome que irá aparecer no menu para
+     ser escolhido.  A segunda linha (`root (hd?,?)') define em qual
+     partição e HD procurar os arquivos que serão utilizados como boot.  A
+     terceira linha (`kernel /boot/vmlinuz-algumaversão root=/dev/hd??
+     ...') mostra qual kernel será carregado e quais os argumentos passados
+     para ele.
+
+timeout 10      # Espere 10 segundos. Se nenhuma tecla for pressionada, carregue o default.
+default 0       # Coloca o primeiro sistema da lista como default.
+fallback 2      # Se não entrar no primeiro (por problemas quaisquer), carregue o terceiro.
+
+# Primeiro sistema da lista: Debian.
+title Debian GNU/Linux (woody)
+         root (hd0,0)
+         kernel=/vmlinuz root=/dev/hda1 apm=on
+
+# Segundo sistema da lista: Red Hat.
+title Red Hat Linux 7.0
+         root (hd0,1)
+         kernel=/boot/vmlinuz root=/dev/hda2 apm=on
+
+# Terceiro sistema: Windows 95.
+title Windows 95
+         hide (hd1,2)    # Esconde o NT.
+         unhide (hd1,0)  # Mostra o 95.
+         root (hd1,0)
+         chainloader +1
+         makeactive
+
+# Quarto sistema: Windows NT.
+title Windows NT
+         hide (hd1,0)    # Esconde o 95.
+         unhide (hd1,2)  # Mostra o NT.
+         root (hd1,2)
+         chainloader +1
+         makeactive
+
+     A partir da cópia deste arquivo para /boot/grub ele passará a mostrar
+     a lista com os quatro sistemas para serem escolhidos.  Em 10 segundos
+     ele tentaria bootar o Debian, caso desse erro ele tentaria o Windows
+     95.  Algumas observações:
+
+     1.  Note que não é necessário o comanto "boot" ao final das
+     sequencias, como fazemos no prompt.
+
+     2.  Se você tiver o grub instalado sem nenhum menu.lst, depois de
+     copiar o menu.lst é necessário instalar o grub de novo, com o comando
+     setup a partir da linha de comando do GRUB ou com o `grub-install'.
+     Depois disso o arquivo menu.lst pode ser modificado como quiser que
+     ele se altera a cada boot.
+
+     3.  Para chamar a linha de comando a partir do menu basta teclar 'c'.
+     Com 'e' você edita uma entrada do menu e com 'd' você deleta (essas
+     alterações não são salvas no menu.lst).
+
+
+2.3. Como remover o GRUB
+------------------------
+
+     Não há maneira de se fazer isso.  A única forma de remover o GRUB de
+     seu MBR é colocando algo por cima dele lá.  Rodar o lilo ou chamar
+     fdisk /mbr no DOS podem ser a solução.  Isso pode parecer ruim em
+     primeiro, mas que utilidade tem um MBR vazio?  Por isso a falta de
+     preocupação dos desenvolvedores com essa tarefa.
+
+
+-------------------------------------------------------------------------------
+
+
+     Como Usar o Grub
+
+     Vitor Silva Souza <vitor@vitoria.org.br>
+     Gustavo Noronha Silva <kov@debian.org>
+
+
+     13 fevereiro 2005
+

@@ -1,0 +1,437 @@
+
+           Atualizando sua distribuição Debian Potato para Woody
+           -----------------------------------------------------
+
+            Gleydson Mazioli da Silva <gleydson@cipsga.org.br>
+
+                         Versão 0.04 - 29/11/2001
+
+
+-------------------------------------------------------------------------------
+
+
+Resumo
+------
+
+     Este documento explica alguns pontos fundamentais para o sucesso na
+     atualização de sua distribuição `Debian' (dist-upgrade).  As
+     explicações aqui se aplicam para a atualização da distribuição
+     _Potato_ (2.2) para _Woody_ (3.0).  Ele foi baseado em testes de
+     dist-upgrade que fiz durante estes 2 meses para o envio de bug
+     reportings ao BTS (Bug Tracking System) da Debian.  Nos últimas 2
+     atualizações Potato para Woody que fiz, tudo correu normalmente sem
+     surpresas ou problemas que precisassem ser corrigidos manualmente.
+     Também serão feitas referências a novos métodos de configurações da
+     `Debian' 3.0 que trouxeram muita facilidade e rapidez para realizar
+     tarefas que antes tinham que ser feitas manualmente ou de maneira mais
+     complexa.  Também estão incluidas neste documento respostas a dúvidas
+     comuns durante a transição.  Sugestões, críticas e correções devem ser
+     enviadas ao autor no final do documento.
+
+
+Nota de Copyright
+-----------------
+
+     Copyleft (C) 1999-2001 - Gleydson Mazioli da Silva.
+
+     Distribuído sobre os termos da FDL (Free Documentation License).
+
+
+-------------------------------------------------------------------------------
+
+
+Conteúdo
+--------
+
+     1.        Preparando seu sistema para a atualização
+
+     2.        Atualizando seu Sistema
+
+     3.        Notas pós atualização
+     3.1.      Removendo pacotes da Debian security obsoletos
+
+     4.        Problemas e Soluções
+     4.1.      Meus acentos do console não funcionam mais!
+     4.2.      Meu XF86Setup não funciona
+     4.3.      Aparecem quadradinhos após a atualização dos sistema no X!
+     4.4.      Meu pacote `xfs-xtt' foi posto em hold!
+     4.5.      As fontes em algumas caixas de diálogos e menus parecem
+               acima do normal
+     4.6.      Meu xhost não funciona, estou usando o xdm, wdm, gdm
+     4.7.      Meu xhost não funciona, inicio o X usando startx
+     4.8.      Sistema em Português
+     4.9.      Meu mapa de teclados está errado!
+     4.10.     Tento acentuar no console, mas não consigo
+     4.11.     Tento acentuar no X, mas não consigo
+
+
+-------------------------------------------------------------------------------
+
+
+1. Preparando seu sistema para a atualização
+--------------------------------------------
+
+     Antes de tudo: Faça um backup dos arquivos de configuração em /etc e
+     outros dados importantes, o processo de atualização é bem testado mas
+     nada pode garantir que ele funcione corretamente para todo mundo.  Se
+     utiliza o servidor Apache, é recomendável fazer pelo menos o backup de
+     sua configuraçao em /etc/apache, pois o programa de atualização pode
+     fazer alterações indesejáveis nos módulos que selecionou.
+
+     Antes de iniciar sua atualização, execute o comando:
+
+          apt-get -f install
+
+     Para se assegurar que todos os pacotes estão com suas dependências
+     satisfeitas e que tudo está OK.
+
+     O próximo passo é incluir as seguintes linhas no seu arquivo
+     `/etc/apt/sources.list':
+
+deb ftp://ftp.debian.org.br/debian woody main non-free contrib
+deb ftp://ftp.debian.org.br/debian-non-US woody/non-US main non-free contrib
+
+     e comente qualquer linha referente a distribuição potato (incluindo
+     proposed-updates e atualizações de segurança).  Depois conecte-se a
+     internet e execute o comando:
+
+          apt-get update
+
+     Para copiar os pacotes da woody do servidor.  Antes de executar o
+     comando que iniciará a atualização da distribuição, é recomendável
+     ajustar as variáveis de localização para o idioma inglês padrão ("C").
+     Isto é necessário porque o sistema de locales será modificado e as
+     consecutivas mensagens de erro poderão confundir o apt e trata-la como
+     um erro.  Caso isto acontecer não se preocupe, apenas execute
+     novamente o comando de atualização.
+
+          export LC_ALL=C
+          export LANG=C
+          export LC_MESSAGES=C
+
+     Então execute o comando
+
+          apt-get -f -u dist-upgrade
+
+     Para iniciar o processo de atualização de sua distribuição.  A
+     quantidade de arquivos que serão baixados da Internet depende da
+     quantidade de pacotes que possui instalados em seu sistemas, em média
+     100MB de pacotes serão baixados para instalações que utilizam o
+     sistema X com alguns programas populares.  Se você quiser somente
+     baixar os pacotes para o diretório `/var/cache/apt/archives' sem
+     executar a atualização, inclua a opção "-d" no comando:
+
+          apt-get -d -f -u dist-upgrade
+
+     Com este método você poderá ir baixando aos poucos os arquivos
+     necessários pela atualização (ideal se tiver uma conexão discada) e
+     quanto todos forem copiados para seu computador, executar o comando
+     "apt-get -f -u dist-upgrade" para iniciar a atualização em definitivo
+     (não esqueça de ajustar os locales para "C", veja acima).
+
+
+-------------------------------------------------------------------------------
+
+
+2. Atualizando seu Sistema
+--------------------------
+
+     A primeira coisa que será perguntada são os locales que deverão ser
+     gerados para seu sistema.  Estes locales serão gravados no arquivo
+     `/etc/locale.gen' e serão atualizados sempre que o comando
+     "locale-gen" for executado.  Mais de um locale poderá ser acrescentado
+     neste arquivo para tornar estes idiomas disponíveis ao seu sistema.
+     Marque a opção "pt_BR" para ter seu sistema em português.
+
+     O restante da atualização depende de seus pacotes e da configuração
+     individual de cada programa, atualmente este processo ocorre sem
+     surpresas (já está bastante seguro).  Algumas coisas são modificadas
+     para os seguintes programas:
+     Apache
+          O programa de atualização normalmente faz modificações
+          indesejáveis no arquivo `/etc/apache/httpd.conf' (como habilitar
+          módulos, etc).  Faça um backup da configuração antiga antes de
+          começar e restaure após a atualização.
+     Squid
+          Algumas diretivas do arquivo `/etc/squid.conf' 2.2 não são mais
+          válidas para o squid 2.4, você terá que executar o comando `squid
+          -k reconfigure' e comentar algumas linhas deste arquivo de
+          configuração para ter seu proxy funcionando denovo.  Da mesma
+          forma, novos recursos foram adicionados a esta versão, que torna
+          o programa bem mais robusto.
+     Kernel
+          A woody trabalha tanto com o kernel 2.2 como o kernel 2.4, eu
+          atualmente estou usando o kernel 2.4.10 sem problemas mas se você
+          tem um firewall ipchains ou a máquina possui sistemas críticos
+          instalados, recomendo continuar mais um tempo com o kernel 2.2 e
+          esperar a série 2.4 se tornar mais madura.  O kernel 2.4 requer
+          4MB de memória mínima para seu funcionamento mas em contrapartida
+          apresenta um desempenho melhor e maior suporte a dispositivos,
+          processadores, dispositivos de memória, USB, etc.
+     _NOTA IMPORTANTE_: Após o dist-upgrade do seu sistema ser completado,
+     execute o `apt-get -f -u dist-upgrade' mais uma vez até que todos os
+     pacotes sejam corretamente instalados e configurados (ele retornará a
+     linha de comando logo em seguida quando isto acontecer).
+
+
+-------------------------------------------------------------------------------
+
+
+3. Notas pós atualização
+------------------------
+
+     Esta seção traz alguns pontos iniciais para tornar sua adaptação, de
+     seus programas na nova distribuição menos traumática.
+
+        * Um novo sistema de configuração foi incluindo na `Debian Woody'
+          para facilitar o trabalho de usuários, trata-se do comando
+          `dpkg-reconfigure'.  Basta executar: `dpkg-reconfigure pacote'
+          para iniciar um programa de configuração rápido e fácil para a
+          configuração de seus programas.
+
+          Todas as respostas que der ao programa sendo configurado serão
+          gravadas para uso futuro e aparecerão como a primeira opção do
+          menu.  Venho gostando muito deste recurso pois facilita bastante
+          o trabalho de administração do sistema.
+
+        * A opção `-I' do tar (para manipular arquivos `bzip2') mudou para
+          `-j'.  Foi necessário para seguir a padronização do utilitário
+          com outros SOs.  Cheque seus programas, atualize se necessário.
+
+        * Se instalou o pacote `apt' do Kov traduzido para a `potato', será
+          necessário instalar o pacote `apt' da `Woody' manualmente.  Isto
+          não afeta o funcionamento do sistema, mas você terá grandes dores
+          de cabeça e não entenderá nada se tentar instalar o pacote
+          `apt-utils' (eu que o diga né Kov?  :)
+
+        * O `squid' 2.4 aceita por padrão POST (envio de dados) de no
+          máximo 1 MB.  Este limite pode ser aumentado colocando um valor
+          maior no parâmetro _request_body_max_size 5 MB_ especificando 0,
+          desativa o limite.
+
+
+3.1. Removendo pacotes da Debian security obsoletos
+---------------------------------------------------
+
+     Os pacotes retornados com o comando:
+
+          dpkg -l|grep potato
+
+     Podem ser seguramente removidos do seu sistema, pois a `Debian 3.0'
+     não precisa mais deles: `dpkg --purge pacote' ou `apt-get --purge
+     remove pacote'.  (use `dpkg --purge' caso o `apt-get' não remover o
+     pacote).
+
+     Ocorre também de bibliotecas ficarem "órfãs" após o dist-upgrade, para
+     localizar e remove-las instale o pacote "deborphan" e execute-o:
+
+          deborphan
+
+     Todas as bibliotecas listadas poderão ser seguramente removidas, mas
+     tenha atenção ao fato de serem requeridas por algum método de
+     compilação.
+
+
+-------------------------------------------------------------------------------
+
+
+4. Problemas e Soluções
+-----------------------
+
+
+4.1. Meus acentos do console não funcionam mais!
+------------------------------------------------
+
+     Pacote kbd
+          Edite o arquivo `/etc/kbd/config' e especifique a fonte
+          `lat1u-16.psf' como fonte de tela:
+               CONSOLE_FONT=lat1u-16.psf
+     Para pacote console-tools
+          Edite o arquivo `/etc/console-tools/config' e especifique a fonte
+          `lat1u-16' como fonte de tela:
+               SCREEN_FONT=lat1u-16
+     Assim esta fonte será automaticamente carregada na inicialização do
+     sistema.  Para carregar manualmente digite: `loadfont lat1u-16'.  É
+     comum a tela ficar com caracteres estranhos em programas semi-gráficos
+     até que o sistema seja, argh, reinicializado.
+
+
+4.2. Meu XF86Setup não funciona
+-------------------------------
+
+     Já reportei um bug sobre isso e segundo o maintainer dos pacotes do X
+     (Branden Robinson) ele ficou obsoleto e não mais voltara a funcionar.
+     Remova seu pacote com `dpkg --purge xf86setup' e use o `xf86config-v3'
+     ou `dpkg-reconfigure xserver-svga' (preferido) para configurar seu X.
+
+
+4.3. Aparecem quadradinhos após a atualização dos sistema no X!
+---------------------------------------------------------------
+
+     Isto ocorre em configurações anteriores feitas com o `XF86Setup'
+     (xf86config também?  se acontecer com voce me avise!).  Apenas
+     acrescente a linha `FontPath "unix/:7100"' como primeira linha da
+     seção _Files_ do arquivo `/etc/X11/XF86Config' e reinicie o servidor X
+     e o xfs.  O conteúdo dele ficará desta forma:
+
+          Section "Files"
+              FontPath		"unix/:7100"
+              FontPath		"/usr/lib/X11/fonts/misc"
+              FontPath		"/usr/lib/X11/fonts/cirilic"
+              ...
+
+     O uso do servidor `xfs' para acesso a fontes garante um aumento
+     drástico no acesso a fontes do sistema além de resolver este problema.
+
+     _OBS:_ - Segundo experiência do amigo Cosmo [cosmo@osite.com.br],
+     quando a linha "FontPath" que carrega está comentada, o problema
+     também aparece.
+
+
+4.4. Meu pacote `xfs-xtt' foi posto em hold!
+--------------------------------------------
+
+     Isto é normal e na maioria das vezes não afetam a instalação.  A
+     equipe da `Debian' recomenda o uso do pacote `xfs' (como servidor de
+     fontes) e o `libxfont-xtt' para adicionar suporte a fontes True Type
+     no sistema.
+
+
+4.5. As fontes em algumas caixas de diálogos e menus parecem acima do
+normal
+----------------------------------------------------------------------------
+
+     Edite o arquivo `/etc/X11/fs/config', localize a linha:
+
+          catalogue=
+
+     e coloque as fontes de 75 dpi para serem carregadas antes da de 100
+     dpi neste arquivo.  Adicionalmente edite a linha:
+
+          defaults_resolutions= 100,100,75,75
+
+     e modifique-a para:
+
+          defaults_resolutions=75,75,100,100
+
+
+4.6. Meu xhost não funciona, estou usando o xdm, wdm, gdm
+---------------------------------------------------------
+
+     O X possui uma configuração restrita na Woody não aceitando conexões
+     por padrão.  Edite o arquivo `/etc/X11/xdm/xservers' e remova a opção
+     _--no-listen tcp_ da linha que inicia o servidor X e reinicie o
+     servidor X.
+
+     Neste mesma linha você encontrará a opção `--dpi 100' que indica as
+     fontes que serão carregadas por padrão quando o arquivo
+     `/etc/X11/XF86Config' não utiliza o `xfs' para acesso as fontes.
+
+
+4.7. Meu xhost não funciona, inicio o X usando startx
+-----------------------------------------------------
+
+     Edite o arquivo `/etc/X11/xinit/xserverrc' e siga as explicações
+     acima.
+
+
+4.8. Sistema em Português
+-------------------------
+
+     A Woody utiliza um novo sistema de locales um pouco diferentes da
+     Potato.  Para deixar seu sistema em português, você precisará criar um
+     arquivo `/etc/locale.gen' com o seguinte conteúdo:
+
+           pt_BR ISO-8859-1
+
+     Ele também pode conter referência a múltiplos locales:
+
+            en_US ISO-8859-1
+            pt_BR ISO-8859-1
+
+     Após isso, execute o comando `locale-gen' para gerar os locales para o
+     idioma pt_BR.  As variáveis de ambiente de localização podem ser
+     especificadas no arquivo `/etc/locales.def'.  O arquivo
+     `/etc/environment' continua válido, mas agora é mais apropriado para
+     ajustar outras variáveis de ambiente.
+
+
+4.9. Meu mapa de teclados está errado!
+--------------------------------------
+
+     Digite:
+
+          dpkg-reconfigure console-data
+
+     Selecione `Select keymap from arch list' => qwerty e então uma das
+     seguintes opções de teclado:
+        * Para o teclado padrão internacional com acentos, selecione: `US
+          american' => `Standard' => `US International (ISO-8859-1)'
+        * Para teclado brasileiro ABNT2 selecione: Brazilian
+     Você poderá executar este programa a qualquer hora para reconfigurar
+     seu teclado.  Note que as seleções anteriores são jogadas para o alto
+     do menu.
+
+
+4.10. Tento acentuar no console, mas não consigo
+------------------------------------------------
+
+     Inclua novamente a fonte de console `lat1u-16.psf' no arquivo
+     `/etc/kbd/config', este arquivo é substituído após a atualização da
+     distribuição.
+
+
+4.11. Tento acentuar no X, mas não consigo
+------------------------------------------
+
+     Edite o arquivo `/etc/X11/Xsession' e comente as seguintes linhas no
+     final do arquivo:
+
+for sessionfile in $syssessiondir/*; do
+  if [ -f $sessionfile ]; then
+    if expr $sessionfile : '.*/[0-9][0-9][[:alnum:]_-]*$' > /dev/null 2>&1; then
+      . $sessionfile
+    fi
+  fi
+done
+
+     para
+
+for sessionfile in $syssessiondir/*; do
+  if [ -f $sessionfile ]; then
+#    if expr $sessionfile : '.*/[0-9][0-9][[:alnum:]_-]*$' > /dev/null 2>&1; then
+      . $sessionfile
+#    fi
+  fi
+done
+
+     e então crie um arquivo (caso ele não exista) em `/etc/X11/Xsession.d'
+     chamado `40xfree86-common_xmodmap.xfree86-common' com o conteúdo:
+
+          if [ -x /usr/bin/X11/xmodmap ]; then
+            if [ -f $sysmodmap ]; then
+              xmodmap $sysmodmap
+            fi
+          fi
+          
+          if [ -x /usr/bin/X11/xmodmap ]; then
+            if grep -qs ^allow-user-modmap $optionfile; then
+              if [ -f $usrmodmap ]; then
+                xmodmap $usrmodmap
+              fi
+            fi
+          fi
+
+     A acentuação funcionará assim que entrar em seu sistema X Window.
+
+
+-------------------------------------------------------------------------------
+
+
+     Atualizando sua distribuição Debian Potato para Woody
+
+     Gleydson Mazioli da Silva <gleydson@cipsga.org.br>
+
+
+     Versão 0.04 - 29/11/2001
+

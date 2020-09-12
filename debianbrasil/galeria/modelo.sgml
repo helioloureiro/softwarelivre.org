@@ -1,0 +1,220 @@
+<!DOCTYPE debiandoc PUBLIC "-//DebianDoc//DTD DebianDoc//EN">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"></head><body><debiandoc>
+ <book>
+ <!-- a tag <book> é fechada no fim do arquivo sgml -->
+
+  <titlepag>
+   <title>Aqui entra o título do guia</title>
+   
+   <author>
+      <name>Gleydson Mazioli da Silva</name>
+      <email>gleydson@debian.org</email>
+   </author>
+   <version>Versão do documento 0.01 - 06/11/2001</version>
+
+   <abstract>
+Coloque aqui um resumo sobre este documento. 
+Não utilize a tag &lt;p&gt; para quebra de linha junto com 
+a tag &lt;abstract&gt;, isto causa erros de compilação estranhos 
+que podem te pertubar. 
+  </abstract>
+
+    <copyright>
+    <copyrightsummary>
+      Copyleft © 1999-2001 - Gleydson Mazioli da Silva.
+    </copyrightsummary>
+      <p>
+     Aqui você pode descrever sob qual licença se encontra seu documento. 
+     De a preferência a licença FDL (Free Documentation License) que permite 
+     livre redistribuição e utilização do seu material. 
+ 
+     
+  
+
+
+<!-- Este é um comentário em uma linhha -->
+<!-- A tag abaixo inicia a tabela de conteúdo (Table Of Contents). O parâmetro
+"sect1" permite que 1 nível de indices sejam exibidos, os níveis podem ser 
+expandidos até "sect4" -->
+<toc sect1="">
+
+<chapt id="chapt1">Introdução
+ </chapt></toc></p><p>
+Capítulo 1, clique em <ref id="chapt2"> para ir para o capítulo 2. 
+
+<!-- A tag "chapt" acima inicia um capítulo no documento SGML. O 
+parâmetro 'id="chapt1"' permite que sejam usadas referências 
+<ref id="chapt1"> para fazer links ao arquivo. Cada capítulo recebe 
+um número automaticamente quando você compila o documento com 
+"dbiandoc2html documento.sgml" incluindo o parâmetro especificado 
+em "id=" como parte do nome, seguindo o formato:
+
+ch-chapt1.html
+ch-chapt2.html
+
+ -->
+
+
+<sect>Seção 1
+ </sect></ref></p><p>
+Exemplo de seção 1. <em>Texto destacado</em>, <tt>texto formatado</tt>. 
+<strong>Texto muito destacado</strong>, <var>variável</var>, 
+<package>Nome de pacote</package>, <prgn>nome de programa</prgn>.
+
+<!-- Primeiro nível de seção do capítulo, veja seus efeitos após 
+a compilação. O conteúdo de todas as seções serão colocadas no 
+mesmo arquivo do capítulo (supondo o formato .html) -->
+
+
+<sect1>Subseção 1
+ </sect1></p><p>
+Texto da subseção. <footnote>Esta é uma footnote</footnote>. 
+
+
+<sect2>Subseção da subseção 1
+ </sect2></p><p>
+Texto da sub-subseção. <footnote>Esta é uma segunda footnote</footnote>. 
+
+
+<sect1><heading>Subseção 2</heading>
+ </sect1></p><p>
+Texto da subseção 1
+ </p><p>
+Parágrafo
+
+
+<sect>Seção 2
+ </sect></p><p>
+Texto da seção 2
+
+
+<chapt id="chapt2">Capítulo 2
+ </chapt></p><p>
+Este é o capítulo 2 do documento. Clique em <ref id="chapt1"> para abrir o 
+capítulo 1. 
+O texto abaixo é uma forma de expressar exemplos no documento:  
+<example>
+Texto de saida
+Texto de saida
+Texto de saida
+</example>
+O texto permanece formatado conforme foi escrito. 
+
+
+<chapt id="chapt3">Capítulo 3
+ </chapt></ref></p><p>
+Exemplos de listagem. 
+
+ </p><p>
+O seguinte exemplo, mostra listagem usando tags:
+<taglist compact="">
+ <tag>Titulo1</tag>
+  <item>
+Texto que segue o titulo 1. 
+
+ <tag>Titulo 2</tag>
+  <item>
+Texto que segue o titulo 2.
+ 
+ <tag>Titulo 3</tag>
+  <item>
+Texto que segue o titulo 3.
+</item></item></item></taglist>
+
+
+Um exemplo de texto de listagem:
+<list>
+ <item>
+Item número 1.
+ </item></list></p><p>
+ <item>
+Item número 2.
+ </item></p><p>
+Texto texto texto. 
+
+
+
+Um exemplo de texto de listagem numérica:
+<enumlist>
+ <item>
+Item número 1.
+ </item></enumlist></p><p>
+ <item>
+Item número 2.
+ </item></p><p>
+Texto texto texto. 
+
+
+
+<chapt id="caracteres">Caracteres Especiais
+ </chapt></p><p>
+Alguns dos caracteres especiais são mostrados a seguir.
+ </p><p>
+<!-- resumo dos elementos retirados de
+     http://www.linuxdoc.org/HOWTO/mini/Linuxdoc-Reference-14.html -->
+aelig æ AElig Æ amp &amp; apos ' aring å ast *
+bull • cir &#9675; clubs &#9827; commat @ copy © darr &#8595;
+deg ° diams &#9830; divide ÷ equals = excl ! gt &gt;
+hearts &#9829; horbar &#8213; hyphen &#8208; iexcl ¡ iquest ¿
+laquo « larr &#8592; ldquo “ lsquo ‘ lt &lt; mdash —
+micro µ middot · ndash – not ¬ ntilde ñ
+Ntilde Ñ ohm &#937; ordf ª ordm º oslash ø
+Oslash Ø para ¶ plusmn ± quot " raquo »
+rdquo ” reg ® rsquo ’ sect § spades &#9824;
+szlig ß times × trade ™ uarr &#8593; yacute ý
+Yacute Ý 
+
+<chapt id="compilando">Compilando seu documento
+ </chapt></p><p>
+Utilize uma das seguinte sintaxe para compilar o documento 
+<file>.sgml</file> no formato apropriado:
+<taglist>
+ <tag>debiandoc2text modelo.sgml</tag>
+  <item>
+ Compila o documento em formato texto.
+
+ <tag>debiandoc2textov modelo.sgml</tag>
+  <item>
+ Semelhante ao acima, mas adiciona características de destaques no texto 
+ para melhor visualização com o comando <prgn>less</prgn>, <prgn>more</prgn>, 
+ etc.
+ 
+ <tag>debiandoc2html modelo.sgml</tag>
+  <item>
+ Compila o documento em formato html. Os arquivos de saída serão gravados 
+ em um diretório com o nome <file>nome_do_documento.html</file>. 
+ 
+ <tag>debiandoc2info modelo.sgml</tag>
+  <item>
+ Compila o documento no formato info pages (para ser aberto com 
+ o programa <prgn>info</prgn>). 
+
+ <tag>debiandoc2latex modelo.sgml</tag>
+  <item>
+ Compila o documento no formato Latex (extensão <file>.tex</file>). 
+ 
+ <tag>debiandoc2latexpdf modelo.sgml</tag>
+  <item>
+ Compila o documento no formato <file>.pdf</file> (gerado via latex). 
+ Este formato foi padronizado pelo programa Acrobat Reader. 
+ 
+ <tag>debiandoc2latexps modelo.sgml</tag>
+  <item>
+Compila o documento no formato <file>.ps</file> que poderá ser 
+aberto pelo Ghost Script. Este é um dos formatos preferidos para 
+impressão.  
+
+<tag>debiandoc2latexdvi modelo.sgml</tag>
+ <item>
+Compila o documento no formato <file>.dvi</file>.
+ 
+</item></item></item></item></item></item></item></item></taglist>
+Note que alguns dos formatos como PDF, PS e DVI requerem os 
+pacotes do Latex instalados para serem gerados: 
+<package>tetex-lib tetex-bin tetex-extras</package>. 
+
+
+
+
+</p></copyright></titlepag></book></debiandoc></body></html>

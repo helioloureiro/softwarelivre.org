@@ -1,0 +1,503 @@
+
+                           Manual Debiandoc-SGML
+                           ---------------------
+
+                   Ian Jackson <ijackson@gnu.ai.mit.edu>
+
+                  Ardo van Rangelrooij <ardo@debian.org>
+
+        Grupo de Revisores Debian-BR <grd-br@listas.cipsga.org.br>
+
+                               10 março 2005
+
+
+-------------------------------------------------------------------------------
+
+
+Nota de Copyright
+-----------------
+
+     Copyright (C) 1998 Ardo van Rangelrooij
+     Copyright (C) 1996 Ian Jackson
+
+     Debiandoc-SGML, incluíndo este manual, é software livre; você pode
+     redistribui-lo e/ou modifica-ló dentro dos termos da GNU General
+     Public Licence como publicada pela Free Software Foundation; versão 2,
+     ou (sobre sua escolha) qualquer versão futura.
+
+     Este é distribuído esperando que sejá útil ao seu utilizador, mas _sem
+     nenhuma garantia_; sem até mesmo para garantia em particular ou
+     determinado propósito.  Vejá a GNU General Public License para mais
+     detalhes.
+
+     Você deve ter recebido uma cópia da Licença GNU com seuM sistema
+     Debian GNU/Linux, em `/usr/doc/copyright/GPL', ou com o pacote fonte
+     `debiandoc-sgml' como o arquivo `COPYING'.  Se não recebeu, escreva
+     para a Free Software Foundation, Inc., 59 Temple Place, Suite 330,
+     Boston, MAM 02111-1307, USA.
+
+
+-------------------------------------------------------------------------------
+
+
+Conteúdo
+--------
+
+     1.        Marcação SGML e metacaracteres
+
+     2.        Estrutura Global
+
+     3.        Capítulos, apêndices, seguês, e parágrafos
+
+     4.        Texto marcado inline e marcação do estilo de caracteres
+     4.1.      Estilo do Carácter
+     4.2.      Referências Cruzadas
+     4.3.      Footnotes
+
+     5.        Lists e exemplos
+     5.1.      Listas
+     5.2.      Exemplos
+
+     6.        Carácterísticas SGML ainda não suportadas
+
+
+-------------------------------------------------------------------------------
+
+
+1. Marcação SGML e metacaracteres
+---------------------------------
+
+     Um documento SGML consiste em um texto entre tags marcando o início e
+     final de elementos.
+
+     Tags tem a forma `<<elemento>>' para iníciar o <elemento> e
+     `<</elemento>>' para finalizá-la.
+
+     Existem alguns atalhos que se pode usar: `<<elemento/><conteúdo/>'
+     específica um elemento <elemento> com conteúdo <conteúdo>, mas o
+     <conteúdo> não pode contér uma barra `/'.  `</>' fecha o elemento
+     atualmente aberto.
+
+     Muitos tipos de elementos iníciais de tags podem contér atributos;
+     estes aparecem dentro do parêntese, e são separados do elemento por um
+     espaço em branco.  Os atributos permitidos em um elemento particular
+     de inicio de tag são descritos ao longo do elemento.
+
+     Se você deseja incluir carácteres de marcação SGML (sinal de menor e
+     maior `<' `>' e `&') como texto você deve se referir a eles pelo nome
+     (isto é chamado uma referência na linguagem SGML).  `&<nome>;' produz
+     o carácter que o nome é <nome>.
+
+     Alguns caracteres úteis são:
+     `lt'
+          sinal de menor (esquerdo) `<'
+     `gt'
+          sinal de maior (direito) `>'
+     `amp'
+          `&'
+     `copy'
+          símbolo de copyright `(C)'
+     A lista completa de caracteres está disponível em `linuxdoc-sgml', em
+     `linuxdoc-sgml''s no arquivo `rep/latin1/general'.
+
+     Você pode também usar `&#<número>;' para se referir ao carácter que o
+     número é <número> (em ISO-LATIN-1).  <número> deve estar em valor
+     decimal.
+
+
+-------------------------------------------------------------------------------
+
+
+2. Estrutura Global
+-------------------
+
+     A primeira linha do documento deve ser
+
+          <!doctype debiandoc public "-//DebianDoc//DTD DebianDoc//EN">
+
+     ou
+
+          <!doctype debiandoc system>
+
+     para indicar que o documento é um arquivo Debiandoc-SGML.
+
+     O documento deve iniciar com a tag `<book>' tag e finalizar com
+     `</book>'.
+
+     Isto pode ser seguido de `<title>', um ou mais tags
+     `<author>'-`<email>', e opcionalmente `<version>'.  Cada uma destas é
+     uma pega da marcação de texto inline - vejá Capítulo 4, `Texto marcado
+     inline e marcação do estilo de caracteres'.  A `<version>' pode também
+     contér `<date>' que mostra a data e hora em que o documento foi
+     gerado.
+
+     Então pode vir uma `<abstract>', um aviso de `<copyright>', e um
+     marcador `<toc>'.
+
+     `<abstract>' contém um parágrafo simples que contém um resumo do
+     documento.
+
+     A tag `<copyright>' contém um aviso de copyright (isto é usado, por
+     exemplo, no rodapé de cada pagina HTML) seguida de um ou mais
+     parágrafos, o primeiro deve ser indicado pela tag `<p>' para
+     distinguir ela do sumário.
+
+     O marcador `<toc>' específica que a tabela de conteúdo será produzida.
+     A tag `<toc>' não contém nada no fonte SGML - seu conteúdo é gerado
+     pelo sistema de processamento.  A tag `<toc>' pode contér um atributo
+     dizendo em detalhes como ele pode ser, por exemplo, `<toc sect1>' diz
+     que as subsegues devem ser incluídas, considerando que a tag `<toc
+     chapt>' diz que somente capítulos e apêndices devem ser incluídos.  Os
+     valores permitidos são `chapt', `sect', `sect1' e `sect2'.
+
+     Seguinte a estas partes vem o corpo do documento - um ou mais
+     capítulos `<chapt>', opcionalmente seguido de um ou mais apêndices
+     `<appendix>'.
+
+     Não é necessario marcar o final dos elementos `<title>', `<author>',
+     `<version>', `<abstract>' e `<copyright>' - eles são automaticamente
+     fechados no inicio do próximo elemento.
+
+
+-------------------------------------------------------------------------------
+
+
+3. Capítulos, apêndices, seguês, e parágrafos
+---------------------------------------------
+
+     Cada capítulo inicia com a tag `<chapt>', seguida do titulo do
+     capítulo.  O titulo pode conter texto marcado inline, mas sem
+     referências cruzes (veja Capítulo 4, `Texto marcado inline e marcação
+     do estilo de caracteres').  O mesmo se aplica para um apêndice, exceto
+     que ele inicia com uma tag `<appendix>'.
+
+     O corpo de um capítulo ou um apêndice contêm zero ou mais parágrafos,
+     o primeiro deve se indicado por uma tag `<p>' para distingui-lô do
+     título, e então zero ou mais seguês.
+
+     Subseguês são `<sect1>'; existe também pequenas divisões `<sect2>',
+     `<sect3>' e `<sect4>'.
+
+     Parágrafos são incluídos com `<p>'.  Algumas vezes a tag de inicio de
+     parágrafo pode ser omitida, mas é obrigatório após `<chapt>', `<sect>'
+     e assim por diante.  Não é necessário marcar o final de um parágrafo
+     com `</p>'.
+
+     Parágrafos podem contar texto marcados inline (veja Capítulo 4, `Texto
+     marcado inline e marcação do estilo de caracteres') e também listas e
+     exemplos (Capítulo 5, `Lists e exemplos').
+
+
+-------------------------------------------------------------------------------
+
+
+4. Texto marcado inline e marcação do estilo de caracteres
+----------------------------------------------------------
+
+     Texto ordinário (chamado "texto inline" neste documento) pode contér
+     elementos para formação especial e referência cruz.  Texto inline
+     aparece em capítulo, apêndice e títulos de seguês, em aviso de
+     copyright, dentro de parágrafos e em outros lugares parecidos.
+
+
+4.1. Estilo do Carácter
+-----------------------
+
+     Existem um número de elementos para denotar certas partes especiais de
+     texto.  Para todos eles um texto especial pode ser marcado
+     explicitamente, usando uma tag final `<<element>>', a tag final para
+     fechamento para elementos `</>' ou barra `/' que finaliza a forma mais
+     abreviada de marcação de elementos (see Capítulo 1, `Marcação SGML e
+     metacaracteres').
+
+     `<em>' - jnfase
+          Indica que o texto contido é mais importante ou mais significante
+          que o resto.
+
+          Normalmente isto será representado por italicos se disponível, ou
+          texto icentivado ou sublinhado, ou em formatos de texto planos
+          colocando o texto entre astériscos como *este*.
+
+     `<strong>' - mais jnfase
+          Indica que o texto contido é ainda mais importante ou ainda mais
+          significante que o resto.
+
+          Tipicamente isto será representado por negrito se disponível ou
+          em formato texto plano com texto entre astérisco como *este*.
+
+     `<var>' - variável metasintática
+          Indica que o texto contido é uma variável matasintática.  Ou
+          sejá, ele é uma pega de objeto da sintaxe que é usado para ter
+          uma valor real substituído.
+
+          Normalmente isto será representado por italicos, em em formato
+          texto plano com sinais de maior e menor como <este>.  Se muitas
+          variáveis metasintáticas são mostradas uma após as outras eles
+          devem cada uma ser seguidas de seu próprio elemento `<var>'.
+
+     `<package>' - nome do pacote
+          Indica que o texto contido é o nome de um pacote Debian.
+
+          Isto é normalmente feito usando uma fonte com largura fixa; em
+          formato texto plano quotas são usadas em torno do elemento.
+
+     `<prgn>' - nome do programa ou arquivo conhecido
+          Indica que o texto contido é o nome de um programa, um arquivo
+          conhecido (normalmente sem o caminho), uma função ou alguma coisa
+          parecida que tem um nome no computador.
+
+          Em formatos de saída onde o sublinhado de carácter e vários
+          estilos de fontes estão disponíveis este é normalmente
+          representado com uma fonte de largura fixa.  Em texto plano,
+          estes nomes não são especialmente marcados, ocorre a introdução
+          de quotas no fluxo do texto.
+
+     `<file>' - arquivo completo ou nome de diretório
+          Indica que o texto contido é o caminho completo de um arquivo,
+          buffer, diretório, etc.
+
+          Isto é normalmente feito usando uma fonte com larguraM fixa; em
+          formato texto plano, quotas podem ser usadasM em torno do
+          elemento.M
+
+     `<tt>' - código ou fragmento de saída, comando string
+          Indica que o texto contido é uma string geral que vêm de fora do
+          computador.  Ele deve ser usado para comandos ou fragmentos de
+          código que devem ser mostrados na linha de comando ou palavras
+          (vejá Seção 5.2, `Exemplos' para uma alternativa), e assim por
+          diante.  Ele é frequentemente necessário para introduzir
+          variáveis metasintáticas nestas strings, onde elas devem fazer
+          parte do elemento `<tt>' ao invés de elementos dentro dela.
+
+          Isto é normalmente feito usando uma fonte com largura fixa; em
+          formatos texto plano quotas podem ser usadas ao redor do
+          elemento.
+
+     `<qref id="<refid>">' - Referência quieta
+          Produz uma "referência quieta" para identificação de referência
+          nomeada (veja Seção 4.2, `Referências Cruzadas').  Isto deve ser
+          usado onde uma referência cruzada pode ser útil mas não
+          intrusiva, mas onde não é essencial.
+
+          Em formatos onde referências cruzadas podem ser feitas não
+          intrusivamente fazendo uma região do texto um hyperlink sem
+          introduzir textos inline, este elemento fará com que seu texto
+          contido se torne um hyperlink para o alvo da referência cruzada.
+          Em outros formatos este elemento não tem nenhum efeito.
+
+
+4.2. Referências Cruzadas
+-------------------------
+
+     Existem um número de elementos para introduzir referências cruzadas ou
+     para outras partes do mesmo documento ou para outros documentos.
+
+     As referências cruzadas para documentos internos são baseadas no
+     esquema de identificação de referências.  Cada capítulo, apêndice,
+     seção, subseção, etc, pode ter um atributo `id' passando sua
+     referência de identificação - por exemplo `<chapt id="spong">'
+     especifica que o capítulo ou apêndice iniciado tem a referência de
+     identificação `spong'.  Esta referência de identificação pode então
+     ser referida em outras partes do documento usando elementos especiais
+     de referência cruzada.
+
+     O identificador de referência poderá também ser usado para gerar nomes
+     de arquivos e referências para formatos tal como HTML, que produzem
+     diversos arquivos de saída; se nenhuma identificação de referência é
+     especificada então o capítulo, apêndice ou números de seção serão
+     usados.  É uma boa idéia identificar no mínimo suas referências de
+     apêndice ou capítulos.  Assim, aqueles nomes de arquivos não serão
+     alterados se você alterar a ordem daqueles capítulos, seções ou
+     apêndices em seu documento.
+
+     `<ref id="<refid>">' - referências cruzadas no documento completo
+          Isto gera uma referência cruzada dentro do mesmo documento para o
+          capítulo, apêndice ou seção com id <refid>.
+
+          O elemento `<ref>' não tem nenhum conteúdo; o capítulo, apêndice
+          ou número de seção e título e seu número de página ou tudo que é
+          apropriado para o formato de saída será inserido no texto no
+          ponto onde a tag aparece.
+
+          Sintaticamente a referência cruzada é um substantivo de frase,
+          satisfatório para usuários como `(veja <ref id="<...>">)' ou
+          `informações mais adiante em <ref id="<...>">.'.
+
+     `<manref name="<name>" section="<section>">' - manpage
+          Gera uma referência cruzada para uma manpage para <name> na seção
+          <seção>.  Esta tag não possui nenhum conteúdo; texto descrevendo
+          a página, tipicamente `<name>(<section>)', será inserido no ponto
+          onde `<manref>' aparece.
+
+     `<email>' - endereço de email
+          Indica que o texto contido é um endereço de email.  O conteúdo da
+          tag deve ser simplesmente o texto do endereço de email; marcação
+          de estilo de carecteres e referências cruzadas são proíbidas.
+          Normalmente a tag final `</email>' não pode ser omitida, mas ela
+          pode ser deixado fora quando aparece em uma `<author>' como o
+          final de `<author>', implicado pelo início do próximo elemento,
+          implicando no final do endereço de email.
+
+          Em muitos formatos isto irá gerar uma referência cruzada que
+          pode, por exemplo, ser usada para enviar endereço de e-mail para
+          o endereço citado.  Em outros será simplesmente uma marcação para
+          um texto especial, incluíndo sinais de maior e menor `<' `>' em
+          torno dele.
+
+     `<ftpsite>' - nome de site FTP anônimo
+     `<ftppath>' - caminho dos arquivos de site FTP
+          `<ftpsite>' indica que o conteúdo do elemento é um nome DNS de um
+          site FTP anônimo, e `<ftppath>' que é um caminho no site.  Ambos
+          elementos não podem contêr qualquer marcação de estilo de
+          carácteres ou referência cruzada.
+
+          Tipicamente, ambos elementos serão feitos em fonte fixa; se
+          possível, o `<ftppath>' será feito em um hyperlink funcional para
+          o site `<ftpsite>'.
+
+          `<ftppath>' deve sempre ser precedido por um `<ftpsite>' no mesmo
+          capítulo, ou apêndice, mas uma vez que um site foi nomeado,
+          vários caminhos podem ser definidos.
+
+     `<httpsite>' - Nome de site HTTP
+     `<httppath>' - caminho para o site HTTP
+          `<httpsite>' indica que o conteúdo do elemento é um nome DNS de
+          um site HTTP, e `<httppath>' que é o caminho naquele site.  Ambos
+          elementos não podem contêr qualquer estilo de carácter ou
+          referência cruzada.
+
+          Normalmente ambos elementos serão feitos em fonte fixa; Se
+          possível, `<httppath>' será feito em um hyperlink funcional para
+          os arquivos nomeados no diretório mais recente.  `<httpsite>'.
+
+          Normalmente ambos elementos serão feitos em fonte fixa; Se
+          possível, `<httppath>' será feita em um hyperlink funcional para
+          os arquivos nomeados no diretório mais recente.  `<httpsite>'.
+
+          `<httppath>' deve sempre ser procedida de um `<httpsite>' no
+          mesmo capítulo ou apêndice, mas uma vez que o site foi nomeado
+          vários caminhos podem aparecer.
+
+     `<url id="<id>" name="<name>">' - URL
+          Gera uma referência cruz para a URL com a identificação <id> e
+          usa o <name> para ser mostrado no documento ao invés da id.  Está
+          tag nco contêm qualquer conteúdo.
+
+          Normalmente este elemento será criado em fonte fixa; Se possível,
+          <id> será feito em um hyperlink funcional usando <name> como
+          identificação.
+
+
+4.3. Footnotes
+--------------
+
+     Footnotes pode aparecer em muitos textos inline, e são indicados por
+     `<footnote><...></footnote>'.  O texto de footnote será removido e
+     colocado em outro lugar (onde depende do formato), e troca com uma
+     referência ou hyperlink para footnote.
+
+     O conteúdo do footnote deve contér um ou mais parágrafos; o inicio do
+     primeiro parágrafo não precisa ser marcado explicitamente.  Elementos
+     de marcação inline como um estilo de carácter não fazem efeito no
+     conteúdo do footnotes definido dentro dele - o footnote é um trecho
+     limpo.
+
+     Footnote pode ser aninhado, mas é raramente uma boa idéia.
+
+
+-------------------------------------------------------------------------------
+
+
+5. Lists e exemplos
+-------------------
+
+
+5.1. Listas
+-----------
+
+     Existem trás tipos de listas:
+        * `<list>' - lista ordinária (bola)
+        * `<enumlist>' - lista númerada
+        * `<taglist>' - lista com tags
+
+     Cada entrada em uma lisa ordinária ou numerada é um item introduzido
+     por `<item>'.  Cada entrada em uma lista é uma ou mais tags `<tag>'s
+     seguida de um `<item>'.
+
+     Não é necessário marcar o final de `<tag>' ou elementos `<item>'.
+
+     Todos os trás tipos de lista vem em dois tipos, dependendo se você
+     especificar o atributo `compact' (eg, `<taglist compact>') ou nÀo (eg,
+     `<enumlist>').  A `<tag>' pode contêr apenas texto marcado inline.
+
+     As versões compactas são usadas dentro de parágrafos.  O formatador
+     não colocara "buracos" em torno da lista ou entre os iténs.[1] As
+     entradas em cada lista compacta devem ser um parágrafo simples (não é
+     necessário para marcar o inicio de um parágrafo).  Quaisquer listas
+     dentro de uma lista compacta deve ser marcadas como compactas (embora
+     os formatadores de fato deduzem que elas devem ser compactas).
+
+     As versões não compactas são entendidas como parágrafos.  Cada entrada
+     em tal lista pode contêr mais que um parágrafo (denovo, o inico do
+     primeiro parágrafo não precisa ser marcado).  A lista é separada do
+     texto cercado, e as entradas de cada outro, por linhas em branco como
+     devem ser esperadas para quebras de parágrafo.
+
+[1]  Existe um problema com isto em HTML.  O formatador HTML não tenta,
+     usando listas HTML com atributo `compact' que gerou, mas nem todos os
+     navegadores o entendem corretamente.
+
+
+5.2. Exemplos
+-------------
+
+     Exemplos - fragmentos de código multi linhas, scripts, e pegasM
+     similares de um texto de computador são incluídos com `<example>' e
+     finalizados com `</example>'.
+
+     O exemplo será formatado exatamente com ele é digitado, com espaços e
+     novas linhas reproduzidas.  Ele será mostrado em uma fonte fixa,
+     normalmente é usada pelo estilo de carácteres `<tt>', até mesmo se o
+     formatador usa uma fonte proporcional.  Qualquer identação que pode
+     ser incluída apropriadamente pelo formatador; o exemplo pode ser
+     incluído iniciando na coluna da esquerda.
+
+     Exemplos pode contêr texto de carácteres marcados mas não podem contar
+     referências cruzadas ou elementos de estilo de carácteres `<em>',
+     `<strong>', `<package>', `<prgn>', `<file>', e `<tt>'.  Vejá Capítulo
+     4, `Texto marcado inline e marcação do estilo de caracteres'.
+
+     Um exemplo não produz uma quebra de parágrafo; exemplos são
+     considerados parte do parágrafo.  Se um exemplo será um parágrafo
+     então seu próprio parágrafo inicia tags que devem ser adicionadas como
+     apropriadas.
+
+     Qualquer carácter de marcação SGML no exemplo deve usual - vejá
+     Capítulo 1, `Marcação SGML e metacaracteres'.  `<example>' não
+     funciona como o ambiente TeX's `verbatim'.
+
+
+-------------------------------------------------------------------------------
+
+
+6. Carácterísticas SGML ainda não suportadas
+--------------------------------------------
+
+     O pacote `debiandoc-sgml' não suporta a carácterística SUBDOC do SGML.
+     Embora é possível declarar uma entity SUBDOC no documento e então se
+     referir a está entity no corpo do documento, a saída gerada pelos
+     conversores do pacote não são tão parecidas como o esperado.
+
+
+-------------------------------------------------------------------------------
+
+
+     Manual Debiandoc-SGML
+
+     Ian Jackson <ijackson@gnu.ai.mit.edu>
+     Ardo van Rangelrooij <ardo@debian.org>
+     Grupo de Revisores Debian-BR <grd-br@listas.cipsga.org.br>
+
+
+     10 março 2005
+

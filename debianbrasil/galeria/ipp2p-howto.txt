@@ -1,0 +1,218 @@
+
+                         Controlando P2P no Debian
+                         -------------------------
+
+        Raphael Bittencourt S. Costa <raphaelbscosta@yahoo.com.br>
+
+                    Versão 1.0 Gerado em 18 abril 2005
+
+
+-------------------------------------------------------------------------------
+
+
+Resumo
+------
+
+     Este documento foi criado visando ajudar os administradores de rede
+     que utilizam o Debian como distro de seus gateways e desejam ter o
+     controle sobre conexoes P2P - utilizando ipp2p.  Foi utilizado para a
+     criação deste o Debian Sarge 3.1 (testing).
+
+
+Nota de Copyright
+-----------------
+
+     Copyright (C) 2005 Raphael Bittencourt S. Costa
+
+     Todo o contedo deste artigo é software livre; você pode
+     redistribuí­-lo e/ou modificá-lo sob os termos da Licença Pública
+     Geral GNU conforme publicada pela Free Software Foundation; tanto a
+     versãoo 2 da licença, como (a seu critério) qualquer versão posterior.
+
+
+-------------------------------------------------------------------------------
+
+
+Conteúdo
+--------
+
+     1.        Controlando Conexões P2P
+     1.1.      Introdução
+     1.2.      Compilando Kernel
+     1.3.      Instalando iptables
+     1.4.      Instalando IPP2P
+     1.5.      Instalando o IPROUTE
+     1.6.      Criando regras HTB
+
+
+-------------------------------------------------------------------------------
+
+
+1. Controlando Conexões P2P
+---------------------------
+
+
+1.1. Introdução
+---------------
+
+     Bem, acredito que uma das maiores preocupações de um administrador de
+     redes hoje, É o tráfego P2P.  Pois a cada dia tem aumentado
+     consideravelmente o números de pessoas utilizando Kazaa, eMule, etc.
+     Neste artigo você aprenderá a limitar e bloquear todo tráfego P2P da
+     sua rede.
+
+     Eu instalei um servidor utilizando o Sarge 3.1 (testing), Kernel
+     2.6.11.5 e iptables 1.3.1.
+
+     Pacotes necessários:
+
+     1.   Kernel atual, no meu caso 2.6.11.5.  (kernel.org
+          (http://www.kernel.org)).
+
+     2.   Iptables atual, utilizei 1.3.1 (netfilter.org
+          (http://www.netfilter.org)).
+
+     3.   IPP2P, utilizei o 0.7.4 (ipp2p.org (http://www.ipp2p.org)), se
+          você estiver com iptables 1.3.x, somente funcionará na versão
+          0.7.4 ou posterior.
+
+     4.   Iproute2 (`iproute').
+
+     _Dica1_: Se você quiser utilizar o kernel 2.4.x, terá que baixar no
+     site do iptables um pacote chamado patch-o-matic-ng.  Siga as
+     instruções e aplique o patch para modulo CONNMARK, vou falar dele
+     abaixo.
+
+     _Dica2_: Agora acredito que você deve estar se perguntando o porque de
+     eu não estar utilizando o iptables-p2p.  Bem, pelo simples motivo que
+     a versão atual dele ainda não ter suporte para iptables 1.3.x.
+
+     Agora que você já pegou tudo necessário, vamos ao que interessa:
+
+
+1.2. Compilando Kernel
+----------------------
+
+     A primeira coisa a fazer será compilar um novo kernel para instalar um
+     módulo(CONNMARK) que será necessário para controlarmos as conexões
+     P2P.  Pois o IPP2P não reconhece todos os pacotes P2P, somente alguns,
+     por isso é necessário a utilização deste módulo para conseguirmos
+     marcar essas conexões.
+
+     Siga os procedimentos normais para a compilação de um novo kernel,
+     lembre-se de marcar como módulo: _DEVICE DRIVERS > NETWORKING SUPPORT
+     > NETWORKING OPTIONS > NETWORK PACKET FILTERING > IP: NETFILTER
+     CONFIGURATION: Conection Mark Traking Support , Connmark e Conection
+     Mark Match Support_.  Agora é só compilar e bootar com o kernel novo.
+
+
+1.3. Instalando iptables
+------------------------
+
+     Vamos agora instalar o iptables.  No Debian, como em qualquer outra
+     disto o iptables já vem instalado por padrão.  Para garantir que não
+     haja problemas de uma versão com outra remova o iptables instalado:
+
+          		aptitude remove iptables
+
+     Agora entre descompacte o pacote, sugiro que você o faça em /usr/src/.
+     Entre no diretório e execute:
+
+		make KERNEL_DIR=<caminho do seu kernel> BINDIR=/sbin LIBDIR=/lib
+		make KERNEL_DIR=<caminho do seu kernel> BINDIR=/sbin LIBDIR=/lib install
+
+     Pronto, agora seu iptables já está funcionando.  Para testar execute:
+     iptables -V.  Você deve observar a versão.
+
+          		inuyasha:/usr/src/iptables# iptables -V
+          		iptables v1.3.1
+
+
+1.4. Instalando IPP2P
+---------------------
+
+     Descompacte agora o IPP2P e entre no diretório.  Bem você terá que
+     editar o arquivo Makefile.
+
+          		vi Makefile
+
+     Vá para a linha IPTABLES_BIN, aponte para `/sbin/iptables'.  Depois
+     altere também a linha IPTABLES_SRC, apontando para o source do
+     iptables.  Observe as linhas abaixo:
+
+          		ifeq ($(IPTABLES_SRC),)
+          		IPTABLES_SRC = /usr/src/iptables-1.3.1
+          		endif
+
+     Agora é só executar:
+
+          		make
+
+     1.   Depois copie libipt_ipp2p.so para o diretório lib do iptables
+          (`/lib/iptables').
+
+     2.   Copie ipt_ipp2p.ko para o diretório de módulos do kernel
+          (`/lib/modules/<sua_versão>/kernel').
+
+     3.   Execute "depmod -a".
+
+
+1.5. Instalando o IPROUTE
+-------------------------
+
+     Só falta instalar o IPROUTE:
+
+          aptitude install iproute
+
+     Pronto!
+
+
+1.6. Criando regras HTB
+-----------------------
+
+     Agora já está tudo pronto, você está com Kernel e o Iptables novinhos.
+     Você precisa criar as suas regras no Iptables e no HTB, segue abaixo
+     um exemplo do script.
+
+#!/bin/bash
+#Limitando a Banda P2P
+ iptables -F
+ iptables -A PREROUTING -t mangle -p tcp -j CONNMARK --restore-mark
+ iptables -A PREROUTING -t mangle -p tcp -m mark ! --mark 0 -j ACCEPT
+ iptables -A PREROUTING -t mangle -m ipp2p --edk --kazaa --gnu --bit --apple --dc --soul --winmx --ares -j MARK --set-mark 1
+ iptables -A PREROUTING -t mangle -p tcp -m mark --mark 1 -j CONNMARK --save-mark
+
+    tc qdisc del dev eth0 root
+    tc qdisc add dev eth0 root handle 1: htb default 2
+    tc class add dev eth0 parent 1: classid 1:1 htb rate 256Kbit ceil 256Kbit
+	    tc class add dev eth0 parent 1:1 classid 1:2 htb rate 200Kbit ceil 256Kbit
+	    tc class add dev eth0 parent 1:1 classid 1:3 htb rate 56Kbit ceil 256Kbit
+    tc filter add dev eth0 parent 1:0 protocol ip prio 4 handle 1 fw classid 1:3
+
+     Observe nesse script rate e ceil, onde rate é a velocidade garantida e
+     ceil é a velocidade máxima permitida, se houver recurso livre em
+     alguma classe.  Aqui eu defini que a velocidade de meu link era
+     256Kbit e que garanto somente 56Kbit para tráfego P2P.
+
+     Para obter mais informações sobre HTB veja no (site oficial do HTB
+     (http://luxik.cdi.cz/~devik/qos/htb/)).
+
+     Se você quiser somente bloquear execute:
+
+iptables -A FORWARD -m ipp2p --edk --kazaa --gnu --bit --apple --dc --soul --winmx --ares -j DROP
+
+     Pronto!  Você já está com o poder em suas mãos.  Não se esqueça se
+     tiver qualquer dúvida mandar para
+     <debian-user-portuguese@lists.debian.org>
+
+
+-------------------------------------------------------------------------------
+
+
+     Controlando P2P no Debian
+
+     Raphael Bittencourt S. Costa <raphaelbscosta@yahoo.com.br>
+
+
+     Versão 1.0 Gerado em 18 abril 2005
+

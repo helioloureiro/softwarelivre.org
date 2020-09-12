@@ -1,0 +1,197 @@
+
+DDTP (Debian Description Translation Project) - Traduzindo uma Descrição de
+                               Pacote Debian
+----------------------------------------------------------------------------
+
+             Raphael Barreto <raphaelbarreto at gmail dot com>
+
+                             1.0 - agosto/2004
+
+
+-------------------------------------------------------------------------------
+
+
+Nota de Copyright
+-----------------
+
+     Copyright (C) 2004 Raphael Barreto
+
+     Copyright (c) 2004 Raphael Barreto <raphaelbarreto at gmail dot com>.
+     Permission is granted to copy, distribute and/or modify this document
+     under the terms of the GNU Free Documentation License, Version 1.2 or
+     any later version published by the Free Software Foundation; with no
+     Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.  A
+     copy of the license is in http://www.gnu.org/copyleft/fdl.html.
+
+
+-------------------------------------------------------------------------------
+
+
+Conteúdo
+--------
+
+     1.        Introdução
+
+     2.        Traduzindo
+     2.1.      Requisitos
+     2.2.      Passo a passo
+
+     3.        FAQ
+
+     4.        Sobre o autor
+
+     5.        Links
+
+
+-------------------------------------------------------------------------------
+
+
+1. Introdução
+-------------
+
+     O _DDTP (Debian Description Translation Project @
+     http://ddtp.debian.org/)_ é um projeto que visa traduzir as descrições
+     dos pacotes Debian para diversos idiomas.
+
+     Recomendo a quem tiver interesse em colaborar, assinar a lista oficial
+     correspondente ao idioma para o qual você deseja traduzir.
+
+     Note que são as listas l10n e não i18n!
+
+     Para o português a lista é: <debian-l10n-portuguese@lists.debian.org>
+
+     Veja as listas disponíveis em: http://lists.debian.org/i18n.html
+
+
+-------------------------------------------------------------------------------
+
+
+2. Traduzindo
+-------------
+
+
+2.1. Requisitos
+---------------
+
+     Você irá precisar de:
+
+        * Um editor de texto
+
+        * Um e-mail
+
+        * Ter conhecimento em inglês (duh!)
+
+
+2.2. Passo a passo
+------------------
+
+     Neste passo a passo vou mostrar como solicitar 1 (uma) descrição ao
+     servidor, entender o arquivo que ele envia e como enviar ao servidor o
+     arquivo traduzido.  Por motivos óbvios, a tradução é por sua conta.
+     :D
+
+     1.   Envie um e-mail para <desc@ddtp.dot.debian.org> (ativo em
+          20/08/2004) com o assunto:
+
+               get 1 pt_BR
+
+          (Substitua pt_BR pelo código do idioma para o qual deseja
+          traduzir.  pt_BR corresponde ao português brasileiro)
+
+     2.   Aguarde.  Deverá chegar um e-mail para você com o mesmo assunto
+          (get 1 pt_BR).  OK, Aqui vou explicar o que significa cada parte
+          desse e-mail:
+
+          O corpo da mensagem contém um guia de tradução do DDTP que você
+          também pode achar, nesse caso, no arquivo em anexo
+          `guide-pt_BR.txt'.  Esse guia irá listar os comandos disponíveis,
+          que são digitados no campo assunto para que o servidor possa
+          interpretá-los.
+
+          No arquivo `log.txt' você verá o log da transação que o seu
+          comando ao servidor resultou.
+
+          O arquivo `new.ddtp' é o mais importante para a tradução, pois
+          nele contém o texto original (em inglês) e irei explicá-lo melhor
+          agora:
+
+          As linhas com '#' estão comentadas.  A seção _Description_ e o
+          texto original, sendo que a linha onde tem _Description:_, ao
+          lado esta uma breve descrição do pacote (apenas uma linha)
+
+          Os parágrafos são separados por uma linha contendo apenas um
+          ponto.  _Não modifique isso!_
+
+          Em _Description-codigo do idioma:_ fica a versão no idioma para o
+          qual será a tradução.  Analogamente a seção _Description_, a
+          primeira linha e a tradução da breve descrição.
+
+          _Substitua_ (sim, apague e coloque sua tradução) o texto _trans_
+          por sua tradução, lembrando de manter a separação de parágrafos
+          pelo '.'.
+
+          Ao acabar de traduzir, verifique se existe uma linha comentada
+          _BTSCLOSE_.  Se houver, descomente-a.  Salve o arquivo.
+
+     3.   Envie um e-mail novamente para o mesmo e-mail que você solicitou
+          a descrição com o arquivo já traduzido anexado.  O assunto pode
+          ser em branco, ou qualquer outro comando.  Eu particularmente
+          deixo em branco ou uso o _noguide_ para ele não reenviar o guia.
+
+     4.   Aguarde novamente.  Deverá chegar outro email com alguns arquivos
+          em anexo.  Se você deixou em branco o assunto, ele deverá chegar
+          com o assunto _nothing_ e 3 anexos, sendo o `log.txt' importante
+          dar uma conferida para ver se tudo ocorreu bem.  Caso tenha dado
+          algum erro, reporte-o para a lista de disussão mencionada em
+          Capítulo 1, `Introdução'.
+
+
+-------------------------------------------------------------------------------
+
+
+3. FAQ
+------
+
+     TBD (TO BE DONE)
+
+     Se você tiver alguma dúvida, envie um e-mail para a lista de discussão
+     correspondente ao idioma, como citado em Capítulo 1, `Introdução'.  Ou
+     para o responsável pelo DDTP naquele idioma.
+
+
+-------------------------------------------------------------------------------
+
+
+4. Sobre o autor
+----------------
+
+     Raphael Barreto é Bacharel em Ciência da Computação e colaborador do
+     projeto Debian como tradutor/revisor.
+
+
+-------------------------------------------------------------------------------
+
+
+5. Links
+--------
+
+     DDTP: http://ddtp.debian.org/
+
+     Listas de discussão sobre tradução: http://lists.debian.org/i18n.html
+
+     Projeto Debian-br: http://www.debian-br.org
+
+     Projeto Debian: http://www.debian.org
+
+
+-------------------------------------------------------------------------------
+
+
+     DDTP (Debian Description Translation Project) - Traduzindo uma
+     Descrição de Pacote Debian
+
+     Raphael Barreto <raphaelbarreto at gmail dot com>
+
+
+     1.0 - agosto/2004
+

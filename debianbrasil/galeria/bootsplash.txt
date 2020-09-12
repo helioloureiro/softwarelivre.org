@@ -1,0 +1,320 @@
+
+                   Boot gráfico no Debian com BootSplash
+                   -------------------------------------
+
+               Tiago Bortoletto Vaz <tiagovaz@debian-ba.org>
+
+                          1.0 - Novembro de 2004
+
+
+-------------------------------------------------------------------------------
+
+
+Resumo
+------
+
+     Este documento descreve como utilizar o bootsplash para obter um boot
+     gráfico no Debian.  Pode ser referência também para usuários de outras
+     distribuições, embora algumas ferramentas abordadas sejam específicas
+     do Debian.
+
+
+Nota de Copyright
+-----------------
+
+     Copyright (C) 2004 Tiago Bortoletto Vaz
+
+     Esse manual está licenciado nos termos da GNU FDL (Free Documentation
+     License).  Ele é feito na intenção de ser útil à comunidade mas vem
+     sem nenhuma garantia, use a seu próprio risco.
+
+
+-------------------------------------------------------------------------------
+
+
+Conteúdo
+--------
+
+     1.        Introdução
+     1.1.      Pra quê boot gráfico?
+
+     2.        Preparando o kernel
+     2.1.      Baixando os fontes do kernel
+     2.2.      Compilando o novo kernel com suporte a boot gráfico
+
+     3.        Instalando o `bootsplash' e configurando o `boot loader'
+     3.1.      Instalando o bootsplash
+     3.2.      Configurando o `boot loader':
+     3.3.      Fazendo a maldita barra de progresso funcionar
+
+     4.        Referências
+
+
+-------------------------------------------------------------------------------
+
+
+1. Introdução
+-------------
+
+
+1.1. Pra quê boot gráfico?
+--------------------------
+
+     Algumas pessoas não gostam de ver aquelas letrinhas que geralmente
+     aparecem na inicialização de um sistema GNU/Linux.  É possível ter um
+     boot gráfico bastante agradável e personalizável numa distribuição
+     GNU/Linux, inclusive algumas delas já o fazem por padrão.  No Debian
+     podemos utilizar alguns de seus recursos para ter um boot gráfico com
+     facilidade.
+
+     Vamos ver aqui como aplicar o patch no kernel e criar um novo `.deb',
+     depois veremos como instalar o bootsplash, escolher um tema e fazer
+     funcionar a barra de progresso.  Os exemplos são baseados no Debian
+     `Sid', porém nada impede que os procedimentos sejam executados em
+     outra release do Debian ou em `CDDs'.
+
+
+-------------------------------------------------------------------------------
+
+
+2. Preparando o kernel
+----------------------
+
+
+2.1. Baixando os fontes do kernel
+---------------------------------
+
+     Você pode usar o `apt-get' ou o `aptitude' pra fazer o download dos
+     fontes do kernel do Debian.  Vamos aqui usar o aptitude.  Se você não
+     tem o aptitude instalado execute o comando abaixo:
+
+          apt-get install aptitude
+
+     Usaremos o kernel-2.6.7 como exemplo.  Você pode usar um kernel mais
+     atual, mas antes vejam em http://www.bootsplash.de/files/ se já existe
+     um `patch' disponível para o kernel mais atual.  Para baixar os fontes
+     do kernel-2.6.7 use o comando abaixo:
+
+          aptitude install kernel-source-2.6.7
+
+     Os fontes compactados estarão em `/usr/src/kernel-2.6.7-X.tar.bz2',
+     onde X pode variar de acordo com a última atualização do pacote no
+     repositório APT em uso.  No nosso caso X é 4, então teremos
+     `/usr/src/kernel-2.6.7-4.tar.bz2'.  Descompacte os fontes do kernel
+     com os comandos abaixo:
+
+          cd /usr/src
+          tar vfjx kernel-2.6.7-4.tar.bz2
+
+
+2.2. Compilando o novo kernel com suporte a boot gráfico
+--------------------------------------------------------
+
+     Talvez seja preciso instalar os pacotes `libncurses5' e
+     `kernel-package'.  Eles serão necessários para nossa compilação e
+     geração do pacote `.deb' do novo kernel.  Pra fazer isso execute:
+
+          aptitude install libncurses5 kernel-package
+
+     Agora é preciso baixar o patch que será aplicado no kernel para que
+     ele suporte o boot gráfico.  Você pode baixar o patch em
+     http://www.bootsplash.de/files/.  Vamos usar o patch
+     `bootsplash-3.1.4-sp3-2.6.7.diff' para o kernel que estamos usando.
+     Faça o download desse arquivo e salve-o no diretório dos fontes do
+     kernel, que no nosso caso é `/usr/src/kernel-2.6.7-4'.
+
+     Para aplicar o patch no kernel execute o comando a seguir dentro do
+     diretório `/usr/src/kernel-2.6.7-4' (lembrando que o arquivo
+     `bootsplash-3.1.4-sp3-2.6.7.diff' deve estar neste diretório):
+
+          patch -p1 < bootsplash-3.1.4-sp3-2.6.7.diff
+
+     Ainda dentro deste diretório execute o comando abaixo para começar o
+     procedimento de compilação:
+
+          make menuconfig
+
+     Sinta-se à vontade para escolher as opções do kernel de acordo com
+     suas necessidades.  Se você não se sente apto a fazer isso, deixe as
+     opções padrão, que dá suporte aos hardwares mais comuns.  É necessário
+     marcar algumas opções.  Siga os passos abaixo que não haverá
+     dificuldade (atenção: todas as opções abaixo _não_ devem ser marcadas
+     como módulo, marque-as com um '*'):
+
+        * Vá na tela principal --> `File Systems' --> `Misc File Systems' e
+          verifique se a opção `Compressed ROM File System Support
+          (cramfs)' está marcada.  Se não estiver marque-a.
+
+        * Vá na tela principal --> `Device Drivers' --> `Block Devices' e
+          verifique se as opções `Ram Disk Support' e `Initial RAM Disk
+          (initrd)' estão marcadas.  Se não estivere marque-as.
+
+        * Vá na tela principal --> `Device Drivers' -->`Graphics Support'
+          --> `Support For Frame Buffer devices' e verifique se as opções
+          `VGA 16 Color Graphics Suport' e `Vesa VGA Graphics support'
+          estão marcadas.  Se não estiverem marque-as.
+
+        * Vá na tela principal --> `Device Drivers' --> `Graphics Support'
+          --> `Console Display Driver Support' e verifique se a opção
+          `Framebuffer Console Support' está marcada.  Se não estiver
+          marque-a.
+
+        * Vá na tela principal --> `Device Drivers' --> `Graphics Support'
+          --> `Bootsplash Configuration' e verifique se a opção `Bootsplash
+          Screen' está marcada.  Se não estiver marque-a.
+
+     Agora chegou a hora de efetivamente compilar o kernel com as novas
+     opções.  Para isso salve suas as modificações e execute o comando
+     abaixo no mesmo diretório onde estão os fontes (para saber mais sobre
+     o processo de compilação do kernel no Debian veja Administrando Kernel
+     no Debian GNU/Linux
+     (http://debian-br.alioth.debian.org/docs/sgml/kdebian/kdebian-html/index.html)):
+
+          make-kpkg buildpackage -rev Custom.1 kernel_image
+
+     Esse comando irá criar os pacotes fonte e binário do seu novo kernel.
+     Eles estarão em `/usr/src'.  Entre nesse diretório e instale o novo
+     pacote kernel-image com o comando:
+
+          dpkg -i kernel-image-2.6.7_Custom.1_i386.deb
+
+
+-------------------------------------------------------------------------------
+
+
+3. Instalando o `bootsplash' e configurando o `boot loader'
+-----------------------------------------------------------
+
+
+3.1. Instalando o bootsplash
+----------------------------
+
+     Edite o arquivo `/etc/apt/sources.list' adicionando as seguinte
+     linhas:
+
+          deb http://www.bootsplash.de/files/debian unstable main
+          deb-src http://www.bootsplash.de/files/debian unstable main
+
+     Salve o arquivo e execute os comandos abaixo para instalar o
+     boosplash:
+
+          aptitude update
+          aptitude install bootsplash
+
+     Você pode agora escolher um tema para seu boot gráfico.  Execute o
+     comando
+
+          apt-cache search bootsplash
+
+     para ver uma lista de temas disponíveis.  Antes de escolher um tema
+     você pode ver seus screenshots em http://www.bootsplash.de/.  Vamos
+     escolher aqui o tema bootsplash-theme-killbilltux-yellow.  Para
+     instalá-lo devemos executar:
+
+          aptitude install bootsplash-theme-killbilltux-yellow
+
+     Para escolher o tema padrão basta executar:
+
+          dpkg-reconfigure bootsplash
+
+     É possível também escolher o tema padrão com uma ferramenta do próprio
+     bootsplash ( útil para usuários de outras distribuições):
+
+splash -s -f /etc/bootsplash/themes/killbilltux-yellow/config/bootsplash-1024x768.cfg >> /boot/initrd.img-2.6.7
+
+
+3.2. Configurando o `boot loader':
+----------------------------------
+
+3.2.1. Se você usa Lilo...
+--------------------------
+
+     Provavelmente ao ter instalado o novo kernel, seu `/etc/lilo.conf' foi
+     modificado.  Mas ainda é preciso adicionar algumas opções para seu
+     novo kernel nele:
+
+          initrd=/boot/initrd.splash
+          vga=791
+          append="splash=silent"
+
+     Salve o arquivo e execute o lilo para efetivar as modificações no MBR:
+
+          lilo
+
+3.2.2. Se você usa Grub...
+--------------------------
+
+     Considere que a entrada do seu novo kernel no arquivo
+     `/boot/grub/menu.lst' era:
+
+          title Debian GNU/Linux, kernel 2.6.6
+          kernel (hd0,5)/boot/vmlinuz-2.6.6 root=/dev/hda6
+          savedefault
+          boot
+
+     Preste atenção em como deve ficar agora:
+
+title Debian GNU/Linux, kernel 2.6.6
+kernel (hd0,5)/boot/vmlinuz-2.6.6 root=/dev/hda6 vga=791 splash=silent
+initrd (hd0,5)/boot/initrd.splash
+savedefault
+boot
+
+     Não é preciso executar nenhum comando, basta salvar o arquivo com as
+     modificações.
+
+     Obs: Você pode trocar "silent" por "verbose" nas configurações acima.
+     Fazendo isso você terá um boot "semi-gráfico", com uma imagem de
+     background mas as mensagens de boot sendo exibidas.  Alguns temas só
+     suportam essa opção.
+
+     Reinicie o sistema com o novo kernel.  Se tudo correr bem você terá um
+     boot gráfico como este:
+     http://www.bootsplash.de/files/themes/screenshots/Theme-KillBillTux-Yellow-silent.png.
+
+
+3.3. Fazendo a maldita barra de progresso funcionar
+---------------------------------------------------
+
+     Se você percebeu que a barra de progresso não andou durante seu boot
+     gráfico, relaxe.  Não é necessário fazer scripts e encher seu
+     `init.d/' de lixo (como eu fiz...).  Basta instalar um pacote chamado
+     sysv-rc-bootsplash.  Esse pacote irá substituir seus arquivos
+     `/etc/init.d/rc' e `/etc/init.d/rcS' executando os comandos
+     necessários para a barra de progresso do seu splash funcionar.  Para
+     fazer isso basta executar:
+
+          aptitude install sysv-rc-bootsplash
+
+
+-------------------------------------------------------------------------------
+
+
+4. Referências
+--------------
+
+     Muita coisa nesse documento foi baseada em
+     http://www.desktop-linux.net/bootsplash.htm.  Outras referências
+     interessantes sobre o assunto:
+
+        * http://www.bootsplash.de/ (temas, patches e mais temas...)
+
+        * http://www.bootsplash.org/ (página oficial do boostsplash)
+
+        * http://bulma.net/impresion.phtml?nIdNoticia=1812 (outra
+          documentação sobre bootsplash)
+
+        * http://www.desktop-linux.net/debkernel.htm (Debian Kernel 2.6 How
+          To)
+
+
+-------------------------------------------------------------------------------
+
+
+     Boot gráfico no Debian com BootSplash
+
+     Tiago Bortoletto Vaz <tiagovaz@debian-ba.org>
+
+
+     1.0 - Novembro de 2004
+
