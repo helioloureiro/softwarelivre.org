@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    <title>Galeria - Vinícius Gomes - Software Livre Brasil</title>
+
+    <style type="text/css">
+@import url(/stylesheets/slideshow.css);
+</style>
+    <script src="/javascripts/jquery-2.1.1.min.js"></script>
+<script src="/assets/vendor/sliderjs-4813c008b79ff67e006eacb62a9b8630.js"></script>
+<script src="/assets/vendor/pikachoose-476b26458f07a3a41eb6156f4ec6ef23.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function (){
+        $("#slideshow").PikaChoose({
+          buttons: { play: "Iniciar", stop: "Parar", previous: "Anterior", next: "Próximo" }
+        });
+        $("#slideshow").SliderJS({
+          window_width: 320,
+          window_height: 55,
+          list_width: 832,
+          pikachoose: true,
+          auto_play: false
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p class='back-button' ><a class="button icon- with-text" title="Voltar à galeria" href="http://softwarelivre.org/vinicius-gomes/galeria">&nbsp;<span>Voltar à galeria</span></a></p>
+<ul id='slideshow' >
+      <li><img title="Campus Party 8" src="/thumbnails/0140/9809/dsc03260_display.jpg" alt="Dsc03260 display" /></li>
+      <li><img title="Campus Party 8 - Firefox OS" src="/thumbnails/0141/0066/dsc03240_display.jpg" alt="Dsc03240 display" /></li>
+      <li><img title="CPBR8" src="/thumbnails/0141/0065/dsc-0514_display.jpg" alt="Dsc 0514 display" /></li>
+      <li><img title="D-LINK CPBR8 " src="/thumbnails/0141/0067/dsc03262_display.jpg" alt="Dsc03262 display" /></li>
+      <li><img title="NÃO a militarização da INTERNET" src="/thumbnails/0141/0058/19_display.jpg" alt="19 display" /></li>
+</ul>
+
+  </body>
+</html>
