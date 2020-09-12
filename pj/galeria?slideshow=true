@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    <title>galeria - P. J. - Software Livre Brasil</title>
+
+    <style type="text/css">
+@import url(/stylesheets/slideshow.css);
+</style>
+    <script src="/javascripts/jquery-2.1.1.min.js"></script>
+<script src="/assets/vendor/sliderjs-4813c008b79ff67e006eacb62a9b8630.js"></script>
+<script src="/assets/vendor/pikachoose-476b26458f07a3a41eb6156f4ec6ef23.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function (){
+        $("#slideshow").PikaChoose({
+          buttons: { play: "Iniciar", stop: "Parar", previous: "Anterior", next: "Próximo" }
+        });
+        $("#slideshow").SliderJS({
+          window_width: 320,
+          window_height: 55,
+          list_width: 832,
+          pikachoose: true,
+          auto_play: false
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p class='back-button' ><a class="button icon- with-text" title="Voltar à galeria" href="http://softwarelivre.org/pj/galeria">&nbsp;<span>Voltar à galeria</span></a></p>
+<ul id='slideshow' >
+      <li><img title="cego_surdo_mudo.jpg" src="/thumbnails/0053/5149/cego-surdo-mudo_display.jpg" alt="Cego surdo mudo display" /></li>
+      <li><img title="Dungeons_and_Dragons_Eric_by_kevinbolk.jpg" src="/thumbnails/0053/5150/dungeons-and-dragons-eric-by-kevinbolk_display.jpg" alt="Dungeons and dragons eric by kevinbolk display" /></li>
+      <li><img title="naipes.png" src="/thumbnails/0132/6549/naipes_display.png" alt="Naipes display" /></li>
+      <li><img title="set-se-vire-on.png" src="/thumbnails/0129/0802/set-se-vire-on_display.png" alt="Set se vire on display" /></li>
+      <li><img title="tux4321.png" src="/thumbnails/0053/5148/tux4321_display.png" alt="Tux4321 display" /></li>
+      <li><img title="tux-anonymous.jpeg" src="/thumbnails/0129/0803/tux-anonymous_display.jpeg" alt="Tux anonymous display" /></li>
+      <li><img title="tux-debian_big.png" src="/thumbnails/0054/2923/tux-debian-big_display.png" alt="Tux debian big display" /></li>
+</ul>
+
+  </body>
+</html>
