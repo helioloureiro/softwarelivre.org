@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    <title>Galeria - Marcos Antonio Ribeiro - Software Livre Brasil</title>
+
+    <style type="text/css">
+@import url(/stylesheets/slideshow.css);
+</style>
+    <script src="/javascripts/jquery-2.1.1.min.js"></script>
+<script src="/assets/vendor/sliderjs-4813c008b79ff67e006eacb62a9b8630.js"></script>
+<script src="/assets/vendor/pikachoose-476b26458f07a3a41eb6156f4ec6ef23.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function (){
+        $("#slideshow").PikaChoose({
+          buttons: { play: "Play", stop: "Stop", previous: "Previous", next: "Next" }
+        });
+        $("#slideshow").SliderJS({
+          window_width: 320,
+          window_height: 55,
+          list_width: 832,
+          pikachoose: true,
+          auto_play: false
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p class='back-button' ><a class="button icon- with-text" title="Back to gallery" href="http://softwarelivre.org/marcos0662/galeria">&nbsp;<span>Back to gallery</span></a></p>
+<ul id='slideshow' >
+      <li><img title="banner-870x1024.jpg" src="/thumbnails/0134/4879/banner-870x1024_display.jpg" alt="Banner 870x1024 display" /></li>
+      <li><img title="campus5.jpeg" src="/thumbnails/0169/3707/campus5_display.jpeg" alt="Campus5 display" /></li>
+      <li><img title="DSC06178.JPG" src="/thumbnails/0132/0050/dsc06178_display.jpg" alt="Dsc06178 display" /></li>
+      <li><img title="DSC06181.JPG" src="/thumbnails/0132/0051/dsc06181_display.jpg" alt="Dsc06181 display" /></li>
+      <li><img title="DSC06186.JPG" src="/thumbnails/0132/0052/dsc06186_display.jpg" alt="Dsc06186 display" /></li>
+      <li><img title="DSC06245.JPG" src="/thumbnails/0132/0062/dsc06245_display.jpg" alt="Dsc06245 display" /></li>
+      <li><img title="DSC06246.JPG" src="/thumbnails/0132/0063/dsc06246_display.jpg" alt="Dsc06246 display" /></li>
+      <li><img title="DSC06247.JPG" src="/thumbnails/0132/0064/dsc06247_display.jpg" alt="Dsc06247 display" /></li>
+      <li><img title="Divulgação atividade na cpbr10" src="/thumbnails/0169/5930/15800348-1291516770907068-550891861240513111-o_display.png" alt="15800348 1291516770907068 550891861240513111 o display" /></li>
+</ul>
+
+  </body>
+</html>
