@@ -1,0 +1,486 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt" class="controller-content_viewer action-content_viewer-view_page template-rightbar profile-type-is-person profile-name-is-marcelosoaressouza theme-sl-default">
+  <head>
+    <title>Em breve no Kernel Linux 3.7 - Parte 4 - Drivers - Marcelo</title>
+    <link rel="alternate" type="application/rss+xml" title="Blog do Marcelo Soares Souza" href="http://softwarelivre.org/marcelosoaressouza/blog-do-marcelo-soares-souza/feed" />
+    <!--<meta http-equiv="refresh" content="1"/>-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    
+
+      <meta name="description" content="Software Livre Brasil" />
+
+    <!-- site root -->
+    <meta property="noosfero:root" content=""/>
+
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    
+
+    <script src="/assets/application-1c0930e8f260aafbc74c4fad04079409.js"></script>
+
+  
+  
+<script src="/javascripts/plugins/pg_search/search.js"></script>
+<script src="/javascripts/plugins/pg_search/profile_search_block.js"></script>
+<script src="/assets/plugins/require_auth_to_comment/hide_comment_form-c3a3727ea301c62930e11aab20ae74d4.js"></script>
+<script src="/assets/plugins/require_auth_to_comment/jquery.livequery.min-d1fe96eb7788079f6e550db2b6610365.js"></script>
+<script src="/assets/plugins/orders/javascripts/locale-17eaae2c136082dab9da1d91648b6a7e.js"></script>
+<script src="/assets/plugins/orders/javascripts/toggle_edit-f9da47bc0223fac8e5e5174c6ea24413.js"></script>
+<script src="/assets/plugins/orders/javascripts/sortable-table-ba58eb377fc175eb1e374be63d5454a3.js"></script>
+<script src="/assets/plugins/orders/javascripts/help-14515dc2f741beaa4b3d121df366af0d.js"></script>
+<script src="/assets/plugins/orders/javascripts/orders-560e35746985dc40b97851b13705cb26.js"></script>
+<script src="/assets/plugins/html5_video/video-channel-6aca45f93220c0910d8273dd2368004e.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/locale-17eaae2c136082dab9da1d91648b6a7e.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/toggle_edit-f9da47bc0223fac8e5e5174c6ea24413.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/sortable-table-ba58eb377fc175eb1e374be63d5454a3.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/suppliers-35473b9ebd4b9e65027e1bafa94dfdcd.js"></script>
+<script src="/assets/plugins/event/event-b1013aca7ce3cf0d4d5e6e10dc1f05b2.js"></script>
+<script src="/assets/plugins/display_content/javascripts/jstree/_lib/jquery-1.8.3-09dfd3b315fe6b24fbc309e36f5d70c3.js"></script>
+<script src="/assets/plugins/display_content/javascripts/jstree/jquery.jstree-563d09f7e7938a8a2f4207bfe6d48dd3.js"></script>
+<script src="/assets/plugins/container_block/container_block-7eae56f79aa8da8b64941d18d2972c7b.js"></script>
+<script src="/assets/plugins/delivery/javascripts/delivery-da5b2dac737692db94d5bdc654586171.js"></script>
+<script src="/assets/plugins/products/javascripts/products-a4c860d8dbebe524d554f0b5564e0428.js"></script><script src="/designs/themes/sl-default/theme.js"></script><script>
+//<![CDATA[
+render_all_jquery_ui_widgets()
+//]]>
+</script>
+    <link rel="stylesheet" media="screen" href="/assets/application-e0072ababb97032fa1a5d95fa09d897c.css" />
+<link rel="stylesheet" media="screen" href="/designs/templates/rightbar/stylesheets/style.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/icons/default/style-b3a500c1e17f47b010a70fdb0103012e.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/icons/pidgin/style-138f7bb59f9d26296632e82eae162877.css" />
+<link rel="stylesheet" media="screen" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/people_block/style-c340afe175b0045c7f8669073a428a1c.css" />
+<link rel="stylesheet" media="screen" href="/stylesheets/plugins/pg_search/style.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/recent_content/style-e0d5f807f7056b173f6cf113c840ddc0.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/custom_forms/style-7870704d75309d55ffcaa827c59baa18.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/work_assignment/style-526deb629c3d9e7736f049b99c72a50a.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/require_auth_to_comment/style-66a0efab118159977ca0194806ef4bec.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/orders/style-feb7767bc71e62563ccab53642a6e4c2.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/html5_video/style-8f2b70d373ff7ec22b404d91b1b6f211.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/suppliers/style-64c71b3cd22994ada93abd55c70ea1ce.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/gallery_block/style-4547593291c3fca2ad50216cbb3dfdc9.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/send_email/style-976778195cb106e52b31d57242cdc01c.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/event/style-8f5f6a9b5a7724dbc4977d11c2e4321c.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/display_content/style-cf10f47511255685485ac51859c22a29.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/container_block/style-dd17a810971259abe7c31678e9d9c132.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/video/style-68d51000d73adab06c1dcd036011138d.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/delivery/style-aeef749320f3cdff642340f047806f9b.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/sub_organizations/style-88810bb91c1c70f63817f6f03295fd92.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/products/style-3147a337d78ccc54df05870c504166fd.css" />
+<link rel="stylesheet" media="screen" href="/designs/themes/sl-default/global.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/themes/sl-default/style-f317a60b59d0ee3e8048cb6eba54b282.css" />
+
+    
+    
+
+    <script type="text/javascript">
+      DEFAULT_LOADING_MESSAGE = 'loading...';
+      PERMANENT_NOTIFICATIONS = false;
+      noosfero.profile = "marcelosoaressouza"
+    </script>
+
+      
+<script src="/assets/tinymce/js/tinymce/tinymce-666c93593f34cd23b1f1e9177ab27cae.js"></script><script src="/assets/tinymce/js/tinymce/jquery.tinymce.min-33361c760deadb5b77610a12911056f2.js"></script><script src="/assets/tinymce-4df3fc98953118b704cdb7a023aafdc2.js"></script>
+<script type="text/javascript">
+tinymce.create('tinymce.plugins.MacrosPlugin', {
+  createControl: function(n, cm) {
+    switch (n) {
+       case 'macros':
+    }
+    return null;
+  }
+});
+
+function tinymce_macros_setup(editor) {
+}
+
+// Register plugin with a short name
+tinymce.PluginManager.add('macrosPlugin', tinymce.plugins.MacrosPlugin);
+
+jQuery(document).ready(function () {
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"pt_BR","selector":".tiny_mce","toolbar1":"fullscreen | insertfile undo redo | copy paste | bold italic underline | styleselect fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image","menubar":"edit insert view tools","toolbar2":"print preview code media | table | macros","macros_setup":[]})
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"pt_BR","selector":".tiny_mce_simple","toolbar1":"fullscreen | insertfile undo redo | copy paste | bold italic underline | styleselect fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image","menubar":false,"toolbar2":null,"macros_setup":[]})
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"pt_BR","selector":".tiny_mce_restricted","toolbar1":"bold italic underline | link","menubar":false,"toolbar2":null,"macros_setup":[]})
+});
+</script>
+
+
+  </head>
+  <body class="controller-content_viewer action-content_viewer-view_page template-rightbar">
+    <a href="#content" id="link-go-content"><span>Ir para o conteúdo</span></a>
+    
+    <div id="global-header">
+      <!-- div class='supportbanner'>
+  <div class='content'>
+    <div class='banner-title'>Campanha de doação 2016</div>
+    <div class='banner-subtitle'>Ajude a <span class='asl'>ASL.Org</span> a realizar o <span class='fisl17'>FISL17</span>!</div>
+    <p>Ajude a Associação Software Livre.Org a continuar seu trabalho de 12 anos em prol do desenvolvimento e disseminação do Software Livre. Faça uma doação e ganhe um ingresso cortesia para o <span class='fisl17'>FISL17</span> e uma camiseta oficial do evento.</p>
+  </div>
+  <div class='footer-links'>
+    <a class='logo-fisl17' href='http://fisl.org.br' target='_blank'><span>fisl17</span></a>
+    <a class='logo-asl' href='http://asl.org' target='_blank'><span>ASL.org</span></a>
+    <a class='iot-fisl' href='http://segue.fisl17.softwarelivre.org' target='_blank'><span>Contribua para o fisl17</span></a>
+  </div>
+</div -->
+
+    </div>
+
+    <div id="wrap-1">
+      <div id="theme-header">
+        <div id="top">
+  <ul id="top-menu">
+    <li><a href="/"><span>Início</span></a></li>
+    <li><a id="submenu-people" href="/search/people"><span class="icon-menu-people">Pessoas</span></a><a class="up menu-submenu-trigger" id="submenu-people-trigger" onclick="toggleSubmenu(this, '', {&quot;Mais recentes&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_recent&quot;},&quot;Mais ativas&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_active&quot;},&quot;Mais populares&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_popular&quot;}}); return false" href="#"><span>Menu de pessoas</span></a></li>
+    <li><a id="submenu-communities" href="/search/communities"><span class="icon-menu-community">Comunidades</span></a><a class="up menu-submenu-trigger" id="submenu-communities-trigger" onclick="toggleSubmenu(this, '', {&quot;Mais recentes&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_recent&quot;},&quot;Mais ativas&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_active&quot;},&quot;Mais populares&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_popular&quot;}}); return false" href="#"><span>Menu de comunidades</span></a></li>
+    <li><a href="/profile/portal/events" id="submenu-events"><span class='icon-menu-events'>Eventos</span></a></li>
+    <li><a href="/doc"><span>Manual</span></a></li>
+    <li><a href="/portal/quem-somos" id="submenu-about"><span>Sobre</span></a></li>
+  </ul>
+</div>
+
+      </div>
+      <div id="wrap-2">
+        <div id="user">
+    <span class='not-logged-in'>
+      <span class='login'><a id="link_login" onclick="return noosfero.modal.inline(&#39;#inlineLoginBox&#39;)" class="" href="/account/login"><i class="icon-menu-login"></i><strong>Entrar</strong></a></span>
+
+      <div id='inlineLoginBox' style='display: none;'>
+        <div class="login-box">
+
+<h2>Entrar</h2>
+
+
+
+
+<form action="/account/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="eoEpNsGTPC7MRqEeNq9AXswXioM1b4hZ3NUKM9FP7jLn6Zk3s8g+zSNdVICwLzo9g4ZAQD3jTwuBWTM3jsRI4A==" />
+
+     <div class="formfieldline"><label class="formlabel" for="main_user_login">Nome de usuário / E-mail</label><div class="formfield type-text"><input id="main_user_login" onchange="this.value = convToValidLogin( this.value )" type="text" name="user[login]" /></div></div>
+
+     <div class="formfieldline"><label class="formlabel" for="user_password">senha</label><div class="formfield type-password"><input type="password" name="user[password]" id="user_password" /></div></div>
+
+     <div class='checkbox'>
+       <label>
+         <input type="checkbox" name="remember_me" id="remember_me" value="1" checked="checked" />
+         Mantenha-me logado
+       </label>
+     </div>
+
+     
+
+     <div class=" button-bar">
+       <input type="submit" name="commit" value="Entrar" class="button with-text icon-login submit" />
+         <a class="button icon-close with-text modal-toggle modal-close" rel="deactivate" title="Cancelar" href="#">&nbsp;<span>Cancelar</span></a>
+<br style="clear: left;" /></div>
+</form>
+<div class=" button-bar">
+    <a class="button icon-add with-text" title="Novo usuário" href="/account/signup">&nbsp;<span>Novo usuário</span></a>
+
+    <a class="button icon-help with-text" title="Eu esqueci a minha senha!" href="/account/forgot_password">&nbsp;<span>Eu esqueci a minha senha!</span></a>
+<br style="clear: left;" /></div>
+</div><!-- end class="login-box" -->
+
+
+      </div>
+
+        <span class='or'>ou</span> <span class='signup'><a href="/account/signup"><strong>Registre-se</strong></a></span>
+    </span>
+  <form action="/search/articles" id="top-search" class="search_form clean" method="get">
+    <input name="query" size="15" title="Busca..." onfocus="this.form.className='focused';" onblur="this.form.className=''" />
+    <div>Aperte <strong>Enter</strong> para enviar a consulta.</div>
+    <script>
+//<![CDATA[
+jQuery("#user form input").hint();
+//]]>
+</script>
+  </form>
+</div><!-- end id="user" -->
+
+        <h1 id="site-title">
+          <a href="/"><span>Software livre Brasil</span></a>
+
+        </h1>
+        <div id="navigation">
+          <ul>
+            <div id="friends">
+<ul>
+  <li><a href="/portal"><span>+</span></a></li>
+  <li><a href="http://br-linux.org"><span>BR-Linux</span></a></li>
+  <li><a href="http://www.vivaolinux.com.br"><span>Viva o Linux</span></a></li>
+  <li><a href="http://www.revista.espiritolivre.org"><span>Revista Espírito Livre</span></a></li>
+  <li><a href="http://www.dicas-l.com.br"><span>Dicas-L</span></a></li>
+  <li><a href="http://www.sejalivre.org"><span>Seja Livre</span></a></li>
+  <li><a href="http://www.underlinux.com.br"><span>Under Linux</span></a></li>
+  <li><a href="http://www.sempreupdate.com.br"><span>Sempre Update</span></a></li>
+</ul>
+</div>
+<div id="external-links">
+<ul>
+  <li><a id="blogoosfero" title="Blogoosfero" href="http://blogoosfero.cc/software-livre" target="_blank"><span>Blogoosfero</span></a></li>
+  <li><a id="twitter" title="Twitter" href="https://twitter.com/PSLBrasil" target="_blank"><span>Twitter</span></a></li>
+  <li><a id="diaspora" title="Diaspora" href="https://diaspora.softwarelivre.org/u/pslbrasil" target="_blank"><span>Diaspora</span></a></li>
+  <li><a id="gnu-social" title="Quitter" href="https://quitter.se/pslbrasil" target="_blank"><span>Quitter</span></a></li>
+  <li><a id="feed" title="Feed" href="http://softwarelivre.org/portal/feed"><span>Feed</span></a></li>
+</ul>
+</div>
+
+          </ul>
+          <div id="navigation-end"></div>
+        </div><!-- end id="navigation" -->
+        <div id="content">
+          <div id="content-inner">
+  <div id="profile-header"></div><div class="boxes" id="boxes"><div class="box box-2" id="box-1886"><div class="blocks">  <div class="block-outer"><div class="block profile-image-block" id="block-3548" help="Este bloco apresenta a imagem do perfil"><div class="block-inner-1"><div class="block-inner-2"><div class="vcard">
+
+
+<div class="profile-big-image img-pic">
+  <div class="profile-big-image-inner1">
+    <div class="profile-big-image-inner2">
+      <a href="http://softwarelivre.org/marcelosoaressouza"><img alt="Marcelo Soares Souza" title="" class=" photo" src="/image_uploads/0001/7435/Caricatura_Marcelo_big.jpg" />
+</a>
+    </div>
+  </div>
+</div>
+
+  <p>Marcelo</p>
+
+
+<div class="profile-info-options">
+  <ul>
+</ul>
+
+</div>
+</div><!-- end class="vcard" -->
+</div></div></div></div>
+
+    <div class="block-outer"><div class="block link-list-block" id="block-3549" help="Este bloco pode ser usado para criar um menu de links. Você pode incluir, remove e atualizar links como quiser."><div class="block-inner-1"><div class="block-inner-2"><div class="block-header"><h3 class="block-title empty"><span></span></h3><h4 class="block-subtitle empty"><span></span></h4></div>
+
+
+
+<ul>
+    <li>
+      <a class="icon-menu-people" href="/profile/marcelosoaressouza">Perfil</a>
+    </li>
+    <li>
+      <a class="icon-photos" href="/marcelosoaressouza/galeria">Galeria de fotos</a>
+    </li>
+    <li>
+      <a class="icon-send" href="/contact/marcelosoaressouza/new">Contato</a>
+    </li>
+    <li>
+      <a class="icon-edit" href="/marcelosoaressouza/blog">Blog</a>
+    </li>
+</ul>
+</div></div></div></div>
+</div></div>
+<div class="box box-1" id="box-1885"><div class="blocks">  <div class="block-outer"><div class="block main-block" id="block-3547" help="Este bloco apresenta o conteúdo principal das suas páginas."><div class="block-inner-1"><div class="block-inner-2"><div class="main-content">
+<div id="article" class="text-article">
+
+
+
+<script type="text/javascript">
+    window.ONE_COMMENT = "Um comentário";
+    window.COMMENT_PLURAL = "comentários";
+    window.NO_COMMENT_YET = "Sem comentários ainda";
+</script>
+
+  <div id="article-parent">
+    <a class="button icon-back with-text" title="Voltar a Blog do Marc..." href="http://softwarelivre.org/marcelosoaressouza/blog-do-marcelo-soares-souza">&nbsp;<span>Voltar a Blog do Marc...</span></a>
+  </div>
+
+<div id="article-toolbar">
+  <div>
+  <div id="article-actions">
+
+    
+      <script>fullscreenPageLoad('#article')</script>
+    <a id="fullscreen-btn" onClick="toggle_fullwidth(&#39;#article&#39;)" class="button with-text icon-fullscreen" href="#" title="Ir para o modo tela cheia"><span>Tela cheia</span></a><a style="display: none;" id="exit-fullscreen-btn" onClick="toggle_fullwidth(&#39;#article&#39;)" class="button with-text icon-fullscreen" href="#" title="Sair do modo tela cheia"><span>Sair da tela cheia</span></a>
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+  </div>
+  <div id="article-header">
+    
+    
+      <h1 class="title">
+      Em breve no Kernel Linux 3.7 - Parte 4 - Drivers
+  </h1>
+  <span class="publishing-info">
+  <span class="date">
+    30 de Novembro de 2012, 0:00
+  </span>
+  <span class="author">
+    , por Software Livre Brasil
+  </span>
+  <span class="comments">
+     - 
+  </span>
+
+<span class="followers-count">
+|
+    Ninguém está seguindo este artigo ainda.
+</span>
+
+</span>
+
+  <div id='article-sub-header'>
+      <div id="article-hits">
+        Visualizado 285 vezes
+      </div>
+
+  </div>
+
+
+    
+  </div>
+</div>
+
+</div>
+
+
+
+  <div id="addThis">
+  <script type="text/javascript">
+    addthis_pub = 'ra-4d93d22a7a91a05f';
+    addthis_logo = '';
+    addthis_options = 'identica, twitter, www.facebook.com, favorites, email, delicious, tumblr, digg, slashdot, more';
+  </script>
+  <a href="http://www.addthis.com/bookmark.php" id="bt_addThis" target="_blank" onmouseover="return addthis_open(this, '', '[URL]')" onmouseout="addthis_close()" onclick="return addthis_sendto()"><img width="53" height="16" border="0" alt="" src="/images/bt-bookmark.gif" /></a>
+</div>
+
+
+  <div class="article-body article-body-text-article">
+    <p style="text-align: justify;"><span style="font-size: 14px;"><strong>Autor:</strong> Thorsten Leemhuis (Copyright (c) 2012 Heise Media UK Ltd.)<br><strong>Traduzido:</strong> Marcelo Soares Souza (Dúvidas e melhorias na tradução <a href="mailto:marcelo@juntadados.org">envie por E-mail</a>)<br><strong>Originalmente: <a href="http://h-online.com/-1757358">http://h-online.com/-1757358</a></strong><br> <br><img src="http://marcelo.juntadados.org/system/images/51/original/Kernel_Log_Penguin.jpg" alt="Logo Kernel Log Penguin" style="width: 113px; height: 150px; margin: 6px 12px; float: right;">Os desenvolvedores do driver Nouveau realizaram grandes mudanças na parte do kernel relacionado aos drivers das placas NVIDIA (1[1], 2[2], 3[3], 4[4], 5[5], 6[6] e outros). Este deve se adequar muito melhor aos chips NVIDIA, os quais os desenvolvedores tem se aprofundado através de engenharia reversa ao longo dos anos. O objetivo principal é uma arquitetura do driver mais limpa e simples, que torne a implementação de novas funcionalidades mais fáceis, tais como o NVIDIA Scalable Link Interface (SLI), que ainda não é suportado no Nouveau. Outra adição ao Linux 3.7 é um suporte rudimentar[7] para configuração do gerenciador da ventoinha para núcleos gráficos das séries NV40 a NV50[8], que é utilizadas nas séries 6xxx até 300 de placas GeForce. Para algumas placas de vídeo GeForce 600 com a GPU Kepler (NVE0[9]), o driver Nouveau agora utiliza[10] o seu próprio firmware[11], porém ainda não suporta funcionalidades de aceleração.<br> <br>O código para a configuração de saída de vídeo[12] será mais robusta e flexível graças a uma grande mudança no driver i915 da Intel. Agora o Sysfs pode ser usado para obter informações sobre a frequência do processador gráfico e para definir limites para que, por exemplo, limite a quantidade máxima de consumo de energia (1[13], 2[14], 3[15] e outros). Os usuários devem utilizar o parâmetro preliminary_hw_support no driver para ativar o suporte em alguns núcleos gráficos em alguns processadores que ainda não estão disponíveis.<br><br>No Linux 3.7, a não ser que alguma coisa mude, isto será necessários para os núcleos gráficos tais como os de codinome Haswell e ValleyView, que devem sair no próximo ano. Exigir o parâmetro deve prevenir que usuários acidentalmente usem estes processadores gráficos com um driver incompleto. Outras mudanças para o driver Intel no Linux 3.7 podem ser encontrado no blog do mantenedor Daniel Vetter[16].<br> <br>Mudanças realizadas no código de configuração de monitor, no driver gráfico Radeon irá, em alguns casos, permitir aos novos núcleos gráficos da AMD gerenciarem mais de dois monitores com mais de um phase-locked loop[19] (PLL), permitindo a combinação de mais múltiplos-monitores e diminuindo o consumo de energia[20] para algumas configurações (1[21], 2[22], 3[23], 4[24]).<br><br>Outra nova funcionalidade, traz o suporte a "2-level VM pagetables"[25], e pode diminuir o consumo de memória. Novas funcionalidades no driver Radeon incluem um gerenciador de backlight e melhorias na interação com o firmware do sistema através da ACPI, o que deve permitir que a regulação de brilho funcione melhor em notebooks (1[26], 2[27], 3[28], 4[29]).<br><strong> <br>Áudio</strong><br> <br>O suporte a mecanismo de redução de consumo de energia, em tempo de execução[30], nos drivers para chips de áudio HD não estão mais marcados como experimentais e serão ativados por padrão. Os desenvolvedores do kernel também expandiram o suporte[31], ao gerenciamento de energia em tempo de execução, no driver HDA, assim estes dispositivos PCI/PCIe podem entrar em estado de sleep.<br> <br>Outra adição ao kernel é uma API de mapeamento de canais para melhor consulta e configuração de canais de áudio, o que deve ser útil quando utilizado a funcionalidade de som surround (1[32], 2[33], 3[34], 4[35], 5[36]).<br> <br>Existe também um novo driver para o chip CMI8328 da C-Media [37], que pode ser encontrado em placas de áudio AudioExcel AV500.<br><br>A versão do driver ALSA[38] no kernel não pode mais ser vista através do sistema de arquivos proc; como explica o comentário de envio deste commit, a informação não necessariamente corresponde a versão dos pacotes de drivers que o projeto ALSA disponibiliza.<br> <br><strong>Multimídia</strong><br> <br>O subsistema de mídia traz uma nova API para controladores DVB conectados por USB; um grande número de drivers do kernel foram modificados para usar a API DVB USB v2. Espera-se que esta mudança corrija um grande número de erros e garanta um comportamento adequado durante a suspensão e resumo do sistema. Os desenvolvedores também mudaram o local do driver dentro dos diretórios do kernel ('drivers/media/'), movendo muitos drivers para novos subdiretórios (1[39], 2[40], 3[41], 4[42] e outros).<br><br>Juntamente com as mudanças no driver Nouveau e a separação da API do espaço de usuário, esta é uma das principais razões da análise diffstat mostrar tantas mudanças quando comparada ao Linux 3.6.<br> <br>Outras adições incluem suporte a multistream para o DVB-T2[43], ao driver adv7604[44] e para o decodificador ADV7604.<br><br>O driver coda[45], para o codificador de vídeo Chips&amp;Media e o suporte para receptores de infravermelho TechnoTrend[46] estão disponíveis pela primeira vez. O driver ngene agora funciona com o[47] Terratec Cynergy 2400i Dual DVB-T; af9035[48], com o Asus MyCinema U3100Mini Plus.<br><br>Outro acréscimo ao kernel é o driver stk1160[49] para o chip USB de áudio e vídeo de mesmo nome, que é usado, por exemplo, pelo dispositivo Easycap DVR USB. Este dispositivo foi anteriormente suportado pelo driver easycap na área de avaliação.<br> <br><strong>Área de avaliação</strong><br> <br>Uma adição a área de avaliação, devido ao seu código ainda em desenvolvimento, é o driver silicom[51] para as placas de rede Silicom's "Bypass", que junta duas ou quatro portas.<br><br>O Ramster, que pode transferir partes da RAM para outro sistema em um cluster e que foi adicionado no Linux 3.5, foi redesenhado (1[52], 2[53], 3[54] e outros). O novo código usa o Zcache2, projetado pelo desenvolvedor do Ramster; a implementação é uma reescrita do Zcache, que pode comprimir espaços de swap e partes da memória do sistema e que esta atualmente na área de avaliação.<br><br>Os desenvolvedores das duas variantes do Zcache ainda não chegaram a um acordo[55] sobre qual das implementações é melhor para uma determinada solução fora da área de avaliação.<br> <br><strong>Diversos</strong><br> <br>O subsistema human interface devices (HIDs) agora suporta o controle remoto do Sony PS3 Blue-ray Disc[56]. O driver para o wiimote pode agora trabalhar com o Nintendo Balance-Board[57], enquanto um novo framework[58] foi adicionado para suportar sensores HID.<br> <br>O subsistema de entrada agora suporta mais de 32 dispositivos de entrada[59] - um limite que ocasionalmente é atingido.<br> <br>Utilizando o SR-IOV, o driver Infiniband mlx4 pode agora transferir parte das funções suportadas por HBAs Mellanox para sistemas virtualizadas (1[60], 2[61] e outros).<br><strong> <br>Links para este artigo:</strong><br>[1] http://git.kernel.org/linus/ebb945a94bba2ce8dff7b0942ff2b3f2a52a0a69<br>[2] http://git.kernel.org/linus/77145f1cbdf8d28b46ff8070ca749bad821e0774<br>[3] http://git.kernel.org/linus/cb75d97e9c77743ecfcc43375be135a55a4d9b25<br>[4] http://git.kernel.org/linus/3863c9bc887e9638a9d905d55f6038641ece78d6<br>[5] http://git.kernel.org/linus/9274f4a9ba7e70d1770e237fca16d52f27f0c728<br>[6] http://git.kernel.org/linus/70790f4f819875e8f390871fd15bbbf823f28e1b<br>[7] http://git.kernel.org/linus/2f951a5db5b55f65eb02d9a90aa7cecafde9f8b8<br>[8] http://nouveau.freedesktop.org/wiki/CodeNames<br>[9] http://nouveau.freedesktop.org/wiki/CodeNames#NVE0<br>[10] http://git.kernel.org/linus/e5bf578ce61aecd4612d16e60235c11ed5f92c0e<br>[11] http://git.kernel.org/linus/1978a2f280563427bb675b3197391745aef73424<br>[12] http://blog.ffwll.ch/2012/08/new-modeset-code.html<br>[13] http://git.kernel.org/linus/df6eedc81d43c2245885c6baeb28d488c8a4dea4<br>[14] http://git.kernel.org/linus/ac6ae347a50bfb4667438272c0d48f4fd41154db<br>[15] http://git.kernel.org/linus/46ddf194776500e132693dd2c11b28a971070cc0<br>[16] http://blog.ffwll.ch/2012/10/neat-drmi915-stuff-for-37.html<br>[17] http://article.gmane.org/gmane.linux.kernel/1400265<br>[18] http://article.gmane.org/gmane.linux.kernel/1395793<br>[19] http://en.wikipedia.org/wiki/Phase-locked_loop<br>[20] http://article.gmane.org/gmane.comp.video.dri.devel/74665<br>[21] http://git.kernel.org/linus/19eca43e5a52a8e47fdd40e940912b2417c7c055<br>[22] http://git.kernel.org/linus/f3dd8508d459a2d0d0bc426144b92f1696d4fe86<br>[23] http://git.kernel.org/linus/57b35e29cf4e45eb163631c4ece10dbc259ddf30<br>[24] http://git.kernel.org/linus/2f454cf1261ba913e2f660b7555864b340502c60<br>[25] http://git.kernel.org/linus/fa87e62d357ccf73831cd52ed316593d0968020d<br>[26] http://git.kernel.org/linus/9e05b2f49eb9484e857e9b6c70dea3bbbe564290<br>[27] http://git.kernel.org/linus/f3728734ba78310525bf4a361c7787c7c6fa5d40<br>[28] http://git.kernel.org/linus/fda4b25c55a59ba12378e4b9e4553f6ea57d802d<br>[29] http://git.kernel.org/linus/37e9b6a62fb775276f8edb5bd2b9f13a3102b9dd<br>[30] http://git.kernel.org/linus/83012a7ccbb90dee33c97a004b3e374f988612af<br>[31] http://git.kernel.org/linus/b8dfc4624162c0547d7f36a9df48da2d9b4bd58a<br>[32] http://git.kernel.org/linus/be84bbcccc757b86449daaf924e72f95c95dc00e<br>[33] http://git.kernel.org/linus/7b31d0095e87221dc32c95642a2a714ea08259aa<br>[34] http://git.kernel.org/linus/080108c4747c7378c3601b8584237484f977d8a8<br>[35] http://git.kernel.org/linus/9c9a5175e65b2667001e6a3b6dedddebeee82aa2<br>[36] http://git.kernel.org/linus/2ea3c6a2c779e5a6487d2b436770232162dfbbe3<br>[37] http://git.kernel.org/linus/f9933487468c760b8cd9b4e9f7ec4e494f711a0a<br>[38] http://git.kernel.org/linus/4266274836e81575ee82498d84f4bd08ab7a7378<br>[39] http://git.kernel.org/linus/0c0d06cac63ee327ceaab4b5ffe2206574ab86bd<br>[40] http://git.kernel.org/linus/b285192a43f0432d82c2c10974204e78af0da596<br>[41] http://git.kernel.org/linus/2c3fb08b3f74b8792004095a1f6881a3296ff643<br>[42] http://git.kernel.org/linus/25aee3debe0464f6c680173041fa3de30ec9ff54<br>[43] http://git.kernel.org/linus/287cefd096b124874dc4d6d155f53547c0654860<br>[44] http://git.kernel.org/linus/54450f591c9927496b3d41c041fa802d0ef96885<br>[45] http://git.kernel.org/linus/186b250a07253770717f41eee911b8c5467be04e<br>[46] http://git.kernel.org/linus/0938069fa08970f1c898970c1331a029efe9a1ce<br>[47] http://git.kernel.org/linus/397e972350c42cbaf3228fe2eec23fecf6a69903<br>[48] http://git.kernel.org/linus/d67ceb3398d7ae7fda78ec753639296f442ecf66<br>[49] http://git.kernel.org/linus/9cb2173e6ea8f2948bd1367c93083a2500fcf08f<br>[50] http://git.kernel.org/linus/062ef0d4bb66e975a79dec4d5cc3ef1bf584efef<br>[51] http://git.kernel.org/linus/7040e556c90aefd7b0e1341f7490de20a33340d7<br>[52] http://git.kernel.org/linus/c857ce1659b058c087bce9874cb4eeb5adbf04c5<br>[53] http://git.kernel.org/linus/14c9fda5c477305ccf0d82ccbdfd47f66a557d65<br>[54] http://git.kernel.org/linus/faca2ef77abf1983e87d36b14bc181efb983979a<br>[55] http://thread.gmane.org/gmane.linux.kernel.mm/85248/focus%3D86798<br>[56] http://git.kernel.org/linus/5844c1cdb630b537a2ecdf74dab2985e51dc1bd9<br>[57] http://git.kernel.org/linus/5ad67fbc2a0f5b7e744ce2263a2340b7ebe92e00<br>[58] http://git.kernel.org/linus/401ca24fb34aee0cedf9c4fef361e533224f15a1<br>[59] http://git.kernel.org/linus/7f8d4cad1e4e11a45d02bd6e024cc2812963c38a<br>[60] http://git.kernel.org/linus/37bfc7c1e83f1589bcdc5918c7216422662644ee<br></span></p>
+    <br style="clear:both" />
+  </div> <!-- end class="article-body" -->
+
+
+  <div id="article-tags">
+    Tags deste artigo:
+    <a href="/profile/marcelosoaressouza/tags/linux">linux</a>
+<a href="/profile/marcelosoaressouza/tags/desenvolvimento">desenvolvimento</a>
+<a href="/profile/marcelosoaressouza/tags/em%20breve%20no%20kernel%20linux">em breve no kernel linux</a>
+<a href="/profile/marcelosoaressouza/tags/software%20livre">software livre</a>
+<a href="/profile/marcelosoaressouza/tags/kernel">kernel</a>
+  </div>
+
+
+
+
+
+
+</div><!-- end id="article" -->
+<link rel="stylesheet" media="screen" href="/assets/vendor/jquery.fancybox-f18bccba6b2b1108ccca4462da78aa43.css" /><script src="/assets/vendor/jquery.fancybox.pack-c84445b4cd8162f8a15703d690ccc514.js"></script><script>
+//<![CDATA[
+apply_zoom_to_images("Mais zoom")
+//]]>
+</script>
+</div></div></div></div></div>
+</div></div></div><div id="profile-footer"></div>
+  <br style='clear: both'/>
+</div><!-- end id="content-inner" -->
+
+        </div><!-- end id="content" -->
+      </div><!-- end id="wrap-2" -->
+    </div><!-- end id="wrap-1" -->
+    
+    <div id="footer">
+      <div id="theme-footer">
+        <div id="footer-environment">
+<div id="footer-links">
+  <ul>
+    <li><ul id="slbr-footer">
+        <li><a href="http://softwarelivre.org" id="slbr" class="link-this-page"><span>Software Livre - Brasil</span></a></li>
+        <li><a href="http://softwarelivre.org/tv"><span>TV Software Livre</span></a></li>
+        <li><a href="http://softwarelivre.org/radio"><span>Rádio Software Livre</span></a></li>
+        </ul></li>
+    <li><ul id="conheca-footer"><h3>Conheça</h3>
+        <li><a href="http://softwarelivre.org/portal/quem-somos">Quem Somos</a></li>
+        <li><a href="http://softwarelivre.org/portal/termos-de-uso">Termos de Uso</a></li>
+        <li><a href="http://softwarelivre.org/doc">Documentação</a></li>
+        <li><a href="http://softwarelivre.org/contact/portal/new">Fale Conosco</a></li>
+        </ul></li>
+    <li><ul id="colabore-footer"><h3>Colabore</h3>
+        <li><b><a href="http://softwarelivre.org/myprofile/portal/cms/suggest_an_article">Sugerir um Artigo</a></b></li>
+        <li><a href="http://softwarelivre.org/portal/melhorias">Sugerir Melhorias</a></li>
+        <li><a href="http://softwarelivre.org/portal/bugs">Reportar um Bug</a></li>
+        <li><a href="http://softwarelivre.org/portal/desenvolvimento">Desenvolvimento</a></li>
+        </ul></li>
+    <li><ul id="compartilhe-footer"><h3>Compartilhe</h3>
+        <li><b><!-- AddToAny BEGIN -->
+        <a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fsoftwarelivre.org&amp;linkname=SoftwareLivre.org">Compartilhar Isto!</a>
+        <script type="text/javascript">
+        var a2a_config = a2a_config || {};
+        a2a_config.linkname = "SoftwareLivre.org";
+        a2a_config.linkurl = "http://softwarelivre.org";
+        a2a_config.onclick = 1;
+        a2a_config.locale = "pt-BR";
+        a2a_config.num_services = 6;
+        a2a_config.prioritize = ["identi_ca", "twitter", "facebook", "google_buzz", "digg", "email"]
+        </script>
+        <script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END --></b></li>
+        <li><a href="http://softwarelivre.org/portal/eventos">Novos Eventos</a></li>
+        <li><a href="http://softwarelivre.org/portal/portfolio">Portfólio Livre</a></li>
+        <li><a href="http://softwarelivre.org/portal/divulgue">Páginas Amigas</a></li>
+        </ul></li>
+    <li><ul id="apoio-footer"><h3>Apoio</h3>
+        <li> <a href="http://softwarelivre.org/portal/apoio"><img src="/portal/anuncios/apoio.png" style="width:204px"><span>Apoio</span></img></a></li>
+        </ul></li>
+</div><!-- end id="footer-links" -->
+
+<div id="copyright">
+  © Copyleft 2015 -<a id="link-asl" href="http://associacao.softwarelivre.org/" title="Associação SoftwareLivre.org">ASL</a> - Alguns direitos reservados, exceto quando especificado em contrário e nos conteúdos replicados de outras fontes.
+  <p id="noosfero-license">Este site utiliza o software livre <a href="http://www.noosfero.org/" id="link-noosfero">Noosfero</a>, licenciado sob a licença <a href="http://www.gnu.org/licenses/agpl.html">GNU Affero General Public License</a>, versão 3 ou superior.  </p>
+</div><!-- end id="copyright" -->
+</div>
+
+<script type="text/javascript">
+  jQuery(function($) {
+    $(".highlights-block").insertAfter("#theme-header");
+    $(".action-home-index #block-695148").insertBefore("#block-666540");
+    $(".action-environment_design-index #block-695148").insertBefore("#block-666540");
+    $(".action-home-index #block-695454").insertAfter("#block-666540");
+    $(".action-environment_design-index #block-695454").insertAfter("#block-666540");
+    $("#site-title").prependTo("#top");
+    $("#user").insertAfter("#site-title");
+  });
+</script>
+
+      </div><!-- end id="theme-footer" -->
+      <div id="global-footer">
+        
+      </div><!-- end id="global-footer" -->
+    </div><!-- end id="footer" -->
+    
+    <script src="https://s7.addthis.com/js/152/addthis_widget.js"></script>
+    <!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+     var u = "piwik.colivre.coop.br/";
+     if(!u.match(/^https?/)){
+       var protocol = ("https:" == document.location.protocol ? "https" : "http");
+       u = protocol + '://' + u;
+     }
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 3]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.colivre.coop.br/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+  </body>
+</html>

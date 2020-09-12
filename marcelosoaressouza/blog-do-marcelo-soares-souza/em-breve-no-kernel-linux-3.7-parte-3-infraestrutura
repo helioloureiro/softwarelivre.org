@@ -1,0 +1,486 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt" class="controller-content_viewer action-content_viewer-view_page template-rightbar profile-type-is-person profile-name-is-marcelosoaressouza theme-sl-default">
+  <head>
+    <title>Em breve no Kernel Linux 3.7 - Parte 3 - Infraestrutura - Marcelo</title>
+    <link rel="alternate" type="application/rss+xml" title="Blog do Marcelo Soares Souza" href="http://softwarelivre.org/marcelosoaressouza/blog-do-marcelo-soares-souza/feed" />
+    <!--<meta http-equiv="refresh" content="1"/>-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    
+
+      <meta name="description" content="Software Livre Brasil" />
+
+    <!-- site root -->
+    <meta property="noosfero:root" content=""/>
+
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    
+
+    <script src="/assets/application-1c0930e8f260aafbc74c4fad04079409.js"></script>
+
+  
+  
+<script src="/javascripts/plugins/pg_search/search.js"></script>
+<script src="/javascripts/plugins/pg_search/profile_search_block.js"></script>
+<script src="/assets/plugins/require_auth_to_comment/hide_comment_form-c3a3727ea301c62930e11aab20ae74d4.js"></script>
+<script src="/assets/plugins/require_auth_to_comment/jquery.livequery.min-d1fe96eb7788079f6e550db2b6610365.js"></script>
+<script src="/assets/plugins/orders/javascripts/locale-17eaae2c136082dab9da1d91648b6a7e.js"></script>
+<script src="/assets/plugins/orders/javascripts/toggle_edit-f9da47bc0223fac8e5e5174c6ea24413.js"></script>
+<script src="/assets/plugins/orders/javascripts/sortable-table-ba58eb377fc175eb1e374be63d5454a3.js"></script>
+<script src="/assets/plugins/orders/javascripts/help-14515dc2f741beaa4b3d121df366af0d.js"></script>
+<script src="/assets/plugins/orders/javascripts/orders-560e35746985dc40b97851b13705cb26.js"></script>
+<script src="/assets/plugins/html5_video/video-channel-6aca45f93220c0910d8273dd2368004e.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/locale-17eaae2c136082dab9da1d91648b6a7e.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/toggle_edit-f9da47bc0223fac8e5e5174c6ea24413.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/sortable-table-ba58eb377fc175eb1e374be63d5454a3.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/suppliers-35473b9ebd4b9e65027e1bafa94dfdcd.js"></script>
+<script src="/assets/plugins/event/event-b1013aca7ce3cf0d4d5e6e10dc1f05b2.js"></script>
+<script src="/assets/plugins/display_content/javascripts/jstree/_lib/jquery-1.8.3-09dfd3b315fe6b24fbc309e36f5d70c3.js"></script>
+<script src="/assets/plugins/display_content/javascripts/jstree/jquery.jstree-563d09f7e7938a8a2f4207bfe6d48dd3.js"></script>
+<script src="/assets/plugins/container_block/container_block-7eae56f79aa8da8b64941d18d2972c7b.js"></script>
+<script src="/assets/plugins/delivery/javascripts/delivery-da5b2dac737692db94d5bdc654586171.js"></script>
+<script src="/assets/plugins/products/javascripts/products-a4c860d8dbebe524d554f0b5564e0428.js"></script><script src="/designs/themes/sl-default/theme.js"></script><script>
+//<![CDATA[
+render_all_jquery_ui_widgets()
+//]]>
+</script>
+    <link rel="stylesheet" media="screen" href="/assets/application-e0072ababb97032fa1a5d95fa09d897c.css" />
+<link rel="stylesheet" media="screen" href="/designs/templates/rightbar/stylesheets/style.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/icons/default/style-b3a500c1e17f47b010a70fdb0103012e.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/icons/pidgin/style-138f7bb59f9d26296632e82eae162877.css" />
+<link rel="stylesheet" media="screen" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/people_block/style-c340afe175b0045c7f8669073a428a1c.css" />
+<link rel="stylesheet" media="screen" href="/stylesheets/plugins/pg_search/style.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/recent_content/style-e0d5f807f7056b173f6cf113c840ddc0.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/custom_forms/style-7870704d75309d55ffcaa827c59baa18.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/work_assignment/style-526deb629c3d9e7736f049b99c72a50a.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/require_auth_to_comment/style-66a0efab118159977ca0194806ef4bec.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/orders/style-feb7767bc71e62563ccab53642a6e4c2.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/html5_video/style-8f2b70d373ff7ec22b404d91b1b6f211.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/suppliers/style-64c71b3cd22994ada93abd55c70ea1ce.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/gallery_block/style-4547593291c3fca2ad50216cbb3dfdc9.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/send_email/style-976778195cb106e52b31d57242cdc01c.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/event/style-8f5f6a9b5a7724dbc4977d11c2e4321c.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/display_content/style-cf10f47511255685485ac51859c22a29.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/container_block/style-dd17a810971259abe7c31678e9d9c132.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/video/style-68d51000d73adab06c1dcd036011138d.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/delivery/style-aeef749320f3cdff642340f047806f9b.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/sub_organizations/style-88810bb91c1c70f63817f6f03295fd92.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/products/style-3147a337d78ccc54df05870c504166fd.css" />
+<link rel="stylesheet" media="screen" href="/designs/themes/sl-default/global.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/themes/sl-default/style-f317a60b59d0ee3e8048cb6eba54b282.css" />
+
+    
+    
+
+    <script type="text/javascript">
+      DEFAULT_LOADING_MESSAGE = 'loading...';
+      PERMANENT_NOTIFICATIONS = false;
+      noosfero.profile = "marcelosoaressouza"
+    </script>
+
+      
+<script src="/assets/tinymce/js/tinymce/tinymce-666c93593f34cd23b1f1e9177ab27cae.js"></script><script src="/assets/tinymce/js/tinymce/jquery.tinymce.min-33361c760deadb5b77610a12911056f2.js"></script><script src="/assets/tinymce-4df3fc98953118b704cdb7a023aafdc2.js"></script>
+<script type="text/javascript">
+tinymce.create('tinymce.plugins.MacrosPlugin', {
+  createControl: function(n, cm) {
+    switch (n) {
+       case 'macros':
+    }
+    return null;
+  }
+});
+
+function tinymce_macros_setup(editor) {
+}
+
+// Register plugin with a short name
+tinymce.PluginManager.add('macrosPlugin', tinymce.plugins.MacrosPlugin);
+
+jQuery(document).ready(function () {
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"pt_BR","selector":".tiny_mce","toolbar1":"fullscreen | insertfile undo redo | copy paste | bold italic underline | styleselect fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image","menubar":"edit insert view tools","toolbar2":"print preview code media | table | macros","macros_setup":[]})
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"pt_BR","selector":".tiny_mce_simple","toolbar1":"fullscreen | insertfile undo redo | copy paste | bold italic underline | styleselect fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image","menubar":false,"toolbar2":null,"macros_setup":[]})
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"pt_BR","selector":".tiny_mce_restricted","toolbar1":"bold italic underline | link","menubar":false,"toolbar2":null,"macros_setup":[]})
+});
+</script>
+
+
+  </head>
+  <body class="controller-content_viewer action-content_viewer-view_page template-rightbar">
+    <a href="#content" id="link-go-content"><span>Ir para o conteúdo</span></a>
+    
+    <div id="global-header">
+      <!-- div class='supportbanner'>
+  <div class='content'>
+    <div class='banner-title'>Campanha de doação 2016</div>
+    <div class='banner-subtitle'>Ajude a <span class='asl'>ASL.Org</span> a realizar o <span class='fisl17'>FISL17</span>!</div>
+    <p>Ajude a Associação Software Livre.Org a continuar seu trabalho de 12 anos em prol do desenvolvimento e disseminação do Software Livre. Faça uma doação e ganhe um ingresso cortesia para o <span class='fisl17'>FISL17</span> e uma camiseta oficial do evento.</p>
+  </div>
+  <div class='footer-links'>
+    <a class='logo-fisl17' href='http://fisl.org.br' target='_blank'><span>fisl17</span></a>
+    <a class='logo-asl' href='http://asl.org' target='_blank'><span>ASL.org</span></a>
+    <a class='iot-fisl' href='http://segue.fisl17.softwarelivre.org' target='_blank'><span>Contribua para o fisl17</span></a>
+  </div>
+</div -->
+
+    </div>
+
+    <div id="wrap-1">
+      <div id="theme-header">
+        <div id="top">
+  <ul id="top-menu">
+    <li><a href="/"><span>Início</span></a></li>
+    <li><a id="submenu-people" href="/search/people"><span class="icon-menu-people">Pessoas</span></a><a class="up menu-submenu-trigger" id="submenu-people-trigger" onclick="toggleSubmenu(this, '', {&quot;Mais recentes&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_recent&quot;},&quot;Mais ativas&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_active&quot;},&quot;Mais populares&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_popular&quot;}}); return false" href="#"><span>Menu de pessoas</span></a></li>
+    <li><a id="submenu-communities" href="/search/communities"><span class="icon-menu-community">Comunidades</span></a><a class="up menu-submenu-trigger" id="submenu-communities-trigger" onclick="toggleSubmenu(this, '', {&quot;Mais recentes&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_recent&quot;},&quot;Mais ativas&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_active&quot;},&quot;Mais populares&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_popular&quot;}}); return false" href="#"><span>Menu de comunidades</span></a></li>
+    <li><a href="/profile/portal/events" id="submenu-events"><span class='icon-menu-events'>Eventos</span></a></li>
+    <li><a href="/doc"><span>Manual</span></a></li>
+    <li><a href="/portal/quem-somos" id="submenu-about"><span>Sobre</span></a></li>
+  </ul>
+</div>
+
+      </div>
+      <div id="wrap-2">
+        <div id="user">
+    <span class='not-logged-in'>
+      <span class='login'><a id="link_login" onclick="return noosfero.modal.inline(&#39;#inlineLoginBox&#39;)" class="" href="/account/login"><i class="icon-menu-login"></i><strong>Entrar</strong></a></span>
+
+      <div id='inlineLoginBox' style='display: none;'>
+        <div class="login-box">
+
+<h2>Entrar</h2>
+
+
+
+
+<form action="/account/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="Dfc2gfODLlbKH2xN8dhQjut8SnSBy1vYrHQoV4rK+ViQn4aAgdgstSUEmdN3WCrtpO2At4lHnIrx+BFT1UFfig==" />
+
+     <div class="formfieldline"><label class="formlabel" for="main_user_login">Nome de usuário / E-mail</label><div class="formfield type-text"><input id="main_user_login" onchange="this.value = convToValidLogin( this.value )" type="text" name="user[login]" /></div></div>
+
+     <div class="formfieldline"><label class="formlabel" for="user_password">senha</label><div class="formfield type-password"><input type="password" name="user[password]" id="user_password" /></div></div>
+
+     <div class='checkbox'>
+       <label>
+         <input type="checkbox" name="remember_me" id="remember_me" value="1" checked="checked" />
+         Mantenha-me logado
+       </label>
+     </div>
+
+     
+
+     <div class=" button-bar">
+       <input type="submit" name="commit" value="Entrar" class="button with-text icon-login submit" />
+         <a class="button icon-close with-text modal-toggle modal-close" rel="deactivate" title="Cancelar" href="#">&nbsp;<span>Cancelar</span></a>
+<br style="clear: left;" /></div>
+</form>
+<div class=" button-bar">
+    <a class="button icon-add with-text" title="Novo usuário" href="/account/signup">&nbsp;<span>Novo usuário</span></a>
+
+    <a class="button icon-help with-text" title="Eu esqueci a minha senha!" href="/account/forgot_password">&nbsp;<span>Eu esqueci a minha senha!</span></a>
+<br style="clear: left;" /></div>
+</div><!-- end class="login-box" -->
+
+
+      </div>
+
+        <span class='or'>ou</span> <span class='signup'><a href="/account/signup"><strong>Registre-se</strong></a></span>
+    </span>
+  <form action="/search/articles" id="top-search" class="search_form clean" method="get">
+    <input name="query" size="15" title="Busca..." onfocus="this.form.className='focused';" onblur="this.form.className=''" />
+    <div>Aperte <strong>Enter</strong> para enviar a consulta.</div>
+    <script>
+//<![CDATA[
+jQuery("#user form input").hint();
+//]]>
+</script>
+  </form>
+</div><!-- end id="user" -->
+
+        <h1 id="site-title">
+          <a href="/"><span>Software livre Brasil</span></a>
+
+        </h1>
+        <div id="navigation">
+          <ul>
+            <div id="friends">
+<ul>
+  <li><a href="/portal"><span>+</span></a></li>
+  <li><a href="http://br-linux.org"><span>BR-Linux</span></a></li>
+  <li><a href="http://www.vivaolinux.com.br"><span>Viva o Linux</span></a></li>
+  <li><a href="http://www.revista.espiritolivre.org"><span>Revista Espírito Livre</span></a></li>
+  <li><a href="http://www.dicas-l.com.br"><span>Dicas-L</span></a></li>
+  <li><a href="http://www.sejalivre.org"><span>Seja Livre</span></a></li>
+  <li><a href="http://www.underlinux.com.br"><span>Under Linux</span></a></li>
+  <li><a href="http://www.sempreupdate.com.br"><span>Sempre Update</span></a></li>
+</ul>
+</div>
+<div id="external-links">
+<ul>
+  <li><a id="blogoosfero" title="Blogoosfero" href="http://blogoosfero.cc/software-livre" target="_blank"><span>Blogoosfero</span></a></li>
+  <li><a id="twitter" title="Twitter" href="https://twitter.com/PSLBrasil" target="_blank"><span>Twitter</span></a></li>
+  <li><a id="diaspora" title="Diaspora" href="https://diaspora.softwarelivre.org/u/pslbrasil" target="_blank"><span>Diaspora</span></a></li>
+  <li><a id="gnu-social" title="Quitter" href="https://quitter.se/pslbrasil" target="_blank"><span>Quitter</span></a></li>
+  <li><a id="feed" title="Feed" href="http://softwarelivre.org/portal/feed"><span>Feed</span></a></li>
+</ul>
+</div>
+
+          </ul>
+          <div id="navigation-end"></div>
+        </div><!-- end id="navigation" -->
+        <div id="content">
+          <div id="content-inner">
+  <div id="profile-header"></div><div class="boxes" id="boxes"><div class="box box-2" id="box-1886"><div class="blocks">  <div class="block-outer"><div class="block profile-image-block" id="block-3548" help="Este bloco apresenta a imagem do perfil"><div class="block-inner-1"><div class="block-inner-2"><div class="vcard">
+
+
+<div class="profile-big-image img-pic">
+  <div class="profile-big-image-inner1">
+    <div class="profile-big-image-inner2">
+      <a href="http://softwarelivre.org/marcelosoaressouza"><img alt="Marcelo Soares Souza" title="" class=" photo" src="/image_uploads/0001/7435/Caricatura_Marcelo_big.jpg" />
+</a>
+    </div>
+  </div>
+</div>
+
+  <p>Marcelo</p>
+
+
+<div class="profile-info-options">
+  <ul>
+</ul>
+
+</div>
+</div><!-- end class="vcard" -->
+</div></div></div></div>
+
+    <div class="block-outer"><div class="block link-list-block" id="block-3549" help="Este bloco pode ser usado para criar um menu de links. Você pode incluir, remove e atualizar links como quiser."><div class="block-inner-1"><div class="block-inner-2"><div class="block-header"><h3 class="block-title empty"><span></span></h3><h4 class="block-subtitle empty"><span></span></h4></div>
+
+
+
+<ul>
+    <li>
+      <a class="icon-menu-people" href="/profile/marcelosoaressouza">Perfil</a>
+    </li>
+    <li>
+      <a class="icon-photos" href="/marcelosoaressouza/galeria">Galeria de fotos</a>
+    </li>
+    <li>
+      <a class="icon-send" href="/contact/marcelosoaressouza/new">Contato</a>
+    </li>
+    <li>
+      <a class="icon-edit" href="/marcelosoaressouza/blog">Blog</a>
+    </li>
+</ul>
+</div></div></div></div>
+</div></div>
+<div class="box box-1" id="box-1885"><div class="blocks">  <div class="block-outer"><div class="block main-block" id="block-3547" help="Este bloco apresenta o conteúdo principal das suas páginas."><div class="block-inner-1"><div class="block-inner-2"><div class="main-content">
+<div id="article" class="text-article">
+
+
+
+<script type="text/javascript">
+    window.ONE_COMMENT = "Um comentário";
+    window.COMMENT_PLURAL = "comentários";
+    window.NO_COMMENT_YET = "Sem comentários ainda";
+</script>
+
+  <div id="article-parent">
+    <a class="button icon-back with-text" title="Voltar a Blog do Marc..." href="http://softwarelivre.org/marcelosoaressouza/blog-do-marcelo-soares-souza">&nbsp;<span>Voltar a Blog do Marc...</span></a>
+  </div>
+
+<div id="article-toolbar">
+  <div>
+  <div id="article-actions">
+
+    
+      <script>fullscreenPageLoad('#article')</script>
+    <a id="fullscreen-btn" onClick="toggle_fullwidth(&#39;#article&#39;)" class="button with-text icon-fullscreen" href="#" title="Ir para o modo tela cheia"><span>Tela cheia</span></a><a style="display: none;" id="exit-fullscreen-btn" onClick="toggle_fullwidth(&#39;#article&#39;)" class="button with-text icon-fullscreen" href="#" title="Sair do modo tela cheia"><span>Sair da tela cheia</span></a>
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+  </div>
+  <div id="article-header">
+    
+    
+      <h1 class="title">
+      Em breve no Kernel Linux 3.7 - Parte 3 - Infraestrutura
+  </h1>
+  <span class="publishing-info">
+  <span class="date">
+    27 de Novembro de 2012, 0:00
+  </span>
+  <span class="author">
+    , por Software Livre Brasil
+  </span>
+  <span class="comments">
+     - 
+  </span>
+
+<span class="followers-count">
+|
+    Ninguém está seguindo este artigo ainda.
+</span>
+
+</span>
+
+  <div id='article-sub-header'>
+      <div id="article-hits">
+        Visualizado 279 vezes
+      </div>
+
+  </div>
+
+
+    
+  </div>
+</div>
+
+</div>
+
+
+
+  <div id="addThis">
+  <script type="text/javascript">
+    addthis_pub = 'ra-4d93d22a7a91a05f';
+    addthis_logo = '';
+    addthis_options = 'identica, twitter, www.facebook.com, favorites, email, delicious, tumblr, digg, slashdot, more';
+  </script>
+  <a href="http://www.addthis.com/bookmark.php" id="bt_addThis" target="_blank" onmouseover="return addthis_open(this, '', '[URL]')" onmouseout="addthis_close()" onclick="return addthis_sendto()"><img width="53" height="16" border="0" alt="" src="/images/bt-bookmark.gif" /></a>
+</div>
+
+
+  <div class="article-body article-body-text-article">
+    <p style="text-align: justify;"><span style="font-size: 14px;"><img src="http://marcelo.juntadados.org/upload/2/44/Tux_Worker.png" alt="Logo Tux Worker" style="width: 180px; height: 180px; margin: 6px 12px; float: right;"><strong>Autor:</strong> Thorsten Leemhuis (Copyright (c) 2012 Heise Media UK Ltd.)<br><strong>Traduzido:</strong> Marcelo Soares Souza (Dúvidas e melhorias na tradução <a href="mailto:marcelo@juntadados.org"><strong>envie por E-mail</strong></a>)<br><strong>Originalmente:</strong> <a href="http://h-online.com/-1755953"><strong>http://h-online.com/-1755953</strong></a><br> <br>Agora o Kernel do Linux 3.7 pode assinar módulos do kernel, e verificar estas assinaturas e, portanto, a integridade destes módulos antes de carregá-los (1[1], 2[2], 3[3], 4[4], 5[5], 6[6], 7[7]). Algumas distribuições "enterprise" tiveram funcionalidades similares por um tempo[8] - por exemplo, para garantir que os módulos usados para soluções de problemas são realmente da distribuição do kernel. Desenvolvedores tem trabalhado na integração destas funcionalidades dentro do Linux com algumas distribuições que carregam apenas módulos assinados[9] necessários quando o sistema é iniciado com o boot seguro UEFI - isto agora é possível com o código que foi integrado no Kernel.<br> <br>Outra nova funcionalidade é a extensão para avaliação de integridade[10] para a Integrity Measurement Architecture[11] (IMA), que o kernel já suporta há algum tempo (1[12], 2[13]). O IMA pode armazenar hashes assinados para arquivos e utilizá-los para reconhecer[14] quando binários da instalação do Linux forem alterados. A extensão de avaliação de integridade pode agora verificar os hashes e prevenir o acesso caso este tenha sido alterado. O comportamento do mecanismo pode ser configurado com um novo parâmetro de boot. O IMA pode utilizar uma Trusted platform module (TPM) para assinar e assim salvar os hashes; os desenvolvedores do kernel continuam trabalhando no suporta para o TPMs (1[15], 2[16]).<br><strong> <br>Independência<br> </strong><br>O Kernel pode agora carregar arquivos de firmware diretamente do disco sem depender do udev (1[17], 2[18]). Isto é consequência de uma mudança recente na forma que o udev lida com firmwares e que causava um atraso durante a inicialização do sistema sobre certas circunstâncias; este comportamento levou a uma longa discussão[19] no qual Linus Torvalds criticou[20] os desenvolvedores do udev - que por sua vez, não só levou ao desenvolvimento de um carregador de firmware para o kernel, mas também levaram ao fork do próprio udev (eudev[21]). Desde então, uma alteração foi feita no udev e que também corrige o problema; além disso, o mantenedor do udev, Kay Sievers escreveu [22], mesmo antes da mundaça do kernel, que ele pensava que o kernel deveria ser capaz de carregar arquivos de firmware - ele nos contou que é mais fácil e muito mais confiável do que fazer o udev lidar com isto no espaço do usuário.<br> <br><strong>Separação</strong><br> <br>Eric W. Biederman integrou um grande patch[23] que aprimora o suporte para namespaces, que é um recurso útil para a separação de IDs de usuários e grupos entre hosts e containers (1[24], 2[25], 3[26], 4[27]). As mudanças aprimoram melhorias do "user namespace" que Biederman contribuiu para o Linux 3.5; ele descreve[28] esta mudança como uma correção de curso para o user namespaces. Estas mudanças deve significar que agora tudo deve funcionar, de acordo com esta  nova abordagem[29] - exceto nos mais complexos sistemas de arquivos tais como CIFS, NFS, OCFS2 e XFS. Suporte para estes sistemas de arquivos estão sendo desenvolvidos[30] e devem ser incluído no Linux 3.8. Biederman está trabalhando em outras correções[31] que dever unir toda a reconstrução do código do namespace; a nova infraestrutura deve fica completa e deve permitir aos usuários configurar e usar o namespace.<br> <br>A infraestrutura do cgroups - muitas vezes usadas em containers mas que também podem ser usados ​​em outras situações - agora notifica[32] aos usuários quando este cria uma hierarquia aninhada no control group que utiliza um controlador que não suporte o aninhamento; esta questão é apenas uma[33] de muitos problemas[34] no código do cgroups que o mantenedor do cgroups Tejun Heo esta trabalhando na correção[35]. Outra adição é o suporte a atributos estendidos em sistemas de arquivos virtuais do cgroup (1[36], 2[37]), uma funcionalidade que o desenvolvedor do systemd, Lennart Poettering, tem na sua lista de “correções desejadas”[38], afim de ser capaz de salvar metadados para serviços em segundo plano.<br> <br><strong>Diversos</strong><br> <br>Linus Torvalds removeu[39] o arquivo Documentation/feature-removal.txt usado para anunciar as remoções de funcionalidades do kernel. Em seu comentário, Torvalds descreve o documento como estúpido, dizendo que se um recurso não é usado, então este só poderia ser removido; caso contrário, não há razão para removê-lo.<br> <br>A opção do make para configurar todas as configurações não utilizadas por padrão é agora chamada "olddefconfig[40]" - o desenvolvedor que fez a mudança relata que o antigo parâmetro, "oldnoconfig", confundia os usuários porque não fazia o que o nome sugeria.<br> <br>A extensão Yama security extension pode agora ser usada[41] com outros LSMs (Linux Security Modules), de modo que as funções de segurança do Yama pode ser combinadas, por exemplo com o SELinux.  <br> <br>Devido às alterações[42] no acesso aos dados de coordenação usando o RCU (read copy update), os threads do kernel como rcu_sched, rcu_preempt e rcu_bh agora estão aparecendo na lista de processos - e consumindo mais tempo de CPU em alguns sistemas, de acordo com programas como ps e top. Na verdade, o código do RCU necessitava o mesmo tempo de CPU antes, porém os processos estavam dentro do thread de ksoftirqd. O mantenedor do RCU, Paul McKenney, explica a situação e dar outras informações em um artigo LWN.net[43].<br><strong> <br>Para Hackers do Kernel</strong><br> <br>O kernel esta agora linkando o debugfs, que é tipicamente encontrado no /debug/ ou /sys/kernel/debug/, com as permissões 0700 por padrão[44], de modo que, em geral, apenas usuários root podem ler estes arquivos.<br> <br>Uma implementação genérica[45] para a tabela simples de hash[46] foi adicionado ao kernel. Nas últimas versões do Kernel, é esperado que esta mudança[47] substitua um grande número de outras implementações[48] que apareceram em vários subsistemas do kernel e que agora realizam a mesma função de múltiplas maneiras.<br> <br>Workqueues são agora "não-reentrante" por padrão[49] - isto é, estes não são executados com o mesmo código em múltiplos processos ao mesmo tempo. Muitos desenvolvedores não tinham conhecimento[50] da execução concorrente e por isso foram surpreendidos pois o código do workqueue não funcionava conforme esperado neste cenário.<br> <br>Os desenvolvedores do Kernel iniciaram o armazenamento dos cabeçalhos dos arquivos com definições de tipo de dados usados por ferramentas em diretórios chamados "uapi" localizado no diretório include/ e arch/&lt;arch&gt;/include/ (1[51], 2[52], 3[53]). Esta mudança deve facilitar a diferenciação entre estes de definições usadas dentro do kernel e tomar conta[54] de alguns problemas de integração de arquivos de cabeçalhos. Esta reestruturação[55] é uma das principais razões o porque do diffstat mostrar tantas mudanças[56] comparado ao Linux 3.6.<br> <br><strong>Links deste artigo:</strong><br>[1] http://git.kernel.org/linus/80d65e58e93ffdabf58202653a0435bd3cf2d82e<br>[2] http://git.kernel.org/linus/106a4ee258d14818467829bf0e12aeae14c16cd7<br>[3] http://git.kernel.org/linus/e2a666d52b4825c26c857cada211f3baac26a600<br>[4] http://git.kernel.org/linus/85ecac79457e30b19802bbfaeba1856ad00945b0<br>[5] http://git.kernel.org/linus/631cc66eb9eaa7296e303197ff1eb0f55e32b61d<br>[6] http://git.kernel.org/linus/d441108c6f77541bb66fcd5b3389415b4c232008<br>[7] http://git.kernel.org/linus/ea0b6dcf71d216dc11733ac19b26df0f5d0fd6c2<br>[8] http://lwn.net/Articles/515007/<br>[9] http://www.h-online.com/news/item/State-of-Secure-Boot-detailed-1741460.html<br>[10] http://sourceforge.net/apps/mediawiki/linux-ima/index.php?title=Main_Page#IMA-appraisal<br>[11] http://linux-ima.sourceforge.net/<br>[12] http://git.kernel.org/linus/2fe5d6def1672ae6635dd71867bf36dcfaa7434b<br>[13] http://git.kernel.org/linus/07f6a79415d7d502ee0c7d02ace6594a7be7429a<br>[14] http://lwn.net/Articles/488906/<br>[15] http://git.kernel.org/linus/aad628c1d91a6db57e572e4c1f35e863d81061d7<br>[16] http://git.kernel.org/linus/132f7629474424418a5cdd666796ad3cfa4dc0c5<br>[17] http://git.kernel.org/linus/abb139e75c2cdbb955e840d6331cb5863e409d0e<br>[18] http://git.kernel.org/linus/10bd4c7572b6c6eb97f1c15dedd2d36c63907f91<br>[19] http://lwn.net/Articles/518942/<br>[20] http://thread.gmane.org/gmane.linux.drivers.video-input-infrastructure/49758/focus%3D55168<br>[21] http://www.h-online.com/news/item/Gentoo-developers-start-udev-fork-1752421.html<br>[22] http://thread.gmane.org/gmane.linux.kernel/1369664<br>[23] http://article.gmane.org/gmane.linux.kernel.containers/23940<br>[24] http://git.kernel.org/linus/e8a3e4719b7ec19288c56f22623f537cb78885c1<br>[25] http://git.kernel.org/linus/7064d16e162adf8199f0288b694e6af823ed5431<br>[26] http://git.kernel.org/linus/5f3a4a28ec140a90e6058d1d09f6b1f235d485e5<br>[27] http://git.kernel.org/linus/9a56c2db49e7349c7963f0ce66c1ef578d44ebd3<br>[28] http://www.h-online.com/open/features/Kernel-Log-Coming-in-3-5-Part-5-Infrastructure-1635017.html<br>[29] https://lwn.net/Articles/491310/<br>[30] http://thread.gmane.org/gmane.linux.kernel.containers/24561<br>[31] http://thread.gmane.org/gmane.linux.kernel.containers/24484<br>[32] http://git.kernel.org/linus/8c7f6edbda01f1b1a2e60ad61f14fe38023e433b<br>[33] http://thread.gmane.org/gmane.linux.kernel.mm/86748<br>[34] http://thread.gmane.org/gmane.linux.kernel.containers/23698<br>[35] http://lwn.net/Articles/516908/<br>[36] http://git.kernel.org/linus/03b1cde6b22f625ae832b939bc7379ec1466aec5<br>[37] http://git.kernel.org/linus/19ec2567e0a5fe64f4404ad6df697894aec8c493<br>[38] http://www.h-online.com/open/features/Kernel-Log-Linux-3-1-approaches-1358320.html<br>[39] http://git.kernel.org/linus/9c0ece069b32e8e122aea71aa47181c10eb85ba7<br>[40] http://git.kernel.org/linus/fb16d8912db5268f29706010ecafff74b971c58d<br>[41] http://git.kernel.org/linus/c6993e4ac002c92bc75379212e9179c36d4bf7ee<br>[42] http://article.gmane.org/gmane.linux.kernel/1367653<br>[43] http://lwn.net/Articles/518953/<br>[44] http://git.kernel.org/linus/82aceae4f0d42f03d9ad7d1e90389e731153898f<br>[45] http://git.kernel.org/linus/d9b482c8ba1973a189f2d4c8175d405b87fbf2d7<br>[46] http://en.wikipedia.org/wiki/Hash_table<br>[47] http://thread.gmane.org/gmane.linux.kernel.mm/88612/focus%3D15785<br>[48] http://lwn.net/Articles/510202/<br>[49] http://git.kernel.org/linus/dbf2576e37da0fcc7aacbfbb9fd5d3de7888a3c1<br>[50] https://lwn.net/Articles/511421/<br>[51] http://git.kernel.org/linus/abbf1590de22a6d2240a59383477da50d1402f6a<br>[52] http://git.kernel.org/linus/ec28b7f250b19f31e14b69b015d61d0818bf43a0<br>[53] http://git.kernel.org/linus/607ca46e97a1b6594b29647d98a32d545c24bdff<br>[54] http://lwn.net/Articles/507794/<br>[55] http://article.gmane.org/gmane.linux.kernel/1367929<br>[56] http://www.h-online.com/news/item/Main-development-phase-of-Linux-3-7-completed-1729556.html</span></p>
+    <br style="clear:both" />
+  </div> <!-- end class="article-body" -->
+
+
+  <div id="article-tags">
+    Tags deste artigo:
+    <a href="/profile/marcelosoaressouza/tags/kernel">kernel</a>
+<a href="/profile/marcelosoaressouza/tags/linux">linux</a>
+<a href="/profile/marcelosoaressouza/tags/em%20breve%20no%20kernel%20linux">em breve no kernel linux</a>
+<a href="/profile/marcelosoaressouza/tags/software%20livre">software livre</a>
+<a href="/profile/marcelosoaressouza/tags/desenvolvimento">desenvolvimento</a>
+  </div>
+
+
+
+
+
+
+</div><!-- end id="article" -->
+<link rel="stylesheet" media="screen" href="/assets/vendor/jquery.fancybox-f18bccba6b2b1108ccca4462da78aa43.css" /><script src="/assets/vendor/jquery.fancybox.pack-c84445b4cd8162f8a15703d690ccc514.js"></script><script>
+//<![CDATA[
+apply_zoom_to_images("Mais zoom")
+//]]>
+</script>
+</div></div></div></div></div>
+</div></div></div><div id="profile-footer"></div>
+  <br style='clear: both'/>
+</div><!-- end id="content-inner" -->
+
+        </div><!-- end id="content" -->
+      </div><!-- end id="wrap-2" -->
+    </div><!-- end id="wrap-1" -->
+    
+    <div id="footer">
+      <div id="theme-footer">
+        <div id="footer-environment">
+<div id="footer-links">
+  <ul>
+    <li><ul id="slbr-footer">
+        <li><a href="http://softwarelivre.org" id="slbr" class="link-this-page"><span>Software Livre - Brasil</span></a></li>
+        <li><a href="http://softwarelivre.org/tv"><span>TV Software Livre</span></a></li>
+        <li><a href="http://softwarelivre.org/radio"><span>Rádio Software Livre</span></a></li>
+        </ul></li>
+    <li><ul id="conheca-footer"><h3>Conheça</h3>
+        <li><a href="http://softwarelivre.org/portal/quem-somos">Quem Somos</a></li>
+        <li><a href="http://softwarelivre.org/portal/termos-de-uso">Termos de Uso</a></li>
+        <li><a href="http://softwarelivre.org/doc">Documentação</a></li>
+        <li><a href="http://softwarelivre.org/contact/portal/new">Fale Conosco</a></li>
+        </ul></li>
+    <li><ul id="colabore-footer"><h3>Colabore</h3>
+        <li><b><a href="http://softwarelivre.org/myprofile/portal/cms/suggest_an_article">Sugerir um Artigo</a></b></li>
+        <li><a href="http://softwarelivre.org/portal/melhorias">Sugerir Melhorias</a></li>
+        <li><a href="http://softwarelivre.org/portal/bugs">Reportar um Bug</a></li>
+        <li><a href="http://softwarelivre.org/portal/desenvolvimento">Desenvolvimento</a></li>
+        </ul></li>
+    <li><ul id="compartilhe-footer"><h3>Compartilhe</h3>
+        <li><b><!-- AddToAny BEGIN -->
+        <a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fsoftwarelivre.org&amp;linkname=SoftwareLivre.org">Compartilhar Isto!</a>
+        <script type="text/javascript">
+        var a2a_config = a2a_config || {};
+        a2a_config.linkname = "SoftwareLivre.org";
+        a2a_config.linkurl = "http://softwarelivre.org";
+        a2a_config.onclick = 1;
+        a2a_config.locale = "pt-BR";
+        a2a_config.num_services = 6;
+        a2a_config.prioritize = ["identi_ca", "twitter", "facebook", "google_buzz", "digg", "email"]
+        </script>
+        <script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END --></b></li>
+        <li><a href="http://softwarelivre.org/portal/eventos">Novos Eventos</a></li>
+        <li><a href="http://softwarelivre.org/portal/portfolio">Portfólio Livre</a></li>
+        <li><a href="http://softwarelivre.org/portal/divulgue">Páginas Amigas</a></li>
+        </ul></li>
+    <li><ul id="apoio-footer"><h3>Apoio</h3>
+        <li> <a href="http://softwarelivre.org/portal/apoio"><img src="/portal/anuncios/apoio.png" style="width:204px"><span>Apoio</span></img></a></li>
+        </ul></li>
+</div><!-- end id="footer-links" -->
+
+<div id="copyright">
+  © Copyleft 2015 -<a id="link-asl" href="http://associacao.softwarelivre.org/" title="Associação SoftwareLivre.org">ASL</a> - Alguns direitos reservados, exceto quando especificado em contrário e nos conteúdos replicados de outras fontes.
+  <p id="noosfero-license">Este site utiliza o software livre <a href="http://www.noosfero.org/" id="link-noosfero">Noosfero</a>, licenciado sob a licença <a href="http://www.gnu.org/licenses/agpl.html">GNU Affero General Public License</a>, versão 3 ou superior.  </p>
+</div><!-- end id="copyright" -->
+</div>
+
+<script type="text/javascript">
+  jQuery(function($) {
+    $(".highlights-block").insertAfter("#theme-header");
+    $(".action-home-index #block-695148").insertBefore("#block-666540");
+    $(".action-environment_design-index #block-695148").insertBefore("#block-666540");
+    $(".action-home-index #block-695454").insertAfter("#block-666540");
+    $(".action-environment_design-index #block-695454").insertAfter("#block-666540");
+    $("#site-title").prependTo("#top");
+    $("#user").insertAfter("#site-title");
+  });
+</script>
+
+      </div><!-- end id="theme-footer" -->
+      <div id="global-footer">
+        
+      </div><!-- end id="global-footer" -->
+    </div><!-- end id="footer" -->
+    
+    <script src="https://s7.addthis.com/js/152/addthis_widget.js"></script>
+    <!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+     var u = "piwik.colivre.coop.br/";
+     if(!u.match(/^https?/)){
+       var protocol = ("https:" == document.location.protocol ? "https" : "http");
+       u = protocol + '://' + u;
+     }
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 3]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.colivre.coop.br/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+  </body>
+</html>
