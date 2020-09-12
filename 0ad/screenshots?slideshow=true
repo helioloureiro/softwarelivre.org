@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    <title>Screenshots - 0 A.D. - Software Livre Brasil</title>
+
+    <style type="text/css">
+@import url(/stylesheets/slideshow.css);
+</style>
+    <script src="/javascripts/jquery-2.1.1.min.js"></script>
+<script src="/assets/vendor/sliderjs-4813c008b79ff67e006eacb62a9b8630.js"></script>
+<script src="/assets/vendor/pikachoose-476b26458f07a3a41eb6156f4ec6ef23.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function (){
+        $("#slideshow").PikaChoose({
+          buttons: { play: "Play", stop: "Stop", previous: "Previous", next: "Next" }
+        });
+        $("#slideshow").SliderJS({
+          window_width: 320,
+          window_height: 55,
+          list_width: 832,
+          pikachoose: true,
+          auto_play: false
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p class='back-button' ><a class="button icon- with-text" title="Back to gallery" href="http://softwarelivre.org/0ad/screenshots">&nbsp;<span>Back to gallery</span></a></p>
+<ul id='slideshow' >
+      <li><img title="Amish_remake_wallpaper_1600.jpg" src="/thumbnails/0123/9214/amish-remake-wallpaper-1600_display.jpg" alt="Amish remake wallpaper 1600 display" /></li>
+      <li><img title="Amish_Wallpaper_1600.jpg" src="/thumbnails/0123/9215/amish-wallpaper-1600_display.jpg" alt="Amish wallpaper 1600 display" /></li>
+      <li><img title="Amish_wallpaper_1900.jpg" src="/thumbnails/0123/9213/amish-wallpaper-1900_display.jpg" alt="Amish wallpaper 1900 display" /></li>
+</ul>
+
+  </body>
+</html>
