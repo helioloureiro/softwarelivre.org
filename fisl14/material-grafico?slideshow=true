@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <link rel="shortcut icon" href="/designs/themes/fisl14/favicon.ico" type="image/x-icon" />
+    <title>Material Gráfico - fisl14 - Software Livre Brasil</title>
+
+    <style type="text/css">
+@import url(/stylesheets/slideshow.css);
+</style>
+    <script src="/javascripts/jquery-2.1.1.min.js"></script>
+<script src="/assets/vendor/sliderjs-4813c008b79ff67e006eacb62a9b8630.js"></script>
+<script src="/assets/vendor/pikachoose-476b26458f07a3a41eb6156f4ec6ef23.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function (){
+        $("#slideshow").PikaChoose({
+          buttons: { play: "Play", stop: "Stop", previous: "Previous", next: "Next" }
+        });
+        $("#slideshow").SliderJS({
+          window_width: 320,
+          window_height: 55,
+          list_width: 832,
+          pikachoose: true,
+          auto_play: false
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p class='back-button' ><a class="button icon- with-text" title="Back to gallery" href="http://softwarelivre.org/fisl14/material-grafico">&nbsp;<span>Back to gallery</span></a></p>
+<ul id='slideshow' >
+      <li><img title="compartilhar faz bem" src="/thumbnails/0123/4797/compartilhar-faz-bem_display.png" alt="Compartilhar faz bem display" /></li>
+      <li><img title="download não é crime" src="/thumbnails/0123/4795/download-nao-e-crime_display.png" alt="Download nao e crime display" /></li>
+      <li><img title="esta pessoa usa software livre" src="/thumbnails/0123/4796/esta-pessoa-usa-software-livre_display.png" alt="Esta pessoa usa software livre display" /></li>
+      <li><img title="hacker =! cracker" src="/thumbnails/0123/4794/hacker-cracker_display.png" alt="Hacker cracker display" /></li>
+      <li><img title="optei por ser livre" src="/thumbnails/0123/4798/optei-por-ser-livre_display.png" alt="Optei por ser livre display" /></li>
+</ul>
+
+  </body>
+</html>
