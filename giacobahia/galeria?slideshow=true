@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    <title>Galeria - Prof Giacomo - Software Livre Brasil</title>
+
+    <style type="text/css">
+@import url(/stylesheets/slideshow.css);
+</style>
+    <script src="/javascripts/jquery-2.1.1.min.js"></script>
+<script src="/assets/vendor/sliderjs-4813c008b79ff67e006eacb62a9b8630.js"></script>
+<script src="/assets/vendor/pikachoose-476b26458f07a3a41eb6156f4ec6ef23.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function (){
+        $("#slideshow").PikaChoose({
+          buttons: { play: "Iniciar", stop: "Parar", previous: "Anterior", next: "Próximo" }
+        });
+        $("#slideshow").SliderJS({
+          window_width: 320,
+          window_height: 55,
+          list_width: 832,
+          pikachoose: true,
+          auto_play: false
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p class='back-button' ><a class="button icon- with-text" title="Voltar à galeria" href="http://softwarelivre.org/giacobahia/galeria">&nbsp;<span>Voltar à galeria</span></a></p>
+<ul id='slideshow' >
+      <li><img title="Barra-da-Tijuca-Rio-de-Janeiro-Brazil2.jpg" src="/thumbnails/0128/9558/barra-da-tijuca-rio-de-janeiro-brazil2_display.jpg" alt="Barra da tijuca rio de janeiro brazil2 display" /></li>
+      <li><img title="evolution_wallpaper.jpg" src="/thumbnails/0032/5187/evolution-wallpaper_display.jpg" alt="Evolution wallpaper display" /></li>
+      <li><img title="Illusions_56.jpg" src="/thumbnails/0032/4663/illusions-56_display.jpg" alt="Illusions 56 display" /></li>
+      <li><img title="ima11-1.jpg" src="/thumbnails/0032/4661/ima11-1_display.jpg" alt="Ima11 1 display" /></li>
+      <li><img title="Indifferenza-Mafiosa.jpg" src="/thumbnails/0032/4662/indifferenza-mafiosa_display.jpg" alt="Indifferenza mafiosa display" /></li>
+      <li><img title="Linux_Unix_Wallpapers_2009-127.jpg_linux-011-1024x768.jpg" src="/thumbnails/0034/8431/linux-unix-wallpapers-2009-127.jpg-linux-011-1024x768_display.jpg" alt="Linux unix wallpapers 2009 127.jpg linux 011 1024x768 display" /></li>
+      <li><img title="Peace-world-peace-11304143-500-333.jpg" src="/thumbnails/0034/8430/peace-world-peace-11304143-500-333_display.jpg" alt="Peace world peace 11304143 500 333 display" /></li>
+      <li><img title="Schermata-12.png" src="/thumbnails/0032/4660/schermata-12_display.png" alt="Schermata 12 display" /></li>
+</ul>
+
+  </body>
+</html>
