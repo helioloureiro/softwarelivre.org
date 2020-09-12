@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    <title>Layouts Web - Valessio Brito - Software Livre Brasil</title>
+
+    <style type="text/css">
+@import url(/stylesheets/slideshow.css);
+</style>
+    <script src="/javascripts/jquery-2.1.1.min.js"></script>
+<script src="/assets/vendor/sliderjs-4813c008b79ff67e006eacb62a9b8630.js"></script>
+<script src="/assets/vendor/pikachoose-476b26458f07a3a41eb6156f4ec6ef23.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function (){
+        $("#slideshow").PikaChoose({
+          buttons: { play: "Play", stop: "Stop", previous: "Previous", next: "Next" }
+        });
+        $("#slideshow").SliderJS({
+          window_width: 320,
+          window_height: 55,
+          list_width: 832,
+          pikachoose: true,
+          auto_play: false
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p class='back-button' ><a class="button icon- with-text" title="Back to gallery" href="http://softwarelivre.org/valessiobrito/portfolio/layouts-web">&nbsp;<span>Back to gallery</span></a></p>
+<ul id='slideshow' >
+      <li><img title="Portal da Escola de Farmácia da UFBA, Feito em parceria com a GF7.com.br" src="/thumbnails/0017/2152/farmaciaufba_display.jpg" alt="Farmaciaufba display" /></li>
+      <li><img title="Cirandas.net" src="/thumbnails/0000/9199/sistemafbes-colivre.png_display.jpg" alt="Sistemafbes colivre.png display" /></li>
+      <li><img title="SistemaPROGESP.png.jpg" src="/thumbnails/0000/9200/sistemaprogesp.png_display.jpg" alt="Sistemaprogesp.png display" /></li>
+      <li><img title="SiteCoopertane.png.jpg" src="/thumbnails/0000/9201/sitecoopertane.png_display.jpg" alt="Sitecoopertane.png display" /></li>
+      <li><img title="facesdobrasil.org.br" src="/thumbnails/0000/9198/sitefaces.png_display.jpg" alt="Sitefaces.png display" /></li>
+      <li><img title="SiteIGEO.png.jpg" src="/thumbnails/0000/9202/siteigeo.png_display.jpg" alt="Siteigeo.png display" /></li>
+      <li><img title="SiteOndaCultural.png.jpg" src="/thumbnails/0000/9203/siteondacultural.png_display.jpg" alt="Siteondacultural.png display" /></li>
+</ul>
+
+  </body>
+</html>

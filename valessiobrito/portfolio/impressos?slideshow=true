@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    <title>Impressos - Valessio Brito - Software Livre Brasil</title>
+
+    <style type="text/css">
+@import url(/stylesheets/slideshow.css);
+</style>
+    <script src="/javascripts/jquery-2.1.1.min.js"></script>
+<script src="/assets/vendor/sliderjs-4813c008b79ff67e006eacb62a9b8630.js"></script>
+<script src="/assets/vendor/pikachoose-476b26458f07a3a41eb6156f4ec6ef23.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function (){
+        $("#slideshow").PikaChoose({
+          buttons: { play: "Play", stop: "Stop", previous: "Previous", next: "Next" }
+        });
+        $("#slideshow").SliderJS({
+          window_width: 320,
+          window_height: 55,
+          list_width: 832,
+          pikachoose: true,
+          auto_play: false
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p class='back-button' ><a class="button icon- with-text" title="Back to gallery" href="http://softwarelivre.org/valessiobrito/portfolio/impressos">&nbsp;<span>Back to gallery</span></a></p>
+<ul id='slideshow' >
+      <li><img title="Cartilha Onda Solidária" src="/thumbnails/0000/9211/capafundo_display.jpg" alt="Capafundo display" /></li>
+      <li><img title="Cartilha &quot;Madeira, Jovens &amp; Cia&quot; - Projeto Força Jovem" src="/thumbnails/0017/2153/cartilhafocajovem_display.jpg" alt="Cartilhafocajovem display" /></li>
+      <li><img title="Kit imprensa" src="/thumbnails/0000/9212/kitimprensa_display.png" alt="Kitimprensa display" /></li>
+      <li><img title="Tux em Origami" src="/thumbnails/0000/9210/origamifinal_display.jpg" alt="Origamifinal display" /></li>
+      <li><img title="Rótulo Mel Florativa" src="/thumbnails/0000/9213/rotulomel_display.jpg" alt="Rotulomel display" /></li>
+</ul>
+
+  </body>
+</html>

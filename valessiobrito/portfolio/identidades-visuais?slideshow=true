@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    <title>Identidades visuais - Valessio Brito - Software Livre Brasil</title>
+
+    <style type="text/css">
+@import url(/stylesheets/slideshow.css);
+</style>
+    <script src="/javascripts/jquery-2.1.1.min.js"></script>
+<script src="/assets/vendor/sliderjs-4813c008b79ff67e006eacb62a9b8630.js"></script>
+<script src="/assets/vendor/pikachoose-476b26458f07a3a41eb6156f4ec6ef23.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function (){
+        $("#slideshow").PikaChoose({
+          buttons: { play: "Play", stop: "Stop", previous: "Previous", next: "Next" }
+        });
+        $("#slideshow").SliderJS({
+          window_width: 320,
+          window_height: 55,
+          list_width: 832,
+          pikachoose: true,
+          auto_play: false
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p class='back-button' ><a class="button icon- with-text" title="Back to gallery" href="http://softwarelivre.org/valessiobrito/portfolio/identidades-visuais">&nbsp;<span>Back to gallery</span></a></p>
+<ul id='slideshow' >
+      <li><img title="Alexandre Contabilidade" src="/thumbnails/0000/9208/2p01_display.png" alt="2p01 display" /></li>
+      <li><img title="Logo DebConf10 by ValessioBrito, Jimmy Kaplowitz, Moray (c) GPLv2" src="/thumbnails/0002/9236/800px-debconf10logo.svg_display.png" alt="800px debconf10logo.svg display" /></li>
+      <li><img title="João Matos e Valessio Brito, www.enearte.ufba.br" src="/thumbnails/0002/9235/enearte2009_display.png" alt="Enearte2009 display" /></li>
+      <li><img title="Identidades visuais reformuladas ou criadas por mim." src="/thumbnails/0000/9207/logosqfiz-medium_display.jpg" alt="Logosqfiz medium display" /></li>
+      <li><img title="Criação da Identidade Visual
+
+Feito com Inkscape" src="/thumbnails/0031/6453/slmotos_display.png" alt="Slmotos display" /></li>
+      <li><img title="Ambiente TecCiencia" src="/thumbnails/0017/2154/tecciencia_display.jpg" alt="Tecciencia display" /></li>
+</ul>
+
+  </body>
+</html>
