@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    <title>Mostrando minha história por meio das imagens - Nilton Pereira da Silva - Software Livre Brasil</title>
+
+    <style type="text/css">
+@import url(/stylesheets/slideshow.css);
+</style>
+    <script src="/javascripts/jquery-2.1.1.min.js"></script>
+<script src="/assets/vendor/sliderjs-4813c008b79ff67e006eacb62a9b8630.js"></script>
+<script src="/assets/vendor/pikachoose-476b26458f07a3a41eb6156f4ec6ef23.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function (){
+        $("#slideshow").PikaChoose({
+          buttons: { play: "Play", stop: "Stop", previous: "Previous", next: "Next" }
+        });
+        $("#slideshow").SliderJS({
+          window_width: 320,
+          window_height: 55,
+          list_width: 832,
+          pikachoose: true,
+          auto_play: false
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p class='back-button' ><a class="button icon- with-text" title="Back to gallery" href="http://softwarelivre.org/nilton/mostrando-minha-historia-por-meio-das-imagens">&nbsp;<span>Back to gallery</span></a></p>
+<ul id='slideshow' >
+      <li><img title="043.jpg" src="/thumbnails/0028/6263/043_display.jpg" alt="043 display" /></li>
+      <li><img title="aniverssário_da_amanda_025.jpg" src="/thumbnails/0028/6262/aniverssario-da-amanda-025_display.jpg" alt="Aniverssario da amanda 025 display" /></li>
+      <li><img title="eu_e_minha_esposa_e_amiga.jpg" src="/thumbnails/0028/6315/eu-e-minha-esposa-e-amiga_display.jpg" alt="Eu e minha esposa e amiga display" /></li>
+      <li><img title="eu_em_Poço_de_Caldas_2.jpg" src="/thumbnails/0028/6314/eu-em-poco-de-caldas-2_display.jpg" alt="Eu em poco de caldas 2 display" /></li>
+      <li><img title="eu_e_pais_formatura.jpg" src="/thumbnails/0028/6256/eu-e-pais-formatura_display.jpg" alt="Eu e pais formatura display" /></li>
+      <li><img title="eu_minha_i_esposa_e_sogra.jpg" src="/thumbnails/0028/6316/eu-minha-i-esposa-e-sogra_display.jpg" alt="Eu minha i esposa e sogra display" /></li>
+      <li><img title="eu_minha_irmã.jpg" src="/thumbnails/0028/6318/eu-minha-irma_display.jpg" alt="Eu minha irma display" /></li>
+      <li><img title="Eu.png" src="/thumbnails/0028/6254/eu_display.png" alt="Eu display" /></li>
+      <li><img title="minha_formatura.jpg" src="/thumbnails/0028/6317/minha-formatura_display.jpg" alt="Minha formatura display" /></li>
+      <li><img title="nilton_Diabetes.jpg" src="/thumbnails/0028/6319/nilton-diabetes_display.jpg" alt="Nilton diabetes display" /></li>
+      <li><img title="nilton_HU.jpg" src="/thumbnails/0028/6321/nilton-hu_display.jpg" alt="Nilton hu display" /></li>
+      <li><img title="nilton_Unimed.jpg" src="/thumbnails/0028/6320/nilton-unimed_display.jpg" alt="Nilton unimed display" /></li>
+      <li><img title="pos_final1.jpg" src="/thumbnails/0028/6255/pos-final1_display.jpg" alt="Pos final1 display" /></li>
+      <li><img title="POS_final4.jpg" src="/thumbnails/0028/6264/pos-final4_display.jpg" alt="Pos final4 display" /></li>
+</ul>
+
+  </body>
+</html>
