@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    <title>Galeria - Alexandro Silva - Software Livre Brasil</title>
+
+    <style type="text/css">
+@import url(/stylesheets/slideshow.css);
+</style>
+    <script src="/javascripts/jquery-2.1.1.min.js"></script>
+<script src="/assets/vendor/sliderjs-4813c008b79ff67e006eacb62a9b8630.js"></script>
+<script src="/assets/vendor/pikachoose-476b26458f07a3a41eb6156f4ec6ef23.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function (){
+        $("#slideshow").PikaChoose({
+          buttons: { play: "Play", stop: "Stop", previous: "Previous", next: "Next" }
+        });
+        $("#slideshow").SliderJS({
+          window_width: 320,
+          window_height: 55,
+          list_width: 832,
+          pikachoose: true,
+          auto_play: false
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p class='back-button' ><a class="button icon- with-text" title="Back to gallery" href="http://softwarelivre.org/alexos/galeria">&nbsp;<span>Back to gallery</span></a></p>
+<ul id='slideshow' >
+      <li><img title="P6240191.JPG" src="/thumbnails/0001/3604/p6240191_display.jpg" alt="P6240191 display" /></li>
+      <li><img title="P6240198.JPG" src="/thumbnails/0001/3605/p6240198_display.jpg" alt="P6240198 display" /></li>
+      <li><img title="P6240201.JPG" src="/thumbnails/0001/3606/p6240201_display.jpg" alt="P6240201 display" /></li>
+      <li><img title="P6270363.JPG" src="/thumbnails/0001/3607/p6270363_display.jpg" alt="P6270363 display" /></li>
+      <li><img title="P6270382.JPG" src="/thumbnails/0001/3608/p6270382_display.jpg" alt="P6270382 display" /></li>
+      <li><img title="P6280014.JPG" src="/thumbnails/0001/3609/p6280014_display.jpg" alt="P6280014 display" /></li>
+</ul>
+
+  </body>
+</html>
