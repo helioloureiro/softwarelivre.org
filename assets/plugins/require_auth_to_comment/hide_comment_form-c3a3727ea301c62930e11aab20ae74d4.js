@@ -1,0 +1,1 @@
+!function(o){o(window).bind("userDataLoaded",function(n,t){(t.login||o('meta[name="profile.allow_unauthenticated_comments"]').length>0)&&o(".post-comment-button, .page-comment-form, .comment-footer, .display-comment-form").livequery(function(){o(this).show()})})}(jQuery);

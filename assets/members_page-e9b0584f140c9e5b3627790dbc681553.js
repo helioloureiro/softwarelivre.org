@@ -1,0 +1,1 @@
+!function(t){"use strict";function r(){var r=t("#profile_url").val();t("#sort-members, #sort-admins").on("change",function(){var i=this.value,n=this.id;n=n.replace("sort-","");var e=t(".profile-list-"+n);t.get(r,{sort:i},function(r){var i=t(r);e.html(i.find(".profile-list-"+n).html())})})}t(document).ready(function(){r()})}(jQuery);

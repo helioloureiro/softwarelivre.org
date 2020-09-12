@@ -1,0 +1,1 @@
+jQuery(function(i){i(".lead-button").live("click",function(){return article_id=this.getAttribute("article_id"),i(this).toggleClass("icon-add").toggleClass("icon-remove"),i(article_id).slideToggle(),!1})});
