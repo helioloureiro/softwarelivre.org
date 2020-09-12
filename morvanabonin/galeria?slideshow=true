@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    <title>Galeria - Morvana - Software Livre Brasil</title>
+
+    <style type="text/css">
+@import url(/stylesheets/slideshow.css);
+</style>
+    <script src="/javascripts/jquery-2.1.1.min.js"></script>
+<script src="/assets/vendor/sliderjs-4813c008b79ff67e006eacb62a9b8630.js"></script>
+<script src="/assets/vendor/pikachoose-476b26458f07a3a41eb6156f4ec6ef23.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function (){
+        $("#slideshow").PikaChoose({
+          buttons: { play: "Iniciar", stop: "Parar", previous: "Anterior", next: "Próximo" }
+        });
+        $("#slideshow").SliderJS({
+          window_width: 320,
+          window_height: 55,
+          list_width: 832,
+          pikachoose: true,
+          auto_play: false
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p class='back-button' ><a class="button icon- with-text" title="Voltar à galeria" href="http://softwarelivre.org/morvanabonin/galeria">&nbsp;<span>Voltar à galeria</span></a></p>
+<ul id='slideshow' >
+      <li><img title="1000772_10201531530713999_307538559_n.jpg" src="/thumbnails/0133/4821/1000772-10201531530713999-307538559-n_display.jpg" alt="1000772 10201531530713999 307538559 n display" /></li>
+      <li><img title="1002556_10201596917788635_1049347928_n.jpg" src="/thumbnails/0133/4822/1002556-10201596917788635-1049347928-n_display.jpg" alt="1002556 10201596917788635 1049347928 n display" /></li>
+      <li><img title="1069172_10201531526473893_969974633_n.jpg" src="/thumbnails/0133/4823/1069172-10201531526473893-969974633-n_display.jpg" alt="1069172 10201531526473893 969974633 n display" /></li>
+</ul>
+
+  </body>
+</html>
