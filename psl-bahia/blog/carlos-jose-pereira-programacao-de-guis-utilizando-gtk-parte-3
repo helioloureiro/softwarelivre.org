@@ -1,0 +1,728 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" class="controller-content_viewer action-content_viewer-view_page template-default profile-type-is-community profile-name-is-psl-bahia theme-sl-default">
+  <head>
+    <title>Carlos José Pereira: Programação de GUIs utilizando GTK - Parte 3 - PSL-Ba</title>
+    <link rel="alternate" type="application/rss+xml" title="Blogosfera do PSL-Ba" href="http://softwarelivre.org/psl-bahia/blog/feed" />
+    <!--<meta http-equiv="refresh" content="1"/>-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    
+
+      <meta name="description" content="Software Livre Brasil" />
+
+    <!-- site root -->
+    <meta property="noosfero:root" content=""/>
+
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    
+
+    <script src="/assets/application-1c0930e8f260aafbc74c4fad04079409.js"></script>
+
+  
+  
+<script src="/javascripts/plugins/pg_search/search.js"></script>
+<script src="/javascripts/plugins/pg_search/profile_search_block.js"></script>
+<script src="/assets/plugins/require_auth_to_comment/hide_comment_form-c3a3727ea301c62930e11aab20ae74d4.js"></script>
+<script src="/assets/plugins/require_auth_to_comment/jquery.livequery.min-d1fe96eb7788079f6e550db2b6610365.js"></script>
+<script src="/assets/plugins/orders/javascripts/locale-17eaae2c136082dab9da1d91648b6a7e.js"></script>
+<script src="/assets/plugins/orders/javascripts/toggle_edit-f9da47bc0223fac8e5e5174c6ea24413.js"></script>
+<script src="/assets/plugins/orders/javascripts/sortable-table-ba58eb377fc175eb1e374be63d5454a3.js"></script>
+<script src="/assets/plugins/orders/javascripts/help-14515dc2f741beaa4b3d121df366af0d.js"></script>
+<script src="/assets/plugins/orders/javascripts/orders-560e35746985dc40b97851b13705cb26.js"></script>
+<script src="/assets/plugins/html5_video/video-channel-6aca45f93220c0910d8273dd2368004e.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/locale-17eaae2c136082dab9da1d91648b6a7e.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/toggle_edit-f9da47bc0223fac8e5e5174c6ea24413.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/sortable-table-ba58eb377fc175eb1e374be63d5454a3.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/suppliers-35473b9ebd4b9e65027e1bafa94dfdcd.js"></script>
+<script src="/assets/plugins/event/event-b1013aca7ce3cf0d4d5e6e10dc1f05b2.js"></script>
+<script src="/assets/plugins/display_content/javascripts/jstree/_lib/jquery-1.8.3-09dfd3b315fe6b24fbc309e36f5d70c3.js"></script>
+<script src="/assets/plugins/display_content/javascripts/jstree/jquery.jstree-563d09f7e7938a8a2f4207bfe6d48dd3.js"></script>
+<script src="/assets/plugins/container_block/container_block-7eae56f79aa8da8b64941d18d2972c7b.js"></script>
+<script src="/assets/plugins/delivery/javascripts/delivery-da5b2dac737692db94d5bdc654586171.js"></script>
+<script src="/assets/plugins/products/javascripts/products-a4c860d8dbebe524d554f0b5564e0428.js"></script><script src="/designs/themes/sl-default/theme.js"></script><script>
+//<![CDATA[
+render_all_jquery_ui_widgets()
+//]]>
+</script>
+    <link rel="stylesheet" media="screen" href="/assets/application-e0072ababb97032fa1a5d95fa09d897c.css" />
+<link rel="stylesheet" media="screen" href="/designs/templates/default/stylesheets/style.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/icons/default/style-b3a500c1e17f47b010a70fdb0103012e.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/icons/pidgin/style-138f7bb59f9d26296632e82eae162877.css" />
+<link rel="stylesheet" media="screen" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/people_block/style-c340afe175b0045c7f8669073a428a1c.css" />
+<link rel="stylesheet" media="screen" href="/stylesheets/plugins/pg_search/style.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/recent_content/style-e0d5f807f7056b173f6cf113c840ddc0.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/custom_forms/style-7870704d75309d55ffcaa827c59baa18.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/work_assignment/style-526deb629c3d9e7736f049b99c72a50a.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/require_auth_to_comment/style-66a0efab118159977ca0194806ef4bec.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/orders/style-feb7767bc71e62563ccab53642a6e4c2.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/html5_video/style-8f2b70d373ff7ec22b404d91b1b6f211.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/suppliers/style-64c71b3cd22994ada93abd55c70ea1ce.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/gallery_block/style-4547593291c3fca2ad50216cbb3dfdc9.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/send_email/style-976778195cb106e52b31d57242cdc01c.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/event/style-8f5f6a9b5a7724dbc4977d11c2e4321c.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/display_content/style-cf10f47511255685485ac51859c22a29.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/container_block/style-dd17a810971259abe7c31678e9d9c132.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/video/style-68d51000d73adab06c1dcd036011138d.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/delivery/style-aeef749320f3cdff642340f047806f9b.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/sub_organizations/style-88810bb91c1c70f63817f6f03295fd92.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/products/style-3147a337d78ccc54df05870c504166fd.css" />
+<link rel="stylesheet" media="screen" href="/designs/themes/sl-default/global.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/themes/sl-default/style-f317a60b59d0ee3e8048cb6eba54b282.css" />
+
+    
+    
+
+    <script type="text/javascript">
+      DEFAULT_LOADING_MESSAGE = 'loading...';
+      PERMANENT_NOTIFICATIONS = false;
+      noosfero.profile = "psl-bahia"
+    </script>
+
+      
+<script src="/assets/tinymce/js/tinymce/tinymce-666c93593f34cd23b1f1e9177ab27cae.js"></script><script src="/assets/tinymce/js/tinymce/jquery.tinymce.min-33361c760deadb5b77610a12911056f2.js"></script><script src="/assets/tinymce-4df3fc98953118b704cdb7a023aafdc2.js"></script>
+<script type="text/javascript">
+tinymce.create('tinymce.plugins.MacrosPlugin', {
+  createControl: function(n, cm) {
+    switch (n) {
+       case 'macros':
+    }
+    return null;
+  }
+});
+
+function tinymce_macros_setup(editor) {
+}
+
+// Register plugin with a short name
+tinymce.PluginManager.add('macrosPlugin', tinymce.plugins.MacrosPlugin);
+
+jQuery(document).ready(function () {
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"it","selector":".tiny_mce","toolbar1":"fullscreen | insertfile undo redo | copy paste | bold italic underline | styleselect fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image","menubar":"edit insert view tools","toolbar2":"print preview code media | table | macros","macros_setup":[]})
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"it","selector":".tiny_mce_simple","toolbar1":"fullscreen | insertfile undo redo | copy paste | bold italic underline | styleselect fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image","menubar":false,"toolbar2":null,"macros_setup":[]})
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"it","selector":".tiny_mce_restricted","toolbar1":"bold italic underline | link","menubar":false,"toolbar2":null,"macros_setup":[]})
+});
+</script>
+
+
+  </head>
+  <body class="controller-content_viewer action-content_viewer-view_page template-default">
+    <a href="#content" id="link-go-content"><span>Go to the content</span></a>
+    
+    <div id="global-header">
+      <!-- div class='supportbanner'>
+  <div class='content'>
+    <div class='banner-title'>Campanha de doação 2016</div>
+    <div class='banner-subtitle'>Ajude a <span class='asl'>ASL.Org</span> a realizar o <span class='fisl17'>FISL17</span>!</div>
+    <p>Ajude a Associação Software Livre.Org a continuar seu trabalho de 12 anos em prol do desenvolvimento e disseminação do Software Livre. Faça uma doação e ganhe um ingresso cortesia para o <span class='fisl17'>FISL17</span> e uma camiseta oficial do evento.</p>
+  </div>
+  <div class='footer-links'>
+    <a class='logo-fisl17' href='http://fisl.org.br' target='_blank'><span>fisl17</span></a>
+    <a class='logo-asl' href='http://asl.org' target='_blank'><span>ASL.org</span></a>
+    <a class='iot-fisl' href='http://segue.fisl17.softwarelivre.org' target='_blank'><span>Contribua para o fisl17</span></a>
+  </div>
+</div -->
+
+    </div>
+
+    <div id="wrap-1">
+      <div id="theme-header">
+        <div id="top">
+  <ul id="top-menu">
+    <li><a href="/"><span>Início</span></a></li>
+    <li><a id="submenu-people" href="/search/people"><span class="icon-menu-people">People</span></a><a class="up menu-submenu-trigger" id="submenu-people-trigger" onclick="toggleSubmenu(this, '', {&quot;More recent&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_recent&quot;},&quot;More active&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_active&quot;},&quot;More popular&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_popular&quot;}}); return false" href="#"><span>People menu</span></a></li>
+    <li><a id="submenu-communities" href="/search/communities"><span class="icon-menu-community">Communities</span></a><a class="up menu-submenu-trigger" id="submenu-communities-trigger" onclick="toggleSubmenu(this, '', {&quot;More recent&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_recent&quot;},&quot;More active&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_active&quot;},&quot;More popular&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_popular&quot;}}); return false" href="#"><span>Communities menu</span></a></li>
+    <li><a href="/profile/portal/events" id="submenu-events"><span class='icon-menu-events'>Events</span></a></li>
+    <li><a href="/doc"><span>Manual</span></a></li>
+    <li><a href="/portal/quem-somos" id="submenu-about"><span>About</span></a></li>
+  </ul>
+</div>
+
+      </div>
+      <div id="wrap-2">
+        <div id="user">
+    <span class='not-logged-in'>
+      <span class='login'><a id="link_login" onclick="return noosfero.modal.inline(&#39;#inlineLoginBox&#39;)" class="" href="/account/login"><i class="icon-menu-login"></i><strong>Login</strong></a></span>
+
+      <div id='inlineLoginBox' style='display: none;'>
+        <div class="login-box">
+
+<h2>Login</h2>
+
+
+
+
+<form action="/account/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="VEJQzDcW1+fbOkbsqw/2eCq4TrrWvDMRRmeGJu8k/9jJKuDNRU3VBDQhs3Itj4wbZSmEed4w9EMb678isK9ZCg==" />
+
+     <div class="formfieldline"><label class="formlabel" for="main_user_login">Username / Email</label><div class="formfield type-text"><input id="main_user_login" onchange="this.value = convToValidLogin( this.value )" type="text" name="user[login]" /></div></div>
+
+     <div class="formfieldline"><label class="formlabel" for="user_password">Password</label><div class="formfield type-password"><input type="password" name="user[password]" id="user_password" /></div></div>
+
+     <div class='checkbox'>
+       <label>
+         <input type="checkbox" name="remember_me" id="remember_me" value="1" checked="checked" />
+         Keep me logged in
+       </label>
+     </div>
+
+     
+
+     <div class=" button-bar">
+       <input type="submit" name="commit" value="Log in" class="button with-text icon-login submit" />
+         <a class="button icon-close with-text modal-toggle modal-close" rel="deactivate" title="Cancel" href="#">&nbsp;<span>Cancel</span></a>
+<br style="clear: left;" /></div>
+</form>
+<div class=" button-bar">
+    <a class="button icon-add with-text" title="New user" href="/account/signup">&nbsp;<span>New user</span></a>
+
+    <a class="button icon-help with-text" title="I forgot my password!" href="/account/forgot_password">&nbsp;<span>I forgot my password!</span></a>
+<br style="clear: left;" /></div>
+</div><!-- end class="login-box" -->
+
+
+      </div>
+
+        <span class='or'>or</span> <span class='signup'><a href="/account/signup"><strong>Sign up</strong></a></span>
+    </span>
+  <form action="/search/articles" id="top-search" class="search_form clean" method="get">
+    <input name="query" size="15" title="Search..." onfocus="this.form.className='focused';" onblur="this.form.className=''" />
+    <div>Press <strong>Enter</strong> to send the search query.</div>
+    <script>
+//<![CDATA[
+jQuery("#user form input").hint();
+//]]>
+</script>
+  </form>
+</div><!-- end id="user" -->
+
+        <h1 id="site-title">
+          <a href="/"><span>Software livre Brasil</span></a>
+
+        </h1>
+        <div id="navigation">
+          <ul>
+            <div id="friends">
+<ul>
+  <li><a href="/portal"><span>+</span></a></li>
+  <li><a href="http://br-linux.org"><span>BR-Linux</span></a></li>
+  <li><a href="http://www.vivaolinux.com.br"><span>Viva o Linux</span></a></li>
+  <li><a href="http://www.revista.espiritolivre.org"><span>Revista Espírito Livre</span></a></li>
+  <li><a href="http://www.dicas-l.com.br"><span>Dicas-L</span></a></li>
+  <li><a href="http://www.sejalivre.org"><span>Seja Livre</span></a></li>
+  <li><a href="http://www.underlinux.com.br"><span>Under Linux</span></a></li>
+  <li><a href="http://www.sempreupdate.com.br"><span>Sempre Update</span></a></li>
+</ul>
+</div>
+<div id="external-links">
+<ul>
+  <li><a id="blogoosfero" title="Blogoosfero" href="http://blogoosfero.cc/software-livre" target="_blank"><span>Blogoosfero</span></a></li>
+  <li><a id="twitter" title="Twitter" href="https://twitter.com/PSLBrasil" target="_blank"><span>Twitter</span></a></li>
+  <li><a id="diaspora" title="Diaspora" href="https://diaspora.softwarelivre.org/u/pslbrasil" target="_blank"><span>Diaspora</span></a></li>
+  <li><a id="gnu-social" title="Quitter" href="https://quitter.se/pslbrasil" target="_blank"><span>Quitter</span></a></li>
+  <li><a id="feed" title="Feed" href="http://softwarelivre.org/portal/feed"><span>Feed</span></a></li>
+</ul>
+</div>
+
+          </ul>
+          <div id="navigation-end"></div>
+        </div><!-- end id="navigation" -->
+        <div id="content">
+          <div id="content-inner">
+  <div id="profile-header"></div><div class="boxes" id="boxes"><div class="box box-3" id="box-855"><div class="blocks">    <div class="block-outer"><div class="block members-block" id="block-1833" help="Clicking a member takes you to his/her homepage"><div class="block-inner-1"><div class="block-inner-2">
+<div class="block-header"><h3 class="block-title"><span>17 integrantes</span></h3><h4 class="block-subtitle empty"><span></span></h4></div>
+
+<div>
+    <ul>
+      <div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/cjnetbr/check_friendship" onclick="toggleSubmenu(this, 'cjnet', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/cjnetbr&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/cjnetbr/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/cjnetbr/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/cjnetbr/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/cjnetbr/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/cjnetbr&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Claudio Pereira Gonçalves Junior" href="http://softwarelivre.org/cjnetbr"><span class="profile-image"><img alt="Claudio Pereira Gonçalves Junior" title="" class=" photo" src="/image_uploads/0013/4068/perfil_minor.jpg" /></span><span class="fn">cjnet</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/valessiobrito/check_friendship" onclick="toggleSubmenu(this, 'Valessio Brito', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/valessiobrito&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/valessiobrito/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/valessiobrito/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/valessiobrito/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/valessiobrito/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/valessiobrito&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Valessio Brito" href="http://softwarelivre.org/valessiobrito"><span class="profile-image"><img alt="Valessio Brito" title="" class=" photo" src="/image_uploads/0008/5545/evento12.2013_minor.jpg" /></span><span class="fn">Valessio Brito</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/automata/check_friendship" onclick="toggleSubmenu(this, 'automata', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/automata&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/automata/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/automata/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/automata/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/automata/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/automata&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Vilson Vieira" href="http://softwarelivre.org/automata"><span class="profile-image"><img alt="Vilson Vieira" title="" class=" photo" src="/image_uploads/0008/1862/automata_big_minor.jpg" /></span><span class="fn">automata</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/terradigital/check_friendship" onclick="toggleSubmenu(this, 'Vollrath', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/terradigital&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/terradigital/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/terradigital/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/terradigital/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/terradigital/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/terradigital&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Vinicius Vollrath" href="http://softwarelivre.org/terradigital"><span class="profile-image"><img alt="Vinicius Vollrath" title="" class=" photo" src="/image_uploads/0013/5834/vinicius-perfil-redes_minor.jpg" /></span><span class="fn">Vollrath</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/vicente/check_friendship" onclick="toggleSubmenu(this, 'Vicente Aguiar', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/vicente&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/vicente/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/vicente/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/vicente/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/vicente/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/vicente&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Vicente Aguiar" href="http://softwarelivre.org/vicente"><span class="profile-image"><img alt="Vicente Aguiar" title="" class=" photo" src="/image_uploads/0013/4296/photo110097119107459459_minor.jpg" /></span><span class="fn">Vicente Aguiar</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/joenio/check_friendship" onclick="toggleSubmenu(this, 'Joenio Costa', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/joenio&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/joenio/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/joenio/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/joenio/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/joenio/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/joenio&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Joenio Costa" href="http://softwarelivre.org/joenio"><span class="profile-image"><img alt="Joenio Costa" title="" class=" photo" src="/image_uploads/0013/8697/joenio-profile_minor.jpg" /></span><span class="fn">Joenio Costa</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/dani/check_friendship" onclick="toggleSubmenu(this, 'Daniela Feitosa', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/dani&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/dani/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/dani/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/dani/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/dani/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/dani&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Daniela Feitosa" href="http://softwarelivre.org/dani"><span class="profile-image"><img alt="Daniela Feitosa" title="" class=" photo" src="/image_uploads/0000/7139/dani_minor.jpg" /></span><span class="fn">Daniela Feitosa</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/belleb/check_friendship" onclick="toggleSubmenu(this, 'Belle', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/belleb&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/belleb/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/belleb/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/belleb/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/belleb/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/belleb&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Isabele Barbosa" href="http://softwarelivre.org/belleb"><span class="profile-image"><img alt="Isabele Barbosa" title="" class=" photo" src="/image_uploads/0013/5672/IMG_20170317_084625_331_minor.jpg" /></span><span class="fn">Belle</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block no-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/terceiro/check_friendship" onclick="toggleSubmenu(this, 'Antonio Terceiro', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/terceiro&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/terceiro/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/terceiro/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/terceiro/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/terceiro/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/terceiro&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Antonio Terceiro" href="http://softwarelivre.org/terceiro"><span class="profile-image"><img alt="Antonio Terceiro" title="" class=" photo" src="//www.gravatar.com/avatar/75e3b052e046e34cbb10917c5f9901d7?only_path=false&amp;size=50&amp;d=wavatar" /></span><span class="fn">Antonio Terceiro</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/julio20/check_friendship" onclick="toggleSubmenu(this, 'Julio Santos', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/julio20&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/julio20/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/julio20/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/julio20/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/julio20/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/julio20&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Julio Santos" href="http://softwarelivre.org/julio20"><span class="profile-image"><img alt="Julio Santos" title="" class=" photo" src="/image_uploads/0013/5780/dsc-0123348_minor.jpg" /></span><span class="fn">Julio Santos</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/caiosba/check_friendship" onclick="toggleSubmenu(this, 'Caio SBA', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/caiosba&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/caiosba/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/caiosba/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/caiosba/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/caiosba/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/caiosba&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Caio S. de Britto Almeida" href="http://softwarelivre.org/caiosba"><span class="profile-image"><img alt="Caio S. de Britto Almeida" title="" class=" photo" src="/image_uploads/0009/6742/CaioRubyConf2014_minor.jpg" /></span><span class="fn">Caio SBA</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/diguliu/check_friendship" onclick="toggleSubmenu(this, 'Rodrigo Souto', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/diguliu&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/diguliu/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/diguliu/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/diguliu/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/diguliu/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/diguliu&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Rodrigo Souto" href="http://softwarelivre.org/diguliu"><span class="profile-image"><img alt="Rodrigo Souto" title="" class=" photo" src="/image_uploads/0007/5713/rodrigo-south-park_minor.png" /></span><span class="fn">Rodrigo Souto</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/filipeosaraiva/check_friendship" onclick="toggleSubmenu(this, 'Filipe Saraiva', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/filipeosaraiva&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/filipeosaraiva/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/filipeosaraiva/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/filipeosaraiva/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/filipeosaraiva/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/filipeosaraiva&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Filipe Saraiva" href="http://softwarelivre.org/filipeosaraiva"><span class="profile-image"><img alt="Filipe Saraiva" title="" class=" photo" src="/image_uploads/0007/0972/filipe_research_gate_minor.jpg" /></span><span class="fn">Filipe Saraiva</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/matheusmsampaio/check_friendship" onclick="toggleSubmenu(this, 'Matheus', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/matheusmsampaio&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/matheusmsampaio/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/matheusmsampaio/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/matheusmsampaio/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/matheusmsampaio/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/matheusmsampaio&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Matheus Sampaio" href="http://softwarelivre.org/matheusmsampaio"><span class="profile-image"><img alt="Matheus Sampaio" title="" class=" photo" src="/image_uploads/0009/3124/Perfil2_minor.jpeg" /></span><span class="fn">Matheus</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/alano/check_friendship" onclick="toggleSubmenu(this, 'Alano', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/alano&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/alano/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/alano/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/alano/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/alano/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/alano&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Alano Acioli" href="http://softwarelivre.org/alano"><span class="profile-image"><img alt="Alano Acioli" title="" class=" photo" src="/image_uploads/0009/5774/Eu-rosto_minor.png" /></span><span class="fn">Alano</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block no-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/reginasanto/check_friendship" onclick="toggleSubmenu(this, 'Regina', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/reginasanto&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/reginasanto/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/reginasanto/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/reginasanto/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/reginasanto/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/reginasanto&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Regina" href="http://softwarelivre.org/reginasanto"><span class="profile-image"><img alt="Regina" title="" class=" photo" src="//www.gravatar.com/avatar/f3ad19b40db83a4f2da72256834ce706?only_path=false&amp;size=50&amp;d=wavatar" /></span><span class="fn">Regina</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block no-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/vinimlo/check_friendship" onclick="toggleSubmenu(this, 'Vini Melo', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/vinimlo&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/vinimlo/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/vinimlo/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/vinimlo/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/vinimlo/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/vinimlo&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Vinícius Melo" href="http://softwarelivre.org/vinimlo"><span class="profile-image"><img alt="Vinícius Melo" title="" class=" photo" src="//www.gravatar.com/avatar/5c7eb3ed7fc3ba11b6e59be803a31cb0?only_path=false&amp;size=50&amp;d=wavatar" /></span><span class="fn">Vini Melo</span><span class="extra_info"></span></a></li></div>
+
+    </ul>
+  <br style="clear:both" />
+</div>
+<div class="block-footer-content"><a class="view-all" href="/profile/psl-bahia/members#members-tab">Mostra Tutto</a>
+
+</div></div></div></div></div>
+</div></div>
+<div class="box box-2" id="box-854"><div class="blocks">  <div class="block-outer"><div class="block profile-image-block" id="block-1831" help="This block presents the profile image"><div class="block-inner-1"><div class="block-inner-2"><div class="vcard">
+
+
+<div class="profile-big-image img-pic">
+  <div class="profile-big-image-inner1">
+    <div class="profile-big-image-inner2">
+      <a href="http://softwarelivre.org/psl-bahia"><img alt="Projeto Software Livre Bahia" title="" class=" logo" src="/image_uploads/0000/0723/Logo_PSL-BA_G__big.png" />
+</a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="profile-info-options">
+  <ul>
+  <li>
+    <div class='join-leave-button require-login-popup'>
+    <a class="button icon-add with-text modal-toggle join-community" title="Join this community" href="/profile/psl-bahia/join_not_logged">&nbsp;<span>Join this community</span></a>
+</div>
+
+<script>
+//<![CDATA[
+
+  noosfero.add_and_join.locales.leaveConfirmation = "Please confirm to leave the community 'Projeto Software Livre Bahia'"
+
+//]]>
+</script>
+
+  </li>
+</ul>
+
+</div>
+</div><!-- end class="vcard" -->
+</div></div></div></div>
+
+    <div class="block-outer"><div class="block link-list-block" id="block-9693" help="This block can be used to create a menu of links. You can add, remove and update the links as you wish."><div class="block-inner-1"><div class="block-inner-2"><div class="block-header"><h3 class="block-title empty"><span></span></h3><h4 class="block-subtitle empty"><span></span></h4></div>
+
+
+
+<ul>
+    <li>
+      <a class="icon-spread" href="http://wiki.dcc.ufba.br/PSL">Site do PSL-Ba</a>
+    </li>
+    <li>
+      <a class="icon-send" href="http://wiki.dcc.ufba.br/PSL/ListaDeDiscussao">Lista de Discussão</a>
+    </li>
+    <li>
+      <a class="icon-edit" href="/psl-bahia/blog">Blogosfera do PSL-Ba</a>
+    </li>
+</ul>
+</div></div></div></div>
+
+    <div class="block-outer"><div class="block blog-archives-block" id="block-9699"><div class="block-inner-1"><div class="block-inner-2">  <div class="block-header"><h3 class="block-title"><span>Posts </span></h3><h4 class="block-subtitle empty"><span></span></h4></div>
+
+  <ul class='blog-archives'>
+      <li><strong>2017 (1)</strong></li>
+      <ul class='2017-archive'>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=11&year=2017">Novembre (1)</a></li>
+      </ul>
+      <li><strong>2015 (59)</strong></li>
+      <ul class='2015-archive'>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=10&year=2015">Ottobre (1)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=9&year=2015">Settembre (5)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=8&year=2015">Agosto (11)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=7&year=2015">Luglio (2)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=6&year=2015">Giugno (8)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=5&year=2015">Maggio (6)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=4&year=2015">Aprile (5)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=3&year=2015">Marzo (15)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=2&year=2015">Febbraio (4)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=1&year=2015">Gennaio (2)</a></li>
+      </ul>
+      <li><strong>2014 (32)</strong></li>
+      <ul class='2014-archive'>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=12&year=2014">Dicembre (5)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=11&year=2014">Novembre (4)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=10&year=2014">Ottobre (2)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=9&year=2014">Settembre (5)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=8&year=2014">Agosto (4)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=7&year=2014">Luglio (3)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=6&year=2014">Giugno (2)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=5&year=2014">Maggio (2)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=4&year=2014">Aprile (2)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=3&year=2014">Marzo (2)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=2&year=2014">Febbraio (1)</a></li>
+      </ul>
+      <li><strong>2013 (15)</strong></li>
+      <ul class='2013-archive'>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=11&year=2013">Novembre (1)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=10&year=2013">Ottobre (2)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=9&year=2013">Settembre (1)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=7&year=2013">Luglio (2)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=6&year=2013">Giugno (1)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=4&year=2013">Aprile (3)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=2&year=2013">Febbraio (3)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=1&year=2013">Gennaio (2)</a></li>
+      </ul>
+      <li><strong>2012 (55)</strong></li>
+      <ul class='2012-archive'>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=11&year=2012">Novembre (1)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=10&year=2012">Ottobre (1)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=9&year=2012">Settembre (2)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=8&year=2012">Agosto (1)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=7&year=2012">Luglio (1)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=6&year=2012">Giugno (4)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=5&year=2012">Maggio (9)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=4&year=2012">Aprile (10)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=3&year=2012">Marzo (7)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=2&year=2012">Febbraio (8)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=1&year=2012">Gennaio (11)</a></li>
+      </ul>
+      <li><strong>2011 (228)</strong></li>
+      <ul class='2011-archive'>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=12&year=2011">Dicembre (4)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=11&year=2011">Novembre (7)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=10&year=2011">Ottobre (23)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=9&year=2011">Settembre (19)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=8&year=2011">Agosto (28)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=7&year=2011">Luglio (16)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=6&year=2011">Giugno (19)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=5&year=2011">Maggio (17)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=4&year=2011">Aprile (21)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=3&year=2011">Marzo (34)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=2&year=2011">Febbraio (20)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=1&year=2011">Gennaio (20)</a></li>
+      </ul>
+      <li><strong>2010 (475)</strong></li>
+      <ul class='2010-archive'>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=12&year=2010">Dicembre (24)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=11&year=2010">Novembre (25)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=10&year=2010">Ottobre (26)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=9&year=2010">Settembre (32)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=8&year=2010">Agosto (36)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=7&year=2010">Luglio (36)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=6&year=2010">Giugno (35)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=5&year=2010">Maggio (71)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=4&year=2010">Aprile (74)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=3&year=2010">Marzo (49)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=2&year=2010">Febbraio (41)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=1&year=2010">Gennaio (26)</a></li>
+      </ul>
+      <li><strong>2009 (249)</strong></li>
+      <ul class='2009-archive'>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=12&year=2009">Dicembre (13)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=11&year=2009">Novembre (32)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=10&year=2009">Ottobre (35)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=9&year=2009">Settembre (51)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=8&year=2009">Agosto (33)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=7&year=2009">Luglio (25)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=6&year=2009">Giugno (48)</a></li>
+          <li><a href="http://softwarelivre.org/psl-bahia/blog?month=5&year=2009">Maggio (12)</a></li>
+      </ul>
+  </ul>
+
+  <div class="subscribe-feed"><a href="http://softwarelivre.org/psl-bahia/blog/feed">Subscribe RSS Feed</a></div>
+</div></div></div></div>
+
+    <div class="block-outer"><div class="block recent-documents-block" id="block-9597" help="This block lists your content most recently updated."><div class="block-inner-1"><div class="block-inner-2"><div class="block-header"><h3 class="block-title"><span>Novidades da Bahia</span></h3><h4 class="block-subtitle empty"><span></span></h4></div>
+
+<ul>
+    <li><a href="http://softwarelivre.org/psl-bahia/blog/existem-blobs-binarios-no-kernel-linux-usado-pelo-ubuntu">Existem Blobs Binários no Kernel Linux usado pelo Ubuntu?</a></li>
+    <li><a href="http://softwarelivre.org/psl-bahia/blog/video-interessante-sobre-devops-com-legenda-em-pt-br">Vídeo interessante sobre DevOps, com legenda em pt-br</a></li>
+    <li><a href="http://softwarelivre.org/psl-bahia/blog/deixando-de-ser-artesao-repensando-a-gerencia-de-servidores">Deixando de ser artesão – Repensando a gerência de servidores</a></li>
+    <li><a href="http://softwarelivre.org/psl-bahia/blog/video-2o-docker-salvador">Vídeo – 2º Docker Salvador</a></li>
+    <li><a href="http://softwarelivre.org/psl-bahia/blog/puppet-4-e-suas-melhores-praticas">Puppet 4 e suas melhores práticas</a></li>
+</ul>
+<div class="block-footer-content">  <a href="/profile/psl-bahia/sitemap">All content</a>
+</div></div></div></div></div>
+</div></div>
+<div class="box box-1" id="box-853"><div class="blocks">  <div class="block-outer"><div class="block main-block" id="block-1830" help="This block presents the main content of your pages."><div class="block-inner-1"><div class="block-inner-2"><div class="main-content">
+<div id="article" class="text-article">
+
+
+
+<script type="text/javascript">
+    window.ONE_COMMENT = "One comment";
+    window.COMMENT_PLURAL = "comments";
+    window.NO_COMMENT_YET = "No comments yet";
+</script>
+
+  <div id="article-parent">
+    <a class="button icon-back with-text" title="Go back to Blogosfera d..." href="http://softwarelivre.org/psl-bahia/blog">&nbsp;<span>Go back to Blogosfera d...</span></a>
+  </div>
+
+<div id="article-toolbar">
+  <div>
+  <div id="article-actions">
+
+    
+      <script>fullscreenPageLoad('#article')</script>
+    <a id="fullscreen-btn" onClick="toggle_fullwidth(&#39;#article&#39;)" class="button with-text icon-fullscreen" href="#" title="Go to full screen mode"><span>Full screen</span></a><a style="display: none;" id="exit-fullscreen-btn" onClick="toggle_fullwidth(&#39;#article&#39;)" class="button with-text icon-fullscreen" href="#" title="Exit full screen mode"><span>Exit full screen</span></a>
+
+
+
+
+
+
+      <a id="suggest-article-link" class="button with-text icon-suggest" href="/myprofile/psl-bahia/cms/suggest_an_article"><span>Suggest an article</span></a>
+
+
+
+    
+
+    
+
+  </div>
+  <div id="article-header">
+    
+    
+      <h1 class="title">
+      Carlos José Pereira: Programação de GUIs utilizando GTK - Parte 3
+  </h1>
+  <span class="publishing-info">
+  <span class="date">
+    Maggio 19, 2011 0:00
+  </span>
+  <span class="author">
+    , by Software Livre Brasil
+  </span>
+  <span class="comments">
+     - <a href="/psl-bahia/blog/carlos-jose-pereira-programacao-de-guis-utilizando-gtk-parte-3#comments_list"><span class='comment-count hide'>0</span><span class='comment-count-write-out'>no comments yet</span></a>
+  </span>
+
+<span class="followers-count">
+|
+    No one following this article yet.
+</span>
+
+</span>
+
+  <div id='article-sub-header'>
+      <div id="article-hits">
+        Viewed 262 times 
+      </div>
+
+  </div>
+
+
+    
+  </div>
+</div>
+
+</div>
+
+
+
+  <div id="addThis">
+  <script type="text/javascript">
+    addthis_pub = 'ra-4d93d22a7a91a05f';
+    addthis_logo = '';
+    addthis_options = 'identica, twitter, www.facebook.com, favorites, email, delicious, tumblr, digg, slashdot, more';
+  </script>
+  <a href="http://www.addthis.com/bookmark.php" id="bt_addThis" target="_blank" onmouseover="return addthis_open(this, '', '[URL]')" onmouseout="addthis_close()" onclick="return addthis_sendto()"><img width="53" height="16" border="0" alt="" src="/images/bt-bookmark.gif" /></a>
+</div>
+
+
+  <div class="article-body article-body-text-article">
+    .<br>Back to life... :-)<br><br>Vamos estudar detalhadamente o programa "aloumundo" apresentado no post anterior. Também veremos alguns detalhes relacionados com a consulta a documentação da GTK. Por enquanto, estes artigos ainda serão baseados na GTK2, mas tentarei mostrar comparações com a nova GTK3, na medida do possível.<br><br>Falando em GTK3, algumas observações:<br><ul><li>houve quebra da compatibilidade entre GTK2 e GTK3. Ou seja, não teremos 100% das coisas que funcionam em GTK2 funcionando diretamente (sem modificações) na GTK3;</li></ul><ul><li>devido a essa quebra de compatibilidade, é possível instalar no seu sistema as duas bibliotecas separadamente, e usar (na compilação) conforme o caso. Para instalar a nova GTK3 (para desenvolvimento) e suas dependências, basta instalar o pacote libgtk-3-dev;</li></ul><ul><li>já que estamos no gerenciador de pacotes... vamos instalar também devhelp (acesso a documentação das bibliotecas), libgtk2.0-doc (documentação offline da biblioteca GTK2), e libgtk3.0-doc (idem... GTK3);</li></ul><ul><li>para compilar com GTK3, basta alterar o parâmetro de pkg-config (veja post anterior) para "gtk+-3.0":</li></ul><br><a href="http://3.bp.blogspot.com/-tFrSnj2zwjo/TdVZSroBWbI/AAAAAAAAAPQ/ohvXykc_VWo/s1600/fig_01.png"><img src="http://3.bp.blogspot.com/-tFrSnj2zwjo/TdVZSroBWbI/AAAAAAAAAPQ/ohvXykc_VWo/s400/fig_01.png" border="0" alt="" style="display: block; margin: 0px auto 10px; text-align: center; cursor: pointer; cursor: hand; width: 400px; height: 276px;"></a><br><blockquote>O programa funciona perfeitamente, a janela é criada e tals... mas note que, diferente do que acontece se compilarmos com GTK2, aparece uma mensagem de erro na execução:<br><br><span style="font-weight: bold; font-family: courier new;">Gtk-Message: Failed to load module "canberra-gtk-module"</span><br><br>Para resolver isso, basta instalar o pacote "libcamberra-gtk3-module" e suas dependências.<br><br>Mais do que simplesmente resolver um problema técnico imediato (um erro de compilação/execução), o fato acima gera a seguinte reflexão: "será que, ao instalarmos a biblioteca de desenvolvimento libgtk3-dev, já não deveria ser instalada também, automaticamente (como dependência), a biblioteca libcamberra-gtk3-module?" Ou seja, será que os desenvolvedores/empacotadores da GTK3 "comeram mosca" nessa questão ?<br><br>Feita esta reflexão, você pode ter 2 ações possíveis: reclamar da vida, reclamar dos desenvolvedores, dizer que a coisa tá mal feita, e ficar esperando alguém corrigir... ou ... entrar verdadeiramente no espírito do desenvolvimento colaborativo do software livre, e 1) identificar se isso é realmente um bug e 2) caso seja um bug, contribuir para seu conserto, que vai desde informar esse fato em uma lista de discussão apropriada ou em um sistema de gerenciamento de bugs, até efetivamente mudar o código. Nessa linha de ação, enviei um email para a lista "gnome-love" (específica para auxílio a novatos) para receber o feedback dos mais experientes sobre o fato. Depois coloco aqui a(s) resposta(s).</blockquote><br><br>Segue então, o programa que iremos analisar:<br><br><pre><code style="color: #000000;">1:  #include &lt;gtk/gtk.h&gt;<br>2:<br>3:  int main (int argc, char *argv[])<br>4:  {<br>5:<br>6:    GtkWidget *window;<br>7:<br>8:    gtk_init (&amp;argc, &amp;argv);<br>9:<br>10:    window = gtk_window_new (GTK_WINDOW_TOPLEVEL);<br>11:    gtk_window_set_title (GTK_WINDOW (window), "Alou, mundo!!");<br>12:<br>13:    gtk_widget_show (window);<br>14:<br>15:    gtk_main ();<br>16:    return 0;<br>17:<br>18:  }<br>19:<br></code></pre><br>Para desenvolver com GTK, precisamos incluir (#include) o arquivo gtk.h. Apesar de gtk ser composta por várias bibliotecas de apoio, não precisamos indicá-las todas, o próprio gtk.h já faz isso pra gente. Claro que você precisará indicar outras bibliotecas (não relacionadas com GTK) que você quiser usar no seu programa.<br><br>Vamos então, nesse programa, criar e apresentar ao usuário uma simples janela. Precisamos então de uma variável para ser a referência desta janela. Criamos então a variável window, como um ponteiro para GtkWidget. A explicação de porque estamos criando esta variável como ponteiro para GtkWidget, e não GtkWindow, está no primeiro post desta série. Mas para relembrar rapidamente, todo objeto em gtk é construído a partir do objeto básico GtkWidget, utilizando o recurso de herança do paradigma de orientação a objetos. Logo, uma GtkWindow <span style="font-weight: bold;">É</span> um GtkWidget.<br><br>A função gtk_init é reponsável pela inicialização do ambiente GTK. Deve ser chamada antes de qualquer outra.<br><br>Vamos então, enfim, criar a janela. Atente para o fato que, neste passo, iremos criar a janela EM MEMÓRIA, ou seja, na verdade não vamos criar "o objeto gráfico janela, na tela", mas sim, criar as estruturas de dados em memória que vão armazenar e controlar o funcionamento deste futuro objeto gráfico. A função que faz isso é a gtk_window_new. Vamos ver na documentação qual é o protótipo desta função (ou seja, quais parâmetros precisamos passar para ela executar seu trabalho, e o que ela nos retorna). Vou utilizar para isso o DEVHELP, acessando dentro dele o "GTK+ 2 reference manual":<br><br><a href="http://1.bp.blogspot.com/-TCmn4nG4QD4/TdVZS6o-fCI/AAAAAAAAAPY/COnX0_NF1z0/s1600/fig_02.png"><img src="http://1.bp.blogspot.com/-TCmn4nG4QD4/TdVZS6o-fCI/AAAAAAAAAPY/COnX0_NF1z0/s400/fig_02.png" border="0" alt="" style="display: block; margin: 0px auto 10px; text-align: center; cursor: pointer; cursor: hand; width: 400px; height: 214px;"></a><br>Para usar a função, então, precisaremos indicar um "GtkWindowType". O que é isso? É um parâmetro que diz que tipo de janela iremos criar, se uma janela principal (com tudo que tem direito, bordas, redimensionamento, título, etc...) ou uma janela "básica", sem esses recursos. Se clicarmos no próprio link "GtkWindowType, o DEVHELP vai nos mostrar que dados são válidos para este parâmetro (ou seja, quais os valores que estão definidos na enum GtkWindowType).<br><br><a href="http://2.bp.blogspot.com/-pu5rPZP72ro/TdVZTA_qmPI/AAAAAAAAAPg/ingGY-nRnBs/s1600/fig_03.png"><img src="http://2.bp.blogspot.com/-pu5rPZP72ro/TdVZTA_qmPI/AAAAAAAAAPg/ingGY-nRnBs/s400/fig_03.png" border="0" alt="" style="display: block; margin: 0px auto 10px; text-align: center; cursor: pointer; cursor: hand; width: 274px; height: 171px;"></a><br>Podemos então passar para a função o valor GTK_WINDOW_TOPLEVEL (para uma janela normal, com tudo) ou GTK_WINDOW_POPUP (a janela básica "no osso"). O DEVHELP mostra uma descrição básica para esses valores.<br><br>Voltando a definição da função gtk_window_new, vemos que ela retorna um ponteiro para o tipo GtkWidget. Ou seja, vamos armazenar este retorno (que é efetivamente a referência para os dados da janela criados na memória) na variável window, criada anteriormente.<br><br>Vamos agora definir o texto que vai aparecer na barra de título da janela (Não esqueça que nossa janela ainda é um "projeto" de janela, na memória, e não um objeto gráfico bonitinho na tela do computador... ). Para isso utilizaremos a função gtk_window_set_title. Lá vamos nós novamente no DEVHELP...<br><br><a href="http://4.bp.blogspot.com/-7WGV_VcaoX4/TdVZTVdno0I/AAAAAAAAAPo/tqz1Mu2BDW0/s1600/fig_04.png"><img src="http://4.bp.blogspot.com/-7WGV_VcaoX4/TdVZTVdno0I/AAAAAAAAAPo/tqz1Mu2BDW0/s400/fig_04.png" border="0" alt="" style="display: block; margin: 0px auto 10px; text-align: center; cursor: pointer; cursor: hand; width: 400px; height: 130px;"></a><br>A função não retorna nada (void), mas precisa de 2 parâmetros: um ponteiro para GtkWindow (referência da janela que vamos definir o texto na barra de título) e um ponteiro para "const gchar".<br><br>Como diria Jack, "vamos por partes": armazenamos a referência da janela num ponteiro para GtkWidget, e agora você diz que quer um ponteiro para GtkWindow? Bem, se você relembrar o primeiro post dessa série, verá que a hierarquia de objetos (widget hierarchy) começa em GtkWidget e, neste caso específico, termina em GtkWindow. Ou seja, uma GtkWindow <span style="font-weight: bold;">É</span> uma GtkWidget, então podemos usar uma variável no lugar da outra sem problemas! (ou quase...)<br><br>É "quase" sem problemas porque a linguagem C não foi construída levando em consideração o paradigma da orientação a objetos. Desta forma, algumas coisas não são tão transparentes como seriam numa linguagem especificamente projetada para este paradigma. No nosso caso, poderemos usar a variável window, que é GtkWidget, em um lugar que se espera uma GtkWindow, mas teremos que indicar que uma pequena conversão deverá ser feita. Isto é feito utilizando-se uma "função" que faz esse tipo de conversão pra gente. Neste caso, fica:<br><br><span style="font-weight: bold; font-family: courier new;">gtk_window_set_title (  GTK_WINDOW( window ) , ...</span><br><br>A função que "converte" algo em um GtkWindow é... GTK_WINDOW() !<br><br><span style="font-style: italic;">(estou colocando "converte" entre aspas porque não é uma conversão propriamente dita, é mais uma indicação de tipo)</span><br><br>Mais devagar:<br><ul>
+<li>a variável window é um GtkWidget;</li>
+<li>a "função" GTK_WINDOW( window ) indica que a variável window agora deverá ser tratada como uma GtkWindow. Nenhum problema aqui, pois como vimos, pelo paradigma de orientação a objetos, uma GtkWidget <span style="font-weight: bold;">É</span> um GtkWindow!</li>
+<li>como window agora será tratada como um GtkWindow, podemos passar ela para a função gtk_window_set_title sem problemas!</li>
+</ul><br>Cuidado, se você consultar o livro de Andrew Krause, ele usa o termo "cast" para indicar essa operação de "conversão":<br><span style="font-style: italic;"></span><blockquote><span style="font-style: italic;">"... you can <span style="font-weight: bold;">cast</span> an object as a GtkWindow with GTK_WINDOW() ..."</span></blockquote>Cuidado para não confundir com o cast básico da linguagem C, que tem outra sintaxe (tipo para o qual vamos converter entre parênteses, como em<span style="font-family: courier new;"> ... = (int) ...</span> ).<br><br>Alguns "casts" disponíveis:<br><br><ul>
+<li>para GObject: G_OBJECT()</li>
+<li>para GtkObject: GTK_OBJECT()</li>
+<li>para GtkWidget: GTK_WIDGET() - <span style="font-style: italic;">Como sempre criaremos objetos do tipo GtkWidget, este "cast" raramente será usado</span>.<br>
+</li>
+<li>para GtkContainer: GTK_CONTAINER()</li>
+<li>para GtkBin: GTK_BIN()</li>
+</ul><br>... ou seja, uma função cujo nome é o tipo para o qual queremos "converter" em maiúsculas. Simples assim.<br><br>Falta o segundo parâmetro, o ponteiro para const gchar. Isso nada mais é que uma string, que será o texto da barra de título da janela. Se você lembrar, quando passamos algo como "blá blá blá" (uma string) para uma função, estamos na verdade passando o endereço inicial dessa string. Por exemplo, vamos lembrar a função fopen, que abre um arquivo para leitura e/ou escrita. Seu uso é, por exemplo:<br><span style="font-family: courier new;"></span><blockquote><span style="font-family: courier new;">arquivo = fopen ("dados_vendas.txt", "w");</span></blockquote>Seu protótipo é:<br><span style="font-family: courier new;"><blockquote>FILE * fopen ( const char * filename, const char * mode )</blockquote></span>... ou seja, a variável filename (ponteiro para caracter) recebe o endereço inicial da string "dados_vendas.txt".<br><br>Agora... porque <span style="font-weight: bold;">gchar</span>, e não apenas char?<br><br>Isso é feito para permitir compatibilidade em plataformas diferentes. Você lembra que, cada tipo de dado em C tem um tamanho em bytes específico, de acordo com a plataforma que está sendo usada. Por exemplo (hipotético), um int numa plataforma pode requerer 4 bytes de espaço, enquanto que em outra plataforma pode requerer 8 bytes. Para evitar esses problemas, e possibilitar uma compilação multiplataforma mais transparente, a biblioteca GLIB fornece tipos de dados padronizados, que serão "iguais" mesmo em plataformas diferentes. Assim, se no seu programa você utiliza os tipos de dados fornecidos pela GLIB, você poderá compilar em diversas plataformas diferentes sem se preocupar com as diferenças entre elas, no que diz respeito aos tipos de dados.<br><br>Alguns tipos fornecidos pela Glib:<br><ul>
+<li>gchar - equivalente ao char</li>
+<li>gint - equivalente ao int</li>
+<li>glong - equivalente ao long</li>
+<li>gboolean - valores TRUE e FALSE (não tem equivalente no C)</li>
+</ul>Pra resumir:<br><span style="font-family: courier new;"></span><blockquote><span style="font-family: courier new;">gtk_window_set_title (GTK_WINDOW (window), "Alou, mundo!!");</span></blockquote>... vai colocar a string "Alou mundo!!" na barra de título da janela indicada pela variável window.<br><br><br>Próxima linha:<br><br><span style="font-family: courier new;">gtk_widget_show (window);</span><br><br>Você deve estar pensando, "agora sim! beleza! um comando para efetivamente mostrar a janela na tela" !!!<br><br>No baby, ainda não...<br><br>Este comando apenas DEFINE a visibilidade de um certo objeto (isto é, se ele está visível ou invisível).<br><br>Essa questão da visibilidade é mais complexa do que parece num primeiro momento. Vejamos.<br><br>Neste nosso primeiro programa, estamos trabalhando apenas com um único objeto (uma janela). Não podemos esquecer que num programa "real", teremos vários objetos ao mesmo tempo, e esses objetos estarão organizados numa hierarquia: uma janela conterá outros objetos. Um desses objetos pode ser uma "frame" (caixa), que pode conter outros objetos (botões, labels, caixas de texto para digitação, etc).<br><br>Cada objeto individual possui seu próprio estado de visibilidade ou não. Mas um objeto ser configurado para estar visível não significa que ele vai certamente ser exibido... porque depende da visibilidade do objeto pai (o objeto que está "acima" na hierarquia) !<br><br>Vamos a um exemplo mais prático: imagine uma janela, e dentro dela, um único botão. Vamos definir esses 2 objetos como visíveis:<br><br><span style="font-family: courier new;">gtk_widget_show (window);</span><br><span style="font-family: courier new;">gtk_widget_show (button);</span><br><br>Quando o ambiente gráfico for efetivamente mostrar essas coisas na tela, os 2 objetos estarão visíveis.<br><br>Digamos agora que, por algum motivo, queremos esconder o botão do usuário (pra ele não poder clicar):<br><br><span style="font-family: courier new;">gtk_widget_hide (button);</span><br><br>Isso define que o botão está agora escondido ("hidden"). Quando o ambiente gráfico atualizar a tela, vai aparecer apenas a janela.<br><br>Vamos religar a exibição do botão:<br><br><span style="font-family: courier new;">gtk_widget_show (button);</span><br><br>Novamente, janela e botão visíveis na tela.<br><br>Agora vamos esconder A JANELA:<br><br><span style="font-family: courier new;">gtk_widget_hide (window);</span><br><br>Quando o ambiente gráfico atualizar a tela, não vai mostrar nem a janela, NEM O BOTÃO. Ué, mas o botão não está configurado para ser mostrado? Sim, mas como o botão poderia ser exibido, se ele está dentro da janela, e a própria janela não está visível?<br><br>Então, resumindo, definir a exibição ou não de um certo widget, não significa que ele vai ou não vai ser exibido. É preciso levar em consideração toda a estrutura da interface gráfica que você está construindo.<br><br>Antes de terminar esse comando, vejamos o protótipo:<br><br><span style="font-family: courier new;">void gtk_widget_show (GtkWidget *widget);</span><br><br>A função não devolve nada, e espera receber um ponteiro para GtkWidget. Como nossa variável window é deste tipo, podemos passar ela direto, nenhuma "conversão" necessária.<br><br>Último comando, e finalização do programa:<br><br><span style="font-family: courier new;">gtk_main();</span><br><span style="font-family: courier new;">return 0;</span><br><br>A função gtk_main() passa o controle do gerenciamento da interface gráfica que acabamos de montar e configurar (neste exemplo simples, apenas uma janela vazia) para o ambiente gráfico. Este, então, exibe a interface (a janela) e cuida dos "eventos", ou seja, da interação que o usuário fizer com ela. Note que podemos minimizar, maximizar, mover, redimensionar a janela, mesmo sem termos escrito nenhuma linha de código para tratar dessas questões. Não precisamos, porque quem cuida disso é o próprio ambiente gráfico. gtk_main(), portanto, geralmente é o último comando do nosso main. Quaisquer outros processamentos que nosso programa for realizar (para tratar as ações do usuário) deverá constar de funções, chamadas de "callback functions". Mas isso vai ser papo para outro post.<br><br>Note que a janela aparece e tals, mas quando clicamos no 'x' para fechar, ela até fecha, mas o programa continua rodando (o terminal fica "travado"). Isso acontece porque nosso programa não está tratando nenhum "evento" gerado pelo usuário. Para finalizar o programa, mesmo com a janela fechada, deveremos teclar control-C no terminal.<br><br>Fico por aqui. Lembrando que sugestões e correções são muito bem-vindas. Até a próxima!<br><br>Grande abraço!<br><br>Carlão<div class="blogger-post-footer"><img src="https://blogger.googleusercontent.com/tracker/1071551496408414305-7091107580425747663?l=starfightercarlao.blogspot.com" height="1" alt="" width="1"></div>
+    <br style="clear:both" />
+  </div> <!-- end class="article-body" -->
+
+
+
+<div id="article-source">Source: <a href="http://starfightercarlao.blogspot.com/2011/05/programacao-de-guis-utilizando-gtk.html">http://starfightercarlao.blogspot.com/2011/05/programacao-de-guis-utilizando-gtk.html</a></div>
+
+
+
+  <div class="comments" id="comments_list">
+    <h3 class="no-comments-yet">
+      <span class='comment-count hide'>0</span><span class='comment-count-write-out'>no comments yet</span>
+    </h3>
+
+
+    <ul class="article-comments-list">
+    </ul>
+
+      <div id='page-comment-form' class='page-comment-form'><div class="page-comment-form">
+
+
+
+<div class="post_comment_box closed">
+
+  <a class="display-comment-form" href="#">Post a comment</a>
+<form class="comment_form" id="new_comment" onsubmit="jQuery.ajax({data:jQuery.param(jQuery(this).serializeArray()) + &#39;&amp;authenticity_token=&#39; + encodeURIComponent(&#39;j2cZAdhbKILsrCec0GIU4KBHYcLCmGsgPzAlPTuomfwSD6kAqgAqYQO30gJW4m6D79arAcoUrHJivBw5ZCM/Lg==&#39;), dataType:&#39;script&#39;, type:&#39;post&#39;, url:&#39;/profile/psl-bahia/comment/create/322599?escape=false&#39;}); return false;" action="/profile/psl-bahia/comment/create/322599" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="vBe2hdY2eNGHuy646IYhTQ8ZOgOFjV1JjsI+D5JNuIAhfwaEpG16Mmig2yZuBlsuQIjwwI0BmhvTTgcLzcYeUg==" />
+
+  <p><span class="required-field">The <label class='pseudoformlabel'>highlighted</label> fields are mandatory.</span></p>
+
+
+    <span class="required-field"><div class="formfieldline"><label class="formlabel" for="comment_name">Nome</label><div class="formfield type-text"><input type="text" name="comment[name]" id="comment_name" /></div></div></span>
+    <span class="required-field"><div class="formfieldline"><label class="formlabel" for="comment_email">e-mail</label><div class="formfield type-text"><input type="text" name="comment[email]" id="comment_email" /></div></div></span>
+    <p>
+    If you are a registered user, you can login and be automatically recognized.
+    </p>
+
+
+  <div class="formfieldline"><label class="formlabel" for="comment_title">Titolo</label><div class="formfield type-text"><input type="text" name="comment[title]" id="comment_title" /></div></div>
+  <span class="required-field"><div class="formfieldline"><label class="formlabel" for="comment_body">Enter your comment</label><div class="formfield type-textarea"><textarea rows="5" name="comment[body]" id="comment_body">
+</textarea></div></div></span>
+
+    <p><script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<div class="g-recaptcha " data-sitekey="6LcK7CYUAAAAABl-eMkoFIv3VvOOIPwiXeinFmUi" ajax="true"></div>
+          <noscript>
+            <div>
+              <div style="width: 302px; height: 422px; position: relative;">
+                <div style="width: 302px; height: 422px; position: absolute;">
+                  <iframe
+                    src="https://www.google.com/recaptcha/api/fallback?k=6LcK7CYUAAAAABl-eMkoFIv3VvOOIPwiXeinFmUi"
+                    frameborder="0" scrolling="no"
+                    style="width: 302px; height:422px; border-style: none;">
+                  </iframe>
+                </div>
+              </div>
+              <div style="width: 300px; height: 60px; border-style: none;
+                bottom: 12px; left: 25px; margin: 0px; padding: 0px; right: 25px;
+                background: #f9f9f9; border: 1px solid #c1c1c1; border-radius: 3px;">
+                <textarea id="g-recaptcha-response" name="g-recaptcha-response"
+                  class="g-recaptcha-response"
+                  style="width: 250px; height: 40px; border: 1px solid #c1c1c1;
+                  margin: 10px 25px; padding: 0px; resize: none;" value="">
+                </textarea>
+              </div>
+            </div>
+          </noscript>
+</p>
+
+
+  <input type="hidden" name="confirm" id="confirm" value="false" />
+  <input type="hidden" name="view" id="view" />
+  <input type="hidden" name="comment[reply_of_id]" id="comment_reply_of_id" />
+
+  
+
+  <div class=" button-bar">
+    <input type="submit" name="commit" value="Post comment" onclick="save_comment(this); return false;" class="button with-text icon-add submit" />
+      <a id="cancel-comment" class="button icon-cancel with-text" title="Cancel" href="">&nbsp;<span>Cancel</span></a>
+<br style="clear: left;" /></div></form>
+
+</div><!-- end class="post_comment_box" -->
+</div><!-- end class="page-comment-form" -->
+
+<script src="/assets/comment_form-6675ef0f0fa17bef4ca4a3b992647bd9.js"></script>
+</div>
+  </div><!-- end class="comments" -->
+
+</div><!-- end id="article" -->
+<link rel="stylesheet" media="screen" href="/assets/vendor/jquery.fancybox-f18bccba6b2b1108ccca4462da78aa43.css" /><script src="/assets/vendor/jquery.fancybox.pack-c84445b4cd8162f8a15703d690ccc514.js"></script><script>
+//<![CDATA[
+apply_zoom_to_images("Zoom in")
+//]]>
+</script>
+</div></div></div></div></div>
+</div></div></div><div id="profile-footer"></div>
+  <br style='clear: both'/>
+</div><!-- end id="content-inner" -->
+
+        </div><!-- end id="content" -->
+      </div><!-- end id="wrap-2" -->
+    </div><!-- end id="wrap-1" -->
+    
+    <div id="footer">
+      <div id="theme-footer">
+        <div id="footer-environment">
+<div id="footer-links">
+  <ul>
+    <li><ul id="slbr-footer">
+        <li><a href="http://softwarelivre.org" id="slbr" class="link-this-page"><span>Software Livre - Brasil</span></a></li>
+        <li><a href="http://softwarelivre.org/tv"><span>TV Software Livre</span></a></li>
+        <li><a href="http://softwarelivre.org/radio"><span>Rádio Software Livre</span></a></li>
+        </ul></li>
+    <li><ul id="conheca-footer"><h3>Conheça</h3>
+        <li><a href="http://softwarelivre.org/portal/quem-somos">Quem Somos</a></li>
+        <li><a href="http://softwarelivre.org/portal/termos-de-uso">Termos de Uso</a></li>
+        <li><a href="http://softwarelivre.org/doc">Documentação</a></li>
+        <li><a href="http://softwarelivre.org/contact/portal/new">Fale Conosco</a></li>
+        </ul></li>
+    <li><ul id="colabore-footer"><h3>Colabore</h3>
+        <li><b><a href="http://softwarelivre.org/myprofile/portal/cms/suggest_an_article">Sugerir um Artigo</a></b></li>
+        <li><a href="http://softwarelivre.org/portal/melhorias">Sugerir Melhorias</a></li>
+        <li><a href="http://softwarelivre.org/portal/bugs">Reportar um Bug</a></li>
+        <li><a href="http://softwarelivre.org/portal/desenvolvimento">Desenvolvimento</a></li>
+        </ul></li>
+    <li><ul id="compartilhe-footer"><h3>Compartilhe</h3>
+        <li><b><!-- AddToAny BEGIN -->
+        <a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fsoftwarelivre.org&amp;linkname=SoftwareLivre.org">Compartilhar Isto!</a>
+        <script type="text/javascript">
+        var a2a_config = a2a_config || {};
+        a2a_config.linkname = "SoftwareLivre.org";
+        a2a_config.linkurl = "http://softwarelivre.org";
+        a2a_config.onclick = 1;
+        a2a_config.locale = "pt-BR";
+        a2a_config.num_services = 6;
+        a2a_config.prioritize = ["identi_ca", "twitter", "facebook", "google_buzz", "digg", "email"]
+        </script>
+        <script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END --></b></li>
+        <li><a href="http://softwarelivre.org/portal/eventos">Novos Eventos</a></li>
+        <li><a href="http://softwarelivre.org/portal/portfolio">Portfólio Livre</a></li>
+        <li><a href="http://softwarelivre.org/portal/divulgue">Páginas Amigas</a></li>
+        </ul></li>
+    <li><ul id="apoio-footer"><h3>Apoio</h3>
+        <li> <a href="http://softwarelivre.org/portal/apoio"><img src="/portal/anuncios/apoio.png" style="width:204px"><span>Apoio</span></img></a></li>
+        </ul></li>
+</div><!-- end id="footer-links" -->
+
+<div id="copyright">
+  © Copyleft 2015 -<a id="link-asl" href="http://associacao.softwarelivre.org/" title="Associação SoftwareLivre.org">ASL</a> - Alguns direitos reservados, exceto quando especificado em contrário e nos conteúdos replicados de outras fontes.
+  <p id="noosfero-license">Este site utiliza o software livre <a href="http://www.noosfero.org/" id="link-noosfero">Noosfero</a>, licenciado sob a licença <a href="http://www.gnu.org/licenses/agpl.html">GNU Affero General Public License</a>, versão 3 ou superior.  </p>
+</div><!-- end id="copyright" -->
+</div>
+
+<script type="text/javascript">
+  jQuery(function($) {
+    $(".highlights-block").insertAfter("#theme-header");
+    $(".action-home-index #block-695148").insertBefore("#block-666540");
+    $(".action-environment_design-index #block-695148").insertBefore("#block-666540");
+    $(".action-home-index #block-695454").insertAfter("#block-666540");
+    $(".action-environment_design-index #block-695454").insertAfter("#block-666540");
+    $("#site-title").prependTo("#top");
+    $("#user").insertAfter("#site-title");
+  });
+</script>
+
+      </div><!-- end id="theme-footer" -->
+      <div id="global-footer">
+        
+      </div><!-- end id="global-footer" -->
+    </div><!-- end id="footer" -->
+    
+    <script src="https://s7.addthis.com/js/152/addthis_widget.js"></script>
+    <!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+     var u = "piwik.colivre.coop.br/";
+     if(!u.match(/^https?/)){
+       var protocol = ("https:" == document.location.protocol ? "https" : "http");
+       u = protocol + '://' + u;
+     }
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 3]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.colivre.coop.br/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+  </body>
+</html>
