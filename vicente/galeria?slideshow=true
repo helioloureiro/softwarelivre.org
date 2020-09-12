@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    <title>Galeria - Vicente Aguiar - Software Livre Brasil</title>
+
+    <style type="text/css">
+@import url(/stylesheets/slideshow.css);
+</style>
+    <script src="/javascripts/jquery-2.1.1.min.js"></script>
+<script src="/assets/vendor/sliderjs-4813c008b79ff67e006eacb62a9b8630.js"></script>
+<script src="/assets/vendor/pikachoose-476b26458f07a3a41eb6156f4ec6ef23.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function (){
+        $("#slideshow").PikaChoose({
+          buttons: { play: "Iniciar", stop: "Parar", previous: "Anterior", next: "Próximo" }
+        });
+        $("#slideshow").SliderJS({
+          window_width: 320,
+          window_height: 55,
+          list_width: 832,
+          pikachoose: true,
+          auto_play: false
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p class='back-button' ><a class="button icon- with-text" title="Voltar à galeria" href="http://softwarelivre.org/vicente/galeria">&nbsp;<span>Voltar à galeria</span></a></p>
+<ul id='slideshow' >
+      <li><img title="2012-03-01_14.17.27.jpg" src="/thumbnails/0137/3701/2012-03-01-14.17.27_display.jpg" alt="2012 03 01 14.17.27 display" /></li>
+      <li><img title="Captura_de_tela_de_2015-11-28_21_33_24.png" src="/thumbnails/0151/2696/captura-de-tela-de-2015-11-28-21-33-24_display.png" alt="Captura de tela de 2015 11 28 21 33 24 display" /></li>
+      <li><img title="DSCN4974.jpg" src="/thumbnails/0045/2600/dscn4974_display.jpg" alt="Dscn4974 display" /></li>
+      <li><img title="DSCN5049.jpg" src="/thumbnails/0045/2601/dscn5049_display.jpg" alt="Dscn5049 display" /></li>
+      <li><img title="XP Colivriano" src="/thumbnails/0001/2198/img-0068_display.jpg" alt="Img 0068 display" /></li>
+      <li><img title="Wikipedia_logo.png" src="/thumbnails/0151/2697/wikipedia-logo_display.png" alt="Wikipedia logo display" /></li>
+</ul>
+
+  </body>
+</html>
