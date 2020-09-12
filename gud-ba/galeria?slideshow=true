@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    <title>galeria - Grupo de Usuários Debian da Bahia - Software Livre Brasil</title>
+
+    <style type="text/css">
+@import url(/stylesheets/slideshow.css);
+</style>
+    <script src="/javascripts/jquery-2.1.1.min.js"></script>
+<script src="/assets/vendor/sliderjs-4813c008b79ff67e006eacb62a9b8630.js"></script>
+<script src="/assets/vendor/pikachoose-476b26458f07a3a41eb6156f4ec6ef23.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function (){
+        $("#slideshow").PikaChoose({
+          buttons: { play: "Iniciar", stop: "Parar", previous: "Anterior", next: "Próximo" }
+        });
+        $("#slideshow").SliderJS({
+          window_width: 320,
+          window_height: 55,
+          list_width: 832,
+          pikachoose: true,
+          auto_play: false
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p class='back-button' ><a class="button icon- with-text" title="Voltar à galeria" href="http://softwarelivre.org/gud-ba/galeria">&nbsp;<span>Voltar à galeria</span></a></p>
+<ul id='slideshow' >
+      <li><img title="Debian Day  - Salvador - 2011" src="/thumbnails/0035/1125/IMG_0129_display.JPG" alt="Img 0129 display" /></li>
+      <li><img title="Debian Day  - Salvador - 2011" src="/thumbnails/0035/1126/IMG_0124_display.JPG" alt="Img 0124 display" /></li>
+      <li><img title="DebianDay Salvador-Ba 2005 (13/08)" src="/thumbnails/0034/3426/2005_display.jpg" alt="2005 display" /></li>
+      <li><img title="DebianDay Salvador-Ba 2010 (14/08)" src="/thumbnails/0034/3419/dsc05610_display.jpg" alt="Dsc05610 display" /></li>
+      <li><img title="#DebianDay Salvador Bahia 2004 (21/08)" src="/thumbnails/0034/3456/diad049-vi_display.jpg" alt="Diad049 vi display" /></li>
+      <li><img title="O alternativo do #DebianDay" src="/thumbnails/0034/3451/224815-10150229343912658-618257657-8486424-3562048-n_display.jpg" alt="224815 10150229343912658 618257657 8486424 3562048 n display" /></li>
+      <li><img title="Galera comemorando o Lançamento do Squeeze" src="/thumbnails/0035/0869/squeeze_display.jpg" alt="Squeeze display" /></li>
+      <li><img title="A primeira palestra do primeiro desenvolvedor Debian que veio ao I Festival Software Livre da Bahia, em Salvador. Eduardo Maçan! :D" src="/thumbnails/0034/3450/246944-10150267413172658-618257657-8816481-5701962-n_display.jpg" alt="246944 10150267413172658 618257657 8816481 5701962 n display" /></li>
+</ul>
+
+  </body>
+</html>
