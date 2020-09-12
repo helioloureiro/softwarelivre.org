@@ -1,0 +1,277 @@
+#!/usr/bin/perl
+
+my $VERSION = '1.0.0';
+
+=head1 NAME
+
+git export-debian-patches
+
+=head1 SYNOPSIS
+
+git export-debian-patches [OPTIONS]
+
+=head1 DESCRIPTION
+
+This program must be run from inside a Debian source package that is maintained
+in a Git repository. It will generate a I<debian/patches/> directory with one
+patch for each commit in the Debian packaging branch that do not touch files
+under I<debian/>.
+
+Commits that are already applied upstream are not exported. Commits were not
+applied upstream, but were reversed by later commits, are also not applied.
+
+By default, the Debian packaging branch is assumed to be the I<master> branch,
+and the upstream branch is assumed to be I<upstream> branch. You can change
+these defaults with command-line options (see below).
+
+=head1 ASSUMPTIONS
+
+This tool makes a fair number of assumptions of how the package is being
+maintained in a Git repository:
+
+=over
+
+=item
+
+Debian packaging and upstream source are kept in separate branches.
+
+=item
+
+The upstream sources branch is merged into the Debian packaging branch.
+
+=item
+
+Changes to the upstream source made are merged into the Debian package branch.
+
+=item
+
+There are no commits that touch both files under I<debian/> and files
+outside it, i.e. all commits are either strictly Debian packaging changes B<or>
+upstream source changes.
+
+=item
+
+Last, but not least, each commits that changes upstream source and is merged
+into the Debian packaging branch is self-contained and makes sense on its own.
+If you have a series of commits that only make sense together, you will end up
+with one patch for each commit.
+
+=back
+
+One important assumption that this tools I<does not> make is how exactly you
+manage these patches. You can keep them on topic branches and merge everything
+together with the Debian packaging in a build branch. You can keep commits
+applied in the main Debian packaging branch. You can have a separate branch
+with all patches for upstream and merge it into the Debian packaging branch.
+As long as all the needed commits are merged into the I<master> branch (or
+whatever branch you pass to the I<--debian-branch> option), the relevant
+commits will be exported as patches into I<debian/patches/>.
+
+=head1 COMMAND LINE OPTIONS
+
+=over
+
+=item B<--debian-branch=>BRANCH
+
+Uses I<BRANCH> as Debian packaging branch. Default: "master".
+
+=item B<--upstream-branch=>BRANCH
+
+Uses I<BRANCH> as upstream branch. Default: "upstream".
+
+=back
+
+=head1 MODE OF OPERATION
+
+=cut
+
+use strict;
+use warnings;
+use YAML;
+use File::Basename;
+use File::Temp qw/ tempdir /;
+use File::Copy;
+use Getopt::Long;
+use Pod::Usage;
+
+# Defaults
+my $upstream_branch = 'upstream';
+my $debian_branch   = 'master';
+
+GetOptions(
+  'd|debian-branch=s'   => \$debian_branch,
+  'u|upstream-branch=s' => \$upstream_branch,
+) or pod2usage(1);
+
+scalar(@ARGV) == 0 or pod2usage(1); # no command line arguments accepted
+
+sub run($) {
+  my ($command) = @_;
+  unless (system("$command") == 0) {
+    my $exitstatus = ($? >> 8);
+    exit($exitstatus);
+  }
+}
+
+# detect whether we are in a valid git repository. If we are not, nothing
+# further happens.
+run("git symbolic-ref HEAD  > /dev/null");
+
+my $range = "$upstream_branch..$debian_branch";
+
+=pod
+
+First, all commits present in the Debian packaging branch but not in the
+upstrean branch are listed.
+
+=cut
+
+# List all commits in the specified range and transform the stream in a valid
+# YAML stream. The stream contains one list per commit. The first element of the
+# list is the commit SHA1, and the remaining elements are the files changed by
+# that commit.
+my $yaml_stream = '';
+open(GIT, "git log $range --format=---%n%H --reverse --name-only|");
+while (my $line = <GIT>) {
+  if ($line !~ /^\s*$/ ) { # skip blank lines
+    if ($line !~ /^---/) {
+      $line = "- $line";
+    }
+    $yaml_stream .= $line;
+  }
+}
+close(GIT);
+
+# Load the YAML stream
+my @commits = Load($yaml_stream);
+exit(0) unless (@commits); # do not proceed with there are no commits to process
+
+=pod
+
+Then a list of upstream commits is created by picking the commits in the
+original list that do not change any files under I<debian/>.
+
+=cut
+
+my @upstream_patches = ();
+for my $commit (@commits) {
+  my $sha1 = shift @$commit;
+  my $debian = grep { $_ =~ /^debian\//} @$commit;
+  if (!$debian) {
+    push @upstream_patches, $sha1;
+    print $sha1, "\n";
+  }
+}
+
+=pod
+
+Then a local temporary branch is created off the upstream branch, and all
+selected commits are cherry-pick'ed into that branch. The temporary branch is
+then rebased against the upstream branch. This will drop all commits that were
+already applied upstream.
+
+=cut
+
+my $tmp_branch = 'git-debian-patches-tmp';
+run("git checkout -b $tmp_branch $upstream_branch");
+for my $sha1 (@upstream_patches) {
+  run("git cherry-pick $sha1");
+}
+run("git rebase $upstream_branch");
+
+=pod
+
+After removing commits already applied upstream, the remaining patches are
+exported to a temporary directory.
+
+=cut
+
+my $tmp_dir = tempdir(CLEANUP => 1);
+run("git format-patch --output $tmp_dir $upstream_branch..$tmp_branch");
+my @patches = glob("$tmp_dir/*");
+
+=pod
+
+In that directory we exclude any pair of patches in which the later reverses
+the former.  The fact that one patch reverses the other is detected using
+B<combinediff(1)>: if patches p1 and p2 result in an empty patch when combined,
+then p2 reverts p1.
+
+=cut
+
+sub reversed($$) {
+  my ($p1, $p2) = @_;
+  open(DIFF, "combinediff $p1 $p2|");
+  my @difflines = <DIFF>;
+  close(DIFF);
+  chomp @difflines;
+  my $diff = join('', @difflines);
+  if (!$diff) {
+    # diff is empty, $p2 reverses $p1
+    return 1;
+  } else {
+    return 0;
+  }
+}
+
+my %dropped = ();
+my $n = scalar(@patches);
+for (my $i = 0; $i < $n; $i++) {
+  my $p1 = $patches[$i];
+  for (my $j = $i+1; $j < $n; $j++) {
+    my $p2 = $patches[$j];
+    if (reversed($p1,$p2)) {
+      $dropped{$p1} = 1;
+      $dropped{$p2} = 1;
+    }
+  }
+}
+@patches = grep { !$dropped{$_} } @patches;
+
+=pod
+
+Finally the Debian packaging branch is checked out, the temporary branch is
+removed, B<all files in I<debian/patches/> are deleted>, the patches are copied
+in I<debian/patches/> and a patch series file is written to
+I<debian/patches/series>.
+
+=cut
+run("git checkout $debian_branch");
+run("git branch -D $tmp_branch");
+
+run("mkdir -p debian/patches");
+run("rm -rf debian/patches/*");
+open(SERIES, '>', 'debian/patches/series');
+for my $patch (map { basename($_) } @patches) {
+  copy("$tmp_dir/$patch", "debian/patches/");
+  print SERIES $patch, "\n";
+}
+close(SERIES);
+
+=pod
+
+=head1 SEE ALSO
+
+B<git-buildpackage(1)>,
+B<git-rebase(1)>,
+B<git-format-patch(1)>,
+B<dpkg-source(1)>,
+B<combinediff(1)>.
+
+=head1 COPYRIGHT
+
+Copyright (c) 2011, Antonio Terceiro <terceiro@debian.org>
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+this program.  If not, see <http://www.gnu.org/licenses/>.
+
+=cut

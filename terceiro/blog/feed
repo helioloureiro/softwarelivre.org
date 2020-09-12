@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Feed RSS do(a) Antonio Terceiro</title><link>http://softwarelivre.org/terceiro</link><description>Conteúdo do(a) Antonio Terceiro publicado no Software Livre Brasil</description><item><title>pristine-tar updates</title><description>&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://packages.debian.org/pristine-tar"&gt;pristine-tar&lt;/a&gt; is a tool that is present in the workflow of a lot of Debian people. I adopted it last year after it has been orphaned by its creator &lt;a href="https://joeyh.name/"&gt;Joey Hess&lt;/a&gt;. A little after that &lt;a href="https://tomasz.buchert.pl/"&gt;Tomasz Buchert&lt;/a&gt; joined me and we are now a functional two-person team.&lt;/p&gt;
+&lt;p&gt;pristine-tar goals are to import the content of a pristine upstream tarball into a &lt;span class="caps"&gt;VCS&lt;/span&gt; repository, and being able to later reconstruct that exact same tarball, bit by bit, based on the contents in the &lt;span class="caps"&gt;VCS&lt;/span&gt;, so we don&amp;#8217;t have to store a full copy of that tarball. This is done by storing a binary delta files which can be used to reconstruct the original tarball from a tarball produced with the contents of the &lt;span class="caps"&gt;VCS&lt;/span&gt;. Ultimately, we want to make sure that the tarball that is uploaded to Debian is exactly the same as the one that has been downloaded from upstream, without having to keep a full copy of it around if all of its contents is already extracted in the &lt;span class="caps"&gt;VCS&lt;/span&gt; anyway.&lt;/p&gt;
+&lt;h2&gt;The current state of the art, and perspectives for the future&lt;/h2&gt;
+&lt;p&gt;pristine-tar solves a &lt;a href="https://en.wikipedia.org/wiki/Wicked_problem"&gt;wicked problem&lt;/a&gt;, because our ability to reconstruct the original tarball is affected by changes in the behavior of &lt;code&gt;tar&lt;/code&gt; and of all of the compression tools (&lt;code&gt;gzip&lt;/code&gt;, &lt;code&gt;bzip2&lt;/code&gt;, &lt;code&gt;xz&lt;/code&gt;) and by what exact options were used when creating the original tarballs. Because of this, pristine-tar currently has a few embedded copies of old versions of compressors to be able to reconstruct tarballs produced by them, and also rely on a ever-evolving patch to tar that is been carried in Debian for a while.&lt;/p&gt;
+&lt;p&gt;So basically keeping pristine-tar working is a game of &lt;a href="https://en.wikipedia.org/wiki/Whac-A-Mole"&gt;Whac-A-Mole&lt;/a&gt;. Joey provided a &lt;a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=737871"&gt;good summary of the situation when he orphaned pristine-tar&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Going forward, we may need to rely on other ways of ensuring integrity of upstream source code. That could take the form of signed git tags, signed uncompressed tarballs (so that the compression doesn&amp;#8217;t matter), or maybe even a different system for storing actual tarballs. &lt;a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=871806"&gt;Debian bug #871806&lt;/a&gt; contains an interesting discussion on this topic.&lt;/p&gt;
+&lt;h2&gt;Recent improvements&lt;/h2&gt;
+&lt;p&gt;Even if keeping pristine-tar useful in the long term  will be hard, too much of Debian work currently relies on it, so we can&amp;#8217;t just abandon it. Instead, we keep figuring out ways to improve. And I have good news: pristine-tar has recently received updates that improve the situation quite a bit.&lt;/p&gt;
+&lt;p&gt;In order to be able to understand how better we are getting at it, I created a &amp;quot;visualization of the &lt;a href="https://people.debian.org/~terceiro/pristine-tar/"&gt;regression test suite results&lt;/a&gt;. With the help of data from there, let&amp;#8217;s look at the improvements made since pristine-tar 1.38, which was the version included in stretch.&lt;/p&gt;
+&lt;h3&gt;pristine-tar 1.39: xdelta3 by default.&lt;/h3&gt;
+&lt;p&gt;This was the first release made after the stretch release, and made &lt;code&gt;xdelta3&lt;/code&gt; the default delta generator for newly-imported tarballs. Existing tarballs with deltas produced by &lt;code&gt;xdelta&lt;/code&gt; are still supported, this only affects new imports.&lt;/p&gt;
+&lt;p&gt;The support for having multiple delta generator was written by Tomasz, and was already there since 1.35, but we decided to only flip the switch after using xdelta3 was supported in a stable release.&lt;/p&gt;
+&lt;h3&gt;pristine-tar 1.40: improved compression heuristics&lt;/h3&gt;
+&lt;p&gt;pristine-tar uses a few heuristics to produce the smaller delta possible, and this includes trying different compression options. In the release Tomasz included a contribution by Lennart Sorensen to also try the &lt;code&gt;--gnu&lt;/code&gt;, which gretly improved the support for rsyncable gzip compressed files. We can see an example of the type of improvement we got in the &lt;a href="https://people.debian.org/~terceiro/pristine-tar/"&gt;regression test suite data for delta sizes&lt;/a&gt; for &lt;code&gt;faad2_2.6.1.orig.tar.gz&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src="/articles/0173/3653/1_40.png" title="In 1.40, the delta produced from the test tarball faad2_2.6.1.orig.tar.gz went down from 800KB, almost the same size of tarball itself, to 6.8KB" alt="In 1.40, the delta produced from the test tarball faad2_2.6.1.orig.tar.gz went down from 800KB, almost the same size of tarball itself, to 6.8KB" /&gt;&lt;/p&gt;
+&lt;h3&gt;pristine-tar 1.41: support for signatures&lt;/h3&gt;
+&lt;p&gt;This release saw the addition of support for storage and retrieval of upstream signatures, contributed by Chris Lamb.&lt;/p&gt;
+&lt;h3&gt;pristine-tar 1.42: optionally recompressing tarballs&lt;/h3&gt;
+&lt;p&gt;I had this idea and wanted to try it out: most of our problems reproducing tarballs come from tarballs produced with old compressors, or from changes in compressor behavior, or from uncommon compression options being used. What if we could just recompress the tarballs before importing then? Yes, this kind of breaks the &amp;#8220;pristine&amp;#8221; bit of the whole business, but on the other hand, 1) the contents of the tarball are not affected, and 2) even if the initial tarball is not bit by bit the same that upstream release, at least future uploads of that same upstream version with Debian revisions can be regenerated just fine.&lt;/p&gt;
+&lt;p&gt;In some cases, as the case for the test tarball &lt;code&gt;util-linux_2.30.1.orig.tar.xz&lt;/code&gt;, recompressing is what makes it possible to reproduce the tarball (and thus import it with pristine-tar) possible at all:&lt;/p&gt;
+&lt;p&gt;&lt;img src="/articles/0173/3655/1_42_fail.png" title="util-linux_2.30.1.orig.tar.xz can only be imported after being recompressed" alt="util-linux_2.30.1.orig.tar.xz can only be imported after being recompressed" /&gt;&lt;/p&gt;
+&lt;p&gt;In other cases, if the current heuristics can&amp;#8217;t produce a reasonably small delta, recompressing makes a huge difference. It&amp;#8217;s the case for &lt;code&gt;mumble_1.1.8.orig.tar.gz&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src="/articles/0173/3654/1_42_reduce.png" title="with recompression, the delta produced from mumble_1.1.8.orig.tar.gz goes from 1.2MB, or 99% of the size to the original tarball, to 14.6KB, 1% of the size of original tarball" alt="with recompression, the delta produced from mumble_1.1.8.orig.tar.gz goes from 1.2MB, or 99% of the size to the original tarball, to 14.6KB, 1% of the size of original tarball" /&gt;&lt;/p&gt;
+&lt;p&gt;Recompressing is not enabled by default, and can be enabled by passing the &lt;code&gt;--recompress&lt;/code&gt; option. If you are using &lt;code&gt;pristine-tar&lt;/code&gt; via a wrapper tool like &lt;code&gt;gbp-buildpackage&lt;/code&gt;, you can use the &lt;code&gt;$PRISTINE_TAR&lt;/code&gt; environment variable to set options that will affect any pristine-tar invocations.&lt;/p&gt;
+&lt;p&gt;Also, even if you enable recompression, pristine-tar will only try it if the delta generations fails completely, of if the delta produced from the original tarball is too large. You can control what &amp;#8220;too large&amp;#8221; means by using the &lt;code&gt;--recompress-threshold-bytes&lt;/code&gt; and &lt;code&gt;--recompress-threshold-percent&lt;/code&gt; options. See the &lt;b&gt;pristine-tar(1)&lt;/b&gt; manual page for details.&lt;/p&gt;</description><pubDate>Mon, 09 Oct 2017 15:06:22 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/pristine-tar-updates</link><guid>http://softwarelivre.org/terceiro/blog/pristine-tar-updates</guid></item><item><title>Debconf17</title><description>&lt;p&gt;I&amp;#8217;m back from Debconf17.&lt;/p&gt;
+&lt;p&gt;I gave a &lt;a href="https://debconf17.debconf.org/talks/34/"&gt;talk&lt;/a&gt; entitled &amp;#8220;Patterns for Testing Debian Packages&amp;#8221;, in which I presented a collection of 7 patterns I documented while pushing the &lt;a href="https://ci.debian.net/"&gt;Debian Continuous Integration&lt;/a&gt; project, and were published &lt;a href="https://softwarelivre.org/terceiro/blog/patterns-for-testing-debian-packages"&gt;in a 2016 paper&lt;/a&gt;. &lt;a href="http://meetings-archive.debian.net/pub/debian-meetings/2017/debconf17/patterns-for-testing-debian-packages.vp8.webm"&gt;Video recording&lt;/a&gt; and a &lt;a href="https://annex.debconf.org/debconf-share/debconf17/slides/34-patterns-for-testing-debian-packages.pdf"&gt;copy of the slides&lt;/a&gt; are available.&lt;/p&gt;
+&lt;p&gt;I also hosted the &lt;a href="https://debconf17.debconf.org/talks/35/"&gt;ci/autopkgtest BoF&lt;/a&gt; session, in which we discussed issues around the usage of autopkgtest within Debian, the CI system, etc. &lt;a href="http://meetings-archive.debian.net/pub/debian-meetings/2017/debconf17/ci-autopkgtest-bof.vp8.webm"&gt;Video recording is available&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Kudos for the Debconf video team for making the recordings available so quickly!&lt;/p&gt;</description><pubDate>Mon, 14 Aug 2017 17:27:06 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/debconf17</link><guid>http://softwarelivre.org/terceiro/blog/debconf17</guid></item><item><title>Papo Livre #1 - meios de comunicação</title><description>&lt;p&gt;Acabamos de lançar mais um episódio do Papo Livre: &lt;a href="https://papolivre.org/1/"&gt;#1 &amp;#8211; meios de comunicação&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Neste episódio eu, Paulo Santana e Thiago Mendonça discutimos os diversos meios de comunicação em comunidades de software livre. A discussão começa pelos meios mais &amp;#8220;antigos&amp;#8221;, como &lt;span class="caps"&gt;IRC&lt;/span&gt; e listas de discussão e chega aos mais &amp;#8220;modernos&amp;#8221;, passo pelo meio livre e meio proprietário Telegram, e chega à mais nova promessa nessa área, Matrix (e o seu cliente mais famoso/viável, Riot).&lt;/p&gt;</description><pubDate>Tue, 06 Jun 2017 12:46:58 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/papo-livre-1-meios-de-comunicacao</link><guid>http://softwarelivre.org/terceiro/blog/papo-livre-1-meios-de-comunicacao</guid></item><item><title>Debian CI: new data retention policy</title><description>&lt;p&gt;When I started &lt;a href="https://packages.debian.org/debci"&gt;debci&lt;/a&gt; for
+&lt;a href="https://ci.debian.net/"&gt;Debian CI&lt;/a&gt;, I went for the simplest thing that could
+possibly work. One of the design decisions was to use the filesystem directly
+for file storage. A large part of the Debian CI data is log files and test
+artifacts (which are just files), and using the filesystem directly for storage
+makes it a lot easier to handle it. The rest of the data which is structured
+(test history and status of packages) is stored as &lt;span class="caps"&gt;JSON&lt;/span&gt; files.&lt;/p&gt;
+&lt;p&gt;Another nice benefit of using the filesystem like this is that I get a sort of
+&lt;span class="caps"&gt;REST&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt; for free by just exposing &lt;a href="https://ci.debian.net/data/"&gt;the file storage&lt;/a&gt;
+to the web. For example, getting the latest test status of debci itself on
+unstable/amd64  is as easy as:&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;
+$ curl https://ci.debian.net/data/packages/unstable/amd64/d/debci/latest.json
+{
+  "run_id": "20170528_173652",
+  "package": "debci",
+  "version": "1.5.1",
+  "date": "2017-05-28 17:43:05",
+  "status": "pass",
+  "blame": [],
+  "previous_status": "pass",
+  "duration_seconds": "373",
+  "duration_human": "0h 6m 13s",
+  "message": "Tests passed, but at least one test skipped",
+  "last_pass_version": "1.5.1",
+  "last_pass_date": "2017-05-28 17:43:05"
+}
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Now, nothing in life is without compromises. One big disadvantage of the way
+debci stored its data is that there were &lt;strong&gt;a lot&lt;/strong&gt; of files, which ends up using
+a large number of inodes in the filesystem. The current Debian CI master has
+more than 10 million inodes in its filesystem, and almost all of them were
+being used. This is clearly unsustainable.&lt;/p&gt;
+&lt;p&gt;You will notice that I said &lt;em&gt;stored&lt;/em&gt;, because as of version 1.6, debci now
+implements a data retention policy: log files and test artifacts will now only
+be kept for a configurable amount of days (default: 180).&lt;/p&gt;
+&lt;p&gt;So there you have it: effective immediately, Debian CI will not provide logs
+and test artifacts older than 180 days.&lt;/p&gt;
+&lt;p&gt;If you are reporting bugs based on logs from Debian CI, please don&amp;#8217;t hotlink
+the log files. Instead, make sure you download the logs in question and attach
+them to the bug report, because in 6 months they will be gone.&lt;/p&gt;</description><pubDate>Sun, 28 May 2017 21:20:04 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/debian-ci-new-data-retention-policy</link><guid>http://softwarelivre.org/terceiro/blog/debian-ci-new-data-retention-policy</guid></item><item><title>Papo Livre Podcast, episodio #0</title><description>&lt;p&gt;Podcasts têm sido um dos meus passatempos favoritos a um tempo. Eu acho que é um formato muito interssante, por dois motivos.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Primeiro&lt;/strong&gt;, existem muitos podcasts com conteúdo de altíssima qualidade. Meu feed atualmente contém os seguintes (em ordem de assinatura):&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;a href="https://changelog.com/podcast"&gt;The Changelog&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="https://changelog.com/rfc"&gt;Request for Commits&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="https://twit.tv/shows/floss-weekly"&gt;&lt;span class="caps"&gt;FLOSS&lt;/span&gt; Weekly&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="https://devchat.tv/ruby-rogues"&gt;Ruby Rogues&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://faif.us/"&gt;Free as in Freedom&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://joerogan.net/podcasts/"&gt;Joe Rogan Podcast&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="https://www.samharris.org/podcast"&gt;Waking Up with Sam Harris&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="https://jovemnerd.com.br/nerdcast/"&gt;Nerdcast&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://www.portalcafebrasil.com.br/"&gt;Café Brasil&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://anticast.com.br/podcast/anticast/"&gt;Anticast&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://www.b9.com.br/podcasts/mamilos/"&gt;Mamilos&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://www.redegeek.com.br/podcast/"&gt;Ultrageek&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://www.npr.org/podcasts/510307/invisibilia"&gt;Invisibilia&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://decrepitos.com/"&gt;Decrépitos&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="https://mundopodcast.com.br/podprogramar/"&gt;PodProgramar&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Parece muito, e é. Ultimamente eu notei que estava ouvindo episódios com várias semanas de atraso, e resolvi priorizar episódios cujo tema me interessam muito e/ou que dizem respeito a temas da atualidade. Além disso desencanei de tentar escutar &lt;strong&gt;tudo&lt;/strong&gt;, e passei a aceitar que vou deletar alguns itens sem escutar.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Segundo&lt;/strong&gt;, ouvir um podcast não exige que você pare pra dar atenção total. Por exemplo, por conta de uma lesão no joelho que me levou a fazer cirurgia reconstrução de ligamento, eu estou condenado a fazer musculação para o resto da minha vida, o que é &lt;em&gt;um saco&lt;/em&gt;. Depois que eu comecei a ouvir podcasts, eu &lt;em&gt;tenho vontade&lt;/em&gt; de ir pra academia, porque agora isso representa o meu principal momento de ouvir podcast. Além disso, toda vez que eu preciso me deslocar sozinho pra qualquer lugar, ou fazer alguma tarefa chata mas necessária como lavar louça, eu tenho companhia.&lt;/p&gt;
+&lt;p&gt;Fazia um tempo que eu tinha vontade de fazer um podcast, e ontem oficialmente esse projeto se tornou realidade. Eu, &lt;a href="http://phls.com.br"&gt;Paulo Santana&lt;/a&gt; e &lt;a href="http://acesso.me/"&gt;Thiago Mendonça&lt;/a&gt; estamos lançando o &lt;a href="https://papolivre.org/"&gt;Podcast Papo Livre&lt;/a&gt; onde discutiremos software livre em todos os seus aspectos.&lt;/p&gt;
+&lt;p&gt;No &lt;a href="https://papolivre.org/0/" title="#0"&gt;primeiro episódio&lt;/a&gt;, partindo da notícia sobre a vinda de Richard Stallman ao Brasil nas próximas semanas, discutimos as origens e alguns conceitos fundamentais do software livre.&lt;/p&gt;</description><pubDate>Tue, 23 May 2017 13:00:50 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/papo-livre-podcast-episodio-0</link><guid>http://softwarelivre.org/terceiro/blog/papo-livre-podcast-episodio-0</guid></item><item><title>Patterns for Testing Debian Packages</title><description>&lt;p&gt;At the and of 2016 I had the pleasure to attend the &lt;a href="http://hillside.net/sugarloaf/2016/"&gt;11th Latin American Conference on Pattern Languages of Programs&lt;/a&gt;, a.k.a SugarLoaf PLoP. PLoP is a &lt;a href="http://hillside.net/conferences"&gt;series of conferences&lt;/a&gt; on Patterns (as in &amp;#8220;Design Patterns&amp;#8221;), a subject that I appreciate a lot. Each of the PLoP conferences but the original main &amp;#8220;big&amp;#8221; conference has a funny name. SugarLoaf PLoP is called that way because its very first edition was held in Rio de Janeiro, so the organizers named it after a &lt;a href="https://en.wikipedia.org/wiki/Sugarloaf_Mountain"&gt;very famous mountain&lt;/a&gt; in Rio. The name stuck even though a long time has passed since it was held in Rio for the last time. 2016 was actually the first time SugarLoaf PLoP was held outside of Brazil, finally justifying the &amp;#8220;Latin American&amp;#8221; part of its name.&lt;/p&gt;
+&lt;p&gt;I was presenting a paper I wrote on patterns for testing Debian packages. The Debian project funded my travel expenses through the generous donations of its supporters. PLoP&amp;#8217;s are very fun conferences with a relaxed atmosphere, and is amazing how many smart (and interesting!) people gather together for them.&lt;/p&gt;
+&lt;p&gt;My paper is titled &amp;#8220;Patterns for Writing As-Installed Tests for Debian Packages&amp;#8221;, and has the following abstract:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Large software ecosystems, such as &lt;span class="caps"&gt;GNU&lt;/span&gt;/Linux distributions, demand a large amount of effort to make sure all of its components work correctly invidually, and also integrate correctly with each other to form a coherent system. Automated Quality Assurance techniques can prevent issues from reaching end users. This paper presents a pattern language originated in the Debian project for automated software testing in production-like environments. Such environments are closer in similarity to the environment where software will be actually deployed and used, as opposed to the development environment under which developers and regular Continuous Integration mechanisms usually test software products. The pattern language covers the handling of issues arising from the difference between development and production-like environments, as well as solutions for writing new, exclusive tests for as-installed functional tests. Even though the patterns are documented here in the context of the Debian project, they can also be generalized to other contexts.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In practical terms, the paper documents a set of patterns I have noticed in the last few years, when I have been pushing the &lt;a href="https://ci.debian.net/"&gt;Debian Continous Integration&lt;/a&gt; project. It should be an interesting read for people interested in the testing of Debian packages in their installed form, as done with autopkgtest. It should also be useful for people from other distributions interested in the subject, as the issues are not really Debian-specific.&lt;/p&gt;
+&lt;p&gt;I have recently finished the final version of the paper, which should be published in the &lt;span class="caps"&gt;ACM&lt;/span&gt; Digital Library at any point now. You can download a &lt;a href="https://gitlab.com/terceiro/installed-tests-patterns/raw/pdf/final/installed-tests-patterns.pdf"&gt;copy of the paper&lt;/a&gt; in &lt;span class="caps"&gt;PDF&lt;/span&gt;. &lt;a href="https://gitlab.com/terceiro/installed-tests-patterns"&gt;Source&lt;/a&gt; is also available, if you are into markdown, LaTeX, makefiles and this sort of thing.&lt;/p&gt;
+&lt;p&gt;If everything goes according to plan, I should be presenting a talk on this at the next Debconf in Montreal.&lt;/p&gt;</description><pubDate>Fri, 17 Mar 2017 01:23:33 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/patterns-for-testing-debian-packages</link><guid>http://softwarelivre.org/terceiro/blog/patterns-for-testing-debian-packages</guid></item><item><title>Debian CI updates for September 2016</title><description>&lt;p&gt;&lt;a href="https://tracker.debian.org/news/795502"&gt;debci 1.4&lt;/a&gt; was released just a few days ago. Among general improvements, I would like to highlight:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;pretty much every place in the web UI that mentions a &lt;span class="caps"&gt;PASS&lt;/span&gt; or a &lt;span class="caps"&gt;FAIL&lt;/span&gt; also displays the tested package version. This was suggested to me on &lt;span class="caps"&gt;IRC&lt;/span&gt; by &lt;a href="http://layer-acht.org/thinking/"&gt;Holger&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;I also tried to workaround an instability when setting up the &lt;span class="caps"&gt;LXC&lt;/span&gt; containers used for the tests, where the test bed process setup would finish without failure even though some steps in the middle of it failed. This caused the very final step for the debci-specific setup to fail, so there was no &lt;code&gt;debci&lt;/code&gt; user inside the container, which caused tests to fail because that user was missing. Before that was fixed I was always keeping an eye on this issue, fixing the issue by hand, and re-triggering the affected packages by hand, so as far I can tell there is no package whose status has been permanently affected by this.&lt;/li&gt;
+	&lt;li&gt;Last, but not least, this release brings an interesting contribution by Gordon Ball, which is keeping track of different failure states. debci will now let you know whether a currently failing package has always failed, has passed in a previous version, or if the same version that is currently failing has previously passed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://ci.debian.net/"&gt;ci.debian.net&lt;/a&gt; has been upgraded to &lt;code&gt;debci&lt;/code&gt; 1.4 just after that. At the same time I have also upgraded &lt;code&gt;autodep8&lt;/code&gt; and &lt;code&gt;autopkgtest&lt;/code&gt; to their latest versions, available in jessie-backports. This means that it is now safe for Debian packages to assume the changes in &lt;a href="http://www.piware.de/2016/06/autopkgtest-4-0-simplified-cli-deprecating-adt/"&gt;autopkgtest 4.0&lt;/a&gt; are available, in special the &lt;code&gt;$AUTOPKGTEST_*&lt;/code&gt; environment variables.&lt;/p&gt;
+&lt;p&gt;In other news, for several weeks there were had issues with tests not being scheduled when they should have. I was just assuming that the issue was due to the existing test scheduler, &lt;code&gt;debci-batch&lt;/code&gt;, being broken. Today I was working on a new implementation that is going to be a lot faster, I started to hit a similar issue on my local tests, and finally realized what was wrong. The fact is that &lt;code&gt;debci-batch&lt;/code&gt; stores the timestamp of the last time a package has been scheduled to run, and it there are no test result after that timestamp, it assumes the package is still in the queue to be tested, and does not schedule it again. It turns out that a few weeks ago, during maintainance work, I had cleared the queue, discarding all jobs that were there, but forgot to reset those timestamps, so when &lt;code&gt;debci-batch&lt;/code&gt; came around again, it checked the timestamp of the last request and did not make new requests because there was no test result after that timestamp! I cleared all those timestamps, and the system should now go back to normal.&lt;/p&gt;
+&lt;p&gt;That is it for now. I you want to contribute to the Debian CI project and want to get in touch, you can pop up on the &lt;code&gt;#debci&lt;/code&gt; channel on the &lt;span class="caps"&gt;OFTC&lt;/span&gt; &lt;span class="caps"&gt;IRC&lt;/span&gt; network, or mail the &lt;a href="http://lists.alioth.debian.org/cgi-bin/mailman/listinfo/autopkgtest-devel"&gt;autopkgtest-devel&lt;/a&gt; mailing list.&lt;/p&gt;</description><pubDate>Wed, 07 Sep 2016 22:07:42 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/debian-ci-updates-for-september-2016</link><guid>http://softwarelivre.org/terceiro/blog/debian-ci-updates-for-september-2016</guid></item><item><title>testing build reproducibility with debrepro</title><description>&lt;p&gt;Earlier today I was handling a &lt;a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=829362"&gt;reproducibility bug&lt;/a&gt; and decided I had to try a reproducibility test by myself. I tried &lt;a href="https://packages.debian.org/reprotest"&gt;reprotest&lt;/a&gt;, but I was being hit by a disorderfs issue and I was not sure whether the problem was with reprotest or not (at this point I cannot reproduce that anymore).&lt;/p&gt;
+&lt;p&gt;So I decided to hack a simple script to that, and it works. I even &lt;a href="https://anonscm.debian.org/cgit/collab-maint/devscripts.git/commit/?id=f3fd7952b8d38438f193076521f9067d742f9c94"&gt;included it in devscripts&lt;/a&gt; after writing a manpage. Of course reprotest is more complete, extensible, and supports arbitrary virtualization backends for doing the more dangerous/destructive variations (such as changing the hostname and other things that require root) but for quick tests &lt;code&gt;debrepro&lt;/code&gt; does the job.&lt;/p&gt;
+&lt;p&gt;Usage examples:&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;
+$ debrepro                                 # builds current directory
+$ debrepro /path/to/sourcepackage          # builds package there
+$ gbp-buildpackage --git-builder=debrepro  # can be used with vcs wrappers as well
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;debrepro&lt;/code&gt; will do two builds with a few variations between them, including $&lt;span class="caps"&gt;USER&lt;/span&gt;, $&lt;span class="caps"&gt;PATH&lt;/span&gt;, timezone, locale, umask, current time, and will even build under disorderfs if available. Build path variation is also performed because by definition the builds are done in different directories. If diffoscope is installed, it will be used for deep comparison of non-matching binaries.&lt;/p&gt;
+&lt;p&gt;If you are interested and don&amp;#8217;t want to build devscripts from source or wait for the next release, you can just &lt;a href="https://anonscm.debian.org/cgit/collab-maint/devscripts.git/plain/scripts/debrepro.sh?id=f3fd7952b8d38438f193076521f9067d742f9c94"&gt;grab the script&lt;/a&gt;, save it as &amp;#8220;debrepro&amp;#8221; somewhere on your $&lt;span class="caps"&gt;PATH&lt;/span&gt; and make it executable.&lt;/p&gt;</description><pubDate>Sat, 03 Sep 2016 16:58:01 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/testing-build-reproducibility-with-debrepro</link><guid>http://softwarelivre.org/terceiro/blog/testing-build-reproducibility-with-debrepro</guid></item><item><title>Adopting pristine-tar</title><description>&lt;p&gt;As of yesterday, I am the new maintainer of &lt;a href="https://packages.debian.org/pristine-tar"&gt;pristine-tar&lt;/a&gt;. As it is the case for most of &lt;a href="http://joeyh.name/"&gt;Joey Hess&lt;/a&gt;&amp;#8217; creations, it is an extremely useful tool, and used in a very large number of Debian packages which are maintained in git.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://tracker.debian.org/news/769872"&gt;My first upload&lt;/a&gt; was most of a terrain recognition nature: I did some housekeeping tasks, such as making the build idempotent and making sure all binaries are built with security hardening flags, and wrote a few automated test cases to serve as build-time and run-time regression test suite. No functional changes have been made.&lt;/p&gt;
+&lt;p&gt;As Joey &lt;a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=737871"&gt;explained when he orphaned it&lt;/a&gt;, there are a few technical challenges involved in making sure pristine-tar stays useful in the future. Although I did read some of the code, I am not particularly familiar with the internals yet, and will be more than happy to get co-maintainers. If you are interested, please get in touch. The &lt;a href="http://anonscm.debian.org/cgit/collab-maint/pristine-tar.git"&gt;source git repository&lt;/a&gt; is right there.&lt;/p&gt;</description><pubDate>Sun, 22 May 2016 14:02:35 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/adopting-pristine-tar</link><guid>http://softwarelivre.org/terceiro/blog/adopting-pristine-tar</guid></item><item><title>Debian Ruby Sprint 2016 - day 5: More Reproducible Builds, Retrospective, and A Little Bit of Tourism</title><description>&lt;p&gt;Earlier today I was made aware by Holger of &lt;a href="https://tests.reproducible-builds.org/unstable/amd64/stats_meta_pkg_state_maint_pkg-ruby-extras-maintainers.png"&gt;the results&lt;/a&gt; of our reproducibility efforts during the sprint. I would like to thank Lunar for pinging us about the issue, and Holger for pointing me to updated results. The  figure below depicts a stacked area chart where the X axis is time and the green area is reproducible packages. Red is packages that fail to build, and Orange are unreproducible packages&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://tests.reproducible-builds.org/unstable/amd64/stats_meta_pkg_state_maint_pkg-ruby-extras-maintainers.png"&gt;&lt;img src="/articles/0152/3781/reproducible.png" alt="" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I was able to book accommodation for the sprint attendees very close to both my place and the sprint venue, what was very useful but also had this downside of them not being able to see much of city. As the final day of the sprint was getting closer, we decided to have a different lunch to allow them to see one of the most famous local landmarks, the botanical gardens.&lt;/p&gt;
+&lt;p&gt;So we headed down to the botanical gardens, grabbed a few items for lunch at the park coffee shop, and set out to visit this very beautiful place. I have to say that there is the place were I usually take every visitor I have. We were joined by Gioavani who had just arrived for the &lt;a href="http://br2016.mini.debconf.org/"&gt;the MiniDebconf&lt;/a&gt; on the following weekend.&lt;/p&gt;
+&lt;p&gt;&lt;img src="/articles/0152/3780/botanical-gardens.jpg" alt="" /&gt;&lt;/p&gt;
+&lt;p&gt;The final lists of accomplishments of the day was again very impressive&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;r10k 2.1.1-2&lt;/li&gt;
+	&lt;li&gt;run massive update on team repositories
+	&lt;ul&gt;
+		&lt;li&gt;bump Standards-Version&lt;/li&gt;
+		&lt;li&gt;fix Vcs-* fields&lt;/li&gt;
+		&lt;li&gt;drop version in gem2deb build-dependency&lt;/li&gt;
+		&lt;li&gt;set debhelper compatibility level to 9&lt;/li&gt;
+		&lt;li&gt;update the default ruby-tests.rake&lt;/li&gt;
+	&lt;/ul&gt;&lt;/li&gt;
+	&lt;li&gt;day 4 report&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-faraday-middleware-multi-json 0.0.6-2&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-powerpack 0.1.1-2&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-contracts 0.13.0-1&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-chef-config 12.7.2-1 (&lt;span class="caps"&gt;NEW&lt;/span&gt;)&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-foreigner #808530 and asked it removal from the &lt;span class="caps"&gt;NEW&lt;/span&gt; queue (was already ROMed)&lt;/li&gt;
+	&lt;li&gt;filled for RM ruby-opengraph-parser (#816752)&lt;/li&gt;
+	&lt;li&gt;new how-can-i-help version developed and uploaded&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-romkan to unstable (from exp)&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-rinku to unstable (from exp)&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-ole to unstable (from exp)&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-net-ldap to unstable (from exp)&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-rack-mobile-detect to unstable (from exp)&lt;/li&gt;
+	&lt;li&gt;uploaded gem2deb 0.28 to help with reproducible builds: filenames are now sorted&lt;/li&gt;
+	&lt;li&gt;uploaded rails 2:4.2.5.2-2 with packaging improvements
+	&lt;ul&gt;
+		&lt;li&gt;run unit tests during the build and on CI&lt;/li&gt;
+		&lt;li&gt;apply upstream patch to fix ActiveRecord breakage under Ruby 2.3&lt;/li&gt;
+	&lt;/ul&gt;&lt;/li&gt;
+	&lt;li&gt;pushed a ton of tags for existing uploads&lt;/li&gt;
+	&lt;li&gt;merged improvements to the team master repository
+	&lt;ul&gt;
+		&lt;li&gt;review/cleanup the contents of the repository&lt;/li&gt;
+		&lt;li&gt;improved helper scripts to automate the workflow (upload, build, new-upstream, etc)&lt;/li&gt;
+	&lt;/ul&gt;&lt;/li&gt;
+	&lt;li&gt;followed up on ruby2.3 transition, filed #816698 against subversion because of ftbfs on mips, mipsel&lt;/li&gt;
+	&lt;li&gt;put ruby-cocoon into a better state&lt;/li&gt;
+	&lt;li&gt;uploaded ruby-plist&lt;/li&gt;
+	&lt;li&gt;gem2deb: gem2tgz will now create foo.gemspec (easier to patch) instead of metadata.yml&lt;/li&gt;
+	&lt;li&gt;gemwatch: ditto&lt;/li&gt;
+	&lt;li&gt;close #794139 jekyll bug (unreproducible)&lt;/li&gt;
+	&lt;li&gt;close #798934 ruby-ffi-rzmq bug (unreproducible)&lt;/li&gt;
+	&lt;li&gt;closed ftbfs #816586 #800057 #784699 as unreproducible&lt;/li&gt;
+	&lt;li&gt;reassigned #760952 #680297 to ruby2.3 (from ruby2.2)&lt;/li&gt;
+	&lt;li&gt;investigated how to list packages with non-buildd-binary uploads&lt;/li&gt;
+	&lt;li&gt;ScottK has removed ruby2.1 from unstable!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;By the end of the afternoon I asked everyone to fill out a simple retrospective list, what we can use later to make future sprints better and better. Below are the results we got.&lt;/p&gt;
+&lt;p&gt;What was good:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;restricted room hours actually made for a nice rhythm (did not apply for a long time&amp;#8230;)&lt;/li&gt;
+	&lt;li&gt;very good food&lt;/li&gt;
+	&lt;li&gt;very cheap food!&lt;/li&gt;
+	&lt;li&gt;longer period makes the effort of travel more worthwhile&lt;/li&gt;
+	&lt;li&gt;many participants and longer sprint than usual allowing more work to be done&lt;/li&gt;
+	&lt;li&gt;good preparation with clear goals, make the sprint usefull&lt;/li&gt;
+	&lt;li&gt;patience with the less experienced participants&lt;/li&gt;
+	&lt;li&gt;&lt;span class="caps"&gt;RFS&lt;/span&gt; very fast&lt;/li&gt;
+	&lt;li&gt;Antônio is an excellent host&lt;/li&gt;
+	&lt;li&gt;You all are so helpful&lt;/li&gt;
+	&lt;li&gt;great dinners&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;What could be better:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;room too close to the street, too much vehicle noise, but sometimes nice music&lt;/li&gt;
+	&lt;li&gt;more coffee ^W meat&lt;/li&gt;
+	&lt;li&gt;could know more portugues so ordering food would have been easier&lt;/li&gt;
+	&lt;li&gt;debian infra could have not been down during the sprint&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The night ended at &lt;a href="http://www.bardoalemaocuritiba.com.br/"&gt;Bar do Alemão&lt;/a&gt; (&amp;#8220;The German&amp;#8217;s Bar&amp;#8221;). Both their beer and their food are very good, but I don&amp;#8217;t have enough elements to vouch for their authenticity. :) We were joined by Giovani (who we also met earlier in the botanic gardens), and by Paulo and Daniel who are organizing the MiniDebconf.&lt;/p&gt;
+&lt;p&gt;&lt;img src="/articles/0152/3779/bar-do-alemao.jpg" alt="" /&gt;&lt;/p&gt;
+&lt;p&gt;And that is the end of this year&amp;#8217;s Debian Ruby team sprint. I hope we do it all over again next year.&lt;/p&gt;</description><pubDate>Sat, 05 Mar 2016 16:21:18 +0000</pubDate><link>http://softwarelivre.org/terceiro/blog/debian-ruby-sprint-2016-day-5-more-reproducible-builds-retrospective-and-a-little-bit-of-tourism</link><guid>http://softwarelivre.org/terceiro/blog/debian-ruby-sprint-2016-day-5-more-reproducible-builds-retrospective-and-a-little-bit-of-tourism</guid></item></channel></rss>

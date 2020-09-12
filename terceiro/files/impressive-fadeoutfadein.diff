@@ -1,0 +1,26 @@
+--- src/transitions.py.old	2010-05-16 12:02:23.000000000 -0300
++++ src/transitions.py	2010-05-16 12:02:36.000000000 -0300
+@@ -41,6 +41,23 @@
+       DrawFullQuad()
+ AllTransitions.append(Crossfade)
+ 
++# FadeOutFadeIn: a stimulating transition
++class FadeOutFadeIn(Transition):
++    """fade out to black, then fade in to next slide"""
++    def render(self,t):
++        if t < 0.5:
++            # first half: current -> black
++            DrawPageDirect(Tcurrent)
++            EnableAlphaBlend()
++            glColor4d(0, 0, 0, 2.0 * t)
++            DrawFullQuad()
++        else:
++            # seconf half: black -> next
++            EnableAlphaBlend()
++            glBindTexture(TextureTarget, Tnext)
++            glColor4d(1, 1, 1, 2.0 * (t - 0.5))
++        DrawFullQuad()
++AllTransitions.append(FadeOutFadeIn)
+ 
+ # Slide: a class of transitions that simply slide the new page in from one side
+ # after an idea from Joachim B Haga
