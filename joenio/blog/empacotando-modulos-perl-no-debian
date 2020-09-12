@@ -1,0 +1,1127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="eo" lang="eo" class="controller-content_viewer action-content_viewer-view_page template-leftbar profile-type-is-person profile-name-is-joenio theme-sl-default">
+  <head>
+    <title>Empacotando módulos Perl no Debian - Joenio Costa</title>
+    <link rel="alternate" type="application/rss+xml" title="Blog do Joenio" href="http://softwarelivre.org/joenio/blog/feed" />
+    <!--<meta http-equiv="refresh" content="1"/>-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    
+
+      <meta name="description" content="Software Livre Brasil" />
+
+    <!-- site root -->
+    <meta property="noosfero:root" content=""/>
+
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    
+
+    <script src="/assets/application-1c0930e8f260aafbc74c4fad04079409.js"></script>
+
+  
+  
+<script src="/javascripts/plugins/pg_search/search.js"></script>
+<script src="/javascripts/plugins/pg_search/profile_search_block.js"></script>
+<script src="/assets/plugins/require_auth_to_comment/hide_comment_form-c3a3727ea301c62930e11aab20ae74d4.js"></script>
+<script src="/assets/plugins/require_auth_to_comment/jquery.livequery.min-d1fe96eb7788079f6e550db2b6610365.js"></script>
+<script src="/assets/plugins/orders/javascripts/locale-17eaae2c136082dab9da1d91648b6a7e.js"></script>
+<script src="/assets/plugins/orders/javascripts/toggle_edit-f9da47bc0223fac8e5e5174c6ea24413.js"></script>
+<script src="/assets/plugins/orders/javascripts/sortable-table-ba58eb377fc175eb1e374be63d5454a3.js"></script>
+<script src="/assets/plugins/orders/javascripts/help-14515dc2f741beaa4b3d121df366af0d.js"></script>
+<script src="/assets/plugins/orders/javascripts/orders-560e35746985dc40b97851b13705cb26.js"></script>
+<script src="/assets/plugins/html5_video/video-channel-6aca45f93220c0910d8273dd2368004e.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/locale-17eaae2c136082dab9da1d91648b6a7e.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/toggle_edit-f9da47bc0223fac8e5e5174c6ea24413.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/sortable-table-ba58eb377fc175eb1e374be63d5454a3.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/suppliers-35473b9ebd4b9e65027e1bafa94dfdcd.js"></script>
+<script src="/assets/plugins/event/event-b1013aca7ce3cf0d4d5e6e10dc1f05b2.js"></script>
+<script src="/assets/plugins/display_content/javascripts/jstree/_lib/jquery-1.8.3-09dfd3b315fe6b24fbc309e36f5d70c3.js"></script>
+<script src="/assets/plugins/display_content/javascripts/jstree/jquery.jstree-563d09f7e7938a8a2f4207bfe6d48dd3.js"></script>
+<script src="/assets/plugins/container_block/container_block-7eae56f79aa8da8b64941d18d2972c7b.js"></script>
+<script src="/assets/plugins/delivery/javascripts/delivery-da5b2dac737692db94d5bdc654586171.js"></script>
+<script src="/assets/plugins/products/javascripts/products-a4c860d8dbebe524d554f0b5564e0428.js"></script><script src="/designs/themes/sl-default/theme.js"></script><script>
+//<![CDATA[
+render_all_jquery_ui_widgets()
+//]]>
+</script>
+    <link rel="stylesheet" media="screen" href="/assets/application-e0072ababb97032fa1a5d95fa09d897c.css" />
+<link rel="stylesheet" media="screen" href="/designs/templates/leftbar/stylesheets/style.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/icons/default/style-b3a500c1e17f47b010a70fdb0103012e.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/icons/pidgin/style-138f7bb59f9d26296632e82eae162877.css" />
+<link rel="stylesheet" media="screen" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/people_block/style-c340afe175b0045c7f8669073a428a1c.css" />
+<link rel="stylesheet" media="screen" href="/stylesheets/plugins/pg_search/style.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/recent_content/style-e0d5f807f7056b173f6cf113c840ddc0.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/custom_forms/style-7870704d75309d55ffcaa827c59baa18.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/work_assignment/style-526deb629c3d9e7736f049b99c72a50a.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/require_auth_to_comment/style-66a0efab118159977ca0194806ef4bec.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/orders/style-feb7767bc71e62563ccab53642a6e4c2.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/html5_video/style-8f2b70d373ff7ec22b404d91b1b6f211.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/suppliers/style-64c71b3cd22994ada93abd55c70ea1ce.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/gallery_block/style-4547593291c3fca2ad50216cbb3dfdc9.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/send_email/style-976778195cb106e52b31d57242cdc01c.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/event/style-8f5f6a9b5a7724dbc4977d11c2e4321c.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/display_content/style-cf10f47511255685485ac51859c22a29.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/container_block/style-dd17a810971259abe7c31678e9d9c132.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/video/style-68d51000d73adab06c1dcd036011138d.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/delivery/style-aeef749320f3cdff642340f047806f9b.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/sub_organizations/style-88810bb91c1c70f63817f6f03295fd92.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/products/style-3147a337d78ccc54df05870c504166fd.css" />
+<link rel="stylesheet" media="screen" href="/designs/themes/sl-default/global.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/themes/sl-default/style-f317a60b59d0ee3e8048cb6eba54b282.css" />
+
+    
+    
+
+    <script type="text/javascript">
+      DEFAULT_LOADING_MESSAGE = 'loading...';
+      PERMANENT_NOTIFICATIONS = false;
+      noosfero.profile = "joenio"
+    </script>
+
+      
+<script src="/assets/tinymce/js/tinymce/tinymce-666c93593f34cd23b1f1e9177ab27cae.js"></script><script src="/assets/tinymce/js/tinymce/jquery.tinymce.min-33361c760deadb5b77610a12911056f2.js"></script><script src="/assets/tinymce-4df3fc98953118b704cdb7a023aafdc2.js"></script>
+<script type="text/javascript">
+tinymce.create('tinymce.plugins.MacrosPlugin', {
+  createControl: function(n, cm) {
+    switch (n) {
+       case 'macros':
+    }
+    return null;
+  }
+});
+
+function tinymce_macros_setup(editor) {
+}
+
+// Register plugin with a short name
+tinymce.PluginManager.add('macrosPlugin', tinymce.plugins.MacrosPlugin);
+
+jQuery(document).ready(function () {
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"eo","selector":".tiny_mce","toolbar1":"fullscreen | insertfile undo redo | copy paste | bold italic underline | styleselect fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image","menubar":"edit insert view tools","toolbar2":"print preview code media | table | macros","macros_setup":[]})
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"eo","selector":".tiny_mce_simple","toolbar1":"fullscreen | insertfile undo redo | copy paste | bold italic underline | styleselect fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image","menubar":false,"toolbar2":null,"macros_setup":[]})
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"eo","selector":".tiny_mce_restricted","toolbar1":"bold italic underline | link","menubar":false,"toolbar2":null,"macros_setup":[]})
+});
+</script>
+
+
+  </head>
+  <body class="controller-content_viewer action-content_viewer-view_page template-leftbar">
+    <a href="#content" id="link-go-content"><span>Go to the content</span></a>
+    
+    <div id="global-header">
+      <!-- div class='supportbanner'>
+  <div class='content'>
+    <div class='banner-title'>Campanha de doação 2016</div>
+    <div class='banner-subtitle'>Ajude a <span class='asl'>ASL.Org</span> a realizar o <span class='fisl17'>FISL17</span>!</div>
+    <p>Ajude a Associação Software Livre.Org a continuar seu trabalho de 12 anos em prol do desenvolvimento e disseminação do Software Livre. Faça uma doação e ganhe um ingresso cortesia para o <span class='fisl17'>FISL17</span> e uma camiseta oficial do evento.</p>
+  </div>
+  <div class='footer-links'>
+    <a class='logo-fisl17' href='http://fisl.org.br' target='_blank'><span>fisl17</span></a>
+    <a class='logo-asl' href='http://asl.org' target='_blank'><span>ASL.org</span></a>
+    <a class='iot-fisl' href='http://segue.fisl17.softwarelivre.org' target='_blank'><span>Contribua para o fisl17</span></a>
+  </div>
+</div -->
+
+    </div>
+
+    <div id="wrap-1">
+      <div id="theme-header">
+        <div id="top">
+  <ul id="top-menu">
+    <li><a href="/"><span>Início</span></a></li>
+    <li><a id="submenu-people" href="/search/people"><span class="icon-menu-people">People</span></a><a class="up menu-submenu-trigger" id="submenu-people-trigger" onclick="toggleSubmenu(this, '', {&quot;More recent&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_recent&quot;},&quot;More active&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_active&quot;},&quot;More popular&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_popular&quot;}}); return false" href="#"><span>People menu</span></a></li>
+    <li><a id="submenu-communities" href="/search/communities"><span class="icon-menu-community">Communities</span></a><a class="up menu-submenu-trigger" id="submenu-communities-trigger" onclick="toggleSubmenu(this, '', {&quot;More recent&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_recent&quot;},&quot;More active&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_active&quot;},&quot;More popular&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_popular&quot;}}); return false" href="#"><span>Communities menu</span></a></li>
+    <li><a href="/profile/portal/events" id="submenu-events"><span class='icon-menu-events'>Events</span></a></li>
+    <li><a href="/doc"><span>Manual</span></a></li>
+    <li><a href="/portal/quem-somos" id="submenu-about"><span>About</span></a></li>
+  </ul>
+</div>
+
+      </div>
+      <div id="wrap-2">
+        <div id="user">
+    <span class='not-logged-in'>
+      <span class='login'><a id="link_login" onclick="return noosfero.modal.inline(&#39;#inlineLoginBox&#39;)" class="" href="/account/login"><i class="icon-menu-login"></i><strong>Login</strong></a></span>
+
+      <div id='inlineLoginBox' style='display: none;'>
+        <div class="login-box">
+
+<h2>Login</h2>
+
+
+
+
+<form action="/account/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="7wDhBD0TWrNLkQABS/An6cp+qYHo/+RTd+a1jTzSIZFyaFEFT0hYUKSK9Z/NcF2Khe9jQuBzIwEqaoyJY1mHQw==" />
+
+     <div class="formfieldline"><label class="formlabel" for="main_user_login">Username / Email</label><div class="formfield type-text"><input id="main_user_login" onchange="this.value = convToValidLogin( this.value )" type="text" name="user[login]" /></div></div>
+
+     <div class="formfieldline"><label class="formlabel" for="user_password">Password</label><div class="formfield type-password"><input type="password" name="user[password]" id="user_password" /></div></div>
+
+     <div class='checkbox'>
+       <label>
+         <input type="checkbox" name="remember_me" id="remember_me" value="1" checked="checked" />
+         Keep me logged in
+       </label>
+     </div>
+
+     
+
+     <div class=" button-bar">
+       <input type="submit" name="commit" value="Log in" class="button with-text icon-login submit" />
+         <a class="button icon-close with-text modal-toggle modal-close" rel="deactivate" title="Cancel" href="#">&nbsp;<span>Cancel</span></a>
+<br style="clear: left;" /></div>
+</form>
+<div class=" button-bar">
+    <a class="button icon-add with-text" title="New user" href="/account/signup">&nbsp;<span>New user</span></a>
+
+    <a class="button icon-help with-text" title="I forgot my password!" href="/account/forgot_password">&nbsp;<span>I forgot my password!</span></a>
+<br style="clear: left;" /></div>
+</div><!-- end class="login-box" -->
+
+
+      </div>
+
+        <span class='or'>or</span> <span class='signup'><a href="/account/signup"><strong>Sign up</strong></a></span>
+    </span>
+  <form action="/search/articles" id="top-search" class="search_form clean" method="get">
+    <input name="query" size="15" title="Search..." onfocus="this.form.className='focused';" onblur="this.form.className=''" />
+    <div>Press <strong>Enter</strong> to send the search query.</div>
+    <script>
+//<![CDATA[
+jQuery("#user form input").hint();
+//]]>
+</script>
+  </form>
+</div><!-- end id="user" -->
+
+        <h1 id="site-title">
+          <a href="/"><span>Software livre Brasil</span></a>
+
+        </h1>
+        <div id="navigation">
+          <ul>
+            <div id="friends">
+<ul>
+  <li><a href="/portal"><span>+</span></a></li>
+  <li><a href="http://br-linux.org"><span>BR-Linux</span></a></li>
+  <li><a href="http://www.vivaolinux.com.br"><span>Viva o Linux</span></a></li>
+  <li><a href="http://www.revista.espiritolivre.org"><span>Revista Espírito Livre</span></a></li>
+  <li><a href="http://www.dicas-l.com.br"><span>Dicas-L</span></a></li>
+  <li><a href="http://www.sejalivre.org"><span>Seja Livre</span></a></li>
+  <li><a href="http://www.underlinux.com.br"><span>Under Linux</span></a></li>
+  <li><a href="http://www.sempreupdate.com.br"><span>Sempre Update</span></a></li>
+</ul>
+</div>
+<div id="external-links">
+<ul>
+  <li><a id="blogoosfero" title="Blogoosfero" href="http://blogoosfero.cc/software-livre" target="_blank"><span>Blogoosfero</span></a></li>
+  <li><a id="twitter" title="Twitter" href="https://twitter.com/PSLBrasil" target="_blank"><span>Twitter</span></a></li>
+  <li><a id="diaspora" title="Diaspora" href="https://diaspora.softwarelivre.org/u/pslbrasil" target="_blank"><span>Diaspora</span></a></li>
+  <li><a id="gnu-social" title="Quitter" href="https://quitter.se/pslbrasil" target="_blank"><span>Quitter</span></a></li>
+  <li><a id="feed" title="Feed" href="http://softwarelivre.org/portal/feed"><span>Feed</span></a></li>
+</ul>
+</div>
+
+          </ul>
+          <div id="navigation-end"></div>
+        </div><!-- end id="navigation" -->
+        <div id="content">
+          <div id="content-inner">
+  <div id="profile-header"></div><div class="boxes" id="boxes"><div class="box box-2" id="box-14"><div class="blocks">  <div class="block-outer"><div class="block profile-image-block" id="block-7923" help="This block presents the profile image"><div class="block-inner-1"><div class="block-inner-2"><div class="vcard">
+
+
+<div class="profile-big-image img-pic">
+  <div class="profile-big-image-inner1">
+    <div class="profile-big-image-inner2">
+      <a href="http://softwarelivre.org/joenio"><img alt="Joenio Costa" title="" class=" photo" src="/image_uploads/0013/8697/joenio-profile_big.jpg" />
+</a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="profile-info-options">
+  <ul>
+</ul>
+
+</div>
+</div><!-- end class="vcard" -->
+</div></div></div></div>
+
+  <div class="block-outer"><div class="block my-network-block" id="block-53414" help="This block displays some info about your networking."><div class="block-inner-1"><div class="block-inner-2"><div class="block-header"><h3 class="block-title"><span>Mia reto</span></h3><h4 class="block-subtitle empty"><span></span></h4></div>
+
+<ul>
+  <li><a class="url" href="http://softwarelivre.org/joenio">Homepage</a></li>
+  <li><a href="http://softwarelivre.org/profile/joenio">View profile</a></li>
+</ul>
+
+<div class="my-network-actions">
+  <ul>
+</ul>
+
+</div>
+</div></div></div></div>
+
+    <div class="block-outer"><div class="block blog-archives-block" id="block-1773"><div class="block-inner-1"><div class="block-inner-2">  <div class="block-header"><h3 class="block-title"><span>Meus posts</span></h3><h4 class="block-subtitle empty"><span></span></h4></div>
+
+  <ul class='blog-archives'>
+      <li><strong>2019 (2)</strong></li>
+      <ul class='2019-archive'>
+          <li><a href="http://softwarelivre.org/joenio/blog?month=12&year=2019">decembro (1)</a></li>
+          <li><a href="http://softwarelivre.org/joenio/blog?month=5&year=2019">majo (1)</a></li>
+      </ul>
+      <li><strong>2018 (2)</strong></li>
+      <ul class='2018-archive'>
+          <li><a href="http://softwarelivre.org/joenio/blog?month=12&year=2018">decembro (1)</a></li>
+          <li><a href="http://softwarelivre.org/joenio/blog?month=3&year=2018">marto (1)</a></li>
+      </ul>
+      <li><strong>2017 (2)</strong></li>
+      <ul class='2017-archive'>
+          <li><a href="http://softwarelivre.org/joenio/blog?month=6&year=2017">junio (1)</a></li>
+          <li><a href="http://softwarelivre.org/joenio/blog?month=2&year=2017">februaro (1)</a></li>
+      </ul>
+      <li><strong>2016 (3)</strong></li>
+      <ul class='2016-archive'>
+          <li><a href="http://softwarelivre.org/joenio/blog?month=11&year=2016">novembro (1)</a></li>
+          <li><a href="http://softwarelivre.org/joenio/blog?month=3&year=2016">marto (1)</a></li>
+          <li><a href="http://softwarelivre.org/joenio/blog?month=1&year=2016">januaro (1)</a></li>
+      </ul>
+      <li><strong>2015 (4)</strong></li>
+      <ul class='2015-archive'>
+          <li><a href="http://softwarelivre.org/joenio/blog?month=8&year=2015">aŭgusto (1)</a></li>
+          <li><a href="http://softwarelivre.org/joenio/blog?month=6&year=2015">junio (1)</a></li>
+          <li><a href="http://softwarelivre.org/joenio/blog?month=3&year=2015">marto (2)</a></li>
+      </ul>
+      <li><strong>2014 (3)</strong></li>
+      <ul class='2014-archive'>
+          <li><a href="http://softwarelivre.org/joenio/blog?month=12&year=2014">decembro (3)</a></li>
+      </ul>
+      <li><strong>2010 (5)</strong></li>
+      <ul class='2010-archive'>
+          <li><a href="http://softwarelivre.org/joenio/blog?month=12&year=2010">decembro (1)</a></li>
+          <li><a href="http://softwarelivre.org/joenio/blog?month=7&year=2010">julio (1)</a></li>
+          <li><a href="http://softwarelivre.org/joenio/blog?month=5&year=2010">majo (2)</a></li>
+          <li><a href="http://softwarelivre.org/joenio/blog?month=4&year=2010">aprilo (1)</a></li>
+      </ul>
+      <li><strong>2009 (6)</strong></li>
+      <ul class='2009-archive'>
+          <li><a href="http://softwarelivre.org/joenio/blog?month=6&year=2009">junio (2)</a></li>
+          <li><a href="http://softwarelivre.org/joenio/blog?month=3&year=2009">marto (1)</a></li>
+          <li><a href="http://softwarelivre.org/joenio/blog?month=2&year=2009">februaro (1)</a></li>
+          <li><a href="http://softwarelivre.org/joenio/blog?month=1&year=2009">januaro (2)</a></li>
+      </ul>
+  </ul>
+
+  <div class="subscribe-feed"><a href="http://softwarelivre.org/joenio/blog/feed">Subscribe RSS Feed</a></div>
+</div></div></div></div>
+
+    <div class="block-outer"><div class="block communities-block" id="block-29" help="This block displays the communities in which the user is a member."><div class="block-inner-1"><div class="block-inner-2"><div class="block-header"><h3 class="block-title"><span>Comunidades</span></h3><h4 class="block-subtitle empty"><span></span></h4></div>
+
+
+<div>
+    <ul><div class="common-profile-list-block has-pic"><li class="vcard"><a class="community-trigger menu-submenu-trigger" url="/profile/portal/check_membership" onclick="toggleSubmenu(this, 'PSL Brasil', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/portal&quot;}},{&quot;Members&quot;:{&quot;href&quot;:&quot;/profile/portal/members&quot;}},{&quot;Agenda&quot;:{&quot;href&quot;:&quot;/profile/portal/events&quot;}},{&quot;Eniri&quot;:{&quot;href&quot;:&quot;/profile/portal/join&quot;,&quot;class&quot;:&quot;join-community&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Leave community&quot;:{&quot;href&quot;:&quot;/profile/portal/leave?reload=false&quot;,&quot;class&quot;:&quot;leave-community&quot;,&quot;style&quot;:&quot;display:  none&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/portal/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/portal&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="PSL-Brasil" href="http://softwarelivre.org/portal"><span class="profile-image"><img alt="PSL-Brasil" title="" class=" logo" src="/image_uploads/0008/3041/g8733_minor.png" /></span><span class="org">PSL Brasil</span><span class="extra_info"></span></a></li></div>
+ <div class="common-profile-list-block has-pic"><li class="vcard"><a class="community-trigger menu-submenu-trigger" url="/profile/slcampusparty/check_membership" onclick="toggleSubmenu(this, 'Soft. Livre na Campus Party', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/slcampusparty&quot;}},{&quot;Members&quot;:{&quot;href&quot;:&quot;/profile/slcampusparty/members&quot;}},{&quot;Agenda&quot;:{&quot;href&quot;:&quot;/profile/slcampusparty/events&quot;}},{&quot;Eniri&quot;:{&quot;href&quot;:&quot;/profile/slcampusparty/join&quot;,&quot;class&quot;:&quot;join-community&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Leave community&quot;:{&quot;href&quot;:&quot;/profile/slcampusparty/leave?reload=false&quot;,&quot;class&quot;:&quot;leave-community&quot;,&quot;style&quot;:&quot;display:  none&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/slcampusparty/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/slcampusparty&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Soft. Livre na Campus Party" href="http://softwarelivre.org/slcampusparty"><span class="profile-image"><img alt="Soft. Livre na Campus Party" title="" class=" logo" src="/image_uploads/0007/5785/avatar_500x500_minor.png" /></span><span class="org">Soft. Livre na Campus Party</span><span class="extra_info"></span></a></li></div>
+ <div class="common-profile-list-block has-pic"><li class="vcard"><a class="community-trigger menu-submenu-trigger" url="/profile/fisl13/check_membership" onclick="toggleSubmenu(this, 'fisl13', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/fisl13&quot;}},{&quot;Members&quot;:{&quot;href&quot;:&quot;/profile/fisl13/members&quot;}},{&quot;Agenda&quot;:{&quot;href&quot;:&quot;/profile/fisl13/events&quot;}},{&quot;Eniri&quot;:{&quot;href&quot;:&quot;/profile/fisl13/join&quot;,&quot;class&quot;:&quot;join-community&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Leave community&quot;:{&quot;href&quot;:&quot;/profile/fisl13/leave?reload=false&quot;,&quot;class&quot;:&quot;leave-community&quot;,&quot;style&quot;:&quot;display:  none&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/fisl13/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/fisl13&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="fisl13" href="http://softwarelivre.org/fisl13"><span class="profile-image"><img alt="fisl13" title="" class=" logo" src="/image_uploads/0006/7980/fisl_minor.jpg" /></span><span class="org">fisl13</span><span class="extra_info"></span></a></li></div>
+ <div class="common-profile-list-block has-pic"><li class="vcard"><a class="community-trigger menu-submenu-trigger" url="/profile/fisl18/check_membership" onclick="toggleSubmenu(this, 'Fisl18', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/fisl18&quot;}},{&quot;Members&quot;:{&quot;href&quot;:&quot;/profile/fisl18/members&quot;}},{&quot;Agenda&quot;:{&quot;href&quot;:&quot;/profile/fisl18/events&quot;}},{&quot;Eniri&quot;:{&quot;href&quot;:&quot;/profile/fisl18/join&quot;,&quot;class&quot;:&quot;join-community&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Leave community&quot;:{&quot;href&quot;:&quot;/profile/fisl18/leave?reload=false&quot;,&quot;class&quot;:&quot;leave-community&quot;,&quot;style&quot;:&quot;display:  none&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/fisl18/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/fisl18&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Fisl18" href="http://softwarelivre.org/fisl18"><span class="profile-image"><img alt="Fisl18" title="" class=" logo" src="/image_uploads/0013/5222/fisllogo_minor.jpeg" /></span><span class="org">Fisl18</span><span class="extra_info"></span></a></li></div></ul>
+</div>
+
+<br style='clear:both'/>
+<div class="block-footer-content">    <a class="view-all" href="/profile/joenio/communities">View all</a>
+
+</div></div></div></div></div>
+</div></div>
+<div class="box box-1" id="box-13"><div class="blocks">  <div class="block-outer"><div class="block main-block" id="block-23" help="This block presents the main content of your pages."><div class="block-inner-1"><div class="block-inner-2"><div class="main-content">
+<div id="article" class="text-article">
+
+
+
+<script type="text/javascript">
+    window.ONE_COMMENT = "One comment";
+    window.COMMENT_PLURAL = "comments";
+    window.NO_COMMENT_YET = "Neniu komento";
+</script>
+
+  <div id="article-parent">
+    <a class="button icon-back with-text" title="Go back to Blog do Joenio" href="http://softwarelivre.org/joenio/blog">&nbsp;<span>Go back to Blog do Joenio</span></a>
+  </div>
+
+<div id="article-toolbar">
+  <div>
+  <div id="article-actions">
+
+    
+      <script>fullscreenPageLoad('#article')</script>
+    <a id="fullscreen-btn" onClick="toggle_fullwidth(&#39;#article&#39;)" class="button with-text icon-fullscreen" href="#" title="Go to full screen mode"><span>Full screen</span></a><a style="display: none;" id="exit-fullscreen-btn" onClick="toggle_fullwidth(&#39;#article&#39;)" class="button with-text icon-fullscreen" href="#" title="Exit full screen mode"><span>Exit full screen</span></a>
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+  </div>
+  <div id="article-header">
+    
+    
+      <h1 class="title">
+      Empacotando módulos Perl no Debian
+  </h1>
+  <span class="publishing-info">
+  <span class="date">
+    majo 8, 2019 3:00
+  </span>
+  <span class="author">
+    , by Joenio Marques da Costa
+  </span>
+  <span class="comments">
+     - <a href="/joenio/blog/empacotando-modulos-perl-no-debian#comments_list"><span class='comment-count hide'>0</span><span class='comment-count-write-out'>no comments yet</span></a>
+  </span>
+
+<span class="followers-count">
+|
+    No one following this article yet.
+</span>
+
+</span>
+
+  <div id='article-sub-header'>
+      <div id="article-hits">
+        Viewed 298 times 
+      </div>
+
+  </div>
+
+
+    
+  </div>
+</div>
+
+</div>
+
+
+
+  <div id="addThis">
+  <script type="text/javascript">
+    addthis_pub = 'ra-4d93d22a7a91a05f';
+    addthis_logo = '';
+    addthis_options = 'identica, twitter, www.facebook.com, favorites, email, delicious, tumblr, digg, slashdot, more';
+  </script>
+  <a href="http://www.addthis.com/bookmark.php" id="bt_addThis" target="_blank" onmouseover="return addthis_open(this, '', '[URL]')" onmouseout="addthis_close()" onclick="return addthis_sendto()"><img width="53" height="16" border="0" alt="" src="/images/bt-bookmark.gif" /></a>
+</div>
+
+
+  <div class="article-body article-body-text-article">
+    <p><img src="http://joenio.me/files/clone-trooper-e-wall-e-pacotes-perl.jpg" alt="descricao imagem aqui"></p>
+
+<p>Neste post irei demonstrar como criar pacotes para o sistema operacional livre
+<a href="http://debian.org">Debian</a> <a href="http://www.kernel.org">GNU/Linux</a>, submeter esses pacotes ao projeto oficial,
+resolver e documentar questões sobre licenças, e uma série de outras
+informações relacionadas ao processo de empacotamento Debian, especialmente
+sobre o empacotamento de <a href="http://metacpan.org">módulos</a> <a href="http://perl.org">Perl</a>.</p>
+
+<p>O Debian é um sistema operacional <a href="http://debian.org/intro/free">livre</a> criado e mantido por um grupo
+independente de desenvolvedores espalhados ao redor do mundo, o projeto foi
+iniciado em 1993 e tem sido desenvolvido abertamente desde então, sempre
+seguindo o espírito livre do <a href="http://www.gnu.org">projeto GNU</a>. O sistema de gerenciamento de
+pacotes Debian, chamado <a href="http://pt.wikipedia.org/wiki/Advanced_Packaging_Tool">APT</a>, foi criado originalmente pelos
+desenvolvedores do projeto e conta hoje com 51 mil pacotes em seus
+<a href="http://www.debian.org/releases/stable/amd64/release-notes/ch-whats-new.pt-br.html#newdistro">repositórios</a> oficiais.</p>
+
+<p>A enorme quantidade de pacotes disponíveis torna extremamente simples
+pesquisar, instalar, atualizar ou remover qualquer software em seu computador,
+seja desktop, servidor ou qualquer outra <a href="http://www.debian.org/ports">plataforma suportada pelo
+Debian</a>. Contribuir com o empacotamento de novos projetos de
+software ou com a manutenção dos pacotes existentes é uma forma muito simples e
+útil de melhorar a qualidade geral deste sistema operacional universal.</p>
+
+<p>Vamos lá! Os exemplos relatados aqui serão com o módulo <a href="http://metacpan.org/pod/Devel::FindPerl">Devel::FindPerl</a>, empacotado durante a escrita deste post e que até a data de
+publicação ainda não estava empacotado no Debian.</p>
+
+<h2 id="instalar-as-dependências-para-empacotamento">Instalar as dependências para empacotamento</h2>
+
+<p>Primeiro, antes de tudo, é necessário utilizar alguma versão do Debian,
+<em>stable</em>, <em>testing</em>, ou <em>unstable</em> e ter os seguintes pacotes instalados.</p>
+
+<pre>
+<code>
+apt install devscripts debhelper git-buildpackage pkg-perl-tools
+</code>
+</pre>
+
+<p>Consulte o <a href="http://perl-team.pages.debian.net/git.html">guia do Debian Perl Group sobre uso do Git</a> para mais
+detalhes sobre os pacotes necessários. Instale também o <code>apt-file</code> e atualize a
+sua base de dados para que o <code>dh-make-perl</code> possa descobrir qual pacote é de
+qual módulo.</p>
+
+<pre>
+<code>
+apt install apt-file
+apt-file update
+</code>
+</pre>
+
+<p>Assim é possível descobrir quando um certo módulo Perl já está empacotado no
+Debian, execute o comando abaixo para descobrir se o módulo <a href="http://metacpan.org/pod/Devel::FindPerl">Devel::FindPerl</a> está empacotado e qual é o nome do pacote em caso afirmativo.</p>
+
+<pre>
+<code>
+dh-make-perl locate Devel::FindPerl
+</code>
+</pre>
+
+<p>Até o momento da escrita deste post o módulo <code>Devel::FindPerl</code> não está
+empacotado no Debian então o <code>dh-make-perl</code> reporta o seguinte.</p>
+
+<pre>
+<code>
+== dh-make-perl 0.95 ==
+Using cached Contents from Sun Jul 16 19:21:00 2017
+Devel::FindPerl is not found in any Debian package
+</code>
+</pre>
+
+<h2 id="criar-a-versão-inicial-do-pacote">Criar a versão inicial do pacote</h2>
+
+<p>Infome ao Git quem você é para que o <code>dh-make-perl</code> gere o template
+inicial do pacote com as informações corretas.</p>
+
+<pre>
+<code>
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+</code>
+</pre>
+
+<p>Crie também as variáveis de ambiente abaixo com seu nome e email, isso ajuda o
+<code>dh-make-perl</code> a criar os arquivos do pacote em <code>debian/</code> com seus dados
+corretamente.</p>
+
+<div><div><pre><code><span>export </span><span>EMAIL</span><span>=</span>you@example.com
+<span>export </span><span>DEBFULLNAME</span><span>=</span><span>"Your Name"</span>
+</code></pre></div></div>
+
+<p>Crie a versão inicial do pacote.</p>
+
+<pre>
+<code>
+dh-make-perl --pkg-perl --cpan Devel::FindPerl
+</code>
+</pre>
+
+<div>
+  <p><strong>Atenção!</strong>
+<em>Se o <code>cpan</code> nunca foi utilizado execute-o antes do <code>dh-make-perl</code> para que
+sejam criadas as configurações básicas.</em></p>
+</div>
+
+<p>O <code>dh-make-perl</code> criará um repositório Git local com a cópia da última versão
+do módulo <code>Devel::FindPerl</code> já com os arquivos necessários para o pacote
+Debian, o nome dado ao pacote será <code>libdevel-findperl-perl</code>, este é o padrão
+definido pela <a href="http://perl-team.pages.debian.net/policy.html#Package_Naming_Policy">política de nomes para pacotes</a> do <em>Debian Perl
+Group</em>.</p>
+
+<h2 id="correções-básicas-no-template-inicial">Correções básicas no template inicial</h2>
+
+<p>O template inicial do pacote criado pelo <code>dh-make-perl</code> é bom mas não é
+ideal, muitas alterações são necessárias até o pacote estar pronto para entrar nos
+repositórios oficiais do projeto Debian, geralmente é necessário
+alterar ao menos os seguintes arquivos:</p>
+
+<h3 id="debiancopyright">debian/copyright</h3>
+
+<p>Adicionar o ano em cada linha do copyright, exemplo:</p>
+
+<div><div><pre><code>Files: debian/*
+Copyright: 2006, Florian Ragwitz &lt;rafl@debian.org&gt;
+ 2008-2014, gregor herrmann &lt;gregoa@debian.org&gt;
+ 2008, Damyan Ivanov &lt;dmn@debian.org&gt;
+License: Artistic or GPL-1+
+</code></pre></div></div>
+
+<p>Remover <strong>DISCLAIMER</strong> do copyright adicionado pelo <code>dh-make-perl</code>
+automaticamente.</p>
+
+<h4 id="o-que-fazer-quando-o-upstream-não-informa-corretamente-o-ano-do-copyright">O que fazer quando o upstream não informa corretamente o ano do copyright?</h4>
+
+<p>Se o upstream não informar o ano nas notas de copyright do código fonte então
+será necessário documentar isso de alguma forma, as opções são (1) fazer um
+comentário como feito no
+<a href="https://salsa.debian.org/perl-team/modules/packages/liblog-dispatch-config-perl/blob/debian/1.04-1/debian/copyright">liblog-dispatch-config-perl/debian/copyright</a>
+ou (2) utilizar o padrão <a href="http://perl-team.pages.debian.net/copyright.html#Berne_Convention">Berne Convention Comment</a>.</p>
+
+<p>(1) liblog-dispatch-config-perl:</p>
+
+<div><div><pre><code><span>Comment</span><span>:</span> <span>Rationale from the author was</span><span>:</span>
+  <span>All of my modules available at http://search.cpan.org/~miyagawa/ with the</span>
+  <span>statement "AUTHOR</span><span>:</span> <span>Tatsuhiko Miyagawa" are, unless otherwise noted,</span>
+  <span>Copyright (c) Tatsuhiko Miyagawa.</span>
+</code></pre></div></div>
+
+<p>(2) Berne Convention:</p>
+
+<div><div><pre><code><span>Comment</span><span>:</span> <span>The upstream distribution does not contain an explicit statement of</span>
+ <span>copyright ownership. Pursuant to the Berne Convention for the Protection of</span>
+ <span>Literary and Artistic Works, it is assumed that all content is copyright by</span>
+ <span>its respective authors unless otherwise stated.</span>
+</code></pre></div></div>
+
+<p>Eu, geralmente, prefiro usar o comentário no formato <strong>Berne Convention</strong>.</p>
+
+<h3 id="debiancontrol">debian/control</h3>
+
+<p>Escolher uma boa descrição é fundamental, deve-se levar um bom tempo nisso,
+tanto para a descrição curta, quanto para a descrição longa do pacote.</p>
+
+<p>Consulte a <a href="https://www.debian.org/doc/debian-policy/ch-binary.html#s-descriptions">política para descrição de pacotes</a> no manual
+de políticas do Debian para mais detalhes sobre como descrever os pacotes de
+forma adequada. A descrição curta deve, usualmente, iniciar com letra minúscula
+e deve ser uma “noum phrase” (substantivo). No caso do pacote <code>Devel::FindPerl</code>
+alterei a descrição gerada pelo <code>dh-make-perl</code> para o seguinte.</p>
+
+<h4 id="single-line-synopsis">single line synopsis:</h4>
+
+<div><div><pre><code><span>Description</span><span>:</span> <span>Perl module to find the path to the currently running perl</span>
+</code></pre></div></div>
+
+<p>Usei descrição curta iniciando com maiúscula por se tratar de um nome próprio
+neste caso, a linguagem de programação é Perl e não perl, perl é o
+interpretador.</p>
+
+<h4 id="extended-description">extended description:</h4>
+
+<div><div><pre><code> <span>The Devel::FindPerl module tries to find the path to the currently running</span>
+ <span>perl. It implements a function to try (really really hard) to find the path to</span>
+ <span>the perl running your program and another function to test if the perl in</span>
+ <span>`$path` is the same perl as the currently running one.</span>
+ <span>.</span>
+ <span>SECURITY ALERT</span><span>:</span> <span>This module by default does things that are not particularly</span>
+ <span>secure (run programs based on external input).</span>
+</code></pre></div></div>
+
+<h3 id="debianchangelog">debian/changelog</h3>
+
+<p>Deve ser informado no arquivo <code>debian/changelog</code> uma mensagem referenciando o
+fechamendo de um bug do tipo <a href="https://wiki.debian.org/ITP">ITP</a> e o pacote deve ser indicado como
+<code>unstable</code>, isto significa que os pacotes sempre entram na distribuição
+<code>unstable</code>, a partir disso segue seu fluxo até chegar na versão <code>stable</code>,
+passando pela <code>testing</code>.</p>
+
+<h4 id="reportar-bug-do-tipo-itp-com-reportbug">Reportar bug do tipo ITP com reportbug</h4>
+
+<p><code>reportbug</code> é uma ferramenta de linha de comando para reportar bugs do sistema
+Debian. Ao empacotar um software é importante registrar que temos a intenção de
+empacotar este software para que a comunidade Debian tenha conhecimento de que
+alguém está trabalhando nisso e assim evitar re-trabalho e sobreposição, um
+pseudo-pacote chamado <code>wnpp</code> (<a href="https://wiki.debian.org/WNPP">Work-Needing and Prospective Packages</a>)
+é utilizado para concentrar os bugreports relativos a novos pacotes.</p>
+
+<p>Os bugs reportados no pseudo-pacote <code>wnpp</code> recebem tags indicando o tipo do
+“bug”, neste caso queremos reportar um bug indicando que estamos trabalhando
+(ou iremos trabalhar) num novo pacote, a tag para isso é a <strong>ITP</strong> (Intent To
+Package), consulte a <a href="https://wiki.debian.org/reportbug">documentação oficial do <code>reportbug</code></a> para
+saber como configurá-lo e execute o seguinte comando para registrar um bug do
+tipo ITP.</p>
+
+<pre>
+<code>
+reportbug wnpp
+</code>
+</pre>
+
+<p>Selecione <em>1 ITP</em>, informe o nome do pacote como <em>libdevel-findperl-perl</em>, informe a
+descrição do pacote, use a mesma descrição curta utilizada no <code>debian/control</code>.
+Após isso o <em>reportbug</em> abrirá um editor de texto com o template da mensagem de
+bug a ser enviada, adicione as seguintes informações:</p>
+
+<ol>
+  <li>versão do pacote = <em>0.015</em>
+</li>
+  <li>nome do upstream = <em>Leon Timmermans <a href="mailto:leont@cpan.org">leont@cpan.org</a>, Randy Sims <a href="mailto:randys@thepierianspring.org">randys@thepierianspring.org</a></em>
+</li>
+  <li>url do upstream = <em>https://metacpan.org/release/Devel-FindPerl</em>
+</li>
+  <li>licença = <em>Artistic or GPL-1+</em>
+</li>
+  <li>linguagem = <em>Perl</em>
+</li>
+  <li>inclua a descrição longa (use o mesmo do arquivo <code>debian/control</code>) no corpo da mensagem</li>
+</ol>
+
+<p>Apague as mensagens adicionadas pelo template do reportbug, salve e feche o
+arquivo para retornar ao reportbug, ele solicitará confirmação para o envio do
+email ao sistema de bugs do Debian, responda <code>Y</code>. No exemplo seguido aqui
+para o pacote <code>Devel::FindPerl</code> a mensagem do reportbug ficou da seguinte
+forma.</p>
+
+<div><div><pre><code>Subject: ITP: libdevel-findperl-perl -- Perl module to find the path to the currently running perl
+Package: wnpp
+Owner: Joenio Costa &lt;joenio@joenio.me&gt;
+Severity: wishlist
+
+* Package name    : libdevel-findperl-perl
+  Version         : 0.015
+  Upstream Author : Leon Timmermans &lt;leont@cpan.org&gt;
+                    Randy Sims &lt;randys@thepierianspring.org&gt;
+* URL             : https://metacpan.org/release/Devel-FindPerl
+* License         : Artistic or GPL-1+
+  Programming Lang: Perl
+  Description     : Perl module to find the path to the currently running perl
+
+The Devel::FindPerl module tries to find the path to the currently running
+perl. It implements a function to try (really really hard) to find the path to
+the perl running your program and another function to test if the perl in
+`$path` is the same perl as the currently running one.
+
+SECURITY ALERT: This module by default does things that are not particularly
+secure (run programs based on external input).
+</code></pre></div></div>
+
+<p>Verifique a mensagem nos servidores do Debian, você deve receber uma
+cópia do email, esta mensagem contém o número do bug, adicione o número do bug
+no arquivo <code>debian/changelog</code> com a mensagem “(Closes #&lt;numero do bug&gt;)”, veja
+como ficou o changelog do <code>libdevel-findperl-perl</code>.</p>
+
+<div><div><pre><code>libdevel-findperl-perl (0.015-1) unstable; urgency=low
+
+  * Initial release. (Closes #928632)
+
+ -- Joenio Costa &lt;joenio@joenio.me&gt;  Tue, 7 May 2019 12:21:30 -0300
+</code></pre></div></div>
+
+<p>A mensagem automática com o número do bug ITP criado para o pacote <code>libdevel-findperl-perl</code> recebida dos servidores do Debian foi a seguinte.</p>
+
+<div><div><pre><code>Subject: Bug#928632: Acknowledgement (ITP: libdevel-findperl-perl -- Perl module to find the path to the currently running perl)
+
+Thank you for filing a new Bug report with Debian.
+
+You can follow progress on this Bug here: 928632: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=928632.
+
+This is an automatically generated reply to let you know your message
+has been received.
+
+Your message is being forwarded to the package maintainers and other
+interested parties for their attention; they will reply in due course.
+
+As you requested using X-Debbugs-CC, your message was also forwarded to
+  debian-devel@lists.debian.org
+(after having been given a Bug report number, if it did not have one).
+
+Your message has been sent to the package maintainer(s):
+ wnpp@debian.org
+
+If you wish to submit further information on this problem, please
+send it to 928632@bugs.debian.org.
+
+Please do not send mail to owner@bugs.debian.org unless you wish
+to report a problem with the Bug-tracking system.
+
+-- 
+928632: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=928632
+Debian Bug Tracking System
+Contact owner@bugs.debian.org with problems
+</code></pre></div></div>
+
+<h4 id="atenção-sobre-dependendências-declaradas-no-debiancontrol">Atenção sobre dependendências declaradas no <code>debian/control</code>
+</h4>
+
+<p>Não se deve incluir dependencias para os pacotes <code>perl-modules</code> ou <code>perl-base</code>,
+apenas para <code>perl</code>, lembrar que <code>perl</code> é fornecido por <code>${perl:Depends}</code>.</p>
+
+<p>Verifique a versão das dependências, nem sempre as sugestões dos
+desenvolvedores no <code>Makefile.PL</code> está correta, ou pode ocorrer do Debian não
+possuir versão mais antiga que as versões no <code>Makefile.PL</code>.</p>
+
+<p>Neste ponto já temos o pacote minimamente pronto, vamos testar e usar o
+<code>lintian</code> para debugar possíveis problemas.</p>
+
+<h2 id="gerar-o-pacote-e-verificar-a-conformidade-com-lintian">Gerar o pacote e verificar a conformidade com lintian</h2>
+
+<p>Commite as mudanças realizadas nos arquivos em <code>debian/</code> e use o
+<code>git-buildpackage</code> para gerar o pacote.</p>
+
+<pre>
+<code>
+gbp buildpackage -us -uc
+</code>
+</pre>
+
+<p>As flags <code>-us</code> e <code>-uc</code> informam ao processo de build para não assinar o
+pacote ao final do processo, usamos estas flags apenas enquanto estamos
+testando, ao final quando for o momento de submeter o pacote ao Debian iremos
+gerar o pacote e assinar ele com o GnuPG.</p>
+
+<p>O <code>lintian</code> encontrou alguns problemas no empacotamento do módulo <code>Devel::FindPerl</code>:</p>
+
+<div><div><pre><code>Now running lintian libdevel-findperl-perl_0.015-1_amd64.changes ...
+W: libdevel-findperl-perl: new-package-should-close-itp-bug
+E: libdevel-findperl-perl: possible-missing-colon-in-closes Closes #928632
+W: libdevel-findperl-perl: spelling-error-in-description really really (duplicate word) really
+</code></pre></div></div>
+
+<p>Dois dos três problemas relatados pelo <code>lintian</code> indica que faltou adicionar
+dois pontos (<code>:</code>) após a palavra <em>Closes</em>, o diff da mudança necessária para
+resolver esse problema é o seguinte.</p>
+
+<div><div><pre><code><span>diff --git a/debian/changelog b/debian/changelog
+index 914b680..8e8e6f6 100644
+</span><span>--- a/debian/changelog
+</span><span>+++ b/debian/changelog
+</span><span>@@ -1,5 +1,5 @@
+</span> libdevel-findperl-perl (0.015-1) unstable; urgency=low
+ 
+<span>-  * Initial release. (Closes #928632)
+</span><span>+  * Initial release. (Closes: #928632)
+</span> 
+  -- Joenio Costa &lt;joenio@joenio.me&gt;  Tue, 7 May 2019 12:21:30 -0300
+</code></pre></div></div>
+
+<p>O terceiro warning do <code>lintian</code> <em>spelling-error-in-description</em> é um falso
+positivo pois a palavra <em>really</em> duplicada está assim de propósito, a descrição
+do upstream usa essa forma para enfatizar a mensagem, usei a mesma descrição
+do upstream, neste caso podemos criar um arquivo no pacote para fazer o
+<code>lintian</code> não mais reclamar desse falso warning, para isso usamos o <code>lintian</code>
+<a href="https://lintian.debian.org/manual/section-2.4.html"><em>Override</em></a> criando o arquivo
+<code>debian/libdevel-findperl-perl.lintian-overrides</code> com o seguinte conteúdo.</p>
+
+<div><div><pre><code><span># The package long description duplicate the word "really" on purpose</span>
+<span>libdevel-findperl-perl binary</span><span>:</span> <span>spelling-error-in-description</span>
+</code></pre></div></div>
+
+<p>Após corrigir os <em>warnings</em> do <code>lintian</code> vamos re-gerar o pacote e verificar
+novamente usando a flag <code>-I</code> para obter mensagens mais descritivas do lintian.
+Commite as mudanças realizadas no código do pacote (arquivo em <code>debian/</code>),
+execute novamente <code>gbp buildpackage -us -uc</code> e rode o <code>lintian</code>.</p>
+
+<pre>
+<code>
+lintian -I
+</code>
+</pre>
+
+<p>Uma vez que temos uma versão inicial do pacote pronta é interessante publicar
+em algum repositório para testar a instalação com o <code>APT</code>, claro que é possível
+instalar o pacote localmente usando o <code>dpkg</code> diretamente.</p>
+
+<h2 id="publicar-o-pacote-em-repositório-não-oficial">Publicar o pacote em repositório (não-oficial)</h2>
+
+<p>Veja no post <a href="http://joenio.me/aprenda-a-criar-repositorios-de-pacotes-debian">Aprenda a criar repositórios de pacotes
+Debian</a> como criar seu próprio
+repositório de pacotes Debian usando <code>dput</code> + <code>mini-dinstall</code> + <code>nginx</code>. É
+necessário gerar o pacote novamente sem o uso das flags <code>-us</code> e <code>-uc</code> para
+assinar o pacote com <a href="https://www.gnupg.org">GnuPG</a>, o upload para o repositório via <code>dput</code> requer
+que o pacote esteja assinado.</p>
+
+<p>Irei publicar no repositório <a href="http://debian.joenio.me">http://debian.joenio.me</a>
+usando o <code>dput</code> para testar a publicação do pacote e na sequência testar a
+instalação via APT. O <code>dput</code> aceita como parâmetro o arquivo <code>.changes</code> do
+pacote, para o pacote <code>libdevel-findperl-perl</code> vamos executar o seguinte.</p>
+
+<pre>
+<code>
+dput debian.joenio.me ../libdevel-findperl-perl_0.015-1_amd64.changes
+</code>
+</pre>
+
+<p>Altere o endereço do repositório <code>debian.joenio.me</code> pelo seu próprio
+repositório ou por qualquer outro repositório onde você tem permissão de
+escrita. Teste a instalação do pacote e garanta que ele instala corretamente,
+caso encontre problemas resolva e só então submeta o pacote ao Debian. É uma
+boa prática testar também a construção do pacote num ambiente <code>chroot</code> limpo.</p>
+
+<h2 id="construir-o-pacote-num-ambiente-chroot-isolado">Construir o pacote num ambiente chroot isolado</h2>
+
+<p>Existem diversas ferramentas para criar um ambiente Debian limpo voltado para
+construção de pacotes, geralmente usando <code>chroot</code>, entre os mais comuns estão o
+<code>sbuild</code>, <code>pbuilder</code> e <code>cowbuilder</code>. Aqui vou mostrar o uso do <code>pbuilder</code> por
+ser o que costumo utilizar no meu fluxo de empacotamento, execute os comandos
+abaixo a partir do diretório do pacote.</p>
+
+<pre>
+<code>
+sudo pbuilder create
+sudo pbuilder update
+pdebuild
+</code>
+</pre>
+
+<p>O <code>git-buildpackage</code> oferece um wrapper para o <code>pdebuild</code>, para usar ele e
+evitar alertas a respeito dos arquivos binários existentes no diretório <code>.git</code>
+basta executar o <code>pdebuild</code> da seguinte forma:</p>
+
+<pre>
+<code>
+BUILDER=pbuilder git-pbuilder
+</code>
+</pre>
+
+<p>Passe a opção <code>--force-sign</code> para assinar os arquivos do pacote, se desejar
+informar um mirror alternativo passe o parâmetro <code>--othermirror "deb
+http://local/mirror stable main"</code>.</p>
+
+<h2 id="fazer-upload-do-pacote-no-repositório-do-grupo-debian-perl">Fazer upload do pacote no repositório do grupo Debian Perl</h2>
+
+<p>É necessário solicitar acesso ao <a href="https://salsa.debian.org/perl-team">Salsa do time Perl do Debian</a>
+enviando um email com uma curta apresentação pessoal para o seguinte email <a href="mailto:debian-perl@lists.debian.org">debian-perl@lists.debian.org</a>.
+Após ter acesso ao repositório do grupo Perl é hora de fazer upload do pacote
+no repositório do grupo, mas antes faça uma revisão final no pacote:</p>
+
+<ul>
+  <li>Verifique se o status do pacote em <code>debian/changelog</code> foi alterado de UNRELEASED para unstable</li>
+  <li>Garanta que há uma mensagem <code>(Closes: #NNNNNN)</code> no <code>debian/changelog</code> indicando o número do bug ITP</li>
+  <li>Verifique a versão correta de “Standards-Version:”, aqui a versão utilizada foi 4.3.0</li>
+  <li>Use o formato correto no arquivo <code>debian/copyright</code>, atualmente usar <a href="https://dep-team.pages.debian.net/deps/dep5/">DEP-5</a>
+</li>
+  <li>Verificar o COPYRIGHT de cada arquivo (usar grep ou ack) para buscar a quem pertence o copyright de cada arquivo</li>
+</ul>
+
+<p>Feito as verificações finais, use o comando abaixo para criar e configurar um
+novo projeto no Salsa, e subir o repositório local do nosso novo pacote <code>libdevel-findperl-perl</code>.</p>
+
+<pre>
+<code>
+dpt salsa pushrepo
+</code>
+</pre>
+
+<div>
+  <p><strong>Atenção!</strong>
+<em>
+Lembre de registrar um token em
+<a href="https://salsa.debian.org/profile/personal_access_tokens">https://salsa.debian.org/profile/personal_access_tokens</a>
+e defina este token na variável de ambiente <code>DPT_SALSA_PRIVATE_TOKEN</code> para que
+o <code>dpt</code> tenha acesso de escrita no servidor Salsa.
+</em></p>
+</div>
+
+<p>Para saber mais detalhes de como fazer upload do seu pacote veja a documentação
+<a href="http://perl-team.pages.debian.net/git.html#pushing_to_salsa.debian.org">pushing to salsa.debian.org</a>, além do token é necessário
+também fazer upload de sua chave ssh no Salsa, ele é uma instância do Gitlab,
+então basta acessar sua conta ir em preferências e configurar uma chave ssh por
+lá.</p>
+
+<p>Algum tempo após o upload o pacote entra no <a href="http://pet.debian.net/pkg-perl/pet.cgi">PET</a> (Package Entropy Tracker),
+mas apenas caso nenhum revisor solicite alterações mudando o status em
+<code>debian/changelog</code> para <code>UNRELEASED</code>. Além disso, alguns pacotes marcados na
+whitelist são executados contra o <a href="https://perl-team.pages.debian.net/autopkgtest.html">autopkgtest</a> no servidor CI do Debian e
+podem ser consultados em <a href="http://ci.debian.net">ci.debian.net</a>.</p>
+
+<p>O módulo <code>Devel::FindPerl</code> empacotado para <code>libdevel-findperl-perl</code> durante a escrita
+deste post foi submetido ao repositório do Debian Perl Group e pode ser visualizado em:</p>
+
+<ul>
+  <li><a href="https://salsa.debian.org/perl-team/modules/packages/libdevel-findperl-perl">https://salsa.debian.org/perl-team/modules/packages/libdevel-findperl-perl</a></li>
+</ul>
+    <br style="clear:both" />
+  </div> <!-- end class="article-body" -->
+
+
+
+<div id="article-source">Source: <a href="http://joenio.me/empacotando-modulos-perl-no-debian/index.html">http://joenio.me/empacotando-modulos-perl-no-debian/index.html</a></div>
+
+
+
+  <div class="comments" id="comments_list">
+    <h3 class="no-comments-yet">
+      <span class='comment-count hide'>0</span><span class='comment-count-write-out'>no comments yet</span>
+    </h3>
+
+
+    <ul class="article-comments-list">
+    </ul>
+
+      <div id='page-comment-form' class='page-comment-form'><div class="page-comment-form">
+
+
+
+<div class="post_comment_box closed">
+
+  <a class="display-comment-form" href="#">Post a comment</a>
+<form class="comment_form" id="new_comment" onsubmit="jQuery.ajax({data:jQuery.param(jQuery(this).serializeArray()) + &#39;&amp;authenticity_token=&#39; + encodeURIComponent(&#39;7xV2UyJHAenNQktffphTLzsubrAW8fPjLchvMNApcYhyfcZSUBwDCiJZvsH4GClMdL+kcx59NLFwRFY0j6LXWg==&#39;), dataType:&#39;script&#39;, type:&#39;post&#39;, url:&#39;/profile/joenio/comment/create/1746360?escape=false&#39;}); return false;" action="/profile/joenio/comment/create/1746360" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="vHMuWIknKoCmTEUi3h7KhAfogQnlLXxEEr6QSEsGyYghG55Z+3woY0lXsLxYnrDnSHlLyu2huxZPMqlMFI1vWg==" />
+
+  <p><span class="required-field">The <label class='pseudoformlabel'>highlighted</label> fields are mandatory.</span></p>
+
+
+    <span class="required-field"><div class="formfieldline"><label class="formlabel" for="comment_name">Name</label><div class="formfield type-text"><input type="text" name="comment[name]" id="comment_name" /></div></div></span>
+    <span class="required-field"><div class="formfieldline"><label class="formlabel" for="comment_email">e-mail</label><div class="formfield type-text"><input type="text" name="comment[email]" id="comment_email" /></div></div></span>
+    <p>
+    If you are a registered user, you can login and be automatically recognized.
+    </p>
+
+
+  <div class="formfieldline"><label class="formlabel" for="comment_title">Title</label><div class="formfield type-text"><input type="text" name="comment[title]" id="comment_title" /></div></div>
+  <span class="required-field"><div class="formfieldline"><label class="formlabel" for="comment_body">Enter your comment</label><div class="formfield type-textarea"><textarea rows="5" name="comment[body]" id="comment_body">
+</textarea></div></div></span>
+
+    <p><script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<div class="g-recaptcha " data-sitekey="6LcK7CYUAAAAABl-eMkoFIv3VvOOIPwiXeinFmUi" ajax="true"></div>
+          <noscript>
+            <div>
+              <div style="width: 302px; height: 422px; position: relative;">
+                <div style="width: 302px; height: 422px; position: absolute;">
+                  <iframe
+                    src="https://www.google.com/recaptcha/api/fallback?k=6LcK7CYUAAAAABl-eMkoFIv3VvOOIPwiXeinFmUi"
+                    frameborder="0" scrolling="no"
+                    style="width: 302px; height:422px; border-style: none;">
+                  </iframe>
+                </div>
+              </div>
+              <div style="width: 300px; height: 60px; border-style: none;
+                bottom: 12px; left: 25px; margin: 0px; padding: 0px; right: 25px;
+                background: #f9f9f9; border: 1px solid #c1c1c1; border-radius: 3px;">
+                <textarea id="g-recaptcha-response" name="g-recaptcha-response"
+                  class="g-recaptcha-response"
+                  style="width: 250px; height: 40px; border: 1px solid #c1c1c1;
+                  margin: 10px 25px; padding: 0px; resize: none;" value="">
+                </textarea>
+              </div>
+            </div>
+          </noscript>
+</p>
+
+
+  <input type="hidden" name="confirm" id="confirm" value="false" />
+  <input type="hidden" name="view" id="view" />
+  <input type="hidden" name="comment[reply_of_id]" id="comment_reply_of_id" />
+
+  
+
+  <div class=" button-bar">
+    <input type="submit" name="commit" value="Post comment" onclick="save_comment(this); return false;" class="button with-text icon-add submit" />
+      <a id="cancel-comment" class="button icon-cancel with-text" title="Cancel" href="">&nbsp;<span>Cancel</span></a>
+<br style="clear: left;" /></div></form>
+
+</div><!-- end class="post_comment_box" -->
+</div><!-- end class="page-comment-form" -->
+
+<script src="/assets/comment_form-6675ef0f0fa17bef4ca4a3b992647bd9.js"></script>
+</div>
+  </div><!-- end class="comments" -->
+
+</div><!-- end id="article" -->
+<link rel="stylesheet" media="screen" href="/assets/vendor/jquery.fancybox-f18bccba6b2b1108ccca4462da78aa43.css" /><script src="/assets/vendor/jquery.fancybox.pack-c84445b4cd8162f8a15703d690ccc514.js"></script><script>
+//<![CDATA[
+apply_zoom_to_images("Zoom in")
+//]]>
+</script>
+</div></div></div></div></div>
+
+    <div class="block-outer"><div class="block raw-html-block" id="block-636508"><div class="block-inner-1"><div class="block-inner-2"><div class="block-header"><h3 class="block-title empty"><span></span></h3><h4 class="block-subtitle empty"><span></span></h4></div>
+
+<script>
+$( function() {
+  $( "#mapa-dialog" ).dialog();
+});
+</script>
+
+<div id="mapa-dialog" title="Basic dialog" style="display:none">
+  <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+</div>
+</div></div></div></div>
+</div></div></div><div id="profile-footer"></div>
+  <br style='clear: both'/>
+</div><!-- end id="content-inner" -->
+
+        </div><!-- end id="content" -->
+      </div><!-- end id="wrap-2" -->
+    </div><!-- end id="wrap-1" -->
+    
+    <div id="footer">
+      <div id="theme-footer">
+        <div id="footer-environment">
+<div id="footer-links">
+  <ul>
+    <li><ul id="slbr-footer">
+        <li><a href="http://softwarelivre.org" id="slbr" class="link-this-page"><span>Software Livre - Brasil</span></a></li>
+        <li><a href="http://softwarelivre.org/tv"><span>TV Software Livre</span></a></li>
+        <li><a href="http://softwarelivre.org/radio"><span>Rádio Software Livre</span></a></li>
+        </ul></li>
+    <li><ul id="conheca-footer"><h3>Conheça</h3>
+        <li><a href="http://softwarelivre.org/portal/quem-somos">Quem Somos</a></li>
+        <li><a href="http://softwarelivre.org/portal/termos-de-uso">Termos de Uso</a></li>
+        <li><a href="http://softwarelivre.org/doc">Documentação</a></li>
+        <li><a href="http://softwarelivre.org/contact/portal/new">Fale Conosco</a></li>
+        </ul></li>
+    <li><ul id="colabore-footer"><h3>Colabore</h3>
+        <li><b><a href="http://softwarelivre.org/myprofile/portal/cms/suggest_an_article">Sugerir um Artigo</a></b></li>
+        <li><a href="http://softwarelivre.org/portal/melhorias">Sugerir Melhorias</a></li>
+        <li><a href="http://softwarelivre.org/portal/bugs">Reportar um Bug</a></li>
+        <li><a href="http://softwarelivre.org/portal/desenvolvimento">Desenvolvimento</a></li>
+        </ul></li>
+    <li><ul id="compartilhe-footer"><h3>Compartilhe</h3>
+        <li><b><!-- AddToAny BEGIN -->
+        <a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fsoftwarelivre.org&amp;linkname=SoftwareLivre.org">Compartilhar Isto!</a>
+        <script type="text/javascript">
+        var a2a_config = a2a_config || {};
+        a2a_config.linkname = "SoftwareLivre.org";
+        a2a_config.linkurl = "http://softwarelivre.org";
+        a2a_config.onclick = 1;
+        a2a_config.locale = "pt-BR";
+        a2a_config.num_services = 6;
+        a2a_config.prioritize = ["identi_ca", "twitter", "facebook", "google_buzz", "digg", "email"]
+        </script>
+        <script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END --></b></li>
+        <li><a href="http://softwarelivre.org/portal/eventos">Novos Eventos</a></li>
+        <li><a href="http://softwarelivre.org/portal/portfolio">Portfólio Livre</a></li>
+        <li><a href="http://softwarelivre.org/portal/divulgue">Páginas Amigas</a></li>
+        </ul></li>
+    <li><ul id="apoio-footer"><h3>Apoio</h3>
+        <li> <a href="http://softwarelivre.org/portal/apoio"><img src="/portal/anuncios/apoio.png" style="width:204px"><span>Apoio</span></img></a></li>
+        </ul></li>
+</div><!-- end id="footer-links" -->
+
+<div id="copyright">
+  © Copyleft 2015 -<a id="link-asl" href="http://associacao.softwarelivre.org/" title="Associação SoftwareLivre.org">ASL</a> - Alguns direitos reservados, exceto quando especificado em contrário e nos conteúdos replicados de outras fontes.
+  <p id="noosfero-license">Este site utiliza o software livre <a href="http://www.noosfero.org/" id="link-noosfero">Noosfero</a>, licenciado sob a licença <a href="http://www.gnu.org/licenses/agpl.html">GNU Affero General Public License</a>, versão 3 ou superior.  </p>
+</div><!-- end id="copyright" -->
+</div>
+
+<script type="text/javascript">
+  jQuery(function($) {
+    $(".highlights-block").insertAfter("#theme-header");
+    $(".action-home-index #block-695148").insertBefore("#block-666540");
+    $(".action-environment_design-index #block-695148").insertBefore("#block-666540");
+    $(".action-home-index #block-695454").insertAfter("#block-666540");
+    $(".action-environment_design-index #block-695454").insertAfter("#block-666540");
+    $("#site-title").prependTo("#top");
+    $("#user").insertAfter("#site-title");
+  });
+</script>
+
+      </div><!-- end id="theme-footer" -->
+      <div id="global-footer">
+        
+      </div><!-- end id="global-footer" -->
+    </div><!-- end id="footer" -->
+    
+    <script src="https://s7.addthis.com/js/152/addthis_widget.js"></script>
+    <!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+     var u = "piwik.colivre.coop.br/";
+     if(!u.match(/^https?/)){
+       var protocol = ("https:" == document.location.protocol ? "https" : "http");
+       u = protocol + '://' + u;
+     }
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 3]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.colivre.coop.br/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+  </body>
+</html>
