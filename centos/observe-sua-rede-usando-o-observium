@@ -1,0 +1,514 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt" class="controller-content_viewer action-content_viewer-view_page template-default profile-type-is-community profile-name-is-centos theme-sl-default">
+  <head>
+    <title>&quot;Observe&quot; sua Rede usando o Observium - CentOS</title>
+    
+    <!--<meta http-equiv="refresh" content="1"/>-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    
+
+      <meta name="description" content="Software Livre Brasil" />
+
+    <!-- site root -->
+    <meta property="noosfero:root" content=""/>
+
+    <link rel="shortcut icon" href="/designs/themes/sl-default/favicon.ico" type="image/x-icon" />
+    
+
+    <script src="/assets/application-1c0930e8f260aafbc74c4fad04079409.js"></script>
+
+  
+  
+<script src="/javascripts/plugins/pg_search/search.js"></script>
+<script src="/javascripts/plugins/pg_search/profile_search_block.js"></script>
+<script src="/assets/plugins/require_auth_to_comment/hide_comment_form-c3a3727ea301c62930e11aab20ae74d4.js"></script>
+<script src="/assets/plugins/require_auth_to_comment/jquery.livequery.min-d1fe96eb7788079f6e550db2b6610365.js"></script>
+<script src="/assets/plugins/orders/javascripts/locale-17eaae2c136082dab9da1d91648b6a7e.js"></script>
+<script src="/assets/plugins/orders/javascripts/toggle_edit-f9da47bc0223fac8e5e5174c6ea24413.js"></script>
+<script src="/assets/plugins/orders/javascripts/sortable-table-ba58eb377fc175eb1e374be63d5454a3.js"></script>
+<script src="/assets/plugins/orders/javascripts/help-14515dc2f741beaa4b3d121df366af0d.js"></script>
+<script src="/assets/plugins/orders/javascripts/orders-560e35746985dc40b97851b13705cb26.js"></script>
+<script src="/assets/plugins/html5_video/video-channel-6aca45f93220c0910d8273dd2368004e.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/locale-17eaae2c136082dab9da1d91648b6a7e.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/toggle_edit-f9da47bc0223fac8e5e5174c6ea24413.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/sortable-table-ba58eb377fc175eb1e374be63d5454a3.js"></script>
+<script src="/assets/plugins/suppliers/javascripts/suppliers-35473b9ebd4b9e65027e1bafa94dfdcd.js"></script>
+<script src="/assets/plugins/event/event-b1013aca7ce3cf0d4d5e6e10dc1f05b2.js"></script>
+<script src="/assets/plugins/display_content/javascripts/jstree/_lib/jquery-1.8.3-09dfd3b315fe6b24fbc309e36f5d70c3.js"></script>
+<script src="/assets/plugins/display_content/javascripts/jstree/jquery.jstree-563d09f7e7938a8a2f4207bfe6d48dd3.js"></script>
+<script src="/assets/plugins/container_block/container_block-7eae56f79aa8da8b64941d18d2972c7b.js"></script>
+<script src="/assets/plugins/delivery/javascripts/delivery-da5b2dac737692db94d5bdc654586171.js"></script>
+<script src="/assets/plugins/products/javascripts/products-a4c860d8dbebe524d554f0b5564e0428.js"></script><script src="/designs/themes/sl-default/theme.js"></script><script>
+//<![CDATA[
+render_all_jquery_ui_widgets()
+//]]>
+</script>
+    <link rel="stylesheet" media="screen" href="/assets/application-e0072ababb97032fa1a5d95fa09d897c.css" />
+<link rel="stylesheet" media="screen" href="/designs/templates/default/stylesheets/style.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/icons/default/style-b3a500c1e17f47b010a70fdb0103012e.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/icons/pidgin/style-138f7bb59f9d26296632e82eae162877.css" />
+<link rel="stylesheet" media="screen" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/people_block/style-c340afe175b0045c7f8669073a428a1c.css" />
+<link rel="stylesheet" media="screen" href="/stylesheets/plugins/pg_search/style.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/recent_content/style-e0d5f807f7056b173f6cf113c840ddc0.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/custom_forms/style-7870704d75309d55ffcaa827c59baa18.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/work_assignment/style-526deb629c3d9e7736f049b99c72a50a.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/require_auth_to_comment/style-66a0efab118159977ca0194806ef4bec.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/orders/style-feb7767bc71e62563ccab53642a6e4c2.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/html5_video/style-8f2b70d373ff7ec22b404d91b1b6f211.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/suppliers/style-64c71b3cd22994ada93abd55c70ea1ce.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/gallery_block/style-4547593291c3fca2ad50216cbb3dfdc9.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/send_email/style-976778195cb106e52b31d57242cdc01c.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/event/style-8f5f6a9b5a7724dbc4977d11c2e4321c.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/display_content/style-cf10f47511255685485ac51859c22a29.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/container_block/style-dd17a810971259abe7c31678e9d9c132.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/video/style-68d51000d73adab06c1dcd036011138d.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/delivery/style-aeef749320f3cdff642340f047806f9b.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/sub_organizations/style-88810bb91c1c70f63817f6f03295fd92.css" />
+<link rel="stylesheet" media="screen" href="/assets/plugins/products/style-3147a337d78ccc54df05870c504166fd.css" />
+<link rel="stylesheet" media="screen" href="/designs/themes/sl-default/global.css" />
+<link rel="stylesheet" media="screen" href="/assets/designs/themes/sl-default/style-f317a60b59d0ee3e8048cb6eba54b282.css" />
+
+    
+    
+
+    <script type="text/javascript">
+      DEFAULT_LOADING_MESSAGE = 'loading...';
+      PERMANENT_NOTIFICATIONS = false;
+      noosfero.profile = "centos"
+    </script>
+
+      
+<script src="/assets/tinymce/js/tinymce/tinymce-666c93593f34cd23b1f1e9177ab27cae.js"></script><script src="/assets/tinymce/js/tinymce/jquery.tinymce.min-33361c760deadb5b77610a12911056f2.js"></script><script src="/assets/tinymce-4df3fc98953118b704cdb7a023aafdc2.js"></script>
+<script type="text/javascript">
+tinymce.create('tinymce.plugins.MacrosPlugin', {
+  createControl: function(n, cm) {
+    switch (n) {
+       case 'macros':
+    }
+    return null;
+  }
+});
+
+function tinymce_macros_setup(editor) {
+}
+
+// Register plugin with a short name
+tinymce.PluginManager.add('macrosPlugin', tinymce.plugins.MacrosPlugin);
+
+jQuery(document).ready(function () {
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"pt_BR","selector":".tiny_mce","toolbar1":"fullscreen | insertfile undo redo | copy paste | bold italic underline | styleselect fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image","menubar":"edit insert view tools","toolbar2":"print preview code media | table | macros","macros_setup":[]})
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"pt_BR","selector":".tiny_mce_simple","toolbar1":"fullscreen | insertfile undo redo | copy paste | bold italic underline | styleselect fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image","menubar":false,"toolbar2":null,"macros_setup":[]})
+  noosfero.tinymce.init({"document_base_url":"http://softwarelivre.org","content_css":"/stylesheets/tinymce.css,","plugins":["compat3x","advlist","autolink","lists","link","image","charmap","print","preview","hr","anchor","pagebreak","searchreplace","wordcount","visualblocks","visualchars","code","fullscreen","insertdatetime","media","nonbreaking","save","table","contextmenu","directionality","emoticons","template","paste","textcolor","colorpicker","textpattern"],"image_advtab":true,"language":"pt_BR","selector":".tiny_mce_restricted","toolbar1":"bold italic underline | link","menubar":false,"toolbar2":null,"macros_setup":[]})
+});
+</script>
+
+
+  </head>
+  <body class="controller-content_viewer action-content_viewer-view_page template-default">
+    <a href="#content" id="link-go-content"><span>Go to the content</span></a>
+    
+    <div id="global-header">
+      <!-- div class='supportbanner'>
+  <div class='content'>
+    <div class='banner-title'>Campanha de doação 2016</div>
+    <div class='banner-subtitle'>Ajude a <span class='asl'>ASL.Org</span> a realizar o <span class='fisl17'>FISL17</span>!</div>
+    <p>Ajude a Associação Software Livre.Org a continuar seu trabalho de 12 anos em prol do desenvolvimento e disseminação do Software Livre. Faça uma doação e ganhe um ingresso cortesia para o <span class='fisl17'>FISL17</span> e uma camiseta oficial do evento.</p>
+  </div>
+  <div class='footer-links'>
+    <a class='logo-fisl17' href='http://fisl.org.br' target='_blank'><span>fisl17</span></a>
+    <a class='logo-asl' href='http://asl.org' target='_blank'><span>ASL.org</span></a>
+    <a class='iot-fisl' href='http://segue.fisl17.softwarelivre.org' target='_blank'><span>Contribua para o fisl17</span></a>
+  </div>
+</div -->
+
+    </div>
+
+    <div id="wrap-1">
+      <div id="theme-header">
+        <div id="top">
+  <ul id="top-menu">
+    <li><a href="/"><span>Início</span></a></li>
+    <li><a id="submenu-people" href="/search/people"><span class="icon-menu-people">People</span></a><a class="up menu-submenu-trigger" id="submenu-people-trigger" onclick="toggleSubmenu(this, '', {&quot;More recent&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_recent&quot;},&quot;More active&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_active&quot;},&quot;More popular&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/people?filter=more_popular&quot;}}); return false" href="#"><span>People menu</span></a></li>
+    <li><a id="submenu-communities" href="/search/communities"><span class="icon-menu-community">Communities</span></a><a class="up menu-submenu-trigger" id="submenu-communities-trigger" onclick="toggleSubmenu(this, '', {&quot;More recent&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_recent&quot;},&quot;More active&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_active&quot;},&quot;More popular&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/search/communities?filter=more_popular&quot;}}); return false" href="#"><span>Communities menu</span></a></li>
+    <li><a href="/profile/portal/events" id="submenu-events"><span class='icon-menu-events'>Events</span></a></li>
+    <li><a href="/doc"><span>Manual</span></a></li>
+    <li><a href="/portal/quem-somos" id="submenu-about"><span>About</span></a></li>
+  </ul>
+</div>
+
+      </div>
+      <div id="wrap-2">
+        <div id="user">
+    <span class='not-logged-in'>
+      <span class='login'><a id="link_login" onclick="return noosfero.modal.inline(&#39;#inlineLoginBox&#39;)" class="" href="/account/login"><i class="icon-menu-login"></i><strong>Login</strong></a></span>
+
+      <div id='inlineLoginBox' style='display: none;'>
+        <div class="login-box">
+
+<h2>Login</h2>
+
+
+
+
+<form action="/account/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="48aGZL+Fc9dfGIKmJbhIqb7xXOIJmNafT5kV4JfbCVx+rjZlzd5xNLADdzijODLK8WCWIQEUEc0SFSzkyFCvjg==" />
+
+     <div class="formfieldline"><label class="formlabel" for="main_user_login">Username / Email</label><div class="formfield type-text"><input id="main_user_login" onchange="this.value = convToValidLogin( this.value )" type="text" name="user[login]" /></div></div>
+
+     <div class="formfieldline"><label class="formlabel" for="user_password">Password</label><div class="formfield type-password"><input type="password" name="user[password]" id="user_password" /></div></div>
+
+     <div class='checkbox'>
+       <label>
+         <input type="checkbox" name="remember_me" id="remember_me" value="1" checked="checked" />
+         Keep me logged in
+       </label>
+     </div>
+
+     
+
+     <div class=" button-bar">
+       <input type="submit" name="commit" value="Log in" class="button with-text icon-login submit" />
+         <a class="button icon-close with-text modal-toggle modal-close" rel="deactivate" title="Cancel" href="#">&nbsp;<span>Cancel</span></a>
+<br style="clear: left;" /></div>
+</form>
+<div class=" button-bar">
+    <a class="button icon-add with-text" title="New user" href="/account/signup">&nbsp;<span>New user</span></a>
+
+    <a class="button icon-help with-text" title="I forgot my password!" href="/account/forgot_password">&nbsp;<span>I forgot my password!</span></a>
+<br style="clear: left;" /></div>
+</div><!-- end class="login-box" -->
+
+
+      </div>
+
+        <span class='or'>or</span> <span class='signup'><a href="/account/signup"><strong>Sign up</strong></a></span>
+    </span>
+  <form action="/search/articles" id="top-search" class="search_form clean" method="get">
+    <input name="query" size="15" title="Search..." onfocus="this.form.className='focused';" onblur="this.form.className=''" />
+    <div>Press <strong>Enter</strong> to send the search query.</div>
+    <script>
+//<![CDATA[
+jQuery("#user form input").hint();
+//]]>
+</script>
+  </form>
+</div><!-- end id="user" -->
+
+        <h1 id="site-title">
+          <a href="/"><span>Software livre Brasil</span></a>
+
+        </h1>
+        <div id="navigation">
+          <ul>
+            <div id="friends">
+<ul>
+  <li><a href="/portal"><span>+</span></a></li>
+  <li><a href="http://br-linux.org"><span>BR-Linux</span></a></li>
+  <li><a href="http://www.vivaolinux.com.br"><span>Viva o Linux</span></a></li>
+  <li><a href="http://www.revista.espiritolivre.org"><span>Revista Espírito Livre</span></a></li>
+  <li><a href="http://www.dicas-l.com.br"><span>Dicas-L</span></a></li>
+  <li><a href="http://www.sejalivre.org"><span>Seja Livre</span></a></li>
+  <li><a href="http://www.underlinux.com.br"><span>Under Linux</span></a></li>
+  <li><a href="http://www.sempreupdate.com.br"><span>Sempre Update</span></a></li>
+</ul>
+</div>
+<div id="external-links">
+<ul>
+  <li><a id="blogoosfero" title="Blogoosfero" href="http://blogoosfero.cc/software-livre" target="_blank"><span>Blogoosfero</span></a></li>
+  <li><a id="twitter" title="Twitter" href="https://twitter.com/PSLBrasil" target="_blank"><span>Twitter</span></a></li>
+  <li><a id="diaspora" title="Diaspora" href="https://diaspora.softwarelivre.org/u/pslbrasil" target="_blank"><span>Diaspora</span></a></li>
+  <li><a id="gnu-social" title="Quitter" href="https://quitter.se/pslbrasil" target="_blank"><span>Quitter</span></a></li>
+  <li><a id="feed" title="Feed" href="http://softwarelivre.org/portal/feed"><span>Feed</span></a></li>
+</ul>
+</div>
+
+          </ul>
+          <div id="navigation-end"></div>
+        </div><!-- end id="navigation" -->
+        <div id="content">
+          <div id="content-inner">
+  <div id="profile-header"></div><div class="boxes" id="boxes"><div class="box box-3" id="box-1014"><div class="blocks">    <div class="block-outer"><div class="block members-block" id="block-2118" help="Clicking a member takes you to his/her homepage"><div class="block-inner-1"><div class="block-inner-2">
+<div class="block-header"><h3 class="block-title"><span>9 integrantes</span></h3><h4 class="block-subtitle empty"><span></span></h4></div>
+
+<div>
+    <ul>
+      <div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/cjnetbr/check_friendship" onclick="toggleSubmenu(this, 'cjnet', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/cjnetbr&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/cjnetbr/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/cjnetbr/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/cjnetbr/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/cjnetbr/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/cjnetbr&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Claudio Pereira Gonçalves Junior" href="http://softwarelivre.org/cjnetbr"><span class="profile-image"><img alt="Claudio Pereira Gonçalves Junior" title="" class=" photo" src="/image_uploads/0013/4068/perfil_minor.jpg" /></span><span class="fn">cjnet</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/rbferreira/check_friendship" onclick="toggleSubmenu(this, 'RBFerreira', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/rbferreira&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/rbferreira/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/rbferreira/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/rbferreira/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/rbferreira/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/rbferreira&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Rafael de Barros Ferreira" href="http://softwarelivre.org/rbferreira"><span class="profile-image"><img alt="Rafael de Barros Ferreira" title="" class=" photo" src="/image_uploads/0009/2483/eu-foto-perfil_minor.jpeg" /></span><span class="fn">RBFerreira</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/bruno_cavalcanti/check_friendship" onclick="toggleSubmenu(this, 'Bruno_Cavalcanti', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/bruno_cavalcanti&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/bruno_cavalcanti/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/bruno_cavalcanti/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/bruno_cavalcanti/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/bruno_cavalcanti/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/bruno_cavalcanti&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Bruno Vinicius Barroso Cavalcanti" href="http://softwarelivre.org/bruno_cavalcanti"><span class="profile-image"><img alt="Bruno Vinicius Barroso Cavalcanti" title="" class=" photo" src="/image_uploads/0009/1787/1781972_275572209264203_384728084_n_minor.jpg" /></span><span class="fn">Bruno_Cavalcanti</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/albertosoares/check_friendship" onclick="toggleSubmenu(this, 'Alberto Soares', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/albertosoares&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/albertosoares/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/albertosoares/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/albertosoares/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/albertosoares/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/albertosoares&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Alberto Soares" href="http://softwarelivre.org/albertosoares"><span class="profile-image"><img alt="Alberto Soares" title="" class=" photo" src="/image_uploads/0008/5041/WP_000281_minor.jpg" /></span><span class="fn">Alberto Soares</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/julio20/check_friendship" onclick="toggleSubmenu(this, 'Julio Santos', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/julio20&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/julio20/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/julio20/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/julio20/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/julio20/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/julio20&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Julio Santos" href="http://softwarelivre.org/julio20"><span class="profile-image"><img alt="Julio Santos" title="" class=" photo" src="/image_uploads/0013/5780/dsc-0123348_minor.jpg" /></span><span class="fn">Julio Santos</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block has-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/jpmarcucci/check_friendship" onclick="toggleSubmenu(this, 'Joao', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/jpmarcucci&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/jpmarcucci/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/jpmarcucci/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/jpmarcucci/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/jpmarcucci/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/jpmarcucci&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Joao Marcucci" href="http://softwarelivre.org/jpmarcucci"><span class="profile-image"><img alt="Joao Marcucci" title="" class=" photo" src="/image_uploads/0008/4423/3148e54_minor.jpg" /></span><span class="fn">Joao</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block no-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/silviogazeta/check_friendship" onclick="toggleSubmenu(this, 'Silvio', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/silviogazeta&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/silviogazeta/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/silviogazeta/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/silviogazeta/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/silviogazeta/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/silviogazeta&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Silvio Gazeta" href="http://softwarelivre.org/silviogazeta"><span class="profile-image"><img alt="Silvio Gazeta" title="" class=" photo" src="//www.gravatar.com/avatar/256730db6e303676ef98dea26f502385?only_path=false&amp;size=50&amp;d=wavatar" /></span><span class="fn">Silvio</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block no-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/reginasanto/check_friendship" onclick="toggleSubmenu(this, 'Regina', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/reginasanto&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/reginasanto/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/reginasanto/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/reginasanto/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/reginasanto/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/reginasanto&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Regina" href="http://softwarelivre.org/reginasanto"><span class="profile-image"><img alt="Regina" title="" class=" photo" src="//www.gravatar.com/avatar/f3ad19b40db83a4f2da72256834ce706?only_path=false&amp;size=50&amp;d=wavatar" /></span><span class="fn">Regina</span><span class="extra_info"></span></a></li></div>
+<div class="common-profile-list-block no-pic"><li class="vcard"><a class="person-trigger menu-submenu-trigger" url="/profile/saimon/check_friendship" onclick="toggleSubmenu(this, 'saimon', [{&quot;Wall&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/profile/saimon&quot;}},{&quot;Friends&quot;:{&quot;href&quot;:&quot;/profile/saimon/friends&quot;}},{&quot;Communities&quot;:{&quot;href&quot;:&quot;/profile/saimon/communities&quot;}},{&quot;Send an e-mail&quot;:{&quot;href&quot;:&quot;/contact/saimon/new&quot;,&quot;class&quot;:&quot;send-an-email&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;Add&quot;:{&quot;href&quot;:&quot;/profile/saimon/add&quot;,&quot;class&quot;:&quot;add-friend&quot;,&quot;style&quot;:&quot;display: none&quot;}},{&quot;home&quot;:{&quot;href&quot;:&quot;http://softwarelivre.org/saimon&quot;}}]); return false" href="#"><span>Profile links</span></a><a class="profile_link url" style="" title="Saimon Weslei de Lima" href="http://softwarelivre.org/saimon"><span class="profile-image"><img alt="Saimon Weslei de Lima" title="" class=" photo" src="//www.gravatar.com/avatar/259cce648722ea3ecadbc323399769a7?only_path=false&amp;size=50&amp;d=wavatar" /></span><span class="fn">saimon</span><span class="extra_info"></span></a></li></div>
+
+    </ul>
+  <br style="clear:both" />
+</div>
+<div class="block-footer-content"><a class="view-all" href="/profile/centos/members#members-tab">Mostra Tutto</a>
+
+</div></div></div></div></div>
+</div></div>
+<div class="box box-2" id="box-1013"><div class="blocks">  <div class="block-outer"><div class="block profile-image-block" id="block-2116" help="This block presents the profile image"><div class="block-inner-1"><div class="block-inner-2"><div class="vcard">
+
+
+<div class="profile-big-image img-pic">
+  <div class="profile-big-image-inner1">
+    <div class="profile-big-image-inner2">
+      <a href="http://softwarelivre.org/centos"><img alt="CentOS" title="" class=" logo" src="/image_uploads/0000/1000/centos-logo_big.png" />
+</a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="profile-info-options">
+  <ul>
+  <li>
+    <div class='join-leave-button require-login-popup'>
+    <a class="button icon-add with-text modal-toggle join-community" title="Join this community" href="/profile/centos/join_not_logged">&nbsp;<span>Join this community</span></a>
+</div>
+
+<script>
+//<![CDATA[
+
+  noosfero.add_and_join.locales.leaveConfirmation = "Please confirm to leave the community 'CentOS'"
+
+//]]>
+</script>
+
+  </li>
+</ul>
+
+</div>
+</div><!-- end class="vcard" -->
+</div></div></div></div>
+
+    <div class="block-outer"><div class="block recent-documents-block" id="block-2117" help="Este bloco lista seu conteúdo atualizado mais recentemente."><div class="block-inner-1"><div class="block-inner-2"><div class="block-header"><h3 class="block-title"><span>Conteúdo recente</span></h3><h4 class="block-subtitle empty"><span></span></h4></div>
+
+<ul>
+    <li><a href="http://softwarelivre.org/centos/cluster-de-virtualizacao-de-kvm-aprenda-a-montar-seu-proprio-data-center">Cluster de Virtualização de KVM - Aprenda a montar seu próprio Data Center</a></li>
+    <li><a href="http://softwarelivre.org/centos/definida-a-data-da-realizacao-do-mao-na-massa-jboss-as-7-sera-no-dia-18-de-maio-sabado-das-9h00-as-18h00">Definida a data da realização do Mão na Massa JBoss AS 7: será no dia 18 de maio, sábado, das 9h00 às 18h00</a></li>
+    <li><a href="http://softwarelivre.org/centos/treinamento-realizado-pela-tempo-real-eventos-em-parceria-com-a-savant-demostra-na-pratica-como-montar-um-data-center-atraves-de-cluster-de-virtualiza">Treinamento realizado pela Tempo Real Eventos em parceria com a Savant demostra na prática como Montar um Data Center através de Cluster de Virtualiza</a></li>
+    <li><a href="http://softwarelivre.org/centos/treinamento-realizado-pela-tempo-real-eventos-em-parceria-com-a-savant-demostra-na-pratica-como-montar-um-data-center-atraves-de-cluster-de-virtualiza">Treinamento realizado pela Tempo Real Eventos em parceria com a Savant demostra na prática como Montar um Data Center através de Cluster de Virtualiza</a></li>
+    <li><a href="http://softwarelivre.org/centos/observe-sua-rede-usando-o-observium">&quot;Observe&quot; sua Rede usando o Observium</a></li>
+</ul>
+<div class="block-footer-content">  <a href="/profile/centos/sitemap">Todo o conteúdo</a>
+</div></div></div></div></div>
+</div></div>
+<div class="box box-1" id="box-1012"><div class="blocks">  <div class="block-outer"><div class="block main-block" id="block-2115" help="This block presents the main content of your pages."><div class="block-inner-1"><div class="block-inner-2"><div class="main-content">
+<div id="article" class="text-article">
+
+
+
+<script type="text/javascript">
+    window.ONE_COMMENT = "One comment";
+    window.COMMENT_PLURAL = "comments";
+    window.NO_COMMENT_YET = "No comments yet";
+</script>
+
+
+<div id="article-toolbar">
+  <div>
+  <div id="article-actions">
+
+    
+      <script>fullscreenPageLoad('#article')</script>
+    <a id="fullscreen-btn" onClick="toggle_fullwidth(&#39;#article&#39;)" class="button with-text icon-fullscreen" href="#" title="Go to full screen mode"><span>Full screen</span></a><a style="display: none;" id="exit-fullscreen-btn" onClick="toggle_fullwidth(&#39;#article&#39;)" class="button with-text icon-fullscreen" href="#" title="Exit full screen mode"><span>Exit full screen</span></a>
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+  </div>
+  <div id="article-header">
+    
+    
+      <h1 class="title">
+    &quot;Observe&quot; sua Rede usando o Observium
+  </h1>
+  <span class="publishing-info">
+  <span class="date">
+    Febbraio 21, 2013 0:00
+  </span>
+  <span class="author">
+    , by Alex Sandro de Lacerda Vitola
+  </span>
+  <span class="comments">
+     - 
+  </span>
+
+<span class="followers-count">
+|
+    No one following this article yet.
+</span>
+
+</span>
+
+  <div id='article-sub-header'>
+      <div id="article-hits">
+        Viewed 1927 times 
+      </div>
+
+      <div id="article-license">
+        Licensed under <a target="_blank" href="http://www.gnu.org/licenses/fdl-1.3.txt">GNU FDL</a>
+      </div>
+  </div>
+
+
+    
+  </div>
+</div>
+
+</div>
+
+
+
+  <div id="addThis">
+  <script type="text/javascript">
+    addthis_pub = 'ra-4d93d22a7a91a05f';
+    addthis_logo = '';
+    addthis_options = 'identica, twitter, www.facebook.com, favorites, email, delicious, tumblr, digg, slashdot, more';
+  </script>
+  <a href="http://www.addthis.com/bookmark.php" id="bt_addThis" target="_blank" onmouseover="return addthis_open(this, '', '[URL]')" onmouseout="addthis_close()" onclick="return addthis_sendto()"><img width="53" height="16" border="0" alt="" src="/images/bt-bookmark.gif" /></a>
+</div>
+
+
+  <div class="article-body article-body-text-article">
+    <p><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Quando se fala em sistema de monitoramento de rede OpenSource um nome vem a cabeça: Cacti (*). É quase uma unanimidade, pela facilidade de utilização, </span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">por estar "empacotado" para as principais distribuições Linux, bastando um &lt;apt-get/yum&gt; install cacti e o sistema já está instalado. E também pela ampla </span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">documentação.</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Há algum tempo atrás por uma indicação de um colega da lista de Discussão GTER (**) conheci o Observium (***) e o tenho utilizado desde então, não como </span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">um substituto ao Cacti mas sim como um complemento.</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Sei que isso não é uma métrica muito confiável mas fazendo uma busca pelo termo "cacti network monitoring" nos principais mecanismos de busca que temos </span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">hoje os números são consideráveis.</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Busca pelo termo "cacti network monitoring"</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">* Google -&gt; Aproximadamente 154.000 resultados</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">* Bing -&gt; Aproximadamente 104.000 resultados</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">* Yahoo -&gt; Aproximadamente 102.000 resultados</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Busca pelo termo "observium network monitoring"</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">* Goggle -&gt; Aproximadamente 8.460 resultados</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">* Bing -&gt; Aproximadamente 6.300 resultados</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">* Yahoo -&gt; Aproximadamente 6.320 resultados</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Em alguns sites do Brasil</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Br-Linux &lt;http://br-linux.org&gt; - Uma referência em 2009</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Viva o Linux &lt;http://www.vivaolinux.com.br&gt; - Nenhuma referência</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">UnderLinux &lt;http://www.underlinux.com.br&gt; -Menos de 5 referências no Fórum de usuários</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Introdução</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Este guia mostrar instalar o Observium em um Linux CentOS / RHEL / Scientific Linux.</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Neste exemplo, usei o CentOS 6.3 64Bits, mas para outras distribuições o processo é semelhante, pois a instalação do Observium é feita por SVN.</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">- Repositórios</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Para obter todos os módulos adicionais é ideal ter os repositórios adicionais RPM Forge e EPEL</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">~# rpm --import http://apt.sw.be/RPM-GPG-KEY.dag.txt</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">~# rpm -Uvh http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">~# rpm -Uvh http://mirror.globo.com/epel/6/x86_64/epel-release-6-8.noarch.rpm</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">- Pacotes</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">~# yum install httpd.x86_64 \</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">mysql-server.x86_64 \</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">mysql.x86_64 \</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">php-gd.x86_64 \</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">php-mcrypt</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">php-mysql.x86_64 \</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">php-pear net-snmp.x86_64 \</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">php-pear.noarch \</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">php-snmp.x86_64 \</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">php.x86_64 \</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">fping.x86_64 \</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">graphviz.x86_64 \</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">ImageMagick.x86_64 \</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">jwhois.x86_64 \</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">net-snmp-utils.x86_64 \</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">nmap.x86_64 \</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">OpenIPMI-tools.x86_64 \</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">rrdtool.x86_64 \</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">subversion.x86_64 \</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">vixie-cron.x86_64 \</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">~# pear install Net_IPv6</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">~# pear install Net_IPv4</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">- Instalação do Observium</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Criar o diretório:</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">~# mkdir -p /opt/observium &amp;&amp; cd /opt</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Checar a última versão no repositório do Subversion:</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">~# svn co http://www.observium.org/svn/observer/trunk observium</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Mudar para o diretório de instalação:</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">~# cd /opt/observium</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">- Base de Dados</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Criar a base de dados e o usuário</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">mysql&gt; CREATE DATABASE observium;</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">mysql&gt; GRANT ALL PRIVILEGES ON observium.* TO 'observium'@'localhost' IDENTIFIED BY '&lt;Senhas&gt;';</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">- Configuração</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Copie o arquivo de configuração padrão e faça as alterações necessárias:</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">~# cp config.php.default config.php</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Adicione uma entrada para o fping</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">$config['fping'] = "/usr/sbin/fping";</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Configure o schema da base de dados:</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">~# php includes/sql-schema/update.php</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Alguns erros devem aparecer, isso é normal. Mas se forem mais do que 6 revise sua configuração.</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Crie os diretórios graphs e rrd (lembre-se ainda estamos abaixo do diretório /opt/observium):</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">~# mkdir graphs rrd</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">~# chown apache.apache graphs rrd</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Obs.: O sistema não aceita rodar como um diretório (http://www.dominio.com/observium)</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Adicionar o primeiro usuário (use o nível 10 para admin):</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">~# cd /opt/observium</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">~# ./adduser.php &lt;username&gt; &lt;password&gt; &lt;level&gt;</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Adicione o primeiro dispositivo para ser monitorado:</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">~# ./addhost.php &lt;hostname&gt; &lt;community&gt; v2c</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Obs.: DEVE obrigatoriamente ter um nome válido, seja por DNS ou pelo /etc/hosts</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Faça uma verificação inicial do novo dispositivo:</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">~# ./discovery.php -h all</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">~# ./poller.php -h all</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Adicione na crontab, (ex.: /etc/cron.d/observium) o conteúdo abaixo:</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">33 */6 * * * root /opt/observium/discovery.php -h all &gt;&gt; /dev/null 2&gt;&amp;1</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">*/5 * * * * root /opt/observium/discovery.php -h new &gt;&gt; /dev/null 2&gt;&amp;1</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">*/5 * * * * root /opt/observium/poller.php -h all &gt;&gt; /dev/null 2&gt;&amp;1</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Faça um reload/restart no serviço:</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">~# /etc/init.d/crond reload/restart</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">O sistema já estará disponível em http://&lt;server ip&gt;</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">- Atualização</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">É utilizado o SVN para a atualização, bastando executar o comando abaixo:</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">~# cd /opt/observium</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">~# svn update</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">~# ./discovery.php -h new</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">- Billing</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Uma função muito útil e interessante é o Billing. Onde você pode contabilizar a utilização de uma ou mais portas.</span></p>
+<p><img src="http://img.vivaolinux.com.br/imagens/artigos/comunidade/obs4a.png" height="115" alt="" style="vertical-align: middle;" width="640"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Como podemos ver na imagem, pelo menos aqui o Barrichello esta na frente de do Schumacher e do Senna :-)</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Para ativá-lo altere a linha abaixo no config.php:</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">$config['enable_billing'] = 1; </span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">E adicione as linhas abaixo no /etc/cron.d/observium:</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">*/5 * * * * root /opt/observium/poll-billing.php &gt;&gt; /dev/null 2&gt;&amp;1</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">01 * * * * root /opt/observium/billing-calculate.php &gt;&gt; /dev/null 2&gt;&amp;1</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">- Desativar itens</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Por padrão quando você adiciona um dispositivo ele traz todas as configurações de rede.</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Num servidor Windows, que eu usei como exemplo para montar este tutorial, ele acaba trazendo</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">uma série de interfaces que não precisam ser vistas, o que num primeiro momento pode deixar</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">o visual um pouco poluído, ao contrário do Cacti que você precisa especificar o quer que seja</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">monitorado.</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Na imagem abaixo podemos ver o Item Ports com todos s itens habilitados</span></p>
+<p> </p>
+<p><img src="http://img.vivaolinux.com.br/imagens/artigos/comunidade/Obs1a.png" height="409" alt="" style="vertical-align: middle;" width="640"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Para desativar estes itens siga os passos abaixo ao acessar a interface web:</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Devices &gt; All Devices &gt; *NomeDoServidor* &gt; Edit (a chave que fica bem escondida bem à direita) &gt; Ports</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Nas colunas "Polling" e "Alerts" deixe todos os itens no "No" com excessão da placa de rede que</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">você quer monitorar.</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Na mesma tela no item "Modules" estão todos os módulos que por padrão vem todos ativados.</span></p>
+<p><img src="http://img.vivaolinux.com.br/imagens/artigos/comunidade/obs6a.png" height="419" alt="" style="vertical-align: middle;" width="640"></p>
+<p><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">- Redirecionar todo tráfego HTTP para HTTPS</span><br><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Pode parecer óbvio mas tenho por padrão não usar HTTP para qualquer serviço Web, somente HTTPS.</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Para isso redireciono todo tráfego, para isso altero nos arquivos abaixo:</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">/etc/httpd/conf/httpd.conf</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">NameVirtualHost *:80</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">&lt;VirtualHost *:80&gt;</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">RewriteEngine on</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">RewriteCond %{SERVER_PORT} ^80$</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">RewriteRule ^(.*)$ https://%{SERVER_NAME}$1 [L,R]</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">&lt;/VirtualHost&gt;</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">''/etc/httpd/conf.d/ssl.conf (arquivo padrão do ssl)''</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">LoadModule ssl_module modules/mod_ssl.so</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Listen 443</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">SSLPassPhraseDialog builtin</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">SSLSessionCache shmcb:/var/cache/mod_ssl/scache(512000)</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">SSLSessionCacheTimeout 300</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">NameVirtualHost *:443</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">SSLMutex default</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">SSLRandomSeed startup file:/dev/urandom 256</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">SSLRandomSeed connect builtin</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">SSLCryptoDevice builtin</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">&lt;VirtualHost *:443&gt;</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">ServerName wiki.domain.net:443</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">ServerAlias wiki.domain.com:443</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">ErrorLog logs/ssl_error_log</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">TransferLog logs/ssl_access_log</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">LogLevel warn</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">SSLEngine on</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">SSLProtocol all -SSLv2</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">SSLCipherSuite ALL:!ADH:!EXPORT:!SSLv2:RC4+RSA:+HIGH:+MEDIUM:+LOW</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">SSLCertificateFile /etc/pki/tls/certs/localhost.crt</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">SSLCertificateKeyFile /etc/pki/tls/private/localhost.key</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">&lt;Files ~ "\.(cgi|shtml|phtml|php3?)$"&gt;</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">SSLOptions +StdEnvVars</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">&lt;/Files&gt;</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">&lt;Directory "/var/www/cgi-bin"&gt;</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">SSLOptions +StdEnvVars</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">&lt;/Directory&gt;</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">SetEnvIf User-Agent ".*MSIE.*" \</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">nokeepalive ssl-unclean-shutdown \</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">downgrade-1.0 force-response-1.0</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">CustomLog logs/ssl_request_log \</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">"%t %h %{SSL_PROTOCOL}x %{SSL_CIPHER}x \"%r\" %b"</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">&lt;/VirtualHost&gt;</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">/etc/httpd/conf.d/ssl-observium.conf (este arquivo não existe, deve ser criado)</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">&lt;VirtualHost *:443&gt;</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">ServerName observium.domain.net:443</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">ServerAlias observium.domain.com:443</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">DocumentRoot "/opt/observium/html"</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">&lt;Directory /opt/observium/html/&gt;</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Options Indexes FollowSymLinks MultiViews</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">AllowOverride All</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Order allow,deny</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">allow from all</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">AuthUserFile /var/www/.htpasswd</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">AuthName "Please enter your ID and password"</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">AuthType Basic</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">require valid-user</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Order allow,deny</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Allow from all</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">&lt;/Directory&gt;</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">ErrorLog logs/ssl-observium_error_log</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">TransferLog logs/ssl-observium_access_log</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">LogLevel warn</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">SSLEngine on</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">SSLProtocol all -SSLv2</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">SSLCipherSuite ALL:!ADH:!EXPORT:!SSLv2:RC4+RSA:+HIGH:+MEDIUM:+LOW</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">SSLCertificateFile /etc/pki/tls/certs/localhost.crt</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">SSLCertificateKeyFile /etc/pki/tls/private/localhost.key</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">&lt;Files ~ "\.(cgi|shtml|phtml|php3?)$"&gt;</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">SSLOptions +StdEnvVars</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">&lt;/Files&gt;</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">&lt;Directory "/var/www/cgi-bin"&gt;</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">SSLOptions +StdEnvVars</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">&lt;/Directory&gt;</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">SetEnvIf User-Agent ".*MSIE.*" \</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">nokeepalive ssl-unclean-shutdown \</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">downgrade-1.0 force-response-1.0</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">CustomLog logs/ssl_request_log \</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">"%t %h %{SSL_PROTOCOL}x %{SSL_CIPHER}x \"%r\" %b"</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">&lt;/VirtualHost&gt; </span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Além de tudo proteger o acesso com senha</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">~# htpasswd /var/www/.htpasswd admin</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">- Tela dos Dispositivos configurados com algumas informações básicas:</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><img src="http://img.vivaolinux.com.br/imagens/artigos/comunidade/Obs2a.png" height="104" alt="" width="640"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">- Tela de Status dos dispositivos:</span></p>
+<p> </p>
+<p><img src="http://img.vivaolinux.com.br/imagens/artigos/comunidade/obs3a.png" height="195" alt="" style="vertical-align: middle;" width="640"></p>
+<p><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">- Algumas outras checagens que ele faz por padrão (Memory, CPU e Disk Usage)</span></p>
+<p><img src="http://img.vivaolinux.com.br/imagens/artigos/comunidade/obs5a.png" height="135" alt="" style="vertical-align: middle;" width="640"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">- Referências</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Este tutorias foi baseado na documentação oficial, disponível no site http://www.observium.org</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">Lista de Discussão: http://postman.memetic.org/cgi-bin/mailman/listinfo/observium</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">(*) http://www.cacti.net/</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">(**) https://eng.registro.br/mailman/listinfo/gter</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">(***) http://www.observium.org</span><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><br style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;"><span style="font-family: Verdana, 'DejaVu Sans'; font-size: 11px; text-align: justify;">para conhecer um demo visite o site http://demo.observium.org/</span></p>
+    <br style="clear:both" />
+  </div> <!-- end class="article-body" -->
+
+
+
+<div id="article-source">Source: <a href="http://softwarelivre.org/vitola/observe-sua-rede-usando-o-observium">Alex Sandro de Lacerda Vitola</a></div>
+
+
+
+
+</div><!-- end id="article" -->
+<link rel="stylesheet" media="screen" href="/assets/vendor/jquery.fancybox-f18bccba6b2b1108ccca4462da78aa43.css" /><script src="/assets/vendor/jquery.fancybox.pack-c84445b4cd8162f8a15703d690ccc514.js"></script><script>
+//<![CDATA[
+apply_zoom_to_images("Zoom in")
+//]]>
+</script>
+</div></div></div></div></div>
+</div></div></div><div id="profile-footer"></div>
+  <br style='clear: both'/>
+</div><!-- end id="content-inner" -->
+
+        </div><!-- end id="content" -->
+      </div><!-- end id="wrap-2" -->
+    </div><!-- end id="wrap-1" -->
+    
+    <div id="footer">
+      <div id="theme-footer">
+        <div id="footer-environment">
+<div id="footer-links">
+  <ul>
+    <li><ul id="slbr-footer">
+        <li><a href="http://softwarelivre.org" id="slbr" class="link-this-page"><span>Software Livre - Brasil</span></a></li>
+        <li><a href="http://softwarelivre.org/tv"><span>TV Software Livre</span></a></li>
+        <li><a href="http://softwarelivre.org/radio"><span>Rádio Software Livre</span></a></li>
+        </ul></li>
+    <li><ul id="conheca-footer"><h3>Conheça</h3>
+        <li><a href="http://softwarelivre.org/portal/quem-somos">Quem Somos</a></li>
+        <li><a href="http://softwarelivre.org/portal/termos-de-uso">Termos de Uso</a></li>
+        <li><a href="http://softwarelivre.org/doc">Documentação</a></li>
+        <li><a href="http://softwarelivre.org/contact/portal/new">Fale Conosco</a></li>
+        </ul></li>
+    <li><ul id="colabore-footer"><h3>Colabore</h3>
+        <li><b><a href="http://softwarelivre.org/myprofile/portal/cms/suggest_an_article">Sugerir um Artigo</a></b></li>
+        <li><a href="http://softwarelivre.org/portal/melhorias">Sugerir Melhorias</a></li>
+        <li><a href="http://softwarelivre.org/portal/bugs">Reportar um Bug</a></li>
+        <li><a href="http://softwarelivre.org/portal/desenvolvimento">Desenvolvimento</a></li>
+        </ul></li>
+    <li><ul id="compartilhe-footer"><h3>Compartilhe</h3>
+        <li><b><!-- AddToAny BEGIN -->
+        <a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fsoftwarelivre.org&amp;linkname=SoftwareLivre.org">Compartilhar Isto!</a>
+        <script type="text/javascript">
+        var a2a_config = a2a_config || {};
+        a2a_config.linkname = "SoftwareLivre.org";
+        a2a_config.linkurl = "http://softwarelivre.org";
+        a2a_config.onclick = 1;
+        a2a_config.locale = "pt-BR";
+        a2a_config.num_services = 6;
+        a2a_config.prioritize = ["identi_ca", "twitter", "facebook", "google_buzz", "digg", "email"]
+        </script>
+        <script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END --></b></li>
+        <li><a href="http://softwarelivre.org/portal/eventos">Novos Eventos</a></li>
+        <li><a href="http://softwarelivre.org/portal/portfolio">Portfólio Livre</a></li>
+        <li><a href="http://softwarelivre.org/portal/divulgue">Páginas Amigas</a></li>
+        </ul></li>
+    <li><ul id="apoio-footer"><h3>Apoio</h3>
+        <li> <a href="http://softwarelivre.org/portal/apoio"><img src="/portal/anuncios/apoio.png" style="width:204px"><span>Apoio</span></img></a></li>
+        </ul></li>
+</div><!-- end id="footer-links" -->
+
+<div id="copyright">
+  © Copyleft 2015 -<a id="link-asl" href="http://associacao.softwarelivre.org/" title="Associação SoftwareLivre.org">ASL</a> - Alguns direitos reservados, exceto quando especificado em contrário e nos conteúdos replicados de outras fontes.
+  <p id="noosfero-license">Este site utiliza o software livre <a href="http://www.noosfero.org/" id="link-noosfero">Noosfero</a>, licenciado sob a licença <a href="http://www.gnu.org/licenses/agpl.html">GNU Affero General Public License</a>, versão 3 ou superior.  </p>
+</div><!-- end id="copyright" -->
+</div>
+
+<script type="text/javascript">
+  jQuery(function($) {
+    $(".highlights-block").insertAfter("#theme-header");
+    $(".action-home-index #block-695148").insertBefore("#block-666540");
+    $(".action-environment_design-index #block-695148").insertBefore("#block-666540");
+    $(".action-home-index #block-695454").insertAfter("#block-666540");
+    $(".action-environment_design-index #block-695454").insertAfter("#block-666540");
+    $("#site-title").prependTo("#top");
+    $("#user").insertAfter("#site-title");
+  });
+</script>
+
+      </div><!-- end id="theme-footer" -->
+      <div id="global-footer">
+        
+      </div><!-- end id="global-footer" -->
+    </div><!-- end id="footer" -->
+    
+    <script src="https://s7.addthis.com/js/152/addthis_widget.js"></script>
+    <!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+     var u = "piwik.colivre.coop.br/";
+     if(!u.match(/^https?/)){
+       var protocol = ("https:" == document.location.protocol ? "https" : "http");
+       u = protocol + '://' + u;
+     }
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 3]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.colivre.coop.br/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+  </body>
+</html>
